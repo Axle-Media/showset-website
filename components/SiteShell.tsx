@@ -1,5 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef, useId } from "react";
+import { CuratedGallery, ProjectModules } from "./WorkExperience";
+import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import type { PageData, Globals, Block, BlockItem } from "@/lib/types";
 import { apiEndpoint, defaultPages } from "@/lib/data";
@@ -149,15 +151,22 @@ function Link({
 function Brand({ g }: { g: Globals }) {
   return (
     <a className="brand" href="/" aria-label="SHOWSET home">
-      <strong>
-        {g.brand.wordmark}
-        <span>.</span>
-      </strong>
-      <small>{g.brand.tagline}</small>
+      <img
+        className="approved-wordmark"
+        src={g.brand.logo || "/brand/approved-wordmark.png"}
+        width="481"
+        height="125"
+        alt={`${g.brand.wordmark}. ${g.brand.tagline}`}
+      />
     </a>
   );
 }
 function Header({ g }: { g: Globals }) {
+  const pathname = usePathname();
+  const current = (href: string) =>
+    pathname.replace(/\/$/, "") === href.replace(/\/$/, "")
+      ? ("page" as const)
+      : undefined;
   const [open, setOpen] = useState(false),
     [mobile, setMobile] = useState(false),
     [scrolled, setScrolled] = useState(false);
@@ -173,6 +182,22 @@ function Header({ g }: { g: Globals }) {
       if (!root.current?.contains(e.target as Node)) setOpen(false);
     };
     const key = (e: KeyboardEvent) => {
+      if (mobile && e.key === "Tab") {
+        const nodes = Array.from(
+          document.querySelectorAll<HTMLElement>(
+            ".site-header a,.site-header button,.mobile-panel a",
+          ),
+        ).filter((x) => x.getBoundingClientRect().width > 0);
+        const first = nodes[0],
+          last = nodes[nodes.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last?.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first?.focus();
+        }
+      }
       if (e.key === "Escape") {
         if (open) trigger.current?.focus();
         else if (mobile) toggle.current?.focus();
@@ -220,7 +245,12 @@ function Header({ g }: { g: Globals }) {
               </button>
               <div className="nav-panel" id={id + "-services"} inert={!open}>
                 {g.header.services.map((x) => (
-                  <a key={x.href} href={safeHref(x.href)} onClick={close}>
+                  <a
+                    key={x.href}
+                    href={safeHref(x.href)}
+                    aria-current={current(x.href)}
+                    onClick={close}
+                  >
                     {x.label}
                     <b>↗</b>
                   </a>
@@ -233,6 +263,7 @@ function Header({ g }: { g: Globals }) {
                 <a
                   key={x.href}
                   className="nav-text"
+                  aria-current={current(x.href)}
                   href={safeHref(x.href)}
                   onClick={close}
                 >
@@ -275,7 +306,12 @@ function Header({ g }: { g: Globals }) {
               (x) => x.label.toLowerCase() !== "what we do",
             ),
           ].map((x) => (
-            <a key={x.href} href={safeHref(x.href)} onClick={close}>
+            <a
+              key={x.href}
+              href={safeHref(x.href)}
+              aria-current={current(x.href)}
+              onClick={close}
+            >
               {x.label}
             </a>
           ))}
@@ -474,11 +510,18 @@ function Story({
               className={`film-image ${i === active ? "is-on" : ""}`}
               key={x.id}
             >
-              <img src={x.image} alt="" loading="lazy" />
+              <img
+                src={x.image}
+                alt=""
+                loading={i === active ? "eager" : "lazy"}
+              />
             </div>
           ))}
         </div>
         <div className="film-veil" />
+        <a className="scene-skip" href="#services">
+          Explore our disciplines ↘
+        </a>
         <div className="film-gridline" />
         <div className="film-story-inner">
           <div className="film-steps">
@@ -535,9 +578,14 @@ function Services({ s, motion }: { s: Block; motion: boolean }) {
           </div>
           <div className="service-navigation">
             {s.items.map((x, i) => (
-              <a
+              <button
+                type="button"
                 key={x.id}
-                href={safeHref(x.href)}
+                aria-pressed={i === active}
+                onClick={() => {
+                  hover.current = i;
+                  setActive(i);
+                }}
                 className={`discipline ${i === active ? "is-on" : ""}`}
                 onPointerEnter={(e) => {
                   if (e.pointerType === "mouse") {
@@ -545,23 +593,19 @@ function Services({ s, motion }: { s: Block; motion: boolean }) {
                     setActive(i);
                   }
                 }}
-                onPointerLeave={() => {
-                  hover.current = null;
-                  dispatchEvent(new Event("scroll"));
-                }}
+                onPointerLeave={() => {}}
                 onFocus={() => {
                   hover.current = i;
                   setActive(i);
                 }}
-                onBlur={() => {
-                  hover.current = null;
-                  dispatchEvent(new Event("scroll"));
-                }}
+                onBlur={() => {}}
                 onTouchStart={() => setActive(i)}
               >
                 <span className="discipline-name">{x.title}</span>
-                <span className="discipline-arrow">↗</span>
-              </a>
+                <span className="discipline-arrow" aria-hidden="true">
+                  {i === active ? "−" : "+"}
+                </span>
+              </button>
             ))}
           </div>
         </div>
@@ -579,9 +623,7 @@ function Services({ s, motion }: { s: Block; motion: boolean }) {
                 <div className="digital-stage">
                   <div className="digital-screen">
                     <div className="digital-top">
-                      <span>
-                        showset<span className="teal-dot">.</span>
-                      </span>
+                      <img src="/brand/approved-wordmark.png" width="145" height="38" alt="showset." />
                     </div>
                     <div className="digital-type">
                       THE NEXT
@@ -708,26 +750,7 @@ function Work({
     addEventListener("resize", update);
     return () => removeEventListener("resize", update);
   }, [count]);
-  if (indexPage)
-    return (
-      <div className="case-index">
-        {s.items.map((x) => (
-          <a className="case-index-item" href={safeHref(x.href)} key={x.id}>
-            <div className="case-index-image">
-              <img src={x.image} alt="" loading="lazy" />
-            </div>
-            <div className="case-index-info">
-              <h2 className="soft-rise">
-                {x.title}
-                <span className="teal-dot">.</span>
-              </h2>
-              <p>{x.description}</p>
-              <span aria-hidden="true">↗</span>
-            </div>
-          </a>
-        ))}
-      </div>
-    );
+  if (indexPage) return <CuratedGallery items={s.items} />;
   return (
     <section className="portfolio-section section-gutter">
       <div className="portfolio-heading">
@@ -814,14 +837,16 @@ function Dot({ s, motion }: { s: Block; motion: boolean }) {
   useScene(ref, motion, (el, p) => {
     const stage = el.querySelector<HTMLElement>(".dot-stage"),
       circle = el.querySelector<HTMLElement>(".dot-core"),
-      words = el.querySelector<HTMLElement>(".dot-words");
+      words = el.querySelectorAll<HTMLElement>(".dot-words");
     if (!stage || !circle) return;
     const full = Math.hypot(stage.clientWidth / 2, stage.clientHeight / 2) + 4;
-    circle.style.setProperty(
+    stage.style.setProperty(
       "--dot-radius",
       `${10 + Math.pow(p, 1.5) * (full - 10)}px`,
     );
-    if (words) words.style.transform = `translate3d(0,${9 - p * 18}px,0)`;
+    words.forEach(
+      (word) => (word.style.transform = `translate3d(0,${9 - p * 18}px,0)`),
+    );
   });
   return (
     <section
@@ -830,7 +855,21 @@ function Dot({ s, motion }: { s: Block; motion: boolean }) {
     >
       <div className="dot-stage">
         <div className="dot-core" aria-hidden="true" />
-        <div className="dot-words">
+        <div className="dot-words" aria-hidden="true">
+          <h2>
+            <Rich text={s.headline} />
+          </h2>
+          <p>{s.body}</p>
+        </div>
+        <div className="dot-ink" aria-hidden="true">
+          <div className="dot-words">
+            <h2>
+              <Rich text={s.headline} />
+            </h2>
+            <p>{s.body}</p>
+          </div>
+        </div>
+        <div className="sr-only">
           <h2>
             <Rich text={s.headline} />
           </h2>
@@ -1153,7 +1192,10 @@ function Contact({ s }: { s: Block }) {
     [category, setCategory] = useState("");
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (["localhost", "127.0.0.1"].includes(location.hostname)) {setStatus("preview");return;}
+    if (["localhost", "127.0.0.1"].includes(location.hostname)) {
+      setStatus("preview");
+      return;
+    }
     setStatus("sending");
     const form = new FormData(e.currentTarget);
     form.set("category", category);
@@ -1248,11 +1290,13 @@ function Contact({ s }: { s: Block }) {
           </button>
           <p className="form-note">{s.helperText}</p>
           <p className="form-result" role="status">
-            {status === "preview" ? "That did not go through. This is a design preview, so no message has been sent." : status === "error"
-              ? "That did not go through. Please try again or email us directly."
-              : status === "sent"
-                ? "And so it begins. Your message is in."
-                : ""}
+            {status === "preview"
+              ? "That did not go through. This is a design preview, so no message has been sent."
+              : status === "error"
+                ? "That did not go through. Please try again or email us directly."
+                : status === "sent"
+                  ? "And so it begins. Your message is in."
+                  : ""}
           </p>
         </form>
       </div>
@@ -1282,6 +1326,7 @@ function Wrap({
     "--block-body": d.bodySize ? `${d.bodySize}px` : undefined,
     "--block-radius": d.radius != null ? `${d.radius}px` : undefined,
     "--block-image-position": d.imagePosition,
+    "--block-mobile-image-position": d.mobileImagePosition || d.imagePosition,
     "--block-top": d.spaceTop != null ? `${d.spaceTop}px` : undefined,
     "--block-bottom": d.spaceBottom != null ? `${d.spaceBottom}px` : undefined,
   } as React.CSSProperties;
@@ -1289,10 +1334,12 @@ function Wrap({
     <div
       className={`ss-block-root ${editor ? "ss-editable-section" : ""} ${selectedId === s.id ? "selected" : ""}`}
       data-section={s.id}
+      data-scene={d.motionPreset || "cinematic"}
+      data-variation={d.variation || "editorial"}
       data-heading={d.headingSize != null || undefined}
       data-mobile-heading={d.mobileHeadingSize != null || undefined}
       data-body={d.bodySize != null || undefined}
-      data-image={!!d.imagePosition || undefined}
+      data-image={!!(d.imagePosition || d.mobileImagePosition) || undefined}
       data-radius={d.radius != null || undefined}
       data-top={d.spaceTop != null || undefined}
       data-bottom={d.spaceBottom != null || undefined}
@@ -1314,12 +1361,14 @@ function Wrap({
 export function PageSections({
   page,
   g,
+  catalog = defaultPages,
   editor,
   onSelect,
   selectedId,
 }: {
   page: PageData;
   g: Globals;
+  catalog?: Record<string, PageData>;
   editor?: boolean;
   onSelect?: (id: string) => void;
   selectedId?: string;
@@ -1356,7 +1405,14 @@ export function PageSections({
     return (
       <>
         {hero &&
-          wrap(hero, <PageHero s={hero} kind={page.slug} motion={motion} />)}
+          wrap(
+            hero,
+            <PageHero
+              s={hero}
+              kind={page.slug}
+              motion={motion && hero.design?.motionPreset !== "still"}
+            />,
+          )}
         <section className="studio-copy section-gutter">
           {copy &&
             wrap(
@@ -1485,7 +1541,14 @@ export function PageSections({
     return (
       <>
         {hero &&
-          wrap(hero, <PageHero s={hero} kind={page.slug} motion={motion} />)}
+          wrap(
+            hero,
+            <PageHero
+              s={hero}
+              kind={page.slug}
+              motion={motion && hero.design?.motionPreset !== "still"}
+            />,
+          )}
         <section className="work-page-gallery section-gutter">
           {intro &&
             wrap(
@@ -1507,7 +1570,14 @@ export function PageSections({
     return (
       <>
         {hero &&
-          wrap(hero, <PageHero s={hero} kind={page.slug} motion={motion} />)}
+          wrap(
+            hero,
+            <PageHero
+              s={hero}
+              kind={page.slug}
+              motion={motion && hero.design?.motionPreset !== "still"}
+            />,
+          )}
         <section className="case-detail-body section-gutter">
           {intro &&
             wrap(
@@ -1547,6 +1617,13 @@ export function PageSections({
                 />
               </div>,
             )}
+          <ProjectModules
+            page={page}
+            projects={
+              catalog["our-work"]?.sections.find((x) => x.type === "work")
+                ?.items || []
+            }
+          />
         </section>
       </>
     );
@@ -1558,7 +1635,14 @@ export function PageSections({
     return (
       <>
         {first &&
-          wrap(first, <PageHero s={first} kind={page.slug} motion={motion} />)}
+          wrap(
+            first,
+            <PageHero
+              s={first}
+              kind={page.slug}
+              motion={motion && first.design?.motionPreset !== "still"}
+            />,
+          )}
         <section className="category-detail section-gutter">
           {page.sections
             .filter(
@@ -1639,27 +1723,53 @@ export function PageSections({
         let c: React.ReactNode;
         switch (s.type) {
           case "hero":
-            c = <Hero s={s} motion={motion} scale={g.motion.heroScale} />;
+            c = (
+              <Hero
+                s={s}
+                motion={motion && s.design?.motionPreset !== "still"}
+                scale={g.motion.heroScale}
+              />
+            );
             break;
           case "pagehero":
-            c = <PageHero s={s} kind={page.slug} motion={motion} />;
+            c = (
+              <PageHero
+                s={s}
+                kind={page.slug}
+                motion={motion && s.design?.motionPreset !== "still"}
+              />
+            );
             break;
           case "split":
             c = <Split s={s} home={home} />;
             break;
           case "story":
             c = (
-              <Story s={s} motion={motion} parallax={g.motion.storyParallax} />
+              <Story
+                s={s}
+                motion={motion && s.design?.motionPreset !== "still"}
+                parallax={g.motion.storyParallax}
+              />
             );
             break;
           case "services":
-            c = <Services s={s} motion={motion} />;
+            c = (
+              <Services
+                s={s}
+                motion={motion && s.design?.motionPreset !== "still"}
+              />
+            );
             break;
           case "work":
             c = <Work s={s} g={g} indexPage={page.slug === "our-work"} />;
             break;
           case "dot":
-            c = <Dot s={s} motion={motion} />;
+            c = (
+              <Dot
+                s={s}
+                motion={motion && s.design?.motionPreset !== "still"}
+              />
+            );
             break;
           case "cta":
             c = <CTA s={s} />;
@@ -1695,12 +1805,14 @@ export function PageSections({
 export function SiteLayout({
   page,
   g,
+  catalog = defaultPages,
   editor,
   onSelect,
   selectedId,
 }: {
   page: PageData;
   g: Globals;
+  catalog?: Record<string, PageData>;
   editor?: boolean;
   onSelect?: (id: string) => void;
   selectedId?: string;
@@ -1718,7 +1830,14 @@ export function SiteLayout({
     sessionStorage.removeItem("showset-route-curtain");
     setCurtain(arriving ? "leave" : "");
     navigating.current = false;
-    window.scrollTo(0, 0);
+    if (arriving || editor) window.scrollTo(0, 0);
+    if (arriving) {
+      const heading = root.current?.querySelector<HTMLElement>("h1");
+      if (heading) {
+        heading.tabIndex = -1;
+        heading.focus({ preventScroll: true });
+      }
+    }
     return () => {
       if (routeTimer.current) clearTimeout(routeTimer.current);
     };
@@ -1861,6 +1980,7 @@ export function SiteLayout({
   return (
     <div
       className="ss-site"
+      data-page={page.slug}
       ref={root}
       style={style}
       data-circle={g.motion.circleReveal ? "on" : "off"}
@@ -1875,13 +1995,19 @@ export function SiteLayout({
       </div>
       <div className={`route-curtain ${curtain}`} aria-hidden="true">
         <div className="curtain-brand">
-          showset<span>.</span>
+          <img
+            src={g.brand.logo || "/brand/approved-wordmark.png"}
+            width="481"
+            height="125"
+            alt=""
+          />
         </div>
       </div>
       <Header g={g} />
       <main id="main" className="view is-current">
         <PageSections
           page={page}
+          catalog={catalog}
           g={g}
           editor={editor}
           onSelect={onSelect}
@@ -1902,6 +2028,7 @@ export default function SiteShell({
   onSelect,
   selectedId,
 }: Props) {
+  const [catalog, setCatalog] = useState(defaultPages);
   const [page, setPage] = useState(initialPage),
     [globals, setGlobals] = useState(initialGlobals);
   useEffect(() => {
@@ -1918,7 +2045,10 @@ export default function SiteShell({
           g = JSON.parse(
             localStorage.getItem("showset-preview-published-globals") || "null",
           );
-        if (p?.[initialPage.slug]?.sections) setPage(p[initialPage.slug]);
+        if (p?.[initialPage.slug]?.sections) {
+          setPage(p[initialPage.slug]);
+          setCatalog(p);
+        }
         if (g?.theme) setGlobals(g);
       } catch (e) {
         console.warn("Invalid local preview; defaults retained", e);
@@ -1941,6 +2071,7 @@ export default function SiteShell({
   return (
     <SiteLayout
       page={page}
+      catalog={catalog}
       g={globals}
       editor={editor}
       onSelect={onSelect}

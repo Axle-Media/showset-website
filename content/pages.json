@@ -93,6 +93,24 @@
         "helperText": ""
       },
       {
+        "id": "section-6",
+        "type": "dot",
+        "headline": "Serious about<br>the <em>details.</em><br>Wild about<br>the <em>possibilities.</em>",
+        "accent": "",
+        "body": "The small stuff is never small when you are making something big.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
         "id": "section-4",
         "type": "services",
         "headline": "Different disciplines.",
@@ -163,7 +181,8 @@
             "accent": "",
             "description": "You can plan the programme. The feeling is what makes people stay.",
             "image": "/media/evening.webp",
-            "href": "/work/atmosphere-is-everything/"
+            "href": "/work/atmosphere-is-everything/",
+            "category": "Events & Experiences"
           },
           {
             "id": "made-to-be-remembered-1",
@@ -171,7 +190,8 @@
             "accent": "",
             "description": "Identity is built in a thousand little encounters, not one big reveal.",
             "image": "/media/brand.webp",
-            "href": "/work/made-to-be-remembered/"
+            "href": "/work/made-to-be-remembered/",
+            "category": "Creative & Design"
           },
           {
             "id": "behind-every-moment-2",
@@ -179,28 +199,11 @@
             "accent": "",
             "description": "The quiet precision that makes a big production feel effortless.",
             "image": "/media/sound.webp",
-            "href": "/work/behind-every-moment/"
+            "href": "/work/behind-every-moment/",
+            "category": "Content & Production"
           }
         ],
         "speed": 4.7,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-6",
-        "type": "dot",
-        "headline": "Serious about<br>the <em>details.</em><br>Wild about<br>the <em>possibilities.</em>",
-        "accent": "",
-        "body": "The small stuff is never small when you are making something big.",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
         "formTitle": "",
         "helperText": ""
       },
@@ -1687,7 +1690,8 @@
             "accent": "",
             "description": "A room is never just a room. The arrival, the lighting, the sound and the unexpected little detail all have something to say.",
             "image": "/media/evening.webp",
-            "href": "/work/atmosphere-is-everything/"
+            "href": "/work/atmosphere-is-everything/",
+            "category": "Events & Experiences"
           },
           {
             "id": "made-to-be-remembered-1",
@@ -1695,7 +1699,8 @@
             "accent": "",
             "description": "A brand gets built every time someone meets it. One voice, many touchpoints, a thousand tiny clues.",
             "image": "/media/brand.webp",
-            "href": "/work/made-to-be-remembered/"
+            "href": "/work/made-to-be-remembered/",
+            "category": "Creative & Design"
           },
           {
             "id": "behind-every-moment-2",
@@ -1703,7 +1708,8 @@
             "accent": "",
             "description": "The best production looks effortless because so much of the effort happened before the doors opened.",
             "image": "/media/sound.webp",
-            "href": "/work/behind-every-moment/"
+            "href": "/work/behind-every-moment/",
+            "category": "Content & Production"
           }
         ],
         "speed": 6,

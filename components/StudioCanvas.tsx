@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useCallback, useState } from "react";
 import type { PageData, Globals } from "@/lib/types";
 export default function StudioCanvas({
   page,
+  catalog,
   globals,
   device,
   previewMotion,
@@ -11,6 +12,7 @@ export default function StudioCanvas({
   onNavigate,
 }: {
   page: PageData;
+  catalog: Record<string, PageData>;
   globals: Globals;
   device: "desktop" | "tablet" | "mobile";
   previewMotion: boolean;
@@ -19,8 +21,8 @@ export default function StudioCanvas({
   onNavigate: (route: string) => void;
 }) {
   const frame = useRef<HTMLIFrameElement>(null);
-  const latest = useRef({ page, globals, previewMotion, selected });
-  latest.current = { page, globals, previewMotion, selected };
+  const latest = useRef({ page, catalog, globals, previewMotion, selected });
+  latest.current = { page, catalog, globals, previewMotion, selected };
   const sync = useCallback(
     () =>
       frame.current?.contentWindow?.postMessage(
@@ -31,7 +33,7 @@ export default function StudioCanvas({
   );
   useEffect(() => {
     sync();
-  }, [page, globals, previewMotion, selected, sync]);
+  }, [page, catalog, globals, previewMotion, selected, sync]);
   useEffect(() => {
     const receive = (event: MessageEvent) => {
       if (

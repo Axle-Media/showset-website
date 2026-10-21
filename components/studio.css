@@ -49,3 +49,4 @@
 .studio-stage{display:block;padding:26px 0 40px;overflow:auto}
 .studio-preview-frame{display:block;margin:auto;border:0;background:#061b2b;flex:none;height:900px;box-shadow:0 10px 44px #0d293a38}
 .studio-preview-desktop{width:1440px}.studio-preview-tablet{width:768px;height:1024px}.studio-preview-mobile{width:390px;height:844px}
+.studio-brand>img{display:block;width:124px;height:auto}.studio-brand>small{margin-top:6px}

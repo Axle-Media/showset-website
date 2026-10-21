@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import "./fonts.css";
 import "./globals.css";
 export const metadata: Metadata = {
   title: "SHOWSET | Events & Creative Agency",
@@ -19,17 +20,22 @@ export default function RootLayout({
   return (
     <html lang="en-GB">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
+          rel="preload"
+          href="/fonts/showset-0.woff2"
+          as="font"
+          type="font/woff2"
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          href="/fonts/showset-4.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
         />
       </head>
+
       <body>{children}</body>
     </html>
   );

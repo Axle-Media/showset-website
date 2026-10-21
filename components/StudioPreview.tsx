@@ -6,11 +6,13 @@ import { SiteLayout } from "@/components/SiteShell";
 export default function StudioPreview() {
   const [state, setState] = useState<{
     page: PageData;
+    catalog: Record<string, PageData>;
     globals: Globals;
     previewMotion: boolean;
     selected: string | null;
   }>({
     page: defaultPages.home,
+    catalog: defaultPages,
     globals: defaultGlobals,
     previewMotion: false,
     selected: null,
@@ -56,6 +58,7 @@ export default function StudioPreview() {
   return (
     <SiteLayout
       page={state.page}
+      catalog={state.catalog}
       g={state.globals}
       editor={!state.previewMotion}
       selectedId={state.selected || undefined}
