@@ -844,6 +844,7 @@ function Dot({ s, motion }: { s: Block; motion: boolean }) {
       "--dot-radius",
       `${10 + Math.pow(p, 1.5) * (full - 10)}px`,
     );
+    stage.style.setProperty("--dot-word-y", `${9 - p * 18}px`);
     words.forEach(
       (word) => (word.style.transform = `translate3d(0,${9 - p * 18}px,0)`),
     );

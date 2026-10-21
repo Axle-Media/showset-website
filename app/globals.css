@@ -967,3 +967,6 @@ p,li,summary,label,input,textarea,select{line-height:var(--v12-body-leading);let
 .dot-ink .dot-words,.dot-ink h2,.dot-ink h2 em,.dot-ink .dot-words>p{color:var(--navy)}
 .dot-track.motion-static .dot-ink{clip-path:circle(150vmax at 50% 50%)}
 @media(prefers-reduced-motion:reduce){.dot-ink{clip-path:circle(150vmax at 50% 50%)}}
+.dot-stage>.dot-words{mask-image:radial-gradient(circle var(--dot-radius,10px) at 50% calc(50% - var(--dot-word-y,0px)),transparent calc(100% - 1px),#000 100%)}
+.dot-track.motion-static .dot-stage>.dot-words{visibility:hidden}
+@media(prefers-reduced-motion:reduce){.dot-stage>.dot-words{visibility:hidden}}
