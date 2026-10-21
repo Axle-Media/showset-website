@@ -6,3 +6,5 @@ out/
 backend/api/config.local.php
 *.log
 .DS_Store
+
+*.tsbuildinfo

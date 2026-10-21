@@ -44,3 +44,8 @@
 .studio-device.studio-mobile .ss-hero-track .ss-hero-content{padding:70px 0 20px}
 .studio-device.studio-mobile .ss-dot-track,.studio-device.studio-tablet .ss-dot-track{height:630px}
 .studio-device.studio-mobile .ss-dot-sticky,.studio-device.studio-tablet .ss-dot-sticky{height:630px;position:relative}
+
+/* Real document viewports use the public renderer and stylesheet without emulation. */
+.studio-stage{display:block;padding:26px 0 40px;overflow:auto}
+.studio-preview-frame{display:block;margin:auto;border:0;background:#061b2b;flex:none;height:900px;box-shadow:0 10px 44px #0d293a38}
+.studio-preview-desktop{width:1440px}.studio-preview-tablet{width:768px;height:1024px}.studio-preview-mobile{width:390px;height:844px}
