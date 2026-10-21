@@ -1,0 +1,93 @@
+{
+  "brand": {
+    "wordmark": "showset",
+    "tagline": "events & creative agency"
+  },
+  "header": {
+    "buttonLabel": "Let’s talk",
+    "buttonHref": "/contact/",
+    "links": [
+      {
+        "label": "What we do",
+        "href": "/events-experiences/"
+      },
+      {
+        "label": "Our studio",
+        "href": "/our-studio/"
+      },
+      {
+        "label": "Our work",
+        "href": "/our-work/"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact/"
+      }
+    ],
+    "services": [
+      {
+        "label": "Events & experiences",
+        "href": "/events-experiences/"
+      },
+      {
+        "label": "Creative & design",
+        "href": "/creative-design/"
+      },
+      {
+        "label": "Digital & marketing",
+        "href": "/digital-marketing/"
+      },
+      {
+        "label": "Content & production",
+        "href": "/content-production/"
+      }
+    ]
+  },
+  "footer": {
+    "description": "We think it through. We make it happen. We make it feel like something.",
+    "links": [
+      {
+        "label": "What we do",
+        "href": "/events-experiences/"
+      },
+      {
+        "label": "Our studio",
+        "href": "/our-studio/"
+      },
+      {
+        "label": "Our work",
+        "href": "/our-work/"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact/"
+      }
+    ],
+    "copyright": "SHOWSET. All rights reserved."
+  },
+  "theme": {
+    "navy": "#0D2F49",
+    "navyDark": "#071E2E",
+    "blue": "#153B54",
+    "teal": "#12BAAF",
+    "sand": "#E5D8C3",
+    "white": "#FAF9FD",
+    "fontHeading": "Poppins",
+    "fontBody": "Manrope",
+    "headingTracking": "-0.018em",
+    "bodyTracking": "0.005em",
+    "headingLeading": 1.08,
+    "bodyLeading": 1.55,
+    "sectionSpace": 108,
+    "radius": 20,
+    "buttonHeight": 43,
+    "patternOpacity": 0.09
+  },
+  "motion": {
+    "enabled": true,
+    "circleReveal": true,
+    "heroScale": 1.14,
+    "storyParallax": 0.15,
+    "carouselSeconds": 6
+  }
+}

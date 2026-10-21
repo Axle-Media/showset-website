@@ -1,0 +1,72 @@
+[
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "errors": [],
+    "scrollWidth": 1440,
+    "clientWidth": 1440,
+    "headline": "rgb(250, 249, 253)",
+    "serviceColumns": "669.578px 593.781px",
+    "dotMask": "circle(264.469px at 50% 50%)",
+    "cards": 6,
+    "body": "A little more than a final image. We like to show "
+  },
+  {
+    "viewport": [
+      1024,
+      768
+    ],
+    "errors": [],
+    "scrollWidth": 1024,
+    "clientWidth": 1024,
+    "headline": "rgb(250, 249, 253)",
+    "serviceColumns": "490.984px 435.422px",
+    "dotMask": "circle(195.539px at 50% 50%)",
+    "cards": 6,
+    "body": "A little more than a final image. We like to show "
+  },
+  {
+    "viewport": [
+      768,
+      1024
+    ],
+    "errors": [],
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "headline": "rgb(250, 249, 253)",
+    "serviceColumns": "minmax(0px, 1.06fr) minmax(300px, 0.94fr)",
+    "dotMask": "circle(10px at 50% 50%)",
+    "cards": 6,
+    "body": "A little more than a final image. We like to show "
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "errors": [],
+    "scrollWidth": 390,
+    "clientWidth": 390,
+    "headline": "rgb(250, 249, 253)",
+    "serviceColumns": "minmax(0px, 1.06fr) minmax(300px, 0.94fr)",
+    "dotMask": "circle(139.328px at 50% 50%)",
+    "cards": 6,
+    "body": "A little more than a final image. We like to show "
+  },
+  {
+    "viewport": [
+      320,
+      700
+    ],
+    "errors": [],
+    "scrollWidth": 320,
+    "clientWidth": 320,
+    "headline": "rgb(250, 249, 253)",
+    "serviceColumns": "minmax(0px, 1.06fr) minmax(300px, 0.94fr)",
+    "dotMask": "circle(111.496px at 50% 50%)",
+    "cards": 6,
+    "body": "A little more than a final image. We like to show "
+  }
+]

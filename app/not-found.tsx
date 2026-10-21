@@ -1,0 +1,1 @@
+export default function NotFound(){return <main style={{minHeight:'100vh',padding:'20vh 8vw',background:'#0D2F49',color:'#FAF9FD'}}><h1>Well, that wasn’t in the plan.</h1><p>Looks like this page took a different route.</p><a href="/" style={{color:'#12BAAF'}}>Back to the beginning</a></main>}

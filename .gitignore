@@ -1,0 +1,8 @@
+node_modules/
+.next/
+out/
+.env*
+!*.example
+backend/api/config.local.php
+*.log
+.DS_Store
