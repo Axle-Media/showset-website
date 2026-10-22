@@ -62,6 +62,17 @@ async function styles(page, selector) {
     }
     await page.goto(base + '/');
     await page.waitForSelector('[data-concept-ready="true"]');
+    const secondSwipe = await page.locator('.hero-second .wipe-heading').evaluate(h => {
+      const first = h.querySelector('.wipe-line');
+      const accent = h.querySelector('.wipe-line.accent-line');
+      return {
+        first: getComputedStyle(first, '::after').backgroundColor,
+        accent: getComputedStyle(accent, '::after').backgroundColor
+      };
+    });
+    ck('Second photographic hero has matching teal block swipes on both lines',
+      secondSwipe.first === 'rgb(18, 186, 175)' &&
+      secondSwipe.accent === secondSwipe.first, secondSwipe);
     const hero = await page.locator('.hero-title .line').first().evaluate(el => {
       const css = getComputedStyle(el, '::after');
       const text = getComputedStyle(el.querySelector(':scope > span'));
