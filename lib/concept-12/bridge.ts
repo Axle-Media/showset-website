@@ -626,8 +626,12 @@ export function bindConcept(
   });
   if (g.theme.patternOpacity !== defaultGlobals.theme.patternOpacity)
     host.style.setProperty("--refine-pattern-opacity", String(g.theme.patternOpacity));
-  if (g.footer.description !== defaultGlobals.footer.description)
-    html(".footer-identity>p", g.footer.description.replace(/\n/g, "<br>"));
+  // Both previous saved defaults and new Studio edits retain the intentional footer break.
+  const footerDescription = (g.footer.description || defaultGlobals.footer.description)
+    .replace(/\n/g, "<br>")
+    .replace("We make it happen. We make it feel like something.",
+      "We make it happen.<br>We make it feel like something.");
+  html(".footer-identity>p", footerDescription);
   const footer = g.footer.contact || defaultGlobals.footer.contact;
   if (footer) {
     const email = host.querySelector<HTMLAnchorElement>("[data-footer-email]");
