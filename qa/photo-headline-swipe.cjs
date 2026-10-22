@@ -84,10 +84,11 @@ async function styles(page, selector) {
       heroTransforms.first === 'none' && heroTransforms.second === 'none', heroTransforms);
     const filmMovement = await page.locator('.film-step.is-on').evaluate(el => ({
       transform: getComputedStyle(el).transform,
-      transition: getComputedStyle(el).transitionProperty
+      transition: getComputedStyle(el).transitionProperty,
+      duration: getComputedStyle(el).transitionDuration
     }));
-    ck('Film scene has no vertical chapter slide under its swipe',
-      filmMovement.transform === 'none' && !filmMovement.transition.includes('transform'), filmMovement);
+    ck('Film headline scene has no secondary slide or fade',
+      filmMovement.transform === 'none' && parseFloat(filmMovement.duration) === 0, filmMovement);
     const other = await page.locator('.portfolio-heading .block-heading .wipe-line').first().evaluate(el => {
       const marker = getComputedStyle(el, '::after');
       return { display: marker.display, content: marker.content };
@@ -103,6 +104,14 @@ async function styles(page, selector) {
     ck('Reduced motion disables photo block and leaves text fully visible',
       still?.markerDisplay === 'none' && Number(still.textOpacity) > .99
         && still.textTransform === 'none' && still.textClip === 'none', still);
+    await page.goto(base + '/');
+    await page.waitForSelector('[data-concept-ready="true"]');
+    const reducedHero = await page.locator('.hero-title .line>span').first().evaluate(el => ({
+      clip: getComputedStyle(el).clipPath,
+      animation: getComputedStyle(el).animationName
+    }));
+    ck('Reduced-motion initial hero is legible without any swipe or clipping',
+      reducedHero.clip === 'none' && reducedHero.animation === 'none', reducedHero);
     await page.setViewportSize({ width: 390, height: 844 });
     await page.emulateMedia({ reducedMotion: 'no-preference' });
     await page.goto(base + '/');
