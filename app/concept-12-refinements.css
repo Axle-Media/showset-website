@@ -133,7 +133,8 @@
 .end-section .end-link.solid-link>span{display:inline-block;color:inherit;font-size:15px;font-weight:inherit;line-height:1}
 .end-section .end-link.solid-link:hover{gap:22px;color:#07263c;background:#38d6cb;transform:translateY(-2px)}
 .end-section .end-link.solid-link:focus-visible{outline:2px solid var(--ice);outline-offset:4px}
-.end-section::before{opacity:var(--refine-pattern-opacity,.052)}
+/* Closing pattern stays editable in Studio, but quieter than the rest of the composition. */
+.end-section::before{opacity:calc(var(--refine-pattern-opacity,.052) * .75)}
 
 /* A balanced footer with genuinely separate contact information. */
 .footer .brand .approved-wordmark{width:214px}
