@@ -1,0 +1,73 @@
+/* Requested Concept 12 UI refinements. Source choreography remains in concept-12.css. */
+.concept-12-root { --refine-heading-weight:650; --refine-heading-leading:1.08; }
+.concept-12-root :is(h1,h2,h3) { font-weight:var(--refine-heading-weight); line-height:var(--refine-heading-leading)!important; }
+/* Equal side tracks keep navigation on the viewport centre, independent of labels. */
+@media(min-width:1001px){
+ .header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:24px}
+ .desktop-navigation{margin:0;justify-self:center;white-space:nowrap;gap:clamp(18px,2.3vw,36px)}
+ .header-inner>.brand{justify-self:start}.header-cta{justify-self:end}
+}
+.brand .approved-wordmark{display:block;width:150px;max-width:100%;height:auto;aspect-ratio:962/250;object-fit:contain}
+.footer .brand .approved-wordmark{width:180px}
+/* One primary CTA treatment; secondary underlined and text links remain distinct. */
+.concept-12-root :is(.solid-link,.header-cta){display:inline-flex;align-items:center;justify-content:space-between;gap:22px;min-height:43px;min-width:0;padding:10px 16px;border:1px solid var(--teal);border-radius:var(--ui-radius);background:var(--teal);color:#07263c;font-family:var(--body-font);font-size:11px;font-weight:750;line-height:1.36;letter-spacing:.035em;white-space:nowrap;transition:background .27s,transform .27s,color .27s}
+.concept-12-root :is(.solid-link,.header-cta)>span{display:inline-block;width:auto;height:auto;line-height:1;font-size:15px;border:0;border-radius:0;background:transparent;transform:none;transition:none}
+.concept-12-root :is(.solid-link,.header-cta):hover{background:#38d6cb;transform:translateY(-2px)}
+.concept-12-root :is(.solid-link,.header-cta):focus-visible{outline:2px solid var(--ivory,#faf9fd);outline-offset:4px}
+/* Independent translate leaves the original scroll-controlled transform untouched. */
+.hero-foreground{top:51%;translate:0 -50%}
+.hero-title .line:nth-child(2),.hero-title .line:nth-child(3){display:inline}
+.hero-title .line:nth-child(3)::before{content:' '}
+.services-stage-intro{margin-bottom:clamp(34px,4.5vh,48px)}
+.film-step h2{font-size:clamp(40px,4.8vw,67px);max-width:850px}
+.film-steps{max-width:850px;min-height:340px}
+/* A final period stays with its word and retains its original accessible text. */
+.headline-period{display:inline!important;color:inherit!important;font:inherit;letter-spacing:inherit;white-space:nowrap}
+.headline-period[data-period-tone=teal]{color:var(--teal)!important}
+.headline-period[data-period-tone=light]{color:#faf9fd!important}
+/* Approved S and dot artwork, quietly cropped behind the existing closing layout. */
+.end-section::before{content:''!important;display:block!important;position:absolute;inset:auto -5% -32% auto;width:48%;height:145%;background:url('/brand/closing-pattern.svg') right center/contain no-repeat;opacity:var(--refine-pattern-opacity,.06);pointer-events:none;z-index:-1}
+.end-section .section-title{max-width:1040px}
+.end-bottom{margin-top:clamp(36px,5vw,72px);align-items:center}
+@media(min-width:801px){.footer-head{display:grid;grid-template-columns:minmax(220px,1fr) minmax(360px,1fr) minmax(0,.35fr);gap:clamp(32px,5vw,80px)}.footer-links{justify-content:center;gap:clamp(35px,5vw,80px)}}
+@media(max-width:1000px){.concept-12-root .header-cta{display:none}}
+@media(max-width:800px){
+ .brand .approved-wordmark{width:136px}
+ .hero-foreground{top:51%}
+ .services-stage-intro{margin-bottom:36px}
+ .film-step h2{font-size:clamp(36px,7vw,52px)}
+ .film-steps{min-height:340px}
+ .footer-head{gap:42px}.footer-links{justify-content:flex-start;gap:clamp(35px,9vw,90px)}
+ .end-section::before{width:80%;right:-32%;bottom:-30%;opacity:var(--refine-pattern-opacity,.06)}
+}
+@media(max-width:600px){
+ .film-step h2{font-size:clamp(34px,9.1vw,48px)}
+ .hero-foreground{top:51%;left:9%;right:6%}
+ .hero-title .line:nth-child(2),.hero-title .line:nth-child(3){display:inline}
+ .end-bottom{align-items:flex-start;margin-top:38px}
+ .footer .brand .approved-wordmark{width:160px}
+}
+@media(max-height:650px) and (min-width:801px){
+ .services-stage-intro{margin-bottom:22px}
+ .hero-title{font-size:clamp(36px,4vw,54px)}
+ .hero-foreground{top:54%}
+ .hero-foreground>p{font-size:13px;max-width:530px;margin-bottom:16px}
+ .film-step h2{font-size:clamp(36px,4vw,54px)}
+ .film-steps{min-height:270px}
+}
+@media(prefers-reduced-motion:reduce){.concept-12-root :is(.solid-link,.header-cta){transition:none}}
+[data-static-motion] :is(.solid-link,.header-cta){transition:none!important}
+
+@media(min-width:801px){.hero-foreground{max-width:780px;width:calc(100% - 20vw)}}
+.end-section{background-image:linear-gradient(145deg,#09253a,#0d2f49)!important;background-size:cover!important}
+.end-section::before{z-index:0}.end-section>*{position:relative;z-index:1}
+
+/* Keep the two original entrance animations while allowing the last phrases to share a line. */
+.hero-title .line:nth-child(2),.hero-title .line:nth-child(3){display:inline-block;vertical-align:top}
+.hero-title .line:nth-child(3)::before{content:none}
+.category-process>h2,.studio-rhythm h2{font-size:clamp(36px,4.2vw,60px)}
+@media(max-width:600px){.category-process>h2,.studio-rhythm h2{font-size:clamp(32px,8.5vw,44px)}}
+
+/* Opening visibility is immediate so keyboard focus can enter the fading panel. */
+.custom-select.is-open .select-panel{transition:opacity .25s,transform .25s}
+

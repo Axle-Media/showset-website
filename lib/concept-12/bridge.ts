@@ -1,3 +1,4 @@
+import { refineHeadingPeriods } from "./typography";
 import type { Block, Globals, PageData } from "@/lib/types";
 import { defaultPages, defaultGlobals } from "@/lib/data";
 import { safeHref } from "@/lib/safe";
@@ -85,7 +86,7 @@ export function bindConcept(
     const e = host.querySelector<HTMLAnchorElement>(selector);
     if (!e) return;
     const arrow =
-      e.lastElementChild?.outerHTML || '<span aria-hidden="true">↗</span>';
+      e.lastElementChild?.outerHTML || '<span aria-hidden="true">â†—</span>';
     e.innerHTML = rich(label) + " " + arrow;
     e.href = safeHref(href);
     delete e.dataset.routeKey;
@@ -578,7 +579,7 @@ export function bindConcept(
     if (!equal(g.theme[field], defaultGlobals.theme[field]))
       host
         .querySelectorAll<HTMLElement>(selector)
-        .forEach((e) => e.style.setProperty(property, String(g.theme[field])));
+        .forEach((e) => e.style.setProperty(property, String(g.theme[field]), "important"));
   };
   styleIfEdited("headingTracking", "h1,h2,h3", "letter-spacing");
   styleIfEdited("bodyTracking", "p", "letter-spacing");
@@ -609,29 +610,20 @@ export function bindConcept(
     host
       .querySelectorAll<HTMLElement>(".hero-graphic")
       .forEach((e) => (e.style.opacity = String(g.theme.patternOpacity)));
-  if (g.brand.logo && !equal(g.brand.logo, defaultGlobals.brand.logo))
-    host.querySelectorAll(".brand").forEach((e) => {
-      e.innerHTML = `<img src="${escape(safeHref(g.brand.logo))}" alt="${escape(g.brand.wordmark)}" style="width:150px;height:auto">`;
-    });
-  else {
-    if (g.brand.wordmark !== defaultGlobals.brand.wordmark)
-      host
-        .querySelectorAll(".brand strong")
-        .forEach(
-          (e) => (e.innerHTML = rich(g.brand.wordmark) + "<span>.</span>"),
-        );
-    if (g.brand.tagline !== defaultGlobals.brand.tagline)
-      host
-        .querySelectorAll(".brand small")
-        .forEach((e) => (e.textContent = g.brand.tagline));
-  }
+  // Use approved artwork by default; Studio can still supply a replacement logo.
+  host.querySelectorAll(".brand").forEach((e) => {
+    const logo = g.brand.logo || "/brand/approved-wordmark.png";
+    e.innerHTML = `<img class="approved-wordmark" src="${escape(safeHref(logo))}" alt="${escape(g.brand.wordmark)} — ${escape(g.brand.tagline)}" width="962" height="250">`;
+  });
+  if (g.theme.patternOpacity !== defaultGlobals.theme.patternOpacity)
+    host.style.setProperty("--refine-pattern-opacity", String(g.theme.patternOpacity));
   if (g.footer.description !== defaultGlobals.footer.description)
     text(".footer-identity>p", g.footer.description);
   if (g.footer.copyright !== defaultGlobals.footer.copyright) {
     const e = host.querySelector(".footer-bottom>span");
     if (e)
       e.innerHTML =
-        '© <span id="year">' +
+        'Â© <span id="year">' +
         new Date().getFullYear() +
         "</span> " +
         rich(g.footer.copyright);
@@ -656,7 +648,7 @@ export function bindConcept(
       panel.innerHTML = g.header.services
         .map(
           (x) =>
-            `<a href="${escape(safeHref(x.href))}">${rich(x.label)} <b>↗</b></a>`,
+            `<a href="${escape(safeHref(x.href))}">${rich(x.label)} <b>â†—</b></a>`,
         )
         .join("");
   }
@@ -692,4 +684,5 @@ export function bindConcept(
     g.header.buttonHref !== defaultGlobals.header.buttonHref
   )
     link(".header-cta", g.header.buttonLabel, g.header.buttonHref);
+  refineHeadingPeriods(host);
 }

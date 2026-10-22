@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./fonts.css";
 import "./concept-12.css";
+import "./concept-12-refinements.css";
 import "./concept-12-editor.css";
 export const metadata: Metadata = {
   title: "SHOWSET | Events & Creative Agency",

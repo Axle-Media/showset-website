@@ -8,3 +8,27 @@ backend/api/config.local.php
 .DS_Store
 
 *.tsbuildinfo
+
+# Local configuration, exports and temporary backups
+.vercel/
+.netlify/
+dist/
+build/
+coverage/
+*.local
+*.local.*
+*.sql.gz
+*.dump
+*.sqlite*
+*.db
+*.bak
+*.backup
+backups/
+tmp/
+
+qa-results/
+
+database-dumps/
+*dump*.sql
+*.sql.bz2
+*.sql.zip

@@ -4,7 +4,7 @@
     "tagline": "events & creative agency"
   },
   "header": {
-    "buttonLabel": "Let’s talk",
+    "buttonLabel": "Letâ€™s talk",
     "buttonHref": "/contact/",
     "links": [
       {
@@ -76,11 +76,11 @@
     "fontBody": "Manrope",
     "headingTracking": ".004em",
     "bodyTracking": ".015em",
-    "headingLeading": 1.125,
+    "headingLeading": 1.08,
     "bodyLeading": 1.49,
     "sectionSpace": 108,
     "radius": 20,
-    "buttonHeight": 42,
+    "buttonHeight": 43,
     "patternOpacity": 0.06
   },
   "motion": {
