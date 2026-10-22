@@ -28,7 +28,12 @@ async function styles(page, selector) {
       markerBackground: marker.backgroundColor,
       markerAnimation: marker.animationName,
       textClip: text.clipPath,
-      textOpacity: text.opacity
+      textOpacity: text.opacity,
+      textTransform: text.transform,
+      textTransition: text.transitionDuration,
+      textAnimation: text.animationName,
+      textAnimationDuration: text.animationDuration,
+      markerDuration: marker.animationDuration
     };
   });
 }
@@ -43,21 +48,46 @@ async function styles(page, selector) {
       const o = await styles(page, selector);
       ck(selector + ' has an active rectangular overlay on ' + path,
         o && o.markerDisplay !== 'none' && !['none', 'normal'].includes(o.markerContent)
-        && o.textClip === 'none', o);
+        && o.textClip.startsWith('inset(') && o.textTransform === 'none', o);
       await page.locator(selector).evaluate(h => h.classList.add('is-revealed'));
       const active = await styles(page, selector);
-      ck(selector + ' replays block swipe rather than circular reveal',
+      ck(selector + ' uses only the faster rectangular swipe',
         active?.markerAnimation.includes('showsetPhotoBlockSwipe')
-        && !active.markerAnimation.includes('showsetCircleReveal')
-        && !active.markerAnimation.includes('showsetRadialTypeReveal'), active);
+        && Math.abs(parseFloat(active.markerDuration) - .75) < .01
+        && active?.textAnimation.includes('showsetPhotoTextUnmask')
+        && !active.markerAnimation.includes('showsetRadialTypeReveal')
+        && !active.textAnimation.includes('showsetRadialTypeReveal')
+        && active.textTransform === 'none'
+        && parseFloat(active.textTransition) === 0, active);
     }
     await page.goto(base + '/');
     await page.waitForSelector('[data-concept-ready="true"]');
     const hero = await page.locator('.hero-title .line').first().evaluate(el => {
       const css = getComputedStyle(el, '::after');
-      return { animation: css.animationName, content: css.content };
+      const text = getComputedStyle(el.querySelector(':scope > span'));
+      return { animation: css.animationName, duration: css.animationDuration,
+        content: css.content, textAnimation: text.animationName,
+        textTransform: text.transform, textTransition: text.transitionDuration };
     });
-    ck('Original hero receives matching block sweep', hero.animation.includes('showsetPhotoBlockSwipe'), hero);
+    ck('Original hero uses only the faster swipe, without the rising-line movement',
+      hero.animation.includes('showsetPhotoBlockSwipe')
+        && Math.abs(parseFloat(hero.duration)-.75) < .01
+        && hero.textAnimation.includes('showsetPhotoTextUnmask')
+        && !hero.textAnimation.includes('heroLine')
+        && hero.textTransform === 'none' && parseFloat(hero.textTransition) === 0, hero);
+    const heroTransforms = await page.evaluate(() => {
+      const a = document.querySelector('#hero-foreground');
+      const b = document.querySelector('#hero-second');
+      return { first: a.style.transform, second: b.style.transform };
+    });
+    ck('Both scroll hero scenes stay stationary while photography moves',
+      heroTransforms.first === 'none' && heroTransforms.second === 'none', heroTransforms);
+    const filmMovement = await page.locator('.film-step.is-on').evaluate(el => ({
+      transform: getComputedStyle(el).transform,
+      transition: getComputedStyle(el).transitionProperty
+    }));
+    ck('Film scene has no vertical chapter slide under its swipe',
+      filmMovement.transform === 'none' && !filmMovement.transition.includes('transform'), filmMovement);
     const other = await page.locator('.portfolio-heading .block-heading .wipe-line').first().evaluate(el => {
       const marker = getComputedStyle(el, '::after');
       return { display: marker.display, content: marker.content };
@@ -70,8 +100,9 @@ async function styles(page, selector) {
     await page.goto(base + '/events-experiences/');
     await page.waitForSelector('[data-concept-ready="true"]');
     const still = await styles(page, '.category-hero .block-heading');
-    ck('Reduced motion disables photo block and leaves text visible',
-      still?.markerDisplay === 'none' && Number(still.textOpacity) > .99, still);
+    ck('Reduced motion disables photo block and leaves text fully visible',
+      still?.markerDisplay === 'none' && Number(still.textOpacity) > .99
+        && still.textTransform === 'none' && still.textClip === 'none', still);
     await page.setViewportSize({ width: 390, height: 844 });
     await page.emulateMedia({ reducedMotion: 'no-preference' });
     await page.goto(base + '/');
