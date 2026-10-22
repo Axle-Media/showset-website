@@ -39,7 +39,10 @@ export default function RootLayout({
         />
       </head>
 
-      <body>{children}</body>
+      <body>
+        <noscript><style>{`.soft-rise{opacity:1!important;transform:none!important}.wipe-line>span{clip-path:none!important;opacity:1!important;animation:none!important}.wipe-line:after{display:none!important}.hero-foreground{opacity:1!important}.film-track,.film-stage{height:auto;min-height:0}.film-stage{position:relative;padding:100px 0}.film-story-inner{position:relative;inset:auto;padding:0 var(--gutter)}.film-steps{min-height:0}.film-step{position:relative;inset:auto;opacity:1;transform:none;margin-bottom:50px}.dot-core{clip-path:circle(150vmax at 50% 50%)!important}.dot-words{opacity:1!important;transform:none!important}.case-rail{transform:none!important}`}</style></noscript>
+        {children}
+      </body>
     </html>
   );
 }

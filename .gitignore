@@ -45,3 +45,6 @@ staging-out/
 .staging-build/
 staging-release.tar
 deployment-results/
+
+# Local review artifacts
+outputs/
