@@ -57,6 +57,34 @@ async function position(page, selector, fraction = 0) {
     check('Editorial CTA is beneath heading', await page.locator('.manifesto-heading-group .understated-link').count() === 1);
     check('Service heading has accent period',
       await page.locator('.service-heading-period').evaluate(el => getComputedStyle(el).color) === 'rgb(18, 186, 175)');
+    // Regression: the nested accent period was inheriting display:block,
+    // leaving a stray dot on a third line. Navigation must sit under the copy.
+    for (const { width, height } of [
+      { width: 822, height: 772 }, { width: 1440, height: 900 }
+    ]) {
+      await page.setViewportSize({ width, height });
+      await page.waitForTimeout(120);
+      const geometry = await page.evaluate(() => {
+        const title = document.querySelector('.services-panel-heading > span:first-child');
+        const period = document.querySelector('.service-heading-period');
+        const range = document.createRange();
+        range.selectNodeContents(title.firstChild);
+        const textRect = range.getBoundingClientRect();
+        const dotRect = period.getBoundingClientRect();
+        const copyRect = document.querySelector('.services-stage-intro > p').getBoundingClientRect();
+        const navRect = document.querySelector('.services-left .service-navigation').getBoundingClientRect();
+        return {
+          dotDisplay: getComputedStyle(period).display,
+          dotLineOffset: Math.abs(dotRect.bottom - textRect.bottom),
+          copyToCategories: navRect.top - copyRect.bottom,
+        };
+      });
+      check('Services punctuation stays on first line ' + width,
+        geometry.dotDisplay === 'inline' && geometry.dotLineOffset <= 10, geometry);
+      check('Services category list follows body without large dead space ' + width,
+        geometry.copyToCategories >= 12 && geometry.copyToCategories <= 90, geometry);
+    }
+    await page.setViewportSize({ width: 1440, height: 900 });
 
     const dotBefore = await page.locator('#dot-core').evaluate(el => getComputedStyle(el).clipPath);
     check('Dot initially clipped to zero', /circle\(0px\s+at/.test(dotBefore), dotBefore);
