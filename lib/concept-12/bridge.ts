@@ -648,6 +648,28 @@ export function bindConcept(
     }
     if (location) location.textContent = footer.location;
   }
+  // Social destinations are optional and stay disabled until the owner enters
+  // confirmed official profile URLs in Studio. Never generate generic links.
+  const socials = { facebook: "", instagram: "", linkedin: "",
+    ...defaultGlobals.footer.socials, ...g.footer.socials };
+  (["facebook", "instagram", "linkedin"] as const).forEach((name) => {
+    const link = host.querySelector<HTMLAnchorElement>(
+      `[data-footer-social="${name}"]`,
+    );
+    if (!link) return;
+    const url = safeHref(socials[name]?.trim());
+    if (url !== "#" && url.startsWith("https://")) {
+      link.href = url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.removeAttribute("aria-disabled");
+    } else {
+      link.removeAttribute("href");
+      link.removeAttribute("target");
+      link.removeAttribute("rel");
+      link.setAttribute("aria-disabled", "true");
+    }
+  });
   const signoff = host.querySelector<HTMLElement>(".footer-signoff");
   if (signoff) signoff.textContent = g.footer.signoff ?? defaultGlobals.footer.signoff ?? "Made by Showset.";
   if (g.footer.copyright !== defaultGlobals.footer.copyright) {
