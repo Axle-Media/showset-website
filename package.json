@@ -8,7 +8,8 @@
     "lint:source": "node scripts/check-source.mjs",
     "check": "tsc --noEmit",
     "export:assets": "node scripts/copy-export.mjs",
-    "package:xneelo": "npm run build && node scripts/copy-export.mjs"
+    "package:xneelo": "npm run build && node scripts/copy-export.mjs",
+    "check:seo": "node scripts/check-seo-content.mjs"
   },
   "dependencies": {
     "next": "^16.0.0",
