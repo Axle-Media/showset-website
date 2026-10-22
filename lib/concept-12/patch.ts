@@ -41,6 +41,7 @@ export function patchConcept(host: HTMLElement, key: string, context: Parameters
               to.style.setProperty(name,from.style.getPropertyValue(name),from.style.getPropertyPriority(name));
           });
         }
+        if(from.id==="mobile-panel") {to.toggleAttribute("inert",from.hasAttribute("inert"));to.setAttribute("aria-hidden",from.getAttribute("aria-hidden") || "true")}
         if(from.id==="form-result") to.textContent=from.textContent;
         if(from.matches("details")) to.toggleAttribute("open",from.hasAttribute("open"));
         ["aria-expanded","aria-selected"].forEach(name=>{
@@ -61,4 +62,5 @@ export function patchConcept(host: HTMLElement, key: string, context: Parameters
     host.style.removeProperty("display");
   } finally { target.remove(); }
 }
+
 

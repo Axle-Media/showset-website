@@ -1,0 +1,43 @@
+/* Motion-off reading flow: all acts stay available without pinned scroll waiting. */
+.concept-12-root[data-static-motion] .hero-track,.concept-12-root[data-static-motion] .film-track,.concept-12-root[data-static-motion] .services-track,.concept-12-root[data-static-motion] .dot-track{height:auto!important;min-height:0!important}
+.concept-12-root[data-static-motion] .hero-stage{position:relative;height:auto;min-height:100svh;padding-top:var(--header-height)}
+.concept-12-root[data-static-motion] .hero-photo{inset:0!important}
+.concept-12-root[data-static-motion] .hero-foreground{position:relative;inset:auto;max-width:850px;margin:0;padding:100px var(--gutter) 60px;opacity:1!important;transform:none!important}
+.concept-12-root[data-static-motion] .hero-second{position:relative;inset:auto;padding:0 var(--gutter) 85px;opacity:1!important;transform:none!important;pointer-events:auto!important}
+.concept-12-root[data-static-motion] .hero-scroll-note,.concept-12-root[data-static-motion] .film-progress{display:none!important}
+.concept-12-root[data-static-motion] .film-stage{height:auto;min-height:0;position:relative;padding:90px 0}
+.concept-12-root[data-static-motion] .film-story-inner{position:relative;inset:auto;padding:0 var(--gutter)}
+.concept-12-root[data-static-motion] .film-steps{min-height:0}
+.concept-12-root[data-static-motion] .film-step{position:relative;inset:auto;opacity:1!important;visibility:visible!important;transform:none!important;margin:0 0 55px;pointer-events:auto}
+.concept-12-root[data-static-motion] .film-step:last-child{margin-bottom:0}
+.concept-12-root[data-static-motion] .film-image{transform:none!important;opacity:0!important}
+.concept-12-root[data-static-motion] .film-image:first-child{opacity:1!important}
+.concept-12-root[data-static-motion] .services-stage{position:relative;height:auto;min-height:0}
+.concept-12-root[data-static-motion] .services-right{min-height:420px}
+.concept-12-root[data-static-motion] .dot-stage{position:relative;height:100svh;min-height:520px}
+.concept-12-root[data-static-motion] .dot-core{clip-path:circle(150vmax at 50% 50%)!important}
+.concept-12-root[data-static-motion] .wipe-line>span,.concept-12-root[data-static-motion] .soft-rise{clip-path:none!important;opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){
+.concept-12-root .hero-track,.concept-12-root .film-track,.concept-12-root .services-track,.concept-12-root .dot-track{height:auto!important;min-height:0!important}
+.concept-12-root .hero-stage{position:relative;height:auto;min-height:100svh;padding-top:var(--header-height)}
+.concept-12-root .hero-photo{inset:0!important}
+.concept-12-root .hero-foreground{position:relative;inset:auto;max-width:850px;margin:0;padding:100px var(--gutter) 60px;opacity:1!important;transform:none!important}
+.concept-12-root .hero-second{position:relative;inset:auto;padding:0 var(--gutter) 85px;opacity:1!important;transform:none!important;pointer-events:auto!important}
+.concept-12-root .hero-scroll-note,.concept-12-root .film-progress{display:none!important}
+.concept-12-root .film-stage{height:auto;min-height:0;position:relative;padding:90px 0}
+.concept-12-root .film-story-inner{position:relative;inset:auto;padding:0 var(--gutter)}
+.concept-12-root .film-steps{min-height:0}
+.concept-12-root .film-step{position:relative;inset:auto;opacity:1!important;visibility:visible!important;transform:none!important;margin:0 0 55px;pointer-events:auto}
+.concept-12-root .film-step:last-child{margin-bottom:0}
+.concept-12-root .film-image{transform:none!important;opacity:0!important}
+.concept-12-root .film-image:first-child{opacity:1!important}
+.concept-12-root .services-stage{position:relative;height:auto;min-height:0}
+.concept-12-root .services-right{min-height:420px}
+.concept-12-root .dot-stage{position:relative;height:100svh;min-height:520px}
+.concept-12-root .dot-core{clip-path:circle(150vmax at 50% 50%)!important}
+.concept-12-root .wipe-line>span,.concept-12-root .soft-rise{clip-path:none!important;opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
+}
+
+/* Visibility must be immediate when keyboard focus enters an opening panel. */
+.nav-dropdown.is-open .nav-panel,.mobile-panel.open{transition-property:opacity,transform}
+
