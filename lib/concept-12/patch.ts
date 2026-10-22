@@ -10,6 +10,7 @@ const motionClasses = ["is-on","is-active","is-revealed","is-inview","is-open","
 const motionStyles = ["transform","opacity","clip-path","pointer-events","transition","--dot-radius","--light-x","--light-y"];
 /** Patch content in place; never replace the host or restart its animation engine. */
 export function patchConcept(host: HTMLElement, key: string, context: Parameters<typeof bindConcept>[2]) {
+  const selections=Array.from(host.querySelectorAll("select"),element=>({element,value:element.value}));
   const target=host.ownerDocument.createElement("div");
   target.className=host.className;
   target.innerHTML=markup;
@@ -40,6 +41,7 @@ export function patchConcept(host: HTMLElement, key: string, context: Parameters
               to.style.setProperty(name,from.style.getPropertyValue(name),from.style.getPropertyPriority(name));
           });
         }
+        if(from.id==="form-result") to.textContent=from.textContent;
         if(from.matches("details")) to.toggleAttribute("open",from.hasAttribute("open"));
         ["aria-expanded","aria-selected"].forEach(name=>{
           if(from.hasAttribute(name)) to.setAttribute(name,from.getAttribute(name)!);
@@ -52,8 +54,11 @@ export function patchConcept(host: HTMLElement, key: string, context: Parameters
         return !from.isEqualNode(to);
       },
     });
+    // Reconcile option nodes first, then restore the visitor selection.
+    selections.forEach(({element,value})=>{if(element.isConnected)element.value=value});
     // Globals are CSS variables on the host, which morphdom deliberately does not own.
     host.style.cssText=target.style.cssText;
     host.style.removeProperty("display");
   } finally { target.remove(); }
 }
+
