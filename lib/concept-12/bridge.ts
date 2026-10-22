@@ -95,6 +95,13 @@ export function bindConcept(
     if (!changed(s, "headline") && !changed(s, "accent")) return;
     const e = host.querySelector(selector);
     if (!e) return;
+    if (e.classList.contains("services-panel-heading")) {
+      const head = rich(s.headline).replace(/\.$/, "");
+      const period = s.headline.endsWith(".") ? '<span class="service-heading-period">.</span>' : "";
+      e.innerHTML = '<span>' + head + period + '</span>' +
+        (s.accent ? '<span class="accent-text">' + rich(s.accent) + '</span>' : "");
+      return;
+    }
     if (
       !e.classList.contains("hero-title") &&
       !e.classList.contains("plain-heading") &&
@@ -202,6 +209,8 @@ export function bindConcept(
         if (changed(s, "image")) image("#hero-photo>img", s.image);
         action(".hero-links .solid-link", s);
         action(".hero-links .text-arrow-link", s, true);
+        action(".hero-second-links .solid-link", s);
+        action(".hero-second-links .text-arrow-link", s, true);
         if (changed(s, "items") && s.items[0]) {
           const x = s.items[0];
           host.querySelector("#hero-second h2")!.innerHTML =
@@ -211,7 +220,7 @@ export function bindConcept(
       } else if (s.type === "split") {
         heading("#discover h2", s);
         body(".manifesto-copy>p", s);
-        action(".manifesto-copy .understated-link", s);
+        action(".manifesto-heading-group .understated-link", s);
       } else if (s.type === "story") {
         if (changed(s, "items")) {
           repeat("[data-film-step]", s.items.length, "data-film-step");
@@ -618,7 +627,24 @@ export function bindConcept(
   if (g.theme.patternOpacity !== defaultGlobals.theme.patternOpacity)
     host.style.setProperty("--refine-pattern-opacity", String(g.theme.patternOpacity));
   if (g.footer.description !== defaultGlobals.footer.description)
-    text(".footer-identity>p", g.footer.description);
+    html(".footer-identity>p", g.footer.description.replace(/\n/g, "<br>"));
+  const footer = g.footer.contact || defaultGlobals.footer.contact;
+  if (footer) {
+    const email = host.querySelector<HTMLAnchorElement>("[data-footer-email]");
+    const phone = host.querySelector<HTMLAnchorElement>("[data-footer-phone]");
+    const location = host.querySelector<HTMLElement>("[data-footer-location]");
+    if (email) {
+      email.textContent = footer.email;
+      email.href = safeHref("mailto:" + footer.email);
+    }
+    if (phone) {
+      phone.textContent = footer.phone;
+      phone.href = "tel:" + footer.phone.replace(/[^+\d]/g, "");
+    }
+    if (location) location.textContent = footer.location;
+  }
+  const signoff = host.querySelector<HTMLElement>(".footer-signoff");
+  if (signoff) signoff.textContent = g.footer.signoff || defaultGlobals.footer.signoff || "Made by Showset.";
   if (g.footer.copyright !== defaultGlobals.footer.copyright) {
     const e = host.querySelector(".footer-bottom>span");
     if (e)
