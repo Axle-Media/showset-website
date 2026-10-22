@@ -84,6 +84,22 @@ async function position(page, selector, fraction = 0) {
       check('Services category list follows body without large dead space ' + width,
         geometry.copyToCategories >= 12 && geometry.copyToCategories <= 90, geometry);
     }
+    // The Content & Production photograph caption should be smaller,
+    // closely spaced and no more than two lines at desktop panel widths.
+    for (const width of [1024, 1440, 1920]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.locator('[data-service="3"]').focus();
+      await page.waitForFunction(() =>
+        document.querySelector('#service-visual-copy')?.textContent?.startsWith('From the first storyboard')
+      );
+      const caption = await page.locator('#service-visual-copy').evaluate(el => {
+        const css = getComputedStyle(el);
+        const lines = el.getBoundingClientRect().height / parseFloat(css.lineHeight);
+        return { lines, fontSize: parseFloat(css.fontSize), lineHeight: parseFloat(css.lineHeight), width: el.getBoundingClientRect().width };
+      });
+      check('Production photo caption remains within two lines at ' + width,
+        caption.lines <= 2.1 && caption.fontSize <= 20.1, caption);
+    }
     await page.setViewportSize({ width: 1440, height: 900 });
 
     const dotBefore = await page.locator('#dot-core').evaluate(el => getComputedStyle(el).clipPath);
