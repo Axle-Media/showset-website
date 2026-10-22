@@ -250,6 +250,11 @@
   :is(.wipe-heading,.block-heading) .wipe-line.accent-line::after {
   background:var(--sand);
 }
+/* The second homepage photographic scene uses the same teal swipe on both
+   lines as the other photo-backed headings. Text accent colours are unchanged. */
+.hero-second :is(.wipe-heading,.block-heading) .wipe-line.accent-line::after {
+  background:var(--teal);
+}
 /* Text stays physically still. The only perceived reveal is the coloured swipe:
    a synchronized discrete clip releases the stationary glyphs once the bar covers
    them, with no rising, sliding, fading or radial text movement. */
