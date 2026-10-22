@@ -16,7 +16,7 @@ Each PR targets its preceding foundation branch. They are drafts for owner revie
 
 ## Executed local evidence
 
-The actual Next.js static production application was served locally; no simplified fixture substituted for it. The approved original HTML and the approved refinement captures remained the design references. Source/build checks cover 12 pages and 66 sections. The browser suites cover:
+The development server was restored on 127.0.0.1:3001 and all 16 lifecycle checks also pass under React development mode. The actual Next.js static production application was served locally; no simplified fixture substituted for it. The approved original HTML and the approved refinement captures remained the design references. Source/build checks cover 12 pages and 66 sections. The browser suites cover:
 
 | Suite | Passing assertions |
 | --- | ---: |
@@ -42,3 +42,4 @@ Test commands are qa/concept12-{routes,seo,functional,lifecycle,refinements,glob
 - Contrast proposal needs visual approval before merging.
 - GitHub account billing/spending restriction must be resolved for hosted checks to run. Stacked feature PRs also require owner review and the documented merge order.
 - This work does not assert production form delivery or deploy any backend. Existing honest local preview form behaviour and Save Draft/Publish Preview remain covered.
+
