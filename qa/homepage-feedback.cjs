@@ -161,14 +161,27 @@ async function position(page, selector, fraction = 0) {
       && await page.locator('.footer-contact [data-footer-social="facebook"]').count() === 1
       && await page.locator('.footer-contact [data-footer-social="instagram"]').count() === 1
       && await page.locator('.footer-contact [data-footer-social="linkedin"]').count() === 1);
-    const socialStyles = await page.locator('.footer-socials .footer-social').first().evaluate(el => ({
-      color: getComputedStyle(el).color,
-      href: el.getAttribute('href'),
-      disabled: el.getAttribute('aria-disabled'),
-    }));
-    check('Unconfigured profiles do not link to incorrect accounts',
-      socialStyles.color === 'rgb(18, 186, 175)'
-      && socialStyles.href === null && socialStyles.disabled === 'true', socialStyles);
+    const socialLinks = await page.locator('.footer-socials .footer-social').evaluateAll(els =>
+      Object.fromEntries(els.map(el => [el.dataset.footerSocial, {
+        href: el.getAttribute('href'),
+        target: el.getAttribute('target'),
+        rel: el.getAttribute('rel'),
+        disabled: el.getAttribute('aria-disabled'),
+        color: getComputedStyle(el).color,
+      }]))
+    );
+    const expectedSocials = {
+      facebook: 'https://www.facebook.com/madebyshowset',
+      instagram: 'https://www.instagram.com/madebyshowset',
+      linkedin: 'https://www.linkedin.com/company/madebyshowset',
+    };
+    check('Official SHOWSET social profiles link correctly in new tabs',
+      Object.entries(expectedSocials).every(([name, url]) => {
+        const link = socialLinks[name];
+        return link && link.href === url && link.target === '_blank'
+          && link.rel?.includes('noopener') && link.rel?.includes('noreferrer')
+          && link.disabled === null && link.color === 'rgb(18, 186, 175)';
+      }), socialLinks);
     await page.setViewportSize({ width: 1440, height: 900 });
     const footerColumns = await page.evaluate(() => {
       const elements = [
