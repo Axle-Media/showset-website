@@ -95,12 +95,23 @@ function safely<T>(value: T, canonical: Value, legacy: Value[]): T {
 export function compatiblePages(value: Record<string, PageData>) {
   const reconciled = safely(value, defaultPages, [p1, p2, p3, p4, p5]);
   const oldHero = reconciled.home?.sections.find((s) => s.type === "hero");
-  // Only migrate this exact prior SHOWSET default. Custom hero copy remains intact.
-  // Preserve the user's complete local records before changing their saved seed.
-  if (oldHero?.headline !== "Great ideas" || oldHero.accent !== "should move people.")
-    return reconciled;
+  // Only migrate known previous default splits. Never change an edited headline.
+  const priorDefault =
+    (oldHero?.headline === "Great ideas should" && oldHero.accent === "move people.") ||
+    (oldHero?.headline === "Great ideas" && oldHero.accent === "should move people.");
+  if (!priorDefault) return reconciled;
   try {
     preserveBeforeMigration();
+    // An independent snapshot preserves the *current* saved copy, even when an
+    // older migration recovery snapshot already exists.
+    const key = "showset-shortened-hero-recovery-20261022";
+    if (!localStorage.getItem(key)) {
+      const records = Object.fromEntries([
+        "showset-demo-pages", "showset-demo-globals",
+        "showset-preview-published-pages", "showset-preview-published-globals",
+      ].map(k => [k, localStorage.getItem(k)]));
+      localStorage.setItem(key, JSON.stringify({ version: 1, records }));
+    }
   } catch (e) {
     console.warn("SHOWSET hero copy migration skipped because backup was unavailable.", e);
     return reconciled;
