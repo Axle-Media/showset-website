@@ -37,6 +37,28 @@ async function position(page, selector, fraction = 0) {
       };
     });
     check('Initial hero keeps exact words', initial.title === 'Great ideas should move people.', initial.title);
+    const heroComposition = await page.evaluate(() => {
+      const lines = [...document.querySelectorAll('.hero-title > .line')];
+      const filmFirst = document.querySelector('.film-step .wipe-line');
+      const box = el => el.getBoundingClientRect();
+      return {
+        lines: lines.map(el => el.textContent.trim()),
+        topDistance: lines.length === 2 ? Math.abs(box(lines[0]).bottom - box(lines[1]).top) : null,
+        firstSwipe: lines[0] ? getComputedStyle(lines[0], '::after').backgroundColor : null,
+        secondSwipe: lines[1] ? getComputedStyle(lines[1], '::after').backgroundColor : null,
+        referenceSwipe: filmFirst ? getComputedStyle(filmFirst, '::after').backgroundColor : null,
+      };
+    });
+    check('Hero has two intentional lines with should on first',
+      heroComposition.lines.length === 2 &&
+      heroComposition.lines[0] === 'Great ideas should' &&
+      heroComposition.lines[1] === 'move people.' &&
+      heroComposition.topDistance <= 12, heroComposition);
+    check('Both hero swipe bars use the standard teal heading treatment',
+      heroComposition.firstSwipe === 'rgb(18, 186, 175)' &&
+      heroComposition.secondSwipe === heroComposition.referenceSwipe,
+      heroComposition);
+
     check('Hero phrase teal', initial.accent === 'rgb(18, 186, 175)', initial.accent);
     check('Final hero period white', initial.period === 'rgb(250, 249, 253)', initial.period);
     check('Second-scene controls initially inert', initial.secondHidden);
