@@ -36,7 +36,7 @@ async function position(page, selector, fraction = 0) {
         secondHidden: document.querySelector('#hero-second').inert,
       };
     });
-    check('Initial hero keeps exact words', initial.title === 'Great ideas should move people.', initial.title);
+    check('Initial hero keeps exact words', initial.title === 'Great ideas move people.', initial.title);
     const heroComposition = await page.evaluate(() => {
       const lines = [...document.querySelectorAll('.hero-title > .line')];
       const filmFirst = document.querySelector('.film-step .wipe-line');
@@ -49,14 +49,14 @@ async function position(page, selector, fraction = 0) {
         referenceSwipe: filmFirst ? getComputedStyle(filmFirst, '::after').backgroundColor : null,
       };
     });
-    check('Hero has two intentional lines with should on first',
+    check('Hero has two intentional lines with Great ideas on first',
       heroComposition.lines.length === 2 &&
-      heroComposition.lines[0] === 'Great ideas should' &&
+      heroComposition.lines[0] === 'Great ideas' &&
       heroComposition.lines[1] === 'move people.' &&
       heroComposition.topDistance <= 12, heroComposition);
-    check('Both hero swipe bars use the standard teal heading treatment',
+    check('Opening hero uses teal first bar and sand second bar',
       heroComposition.firstSwipe === 'rgb(18, 186, 175)' &&
-      heroComposition.secondSwipe === heroComposition.referenceSwipe,
+      heroComposition.secondSwipe === 'rgb(229, 216, 195)',
       heroComposition);
 
     check('Hero phrase teal', initial.accent === 'rgb(18, 186, 175)', initial.accent);
