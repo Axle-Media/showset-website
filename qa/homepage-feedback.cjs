@@ -156,6 +156,36 @@ async function position(page, selector, fraction = 0) {
     check('Footer phone link', await page.locator('[data-footer-phone]').getAttribute('href') === 'tel:+27682805777');
     check('Footer Cape Town location', (await page.locator('[data-footer-location]').innerText()) === 'Cape Town, South Africa');
     check('Footer sign-off', (await page.locator('.footer-signoff').innerText()) === 'Made by Showset.');
+    check('Three teal social icons exist under Contact us',
+      await page.locator('.footer-contact .footer-socials .footer-social').count() === 3
+      && await page.locator('.footer-contact [data-footer-social="facebook"]').count() === 1
+      && await page.locator('.footer-contact [data-footer-social="instagram"]').count() === 1
+      && await page.locator('.footer-contact [data-footer-social="linkedin"]').count() === 1);
+    const socialStyles = await page.locator('.footer-socials .footer-social').first().evaluate(el => ({
+      color: getComputedStyle(el).color,
+      href: el.getAttribute('href'),
+      disabled: el.getAttribute('aria-disabled'),
+    }));
+    check('Unconfigured profiles do not link to incorrect accounts',
+      socialStyles.color === 'rgb(18, 186, 175)'
+      && socialStyles.href === null && socialStyles.disabled === 'true', socialStyles);
+    await page.setViewportSize({ width: 1440, height: 900 });
+    const footerColumns = await page.evaluate(() => {
+      const elements = [
+        document.querySelector('.footer-links>div:nth-child(1)'),
+        document.querySelector('.footer-links>div:nth-child(2)'),
+        document.querySelector('.footer-contact'),
+      ];
+      return {
+        lefts: elements.map(el => el.getBoundingClientRect().left),
+        mode: getComputedStyle(document.querySelector('.footer-links')).display,
+      };
+    });
+    const [discoverX, whatX, contactX] = footerColumns.lefts;
+    check('Footer What we do column is centred between Discover and Contact us',
+      footerColumns.mode === 'contents' && discoverX < whatX && whatX < contactX
+      && Math.abs((whatX - discoverX) - (contactX - whatX)) < 25, footerColumns);
+
 
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(base + '/');
