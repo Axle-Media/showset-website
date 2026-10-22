@@ -103,6 +103,18 @@ export function bindConcept(
         (s.accent ? '<span class="accent-text">' + rich(s.accent) + '</span>' : "");
       return;
     }
+    if (e.classList.contains("hero-title")) {
+      // Preserve the exact two-line photo-backed heading in Studio edits.
+      // The accent period remains ivory and is part of the same swipe line.
+      const period = s.accent.trimEnd().endsWith(".");
+      const accent = period ? s.accent.trimEnd().slice(0, -1) : s.accent;
+      e.innerHTML =
+        `<span class="line"><span>${rich(s.headline)}</span></span>` +
+        (s.accent
+          ? `<span class="line hero-accent-phrase"><span>${rich(accent)}${period ? '<span class="hero-period">.</span>' : ""}</span></span>`
+          : "");
+      return;
+    }
     if (
       !e.classList.contains("hero-title") &&
       !e.classList.contains("plain-heading") &&
