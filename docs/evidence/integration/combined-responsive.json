@@ -1,0 +1,4219 @@
+{
+  "rows": [
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "scene": "hero-initial",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 28.796875,
+            "y": 286.84375,
+            "width": 272.015625,
+            "height": 344.3125,
+            "top": 286.84375,
+            "right": 300.8125,
+            "bottom": 631.15625,
+            "left": 28.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 28.796875,
+            "y": 308.3671875,
+            "width": 272.015625,
+            "height": 375.265625,
+            "top": 308.3671875,
+            "right": 300.8125,
+            "bottom": 683.6328125,
+            "left": 28.796875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "scene": "hero-expanded",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 28.796875,
+            "y": 241.84375,
+            "width": 272.015625,
+            "height": 344.3125,
+            "top": 241.84375,
+            "right": 300.8125,
+            "bottom": 586.15625,
+            "left": 28.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 28.796875,
+            "y": 280.3671875,
+            "width": 272.015625,
+            "height": 375.265625,
+            "top": 280.3671875,
+            "right": 300.8125,
+            "bottom": 655.6328125,
+            "left": 28.796875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "scene": "hero-reverse",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 28.796875,
+            "y": 286.84375,
+            "width": 272.015625,
+            "height": 344.3125,
+            "top": 286.84375,
+            "right": 300.8125,
+            "bottom": 631.15625,
+            "left": 28.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 28.796875,
+            "y": 308.3671875,
+            "width": 272.015625,
+            "height": 375.265625,
+            "top": 308.3671875,
+            "right": 300.8125,
+            "bottom": 683.6328125,
+            "left": 28.796875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "scene": "editorial",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 28.796875,
+            "y": -658.15625,
+            "width": 272.015625,
+            "height": 344.3125,
+            "top": -658.15625,
+            "right": 300.8125,
+            "bottom": -313.84375,
+            "left": 28.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 28.796875,
+            "y": -619.6328125,
+            "width": 272.015625,
+            "height": 375.265625,
+            "top": -619.6328125,
+            "right": 300.8125,
+            "bottom": -244.3671875,
+            "left": 28.796875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "scene": "story-1",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 28.796875,
+            "y": -1532.15625,
+            "width": 272.015625,
+            "height": 344.3125,
+            "top": -1532.15625,
+            "right": 300.8125,
+            "bottom": -1187.84375,
+            "left": 28.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 28.796875,
+            "y": -1493.6328125,
+            "width": 272.015625,
+            "height": 375.265625,
+            "top": -1493.6328125,
+            "right": 300.8125,
+            "bottom": -1118.3671875,
+            "left": 28.796875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "scene": "story-2",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 28.796875,
+            "y": -2146.15625,
+            "width": 272.015625,
+            "height": 344.3125,
+            "top": -2146.15625,
+            "right": 300.8125,
+            "bottom": -1801.84375,
+            "left": 28.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 28.796875,
+            "y": -2107.6328125,
+            "width": 272.015625,
+            "height": 375.265625,
+            "top": -2107.6328125,
+            "right": 300.8125,
+            "bottom": -1732.3671875,
+            "left": 28.796875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "scene": "story-3",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 28.796875,
+            "y": -2761.15625,
+            "width": 272.015625,
+            "height": 344.3125,
+            "top": -2761.15625,
+            "right": 300.8125,
+            "bottom": -2416.84375,
+            "left": 28.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 28.796875,
+            "y": -2722.6328125,
+            "width": 272.015625,
+            "height": 375.265625,
+            "top": -2722.6328125,
+            "right": 300.8125,
+            "bottom": -2347.3671875,
+            "left": 28.796875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "scene": "services",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 28.796875,
+            "y": -4070.15625,
+            "width": 272.015625,
+            "height": 344.3125,
+            "top": -4070.15625,
+            "right": 300.8125,
+            "bottom": -3725.84375,
+            "left": 28.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 28.796875,
+            "y": -4031.6328125,
+            "width": 272.015625,
+            "height": 375.265625,
+            "top": -4031.6328125,
+            "right": 300.8125,
+            "bottom": -3656.3671875,
+            "left": 28.796875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "scene": "carousel",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 28.796875,
+            "y": -5090.15625,
+            "width": 272.015625,
+            "height": 344.3125,
+            "top": -5090.15625,
+            "right": 300.8125,
+            "bottom": -4745.84375,
+            "left": 28.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 28.796875,
+            "y": -5051.6328125,
+            "width": 272.015625,
+            "height": 375.265625,
+            "top": -5051.6328125,
+            "right": 300.8125,
+            "bottom": -4676.3671875,
+            "left": 28.796875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "scene": "dot-before",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 28.796875,
+            "y": -5975.15625,
+            "width": 272.015625,
+            "height": 344.3125,
+            "top": -5975.15625,
+            "right": 300.8125,
+            "bottom": -5630.84375,
+            "left": 28.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 28.796875,
+            "y": -5936.6328125,
+            "width": 272.015625,
+            "height": 375.265625,
+            "top": -5936.6328125,
+            "right": 300.8125,
+            "bottom": -5561.3671875,
+            "left": 28.796875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "scene": "dot-middle",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 28.796875,
+            "y": -6223.15625,
+            "width": 272.015625,
+            "height": 344.3125,
+            "top": -6223.15625,
+            "right": 300.8125,
+            "bottom": -5878.84375,
+            "left": 28.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 28.796875,
+            "y": -6184.6328125,
+            "width": 272.015625,
+            "height": 375.265625,
+            "top": -6184.6328125,
+            "right": 300.8125,
+            "bottom": -5809.3671875,
+            "left": 28.796875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "scene": "dot-expanded",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 28.796875,
+            "y": -6470.15625,
+            "width": 272.015625,
+            "height": 344.3125,
+            "top": -6470.15625,
+            "right": 300.8125,
+            "bottom": -6125.84375,
+            "left": 28.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 28.796875,
+            "y": -6431.6328125,
+            "width": 272.015625,
+            "height": 375.265625,
+            "top": -6431.6328125,
+            "right": 300.8125,
+            "bottom": -6056.3671875,
+            "left": 28.796875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "scene": "dot-reverse",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 28.796875,
+            "y": -5975.15625,
+            "width": 272.015625,
+            "height": 344.3125,
+            "top": -5975.15625,
+            "right": 300.8125,
+            "bottom": -5630.84375,
+            "left": 28.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 28.796875,
+            "y": -5936.6328125,
+            "width": 272.015625,
+            "height": 375.265625,
+            "top": -5936.6328125,
+            "right": 300.8125,
+            "bottom": -5561.3671875,
+            "left": 28.796875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "scene": "closing",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 28.796875,
+            "y": -7370.15625,
+            "width": 272.015625,
+            "height": 344.3125,
+            "top": -7370.15625,
+            "right": 300.8125,
+            "bottom": -7025.84375,
+            "left": 28.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 28.796875,
+            "y": -7331.6328125,
+            "width": 272.015625,
+            "height": 375.265625,
+            "top": -7331.6328125,
+            "right": 300.8125,
+            "bottom": -6956.3671875,
+            "left": 28.796875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "scene": "footer",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 28.796875,
+            "y": -7750.15625,
+            "width": 272.015625,
+            "height": 344.3125,
+            "top": -7750.15625,
+            "right": 300.8125,
+            "bottom": -7405.84375,
+            "left": 28.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 28.796875,
+            "y": -7711.6328125,
+            "width": 272.015625,
+            "height": 375.265625,
+            "top": -7711.6328125,
+            "right": 300.8125,
+            "bottom": -7336.3671875,
+            "left": 28.796875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "scene": "hero-initial",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": 291.0078125,
+            "width": 331.515625,
+            "height": 278.859375,
+            "top": 291.0078125,
+            "right": 366.609375,
+            "bottom": 569.8671875,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": 312.59375,
+            "width": 331.515625,
+            "height": 308.5625,
+            "top": 312.59375,
+            "right": 366.609375,
+            "bottom": 621.15625,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "scene": "hero-expanded",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": 246.0078125,
+            "width": 331.515625,
+            "height": 278.859375,
+            "top": 246.0078125,
+            "right": 366.609375,
+            "bottom": 524.8671875,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": 284.59375,
+            "width": 331.515625,
+            "height": 308.5625,
+            "top": 284.59375,
+            "right": 366.609375,
+            "bottom": 593.15625,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "scene": "hero-reverse",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": 291.0078125,
+            "width": 331.515625,
+            "height": 278.859375,
+            "top": 291.0078125,
+            "right": 366.609375,
+            "bottom": 569.8671875,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": 312.59375,
+            "width": 331.515625,
+            "height": 308.5625,
+            "top": 312.59375,
+            "right": 366.609375,
+            "bottom": 621.15625,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "scene": "editorial",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": -597.5234375,
+            "width": 331.515625,
+            "height": 278.859375,
+            "top": -597.5234375,
+            "right": 366.609375,
+            "bottom": -318.6640625,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": -558.9375,
+            "width": 331.515625,
+            "height": 308.5625,
+            "top": -558.9375,
+            "right": 366.609375,
+            "bottom": -250.375,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "scene": "story-1",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": -1361.5234375,
+            "width": 331.515625,
+            "height": 278.859375,
+            "top": -1361.5234375,
+            "right": 366.609375,
+            "bottom": -1082.6640625,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": -1322.9375,
+            "width": 331.515625,
+            "height": 308.5625,
+            "top": -1322.9375,
+            "right": 366.609375,
+            "bottom": -1014.375,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "scene": "story-2",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": -1937.5234375,
+            "width": 331.515625,
+            "height": 278.859375,
+            "top": -1937.5234375,
+            "right": 366.609375,
+            "bottom": -1658.6640625,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": -1898.9375,
+            "width": 331.515625,
+            "height": 308.5625,
+            "top": -1898.9375,
+            "right": 366.609375,
+            "bottom": -1590.375,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "scene": "story-3",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": -2513.5234375,
+            "width": 331.515625,
+            "height": 278.859375,
+            "top": -2513.5234375,
+            "right": 366.609375,
+            "bottom": -2234.6640625,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": -2474.9375,
+            "width": 331.515625,
+            "height": 308.5625,
+            "top": -2474.9375,
+            "right": 366.609375,
+            "bottom": -2166.375,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "scene": "services",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": -3726.5234375,
+            "width": 331.515625,
+            "height": 278.859375,
+            "top": -3726.5234375,
+            "right": 366.609375,
+            "bottom": -3447.6640625,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": -3687.9375,
+            "width": 331.515625,
+            "height": 308.5625,
+            "top": -3687.9375,
+            "right": 366.609375,
+            "bottom": -3379.375,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "scene": "carousel",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": -4671.5234375,
+            "width": 331.515625,
+            "height": 278.859375,
+            "top": -4671.5234375,
+            "right": 366.609375,
+            "bottom": -4392.6640625,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": -4632.9375,
+            "width": 331.515625,
+            "height": 308.5625,
+            "top": -4632.9375,
+            "right": 366.609375,
+            "bottom": -4324.375,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "scene": "dot-before",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": -5580.5234375,
+            "width": 331.515625,
+            "height": 278.859375,
+            "top": -5580.5234375,
+            "right": 366.609375,
+            "bottom": -5301.6640625,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": -5541.9375,
+            "width": 331.515625,
+            "height": 308.5625,
+            "top": -5541.9375,
+            "right": 366.609375,
+            "bottom": -5233.375,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "scene": "dot-middle",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": -5812.5234375,
+            "width": 331.515625,
+            "height": 278.859375,
+            "top": -5812.5234375,
+            "right": 366.609375,
+            "bottom": -5533.6640625,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": -5773.9375,
+            "width": 331.515625,
+            "height": 308.5625,
+            "top": -5773.9375,
+            "right": 366.609375,
+            "bottom": -5465.375,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "scene": "dot-expanded",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": -6044.5234375,
+            "width": 331.515625,
+            "height": 278.859375,
+            "top": -6044.5234375,
+            "right": 366.609375,
+            "bottom": -5765.6640625,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": -6005.9375,
+            "width": 331.515625,
+            "height": 308.5625,
+            "top": -6005.9375,
+            "right": 366.609375,
+            "bottom": -5697.375,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "scene": "dot-reverse",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": -5580.5234375,
+            "width": 331.515625,
+            "height": 278.859375,
+            "top": -5580.5234375,
+            "right": 366.609375,
+            "bottom": -5301.6640625,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": -5541.9375,
+            "width": 331.515625,
+            "height": 308.5625,
+            "top": -5541.9375,
+            "right": 366.609375,
+            "bottom": -5233.375,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "scene": "closing",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": -6888.5234375,
+            "width": 331.515625,
+            "height": 278.859375,
+            "top": -6888.5234375,
+            "right": 366.609375,
+            "bottom": -6609.6640625,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": -6849.9375,
+            "width": 331.515625,
+            "height": 308.5625,
+            "top": -6849.9375,
+            "right": 366.609375,
+            "bottom": -6541.375,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "scene": "footer",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": -7263.5234375,
+            "width": 331.515625,
+            "height": 278.859375,
+            "top": -7263.5234375,
+            "right": 366.609375,
+            "bottom": -6984.6640625,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": -7224.9375,
+            "width": 331.515625,
+            "height": 308.5625,
+            "top": -7224.9375,
+            "right": 366.609375,
+            "bottom": -6916.375,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "scene": "hero-initial",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 76.796875,
+            "y": 407.2578125,
+            "width": 622.09375,
+            "height": 229.953125,
+            "top": 407.2578125,
+            "right": 698.890625,
+            "bottom": 637.2109375,
+            "left": 76.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 61.4375,
+            "y": 435.6015625,
+            "width": 660.484375,
+            "height": 229.265625,
+            "top": 435.6015625,
+            "right": 721.921875,
+            "bottom": 664.8671875,
+            "left": 61.4375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "scene": "hero-expanded",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 76.796875,
+            "y": 362.2578125,
+            "width": 622.09375,
+            "height": 229.953125,
+            "top": 362.2578125,
+            "right": 698.890625,
+            "bottom": 592.2109375,
+            "left": 76.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 61.4375,
+            "y": 407.6015625,
+            "width": 660.484375,
+            "height": 229.265625,
+            "top": 407.6015625,
+            "right": 721.921875,
+            "bottom": 636.8671875,
+            "left": 61.4375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "scene": "hero-reverse",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 76.796875,
+            "y": 407.2578125,
+            "width": 622.09375,
+            "height": 229.953125,
+            "top": 407.2578125,
+            "right": 698.890625,
+            "bottom": 637.2109375,
+            "left": 76.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 61.4375,
+            "y": 435.6015625,
+            "width": 660.484375,
+            "height": 229.265625,
+            "top": 435.6015625,
+            "right": 721.921875,
+            "bottom": 664.8671875,
+            "left": 61.4375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "scene": "editorial",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 76.796875,
+            "y": -661.5078125,
+            "width": 622.09375,
+            "height": 229.953125,
+            "top": -661.5078125,
+            "right": 698.890625,
+            "bottom": -431.5546875,
+            "left": 76.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 61.4375,
+            "y": -616.1640625,
+            "width": 660.484375,
+            "height": 229.265625,
+            "top": -616.1640625,
+            "right": 721.921875,
+            "bottom": -386.8984375,
+            "left": 61.4375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "scene": "story-1",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 76.796875,
+            "y": -1526.5078125,
+            "width": 622.09375,
+            "height": 229.953125,
+            "top": -1526.5078125,
+            "right": 698.890625,
+            "bottom": -1296.5546875,
+            "left": 76.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 61.4375,
+            "y": -1481.1640625,
+            "width": 660.484375,
+            "height": 229.265625,
+            "top": -1481.1640625,
+            "right": 721.921875,
+            "bottom": -1251.8984375,
+            "left": 61.4375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "scene": "story-2",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 76.796875,
+            "y": -2308.5078125,
+            "width": 622.09375,
+            "height": 229.953125,
+            "top": -2308.5078125,
+            "right": 698.890625,
+            "bottom": -2078.5546875,
+            "left": 76.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 61.4375,
+            "y": -2263.1640625,
+            "width": 660.484375,
+            "height": 229.265625,
+            "top": -2263.1640625,
+            "right": 721.921875,
+            "bottom": -2033.8984375,
+            "left": 61.4375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "scene": "story-3",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 76.796875,
+            "y": -3089.5078125,
+            "width": 622.09375,
+            "height": 229.953125,
+            "top": -3089.5078125,
+            "right": 698.890625,
+            "bottom": -2859.5546875,
+            "left": 76.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 61.4375,
+            "y": -3044.1640625,
+            "width": 660.484375,
+            "height": 229.265625,
+            "top": -3044.1640625,
+            "right": 721.921875,
+            "bottom": -2814.8984375,
+            "left": 61.4375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "scene": "services",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 76.796875,
+            "y": -4525.5078125,
+            "width": 622.09375,
+            "height": 229.953125,
+            "top": -4525.5078125,
+            "right": 698.890625,
+            "bottom": -4295.5546875,
+            "left": 76.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 61.4375,
+            "y": -4480.1640625,
+            "width": 660.484375,
+            "height": 229.265625,
+            "top": -4480.1640625,
+            "right": 721.921875,
+            "bottom": -4250.8984375,
+            "left": 61.4375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "scene": "carousel",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 76.796875,
+            "y": -5613.5078125,
+            "width": 622.09375,
+            "height": 229.953125,
+            "top": -5613.5078125,
+            "right": 698.890625,
+            "bottom": -5383.5546875,
+            "left": 76.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 61.4375,
+            "y": -5568.1640625,
+            "width": 660.484375,
+            "height": 229.265625,
+            "top": -5568.1640625,
+            "right": 721.921875,
+            "bottom": -5338.8984375,
+            "left": 61.4375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "scene": "dot-before",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 76.796875,
+            "y": -6557.5078125,
+            "width": 622.09375,
+            "height": 229.953125,
+            "top": -6557.5078125,
+            "right": 698.890625,
+            "bottom": -6327.5546875,
+            "left": 76.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 61.4375,
+            "y": -6512.1640625,
+            "width": 660.484375,
+            "height": 229.265625,
+            "top": -6512.1640625,
+            "right": 721.921875,
+            "bottom": -6282.8984375,
+            "left": 61.4375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "scene": "dot-middle",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 76.796875,
+            "y": -6813.5078125,
+            "width": 622.09375,
+            "height": 229.953125,
+            "top": -6813.5078125,
+            "right": 698.890625,
+            "bottom": -6583.5546875,
+            "left": 76.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 61.4375,
+            "y": -6768.1640625,
+            "width": 660.484375,
+            "height": 229.265625,
+            "top": -6768.1640625,
+            "right": 721.921875,
+            "bottom": -6538.8984375,
+            "left": 61.4375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "scene": "dot-expanded",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 76.796875,
+            "y": -7069.5078125,
+            "width": 622.09375,
+            "height": 229.953125,
+            "top": -7069.5078125,
+            "right": 698.890625,
+            "bottom": -6839.5546875,
+            "left": 76.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 61.4375,
+            "y": -7024.1640625,
+            "width": 660.484375,
+            "height": 229.265625,
+            "top": -7024.1640625,
+            "right": 721.921875,
+            "bottom": -6794.8984375,
+            "left": 61.4375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "scene": "dot-reverse",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 76.796875,
+            "y": -6557.5078125,
+            "width": 622.09375,
+            "height": 229.953125,
+            "top": -6557.5078125,
+            "right": 698.890625,
+            "bottom": -6327.5546875,
+            "left": 76.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 61.4375,
+            "y": -6512.1640625,
+            "width": 660.484375,
+            "height": 229.265625,
+            "top": -6512.1640625,
+            "right": 721.921875,
+            "bottom": -6282.8984375,
+            "left": 61.4375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "scene": "closing",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 76.796875,
+            "y": -8093.5078125,
+            "width": 622.09375,
+            "height": 229.953125,
+            "top": -8093.5078125,
+            "right": 698.890625,
+            "bottom": -7863.5546875,
+            "left": 76.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 61.4375,
+            "y": -8048.1640625,
+            "width": 660.484375,
+            "height": 229.265625,
+            "top": -8048.1640625,
+            "right": 721.921875,
+            "bottom": -7818.8984375,
+            "left": 61.4375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "scene": "footer",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 76.796875,
+            "y": -8213.5078125,
+            "width": 622.09375,
+            "height": 229.953125,
+            "top": -8213.5078125,
+            "right": 698.890625,
+            "bottom": -7983.5546875,
+            "left": 76.796875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 61.4375,
+            "y": -8168.1640625,
+            "width": 660.484375,
+            "height": 229.265625,
+            "top": -8168.1640625,
+            "right": 721.921875,
+            "bottom": -7938.8984375,
+            "left": 61.4375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "scene": "hero-initial",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": 334.1328125,
+            "width": 780,
+            "height": 249.734375,
+            "top": 334.1328125,
+            "right": 869.078125,
+            "bottom": 583.8671875,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": 360.1328125,
+            "width": 666.53125,
+            "height": 253.734375,
+            "top": 360.1328125,
+            "right": 755.609375,
+            "bottom": 613.8671875,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "scene": "hero-expanded",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": 289.1328125,
+            "width": 780,
+            "height": 249.734375,
+            "top": 289.1328125,
+            "right": 869.078125,
+            "bottom": 538.8671875,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": 332.1328125,
+            "width": 666.53125,
+            "height": 253.734375,
+            "top": 332.1328125,
+            "right": 755.609375,
+            "bottom": 585.8671875,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "scene": "hero-reverse",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": 334.1328125,
+            "width": 780,
+            "height": 249.734375,
+            "top": 334.1328125,
+            "right": 869.078125,
+            "bottom": 583.8671875,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": 360.1328125,
+            "width": 666.53125,
+            "height": 253.734375,
+            "top": 360.1328125,
+            "right": 755.609375,
+            "bottom": 613.8671875,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "scene": "editorial",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": -610.8671875,
+            "width": 780,
+            "height": 249.734375,
+            "top": -610.8671875,
+            "right": 869.078125,
+            "bottom": -361.1328125,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": -567.8671875,
+            "width": 666.53125,
+            "height": 253.734375,
+            "top": -567.8671875,
+            "right": 755.609375,
+            "bottom": -314.1328125,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "scene": "story-1",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": -1297.8671875,
+            "width": 780,
+            "height": 249.734375,
+            "top": -1297.8671875,
+            "right": 869.078125,
+            "bottom": -1048.1328125,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": -1254.8671875,
+            "width": 666.53125,
+            "height": 253.734375,
+            "top": -1254.8671875,
+            "right": 755.609375,
+            "bottom": -1001.1328125,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "scene": "story-2",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": -1984.8671875,
+            "width": 780,
+            "height": 249.734375,
+            "top": -1984.8671875,
+            "right": 869.078125,
+            "bottom": -1735.1328125,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": -1941.8671875,
+            "width": 666.53125,
+            "height": 253.734375,
+            "top": -1941.8671875,
+            "right": 755.609375,
+            "bottom": -1688.1328125,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "scene": "story-3",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": -2670.8671875,
+            "width": 780,
+            "height": 249.734375,
+            "top": -2670.8671875,
+            "right": 869.078125,
+            "bottom": -2421.1328125,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": -2627.8671875,
+            "width": 666.53125,
+            "height": 253.734375,
+            "top": -2627.8671875,
+            "right": 755.609375,
+            "bottom": -2374.1328125,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "scene": "services",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": -5528.8671875,
+            "width": 780,
+            "height": 249.734375,
+            "top": -5528.8671875,
+            "right": 869.078125,
+            "bottom": -5279.1328125,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": -5485.8671875,
+            "width": 666.53125,
+            "height": 253.734375,
+            "top": -5485.8671875,
+            "right": 755.609375,
+            "bottom": -5232.1328125,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "scene": "carousel",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": -7789.8671875,
+            "width": 780,
+            "height": 249.734375,
+            "top": -7789.8671875,
+            "right": 869.078125,
+            "bottom": -7540.1328125,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": -7746.8671875,
+            "width": 666.53125,
+            "height": 253.734375,
+            "top": -7746.8671875,
+            "right": 755.609375,
+            "bottom": -7493.1328125,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "scene": "dot-before",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": -8594.8671875,
+            "width": 780,
+            "height": 249.734375,
+            "top": -8594.8671875,
+            "right": 869.078125,
+            "bottom": -8345.1328125,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": -8551.8671875,
+            "width": 666.53125,
+            "height": 253.734375,
+            "top": -8551.8671875,
+            "right": 755.609375,
+            "bottom": -8298.1328125,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "scene": "dot-middle",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": -9021.8671875,
+            "width": 780,
+            "height": 249.734375,
+            "top": -9021.8671875,
+            "right": 869.078125,
+            "bottom": -8772.1328125,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": -8978.8671875,
+            "width": 666.53125,
+            "height": 253.734375,
+            "top": -8978.8671875,
+            "right": 755.609375,
+            "bottom": -8725.1328125,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "scene": "dot-expanded",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": -9449.8671875,
+            "width": 780,
+            "height": 249.734375,
+            "top": -9449.8671875,
+            "right": 869.078125,
+            "bottom": -9200.1328125,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": -9406.8671875,
+            "width": 666.53125,
+            "height": 253.734375,
+            "top": -9406.8671875,
+            "right": 755.609375,
+            "bottom": -9153.1328125,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "scene": "dot-reverse",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": -8594.8671875,
+            "width": 780,
+            "height": 249.734375,
+            "top": -8594.8671875,
+            "right": 869.078125,
+            "bottom": -8345.1328125,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": -8551.8671875,
+            "width": 666.53125,
+            "height": 253.734375,
+            "top": -8551.8671875,
+            "right": 755.609375,
+            "bottom": -8298.1328125,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "scene": "closing",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": -10293.8671875,
+            "width": 780,
+            "height": 249.734375,
+            "top": -10293.8671875,
+            "right": 869.078125,
+            "bottom": -10044.1328125,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": -10250.8671875,
+            "width": 666.53125,
+            "height": 253.734375,
+            "top": -10250.8671875,
+            "right": 755.609375,
+            "bottom": -9997.1328125,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "scene": "footer",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": -10293.8671875,
+            "width": 780,
+            "height": 249.734375,
+            "top": -10293.8671875,
+            "right": 869.078125,
+            "bottom": -10044.1328125,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": -10250.8671875,
+            "width": 666.53125,
+            "height": 253.734375,
+            "top": -10250.8671875,
+            "right": 755.609375,
+            "bottom": -9997.1328125,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "scene": "hero-initial",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 151.1875,
+            "y": 307.4609375,
+            "width": 780,
+            "height": 303.078125,
+            "top": 307.4609375,
+            "right": 931.1875,
+            "bottom": 610.5390625,
+            "left": 151.1875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 151.1875,
+            "y": 300.0625,
+            "width": 900,
+            "height": 373.875,
+            "top": 300.0625,
+            "right": 1051.1875,
+            "bottom": 673.9375,
+            "left": 151.1875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "scene": "hero-expanded",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 151.1875,
+            "y": 262.4609375,
+            "width": 780,
+            "height": 303.078125,
+            "top": 262.4609375,
+            "right": 931.1875,
+            "bottom": 565.5390625,
+            "left": 151.1875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 151.1875,
+            "y": 272.0625,
+            "width": 900,
+            "height": 373.875,
+            "top": 272.0625,
+            "right": 1051.1875,
+            "bottom": 645.9375,
+            "left": 151.1875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "scene": "hero-reverse",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 151.1875,
+            "y": 307.4609375,
+            "width": 780,
+            "height": 303.078125,
+            "top": 307.4609375,
+            "right": 931.1875,
+            "bottom": 610.5390625,
+            "left": 151.1875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 151.1875,
+            "y": 300.0625,
+            "width": 900,
+            "height": 373.875,
+            "top": 300.0625,
+            "right": 1051.1875,
+            "bottom": 673.9375,
+            "left": 151.1875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "scene": "editorial",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 151.1875,
+            "y": -637.5390625,
+            "width": 780,
+            "height": 303.078125,
+            "top": -637.5390625,
+            "right": 931.1875,
+            "bottom": -334.4609375,
+            "left": 151.1875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 151.1875,
+            "y": -627.9375,
+            "width": 900,
+            "height": 373.875,
+            "top": -627.9375,
+            "right": 1051.1875,
+            "bottom": -254.0625,
+            "left": 151.1875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "scene": "story-1",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 151.1875,
+            "y": -1410.5390625,
+            "width": 780,
+            "height": 303.078125,
+            "top": -1410.5390625,
+            "right": 931.1875,
+            "bottom": -1107.4609375,
+            "left": 151.1875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 151.1875,
+            "y": -1400.9375,
+            "width": 900,
+            "height": 373.875,
+            "top": -1400.9375,
+            "right": 1051.1875,
+            "bottom": -1027.0625,
+            "left": 151.1875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "scene": "story-2",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 151.1875,
+            "y": -2097.5390625,
+            "width": 780,
+            "height": 303.078125,
+            "top": -2097.5390625,
+            "right": 931.1875,
+            "bottom": -1794.4609375,
+            "left": 151.1875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 151.1875,
+            "y": -2087.9375,
+            "width": 900,
+            "height": 373.875,
+            "top": -2087.9375,
+            "right": 1051.1875,
+            "bottom": -1714.0625,
+            "left": 151.1875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "scene": "story-3",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 151.1875,
+            "y": -2783.5390625,
+            "width": 780,
+            "height": 303.078125,
+            "top": -2783.5390625,
+            "right": 931.1875,
+            "bottom": -2480.4609375,
+            "left": 151.1875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 151.1875,
+            "y": -2773.9375,
+            "width": 900,
+            "height": 373.875,
+            "top": -2773.9375,
+            "right": 1051.1875,
+            "bottom": -2400.0625,
+            "left": 151.1875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "scene": "services",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 151.1875,
+            "y": -5641.5390625,
+            "width": 780,
+            "height": 303.078125,
+            "top": -5641.5390625,
+            "right": 931.1875,
+            "bottom": -5338.4609375,
+            "left": 151.1875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 151.1875,
+            "y": -5631.9375,
+            "width": 900,
+            "height": 373.875,
+            "top": -5631.9375,
+            "right": 1051.1875,
+            "bottom": -5258.0625,
+            "left": 151.1875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "scene": "carousel",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 151.1875,
+            "y": -7902.5390625,
+            "width": 780,
+            "height": 303.078125,
+            "top": -7902.5390625,
+            "right": 931.1875,
+            "bottom": -7599.4609375,
+            "left": 151.1875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 151.1875,
+            "y": -7892.9375,
+            "width": 900,
+            "height": 373.875,
+            "top": -7892.9375,
+            "right": 1051.1875,
+            "bottom": -7519.0625,
+            "left": 151.1875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "scene": "dot-before",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 151.1875,
+            "y": -8890.5390625,
+            "width": 780,
+            "height": 303.078125,
+            "top": -8890.5390625,
+            "right": 931.1875,
+            "bottom": -8587.4609375,
+            "left": 151.1875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 151.1875,
+            "y": -8880.9375,
+            "width": 900,
+            "height": 373.875,
+            "top": -8880.9375,
+            "right": 1051.1875,
+            "bottom": -8507.0625,
+            "left": 151.1875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "scene": "dot-middle",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 151.1875,
+            "y": -9317.5390625,
+            "width": 780,
+            "height": 303.078125,
+            "top": -9317.5390625,
+            "right": 931.1875,
+            "bottom": -9014.4609375,
+            "left": 151.1875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 151.1875,
+            "y": -9307.9375,
+            "width": 900,
+            "height": 373.875,
+            "top": -9307.9375,
+            "right": 1051.1875,
+            "bottom": -8934.0625,
+            "left": 151.1875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "scene": "dot-expanded",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 151.1875,
+            "y": -9745.5390625,
+            "width": 780,
+            "height": 303.078125,
+            "top": -9745.5390625,
+            "right": 931.1875,
+            "bottom": -9442.4609375,
+            "left": 151.1875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 151.1875,
+            "y": -9735.9375,
+            "width": 900,
+            "height": 373.875,
+            "top": -9735.9375,
+            "right": 1051.1875,
+            "bottom": -9362.0625,
+            "left": 151.1875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "scene": "dot-reverse",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 151.1875,
+            "y": -8890.5390625,
+            "width": 780,
+            "height": 303.078125,
+            "top": -8890.5390625,
+            "right": 931.1875,
+            "bottom": -8587.4609375,
+            "left": 151.1875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 151.1875,
+            "y": -8880.9375,
+            "width": 900,
+            "height": 373.875,
+            "top": -8880.9375,
+            "right": 1051.1875,
+            "bottom": -8507.0625,
+            "left": 151.1875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "scene": "closing",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 151.1875,
+            "y": -10645.5390625,
+            "width": 780,
+            "height": 303.078125,
+            "top": -10645.5390625,
+            "right": 931.1875,
+            "bottom": -10342.4609375,
+            "left": 151.1875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 151.1875,
+            "y": -10635.9375,
+            "width": 900,
+            "height": 373.875,
+            "top": -10635.9375,
+            "right": 1051.1875,
+            "bottom": -10262.0625,
+            "left": 151.1875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "scene": "footer",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 151.1875,
+            "y": -10729.5390625,
+            "width": 780,
+            "height": 303.078125,
+            "top": -10729.5390625,
+            "right": 931.1875,
+            "bottom": -10426.4609375,
+            "left": 151.1875
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 151.1875,
+            "y": -10719.9375,
+            "width": 900,
+            "height": 373.875,
+            "top": -10719.9375,
+            "right": 1051.1875,
+            "bottom": -10346.0625,
+            "left": 151.1875
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scene": "hero-initial",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 180.625,
+            "y": 399.1953125,
+            "width": 780,
+            "height": 303.203125,
+            "top": 399.1953125,
+            "right": 960.625,
+            "bottom": 702.3984375,
+            "left": 180.625
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 180.625,
+            "y": 391.859375,
+            "width": 900,
+            "height": 373.875,
+            "top": 391.859375,
+            "right": 1080.625,
+            "bottom": 765.734375,
+            "left": 180.625
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scene": "hero-expanded",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 180.625,
+            "y": 354.1953125,
+            "width": 780,
+            "height": 303.203125,
+            "top": 354.1953125,
+            "right": 960.625,
+            "bottom": 657.3984375,
+            "left": 180.625
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 180.625,
+            "y": 363.859375,
+            "width": 900,
+            "height": 373.875,
+            "top": 363.859375,
+            "right": 1080.625,
+            "bottom": 737.734375,
+            "left": 180.625
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scene": "hero-reverse",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 180.625,
+            "y": 399.1953125,
+            "width": 780,
+            "height": 303.203125,
+            "top": 399.1953125,
+            "right": 960.625,
+            "bottom": 702.3984375,
+            "left": 180.625
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 180.625,
+            "y": 391.859375,
+            "width": 900,
+            "height": 373.875,
+            "top": 391.859375,
+            "right": 1080.625,
+            "bottom": 765.734375,
+            "left": 180.625
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scene": "editorial",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 180.625,
+            "y": -726.0078125,
+            "width": 780,
+            "height": 303.203125,
+            "top": -726.0078125,
+            "right": 960.625,
+            "bottom": -422.8046875,
+            "left": 180.625
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 180.625,
+            "y": -716.34375,
+            "width": 900,
+            "height": 373.875,
+            "top": -716.34375,
+            "right": 1080.625,
+            "bottom": -342.46875,
+            "left": 180.625
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scene": "story-1",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 180.625,
+            "y": -1570.0078125,
+            "width": 780,
+            "height": 303.203125,
+            "top": -1570.0078125,
+            "right": 960.625,
+            "bottom": -1266.8046875,
+            "left": 180.625
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 180.625,
+            "y": -1560.34375,
+            "width": 900,
+            "height": 373.875,
+            "top": -1560.34375,
+            "right": 1080.625,
+            "bottom": -1186.46875,
+            "left": 180.625
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scene": "story-2",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 180.625,
+            "y": -2393.0078125,
+            "width": 780,
+            "height": 303.203125,
+            "top": -2393.0078125,
+            "right": 960.625,
+            "bottom": -2089.8046875,
+            "left": 180.625
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 180.625,
+            "y": -2383.34375,
+            "width": 900,
+            "height": 373.875,
+            "top": -2383.34375,
+            "right": 1080.625,
+            "bottom": -2009.46875,
+            "left": 180.625
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scene": "story-3",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 180.625,
+            "y": -3217.0078125,
+            "width": 780,
+            "height": 303.203125,
+            "top": -3217.0078125,
+            "right": 960.625,
+            "bottom": -2913.8046875,
+            "left": 180.625
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 180.625,
+            "y": -3207.34375,
+            "width": 900,
+            "height": 373.875,
+            "top": -3207.34375,
+            "right": 1080.625,
+            "bottom": -2833.46875,
+            "left": 180.625
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scene": "services",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 180.625,
+            "y": -6647.0078125,
+            "width": 780,
+            "height": 303.203125,
+            "top": -6647.0078125,
+            "right": 960.625,
+            "bottom": -6343.8046875,
+            "left": 180.625
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 180.625,
+            "y": -6637.34375,
+            "width": 900,
+            "height": 373.875,
+            "top": -6637.34375,
+            "right": 1080.625,
+            "bottom": -6263.46875,
+            "left": 180.625
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scene": "carousel",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 180.625,
+            "y": -9360.0078125,
+            "width": 780,
+            "height": 303.203125,
+            "top": -9360.0078125,
+            "right": 960.625,
+            "bottom": -9056.8046875,
+            "left": 180.625
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 180.625,
+            "y": -9350.34375,
+            "width": 900,
+            "height": 373.875,
+            "top": -9350.34375,
+            "right": 1080.625,
+            "bottom": -8976.46875,
+            "left": 180.625
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scene": "dot-before",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 180.625,
+            "y": -10476.0078125,
+            "width": 780,
+            "height": 303.203125,
+            "top": -10476.0078125,
+            "right": 960.625,
+            "bottom": -10172.8046875,
+            "left": 180.625
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 180.625,
+            "y": -10466.34375,
+            "width": 900,
+            "height": 373.875,
+            "top": -10466.34375,
+            "right": 1080.625,
+            "bottom": -10092.46875,
+            "left": 180.625
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scene": "dot-middle",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 180.625,
+            "y": -10989.0078125,
+            "width": 780,
+            "height": 303.203125,
+            "top": -10989.0078125,
+            "right": 960.625,
+            "bottom": -10685.8046875,
+            "left": 180.625
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 180.625,
+            "y": -10979.34375,
+            "width": 900,
+            "height": 373.875,
+            "top": -10979.34375,
+            "right": 1080.625,
+            "bottom": -10605.46875,
+            "left": 180.625
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scene": "dot-expanded",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 180.625,
+            "y": -11502.0078125,
+            "width": 780,
+            "height": 303.203125,
+            "top": -11502.0078125,
+            "right": 960.625,
+            "bottom": -11198.8046875,
+            "left": 180.625
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 180.625,
+            "y": -11492.34375,
+            "width": 900,
+            "height": 373.875,
+            "top": -11492.34375,
+            "right": 1080.625,
+            "bottom": -11118.46875,
+            "left": 180.625
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scene": "dot-reverse",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 180.625,
+            "y": -10476.0078125,
+            "width": 780,
+            "height": 303.203125,
+            "top": -10476.0078125,
+            "right": 960.625,
+            "bottom": -10172.8046875,
+            "left": 180.625
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 180.625,
+            "y": -10466.34375,
+            "width": 900,
+            "height": 373.875,
+            "top": -10466.34375,
+            "right": 1080.625,
+            "bottom": -10092.46875,
+            "left": 180.625
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scene": "closing",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 180.625,
+            "y": -12488.0078125,
+            "width": 780,
+            "height": 303.203125,
+            "top": -12488.0078125,
+            "right": 960.625,
+            "bottom": -12184.8046875,
+            "left": 180.625
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 180.625,
+            "y": -12478.34375,
+            "width": 900,
+            "height": 373.875,
+            "top": -12478.34375,
+            "right": 1080.625,
+            "bottom": -12104.46875,
+            "left": 180.625
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1920,
+        "height": 1080
+      },
+      "scene": "footer",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 180.625,
+            "y": -12488.0078125,
+            "width": 780,
+            "height": 303.203125,
+            "top": -12488.0078125,
+            "right": 960.625,
+            "bottom": -12184.8046875,
+            "left": 180.625
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 180.625,
+            "y": -12478.34375,
+            "width": 900,
+            "height": 373.875,
+            "top": -12478.34375,
+            "right": 1080.625,
+            "bottom": -12104.46875,
+            "left": 180.625
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "scene": "hero-initial",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": 109.9765625,
+            "width": 331.515625,
+            "height": 164.046875,
+            "top": 109.9765625,
+            "right": 366.609375,
+            "bottom": 274.0234375,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": 131.421875,
+            "width": 331.515625,
+            "height": 177.15625,
+            "top": 131.421875,
+            "right": 366.609375,
+            "bottom": 308.578125,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "scene": "hero-expanded",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": 64.9765625,
+            "width": 331.515625,
+            "height": 164.046875,
+            "top": 64.9765625,
+            "right": 366.609375,
+            "bottom": 229.0234375,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": 103.421875,
+            "width": 331.515625,
+            "height": 177.15625,
+            "top": 103.421875,
+            "right": 366.609375,
+            "bottom": 280.578125,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "scene": "hero-reverse",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": 109.9765625,
+            "width": 331.515625,
+            "height": 164.046875,
+            "top": 109.9765625,
+            "right": 366.609375,
+            "bottom": 274.0234375,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": 131.421875,
+            "width": 331.515625,
+            "height": 177.15625,
+            "top": 131.421875,
+            "right": 366.609375,
+            "bottom": 308.578125,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "scene": "services",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 35.09375,
+            "y": -2125.6328125,
+            "width": 331.515625,
+            "height": 164.046875,
+            "top": -2125.6328125,
+            "right": 366.609375,
+            "bottom": -1961.5859375,
+            "left": 35.09375
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 35.09375,
+            "y": -2087.1875,
+            "width": 331.515625,
+            "height": 177.15625,
+            "top": -2087.1875,
+            "right": 366.609375,
+            "bottom": -1910.03125,
+            "left": 35.09375
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "scene": "hero-initial",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": 240.7421875,
+            "width": 780,
+            "height": 220.515625,
+            "top": 240.7421875,
+            "right": 869.078125,
+            "bottom": 461.2578125,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": 241.5859375,
+            "width": 555.46875,
+            "height": 235.828125,
+            "top": 241.5859375,
+            "right": 644.546875,
+            "bottom": 477.4140625,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "scene": "hero-expanded",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": 69.1328125,
+            "width": 780,
+            "height": 220.515625,
+            "top": 69.1328125,
+            "right": 869.078125,
+            "bottom": 289.6484375,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": 86.9765625,
+            "width": 555.46875,
+            "height": 235.828125,
+            "top": 86.9765625,
+            "right": 644.546875,
+            "bottom": 322.8046875,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "scene": "hero-reverse",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": 240.7421875,
+            "width": 780,
+            "height": 220.515625,
+            "top": 240.7421875,
+            "right": 869.078125,
+            "bottom": 461.2578125,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": 241.5859375,
+            "width": 555.46875,
+            "height": 235.828125,
+            "top": 241.5859375,
+            "right": 644.546875,
+            "bottom": 477.4140625,
+            "left": 89.078125
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "scene": "services",
+      "overflow": false,
+      "broken": [],
+      "hero": [
+        {
+          "id": "hero-foreground",
+          "inert": true,
+          "hidden": "true",
+          "opacity": "0",
+          "rect": {
+            "x": 89.078125,
+            "y": -3058.8671875,
+            "width": 780,
+            "height": 220.515625,
+            "top": -3058.8671875,
+            "right": 869.078125,
+            "bottom": -2838.3515625,
+            "left": 89.078125
+          }
+        },
+        {
+          "id": "hero-second",
+          "inert": false,
+          "hidden": "false",
+          "opacity": "1",
+          "rect": {
+            "x": 89.078125,
+            "y": -3041.0234375,
+            "width": 555.46875,
+            "height": 235.828125,
+            "top": -3041.0234375,
+            "right": 644.546875,
+            "bottom": -2805.1953125,
+            "left": 89.078125
+          }
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

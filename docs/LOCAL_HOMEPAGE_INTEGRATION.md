@@ -21,3 +21,16 @@ The integration-specific suite additionally checks reduced-motion keyboard/acces
 Run npm ci, npm run check, npm run lint:source, npm run check:seo and npm run build. Serve the actual out directory locally and run the existing qa/concept12 suites (contrast only on its optional review branch), qa/homepage-feedback.cjs and qa/integration-homepage.cjs. Set SHOWSET_PLAYWRIGHT_MODULE and SHOWSET_BASE_URL for the local environment. Final executed results and screenshots are in the local workspace outputs/nextjs/integration folder.
 
 Physical iPhone Safari/Android Chrome sessions are still unavailable. Hosted Actions remains unverified because the documented account billing/spending block prevents runner startup. The new hello@showset.co.za address is retained from PR 10, but inbox existence/delivery is not asserted. Colour approval and owner approval of the actual local preview are still required before any merge.
+
+## Final executed local results
+
+- Foundation baseline: 259 applicable assertions pass before PR 10 is applied.
+- Combined integration: 325 assertions pass (259 foundation + 25 homepage + 41 integration-specific), including first-load/no-JS/JS routes, history, full motion and Studio editing/publishing.
+- The combined development server also passes all 41 integration-specific checks under React development mode.
+- Baseline and combined each have 98 actual-browser screenshots with zero recorded horizontal overflows, broken loaded images or page errors. Forward/reverse desktop and mobile recordings are retained for both versions.
+- Optional contrast branch: 55 contrast + eight Studio mask + 25 homepage assertions pass. Its mask defaults/reset/scroll/edit/reduced-motion alignment are tested separately. This does not approve its colours or claim the optional branch completed physical-device QA.
+- Clean npm ci reports zero vulnerabilities; TypeScript, source/assets, authored SEO and production build pass.
+
+Local source merge: 06ea46d (parents 451377b and efc11db). Optional review variant: cdcaa36 on integration/concept12-homepage-contrast-review. The current preview branch is integration/concept12-foundations-homepage and contains no contrast layer. The original PR 12 branch remains at 015db05 and main remains at e59130f.
+
+Local review gallery: http://127.0.0.1:3005/integration/index.html. Actual development homepage / Studio: http://127.0.0.1:3001/ and /studio/. Nothing was pushed, merged into main or deployed during this task.
