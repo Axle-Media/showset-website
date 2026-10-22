@@ -62,6 +62,7 @@ export function bindConcept(
   key: string,
   { catalog, g, editor }: Context,
 ) {
+  const document = host.ownerDocument;
   const page =
     Object.values(catalog).find(
       (p) => routeKeys[p.route] === key && p.route !== "/services/",
@@ -684,5 +685,5 @@ export function bindConcept(
     g.header.buttonHref !== defaultGlobals.header.buttonHref
   )
     link(".header-cta", g.header.buttonLabel, g.header.buttonHref);
-  refineHeadingPeriods(host);
+  if (typeof getComputedStyle === "function") refineHeadingPeriods(host);
 }

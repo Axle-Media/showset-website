@@ -1,4 +1,5 @@
 "use client";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { Globals, PageData } from "@/lib/types";
 import { apiEndpoint, defaultPages } from "@/lib/data";
@@ -12,6 +13,7 @@ type LayoutProps = {
   page: PageData;
   g: Globals;
   catalog?: Record<string, PageData>;
+  initialMarkup?: string;
   editor?: boolean;
   onSelect?: (id: string) => void;
   selectedId?: string;
@@ -21,10 +23,12 @@ export function SiteLayout({
   page,
   g,
   catalog = defaultPages,
+  initialMarkup,
   editor,
   onSelect,
   selectedId,
 }: LayoutProps) {
+  const pathname = usePathname();
   const root = useRef<HTMLDivElement>(null),
     select = useRef(onSelect),
     lastRoute = useRef(page.route);
@@ -59,7 +63,7 @@ export function SiteLayout({
       route: routeKeys[page.route] || "home",
       getMetadata: (key: string) => {
         const pages = { ...catalog, [page.slug]: page };
-        const entry = Object.values(pages).find(p => p.route === location.pathname)
+        const entry = Object.values(pages).find(p => routeKeys[p.route] === key && p.route === location.pathname)
           || Object.values(pages).find(p => routeKeys[p.route] === key);
         return entry ? conceptMetadata(entry) : undefined;
       },
@@ -151,15 +155,17 @@ export function SiteLayout({
     <div
       ref={root}
       className="concept-12-root"
+      data-next-path={pathname}
       data-static-motion={!g.motion.enabled || reduced || !!editor || undefined}
       data-circle-reveal-off={!g.motion.circleReveal || undefined}
-      dangerouslySetInnerHTML={{ __html: markup }}
+      dangerouslySetInnerHTML={{ __html: initialMarkup || markup }}
     />
   );
 }
 type Props = {
   initialPage: PageData;
   initialGlobals: Globals;
+  initialMarkup?: string;
   editor?: boolean;
   onSelect?: (id: string) => void;
   selectedId?: string;
@@ -167,6 +173,7 @@ type Props = {
 export default function SiteShell({
   initialPage,
   initialGlobals,
+  initialMarkup,
   editor,
   onSelect,
   selectedId,
@@ -219,6 +226,7 @@ export default function SiteShell({
   return (
     <SiteLayout
       page={page}
+      initialMarkup={initialMarkup}
       g={g}
       catalog={catalog}
       editor={editor}

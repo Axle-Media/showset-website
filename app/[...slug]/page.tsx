@@ -1,3 +1,4 @@
+import { conceptDocument } from "@/lib/concept-12/document";
 import { conceptMetadata } from "@/lib/concept-12/metadata";
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
@@ -19,5 +20,5 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function ContentPage({ params }: { params: Promise<{ slug: string[] }> }) {
   const page = slugToPage((await params).slug);
   if (!page) notFound();
-  return <SiteShell initialPage={page} initialGlobals={defaultGlobals} />;
+  return <SiteShell initialMarkup={conceptDocument(page, defaultGlobals)} initialPage={page} initialGlobals={defaultGlobals} />;
 }
