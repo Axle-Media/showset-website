@@ -250,11 +250,6 @@
   :is(.wipe-heading,.block-heading) .wipe-line.accent-line::after {
   background:var(--sand);
 }
-/* The second homepage photographic scene uses the same teal swipe on both
-   lines as the other photo-backed headings. Text accent colours are unchanged. */
-.hero-second :is(.wipe-heading,.block-heading) .wipe-line.accent-line::after {
-  background:var(--teal);
-}
 /* Text stays physically still. The only perceived reveal is the coloured swipe:
    a synchronized discrete clip releases the stationary glyphs once the bar covers
    them, with no rising, sliding, fading or radial text movement. */
@@ -321,7 +316,11 @@
   clip-path:inset(0 100% 0 0);
   animation:showsetPhotoBlockSwipe .75s cubic-bezier(.75,.06,.23,.95) .18s both;
 }
-.hero-title .hero-accent-phrase::after{background:var(--teal)}
+.hero-title .hero-accent-phrase::after{background:var(--sand)}
+/* Force only the two opening-line animations back to their initial state before
+   replaying after a return scroll; the scene and photo remain untouched. */
+.hero-title.is-rearming .line>span,
+.hero-title.is-rearming .line::after{animation:none!important}
 .hero-title .line:nth-child(2)::after{animation-delay:.30s}
 
 /* A film chapter should not rise underneath a block-swipe headline. */
