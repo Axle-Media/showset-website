@@ -252,31 +252,41 @@
   :is(.wipe-heading,.block-heading) .wipe-line.accent-line::after {
   background:var(--sand);
 }
+/* Text stays physically still. The only perceived reveal is the coloured swipe:
+   a synchronized discrete clip releases the stationary glyphs once the bar covers
+   them, with no rising, sliding, fading or radial text movement. */
 :is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
   :is(.wipe-heading,.block-heading) .wipe-line>span {
-  opacity:0!important;
-  transform:translateY(104%)!important;
-  clip-path:none!important;
+  opacity:1!important;
+  transform:none!important;
+  clip-path:inset(0 100% 0 0);
   animation:none!important;
-  transition:opacity .5s .24s,transform .88s var(--easing) .2s!important;
-  will-change:opacity,transform;
+  transition:none!important;
+  will-change:clip-path;
 }
 :is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
   :is(.wipe-heading,.block-heading).is-revealed .wipe-line>span {
-  opacity:1!important;
-  transform:translateY(0)!important;
+  animation:showsetPhotoTextUnmask .75s linear both!important;
+}
+:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+  :is(.wipe-heading,.block-heading).is-revealed .wipe-line:nth-child(2)>span {
+  animation-delay:.12s!important;
+}
+:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+  :is(.wipe-heading,.block-heading).is-revealed .wipe-line:nth-child(3)>span {
+  animation-delay:.22s!important;
 }
 :is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
   :is(.wipe-heading,.block-heading).is-revealed .wipe-line::after {
-  animation:showsetPhotoBlockSwipe .95s cubic-bezier(.75,.06,.23,.95) both!important;
+  animation:showsetPhotoBlockSwipe .75s cubic-bezier(.75,.06,.23,.95) both!important;
 }
 :is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
   :is(.wipe-heading,.block-heading).is-revealed .wipe-line:nth-child(2)::after {
-  animation-delay:.16s!important;
+  animation-delay:.12s!important;
 }
 :is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
   :is(.wipe-heading,.block-heading).is-revealed .wipe-line:nth-child(3)::after {
-  animation-delay:.28s!important;
+  animation-delay:.22s!important;
 }
 @keyframes showsetPhotoBlockSwipe {
   0%{clip-path:inset(0 100% 0 0)}
@@ -284,20 +294,48 @@
   55%{clip-path:inset(0 0 0 0)}
   100%{clip-path:inset(0 0 0 100%)}
 }
-/* The initial photographic hero uses its original staggered rising-line entrance;
-   restore the matching coloured bar on each existing line without rewriting markup. */
+@keyframes showsetPhotoTextUnmask {
+  0%,46%{clip-path:inset(0 100% 0 0)}
+  47%,100%{clip-path:inset(0 0 0 0)}
+}
+/* Hero title also uses ONLY the block swipe, not the legacy heroLine rise.
+   Match its invisible text release to the leading edge of each coloured bar. */
 .hero-title .line{position:relative;isolation:isolate}
+.hero-title .line>span {
+  transform:none!important;
+  opacity:1!important;
+  transition:none!important;
+  clip-path:inset(0 100% 0 0);
+  animation:showsetPhotoTextUnmask .75s linear .18s both!important;
+  will-change:clip-path;
+}
+.hero-title .line:nth-child(2)>span{animation-delay:.30s!important}
+.hero-title .line:nth-child(3)>span{animation-delay:.40s!important}
 .hero-title .line::after{
   content:"";
   position:absolute;inset:5% 0;
   background:var(--teal);
   pointer-events:none;z-index:2;
   clip-path:inset(0 100% 0 0);
-  animation:showsetPhotoBlockSwipe .95s cubic-bezier(.75,.06,.23,.95) .24s both;
+  animation:showsetPhotoBlockSwipe .75s cubic-bezier(.75,.06,.23,.95) .18s both;
 }
 .hero-title .hero-accent-phrase::after{background:var(--sand)}
-.hero-title .line:nth-child(2)::after{animation-delay:.37s}
-.hero-title .line:nth-child(3)::after{animation-delay:.5s}
+.hero-title .line:nth-child(2)::after{animation-delay:.30s}
+.hero-title .line:nth-child(3)::after{animation-delay:.40s}
+
+/* A film chapter should not rise underneath a block-swipe headline. */
+.film-step{transform:none!important;transition:opacity .44s ease!important}
+.film-step.is-on{transform:none!important}
+
+/* The still / accessible modes must show the entire heading instantly. */
+:is([data-static-motion],[data-circle-reveal-off],.c12-reveal-off)
+  .hero-title .line>span {
+  clip-path:none!important;animation:none!important;
+  opacity:1!important;transform:none!important;
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-title .line>span{clip-path:none!important;animation:none!important;opacity:1!important;transform:none!important}
+}
 
 /* No swipe may obscure reading or keyboard access in reduced-motion/Studio still
    mode, even though the later global circular-text animation uses !important. */
