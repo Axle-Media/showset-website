@@ -70,9 +70,9 @@ async function styles(page, selector) {
         accent: getComputedStyle(accent, '::after').backgroundColor
       };
     });
-    ck('Second photographic hero has matching teal block swipes on both lines',
+    ck('Second photographic hero uses a teal first block and sand second block',
       secondSwipe.first === 'rgb(18, 186, 175)' &&
-      secondSwipe.accent === secondSwipe.first, secondSwipe);
+      secondSwipe.accent === 'rgb(229, 216, 195)', secondSwipe);
     const hero = await page.locator('.hero-title .line').first().evaluate(el => {
       const css = getComputedStyle(el, '::after');
       const text = getComputedStyle(el.querySelector(':scope > span'));
@@ -86,6 +86,42 @@ async function styles(page, selector) {
         && hero.textAnimation.includes('showsetPhotoTextUnmask')
         && !hero.textAnimation.includes('heroLine')
         && hero.textTransform === 'none' && parseFloat(hero.textTransition) === 0, hero);
+    // Both scroll hero headings replay when returning through their visible
+    // scene, without requiring a route change or a page reload.
+    await page.waitForTimeout(1050);
+    await page.evaluate(() => {
+      window.__showsetReplayCounts = { first: 0, second: 0 };
+      document.querySelector('.hero-title').addEventListener('animationstart', e => {
+        if (e.animationName === 'showsetPhotoTextUnmask') window.__showsetReplayCounts.first++;
+      });
+      document.querySelector('.hero-second .wipe-heading').addEventListener('animationstart', e => {
+        if (e.animationName === 'showsetPhotoTextUnmask') window.__showsetReplayCounts.second++;
+      });
+    });
+    const scrollHeroTo = async fraction => {
+      await page.locator('#hero-track').evaluate((h, p) => {
+        window.scrollTo({ top: scrollY + h.getBoundingClientRect().top +
+          Math.max(0, h.offsetHeight - innerHeight) * p, behavior: 'instant' });
+      }, fraction);
+      await page.waitForTimeout(240);
+    };
+    await scrollHeroTo(.85);
+    await page.waitForTimeout(900);
+    await scrollHeroTo(.12);
+    const firstReplay = await page.evaluate(() => window.__showsetReplayCounts.first);
+    ck('Opening hero block reveal replays when scrolling back upwards', firstReplay >= 2, { firstReplay });
+    await scrollHeroTo(.85);
+    await page.waitForTimeout(900);
+    const secondBefore = await page.evaluate(() => window.__showsetReplayCounts.second);
+    await page.locator('#hero-track').evaluate(h => {
+      window.scrollTo({ top: scrollY + h.getBoundingClientRect().bottom + innerHeight * .5,
+        behavior: 'instant' });
+    });
+    await page.waitForTimeout(180);
+    await scrollHeroTo(.85);
+    const secondAfter = await page.evaluate(() => window.__showsetReplayCounts.second);
+    ck('Second hero block reveal replays after returning from the next section',
+      secondAfter > secondBefore, { secondBefore, secondAfter });
     const heroTransforms = await page.evaluate(() => {
       const a = document.querySelector('#hero-foreground');
       const b = document.querySelector('#hero-second');
