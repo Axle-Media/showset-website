@@ -361,22 +361,25 @@
 .footer-socials{
   display:flex;
   align-items:center;
-  gap:15px;
+  gap:16px;
   margin-top:6px;
 }
 .footer-social{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  width:36px;
-  height:36px;
+  width:30px;
+  height:30px;
+  position:relative;
   flex:none;
   color:var(--teal);
   border:1px solid rgba(18,186,175,.26);
   border-radius:50%;
   transition:color .2s,background-color .2s,border-color .2s,transform .2s;
 }
-.footer-social svg{display:block;width:18px;height:18px}
+.footer-social svg{display:block;width:14px;height:14px}
+/* Keep a generous pointer target while the visible icons remain compact. */
+.footer-social[href]::before{content:"";position:absolute;inset:-7px;border-radius:50%}
 .footer-social[href]:hover{
   color:#061b2b;
   background:var(--teal);
