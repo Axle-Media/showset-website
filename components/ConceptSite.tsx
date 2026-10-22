@@ -7,6 +7,7 @@ import markup from "@/lib/concept-12/markup.json";
 import { mountConcept } from "@/lib/concept-12/runtime";
 import { bindConcept, routeKeys } from "@/lib/concept-12/bridge";
 import { conceptMetadata } from "@/lib/concept-12/metadata";
+import { patchConcept } from "@/lib/concept-12/patch";
 import { safeHref } from "@/lib/safe";
 import { compatiblePages, compatibleGlobals } from "@/lib/concept-12/compat";
 type LayoutProps = {
@@ -33,6 +34,9 @@ export function SiteLayout({
     select = useRef(onSelect),
     lastRoute = useRef(page.route);
   select.current = onSelect;
+  const latest = useRef({page,g,catalog,editor,reduced:false});
+  const engine = useRef<ReturnType<typeof mountConcept> | null>(null);
+  const rendered = useRef<unknown>(null);
   const [reduced, setReduced] = useState(false);
   useEffect(() => {
     const q = matchMedia("(prefers-reduced-motion:reduce)");
@@ -41,25 +45,10 @@ export function SiteLayout({
     q.addEventListener("change", sync);
     return () => q.removeEventListener("change", sync);
   }, []);
-  useLayoutEffect(() => {
-    const host = root.current;
-    if (!host) return;
-    const y = lastRoute.current === page.route ? scrollY : 0;
-    lastRoute.current = page.route;
-    // React owns the host; the upstream engine exclusively owns its descendants.
-    host.innerHTML = markup;
-    bindConcept(host, "home", {
-      catalog: { ...catalog, [page.slug]: page },
-      g,
-      editor,
-    });
-    if (routeKeys[page.route] && routeKeys[page.route] !== "home")
-      bindConcept(host, routeKeys[page.route], {
-        catalog: { ...catalog, [page.slug]: page },
-        g,
-        editor,
-      });
-    const dispose = mountConcept(host, {
+  latest.current = {page,g,catalog,editor,reduced};
+  function optionsFor(context: typeof latest.current) {
+    const {page,g,catalog,editor,reduced}=context;
+    return {
       route: routeKeys[page.route] || "home",
       getMetadata: (key: string) => {
         const pages = { ...catalog, [page.slug]: page };
@@ -123,9 +112,31 @@ export function SiteLayout({
             data[key].preview = item.description;
         });
       },
+    };
+  }
+  useLayoutEffect(() => {
+    const host = root.current;
+    if (!host) return;
+    const y = lastRoute.current === page.route ? scrollY : 0;
+    lastRoute.current = page.route;
+    // React owns the host; the upstream engine exclusively owns its descendants.
+    host.innerHTML = markup;
+    bindConcept(host, "home", {
+      catalog: { ...catalog, [page.slug]: page },
+      g,
+      editor,
     });
+    if (routeKeys[page.route] && routeKeys[page.route] !== "home")
+      bindConcept(host, routeKeys[page.route], {
+        catalog: { ...catalog, [page.slug]: page },
+        g,
+        editor,
+      });
+    const dispose = mountConcept(host, optionsFor(latest.current));
+    engine.current=dispose;
+    rendered.current=latest.current;
     const choose = (event: MouseEvent) => {
-      if (!editor) return;
+      if (!latest.current.editor) return;
       const e = (event.target as Element).closest<HTMLElement>(
         "[data-section]",
       );
@@ -139,8 +150,17 @@ export function SiteLayout({
     return () => {
       host.removeEventListener("click", choose, true);
       dispose();
+      engine.current=null;
     };
-  }, [page, g, catalog, editor, reduced]);
+  }, [page.route]);
+  useLayoutEffect(() => {
+    const host=root.current;
+    if (!host || !engine.current || rendered.current===latest.current) return;
+    const context=latest.current;
+    patchConcept(host, host.dataset.conceptRoute || routeKeys[page.route] || "home", {catalog:{...catalog,[page.slug]:page},g,editor});
+    engine.current.refresh(optionsFor(context));
+    rendered.current=context;
+  }, [page,g,catalog,editor,reduced]);
   useEffect(() => {
     root.current
       ?.querySelectorAll("[data-section]")
