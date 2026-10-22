@@ -1,0 +1,1124 @@
+{
+  "checks": [
+    {
+      "name": "Dropdown arrow opens and focuses first route",
+      "pass": true
+    },
+    {
+      "name": "Dropdown Escape restores trigger focus",
+      "pass": true
+    },
+    {
+      "name": "Mobile Shift-Tab wraps inside navigation",
+      "pass": true
+    },
+    {
+      "name": "Mobile Tab wraps to toggle",
+      "pass": true
+    },
+    {
+      "name": "Mobile Escape closes, restores focus and makes panel inert",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion exposes every story act",
+      "pass": true,
+      "detail": {
+        "track": 857,
+        "stage": 857,
+        "steps": [
+          {
+            "opacity": "1",
+            "position": "relative",
+            "height": 191,
+            "clip": "none"
+          },
+          {
+            "opacity": "1",
+            "position": "relative",
+            "height": 191,
+            "clip": "none"
+          },
+          {
+            "opacity": "1",
+            "position": "relative",
+            "height": 170,
+            "clip": "none"
+          }
+        ],
+        "hero2": "1",
+        "sticky": [
+          "relative",
+          "relative",
+          "relative",
+          "relative"
+        ]
+      }
+    },
+    {
+      "name": "Reduced motion removes pinned waiting and shows second hero copy",
+      "pass": true,
+      "detail": {
+        "track": 857,
+        "stage": 857,
+        "steps": [
+          {
+            "opacity": "1",
+            "position": "relative",
+            "height": 191,
+            "clip": "none"
+          },
+          {
+            "opacity": "1",
+            "position": "relative",
+            "height": 191,
+            "clip": "none"
+          },
+          {
+            "opacity": "1",
+            "position": "relative",
+            "height": 170,
+            "clip": "none"
+          }
+        ],
+        "hero2": "1",
+        "sticky": [
+          "relative",
+          "relative",
+          "relative",
+          "relative"
+        ]
+      }
+    },
+    {
+      "name": "Reduced-motion carousel still responds without transition",
+      "pass": true
+    },
+    {
+      "name": "Email error uses native validity and focus",
+      "pass": true
+    },
+    {
+      "name": "Contact selection Escape restores trigger",
+      "pass": true
+    },
+    {
+      "name": "All public routes at 320x900",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "All public routes at 390x844",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "All public routes at 768x1024",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "All public routes at 1024x900",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "All public routes at 1440x900",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "All public routes at 390x320",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "All public routes at 1024x440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "All public routes at 720x450",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Emulated touch swipe advances the case rail",
+      "pass": true
+    },
+    {
+      "name": "Emulated touch service link reaches its real route",
+      "pass": true
+    },
+    {
+      "name": "No browser runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "metrics": [
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "route": "/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "route": "/events-experiences/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "route": "/creative-design/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "route": "/digital-marketing/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "route": "/content-production/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "route": "/our-studio/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "route": "/our-work/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "route": "/contact/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "route": "/work/atmosphere-is-everything/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "route": "/work/made-to-be-remembered/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "route": "/work/behind-every-moment/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 900
+      },
+      "route": "/services/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/events-experiences/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/creative-design/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/digital-marketing/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/content-production/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/our-studio/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/our-work/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/contact/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/work/atmosphere-is-everything/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/work/made-to-be-remembered/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/work/behind-every-moment/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/services/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/events-experiences/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/creative-design/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/digital-marketing/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/content-production/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/our-studio/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/our-work/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/contact/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/work/atmosphere-is-everything/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/work/made-to-be-remembered/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/work/behind-every-moment/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/services/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "route": "/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "route": "/events-experiences/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "route": "/creative-design/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "route": "/digital-marketing/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "route": "/content-production/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "route": "/our-studio/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "route": "/our-work/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "route": "/contact/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "route": "/work/atmosphere-is-everything/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "route": "/work/made-to-be-remembered/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "route": "/work/behind-every-moment/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 900
+      },
+      "route": "/services/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/events-experiences/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/creative-design/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/digital-marketing/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/content-production/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/our-studio/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/our-work/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/contact/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/work/atmosphere-is-everything/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/work/made-to-be-remembered/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/work/behind-every-moment/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/services/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "route": "/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "route": "/events-experiences/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "route": "/creative-design/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "route": "/digital-marketing/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "route": "/content-production/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "route": "/our-studio/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "route": "/our-work/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "route": "/contact/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "route": "/work/atmosphere-is-everything/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "route": "/work/made-to-be-remembered/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "route": "/work/behind-every-moment/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 390,
+        "height": 320
+      },
+      "route": "/services/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "route": "/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "route": "/events-experiences/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "route": "/creative-design/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "route": "/digital-marketing/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "route": "/content-production/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "route": "/our-studio/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "route": "/our-work/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "route": "/contact/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "route": "/work/atmosphere-is-everything/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "route": "/work/made-to-be-remembered/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "route": "/work/behind-every-moment/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 1024,
+        "height": 440
+      },
+      "route": "/services/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 720,
+        "height": 450
+      },
+      "route": "/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 720,
+        "height": 450
+      },
+      "route": "/events-experiences/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 720,
+        "height": 450
+      },
+      "route": "/creative-design/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 720,
+        "height": 450
+      },
+      "route": "/digital-marketing/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 720,
+        "height": 450
+      },
+      "route": "/content-production/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 720,
+        "height": 450
+      },
+      "route": "/our-studio/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 720,
+        "height": 450
+      },
+      "route": "/our-work/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 720,
+        "height": 450
+      },
+      "route": "/contact/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 720,
+        "height": 450
+      },
+      "route": "/work/atmosphere-is-everything/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 720,
+        "height": 450
+      },
+      "route": "/work/made-to-be-remembered/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 720,
+        "height": 450
+      },
+      "route": "/work/behind-every-moment/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    },
+    {
+      "size": {
+        "width": 720,
+        "height": 450
+      },
+      "route": "/services/",
+      "overflow": false,
+      "heading": "visible",
+      "broken": []
+    }
+  ],
+  "errors": [],
+  "physicalDevices": "Unavailable; not tested",
+  "zoom": "720px layout proxy for 1440px at 200%; native browser zoom not claimed"
+}
