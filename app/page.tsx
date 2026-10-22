@@ -1,3 +1,12 @@
-import {defaultPages,defaultGlobals} from '@/lib/data';
+import type { Metadata } from 'next';
+import { defaultPages, defaultGlobals } from '@/lib/data';
 import SiteShell from '@/components/SiteShell';
-export default function Home(){return <SiteShell initialPage={defaultPages.home} initialGlobals={defaultGlobals}/>}
+
+export const metadata: Metadata = {
+  title: defaultPages.home.seo.title,
+  description: defaultPages.home.seo.description,
+};
+
+export default function Home() {
+  return <SiteShell initialPage={defaultPages.home} initialGlobals={defaultGlobals} />;
+}
