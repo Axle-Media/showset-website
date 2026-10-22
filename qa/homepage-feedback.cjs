@@ -114,6 +114,42 @@ async function position(page, selector, fraction = 0) {
       await page.locator('.dot-words h2 br').count() === 1);
     check('Closing CTA follows body text',
       await page.locator('.end-bottom p + a.end-link').count() === 1);
+    for (const width of [833, 1440]) {
+      await page.setViewportSize({ width, height: 900 });
+      const copy = await page.locator('#ending .end-bottom>p').evaluate(el => {
+        const style = getComputedStyle(el);
+        return {
+          lines: el.getBoundingClientRect().height / parseFloat(style.lineHeight),
+          width: el.getBoundingClientRect().width,
+          maxWidth: style.maxWidth,
+          text: el.textContent.trim(),
+        };
+      });
+      check('Closing paragraph stays within two lines on desktop ' + width,
+        copy.lines <= 2.1 && copy.text.endsWith('start.'), copy);
+    }
+    const buttonMatch = await page.evaluate(() => {
+      const sample = document.querySelector('.hero-links .solid-link');
+      const closing = document.querySelector('#ending .end-link');
+      if (!sample || !closing) return null;
+      const pick = el => {
+        const css = getComputedStyle(el);
+        return {
+          background: css.backgroundColor,
+          foreground: css.color,
+          borderRadius: css.borderRadius,
+          fontSize: css.fontSize,
+          paddingTop: css.paddingTop,
+          borderTop: css.borderTopWidth,
+          borderBottom: css.borderBottomWidth,
+        };
+      };
+      return { sample: pick(sample), closing: pick(closing), href: closing.getAttribute('href') };
+    });
+    check('Closing CTA uses the shared primary button design',
+      buttonMatch && JSON.stringify(buttonMatch.sample) === JSON.stringify(buttonMatch.closing)
+      && buttonMatch.href === '/contact/', buttonMatch);
+    await page.setViewportSize({ width: 1440, height: 900 });
 
     check('Footer contact column exists', await page.locator('.footer-contact').count() === 1);
     check('Footer email domain', await page.locator('[data-footer-email]').getAttribute('href') === 'mailto:hello@showset.co.za');
