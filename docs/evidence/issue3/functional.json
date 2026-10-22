@@ -1,0 +1,218 @@
+{
+  "checks": [
+    {
+      "name": "Requested two-line desktop hero retains original words",
+      "pass": true
+    },
+    {
+      "name": "Original photographic expansion equation",
+      "pass": true
+    },
+    {
+      "name": "Hero reverses to source initial state",
+      "pass": true
+    },
+    {
+      "name": "Story chapter 0",
+      "pass": true
+    },
+    {
+      "name": "Circular heading visible 0",
+      "pass": true
+    },
+    {
+      "name": "Story chapter 1",
+      "pass": true
+    },
+    {
+      "name": "Circular heading visible 1",
+      "pass": true
+    },
+    {
+      "name": "Story chapter 2",
+      "pass": true
+    },
+    {
+      "name": "Circular heading visible 2",
+      "pass": true
+    },
+    {
+      "name": "Scroll-selected service 0",
+      "pass": true
+    },
+    {
+      "name": "Scroll-selected service 1",
+      "pass": true
+    },
+    {
+      "name": "Scroll-selected service 2",
+      "pass": true
+    },
+    {
+      "name": "Scroll-selected service 3",
+      "pass": true
+    },
+    {
+      "name": "Keyboard focus selects service",
+      "pass": true
+    },
+    {
+      "name": "Service link uses real route",
+      "pass": true
+    },
+    {
+      "name": "Original centred dot reverses",
+      "pass": true
+    },
+    {
+      "name": "Dot retains full-resolution clip geometry",
+      "pass": true
+    },
+    {
+      "name": "Three originals plus seamless clones",
+      "pass": true
+    },
+    {
+      "name": "Desktop reel has three columns",
+      "pass": true
+    },
+    {
+      "name": "Carousel arrow key advances",
+      "pass": true
+    },
+    {
+      "name": "Carousel pauses on hover/focus",
+      "pass": true
+    },
+    {
+      "name": "Dropdown opens",
+      "pass": true
+    },
+    {
+      "name": "Dropdown Escape closes",
+      "pass": true
+    },
+    {
+      "name": "Dropdown outside click closes",
+      "pass": true
+    },
+    {
+      "name": "Source route transition reaches Studio page",
+      "pass": true
+    },
+    {
+      "name": "Source curtain completes",
+      "pass": true
+    },
+    {
+      "name": "Browser back restores homepage",
+      "pass": true
+    },
+    {
+      "name": "Navigation does not duplicate carousel clones",
+      "pass": true
+    },
+    {
+      "name": "Mobile menu opens",
+      "pass": true
+    },
+    {
+      "name": "Mobile menu Escape unlocks scroll",
+      "pass": true
+    },
+    {
+      "name": "Accordion keyboard /events-experiences/",
+      "pass": true
+    },
+    {
+      "name": "Accordion keyboard /creative-design/",
+      "pass": true
+    },
+    {
+      "name": "Accordion keyboard /digital-marketing/",
+      "pass": true
+    },
+    {
+      "name": "Accordion keyboard /content-production/",
+      "pass": true
+    },
+    {
+      "name": "Accordion keyboard /our-studio/",
+      "pass": true
+    },
+    {
+      "name": "Contact selection keyboard",
+      "pass": true
+    },
+    {
+      "name": "Form required validation",
+      "pass": true
+    },
+    {
+      "name": "Original preview form gives honest non-delivery feedback",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion disables carousel transitions",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion exposes hero heading",
+      "pass": true
+    },
+    {
+      "name": "Studio heading edit renders source component",
+      "pass": true
+    },
+    {
+      "name": "Studio typography and image radius",
+      "pass": true
+    },
+    {
+      "name": "Studio responsive font/crop controls",
+      "pass": true
+    },
+    {
+      "name": "Save Draft persists after reload",
+      "pass": true
+    },
+    {
+      "name": "Draft does not overwrite published preview",
+      "pass": true
+    },
+    {
+      "name": "Publish Preview renders saved Concept 12 content",
+      "pass": true
+    },
+    {
+      "name": "Recovery snapshot retained",
+      "pass": true
+    },
+    {
+      "name": "Studio/public share exact preview geometry",
+      "pass": true,
+      "detail": {
+        "a": {
+          "font": "650 31px / 33.48px Poppins, \"Inter Display\", Inter, \"Segoe UI\", sans-serif",
+          "x": 35.09375,
+          "y": 300.734375
+        },
+        "z": {
+          "font": "650 31px / 33.48px Poppins, \"Inter Display\", Inter, \"Segoe UI\", sans-serif",
+          "x": 35.09375,
+          "y": 300.734375
+        }
+      }
+    },
+    {
+      "name": "Editor rerenders never accumulate rail clones",
+      "pass": true
+    },
+    {
+      "name": "No runtime exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}
