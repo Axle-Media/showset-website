@@ -5,6 +5,7 @@ import { apiEndpoint, defaultPages } from "@/lib/data";
 import markup from "@/lib/concept-12/markup.json";
 import { mountConcept } from "@/lib/concept-12/runtime";
 import { bindConcept, routeKeys } from "@/lib/concept-12/bridge";
+import { conceptMetadata } from "@/lib/concept-12/metadata";
 import { safeHref } from "@/lib/safe";
 import { compatiblePages, compatibleGlobals } from "@/lib/concept-12/compat";
 type LayoutProps = {
@@ -56,6 +57,12 @@ export function SiteLayout({
       });
     const dispose = mountConcept(host, {
       route: routeKeys[page.route] || "home",
+      getMetadata: (key: string) => {
+        const pages = { ...catalog, [page.slug]: page };
+        const entry = Object.values(pages).find(p => p.route === location.pathname)
+          || Object.values(pages).find(p => routeKeys[p.route] === key);
+        return entry ? conceptMetadata(entry) : undefined;
+      },
       editor: !!editor,
       staticMotion: !g.motion.enabled || reduced || !!editor,
       heroScale: Math.max(1, Math.min(3, g.motion.heroScale)),

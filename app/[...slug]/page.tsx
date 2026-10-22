@@ -1,3 +1,4 @@
+import { conceptMetadata } from "@/lib/concept-12/metadata";
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { slugToPage, defaultGlobals, pageList } from '@/lib/data';
@@ -12,11 +13,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
   const page = slugToPage((await params).slug);
   if (!page) notFound();
-  const label = page.seo.title || page.title;
-  return {
-    title: label.includes('SHOWSET') ? label : `${label} | SHOWSET`,
-    description: page.seo.description || page.sections[0]?.body || 'SHOWSET events and creative agency.',
-  };
+  return conceptMetadata(page);
 }
 
 export default async function ContentPage({ params }: { params: Promise<{ slug: string[] }> }) {
