@@ -1,0 +1,126 @@
+{
+  "sampleFrames": 121,
+  "medianFrameGapMs": 6.900000000000091,
+  "maximumFrameGapMs": 7.2000000000000455,
+  "longTasksMs": [],
+  "brokenImages": [],
+  "resources": [
+    {
+      "name": "/fonts/showset-0.woff2",
+      "duration": 6.5999999940395355,
+      "transferSize": 25136
+    },
+    {
+      "name": "/fonts/showset-4.woff2",
+      "duration": 10.799999982118607,
+      "transferSize": 8116
+    },
+    {
+      "name": "/_next/static/chunks/3rs-tabimyjsv.css",
+      "duration": 10.199999988079071,
+      "transferSize": 102159
+    },
+    {
+      "name": "/_next/static/chunks/12jg43355bbw3.js",
+      "duration": 14.800000011920929,
+      "transferSize": 32403
+    },
+    {
+      "name": "/_next/static/chunks/1ai8gtzvn4_07.js",
+      "duration": 17.599999994039536,
+      "transferSize": 171051
+    },
+    {
+      "name": "/_next/static/chunks/2khxl0v1q4i6n.js",
+      "duration": 18.200000017881393,
+      "transferSize": 230120
+    },
+    {
+      "name": "/_next/static/chunks/turbopack-3-ry682tkyiqk.js",
+      "duration": 17.80000001192093,
+      "transferSize": 10330
+    },
+    {
+      "name": "/_next/static/chunks/0umf92h1sb77c.js",
+      "duration": 19.600000023841858,
+      "transferSize": 14122
+    },
+    {
+      "name": "/_next/static/chunks/2859a8sh5qs4_.js",
+      "duration": 23.900000005960464,
+      "transferSize": 274654
+    },
+    {
+      "name": "/_next/static/chunks/2lyzuins5hu_-.js",
+      "duration": 20.100000023841858,
+      "transferSize": 117723
+    },
+    {
+      "name": "/brand/approved-wordmark.png",
+      "duration": 11.199999988079071,
+      "transferSize": 6469
+    },
+    {
+      "name": "/concept-12/857bfe33201dcedbc6c9.webp",
+      "duration": 11.799999982118607,
+      "transferSize": 153642
+    },
+    {
+      "name": "/concept-12/cacc0a760b075d1ccf18.webp",
+      "duration": 15.5,
+      "transferSize": 147766
+    },
+    {
+      "name": "/concept-12/900abdb6d28df2c511ea.webp",
+      "duration": 14.699999988079071,
+      "transferSize": 145234
+    },
+    {
+      "name": "/concept-12/7f12ec7b20911ecee355.webp",
+      "duration": 21.80000001192093,
+      "transferSize": 158638
+    },
+    {
+      "name": "/concept-12/aa01c56d7f9e7726002f.webp",
+      "duration": 24.200000017881393,
+      "transferSize": 161450
+    },
+    {
+      "name": "/concept-12/bb1b857a951a4915479a.svg",
+      "duration": 2.4000000059604645,
+      "transferSize": 13824
+    },
+    {
+      "name": "/brand/closing-pattern.svg",
+      "duration": 2.5,
+      "transferSize": 13879
+    },
+    {
+      "name": "/fonts/showset-3.woff2",
+      "duration": 5.699999988079071,
+      "transferSize": 8300
+    },
+    {
+      "name": "/fonts/showset-5.woff2",
+      "duration": 7,
+      "transferSize": 8124
+    },
+    {
+      "name": "/fonts/showset-2.woff2",
+      "duration": 7.199999988079071,
+      "transferSize": 8048
+    },
+    {
+      "name": "/favicon.ico",
+      "duration": 2.4000000059604645,
+      "transferSize": 8956
+    },
+    {
+      "name": "/concept-12/f778ffc756368369e22f.webp",
+      "duration": 3.2000000178813934,
+      "transferSize": 163872
+    }
+  ],
+  "nodes": 636,
+  "inkLayers": 1
+}

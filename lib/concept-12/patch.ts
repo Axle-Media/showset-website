@@ -7,7 +7,7 @@ import { populateCategory, populateCaseStudy, selectCurrentView } from "./route-
 
 // These belong to the running engine, not to the editable content model.
 const motionClasses = ["is-on","is-active","is-revealed","is-inview","is-open","open","scrolled","menu-is-open","enter","leave","js-select-ready","selected"];
-const motionStyles = ["transform","opacity","clip-path","pointer-events","transition","--dot-radius","--light-x","--light-y"];
+const motionStyles = ["transform","opacity","clip-path","pointer-events","transition","--dot-radius","--light-x","--light-y","--dot-contrast-radius","--dot-contrast-offset"];
 /** Patch content in place; never replace the host or restart its animation engine. */
 export function patchConcept(host: HTMLElement, key: string, context: Parameters<typeof bindConcept>[2]) {
   const selections=Array.from(host.querySelectorAll("select"),element=>({element,value:element.value}));

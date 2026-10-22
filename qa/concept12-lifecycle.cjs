@@ -11,6 +11,7 @@ const fs=require('fs');const checks=[],errors=[];const check=(name,pass,detail)=
   addEventListener('message',e=>{if(e.data?.type==='showset-studio-state')window.__state=e.data});
  });
  const p=await context.newPage();p.on('pageerror',e=>errors.push(e.message));await p.goto((process.env.SHOWSET_BASE_URL||'http://127.0.0.1:3002')+'/studio/');await p.waitForSelector('.studio-layer');
+ await p.frameLocator('iframe').locator('[data-concept-ready=true]').waitFor();
  const f=p.frames().find(f=>f.url().includes('/studio-preview/'));await f.waitForFunction(()=>window.__state&&document.querySelector('[data-concept-ready=true]'));
  await f.evaluate(()=>window.__hero=document.querySelector('.hero-title'));
  await p.locator('.studio-layer').first().click();await p.getByLabel('Headline',{exact:true}).fill('A stable editable idea.');await p.waitForTimeout(200);
@@ -49,6 +50,7 @@ const fs=require('fs');const checks=[],errors=[];const check=(name,pass,detail)=
  check('Preview form feedback survives content updates',(await f.locator('#form-result').innerText()).includes('no message has been sent'));
  check('No runtime errors',!errors.length,errors);
  }finally{await browser.close();fs.mkdirSync('qa-results',{recursive:true});fs.writeFileSync('qa-results/lifecycle.json',JSON.stringify({checks,errors},null,2));if(checks.some(x=>!x.pass)||errors.length)process.exitCode=1;}})().catch(e=>{console.error(e);process.exitCode=1});
+
 
 
 
