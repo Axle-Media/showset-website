@@ -69,6 +69,11 @@
       "email": "hello@showset.co.za",
       "phone": "+27 68 280 5777",
       "location": "Cape Town, South Africa"
+    },
+    "socials": {
+      "facebook": "",
+      "instagram": "",
+      "linkedin": ""
     }
   },
   "theme": {
