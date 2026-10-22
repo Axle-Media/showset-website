@@ -1,5 +1,6 @@
 "use client";
 import ExperienceThree from "./ExperienceThree";
+import MotionPrototype from "./MotionPrototype";
 import React, { useState, useEffect, useRef, useId } from "react";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
@@ -647,8 +648,20 @@ export function PageSections({
   selectedId?: string;
 }) {
   const reduced = useReduced();
+  const [prototype, setPrototype] = useState(false);
+  useEffect(() => {
+    let search = location.search;
+    // Studio's iframe and public preview deliberately render the same component.
+    try {
+      if (parent !== window && parent.location.origin === location.origin)
+        search = parent.location.search;
+    } catch {}
+    setPrototype(new URLSearchParams(search).get("experience") === "motion");
+  }, []);
+  const Experience =
+    prototype && page.route === "/" ? MotionPrototype : ExperienceThree;
   return (
-    <ExperienceThree
+    <Experience
       page={page}
       g={g}
       catalog={catalog}
