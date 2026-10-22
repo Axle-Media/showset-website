@@ -100,6 +100,8 @@ export interface Globals {
     description: string;
     links: { label: string; href: string }[];
     copyright: string;
+    signoff?: string;
+    contact?: { email: string; phone: string; location: string };
   };
   theme: ThemeTokens;
   motion: {

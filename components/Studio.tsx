@@ -138,7 +138,7 @@ export default function Studio() {
     patch("items", items);
   };
   const patchGlobals = (
-    section: "theme" | "motion" | "brand",
+    section: "theme" | "motion" | "brand" | "footer",
     key: string,
     value: unknown,
   ) =>
@@ -733,6 +733,43 @@ export default function Studio() {
                       value={globals.brand.tagline}
                       onChange={(v) => patchGlobals("brand", "tagline", v)}
                     />
+                    <h3>Footer</h3>
+                    <TextField
+                      label="Footer description"
+                      value={globals.footer.description}
+                      multiline
+                      onChange={(v) => patchGlobals("footer", "description", v)}
+                    />
+                    <TextField
+                      label="Footer sign-off"
+                      value={globals.footer.signoff ?? defaultGlobals.footer.signoff ?? ""}
+                      onChange={(v) => patchGlobals("footer", "signoff", v)}
+                    />
+                    {(["email", "phone", "location"] as const).map((key) => (
+                      <TextField
+                        key={key}
+                        label={"Footer contact " + key}
+                        value={
+                          globals.footer.contact?.[key] ??
+                          defaultGlobals.footer.contact?.[key] ??
+                          ""
+                        }
+                        onChange={(v) =>
+                          setGlobals((g) => ({
+                            ...g,
+                            footer: {
+                              ...g.footer,
+                              contact: {
+                                email: g.footer.contact?.email ?? defaultGlobals.footer.contact?.email ?? "",
+                                phone: g.footer.contact?.phone ?? defaultGlobals.footer.contact?.phone ?? "",
+                                location: g.footer.contact?.location ?? defaultGlobals.footer.contact?.location ?? "",
+                                [key]: v,
+                              },
+                            },
+                          }))
+                        }
+                      />
+                    ))}
                   </>
                 )}
               </>

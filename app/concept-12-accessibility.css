@@ -41,3 +41,12 @@
 /* Visibility must be immediate when keyboard focus enters an opening panel. */
 .nav-dropdown.is-open .nav-panel,.mobile-panel.open{transition-property:opacity,transform}
 
+
+/* Independent translate must not offset either scene in normal reading flow. */
+.concept-12-root[data-static-motion] :is(.hero-foreground,.hero-second){translate:none}
+@media(prefers-reduced-motion:reduce){.concept-12-root :is(.hero-foreground,.hero-second){translate:none}}
+.hero-track[data-scene=still]{height:auto!important;min-height:0!important}
+.hero-track[data-scene=still] .hero-stage{position:relative;height:auto;min-height:100svh;padding-top:var(--header-height)}
+.hero-track[data-scene=still] .hero-foreground,.hero-track[data-scene=still] .hero-second{position:relative;inset:auto;translate:none;opacity:1!important;transform:none!important;pointer-events:auto!important;max-width:850px;padding:60px var(--gutter)}
+
+.dot-track[data-scene=still] .dot-core{clip-path:circle(150vmax at 50% 50%)!important}

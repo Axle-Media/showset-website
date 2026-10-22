@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Initial hero keeps exact words",
+    "pass": true,
+    "detail": "Great ideas should move people."
+  },
+  {
+    "name": "Hero phrase teal",
+    "pass": true,
+    "detail": "rgb(18, 186, 175)"
+  },
+  {
+    "name": "Final hero period white",
+    "pass": true,
+    "detail": "rgb(250, 249, 253)"
+  },
+  {
+    "name": "Second-scene controls initially inert",
+    "pass": true
+  },
+  {
+    "name": "Second hero copy expanded",
+    "pass": true
+  },
+  {
+    "name": "Two second-scene CTA links",
+    "pass": true
+  },
+  {
+    "name": "Second-scene controls become interactive",
+    "pass": true
+  },
+  {
+    "name": "Second hero headline scale matches original",
+    "pass": true,
+    "detail": {
+      "first": 67,
+      "second": 67,
+      "fw": "650",
+      "sw": "650"
+    }
+  },
+  {
+    "name": "Reverse-scrolling hides second controls",
+    "pass": true
+  },
+  {
+    "name": "Editorial CTA is beneath heading",
+    "pass": true
+  },
+  {
+    "name": "Service heading has accent period",
+    "pass": true
+  },
+  {
+    "name": "Dot initially clipped to zero",
+    "pass": true,
+    "detail": "circle(0px at 50% 50%)"
+  },
+  {
+    "name": "Dot expands with scroll",
+    "pass": true,
+    "detail": 353.84
+  },
+  {
+    "name": "Dot reverses to hidden",
+    "pass": true,
+    "detail": 0
+  },
+  {
+    "name": "Dot desktop headline uses two deliberate lines",
+    "pass": true
+  },
+  {
+    "name": "Closing CTA follows body text",
+    "pass": true
+  },
+  {
+    "name": "Footer contact column exists",
+    "pass": true
+  },
+  {
+    "name": "Footer email domain",
+    "pass": true
+  },
+  {
+    "name": "Footer phone link",
+    "pass": true
+  },
+  {
+    "name": "Footer Cape Town location",
+    "pass": true
+  },
+  {
+    "name": "Footer sign-off",
+    "pass": true
+  },
+  {
+    "name": "390px homepage has no horizontal overflow",
+    "pass": true,
+    "detail": 0
+  },
+  {
+    "name": "Mobile second hero CTA still interactive",
+    "pass": true
+  },
+  {
+    "name": "Reduced-motion homepage renders",
+    "pass": true
+  },
+  {
+    "name": "No browser page errors",
+    "pass": true,
+    "detail": []
+  }
+]

@@ -27,5 +27,14 @@ export function conceptDocument(page: PageData, g: Globals): string {
     const key = anchor.getAttribute("href")!.slice(1);
     if (paths[key]) anchor.setAttribute("href", paths[key]);
   });
+  // No-JS visitors get the same second-scene content without inert scroll controls.
+  const second=host.querySelector("#hero-second");
+  if(second){
+    const copy=second.cloneNode(true) as unknown as HTMLElement;
+    copy.id="hero-second-nojs";copy.className="hero-nojs-scene";
+    copy.removeAttribute("inert");copy.removeAttribute("aria-hidden");
+    const fallback=document.createElement("noscript");fallback.innerHTML=copy.outerHTML;
+    second.after(fallback);
+  }
   return host.innerHTML;
 }

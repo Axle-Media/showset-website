@@ -7,8 +7,8 @@
       {
         "id": "section-1",
         "type": "hero",
-        "headline": "Great ideas should move",
-        "accent": "people.",
+        "headline": "Great ideas",
+        "accent": "should move people.",
         "body": "And they should go places. Into rooms. Across screens. Onto stages. Into the hands and heads of real people. We bring events and creative work together to make sure they do.",
         "image": "/media/planning.webp",
         "pattern": true,
@@ -22,7 +22,7 @@
             "id": "hero-second-scene",
             "title": "An idea is a start.",
             "accent": "Let’s see what it becomes.",
-            "description": "We take the good part of “what if?” and turn it into something you can actually experience.",
+            "description": "We take the good part of “what if?” and turn it into something you can actually experience. From the first sketch to the final detail, we connect the ideas, people and production that bring it to life.",
             "image": "",
             "href": ""
           }
@@ -189,7 +189,7 @@
       {
         "id": "section-6",
         "type": "dot",
-        "headline": "Serious about<br>the <em>details.</em><br>Wild about<br>the <em>possibilities.</em>",
+        "headline": "Serious about the <em>details.</em><br>Wild about the <em>possibilities.</em>",
         "accent": "",
         "body": "The small stuff is never small when you are making something big.",
         "image": "",

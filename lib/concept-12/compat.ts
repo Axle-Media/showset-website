@@ -5,6 +5,8 @@ import p4 from "./legacy/pre-source-pages.json";
 import g1 from "./legacy/12cbba7-globals.json";
 import g2 from "./legacy/9307c4d-globals.json";
 import g3 from "./legacy/1a59de3-globals.json";
+import p5 from "./legacy/pre-homepage-pages.json";
+import g4 from "./legacy/pre-homepage-globals.json";
 import { defaultPages, defaultGlobals } from "@/lib/data";
 import type { PageData, Globals } from "@/lib/types";
 
@@ -61,7 +63,7 @@ function reconcile(value: Value, canonical: Value, legacy: Value[]): Value {
 }
 function preserveBeforeMigration() {
   const key = "showset-concept12-recovery";
-  if (localStorage.getItem(key)) return;
+  if (localStorage.getItem(key) && localStorage.getItem("showset-homepage-integration-recovery")) return;
   const records = Object.fromEntries(
     [
       "showset-demo-pages",
@@ -70,16 +72,10 @@ function preserveBeforeMigration() {
       "showset-preview-published-globals",
     ].map((k) => [k, localStorage.getItem(k)]),
   );
-  localStorage.setItem(
-    key,
-    JSON.stringify({
-      version: 1,
-      createdAt: new Date().toISOString(),
-      reason:
-        "Original Concept 12 defaults restored; raw pre-restoration browser records retained.",
-      records,
-    }),
-  );
+  const snapshot=JSON.stringify({version:1,createdAt:new Date().toISOString(),reason:"Raw local records retained before Concept 12 compatibility updates.",records});
+  if(!localStorage.getItem(key))localStorage.setItem(key,snapshot);
+  if(!localStorage.getItem("showset-homepage-integration-recovery"))
+    localStorage.setItem("showset-homepage-integration-recovery",snapshot);
 }
 function safely<T>(value: T, canonical: Value, legacy: Value[]): T {
   const next = reconcile(value, canonical, legacy) as T;
@@ -97,8 +93,8 @@ function safely<T>(value: T, canonical: Value, legacy: Value[]): T {
   return next;
 }
 export function compatiblePages(value: Record<string, PageData>) {
-  return safely(value, defaultPages, [p1, p2, p3, p4]);
+  return safely(value, defaultPages, [p1, p2, p3, p4, p5]);
 }
 export function compatibleGlobals(value: Globals) {
-  return safely(value, defaultGlobals, [g1, g2, g3]);
+  return safely(value, defaultGlobals, [g1, g2, g3, g4]);
 }

@@ -1,0 +1,893 @@
+{
+  "checks": [
+    {
+      "name": "Unapproved contrast layer is absent",
+      "pass": true
+    },
+    {
+      "name": "Hero access follows forward/reverse scroll 0",
+      "pass": true,
+      "detail": [
+        {
+          "inert": false,
+          "hidden": "false"
+        },
+        {
+          "inert": true,
+          "hidden": "true"
+        }
+      ]
+    },
+    {
+      "name": "Hero access follows forward/reverse scroll 0.85",
+      "pass": true,
+      "detail": [
+        {
+          "inert": true,
+          "hidden": "true"
+        },
+        {
+          "inert": false,
+          "hidden": "false"
+        }
+      ]
+    },
+    {
+      "name": "Hero access follows forward/reverse scroll 0",
+      "pass": true,
+      "detail": [
+        {
+          "inert": false,
+          "hidden": "false"
+        },
+        {
+          "inert": true,
+          "hidden": "true"
+        }
+      ]
+    },
+    {
+      "name": "Hero access follows forward/reverse scroll 0.85",
+      "pass": true,
+      "detail": [
+        {
+          "inert": true,
+          "hidden": "true"
+        },
+        {
+          "inert": false,
+          "hidden": "false"
+        }
+      ]
+    },
+    {
+      "name": "Hero access follows forward/reverse scroll 0",
+      "pass": true,
+      "detail": [
+        {
+          "inert": false,
+          "hidden": "false"
+        },
+        {
+          "inert": true,
+          "hidden": "true"
+        }
+      ]
+    },
+    {
+      "name": "Reduced motion exposes both hero scenes to accessibility",
+      "pass": true
+    },
+    {
+      "name": "Motion-off hero links receive keyboard focus #hero-foreground a",
+      "pass": true
+    },
+    {
+      "name": "Motion-off hero links receive keyboard focus #hero-second a",
+      "pass": true
+    },
+    {
+      "name": "Reduced second scene accessible tree includes links",
+      "pass": true
+    },
+    {
+      "name": "Motion re-enable restores hidden second scene",
+      "pass": true
+    },
+    {
+      "name": "Matching hero typography 320x900",
+      "pass": true,
+      "detail": {
+        "first": 37,
+        "second": 37,
+        "tracking": [
+          "0.148px",
+          "0.148px"
+        ],
+        "header": 64,
+        "heading": {
+          "x": 28.796875,
+          "y": 280.3671875,
+          "width": 272.015625,
+          "height": 163.515625,
+          "top": 280.3671875,
+          "right": 300.8125,
+          "bottom": 443.8828125,
+          "left": 28.796875
+        },
+        "links": [
+          {
+            "x": 28.796875,
+            "y": 567.6796875,
+            "width": 157.375,
+            "height": 40,
+            "top": 567.6796875,
+            "right": 186.171875,
+            "bottom": 607.6796875,
+            "left": 28.796875
+          },
+          {
+            "x": 28.796875,
+            "y": 621.6796875,
+            "width": 103.953125,
+            "height": 33.953125,
+            "top": 621.6796875,
+            "right": 132.75,
+            "bottom": 655.6328125,
+            "left": 28.796875
+          }
+        ],
+        "height": 900
+      }
+    },
+    {
+      "name": "Expanded hero heading/CTAs clear header and viewport 320x900",
+      "pass": true,
+      "detail": {
+        "first": 37,
+        "second": 37,
+        "tracking": [
+          "0.148px",
+          "0.148px"
+        ],
+        "header": 64,
+        "heading": {
+          "x": 28.796875,
+          "y": 280.3671875,
+          "width": 272.015625,
+          "height": 163.515625,
+          "top": 280.3671875,
+          "right": 300.8125,
+          "bottom": 443.8828125,
+          "left": 28.796875
+        },
+        "links": [
+          {
+            "x": 28.796875,
+            "y": 567.6796875,
+            "width": 157.375,
+            "height": 40,
+            "top": 567.6796875,
+            "right": 186.171875,
+            "bottom": 607.6796875,
+            "left": 28.796875
+          },
+          {
+            "x": 28.796875,
+            "y": 621.6796875,
+            "width": 103.953125,
+            "height": 33.953125,
+            "top": 621.6796875,
+            "right": 132.75,
+            "bottom": 655.6328125,
+            "left": 28.796875
+          }
+        ],
+        "height": 900
+      }
+    },
+    {
+      "name": "Matching hero typography 390x844",
+      "pass": true,
+      "detail": {
+        "first": 37,
+        "second": 37,
+        "tracking": [
+          "0.148px",
+          "0.148px"
+        ],
+        "header": 64,
+        "heading": {
+          "x": 35.09375,
+          "y": 284.59375,
+          "width": 331.515625,
+          "height": 163.515625,
+          "top": 284.59375,
+          "right": 366.609375,
+          "bottom": 448.109375,
+          "left": 35.09375
+        },
+        "links": [
+          {
+            "x": 35.09375,
+            "y": 553.15625,
+            "width": 157.375,
+            "height": 40,
+            "top": 553.15625,
+            "right": 192.46875,
+            "bottom": 593.15625,
+            "left": 35.09375
+          },
+          {
+            "x": 206.46875,
+            "y": 556.171875,
+            "width": 103.8125,
+            "height": 33.953125,
+            "top": 556.171875,
+            "right": 310.28125,
+            "bottom": 590.125,
+            "left": 206.46875
+          }
+        ],
+        "height": 844
+      }
+    },
+    {
+      "name": "Expanded hero heading/CTAs clear header and viewport 390x844",
+      "pass": true,
+      "detail": {
+        "first": 37,
+        "second": 37,
+        "tracking": [
+          "0.148px",
+          "0.148px"
+        ],
+        "header": 64,
+        "heading": {
+          "x": 35.09375,
+          "y": 284.59375,
+          "width": 331.515625,
+          "height": 163.515625,
+          "top": 284.59375,
+          "right": 366.609375,
+          "bottom": 448.109375,
+          "left": 35.09375
+        },
+        "links": [
+          {
+            "x": 35.09375,
+            "y": 553.15625,
+            "width": 157.375,
+            "height": 40,
+            "top": 553.15625,
+            "right": 192.46875,
+            "bottom": 593.15625,
+            "left": 35.09375
+          },
+          {
+            "x": 206.46875,
+            "y": 556.171875,
+            "width": 103.8125,
+            "height": 33.953125,
+            "top": 556.171875,
+            "right": 310.28125,
+            "bottom": 590.125,
+            "left": 206.46875
+          }
+        ],
+        "height": 844
+      }
+    },
+    {
+      "name": "Matching hero typography 768x1024",
+      "pass": true,
+      "detail": {
+        "first": 40,
+        "second": 40,
+        "tracking": [
+          "0.16px",
+          "0.16px"
+        ],
+        "header": 69,
+        "heading": {
+          "x": 61.4375,
+          "y": 407.6015625,
+          "width": 660.484375,
+          "height": 90.375,
+          "top": 407.6015625,
+          "right": 721.921875,
+          "bottom": 497.9765625,
+          "left": 61.4375
+        },
+        "links": [
+          {
+            "x": 61.4375,
+            "y": 593.8671875,
+            "width": 157.375,
+            "height": 43,
+            "top": 593.8671875,
+            "right": 218.8125,
+            "bottom": 636.8671875,
+            "left": 61.4375
+          },
+          {
+            "x": 246.8125,
+            "y": 598.3828125,
+            "width": 115.703125,
+            "height": 33.953125,
+            "top": 598.3828125,
+            "right": 362.515625,
+            "bottom": 632.3359375,
+            "left": 246.8125
+          }
+        ],
+        "height": 1024
+      }
+    },
+    {
+      "name": "Expanded hero heading/CTAs clear header and viewport 768x1024",
+      "pass": true,
+      "detail": {
+        "first": 40,
+        "second": 40,
+        "tracking": [
+          "0.16px",
+          "0.16px"
+        ],
+        "header": 69,
+        "heading": {
+          "x": 61.4375,
+          "y": 407.6015625,
+          "width": 660.484375,
+          "height": 90.375,
+          "top": 407.6015625,
+          "right": 721.921875,
+          "bottom": 497.9765625,
+          "left": 61.4375
+        },
+        "links": [
+          {
+            "x": 61.4375,
+            "y": 593.8671875,
+            "width": 157.375,
+            "height": 43,
+            "top": 593.8671875,
+            "right": 218.8125,
+            "bottom": 636.8671875,
+            "left": 61.4375
+          },
+          {
+            "x": 246.8125,
+            "y": 598.3828125,
+            "width": 115.703125,
+            "height": 33.953125,
+            "top": 598.3828125,
+            "right": 362.515625,
+            "bottom": 632.3359375,
+            "left": 246.8125
+          }
+        ],
+        "height": 1024
+      }
+    },
+    {
+      "name": "Matching hero typography 1024x900",
+      "pass": true,
+      "detail": {
+        "first": 49.152,
+        "second": 49.152,
+        "tracking": [
+          "0.196608px",
+          "0.196608px"
+        ],
+        "header": 78,
+        "heading": {
+          "x": 89.078125,
+          "y": 332.1328125,
+          "width": 666.53125,
+          "height": 111.078125,
+          "top": 332.1328125,
+          "right": 755.609375,
+          "bottom": 443.2109375,
+          "left": 89.078125
+        },
+        "links": [
+          {
+            "x": 89.078125,
+            "y": 542.8671875,
+            "width": 157.375,
+            "height": 43,
+            "top": 542.8671875,
+            "right": 246.453125,
+            "bottom": 585.8671875,
+            "left": 89.078125
+          },
+          {
+            "x": 274.453125,
+            "y": 547.3828125,
+            "width": 115.8125,
+            "height": 33.953125,
+            "top": 547.3828125,
+            "right": 390.265625,
+            "bottom": 581.3359375,
+            "left": 274.453125
+          }
+        ],
+        "height": 900
+      }
+    },
+    {
+      "name": "Expanded hero heading/CTAs clear header and viewport 1024x900",
+      "pass": true,
+      "detail": {
+        "first": 49.152,
+        "second": 49.152,
+        "tracking": [
+          "0.196608px",
+          "0.196608px"
+        ],
+        "header": 78,
+        "heading": {
+          "x": 89.078125,
+          "y": 332.1328125,
+          "width": 666.53125,
+          "height": 111.078125,
+          "top": 332.1328125,
+          "right": 755.609375,
+          "bottom": 443.2109375,
+          "left": 89.078125
+        },
+        "links": [
+          {
+            "x": 89.078125,
+            "y": 542.8671875,
+            "width": 157.375,
+            "height": 43,
+            "top": 542.8671875,
+            "right": 246.453125,
+            "bottom": 585.8671875,
+            "left": 89.078125
+          },
+          {
+            "x": 274.453125,
+            "y": 547.3828125,
+            "width": 115.8125,
+            "height": 33.953125,
+            "top": 547.3828125,
+            "right": 390.265625,
+            "bottom": 581.3359375,
+            "left": 274.453125
+          }
+        ],
+        "height": 900
+      }
+    },
+    {
+      "name": "Matching hero typography 1440x900",
+      "pass": true,
+      "detail": {
+        "first": 67,
+        "second": 67,
+        "tracking": [
+          "0.268px",
+          "0.268px"
+        ],
+        "header": 78,
+        "heading": {
+          "x": 151.1875,
+          "y": 272.0625,
+          "width": 900,
+          "height": 223.75,
+          "top": 272.0625,
+          "right": 1051.1875,
+          "bottom": 495.8125,
+          "left": 151.1875
+        },
+        "links": [
+          {
+            "x": 151.1875,
+            "y": 602.9375,
+            "width": 157.375,
+            "height": 43,
+            "top": 602.9375,
+            "right": 308.5625,
+            "bottom": 645.9375,
+            "left": 151.1875
+          },
+          {
+            "x": 336.5625,
+            "y": 607.453125,
+            "width": 115.8125,
+            "height": 33.953125,
+            "top": 607.453125,
+            "right": 452.375,
+            "bottom": 641.40625,
+            "left": 336.5625
+          }
+        ],
+        "height": 900
+      }
+    },
+    {
+      "name": "Expanded hero heading/CTAs clear header and viewport 1440x900",
+      "pass": true,
+      "detail": {
+        "first": 67,
+        "second": 67,
+        "tracking": [
+          "0.268px",
+          "0.268px"
+        ],
+        "header": 78,
+        "heading": {
+          "x": 151.1875,
+          "y": 272.0625,
+          "width": 900,
+          "height": 223.75,
+          "top": 272.0625,
+          "right": 1051.1875,
+          "bottom": 495.8125,
+          "left": 151.1875
+        },
+        "links": [
+          {
+            "x": 151.1875,
+            "y": 602.9375,
+            "width": 157.375,
+            "height": 43,
+            "top": 602.9375,
+            "right": 308.5625,
+            "bottom": 645.9375,
+            "left": 151.1875
+          },
+          {
+            "x": 336.5625,
+            "y": 607.453125,
+            "width": 115.8125,
+            "height": 33.953125,
+            "top": 607.453125,
+            "right": 452.375,
+            "bottom": 641.40625,
+            "left": 336.5625
+          }
+        ],
+        "height": 900
+      }
+    },
+    {
+      "name": "Matching hero typography 1920x1080",
+      "pass": true,
+      "detail": {
+        "first": 67,
+        "second": 67,
+        "tracking": [
+          "0.268px",
+          "0.268px"
+        ],
+        "header": 78,
+        "heading": {
+          "x": 180.625,
+          "y": 363.859375,
+          "width": 900,
+          "height": 223.75,
+          "top": 363.859375,
+          "right": 1080.625,
+          "bottom": 587.609375,
+          "left": 180.625
+        },
+        "links": [
+          {
+            "x": 180.625,
+            "y": 694.734375,
+            "width": 157.375,
+            "height": 43,
+            "top": 694.734375,
+            "right": 338,
+            "bottom": 737.734375,
+            "left": 180.625
+          },
+          {
+            "x": 366,
+            "y": 699.25,
+            "width": 115.8125,
+            "height": 33.953125,
+            "top": 699.25,
+            "right": 481.8125,
+            "bottom": 733.203125,
+            "left": 366
+          }
+        ],
+        "height": 1080
+      }
+    },
+    {
+      "name": "Expanded hero heading/CTAs clear header and viewport 1920x1080",
+      "pass": true,
+      "detail": {
+        "first": 67,
+        "second": 67,
+        "tracking": [
+          "0.268px",
+          "0.268px"
+        ],
+        "header": 78,
+        "heading": {
+          "x": 180.625,
+          "y": 363.859375,
+          "width": 900,
+          "height": 223.75,
+          "top": 363.859375,
+          "right": 1080.625,
+          "bottom": 587.609375,
+          "left": 180.625
+        },
+        "links": [
+          {
+            "x": 180.625,
+            "y": 694.734375,
+            "width": 157.375,
+            "height": 43,
+            "top": 694.734375,
+            "right": 338,
+            "bottom": 737.734375,
+            "left": 180.625
+          },
+          {
+            "x": 366,
+            "y": 699.25,
+            "width": 115.8125,
+            "height": 33.953125,
+            "top": 699.25,
+            "right": 481.8125,
+            "bottom": 733.203125,
+            "left": 366
+          }
+        ],
+        "height": 1080
+      }
+    },
+    {
+      "name": "Matching hero typography 390x320",
+      "pass": true,
+      "detail": {
+        "first": 24.18,
+        "second": 24.18,
+        "tracking": [
+          "0.09672px",
+          "0.09672px"
+        ],
+        "header": 64,
+        "heading": {
+          "x": 35.09375,
+          "y": 103.421875,
+          "width": 331.515625,
+          "height": 54.640625,
+          "top": 103.421875,
+          "right": 366.609375,
+          "bottom": 158.0625,
+          "left": 35.09375
+        },
+        "links": [
+          {
+            "x": 35.09375,
+            "y": 240.578125,
+            "width": 139.234375,
+            "height": 40,
+            "top": 240.578125,
+            "right": 174.328125,
+            "bottom": 280.578125,
+            "left": 35.09375
+          },
+          {
+            "x": 184.328125,
+            "y": 244.28125,
+            "width": 97.390625,
+            "height": 32.59375,
+            "top": 244.28125,
+            "right": 281.71875,
+            "bottom": 276.875,
+            "left": 184.328125
+          }
+        ],
+        "height": 320
+      }
+    },
+    {
+      "name": "Expanded hero heading/CTAs clear header and viewport 390x320",
+      "pass": true,
+      "detail": {
+        "first": 24.18,
+        "second": 24.18,
+        "tracking": [
+          "0.09672px",
+          "0.09672px"
+        ],
+        "header": 64,
+        "heading": {
+          "x": 35.09375,
+          "y": 103.421875,
+          "width": 331.515625,
+          "height": 54.640625,
+          "top": 103.421875,
+          "right": 366.609375,
+          "bottom": 158.0625,
+          "left": 35.09375
+        },
+        "links": [
+          {
+            "x": 35.09375,
+            "y": 240.578125,
+            "width": 139.234375,
+            "height": 40,
+            "top": 240.578125,
+            "right": 174.328125,
+            "bottom": 280.578125,
+            "left": 35.09375
+          },
+          {
+            "x": 184.328125,
+            "y": 244.28125,
+            "width": 97.390625,
+            "height": 32.59375,
+            "top": 244.28125,
+            "right": 281.71875,
+            "bottom": 276.875,
+            "left": 184.328125
+          }
+        ],
+        "height": 320
+      }
+    },
+    {
+      "name": "Matching hero typography 1024x440",
+      "pass": true,
+      "detail": {
+        "first": 40.96,
+        "second": 40.96,
+        "tracking": [
+          "0.16384px",
+          "0.16384px"
+        ],
+        "header": 78,
+        "heading": {
+          "x": 89.078125,
+          "y": 86.9765625,
+          "width": 555.46875,
+          "height": 92.515625,
+          "top": 86.9765625,
+          "right": 644.546875,
+          "bottom": 179.4921875,
+          "left": 89.078125
+        },
+        "links": [
+          {
+            "x": 89.078125,
+            "y": 279.8046875,
+            "width": 157.375,
+            "height": 43,
+            "top": 279.8046875,
+            "right": 246.453125,
+            "bottom": 322.8046875,
+            "left": 89.078125
+          },
+          {
+            "x": 274.453125,
+            "y": 284.3203125,
+            "width": 115.796875,
+            "height": 33.953125,
+            "top": 284.3203125,
+            "right": 390.25,
+            "bottom": 318.2734375,
+            "left": 274.453125
+          }
+        ],
+        "height": 440
+      }
+    },
+    {
+      "name": "Expanded hero heading/CTAs clear header and viewport 1024x440",
+      "pass": true,
+      "detail": {
+        "first": 40.96,
+        "second": 40.96,
+        "tracking": [
+          "0.16384px",
+          "0.16384px"
+        ],
+        "header": 78,
+        "heading": {
+          "x": 89.078125,
+          "y": 86.9765625,
+          "width": 555.46875,
+          "height": 92.515625,
+          "top": 86.9765625,
+          "right": 644.546875,
+          "bottom": 179.4921875,
+          "left": 89.078125
+        },
+        "links": [
+          {
+            "x": 89.078125,
+            "y": 279.8046875,
+            "width": 157.375,
+            "height": 43,
+            "top": 279.8046875,
+            "right": 246.453125,
+            "bottom": 322.8046875,
+            "left": 89.078125
+          },
+          {
+            "x": 274.453125,
+            "y": 284.3203125,
+            "width": 115.796875,
+            "height": 33.953125,
+            "top": 284.3203125,
+            "right": 390.25,
+            "bottom": 318.2734375,
+            "left": 274.453125
+          }
+        ],
+        "height": 440
+      }
+    },
+    {
+      "name": "No-JS fallback exposes repeated scene and real CTA routes",
+      "pass": true
+    },
+    {
+      "name": "New footer fields bind inside the real Studio preview",
+      "pass": true
+    },
+    {
+      "name": "Footer newline remains editable",
+      "pass": true
+    },
+    {
+      "name": "Footer field can be intentionally blank",
+      "pass": true
+    },
+    {
+      "name": "Both hero scenes share editable CTA bindings",
+      "pass": true
+    },
+    {
+      "name": "Editing active second scene preserves node, scroll and access",
+      "pass": true
+    },
+    {
+      "name": "Footer and repeated CTA draft survive reload",
+      "pass": true
+    },
+    {
+      "name": "Draft does not leak into public preview",
+      "pass": true
+    },
+    {
+      "name": "Published preview shares edited hero/footer/links",
+      "pass": true
+    },
+    {
+      "name": "Compatibility migration retains exact raw records before editing",
+      "pass": true
+    },
+    {
+      "name": "Reading legacy records does not overwrite draft or publish storage",
+      "pass": true
+    },
+    {
+      "name": "Legacy custom content survives new defaults",
+      "pass": true
+    },
+    {
+      "name": "Untouched legacy hero defaults adopt new teal phrase markup",
+      "pass": true,
+      "detail": "<span class=\"line\"><span>Great ideas</span></span> <span class=\"line hero-accent-phrase\"><span>should move</span></span> <span class=\"line hero-accent-phrase\"><span>people<span class=\"hero-period\"><span class=\"headline-period\" data-period-tone=\"light\">.</span></span></span></span>"
+    },
+    {
+      "name": "No runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "suite": "routes",
+    "exit": 0,
+    "passes": 117,
+    "failures": 0
+  },
+  {
+    "suite": "seo",
+    "exit": 0,
+    "passes": 24,
+    "failures": 0
+  },
+  {
+    "suite": "functional",
+    "exit": 0,
+    "passes": 50,
+    "failures": 0
+  },
+  {
+    "suite": "lifecycle",
+    "exit": 0,
+    "passes": 16,
+    "failures": 0
+  },
+  {
+    "suite": "refinements",
+    "exit": 0,
+    "passes": 22,
+    "failures": 0
+  },
+  {
+    "suite": "global-editing",
+    "exit": 0,
+    "passes": 9,
+    "failures": 0
+  },
+  {
+    "suite": "accessibility",
+    "exit": 0,
+    "passes": 21,
+    "failures": 0
+  },
+  {
+    "suite": "homepage-feedback",
+    "exit": 0,
+    "passes": 25,
+    "failures": 0
+  },
+  {
+    "suite": "integration-homepage",
+    "exit": 0,
+    "passes": 41,
+    "failures": 0
+  }
+]
