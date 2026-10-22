@@ -44,7 +44,7 @@
     ]
   },
   "footer": {
-    "description": "We think it through. We make it happen. We make it feel like something.",
+    "description": "We think it through. We make it happen.\nWe make it feel like something.",
     "links": [
       {
         "label": "What we do",
@@ -63,7 +63,13 @@
         "href": "/contact/"
       }
     ],
-    "copyright": "SHOWSET. All rights reserved."
+    "copyright": "SHOWSET. All rights reserved.",
+    "signoff": "Made by Showset.",
+    "contact": {
+      "email": "hello@showset.co.za",
+      "phone": "+27 68 280 5777",
+      "location": "Cape Town, South Africa"
+    }
   },
   "theme": {
     "navy": "#0D2F49",
