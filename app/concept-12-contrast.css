@@ -1,0 +1,12 @@
+/* Proposal for issue 4: one inert text-only ink layer shares the original sharp mask. */
+.dot-contrast-mask{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;pointer-events:none;clip-path:circle(var(--dot-contrast-radius,10px) at 50% 50%)}
+.dot-contrast-mask .dot-contrast-words{color:var(--deep);transform:translate3d(0,var(--dot-contrast-offset,9px),0)}
+.dot-contrast-words h2,.dot-contrast-words p,.dot-contrast-words em span,.dot-contrast-words .headline-period{color:var(--deep)!important}
+.dot-contrast-words em{color:var(--navy)!important}
+.footer-bottom{color:rgba(250,249,253,.65)}
+.concept-12-root[data-static-motion] .dot-contrast-mask{clip-path:circle(150vmax at 50% 50%)}
+@media(prefers-reduced-motion:reduce){.dot-contrast-mask{clip-path:circle(150vmax at 50% 50%)}}
+/* Cut the same circle out of the light ink to avoid a light antialiasing fringe. */
+.dot-stage>.dot-words{mask-image:radial-gradient(circle var(--dot-contrast-radius,10px) at 50% calc(50% - var(--dot-contrast-offset,9px)),transparent 100%,#000 calc(100% + .5px))}
+.concept-12-root[data-static-motion] .dot-stage>.dot-words{mask-image:linear-gradient(transparent,transparent)}
+@media(prefers-reduced-motion:reduce){.dot-stage>.dot-words{mask-image:linear-gradient(transparent,transparent)}}

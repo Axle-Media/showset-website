@@ -1,3 +1,4 @@
+import { syncDotContrast } from "./contrast";
 import { refineHeadingPeriods } from "./typography";
 import type { Block, Globals, PageData } from "@/lib/types";
 import { defaultPages, defaultGlobals } from "@/lib/data";
@@ -686,4 +687,5 @@ export function bindConcept(
   )
     link(".header-cta", g.header.buttonLabel, g.header.buttonHref);
   if (typeof getComputedStyle === "function") refineHeadingPeriods(host);
+  syncDotContrast(host);
 }

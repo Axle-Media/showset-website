@@ -1,0 +1,1006 @@
+[
+  {
+    "name": "Dot mask geometry 320 p=0",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 310.609375,
+        "width": 320,
+        "height": 297.5625
+      },
+      "b": {
+        "x": 0,
+        "y": 310.609375,
+        "width": 320,
+        "height": 297.5625
+      },
+      "radius": 10,
+      "maskRadius": 10,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 320 p=0",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 320 p=0.25",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 305.728759765625,
+        "width": 320,
+        "height": 297.5625
+      },
+      "b": {
+        "x": 0,
+        "y": 305.728759765625,
+        "width": 320,
+        "height": 297.5625
+      },
+      "radius": 68.85,
+      "maskRadius": 68.85,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 320 p=0.25",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 320 p=0.5",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 301.21875,
+        "width": 320,
+        "height": 297.5625
+      },
+      "b": {
+        "x": 0,
+        "y": 301.21875,
+        "width": 320,
+        "height": 297.5625
+      },
+      "radius": 176.85,
+      "maskRadius": 176.85,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 320 p=0.5",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 320 p=1",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 292.228759765625,
+        "width": 320,
+        "height": 297.5625
+      },
+      "b": {
+        "x": 0,
+        "y": 292.228759765625,
+        "width": 320,
+        "height": 297.5625
+      },
+      "radius": 481.04,
+      "maskRadius": 481.04,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 320 p=1",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 320 p=0.5",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 301.21875,
+        "width": 320,
+        "height": 297.5625
+      },
+      "b": {
+        "x": 0,
+        "y": 301.21875,
+        "width": 320,
+        "height": 297.5625
+      },
+      "radius": 176.85,
+      "maskRadius": 176.85,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 320 p=0.5",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 390 p=0",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 329.78125,
+        "width": 390,
+        "height": 258.6875
+      },
+      "b": {
+        "x": 0,
+        "y": 329.78125,
+        "width": 390,
+        "height": 258.6875
+      },
+      "radius": 10,
+      "maskRadius": 10,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 390 p=0",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 390 p=0.25",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 325.15625,
+        "width": 390,
+        "height": 258.6875
+      },
+      "b": {
+        "x": 0,
+        "y": 325.15625,
+        "width": 390,
+        "height": 258.6875
+      },
+      "radius": 70.65,
+      "maskRadius": 70.65,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 390 p=0.25",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 390 p=0.5",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 320.646240234375,
+        "width": 390,
+        "height": 258.6875
+      },
+      "b": {
+        "x": 0,
+        "y": 320.646240234375,
+        "width": 390,
+        "height": 258.6875
+      },
+      "radius": 181.66,
+      "maskRadius": 181.66,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 390 p=0.5",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 390 p=1",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 311.65625,
+        "width": 390,
+        "height": 258.6875
+      },
+      "b": {
+        "x": 0,
+        "y": 311.65625,
+        "width": 390,
+        "height": 258.6875
+      },
+      "radius": 494.25,
+      "maskRadius": 494.25,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 390 p=1",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 390 p=0.5",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 320.646240234375,
+        "width": 390,
+        "height": 258.6875
+      },
+      "b": {
+        "x": 0,
+        "y": 320.646240234375,
+        "width": 390,
+        "height": 258.6875
+      },
+      "radius": 181.66,
+      "maskRadius": 181.66,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 390 p=0.5",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 768 p=0",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 289.078125,
+        "width": 768,
+        "height": 339.84375
+      },
+      "b": {
+        "x": 0,
+        "y": 289.078125,
+        "width": 768,
+        "height": 339.84375
+      },
+      "radius": 10,
+      "maskRadius": 10,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 768 p=0",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 768 p=0.25",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 284.5581359863281,
+        "width": 768,
+        "height": 339.8437194824219
+      },
+      "b": {
+        "x": 0,
+        "y": 284.5581359863281,
+        "width": 768,
+        "height": 339.8437194824219
+      },
+      "radius": 83.76,
+      "maskRadius": 83.76,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 768 p=0.25",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 768 p=0.5",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 280.078125,
+        "width": 768,
+        "height": 339.84375
+      },
+      "b": {
+        "x": 0,
+        "y": 280.078125,
+        "width": 768,
+        "height": 339.84375
+      },
+      "radius": 217.14,
+      "maskRadius": 217.14,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 768 p=0.5",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 768 p=1",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 271,
+        "width": 768,
+        "height": 339.84375
+      },
+      "b": {
+        "x": 0,
+        "y": 271,
+        "width": 768,
+        "height": 339.84375
+      },
+      "radius": 595.57,
+      "maskRadius": 595.57,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 768 p=1",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 768 p=0.5",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 280.078125,
+        "width": 768,
+        "height": 339.84375
+      },
+      "b": {
+        "x": 0,
+        "y": 280.078125,
+        "width": 768,
+        "height": 339.84375
+      },
+      "radius": 217.14,
+      "maskRadius": 217.14,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 768 p=0.5",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 1024 p=0",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 265.859375,
+        "width": 1024,
+        "height": 386.28125
+      },
+      "b": {
+        "x": 0,
+        "y": 265.859375,
+        "width": 1024,
+        "height": 386.28125
+      },
+      "radius": 10,
+      "maskRadius": 10,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 1024 p=0",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 1024 p=0.25",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 261.349365234375,
+        "width": 1024,
+        "height": 386.28125
+      },
+      "b": {
+        "x": 0,
+        "y": 261.349365234375,
+        "width": 1024,
+        "height": 386.28125
+      },
+      "radius": 94.73,
+      "maskRadius": 94.73,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 1024 p=0.25",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 1024 p=0.5",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 256.8393859863281,
+        "width": 1024,
+        "height": 386.2812194824219
+      },
+      "b": {
+        "x": 0,
+        "y": 256.8393859863281,
+        "width": 1024,
+        "height": 386.2812194824219
+      },
+      "radius": 249.48,
+      "maskRadius": 249.48,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 1024 p=0.5",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 1024 p=1",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 247.640625,
+        "width": 1024,
+        "height": 386.28125
+      },
+      "b": {
+        "x": 0,
+        "y": 247.640625,
+        "width": 1024,
+        "height": 386.28125
+      },
+      "radius": 685.65,
+      "maskRadius": 685.65,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 1024 p=1",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 1024 p=0.5",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 256.8393859863281,
+        "width": 1024,
+        "height": 386.2812194824219
+      },
+      "b": {
+        "x": 0,
+        "y": 256.8393859863281,
+        "width": 1024,
+        "height": 386.2812194824219
+      },
+      "radius": 249.48,
+      "maskRadius": 249.48,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 1024 p=0.5",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 1440 p=0",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 207.38063049316406,
+        "width": 1440,
+        "height": 503.203125
+      },
+      "b": {
+        "x": 0,
+        "y": 207.38063049316406,
+        "width": 1440,
+        "height": 503.203125
+      },
+      "radius": 10,
+      "maskRadius": 10,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 1440 p=0",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 1440 p=0.25",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 202.88063049316406,
+        "width": 1440,
+        "height": 503.203125
+      },
+      "b": {
+        "x": 0,
+        "y": 202.88063049316406,
+        "width": 1440,
+        "height": 503.203125
+      },
+      "radius": 115.76,
+      "maskRadius": 115.76,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 1440 p=0.25",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 1440 p=0.5",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 198.37062072753906,
+        "width": 1440,
+        "height": 503.203125
+      },
+      "b": {
+        "x": 0,
+        "y": 198.37062072753906,
+        "width": 1440,
+        "height": 503.203125
+      },
+      "radius": 308.87,
+      "maskRadius": 308.87,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 1440 p=0.5",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 1440 p=1",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 189.125,
+        "width": 1440,
+        "height": 503.203125
+      },
+      "b": {
+        "x": 0,
+        "y": 189.125,
+        "width": 1440,
+        "height": 503.203125
+      },
+      "radius": 853.06,
+      "maskRadius": 853.06,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 1440 p=1",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Dot mask geometry 1440 p=0.5",
+    "pass": true,
+    "detail": {
+      "a": {
+        "x": 0,
+        "y": 198.37062072753906,
+        "width": 1440,
+        "height": 503.203125
+      },
+      "b": {
+        "x": 0,
+        "y": 198.37062072753906,
+        "width": 1440,
+        "height": 503.203125
+      },
+      "radius": 308.87,
+      "maskRadius": 308.87,
+      "teal": "rgb(18, 186, 175)",
+      "inks": [
+        "rgb(6, 27, 43)",
+        "rgb(13, 47, 73)",
+        "rgb(13, 47, 73)",
+        "rgb(6, 27, 43)"
+      ],
+      "hidden": true,
+      "count": 1
+    }
+  },
+  {
+    "name": "Brand ink contrast 1440 p=0.5",
+    "pass": true,
+    "detail": [
+      7.227203734592754,
+      5.703109971886005,
+      5.703109971886005,
+      7.227203734592754
+    ]
+  },
+  {
+    "name": "Footer normal text contrast exceeds AA",
+    "pass": true,
+    "detail": {
+      "fg": "rgba(250, 249, 253, 0.65)",
+      "bg": "rgb(4, 25, 39)",
+      "ratio": 7.682103412576044
+    }
+  },
+  {
+    "name": "Known original ivory/teal contrast measured",
+    "pass": true,
+    "detail": 2.3111124308496747
+  },
+  {
+    "name": "Known original sand/teal contrast measured",
+    "pass": true,
+    "detail": 1.723747060382112
+  },
+  {
+    "name": "Navy/teal exceeds normal-text AA",
+    "pass": true,
+    "detail": 5.703109971886005
+  },
+  {
+    "name": "Deep/teal exceeds normal-text AA",
+    "pass": true,
+    "detail": 7.227203734592754
+  }
+]

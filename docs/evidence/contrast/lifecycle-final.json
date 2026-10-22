@@ -1,0 +1,119 @@
+{
+  "checks": [
+    {
+      "name": "Studio text edit retains the heading node",
+      "pass": true
+    },
+    {
+      "name": "Edited content renders",
+      "pass": true
+    },
+    {
+      "name": "Motion toggle retains scene nodes",
+      "pass": true
+    },
+    {
+      "name": "Active scroll chapter survives repeated edits",
+      "pass": true,
+      "detail": {
+        "before": {
+          "y": 3587,
+          "chapter": "1",
+          "intervals": 1,
+          "observers": 3
+        },
+        "after": {
+          "y": 3587,
+          "chapter": "1",
+          "same": true,
+          "revealed": true,
+          "intervals": 1,
+          "observers": 3,
+          "clones": 6
+        }
+      }
+    },
+    {
+      "name": "Scroll position and story node survive repeated edits",
+      "pass": true,
+      "detail": {
+        "y": 3587,
+        "chapter": "1",
+        "same": true,
+        "revealed": true,
+        "intervals": 1,
+        "observers": 3,
+        "clones": 6
+      }
+    },
+    {
+      "name": "Circular reveal remains revealed during content updates",
+      "pass": true
+    },
+    {
+      "name": "Autoplay retains one timer after repeated updates",
+      "pass": true,
+      "detail": {
+        "y": 3587,
+        "chapter": "1",
+        "same": true,
+        "revealed": true,
+        "intervals": 1,
+        "observers": 3,
+        "clones": 6
+      }
+    },
+    {
+      "name": "Reveal observers stay bounded",
+      "pass": true,
+      "detail": {
+        "y": 3587,
+        "chapter": "1",
+        "same": true,
+        "revealed": true,
+        "intervals": 1,
+        "observers": 3,
+        "clones": 6
+      }
+    },
+    {
+      "name": "Carousel clones stay bounded",
+      "pass": true
+    },
+    {
+      "name": "Carousel position and node survive content edits",
+      "pass": true
+    },
+    {
+      "name": "Focused service stays focused",
+      "pass": true
+    },
+    {
+      "name": "OS motion change retains scene identity",
+      "pass": true
+    },
+    {
+      "name": "Contact input node, focus and caret survive content updates",
+      "pass": true
+    },
+    {
+      "name": "Selected project label survives content updates",
+      "pass": true,
+      "detail": {
+        "chosen": "Not quite sure yet",
+        "after": "Not quite sure yet",
+        "value": "Not quite sure yet"
+      }
+    },
+    {
+      "name": "Preview form feedback survives content updates",
+      "pass": true
+    },
+    {
+      "name": "No runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}
