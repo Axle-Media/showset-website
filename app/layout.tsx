@@ -7,7 +7,9 @@ export const metadata: Metadata = {
   title: "SHOWSET | Events & Creative Agency",
   description:
     "Events, creative design, digital experiences and production in one connected agency. We think, design, plan and make ideas happen.",
-  robots: { index: true, follow: true },
+  robots: process.env.SHOWSET_STATIC_STAGING === "true"
+    ? { index: false, follow: false, nocache: true, googleBot: { index: false, follow: false, noimageindex: true } }
+    : { index: true, follow: true },
 };
 export const viewport: Viewport = {
   width: "device-width",

@@ -1,0 +1,26 @@
+# SHOWSET static staging only. Never install in a parent or live document root.
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+<IfModule mod_headers.c>
+  Header always set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  <FilesMatch "\.(html|txt|json)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://staging.axlemedia.co.za%{REQUEST_URI} [R=302,L,NE]
+  RewriteRule ^(?:studio|studio-preview|api|backend|local-studio-backup\.html|\.showset-deploy|\.git)(?:/|$) - [R=404,L]
+</IfModule>
+<FilesMatch "(?i)(^\.|\.(php|sql|env|bak|zip|tar|gz|map|key|pem)$)">
+  Require all denied
+</FilesMatch>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 day"
+</IfModule>

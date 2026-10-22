@@ -32,3 +32,9 @@ database-dumps/
 *dump*.sql
 *.sql.bz2
 *.sql.zip
+
+# Staging release artifacts and temporary route exclusion
+staging-out/
+.staging-build/
+staging-release.tar
+deployment-results/

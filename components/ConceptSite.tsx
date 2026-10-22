@@ -172,7 +172,7 @@ export default function SiteShell({
     setGlobals(initialGlobals);
   }, [initialPage, initialGlobals]);
   useEffect(() => {
-    if (editor) return;
+    if (editor || process.env.NEXT_PUBLIC_SHOWSET_STATIC_STAGING === "true") return;
     if (["localhost", "127.0.0.1"].includes(location.hostname)) {
       try {
         const storedPages = JSON.parse(
