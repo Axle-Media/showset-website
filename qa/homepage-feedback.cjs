@@ -1,0 +1,99 @@
+// Homepage refinement round 2. Run against the real locally served Next.js build.
+// SHOWSET_BASE_URL=http://127.0.0.1:3002 node qa/homepage-feedback.cjs
+const { chromium } = require(process.env.SHOWSET_PLAYWRIGHT_MODULE || 'playwright');
+const fs = require('node:fs');
+const base = process.env.SHOWSET_BASE_URL || 'http://127.0.0.1:3002';
+const checks = [], errors = [];
+function check(name, pass, detail) {
+  checks.push({ name, pass: !!pass, detail });
+  console.log(pass ? 'PASS' : 'FAIL', name, detail ?? '');
+}
+async function position(page, selector, fraction = 0) {
+  await page.locator(selector).evaluate((node, p) => {
+    const y = scrollY + node.getBoundingClientRect().top +
+      Math.max(0, node.offsetHeight - innerHeight) * p;
+    scrollTo({ top: y, behavior: 'instant' });
+  }, fraction);
+  await page.waitForTimeout(350);
+}
+(async () => {
+  const browser = await chromium.launch({ channel: 'chrome', headless: true });
+  try {
+    const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+    const page = await context.newPage();
+    page.on('pageerror', e => errors.push(e.message));
+    await page.goto(base + '/');
+    await page.waitForTimeout(750);
+
+    const initial = await page.evaluate(() => {
+      const hero = document.querySelector('.hero-title');
+      const accent = hero.querySelector('.hero-accent-phrase>span');
+      const period = hero.querySelector('.hero-period');
+      return {
+        title: hero.textContent.replace(/\s+/g, ' ').trim(),
+        accent: getComputedStyle(accent).color,
+        period: getComputedStyle(period).color,
+        secondHidden: document.querySelector('#hero-second').inert,
+      };
+    });
+    check('Initial hero keeps exact words', initial.title === 'Great ideas should move people.', initial.title);
+    check('Hero phrase teal', initial.accent === 'rgb(18, 186, 175)', initial.accent);
+    check('Final hero period white', initial.period === 'rgb(250, 249, 253)', initial.period);
+    check('Second-scene controls initially inert', initial.secondHidden);
+    await position(page, '#hero-track', 0.85);
+    check('Second hero copy expanded', (await page.locator('.hero-second-copy').innerText()).includes('first sketch'));
+    check('Two second-scene CTA links', await page.locator('#hero-second a[href]').count() === 2);
+    check('Second-scene controls become interactive',
+      await page.locator('#hero-second').evaluate(el => !el.inert && el.getAttribute('aria-hidden') === 'false'));
+    const sizes = await page.evaluate(() => {
+      const first = getComputedStyle(document.querySelector('.hero-title'));
+      const second = getComputedStyle(document.querySelector('#hero-second h2'));
+      return { first: parseFloat(first.fontSize), second: parseFloat(second.fontSize), fw: first.fontWeight, sw: second.fontWeight };
+    });
+    check('Second hero headline scale matches original', Math.abs(sizes.first - sizes.second) <= 1.5, sizes);
+    await position(page, '#hero-track', 0);
+    check('Reverse-scrolling hides second controls', await page.locator('#hero-second').evaluate(el => el.inert));
+
+    check('Editorial CTA is beneath heading', await page.locator('.manifesto-heading-group .understated-link').count() === 1);
+    check('Service heading has accent period',
+      await page.locator('.service-heading-period').evaluate(el => getComputedStyle(el).color) === 'rgb(18, 186, 175)');
+
+    const dotBefore = await page.locator('#dot-core').evaluate(el => getComputedStyle(el).clipPath);
+    check('Dot initially clipped to zero', /circle\(0px\s+at/.test(dotBefore), dotBefore);
+    await position(page, '#dot-track', 0.55);
+    const dotDuring = await page.locator('#dot-core').evaluate(el => parseFloat(el.style.getPropertyValue('--dot-radius')));
+    check('Dot expands with scroll', dotDuring > 20, dotDuring);
+    await position(page, '#dot-track', 0);
+    const dotAfter = await page.locator('#dot-core').evaluate(el => parseFloat(el.style.getPropertyValue('--dot-radius')));
+    check('Dot reverses to hidden', dotAfter === 0, dotAfter);
+    check('Dot desktop headline uses two deliberate lines',
+      await page.locator('.dot-words h2 br').count() === 1);
+    check('Closing CTA follows body text',
+      await page.locator('.end-bottom p + a.end-link').count() === 1);
+
+    check('Footer contact column exists', await page.locator('.footer-contact').count() === 1);
+    check('Footer email domain', await page.locator('[data-footer-email]').getAttribute('href') === 'mailto:hello@showset.co.za');
+    check('Footer phone link', await page.locator('[data-footer-phone]').getAttribute('href') === 'tel:+27682805777');
+    check('Footer Cape Town location', (await page.locator('[data-footer-location]').innerText()) === 'Cape Town, South Africa');
+    check('Footer sign-off', (await page.locator('.footer-signoff').innerText()) === 'Made by Showset.');
+
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(base + '/');
+    await page.waitForTimeout(400);
+    const mobileOverflow = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
+    check('390px homepage has no horizontal overflow', mobileOverflow <= 1, mobileOverflow);
+    await position(page, '#hero-track', 0.85);
+    check('Mobile second hero CTA still interactive', await page.locator('#hero-second').evaluate(el => !el.inert));
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto(base + '/');
+    check('Reduced-motion homepage renders', await page.locator('.hero-title').isVisible());
+    check('No browser page errors', errors.length === 0, errors);
+    await browser.close();
+    fs.mkdirSync('qa-results', { recursive: true });
+    fs.writeFileSync('qa-results/homepage-feedback.json', JSON.stringify(checks, null, 2));
+    if (checks.some(x => !x.pass)) process.exitCode = 1;
+  } catch (e) {
+    await browser.close();
+    throw e;
+  }
+})().catch(e => { console.error(e); process.exitCode = 1; });
