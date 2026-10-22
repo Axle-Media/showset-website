@@ -93,6 +93,23 @@
       "pass": true
     },
     {
+      "name": "Contact input node, focus and caret survive content updates",
+      "pass": true
+    },
+    {
+      "name": "Selected project label survives content updates",
+      "pass": true,
+      "detail": {
+        "chosen": "Not quite sure yet",
+        "after": "Not quite sure yet",
+        "value": "Not quite sure yet"
+      }
+    },
+    {
+      "name": "Preview form feedback survives content updates",
+      "pass": true
+    },
+    {
       "name": "No runtime errors",
       "pass": true,
       "detail": []
