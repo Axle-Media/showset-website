@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./fonts.css";
 import "./globals.css";
+import "./experience-three.css";
 export const metadata: Metadata = {
   title: "SHOWSET | Events & Creative Agency",
   description:

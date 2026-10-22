@@ -67,7 +67,7 @@ export default function Studio() {
       try {
         const p = localStorage.getItem("showset-demo-pages"),
           g = localStorage.getItem("showset-demo-globals");
-        if (p) setPages(JSON.parse(p));
+        if (p) setPages({ ...initialPages, ...JSON.parse(p) });
         if (g) setGlobals(JSON.parse(g));
       } catch {}
       return;
@@ -385,7 +385,12 @@ export default function Studio() {
     <div className="studio-app">
       <header className="studio-toolbar">
         <div className="studio-brand">
-          <img src={globals.brand.logo || "/brand/approved-wordmark.png"} width="124" height="32" alt="showset." />
+          <img
+            src={globals.brand.logo || "/brand/approved-wordmark.png"}
+            width="124"
+            height="32"
+            alt="showset."
+          />
           <small>STUDIO</small>
         </div>
         <div className="studio-toolbar-center">
@@ -813,6 +818,12 @@ export default function Studio() {
                 {section && (
                   <>
                     <div className="studio-pane-title">Selected section</div>
+                    {section.type === "split" && (
+                      <p className="studio-hint">
+                        Essay images appear in the Photographic variation.
+                        Editorial and Compact keep the copy-led composition.
+                      </p>
+                    )}
                     {(
                       [
                         "spaceTop",
@@ -852,6 +863,7 @@ export default function Studio() {
                       >
                         <option value="editorial">Editorial</option>
                         <option value="compact">Compact</option>
+                        <option value="photographic">Photographic</option>
                       </select>
                     </label>
                     <TextField

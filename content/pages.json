@@ -32,24 +32,6 @@
         "helperText": ""
       },
       {
-        "id": "section-2",
-        "type": "split",
-        "headline": "Too good to leave",
-        "accent": "on the drawing board.",
-        "body": "You know that feeling when an idea clicks and suddenly you can see the whole thing? We live for that part. But we love what happens next even more.\n\nThe planning. The pixels. The people. The power cables. The tiny decisions nobody notices until they are done right. We connect creative thinking with the practical craft it takes to bring a concept into the world. So the work does more than look impressive. It feels right, behaves right and makes people want to be part of it.",
-        "image": "",
-        "pattern": true,
-        "reveal": false,
-        "buttonLabel": "Meet the people behind it",
-        "buttonHref": "/our-studio/",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
         "id": "section-3",
         "type": "story",
         "headline": "",
@@ -93,16 +75,16 @@
         "helperText": ""
       },
       {
-        "id": "section-6",
-        "type": "dot",
-        "headline": "Serious about<br>the <em>details.</em><br>Wild about<br>the <em>possibilities.</em>",
-        "accent": "",
-        "body": "The small stuff is never small when you are making something big.",
+        "id": "section-2",
+        "type": "split",
+        "headline": "Too good to leave",
+        "accent": "on the drawing board.",
+        "body": "You know that feeling when an idea clicks and suddenly you can see the whole thing? We live for that part. But we love what happens next even more.\n\nThe planning. The pixels. The people. The power cables. The tiny decisions nobody notices until they are done right. We connect creative thinking with the practical craft it takes to bring a concept into the world. So the work does more than look impressive. It feels right, behaves right and makes people want to be part of it.",
         "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
+        "pattern": true,
+        "reveal": false,
+        "buttonLabel": "Meet the people behind it",
+        "buttonHref": "/our-studio/",
         "secondaryLabel": "",
         "secondaryHref": "",
         "items": [],
@@ -204,6 +186,24 @@
           }
         ],
         "speed": 4.7,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-6",
+        "type": "dot",
+        "headline": "Serious about<br>the <em>details.</em><br>Wild about<br>the <em>possibilities.</em>",
+        "accent": "",
+        "body": "The small stuff is never small when you are making something big.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
         "formTitle": "",
         "helperText": ""
       },
@@ -2055,6 +2055,104 @@
     "seo": {
       "title": "Contact",
       "description": ""
+    }
+  },
+  "services": {
+    "slug": "services",
+    "route": "/services/",
+    "title": "Our disciplines | SHOWSET",
+    "sections": [
+      {
+        "id": "services-opening-v3",
+        "type": "pagehero",
+        "headline": "Different disciplines.",
+        "accent": "One connected team.",
+        "body": "A launch might need an identity. An event might need a digital home. A campaign might need a film, a space or a piece of technology to make it work. We move between all four worlds so the idea stays in one piece.",
+        "image": "/media/rigging.webp",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "Explore our disciplines",
+        "buttonHref": "#services",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "services-navigator-v3",
+        "type": "services",
+        "headline": "Different disciplines.",
+        "accent": "One connected team.",
+        "body": "A launch might need an identity. An event might need a digital home. A campaign might need a film, a space or a piece of technology to make it work. We move between all four worlds so the idea stays in one piece.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "events---experiences-0",
+            "title": "Events & experiences",
+            "accent": "",
+            "description": "We make room for the unexpected, then plan every last detail around it.",
+            "image": "/media/evening.webp",
+            "href": "/events-experiences/"
+          },
+          {
+            "id": "creative---design-1",
+            "title": "Creative & design",
+            "accent": "",
+            "description": "The kind of thinking that gives a brand a point of view, not just a pretty face.",
+            "image": "/media/brand.webp",
+            "href": "/creative-design/"
+          },
+          {
+            "id": "digital---marketing-2",
+            "title": "Digital & marketing",
+            "accent": "",
+            "description": "Websites, campaigns and technology made for people, not just platforms.",
+            "image": "/media/planning.webp",
+            "href": "/digital-marketing/"
+          },
+          {
+            "id": "content---production-3",
+            "title": "Content & production",
+            "accent": "",
+            "description": "From the first storyboard to the final sound check, we bring the moving parts together.",
+            "image": "/media/sound.webp",
+            "href": "/content-production/"
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "services-conversation-v3",
+        "type": "cta",
+        "headline": "Got a beautifully",
+        "accent": "complicated idea?",
+        "body": "The brief can be polished, half-written or still living entirely in your head. Tell us what you are trying to make happen. We know where to start.",
+        "image": "",
+        "pattern": true,
+        "reveal": false,
+        "buttonLabel": "Let’s make a plan",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Our disciplines | SHOWSET",
+      "description": "A launch might need an identity. An event might need a digital home. A campaign might need a film, a space or a piece of technology to make it work. We move between all four worlds so the idea stays in one piece."
     }
   }
 }

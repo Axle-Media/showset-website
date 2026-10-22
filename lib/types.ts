@@ -30,7 +30,7 @@ export interface BlockDesign {
   imagePosition?: string;
   mobileImagePosition?: string;
   motionPreset?: "cinematic" | "short" | "still";
-  variation?: "editorial" | "compact";
+  variation?: "editorial" | "compact" | "photographic";
   radius?: number;
 }
 export interface Block {
