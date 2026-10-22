@@ -93,7 +93,31 @@ function safely<T>(value: T, canonical: Value, legacy: Value[]): T {
   return next;
 }
 export function compatiblePages(value: Record<string, PageData>) {
-  return safely(value, defaultPages, [p1, p2, p3, p4, p5]);
+  const reconciled = safely(value, defaultPages, [p1, p2, p3, p4, p5]);
+  const oldHero = reconciled.home?.sections.find((s) => s.type === "hero");
+  // Only migrate this exact prior SHOWSET default. Custom hero copy remains intact.
+  // Preserve the user's complete local records before changing their saved seed.
+  if (oldHero?.headline !== "Great ideas" || oldHero.accent !== "should move people.")
+    return reconciled;
+  try {
+    preserveBeforeMigration();
+  } catch (e) {
+    console.warn("SHOWSET hero copy migration skipped because backup was unavailable.", e);
+    return reconciled;
+  }
+  const newHero = defaultPages.home.sections.find((s) => s.type === "hero");
+  if (!newHero) return reconciled;
+  return {
+    ...reconciled,
+    home: {
+      ...reconciled.home,
+      sections: reconciled.home.sections.map((s) =>
+        s.id === oldHero.id
+          ? { ...s, headline: newHero.headline, accent: newHero.accent }
+          : s,
+      ),
+    },
+  };
 }
 export function compatibleGlobals(value: Globals) {
   return safely(value, defaultGlobals, [g1, g2, g3, g4]);
