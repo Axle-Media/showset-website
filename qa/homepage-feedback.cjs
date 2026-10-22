@@ -57,32 +57,50 @@ async function position(page, selector, fraction = 0) {
     check('Editorial CTA is beneath heading', await page.locator('.manifesto-heading-group .understated-link').count() === 1);
     check('Service heading has accent period',
       await page.locator('.service-heading-period').evaluate(el => getComputedStyle(el).color) === 'rgb(18, 186, 175)');
-    // Regression: the nested accent period was inheriting display:block,
-    // leaving a stray dot on a third line. Navigation must sit under the copy.
+    // Regression: group the heading, paragraph and categories with equal visual
+    // intervals, centred within the usable panel space below the fixed header.
     for (const { width, height } of [
-      { width: 822, height: 772 }, { width: 1440, height: 900 }
+      { width: 822, height: 772 },
+      { width: 1440, height: 900 },
+      { width: 1800, height: 686 }
     ]) {
       await page.setViewportSize({ width, height });
       await page.waitForTimeout(120);
       const geometry = await page.evaluate(() => {
-        const title = document.querySelector('.services-panel-heading > span:first-child');
+        const left = document.querySelector('.services-left');
+        const heading = document.querySelector('.services-panel-heading');
+        const title = heading.querySelector(':scope > span:first-child');
         const period = document.querySelector('.service-heading-period');
         const range = document.createRange();
         range.selectNodeContents(title.firstChild);
         const textRect = range.getBoundingClientRect();
         const dotRect = period.getBoundingClientRect();
+        const headingRect = heading.getBoundingClientRect();
         const copyRect = document.querySelector('.services-stage-intro > p').getBoundingClientRect();
         const navRect = document.querySelector('.services-left .service-navigation').getBoundingClientRect();
+        const leftRect = left.getBoundingClientRect();
+        const style = getComputedStyle(left);
+        const paddedCentre = (leftRect.top + parseFloat(style.paddingTop) +
+          leftRect.bottom - parseFloat(style.paddingBottom)) / 2;
+        const groupCentre = (headingRect.top + navRect.bottom) / 2;
         return {
           dotDisplay: getComputedStyle(period).display,
           dotLineOffset: Math.abs(dotRect.bottom - textRect.bottom),
+          headingToCopy: copyRect.top - headingRect.bottom,
           copyToCategories: navRect.top - copyRect.bottom,
+          groupCentreOffset: groupCentre - paddedCentre,
+          topBreathingRoom: headingRect.top - leftRect.top,
+          bottomBreathingRoom: leftRect.bottom - navRect.bottom,
         };
       });
       check('Services punctuation stays on first line ' + width,
         geometry.dotDisplay === 'inline' && geometry.dotLineOffset <= 10, geometry);
-      check('Services category list follows body without large dead space ' + width,
-        geometry.copyToCategories >= 12 && geometry.copyToCategories <= 90, geometry);
+      check('Services heading, copy and category spacing matches ' + width,
+        Math.abs(geometry.headingToCopy - geometry.copyToCategories) <= 3
+        && geometry.copyToCategories >= 18 && geometry.copyToCategories <= 45, geometry);
+      check('Services group is vertically centred ' + width,
+        Math.abs(geometry.groupCentreOffset) <= 15
+        && geometry.topBreathingRoom > 0 && geometry.bottomBreathingRoom > 0, geometry);
     }
     // The Content & Production photograph caption should be smaller,
     // closely spaced and no more than two lines at desktop panel widths.
