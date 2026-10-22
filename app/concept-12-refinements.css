@@ -16,8 +16,7 @@
 .concept-12-root :is(.solid-link,.header-cta):focus-visible{outline:2px solid var(--ivory,#faf9fd);outline-offset:4px}
 /* Independent translate leaves the original scroll-controlled transform untouched. */
 .hero-foreground{top:51%;translate:0 -50%}
-.hero-title .line:nth-child(2),.hero-title .line:nth-child(3){display:inline}
-.hero-title .line:nth-child(3)::before{content:' '}
+.hero-title .line{display:block;white-space:nowrap}
 .services-stage-intro{margin-bottom:clamp(34px,4.5vh,48px)}
 .film-step h2{font-size:clamp(40px,4.8vw,67px);max-width:850px}
 .film-steps{max-width:850px;min-height:340px}
@@ -43,7 +42,7 @@
 @media(max-width:600px){
  .film-step h2{font-size:clamp(34px,9.1vw,48px)}
  .hero-foreground{top:51%;left:9%;right:6%}
- .hero-title .line:nth-child(2),.hero-title .line:nth-child(3){display:inline}
+ .hero-title .line{white-space:normal}
  .end-bottom{align-items:flex-start;margin-top:38px}
  .footer .brand .approved-wordmark{width:160px}
 }
@@ -62,9 +61,8 @@
 .end-section{background-image:linear-gradient(145deg,#09253a,#0d2f49)!important;background-size:cover!important}
 .end-section::before{z-index:0}.end-section>*{position:relative;z-index:1}
 
-/* Keep the two original entrance animations while allowing the last phrases to share a line. */
-.hero-title .line:nth-child(2),.hero-title .line:nth-child(3){display:inline-block;vertical-align:top}
-.hero-title .line:nth-child(3)::before{content:none}
+/* Each hero line is an independent, deliberate block-swipe row. */
+.hero-title .line{display:block;vertical-align:baseline}
 .category-process>h2,.studio-rhythm h2{font-size:clamp(36px,4.2vw,60px)}
 @media(max-width:600px){.category-process>h2,.studio-rhythm h2{font-size:clamp(32px,8.5vw,44px)}}
 
@@ -74,7 +72,7 @@
 /* SHOWSET homepage refinement round 2: 22 October 2026.
    Scoped to approved Concept 12 structures. Studio inline controls still win. */
 
-/* The second and third words are one accent-coloured phrase, with an ivory period. */
+/* Second hero line is teal with an ivory period, regardless of Studio edits. */
 .hero-title .hero-accent-phrase>span{color:var(--teal)}
 .hero-title .hero-period,.hero-title .hero-period .headline-period{color:var(--ice)!important}
 
@@ -310,7 +308,6 @@
   will-change:clip-path;
 }
 .hero-title .line:nth-child(2)>span{animation-delay:.30s!important}
-.hero-title .line:nth-child(3)>span{animation-delay:.40s!important}
 .hero-title .line::after{
   content:"";
   position:absolute;inset:5% 0;
@@ -319,9 +316,8 @@
   clip-path:inset(0 100% 0 0);
   animation:showsetPhotoBlockSwipe .75s cubic-bezier(.75,.06,.23,.95) .18s both;
 }
-.hero-title .hero-accent-phrase::after{background:var(--sand)}
+.hero-title .hero-accent-phrase::after{background:var(--teal)}
 .hero-title .line:nth-child(2)::after{animation-delay:.30s}
-.hero-title .line:nth-child(3)::after{animation-delay:.40s}
 
 /* A film chapter should not rise underneath a block-swipe headline. */
 /* The photograph still crossfades, but the film headline scene switches without a second text fade. */
