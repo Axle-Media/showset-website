@@ -106,8 +106,33 @@
 /* Closing call-to-action is one left-aligned vertical conversation. */
 .end-section .section-title{font-size:clamp(37px,4.4vw,62px);font-weight:650}
 .end-section .end-bottom{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:clamp(18px,2.5vw,28px);margin-top:clamp(25px,3.5vw,42px);border-top:0;padding-top:0}
-.end-section .end-bottom p{max-width:530px;margin:0;line-height:1.6}
-.end-section .end-link{width:max-content;max-width:100%;min-width:0;gap:clamp(36px,5vw,75px)}
+.end-section .end-bottom p{max-width:min(660px,100%);margin:0;line-height:1.6}
+/* Reuse the same primary CTA component as the homepage hero.
+   Override the legacy underlined .end-link proportions without changing
+   the stable Studio-edit selector. */
+.end-section .end-link.solid-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  width:max-content;
+  min-width:0;
+  max-width:100%;
+  gap:22px;
+  padding:10px 16px;
+  border:1px solid var(--teal);
+  border-radius:var(--ui-radius);
+  color:#07263c;
+  background:var(--teal);
+  font-size:11px;
+  font-weight:750;
+  line-height:1.36!important;
+  letter-spacing:.035em;
+  white-space:nowrap;
+  transition:background .27s,transform .27s,color .27s;
+}
+.end-section .end-link.solid-link>span{display:inline-block;color:inherit;font-size:15px;font-weight:inherit;line-height:1}
+.end-section .end-link.solid-link:hover{gap:22px;color:#07263c;background:#38d6cb;transform:translateY(-2px)}
+.end-section .end-link.solid-link:focus-visible{outline:2px solid var(--ice);outline-offset:4px}
 .end-section::before{opacity:var(--refine-pattern-opacity,.052)}
 
 /* A balanced footer with genuinely separate contact information. */
