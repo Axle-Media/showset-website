@@ -102,6 +102,7 @@ export interface Globals {
     copyright: string;
     signoff?: string;
     contact?: { email: string; phone: string; location: string };
+    socials?: { facebook: string; instagram: string; linkedin: string };
   };
   theme: ThemeTokens;
   motion: {
