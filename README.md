@@ -1,40 +1,56 @@
-# SHOWSET Next.js + Studio — Concept 12 restoration
+# SHOWSET Next.js and Studio
 
-The approved frontend is `reference/CONCEPT_12_APPROVED.html`. The 2.0/3.0 redesigns and motion prototype are cancelled. Do not reinterpret or restyle Concept 12.
+SHOWSET Concept 12 website and its local content editor. The restored Concept 12 implementation and approved UI refinements share the same components, styles and motion system.
 
-See [CONCEPT12_RESTORATION.md](CONCEPT12_RESTORATION.md) for implementation, recovery checkpoints, compatibility handling and evidence. [CONCEPT12_NOT_IMPLEMENTED.md](CONCEPT12_NOT_IMPLEMENTED.md) records observations without applying design changes.
+Shared private repository: https://github.com/Axle-Media/showset-website
 
-## Run locally
+## Local development
 
-Use the same browser, hostname and port as your existing Studio session to retain its local storage.
-
-```powershell
-npm install
+```sh
+npm ci
 npm run dev -- -p 3001
 ```
 
-Open `http://localhost:3001/` and `http://localhost:3001/studio/`. `/local-studio-backup.html` exports local drafts, published previews and the restoration recovery snapshot. Changing hostname, port or browser profile selects different browser storage.
+Open http://localhost:3001/ and http://localhost:3001/studio/. Use the same browser, hostname and port as an existing Studio session to retain its browser storage.
 
-## Implementation
+Studio supports content, imagery, typography, spacing and motion settings. **Save Draft** saves locally; **Publish Preview** updates the local website preview on the same browser origin. It does not deploy to hosting or publish to WordPress. `/local-studio-backup.html` exports local drafts, preview data and recovery records. Historical defaults reconcile through a backup-preserving compatibility adapter; custom edits remain intact.
 
-- The eleven original page designs use the original DOM, CSS, photographs, patterns, responsive rules and animation equations inside the real Next.js runtime.
-- Public pages and responsive Studio canvases use the same source-based component and editor bindings.
-- Save Draft and Publish Preview retain their existing four storage keys. Publish Preview is local to this browser/origin and does not publish to WordPress or xneelo.
-- Known historical defaults reconcile to the approved source only after a raw backup is saved under `showset-concept12-recovery`. Loading does not overwrite original saved keys. Custom values and optional project modules are preserved.
-- The former Services index data is retained as a compatibility entry using the original homepage composition. No cancelled index layout remains active.
-- PHP/MySQL publishing and media API source remains present and unchanged. It has not been deployed or tested against a production database in this restoration.
+## Project structure
 
-## Verification and build
+- `app/`: Next.js routes, fonts and shared styles. `/studio/` and `/studio-preview/` are editor routes; `/our-studio/` is a public agency page.
+- `components/ConceptSite.tsx`: shared public website and Studio rendering. `components/Studio.tsx` contains editor controls and saving.
+- `lib/concept-12/`: original markup, motion runtime, content bindings and historical compatibility data.
+- `content/`: editable page and global defaults.
+- `public/`: approved brand artwork, photographs and self-hosted fonts.
+- `reference/CONCEPT_12_APPROVED.html`: definitive Concept 12 reference. Brand guidelines are included in `reference/`. Apply only explicitly approved refinements; do not use cancelled redesign branches as design authority.
+- `qa/`: repeatable Playwright checks and before/after evidence.
+- `backend/`: existing PHP/MySQL publishing source and schema, retained for future secure integration. It is not an authenticated production deployment in the current local workflow.
 
-```powershell
-npm run lint:source
+See [CONCEPT12_RESTORATION.md](CONCEPT12_RESTORATION.md), [CONCEPT12_REFINEMENTS.md](CONCEPT12_REFINEMENTS.md) and [QA_REFINEMENT_RESULTS.md](QA_REFINEMENT_RESULTS.md) for implementation and verification details.
+
+## Checks and build
+
+```sh
 npm run check
+npm run lint:source
 npm run build
-npm run package:xneelo
 ```
 
-The production build exports the actual Next.js application to `out/`; the existing xneelo architecture is unchanged. New routes and crawler-visible SEO changes require rebuilding. The browser evidence includes matched screenshots at six widths, original/restored recordings, motion measurements and isolated Studio tests. Automated checks are not creative approval.
+The production build uses Next.js static export with directory-style URLs and writes to `out/`. The browser checks in `qa/` require Playwright and Chrome; see the refinement documentation for configuration. Existing contrast findings, physical-device testing and the preview form's non-delivery behaviour are documented honestly.
 
-The original preview contact form honestly reports that it does not send messages. SMTP/mail delivery, remote publishing and physical-device Safari/Android testing are not claimed. Approved-source contrast findings are documented without restyling.
+## Branches and collaboration
 
-Older v0.2/v0.4 reports are historical, not current acceptance evidence. Nothing has been pushed or deployed.
+- `main`: shared baseline containing restored Concept 12, approved UI improvements and this README.
+- `refine/concept-12-ui`: approved UI implementation branch.
+- `restore/concept-12-exact`: exact restoration checkpoint before the approved refinements.
+- `wip/staging-preparation`: preserved, unfinished staging packaging work from the interrupted hosting task. It is not approved for deployment.
+- `staging`: preserved deployment branch checkpoint; no automatic deployment is configured.
+- Older `experience/*`, `archive/*` and restoration branches preserve history. Cancelled experiments are not the active website.
+
+Use feature branches and pull requests targeting `main`. Review changes before merging. The existing personal repository remote is preserved; `axle-media` is the shared organisation remote and the default push destination for this checkout.
+
+## Deployment and secrets
+
+Hosting changes require a separate explicit deployment task. Static hosting must use a reviewed public-only artifact, keep Studio private until a secure authenticated backend exists, and target only the authorised staging directory. The legacy `package:xneelo` command includes PHP backend files and editor routes; it is not the public-only staging package.
+
+This repository connection does not deploy anything, enable deployment workflows or modify live websites. Environment files, private keys, local credentials, dependencies, build outputs, database dumps and temporary backups stay out of Git. Only placeholder configuration examples and the source database schema are intentionally tracked. Keep hosting and GitHub credentials in secure stores, never in source or chat.

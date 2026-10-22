@@ -32,3 +32,16 @@ database-dumps/
 *dump*.sql
 *.sql.bz2
 *.sql.zip
+
+# Private connection material and generated staging artifacts
+*.pem
+*.key
+*.p12
+*.pfx
+id_ed25519*
+id_rsa*
+known_hosts*
+staging-out/
+.staging-build/
+staging-release.tar
+deployment-results/
