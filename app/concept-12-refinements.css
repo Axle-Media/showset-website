@@ -93,8 +93,8 @@
 
 /* An internal heading period is an intentional accent, not the final period. */
 .services-panel-heading .service-heading-period{display:inline!important;color:var(--teal)!important;white-space:nowrap}
-.services-panel-heading{font-size:clamp(36px,3.35vw,50px);font-weight:650;line-height:1.08!important;margin-bottom:clamp(23px,3vh,36px)}
-.services-stage-intro{margin-bottom:clamp(20px,3vh,34px)}
+.services-panel-heading{font-size:clamp(36px,3.35vw,50px);font-weight:650;line-height:1.08!important;margin-bottom:var(--services-group-gap)}
+.services-stage-intro{margin-bottom:var(--services-group-gap)}
 .service-image-information>p{max-width:min(510px,100%);line-height:1.2!important;font-size:clamp(16px,1.3vw,20px);letter-spacing:-.018em;margin-bottom:19px}
 .service-image-information{right:clamp(25px,3.6vw,55px)}
 
@@ -148,14 +148,24 @@
 .footer-contact>a:focus-visible{outline:2px solid var(--teal);outline-offset:5px}
 .footer-signoff{font-weight:700;color:var(--ice)}
 
-/* Keep category links directly below the services copy, without an auto spacer. */
+/* Treat the title, copy and four categories as one vertically centred group. */
+.services-left{
+  --services-group-gap:clamp(25px,4vh,38px);
+  justify-content:center;
+  padding-top:calc(var(--header-height) + clamp(14px,2vh,25px));
+  padding-bottom:clamp(23px,3vh,36px);
+}
+.services-left .services-stage-intro{margin-bottom:var(--services-group-gap)}
+.services-left .services-panel-heading{margin-bottom:var(--services-group-gap)}
+.services-left .service-navigation{margin:0}
 @media(min-width:801px){
-  .services-left{justify-content:flex-start}
+  .services-left{justify-content:center}
   .services-left .service-navigation{margin-top:0;margin-bottom:0}
 }
 @media(min-width:801px) and (max-height:790px){
-  .services-panel-heading{font-size:clamp(28px,3vw,43px);margin-bottom:16px}
-  .services-stage-intro{margin-bottom:18px}
+  .services-left{--services-group-gap:clamp(20px,3.6vh,29px)}
+  .services-panel-heading{font-size:clamp(28px,3vw,43px);margin-bottom:var(--services-group-gap)}
+  .services-stage-intro{margin-bottom:var(--services-group-gap)}
   .services-left .service-navigation{margin-top:0;margin-bottom:0}
 }
 @media(max-width:1000px) and (min-width:801px){
@@ -169,7 +179,8 @@
   .manifesto-grid{grid-template-columns:1fr;gap:clamp(26px,5vw,42px)}
   .manifesto-heading-group{gap:24px}
   .services-panel-heading{font-size:clamp(29px,5.2vw,43px)}
-  .services-stage-intro{margin-bottom:28px}
+  .services-left{--services-group-gap:clamp(20px,3vh,29px)}
+  .services-stage-intro{margin-bottom:var(--services-group-gap)}
   .footer-head{display:flex;flex-direction:column;gap:40px}
   .footer-contact{grid-column:auto}
   .footer .brand .approved-wordmark{width:195px}
