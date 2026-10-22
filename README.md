@@ -1,48 +1,40 @@
-# SHOWSET Next.js + Studio — Complete Local Project
+# SHOWSET Next.js + Studio — Concept 12 restoration
 
-**Consolidated version 0.4.0 (Concept 12 motion restoration).** This package combines the original Next.js and SHOWSET Studio application with the v0.2 local Publish Preview workflow, the v0.3 invisible-headline fix, and the v0.4 motion restoration. **No older source folders or patches are needed.**
+The approved frontend is `reference/CONCEPT_12_APPROVED.html`. The 2.0/3.0 redesigns and motion prototype are cancelled. Do not reinterpret or restyle Concept 12.
 
-## Quick start on Windows
+See [CONCEPT12_RESTORATION.md](CONCEPT12_RESTORATION.md) for implementation, recovery checkpoints, compatibility handling and evidence. [CONCEPT12_NOT_IMPLEMENTED.md](CONCEPT12_NOT_IMPLEMENTED.md) records observations without applying design changes.
 
-1. Extract this ZIP. Open PowerShell **inside the `SHOWSET-Next-Studio-Complete` folder containing `package.json`**.
-2. Close the previous development server with Ctrl+C. Use **port 3001** and the **same browser** to retain your browser-local Studio edits.
-3. Run:
+## Run locally
 
-   ```powershell
-   npm install
-   npm run dev -- -p 3001
-   ```
-
-4. Open `http://localhost:3001/` for the public website and `http://localhost:3001/studio/` for Studio.
-5. Confirm the hero headline is visible and Studio > Save draft > Publish preview > website refresh works.
-6. For a backup of your local content, open `http://localhost:3001/local-studio-backup.html` and choose **Download Studio backup**.
-
-For step-by-step setup and safe migration, see [START_HERE_WINDOWS.md](START_HERE_WINDOWS.md).
-
-## Included
-
-- 11 page routes, 62 editorial sections, service destinations, studio, concept studies and contact.
-- React components for cinematic hero, 3-act scroll story, responsive service showcase, centre-expanding sharp brand dot, horizontal case studies, circular heading reveals, internal page curtain, reduced-motion handling, mobile menu and other interactions.
-- SHOWSET Studio visual editor for sections, text, images, styling, global colours/type, device previews, motion settings and **local browser draft/publish preview**.
-- PHP/MySQL backend source for staging/production publishing (not enabled or deployed).
-- Brand assets and approved Concept 12 reference design/copy materials (in `reference/`).
-- Developer docs, source check, example backend config, tests and QA notes.
-
-## Important limitations
-
-- **Publish preview is LOCAL ONLY.** It saves to the browser's localStorage at the chosen localhost address and port, not to WordPress/xneelo or another browser. It worked in the user's local v0.3 environment, but the merged v0.4 runtime still needs to be checked locally.
-- **Changing port, browser profile or hostname means separate browser storage.** Back up using `/local-studio-backup.html` before changing. The backup tool is blocked outside localhost.
-- The v0.4 animations underwent source/syntax and standalone fixture tests; the **actual Next.js app and visual motion parity with Concept 12 remain unverified in this build environment**. Verify locally before replacing the working old folder.
-- Static export doesn't support request-time SSR, automatic new routes or live SEO metadata regeneration; rebuilding/exporting is necessary for new routes and SEO.
-- Backend needs real database, administrator authentication, staging and email testing before production deployment. **Do not upload or activate on showset.co.za yet.**
-
-## Commands
+Use the same browser, hostname and port as your existing Studio session to retain its local storage.
 
 ```powershell
-npm run lint:source   # validate section types and local images
-npm run check         # TypeScript check (after npm install)
-npm run build         # Next.js static build
-npm run package:xneelo # static build + PHP backend export
+npm install
+npm run dev -- -p 3001
 ```
 
-Refer to `MOTION_RESTORE_v04.md`, `docs/QA_REPORT.md` and `docs/XNEELO_DEPLOYMENT.md` for technical details.
+Open `http://localhost:3001/` and `http://localhost:3001/studio/`. `/local-studio-backup.html` exports local drafts, published previews and the restoration recovery snapshot. Changing hostname, port or browser profile selects different browser storage.
+
+## Implementation
+
+- The eleven original page designs use the original DOM, CSS, photographs, patterns, responsive rules and animation equations inside the real Next.js runtime.
+- Public pages and responsive Studio canvases use the same source-based component and editor bindings.
+- Save Draft and Publish Preview retain their existing four storage keys. Publish Preview is local to this browser/origin and does not publish to WordPress or xneelo.
+- Known historical defaults reconcile to the approved source only after a raw backup is saved under `showset-concept12-recovery`. Loading does not overwrite original saved keys. Custom values and optional project modules are preserved.
+- The former Services index data is retained as a compatibility entry using the original homepage composition. No cancelled index layout remains active.
+- PHP/MySQL publishing and media API source remains present and unchanged. It has not been deployed or tested against a production database in this restoration.
+
+## Verification and build
+
+```powershell
+npm run lint:source
+npm run check
+npm run build
+npm run package:xneelo
+```
+
+The production build exports the actual Next.js application to `out/`; the existing xneelo architecture is unchanged. New routes and crawler-visible SEO changes require rebuilding. The browser evidence includes matched screenshots at six widths, original/restored recordings, motion measurements and isolated Studio tests. Automated checks are not creative approval.
+
+The original preview contact form honestly reports that it does not send messages. SMTP/mail delivery, remote publishing and physical-device Safari/Android testing are not claimed. Approved-source contrast findings are documented without restyling.
+
+Older v0.2/v0.4 reports are historical, not current acceptance evidence. Nothing has been pushed or deployed.

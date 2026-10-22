@@ -1,3 +1,5 @@
+> Historical verification/implementation notes. Superseded by CONCEPT12_RESTORATION.md and the current browser evidence.
+
 # SHOWSET Recovery v0.2 (targeted corrections)
 
 ## What is fixed

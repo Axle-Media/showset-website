@@ -1,0 +1,2054 @@
+{
+  "home": {
+    "slug": "home",
+    "route": "/",
+    "title": "SHOWSET | Events & Creative Agency",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "hero",
+        "headline": "Great ideas should move",
+        "accent": "people.",
+        "body": "And they should go places. Into rooms. Across screens. Onto stages. Into the hands and heads of real people. We bring events and creative work together to make sure they do.",
+        "image": "/media/planning.webp",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "See what we do",
+        "buttonHref": "#services",
+        "secondaryLabel": "Get to know us",
+        "secondaryHref": "/our-studio/",
+        "items": [
+          {
+            "id": "hero-second-scene",
+            "title": "An idea is a start.",
+            "accent": "Let’s see what it becomes.",
+            "description": "We take the good part of “what if?” and turn it into something you can actually experience.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "Too good to leave",
+        "accent": "on the drawing board.",
+        "body": "You know that feeling when an idea clicks and suddenly you can see the whole thing? We live for that part. But we love what happens next even more.\n\nThe planning. The pixels. The people. The power cables. The tiny decisions nobody notices until they are done right. We connect creative thinking with the practical craft it takes to bring a concept into the world. So the work does more than look impressive. It feels right, behaves right and makes people want to be part of it.",
+        "image": "",
+        "pattern": true,
+        "reveal": false,
+        "buttonLabel": "Meet the people behind it",
+        "buttonHref": "/our-studio/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "story",
+        "headline": "",
+        "accent": "",
+        "body": "",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "item-0",
+            "title": "First, we",
+            "accent": "imagine it.",
+            "description": "We get curious. Ask the awkwardly good questions. Pull things apart. Put unexpected things together. And find the idea worth chasing.",
+            "image": "/media/planning.webp",
+            "href": ""
+          },
+          {
+            "id": "item-1",
+            "title": "Then, we",
+            "accent": "make it happen.",
+            "description": "We design it, plan it, prototype it, build it and work through the bits nobody sees. This is where imagination meets the production schedule.",
+            "image": "/media/rigging.webp",
+            "href": ""
+          },
+          {
+            "id": "item-2",
+            "title": "Finally, we",
+            "accent": "move people.",
+            "description": "The doors open. The launch goes live. The audience leans in. Everything clicks into place and the idea stops being an idea.",
+            "image": "/media/evening.webp",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-4",
+        "type": "services",
+        "headline": "Different disciplines.",
+        "accent": "One connected team.",
+        "body": "A launch might need an identity. An event might need a digital home. A campaign might need a film, a space or a piece of technology to make it work. We move between all four worlds so the idea stays in one piece.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "events---experiences-0",
+            "title": "Events & experiences",
+            "accent": "",
+            "description": "We make room for the unexpected, then plan every last detail around it.",
+            "image": "/media/evening.webp",
+            "href": "/events-experiences/"
+          },
+          {
+            "id": "creative---design-1",
+            "title": "Creative & design",
+            "accent": "",
+            "description": "The kind of thinking that gives a brand a point of view, not just a pretty face.",
+            "image": "/media/brand.webp",
+            "href": "/creative-design/"
+          },
+          {
+            "id": "digital---marketing-2",
+            "title": "Digital & marketing",
+            "accent": "",
+            "description": "Websites, campaigns and technology made for people, not just platforms.",
+            "image": "/media/planning.webp",
+            "href": "/digital-marketing/"
+          },
+          {
+            "id": "content---production-3",
+            "title": "Content & production",
+            "accent": "",
+            "description": "From the first storyboard to the final sound check, we bring the moving parts together.",
+            "image": "/media/sound.webp",
+            "href": "/content-production/"
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-5",
+        "type": "work",
+        "headline": "The thinking",
+        "accent": "behind the thing.",
+        "body": "A little more than a final image. We like to show what makes an idea work: the intention, the atmosphere, the choices and the craft. Here are a few creative explorations that take you behind the scenes of how we think.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "atmosphere-is-everything-0",
+            "title": "Atmosphere is everything",
+            "accent": "",
+            "description": "You can plan the programme. The feeling is what makes people stay.",
+            "image": "/media/evening.webp",
+            "href": "/work/atmosphere-is-everything/"
+          },
+          {
+            "id": "made-to-be-remembered-1",
+            "title": "Made to be remembered",
+            "accent": "",
+            "description": "Identity is built in a thousand little encounters, not one big reveal.",
+            "image": "/media/brand.webp",
+            "href": "/work/made-to-be-remembered/"
+          },
+          {
+            "id": "behind-every-moment-2",
+            "title": "Behind every moment",
+            "accent": "",
+            "description": "The quiet precision that makes a big production feel effortless.",
+            "image": "/media/sound.webp",
+            "href": "/work/behind-every-moment/"
+          }
+        ],
+        "speed": 4.7,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-6",
+        "type": "dot",
+        "headline": "Serious about<br>the <em>details.</em><br>Wild about<br>the <em>possibilities.</em>",
+        "accent": "",
+        "body": "The small stuff is never small when you are making something big.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "cta",
+        "headline": "Got a beautifully",
+        "accent": "complicated idea?",
+        "body": "The brief can be polished, half-written or still living entirely in your head. Tell us what you are trying to make happen. We know where to start.",
+        "image": "",
+        "pattern": true,
+        "reveal": false,
+        "buttonLabel": "Let’s make a plan",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "SHOWSET | Events & Creative Agency",
+      "description": ""
+    }
+  },
+  "events-experiences": {
+    "slug": "events-experiences",
+    "route": "/events-experiences/",
+    "title": "Events & Experiences",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "We make the room",
+        "accent": "feel something.",
+        "body": "The room. The crowd. The goosebumps. The perfectly timed reveal. We bring bold ideas and meticulous planning together to turn gatherings into experiences.",
+        "image": "/media/evening.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Plan something brilliant",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "The guest list is only the beginning.",
+        "accent": "",
+        "body": "A great event is not just a date with good lighting. It is a story people step into. The way they arrive. The way the space makes them feel. The moment everything goes quiet, then comes alive. We think about all of it because no single detail creates the atmosphere. Every detail plays its part. From a new concept and creative direction to venue sourcing, staging, guest journeys, technical production and the final run of show, we bring the moving parts into one connected plan. We know when to make a statement and when to let the moment speak for itself.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "items",
+        "headline": "How we bring it together.",
+        "accent": "",
+        "body": "Different parts. One connected idea.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "the-big-idea-0",
+            "title": "The big idea",
+            "accent": "",
+            "description": "Event concepts, creative direction, brand worlds and the visual language that ties it together.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "the-space-1",
+            "title": "The space",
+            "accent": "",
+            "description": "Layouts, 3D renders, scenic builds, décor, florals, furniture and environmental design.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "the-show-2",
+            "title": "The show",
+            "accent": "",
+            "description": "Stage, sound, lighting, AV, entertainment, filming, photography and carefully timed moments.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "the-invisible-work-3",
+            "title": "The invisible work",
+            "accent": "",
+            "description": "Planning, suppliers, guest lists, hospitality, transport, logistics and all the things that should feel easy.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-4",
+        "type": "split",
+        "headline": "What we make possible",
+        "accent": "",
+        "body": "Conferences with character. Brand activations people actually want to engage with. Festivals that have a world of their own. Launches that get people talking. Celebrations with heart, polish and just enough mischief. Whatever the format, we start with the reason everyone is there and build outward.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-5",
+        "type": "items",
+        "headline": "From the first thought to the final detail.",
+        "accent": "",
+        "body": "",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "imagine-it--0",
+            "title": "Imagine it.",
+            "accent": "",
+            "description": "We find the point of the experience, then the creative idea that gives it a personality.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "build-it--1",
+            "title": "Build it.",
+            "accent": "",
+            "description": "We plan the guest journey, design the environment and coordinate the production that makes it possible.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "run-it--2",
+            "title": "Run it.",
+            "accent": "",
+            "description": "We keep the right eyes on the right details, so the audience gets the experience, not the logistics.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-6",
+        "type": "accordion",
+        "headline": "Explore the possibilities.",
+        "accent": "",
+        "body": "More ways we can help, depending on your brief.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "event-branding--layout---3d--0",
+            "title": "Event branding, layout & 3D renders",
+            "accent": "",
+            "description": "We design the event as a world, not a collection of separate signs. From branded environments and floor plans to visual renders, we help people see the experience before it exists.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-concepts---creative-di-1",
+            "title": "Event concepts & creative direction",
+            "accent": "",
+            "description": "We shape the central idea, guest experience and creative world that makes the event unmistakably itself. Everything else has something strong to build on.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "graphic-design---event-brand-2",
+            "title": "Graphic design & event branding",
+            "accent": "",
+            "description": "Invitations, stage visuals, signage, credentials and everything in between. We make the whole event look and feel as though it belongs together.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-layout---3d-renders-3",
+            "title": "Event layout & 3D renders",
+            "accent": "",
+            "description": "We help translate ambitious ideas into practical spaces, layouts and visual previews, so decisions can be made before the build begins.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-planning---management-4",
+            "title": "Event planning & management",
+            "accent": "",
+            "description": "We give the experience a plan, a sequence and a clear line of responsibility, keeping the moving parts aligned from briefing to breakdown.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "venue-sourcing-5",
+            "title": "Venue sourcing",
+            "accent": "",
+            "description": "We help find the setting that suits the brief, the audience and the practical realities. The right room changes what is possible.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "d-cor---styling-6",
+            "title": "Décor & styling",
+            "accent": "",
+            "description": "We set the tone with material, colour, furniture, detail and atmosphere, creating a space that looks considered from every angle.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "floral-design-7",
+            "title": "Floral design",
+            "accent": "",
+            "description": "Flowers and botanical elements can change the entire mood of a room. We shape a floral direction that works with the broader creative concept.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "furniture---equipment-hire-8",
+            "title": "Furniture & equipment hire",
+            "accent": "",
+            "description": "We source and coordinate the pieces that make the space function and feel right, from seating and tables to the less glamorous essentials.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "stage-builds---custom-instal-9",
+            "title": "Stage builds & custom installations",
+            "accent": "",
+            "description": "Sometimes the idea needs its own structure. We plan and coordinate stages, scenic elements and custom features that give it physical presence.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "branding--signage---printing-10",
+            "title": "Branding, signage & printing",
+            "accent": "",
+            "description": "From wayfinding and entry moments to step-and-repeat walls and printed details, we make sure the brand is present in the right ways.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "catering---bar-services-11",
+            "title": "Catering & bar services",
+            "accent": "",
+            "description": "Food and drinks are part of the guest experience. We coordinate options that fit the format, the atmosphere and the practical brief.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "entertainment--djs---mcs-12",
+            "title": "Entertainment, DJs & MCs",
+            "accent": "",
+            "description": "We help shape the energy of the room through the right performers, presenters and entertainment for the audience and occasion.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "guest-management---rsvp-coor-13",
+            "title": "Guest management & RSVP coordination",
+            "accent": "",
+            "description": "From invitations and responses to arrival flow, we help make the guest journey feel personal, clear and well considered.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-staffing---hospitality-14",
+            "title": "Event staffing & hospitality",
+            "accent": "",
+            "description": "The best welcome comes from people who know what they are doing. We plan staffing needs and hospitality touchpoints around the experience.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "gifting---branded-merchandis-15",
+            "title": "Gifting & branded merchandise",
+            "accent": "",
+            "description": "We create or coordinate thoughtful takeaways that people might actually want to keep. Useful, surprising and on brand.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "transport---logistics-16",
+            "title": "Transport & logistics",
+            "accent": "",
+            "description": "We think through who and what needs to be where, when and how. Timing, access, movement and deliveries matter as much as the main event.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "brand-activations---interact-17",
+            "title": "Brand activations & interactive experiences",
+            "accent": "",
+            "description": "We design reasons for people to participate, not just observe. A strong activation makes the brand part of a real interaction.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "visual",
+        "headline": "We plan for the practical. And leave room for the magic.",
+        "accent": "",
+        "body": "",
+        "image": "/media/evening.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Bring us your brief",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-8",
+        "type": "cta",
+        "headline": "Keep exploring",
+        "accent": "",
+        "body": "",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Events & Experiences",
+      "description": ""
+    }
+  },
+  "creative-design": {
+    "slug": "creative-design",
+    "route": "/creative-design/",
+    "title": "Creative & Design",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "Make it look",
+        "accent": "like nobody else.",
+        "body": "We build identities, ideas and design systems with a clear point of view. Not design for the sake of decoration. Design that gives people something to recognise, believe in and come back to.",
+        "image": "/media/brand.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Make something distinctive",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "Pretty is easy. Personality takes thinking.",
+        "accent": "",
+        "body": "A colour palette is not a personality. A logo is not the whole story. We start by understanding what you stand for, who you are speaking to and what people should feel when they meet your brand. Then we build a visual world that can hold its own anywhere. From strategy and identity to packaging, print, presentations, event branding, spatial design and campaign artwork, we make sure everything belongs to the same story. A billboard and a business card should feel like relatives, not strangers.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "items",
+        "headline": "How we bring it together.",
+        "accent": "",
+        "body": "Different parts. One connected idea.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "find-your-point-of-view-0",
+            "title": "Find your point of view",
+            "accent": "",
+            "description": "Brand thinking, positioning, naming support, identity and creative strategy.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "build-a-visual-world-1",
+            "title": "Build a visual world",
+            "accent": "",
+            "description": "Art direction, identity systems, campaigns, visual assets and design guidelines.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "make-it-physical-2",
+            "title": "Make it physical",
+            "accent": "",
+            "description": "Packaging, retail, print, signage, event environments and experiences you can walk into.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "keep-it-consistent-3",
+            "title": "Keep it consistent",
+            "accent": "",
+            "description": "Everyday design, creative production and dependable support that protects the big idea.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-4",
+        "type": "split",
+        "headline": "Every touchpoint is a chance to say something.",
+        "accent": "",
+        "body": "The box someone opens. The slide that makes a complicated point instantly clear. The way a festival wristband, website and entrance sign look like they came from the same imagination. We care about the entire system, not just the hero graphic.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-5",
+        "type": "items",
+        "headline": "From the first thought to the final detail.",
+        "accent": "",
+        "body": "",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "discover-the-character--0",
+            "title": "Discover the character.",
+            "accent": "",
+            "description": "We get to the truth beneath the brief.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "draw-the-world--1",
+            "title": "Draw the world.",
+            "accent": "",
+            "description": "We explore the visual language, refine the right direction and build the system.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "make-it-travel--2",
+            "title": "Make it travel.",
+            "accent": "",
+            "description": "We adapt the design across the places and formats it needs to live.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-6",
+        "type": "accordion",
+        "headline": "Explore the possibilities.",
+        "accent": "",
+        "body": "More ways we can help, depending on your brief.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "brand-strategy---identity-0",
+            "title": "Brand strategy & identity",
+            "accent": "",
+            "description": "We find the character behind the business and give it a clear voice, visual identity and rules worth following. The goal is not just recognition, but a brand that knows how to show up.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "graphic-design---creative-pr-1",
+            "title": "Graphic design & creative production",
+            "accent": "",
+            "description": "Campaign assets, presentations, layouts, illustrations and everyday creative with the same care as the big launch. The idea deserves to look good at every size.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "packaging--print---retail-de-2",
+            "title": "Packaging, print & retail design",
+            "accent": "",
+            "description": "We give physical touchpoints their own personality, from packaging and print collateral to retail displays. Something people pick up can make as strong an impression as something they scroll past.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "experiential---environmental-3",
+            "title": "Experiential & environmental design",
+            "accent": "",
+            "description": "We think about how people move through, interact with and remember a space. Physical design becomes part of the story, rather than just somewhere to place the logo.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "marketing-strategy---creativ-4",
+            "title": "Marketing strategy & creative consulting",
+            "accent": "",
+            "description": "We challenge the brief, find the sharpest opportunity and put a direction behind the work. Good creative decisions are easier when the thinking is clear.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "visual",
+        "headline": "Good design gets noticed. Great design gets remembered.",
+        "accent": "",
+        "body": "",
+        "image": "/media/brand.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Give the idea a look",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-8",
+        "type": "cta",
+        "headline": "Keep exploring",
+        "accent": "",
+        "body": "",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Creative & Design",
+      "description": ""
+    }
+  },
+  "digital-marketing": {
+    "slug": "digital-marketing",
+    "route": "/digital-marketing/",
+    "title": "Digital & Marketing",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "Make the screen",
+        "accent": "do more.",
+        "body": "We create websites, campaigns, platforms and content with a purpose beyond being online. Clearer experiences, smarter connections and useful reasons to come back.",
+        "image": "/media/planning.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Build what’s next",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "Clicks are nice. Connection is better.",
+        "accent": "",
+        "body": "The internet has enough noise. We are more interested in the things people choose to pay attention to. The website that makes sense. The campaign that knows what it wants to say. The content that sounds like a human. The technology that solves the problem instead of adding another one. We combine marketing thinking, design and technical problem-solving so digital work works in the real world. That could be a new website, a more joined-up social presence, a focused paid campaign, a useful software solution or creative support that keeps a business moving.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "items",
+        "headline": "How we bring it together.",
+        "accent": "",
+        "body": "Different parts. One connected idea.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "the-foundation-0",
+            "title": "The foundation",
+            "accent": "",
+            "description": "Website planning, UX, design, builds and digital brand experiences.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "the-conversation-1",
+            "title": "The conversation",
+            "accent": "",
+            "description": "Social media content, calendars, community-facing creative and everyday communication.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "the-growth-plan-2",
+            "title": "The growth plan",
+            "accent": "",
+            "description": "Marketing strategy, campaigns, digital advertising and thoughtful optimisation.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "the-smarter-way-3",
+            "title": "The smarter way",
+            "accent": "",
+            "description": "Software, automation, digital tools and custom solutions to practical business challenges.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-4",
+        "type": "split",
+        "headline": "A launch is a moment. Momentum is a habit.",
+        "accent": "",
+        "body": "We do not think a good marketing idea should disappear after launch day. We can stay involved with creative production, campaign planning, content management and ongoing marketing support, making the next move as considered as the first.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-5",
+        "type": "items",
+        "headline": "From the first thought to the final detail.",
+        "accent": "",
+        "body": "",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "find-the-job--0",
+            "title": "Find the job.",
+            "accent": "",
+            "description": "We define what people need to understand, do or experience.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "make-it-useful--1",
+            "title": "Make it useful.",
+            "accent": "",
+            "description": "We design the message and the system around real behaviour, not digital buzzwords.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "keep-learning--2",
+            "title": "Keep learning.",
+            "accent": "",
+            "description": "We review the response and use what we learn to guide what comes next.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-6",
+        "type": "accordion",
+        "headline": "Explore the possibilities.",
+        "accent": "",
+        "body": "More ways we can help, depending on your brief.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "websites---digital-experienc-0",
+            "title": "Websites & digital experiences",
+            "accent": "",
+            "description": "We plan and design websites and digital journeys that people understand and enjoy using. Useful structure, clear content and good design should all pull in the same direction.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-marketing---advertis-1",
+            "title": "Digital marketing & advertising",
+            "accent": "",
+            "description": "We build campaigns around an idea, an audience and a clear objective. From creative to channel planning, every message should have a reason to exist.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "social-media---content-manag-2",
+            "title": "Social media & content management",
+            "accent": "",
+            "description": "We plan the conversation, create the content and keep the rhythm consistent. A recognisable brand voice is built one considered post at a time.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "software--technology---solut-3",
+            "title": "Software, technology & solutions",
+            "accent": "",
+            "description": "We look for the useful technical answer, whether that means a digital tool, tailored software, an integration or a smarter workflow. The best technology makes the hard part feel simple.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "ongoing-creative---marketing-4",
+            "title": "Ongoing creative & marketing partnerships",
+            "accent": "",
+            "description": "We become the creative support that keeps things moving. From fresh campaigns to day-to-day design and marketing needs, we build consistency without losing curiosity.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "visual",
+        "headline": "Built for humans. Clever under the hood.",
+        "accent": "",
+        "body": "",
+        "image": "/media/planning.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Tell us what needs fixing",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-8",
+        "type": "cta",
+        "headline": "Keep exploring",
+        "accent": "",
+        "body": "",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Digital & Marketing",
+      "description": ""
+    }
+  },
+  "content-production": {
+    "slug": "content-production",
+    "route": "/content-production/",
+    "title": "Content & Production",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "Make people look.",
+        "accent": "Then look again.",
+        "body": "Stories deserve more than a nice shot. We bring ideas to life through motion, video, photography, creative production and the technical details that make everything land.",
+        "image": "/media/sound.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Bring the story to life",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "The magic has a call sheet.",
+        "accent": "",
+        "body": "You see the final frame. We see the planning behind it. The storyboard, the light, the pace, the audio, the edit and the hundred decisions that make a piece feel like it was always meant to be that way. We work across digital content, branded video, motion design, multimedia and event production, connecting creative direction with what it takes to deliver. Some stories need to fill a screen. Others need to fill an entire room. Either way, we make sure the execution gives the idea its moment.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "items",
+        "headline": "How we bring it together.",
+        "accent": "",
+        "body": "Different parts. One connected idea.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "plan-the-story-0",
+            "title": "Plan the story",
+            "accent": "",
+            "description": "Creative direction, concepts, scripts, storyboards and production thinking.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "make-the-assets-1",
+            "title": "Make the assets",
+            "accent": "",
+            "description": "Photography, film, motion graphics, editing, animation and multimedia content.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "take-it-live-2",
+            "title": "Take it live",
+            "accent": "",
+            "description": "Stage visuals, on-screen content, technical event production, lighting, sound and AV coordination.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "make-it-work-everywhere-3",
+            "title": "Make it work everywhere",
+            "accent": "",
+            "description": "Cutdowns, platform-ready versions, event recaps, campaign assets and content libraries.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-4",
+        "type": "split",
+        "headline": "Good production knows when to disappear.",
+        "accent": "",
+        "body": "The edit should feel natural. The sound should be right. The presentation should land without a hiccup. We spend time on the things nobody is supposed to notice, so everyone can pay attention to the story.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-5",
+        "type": "items",
+        "headline": "From the first thought to the final detail.",
+        "accent": "",
+        "body": "",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "frame-it--0",
+            "title": "Frame it.",
+            "accent": "",
+            "description": "We decide what the audience needs to see, hear and feel.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "produce-it--1",
+            "title": "Produce it.",
+            "accent": "",
+            "description": "We bring the creative and technical parts into one deliberate process.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "finish-it-properly--2",
+            "title": "Finish it properly.",
+            "accent": "",
+            "description": "We polish, adapt and prepare the final work for where it will be seen.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-6",
+        "type": "accordion",
+        "headline": "Explore the possibilities.",
+        "accent": "",
+        "body": "More ways we can help, depending on your brief.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "motion-graphics--video---mul-0",
+            "title": "Motion graphics, video & multimedia",
+            "accent": "",
+            "description": "We use movement, sound and storytelling to give ideas a different kind of energy, whether it is a product film, animation, presentation visual or content series.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "photography---videography-1",
+            "title": "Photography & videography",
+            "accent": "",
+            "description": "We plan how the event will be captured, from the headline moments to the small human details worth keeping and sharing.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "lighting--sound---audiovisua-2",
+            "title": "Lighting, sound & audiovisual production",
+            "accent": "",
+            "description": "We bring technical requirements into the creative plan, coordinating sound, light, screens and AV so the experience feels as good as it looks.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "visual",
+        "headline": "Roll camera. Cue the lights. Make it count.",
+        "accent": "",
+        "body": "",
+        "image": "/media/sound.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Let’s get producing",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-8",
+        "type": "cta",
+        "headline": "Keep exploring",
+        "accent": "",
+        "body": "",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Content & Production",
+      "description": ""
+    }
+  },
+  "our-studio": {
+    "slug": "our-studio",
+    "route": "/our-studio/",
+    "title": "Our Studio",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "Curious minds.",
+        "accent": "Capable hands.",
+        "body": "We ask big questions, make ambitious plans and care a slightly unreasonable amount about the finishing touches.",
+        "image": "/media/planning.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "We like our ideas",
+        "accent": "out in the wild.",
+        "body": "We are not interested in good ideas that only look good in presentations. We want them out in the world, doing what they were made to do. Drawing a crowd. Starting a conversation. Making something easier. Giving a brand a point of view. Making a room feel different.\n\nThat is why we connect events and creative thinking under one roof. Strategy, design, digital, production and the people who make it all happen belong in the same conversation. One idea can become many things without losing its personality along the way.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "items",
+        "headline": "",
+        "accent": "",
+        "body": "",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "curiosity-first-0",
+            "title": "Curiosity first",
+            "accent": "",
+            "description": "We would rather ask one more good question than rush towards the obvious answer.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "craft-everywhere-1",
+            "title": "Craft everywhere",
+            "accent": "",
+            "description": "A stage build and a tiny button deserve the same attention to detail, even if the tools are different.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "people-at-the-centre-2",
+            "title": "People at the centre",
+            "accent": "",
+            "description": "We think about the audience, the client and everyone involved in making the experience work.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "concept12-studio-belief",
+        "type": "split",
+        "headline": "Heads in the clouds.",
+        "accent": "Feet on the floor plan.",
+        "body": "We love the wild first thought. We also love the spreadsheet that makes it happen. A strong concept needs both imagination and organisation, and we are quite happy moving between the two. It is how we can be adventurous without being careless.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-4",
+        "type": "items",
+        "headline": "How we work.",
+        "accent": "",
+        "body": "",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "listen-properly-0",
+            "title": "Listen properly",
+            "accent": "",
+            "description": "We want to know what matters, what is possible and what would make this worth doing.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "think-freely-1",
+            "title": "Think freely",
+            "accent": "",
+            "description": "We explore routes worth taking and bring the strongest idea into focus.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "make-deliberately-2",
+            "title": "Make deliberately",
+            "accent": "",
+            "description": "We design, plan, produce and keep an eye on the details as the idea takes shape.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "finish-with-pride-3",
+            "title": "Finish with pride",
+            "accent": "",
+            "description": "We test, refine, deliver and make sure the last detail gets the same attention as the first.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-5",
+        "type": "split",
+        "headline": "One brief. Fewer handovers.",
+        "accent": "Better conversations.",
+        "body": "Some projects need the whole team of disciplines. Some just need one good specialist brain. We work with what the brief calls for, whether it is a single design, a full event, a digital platform or a long-term creative partnership. The point is to make the process feel connected, clear and genuinely collaborative.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "Come say hello",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-6",
+        "type": "accordion",
+        "headline": "Good questions. Better conversations.",
+        "accent": "",
+        "body": "Here are a few useful things to know before we start.",
+        "image": "",
+        "pattern": true,
+        "reveal": false,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "what-kind-of-projects-do-we--0",
+            "title": "What kind of projects do we take on?",
+            "accent": "",
+            "description": "We work across events, brand and graphic design, digital experiences, marketing, content and production. Some briefs need one discipline. Others need several. We choose the shape of the work around the goal, not the other way around.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "can-we-handle-a-project-from-1",
+            "title": "Can we handle a project from idea to execution?",
+            "accent": "",
+            "description": "Yes, that is one of the strengths of bringing creative thinking and event production into the same conversation. We can help shape the concept, design the assets and coordinate the work needed to bring it to life, with the right specialists where needed.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "do-we-work-on-individual-ser-2",
+            "title": "Do we work on individual services too?",
+            "accent": "",
+            "description": "Absolutely. You might need an identity, event layout, website, campaign, motion graphic or a helping hand with creative production. We do not need to turn every brief into a giant project.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "can-we-join-an-existing-mark-3",
+            "title": "Can we join an existing marketing or event team?",
+            "accent": "",
+            "description": "Yes. We can work alongside internal teams, agencies and event stakeholders, taking responsibility for a clearly defined part of the work or supporting across several disciplines.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "what-if-the-idea-is-not-full-4",
+            "title": "What if the idea is not fully formed yet?",
+            "accent": "",
+            "description": "That is a perfectly good place to start. We can help turn the rough thought into a useful brief, clarify what matters and work out what it would take to deliver.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "do-we-only-create-events-for-5",
+            "title": "Do we only create events for businesses?",
+            "accent": "",
+            "description": "No. We work with both corporate and private experiences. What matters to us is making the occasion feel considered, appropriate and genuinely personal to the people there.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "can-we-support-a-brand-after-6",
+            "title": "Can we support a brand after launch?",
+            "accent": "",
+            "description": "Yes. We offer ongoing creative and marketing partnerships for businesses that need a steady stream of content, design, marketing thinking or digital support.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "can-we-help-with-event-suppl-7",
+            "title": "Can we help with event suppliers and production partners?",
+            "accent": "",
+            "description": "We can build supplier and production requirements into an event plan and help source or coordinate the relevant services. The scope, responsibilities and final supplier arrangements are agreed for each brief.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "do-we-work-on-projects-outsi-8",
+            "title": "Do we work on projects outside our immediate area?",
+            "accent": "",
+            "description": "Project location, travel and on-site support depend on the brief. Tell us where you need us and we can discuss the practical approach.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "how-do-we-get-started--9",
+            "title": "How do we get started?",
+            "accent": "",
+            "description": "Tell us what you have in mind, what you hope it will achieve and any timing or budget parameters you know. We can take the conversation from there.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "cta",
+        "headline": "We should probably meet.",
+        "accent": "",
+        "body": "Tell us what you are working on. We will bring the questions, the ideas and the practical thinking.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Come say hello",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Our Studio",
+      "description": ""
+    }
+  },
+  "our-work": {
+    "slug": "our-work",
+    "route": "/our-work/",
+    "title": "Our Work",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "The story is",
+        "accent": "in the making.",
+        "body": "The polished final frame is only part of it. We are interested in the decisions that made it possible, the thinking that gave it shape and the feeling it leaves behind.",
+        "image": "/media/details.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "Creative explorations.",
+        "accent": "",
+        "body": "Explore three creative studies from our world. They are a closer look at the ingredients we care about: atmosphere, identity and the behind-the-scenes craft that makes the idea work. Think of them as windows into how we approach a brief, not claims of completed client projects.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "work",
+        "headline": "Creative",
+        "accent": "explorations.",
+        "body": "Each story explores the thinking behind a possibility.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "atmosphere-is-everything-0",
+            "title": "Atmosphere is everything",
+            "accent": "",
+            "description": "A room is never just a room. The arrival, the lighting, the sound and the unexpected little detail all have something to say.",
+            "image": "/media/evening.webp",
+            "href": "/work/atmosphere-is-everything/"
+          },
+          {
+            "id": "made-to-be-remembered-1",
+            "title": "Made to be remembered",
+            "accent": "",
+            "description": "A brand gets built every time someone meets it. One voice, many touchpoints, a thousand tiny clues.",
+            "image": "/media/brand.webp",
+            "href": "/work/made-to-be-remembered/"
+          },
+          {
+            "id": "behind-every-moment-2",
+            "title": "Behind every moment",
+            "accent": "",
+            "description": "The best production looks effortless because so much of the effort happened before the doors opened.",
+            "image": "/media/sound.webp",
+            "href": "/work/behind-every-moment/"
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Our Work",
+      "description": ""
+    }
+  },
+  "atmosphere-is-everything": {
+    "slug": "atmosphere-is-everything",
+    "route": "/work/atmosphere-is-everything/",
+    "title": "Atmosphere is everything",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "Atmosphere is everything.",
+        "accent": "",
+        "body": "A creative exploration of the way spaces make people feel before anyone says a word.",
+        "image": "/media/evening.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "Design for what people remember.",
+        "accent": "",
+        "body": "We think of atmosphere as a series of choices working together. Where the eye goes first. What people hear when they walk in. How they find their way. When the energy rises and when the room gets a moment to breathe. None of it happens by accident. This study explores how a cohesive creative concept might move through spatial layout, lighting, styling, staging and guest experience. It is a reminder that the strongest event design is not just about what a place looks like. It is about what happens to people while they are in it.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "visual",
+        "headline": "Set the scene. Change the feeling.",
+        "accent": "",
+        "body": "",
+        "image": "/media/details.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-4",
+        "type": "cta",
+        "headline": "Have something",
+        "accent": "in mind?",
+        "body": "A good idea deserves a good ending. What could yours become?",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Start a conversation",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Atmosphere is everything",
+      "description": ""
+    }
+  },
+  "made-to-be-remembered": {
+    "slug": "made-to-be-remembered",
+    "route": "/work/made-to-be-remembered/",
+    "title": "Made to be remembered",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "Made to be remembered.",
+        "accent": "",
+        "body": "A visual study of how identity becomes something people recognise without having to think twice.",
+        "image": "/media/brand.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "Consistency with a pulse.",
+        "accent": "",
+        "body": "An identity needs more than one beautiful logo. It needs a character strong enough to travel. Through type and colour, packaging and print, screens and spaces, big statements and tiny bits of useful information. This concept study looks at how a flexible visual system can bring every encounter back to the same idea while leaving space for expression. The goal is not for everything to look identical. It is for everything to feel unmistakably connected.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "visual",
+        "headline": "Recognition lives in the details.",
+        "accent": "",
+        "body": "",
+        "image": "/media/planning.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-4",
+        "type": "cta",
+        "headline": "Have something",
+        "accent": "in mind?",
+        "body": "A good idea deserves a good ending. What could yours become?",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Start a conversation",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Made to be remembered",
+      "description": ""
+    }
+  },
+  "behind-every-moment": {
+    "slug": "behind-every-moment",
+    "route": "/work/behind-every-moment/",
+    "title": "Behind every moment",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "Behind every moment.",
+        "accent": "",
+        "body": "A creative study celebrating the work that makes a live experience run like it was meant to.",
+        "image": "/media/sound.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "The invisible is important.",
+        "accent": "",
+        "body": "The audience comes for the experience. The cables, cue sheets, timing checks and technical conversations are not the headline. They are what allows the headline to happen. This study explores the relationship between creative vision and production craft. How lighting, sound, visuals, people and precision come together to create a moment that feels natural. Our favourite kind of technical excellence is the kind you do not have to think about while you are enjoying the show.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "visual",
+        "headline": "Behind the scenes. Ahead of the moment.",
+        "accent": "",
+        "body": "",
+        "image": "/media/rigging.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-4",
+        "type": "cta",
+        "headline": "Have something",
+        "accent": "in mind?",
+        "body": "A good idea deserves a good ending. What could yours become?",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Start a conversation",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Behind every moment",
+      "description": ""
+    }
+  },
+  "contact": {
+    "slug": "contact",
+    "route": "/contact/",
+    "title": "Contact",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "contact",
+        "headline": "Something",
+        "accent": "brewing?",
+        "body": "A fully formed brief is welcome. So is a wildly ambitious idea, a rough sketch or a sentence that starts with “This might sound crazy...” We are listening.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "Send the idea",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "an-event-or-experience-0",
+            "title": "An event or experience",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "a-brand-or-design-project-1",
+            "title": "A brand or design project",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "a-website-or-digital-solutio-2",
+            "title": "A website or digital solution",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "marketing-and-content-3",
+            "title": "Marketing and content",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "film-or-production-4",
+            "title": "Film or production",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "a-bit-of-everything-5",
+            "title": "A bit of everything",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "not-quite-sure-yet-6",
+            "title": "Not quite sure yet",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "Tell us the interesting bit.",
+        "helperText": "You do not need to have all the answers. That is what the conversation is for. This preview form does not send messages."
+      }
+    ],
+    "seo": {
+      "title": "Contact",
+      "description": ""
+    }
+  }
+}

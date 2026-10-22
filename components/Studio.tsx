@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useId } from "react";
 import {
   defaultGlobals,
   defaultPages,
@@ -16,6 +16,7 @@ import type {
   ThemeTokens,
 } from "@/lib/types";
 import StudioCanvas from "./StudioCanvas";
+import {compatiblePages,compatibleGlobals} from '@/lib/concept-12/compat';
 import "./studio.css";
 const blocks: BlockType[] = [
   "hero",
@@ -67,8 +68,8 @@ export default function Studio() {
       try {
         const p = localStorage.getItem("showset-demo-pages"),
           g = localStorage.getItem("showset-demo-globals");
-        if (p) setPages({ ...initialPages, ...JSON.parse(p) });
-        if (g) setGlobals(JSON.parse(g));
+        if (p) setPages({ ...initialPages, ...compatiblePages(JSON.parse(p)) });
+        if (g) setGlobals(compatibleGlobals(JSON.parse(g)));
       } catch {}
       return;
     }
@@ -818,12 +819,6 @@ export default function Studio() {
                 {section && (
                   <>
                     <div className="studio-pane-title">Selected section</div>
-                    {section.type === "split" && (
-                      <p className="studio-hint">
-                        Essay images appear in the Photographic variation.
-                        Editorial and Compact keep the copy-led composition.
-                      </p>
-                    )}
                     {(
                       [
                         "spaceTop",
@@ -853,19 +848,6 @@ export default function Studio() {
                         />
                       </label>
                     ))}
-                    <label className="studio-field">
-                      Layout variation
-                      <select
-                        value={section.design?.variation || "editorial"}
-                        onChange={(e) =>
-                          patchDesign("variation", e.target.value)
-                        }
-                      >
-                        <option value="editorial">Editorial</option>
-                        <option value="compact">Compact</option>
-                        <option value="photographic">Photographic</option>
-                      </select>
-                    </label>
                     <TextField
                       label="Mobile image position"
                       value={section.design?.mobileImagePosition || ""}
@@ -1284,17 +1266,20 @@ function TextField({
   onChange: (x: string) => void;
   multiline?: boolean;
 }) {
+  const fieldId=useId();
   return (
-    <label className="studio-field">
-      {label}
+    <label className="studio-field" htmlFor={fieldId}>
+      <span id={`${fieldId}-label`}>{label}</span>
       {multiline ? (
         <textarea
+          id={fieldId}
+          aria-labelledby={`${fieldId}-label`}
           rows={4}
           value={value}
           onChange={(e) => onChange(e.target.value)}
         />
       ) : (
-        <input value={value} onChange={(e) => onChange(e.target.value)} />
+        <input id={fieldId} aria-labelledby={`${fieldId}-label`} value={value} onChange={(e) => onChange(e.target.value)} />
       )}
     </label>
   );

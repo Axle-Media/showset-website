@@ -26,10 +26,6 @@
     ],
     "services": [
       {
-        "label": "All disciplines",
-        "href": "/services/"
-      },
-      {
         "label": "Events & experiences",
         "href": "/events-experiences/"
       },

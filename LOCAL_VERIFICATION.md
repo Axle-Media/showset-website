@@ -1,3 +1,5 @@
+> Historical verification/implementation notes. Superseded by CONCEPT12_RESTORATION.md and the current browser evidence.
+
 # SHOWSET Consolidated v0.4: packaging verification
 
 ## Confirmed in this session

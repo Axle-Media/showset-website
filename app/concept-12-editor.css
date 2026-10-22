@@ -1,0 +1,30 @@
+/* Explicit Studio edits only. Default Concept 12 output receives no overrides. */
+[data-circle-reveal-off] .wipe-line>span{clip-path:none!important;animation:none!important}
+[data-circle-reveal-off] .dot-core{clip-path:circle(150vmax at 50% 50%)!important}
+.hero-track[data-scene=short]{height:175vh}.film-track[data-scene=short]{height:220vh}.services-track[data-scene=short]{height:200vh}.dot-track[data-scene=short]{height:150vh}
+[data-scene=still] .wipe-line>span{clip-path:none!important;animation:none!important}
+.c12-reveal-off .wipe-line>span{clip-path:none!important;animation:none!important}
+.c12-custom-heading :is(h1,h2){font-size:var(--c12-heading)!important}
+.c12-custom-body p{font-size:var(--c12-body)!important}
+.c12-custom-crop img{object-position:var(--c12-crop)!important}
+.concept-12-root .ss-editable-section{cursor:pointer}
+.concept-12-root .ss-editable-section.selected{outline:2px solid #12baaf;outline-offset:-3px}
+@media(max-width:800px){.c12-mobile-heading :is(h1,h2){font-size:var(--c12-mobile-heading)!important}.c12-custom-crop img{object-position:var(--c12-mobile-crop)!important}}
+
+/* Original reduced-motion rules, also available to the Studio motion toggle. */
+[data-static-motion] *,[data-static-motion] *:before,[data-static-motion] *:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}[data-static-motion] .hero-photo,[data-static-motion] .film-image,[data-static-motion] .dot-core{will-change:auto}[data-static-motion] .wipe-line>span{opacity:1;transform:none}[data-static-motion] .wipe-line:after{display:none}[data-static-motion] .hero-foreground{opacity:1!important;transform:none!important}[data-static-motion] .film-step.is-on{opacity:1}[data-static-motion] .dot-words{opacity:1!important;transform:none!important}
+[data-static-motion] .case-rail,[data-static-motion] .case-photo img{transition:none!important}[data-static-motion] .dot-core{transform:translate(-50%,-50%) scale(25)!important}[data-static-motion] .dot-words{opacity:1!important;transform:none!important}
+
+[data-static-motion] .dot-core{clip-path:circle(150vmax at 55% 54%)!important;transform:none!important;will-change:auto!important}[data-static-motion] .dot-words{opacity:1!important;transform:none!important}
+
+[data-static-motion] .case-rail{transition:none!important;will-change:auto}[data-static-motion] .case-photo img{transition:none!important;transform:none!important}[data-static-motion] .dot-core{clip-path:circle(150vmax at 50% 50%)!important}
+
+[data-static-motion] .discipline,[data-static-motion] .case-slide,[data-static-motion] .solid-link{transition:none!important}
+[data-static-motion] .soft-rise{opacity:1!important;transform:none!important;transition:none!important}[data-static-motion] .block-heading .wipe-line::after,[data-static-motion] .wipe-heading .wipe-line::after{animation:none!important;clip-path:circle(0% at 120% 50%)!important}[data-static-motion] .block-heading .wipe-line>span,[data-static-motion] .wipe-heading .wipe-line>span{opacity:1!important;transform:none!important;transition:none!important}[data-static-motion] .select-panel{transition:none!important}
+
+[data-static-motion] .category-bg img[data-depth-image],[data-static-motion] .simple-bg img[data-depth-image],[data-static-motion] .case-detail-photo img[data-depth-image]{transform:none!important;will-change:auto}
+
+[data-static-motion] .wipe-line>span{clip-path:none!important;animation:none!important;will-change:auto!important}
+
+[data-static-motion] .hero-photo-reflection{animation:none!important}[data-static-motion] .service-visual img,[data-static-motion] .case-rail,[data-static-motion] .category-bg img,[data-static-motion] .simple-bg img{transition:none!important}[data-static-motion] .block-heading .wipe-line>span,[data-static-motion] .wipe-heading .wipe-line>span{clip-path:none!important;opacity:1!important}
+

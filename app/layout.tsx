@@ -1,17 +1,17 @@
 import type { Metadata, Viewport } from "next";
 import "./fonts.css";
-import "./globals.css";
-import "./experience-three.css";
-import "./motion-prototype.css";
+import "./concept-12.css";
+import "./concept-12-editor.css";
 export const metadata: Metadata = {
   title: "SHOWSET | Events & Creative Agency",
   description:
-    "We bring events, creative design, digital experiences and production into one connected agency.",
+    "Events, creative design, digital experiences and production in one connected agency. We think, design, plan and make ideas happen.",
   robots: { index: true, follow: true },
 };
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
   themeColor: "#0D2F49",
 };
 export default function RootLayout({

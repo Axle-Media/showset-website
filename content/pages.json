@@ -32,6 +32,24 @@
         "helperText": ""
       },
       {
+        "id": "section-2",
+        "type": "split",
+        "headline": "Too good to leave",
+        "accent": "on the drawing board.",
+        "body": "You know that feeling when an idea clicks and suddenly you can see the whole thing? We live for that part. But we love what happens next even more.\n\nThe planning. The pixels. The people. The power cables. The tiny decisions nobody notices until they are done right. We connect creative thinking with the practical craft it takes to bring a concept into the world. So the work does more than look impressive. It feels right, behaves right and makes people want to be part of it.",
+        "image": "",
+        "pattern": true,
+        "reveal": false,
+        "buttonLabel": "Meet the people behind it",
+        "buttonHref": "/our-studio/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
         "id": "section-3",
         "type": "story",
         "headline": "",
@@ -75,24 +93,6 @@
         "helperText": ""
       },
       {
-        "id": "section-2",
-        "type": "split",
-        "headline": "Too good to leave",
-        "accent": "on the drawing board.",
-        "body": "You know that feeling when an idea clicks and suddenly you can see the whole thing? We live for that part. But we love what happens next even more.\n\nThe planning. The pixels. The people. The power cables. The tiny decisions nobody notices until they are done right. We connect creative thinking with the practical craft it takes to bring a concept into the world. So the work does more than look impressive. It feels right, behaves right and makes people want to be part of it.",
-        "image": "",
-        "pattern": true,
-        "reveal": false,
-        "buttonLabel": "Meet the people behind it",
-        "buttonHref": "/our-studio/",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
         "id": "section-4",
         "type": "services",
         "headline": "Different disciplines.",
@@ -127,7 +127,7 @@
             "title": "Digital & marketing",
             "accent": "",
             "description": "Websites, campaigns and technology made for people, not just platforms.",
-            "image": "/media/planning.webp",
+            "image": "",
             "href": "/digital-marketing/"
           },
           {
@@ -163,8 +163,7 @@
             "accent": "",
             "description": "You can plan the programme. The feeling is what makes people stay.",
             "image": "/media/evening.webp",
-            "href": "/work/atmosphere-is-everything/",
-            "category": "Events & Experiences"
+            "href": "/work/atmosphere-is-everything/"
           },
           {
             "id": "made-to-be-remembered-1",
@@ -172,8 +171,7 @@
             "accent": "",
             "description": "Identity is built in a thousand little encounters, not one big reveal.",
             "image": "/media/brand.webp",
-            "href": "/work/made-to-be-remembered/",
-            "category": "Creative & Design"
+            "href": "/work/made-to-be-remembered/"
           },
           {
             "id": "behind-every-moment-2",
@@ -181,8 +179,7 @@
             "accent": "",
             "description": "The quiet precision that makes a big production feel effortless.",
             "image": "/media/sound.webp",
-            "href": "/work/behind-every-moment/",
-            "category": "Content & Production"
+            "href": "/work/behind-every-moment/"
           }
         ],
         "speed": 4.7,
@@ -196,7 +193,7 @@
         "accent": "",
         "body": "The small stuff is never small when you are making something big.",
         "image": "",
-        "pattern": true,
+        "pattern": false,
         "reveal": true,
         "buttonLabel": "",
         "buttonHref": "",
@@ -550,10 +547,10 @@
       {
         "id": "section-7",
         "type": "visual",
-        "headline": "We plan for the practical. And leave room for the magic.",
+        "headline": "We plan for the practical. And leave room for the magic",
         "accent": "",
         "body": "",
-        "image": "/media/evening.webp",
+        "image": "/media/rigging.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "Bring us your brief",
@@ -804,10 +801,10 @@
       {
         "id": "section-7",
         "type": "visual",
-        "headline": "Good design gets noticed. Great design gets remembered.",
+        "headline": "Good design gets noticed. Great design gets remembered",
         "accent": "",
         "body": "",
-        "image": "/media/brand.webp",
+        "image": "/media/details.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "Give the idea a look",
@@ -1058,7 +1055,7 @@
       {
         "id": "section-7",
         "type": "visual",
-        "headline": "Built for humans. Clever under the hood.",
+        "headline": "Built for humans. Clever under the hood",
         "accent": "",
         "body": "",
         "image": "/media/planning.webp",
@@ -1296,10 +1293,10 @@
       {
         "id": "section-7",
         "type": "visual",
-        "headline": "Roll camera. Cue the lights. Make it count.",
+        "headline": "Roll camera. Cue the lights. Make it count",
         "accent": "",
         "body": "",
-        "image": "/media/sound.webp",
+        "image": "/media/rigging.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "Let’s get producing",
@@ -1640,7 +1637,7 @@
         "headline": "The story is",
         "accent": "in the making.",
         "body": "The polished final frame is only part of it. We are interested in the decisions that made it possible, the thinking that gave it shape and the feeling it leaves behind.",
-        "image": "/media/details.webp",
+        "image": "/media/rigging.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "",
@@ -1690,8 +1687,7 @@
             "accent": "",
             "description": "A room is never just a room. The arrival, the lighting, the sound and the unexpected little detail all have something to say.",
             "image": "/media/evening.webp",
-            "href": "/work/atmosphere-is-everything/",
-            "category": "Events & Experiences"
+            "href": "/work/atmosphere-is-everything/"
           },
           {
             "id": "made-to-be-remembered-1",
@@ -1699,8 +1695,7 @@
             "accent": "",
             "description": "A brand gets built every time someone meets it. One voice, many touchpoints, a thousand tiny clues.",
             "image": "/media/brand.webp",
-            "href": "/work/made-to-be-remembered/",
-            "category": "Creative & Design"
+            "href": "/work/made-to-be-remembered/"
           },
           {
             "id": "behind-every-moment-2",
@@ -1708,8 +1703,7 @@
             "accent": "",
             "description": "The best production looks effortless because so much of the effort happened before the doors opened.",
             "image": "/media/sound.webp",
-            "href": "/work/behind-every-moment/",
-            "category": "Content & Production"
+            "href": "/work/behind-every-moment/"
           }
         ],
         "speed": 6,

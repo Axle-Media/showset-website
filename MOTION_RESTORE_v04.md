@@ -1,3 +1,5 @@
+> Historical verification/implementation notes. Superseded by CONCEPT12_RESTORATION.md and the current browser evidence.
+
 > **For the complete standalone package:** v0.4 is already integrated. Ignore the old patch-install instructions below. Open `START_HERE_WINDOWS.md` and run this project directly.
 
 # SHOWSET Motion Restoration v0.4

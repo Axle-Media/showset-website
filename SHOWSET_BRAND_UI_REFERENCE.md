@@ -1,6 +1,6 @@
 # SHOWSET — Canonical Brand & Website UI Reference
 
-**Authority:** `Showset_BrandGuide(3).pdf`, supplied 21 October 2026. The PDF, including its embedded visual examples, is the primary reference for design decisions. If a website concept or AI-generated visual conflicts with the guide, the guide wins. The approved Concept 12 HTML is the baseline for existing website structure and interactions, but it must remain on-brand.
+**Current frontend authority:** `reference/CONCEPT_12_APPROVED.html`. The user cancelled the 2.0/3.0 redesigns and requested exact Concept 12 restoration. This earlier brand/UI reference must not be used to restyle the approved HTML. The supplied brand guide remains an asset reference; see `CONCEPT12_RESTORATION.md` for the active restoration contract.
 
 ## 1. Approved identity
 
