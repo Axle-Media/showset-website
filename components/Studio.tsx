@@ -770,6 +770,28 @@ export default function Studio() {
                         }
                       />
                     ))}
+                    <h3>Social profiles</h3>
+                    {(["facebook", "instagram", "linkedin"] as const).map((key) => (
+                      <TextField
+                        key={key}
+                        label={key.charAt(0).toUpperCase() + key.slice(1) + " URL"}
+                        value={globals.footer.socials?.[key] ?? ""}
+                        onChange={(v) =>
+                          setGlobals((g) => ({
+                            ...g,
+                            footer: {
+                              ...g.footer,
+                              socials: {
+                                facebook: g.footer.socials?.facebook ?? "",
+                                instagram: g.footer.socials?.instagram ?? "",
+                                linkedin: g.footer.socials?.linkedin ?? "",
+                                [key]: v,
+                              },
+                            },
+                          }))
+                        }
+                      />
+                    ))}
                   </>
                 )}
               </>
