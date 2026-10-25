@@ -1,13 +1,13 @@
 @font-face{
   font-family:"Manrope";
-  src:url("/protected-site/fonts/showset-0.woff2") format("woff2");
+  src:url("/gate-assets/fonts/showset-0.woff2") format("woff2");
   font-style:normal;
   font-weight:400 800;
   font-display:swap;
 }
 @font-face{
   font-family:"Poppins";
-  src:url("/protected-site/fonts/showset-4.woff2") format("woff2");
+  src:url("/gate-assets/fonts/showset-4.woff2") format("woff2");
   font-style:normal;
   font-weight:600 800;
   font-display:swap;
