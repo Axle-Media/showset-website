@@ -42,5 +42,5 @@ The command builds the static export, moves the exported Next.js site into `out/
 - The gate must be served over HTTPS so the session cookie is marked Secure.
 - The host must support PHP sessions, Apache rewrite rules and PHP's `password_verify`, `random_bytes`, `flock` and filesystem access.
 - PHP serves protected static files through the gateway, so protected asset requests incur PHP overhead. This is acceptable for a password-protected preview; assess performance before using the same approach as the final public architecture.
-- The public cover stylesheet, script and pattern SVG are intentionally public. The website export and API are not directly served without a valid preview session.
+- The public cover stylesheet, script, pattern SVG and two self-hosted font files are intentionally public. The website export and API are not directly served without a valid preview session.
 - A password gate reduces casual access but is not a guarantee that screenshots, copied content or files obtained by an authorised user cannot be shared.
