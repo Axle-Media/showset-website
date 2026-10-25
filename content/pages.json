@@ -93,6 +93,49 @@
         "helperText": ""
       },
       {
+        "id": "section-5",
+        "type": "work",
+        "headline": "The thinking",
+        "accent": "behind the thing.",
+        "body": "A little more than a final image. We like to show what makes an idea work: the intention, the atmosphere, the choices and the craft. Here are a few creative explorations that take you behind the scenes of how we think.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "atmosphere-is-everything-0",
+            "title": "Atmosphere is everything",
+            "accent": "",
+            "description": "You can plan the programme. The feeling is what makes people stay.",
+            "image": "/media/evening.webp",
+            "href": "/work/atmosphere-is-everything/"
+          },
+          {
+            "id": "made-to-be-remembered-1",
+            "title": "Made to be remembered",
+            "accent": "",
+            "description": "Identity is built in a thousand little encounters, not one big reveal.",
+            "image": "/media/brand.webp",
+            "href": "/work/made-to-be-remembered/"
+          },
+          {
+            "id": "behind-every-moment-2",
+            "title": "Behind every moment",
+            "accent": "",
+            "description": "The quiet precision that makes a big production feel effortless.",
+            "image": "/media/sound.webp",
+            "href": "/work/behind-every-moment/"
+          }
+        ],
+        "speed": 4.7,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
         "id": "section-4",
         "type": "services",
         "headline": "Different disciplines.",
@@ -140,49 +183,6 @@
           }
         ],
         "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-5",
-        "type": "work",
-        "headline": "The thinking",
-        "accent": "behind the thing.",
-        "body": "A little more than a final image. We like to show what makes an idea work: the intention, the atmosphere, the choices and the craft. Here are a few creative explorations that take you behind the scenes of how we think.",
-        "image": "",
-        "pattern": true,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [
-          {
-            "id": "atmosphere-is-everything-0",
-            "title": "Atmosphere is everything",
-            "accent": "",
-            "description": "You can plan the programme. The feeling is what makes people stay.",
-            "image": "/media/evening.webp",
-            "href": "/work/atmosphere-is-everything/"
-          },
-          {
-            "id": "made-to-be-remembered-1",
-            "title": "Made to be remembered",
-            "accent": "",
-            "description": "Identity is built in a thousand little encounters, not one big reveal.",
-            "image": "/media/brand.webp",
-            "href": "/work/made-to-be-remembered/"
-          },
-          {
-            "id": "behind-every-moment-2",
-            "title": "Behind every moment",
-            "accent": "",
-            "description": "The quiet precision that makes a big production feel effortless.",
-            "image": "/media/sound.webp",
-            "href": "/work/behind-every-moment/"
-          }
-        ],
-        "speed": 4.7,
         "formTitle": "",
         "helperText": ""
       },
