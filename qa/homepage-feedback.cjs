@@ -25,6 +25,19 @@ async function position(page, selector, fraction = 0) {
     await page.goto(base + '/');
     await page.waitForTimeout(750);
 
+    const sectionOrder = await page.evaluate(() => {
+      const work = document.querySelector('#portfolio-section');
+      const services = document.querySelector('#services-track');
+      return {
+        workBeforeServices: !!work && !!services &&
+          !!(work.compareDocumentPosition(services) & Node.DOCUMENT_POSITION_FOLLOWING),
+        workTop: work?.getBoundingClientRect().top,
+        servicesTop: services?.getBoundingClientRect().top,
+      };
+    });
+    check('Case studies appear before Services on the homepage',
+      sectionOrder.workBeforeServices, sectionOrder);
+
     const initial = await page.evaluate(() => {
       const hero = document.querySelector('.hero-title');
       const accent = hero.querySelector('.hero-accent-phrase>span');
