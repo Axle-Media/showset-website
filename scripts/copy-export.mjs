@@ -33,8 +33,16 @@ fs.copyFileSync(path.join('backend', 'gate', '.htaccess'), path.join(out, '.htac
 
 const publicGateAssets = path.join(out, 'gate-assets');
 fs.mkdirSync(path.join(publicGateAssets, 'fonts'), { recursive: true });
-for (const file of ['gate.css', 'gate.js', 'pattern.svg', 'favicon.svg']) {
+for (const file of ['gate.css', 'gate.js']) {
   fs.copyFileSync(path.join('backend', 'gate', 'assets', file), path.join(publicGateAssets, file));
+}
+for (const [source, target] of [
+  ['public/brand/approved-wordmark.png', 'approved-wordmark.png'],
+  ['public/brand/approved-icon.png', 'approved-icon.png'],
+  ['public/brand/pattern.svg', 'pattern.svg'],
+  ['public/media/evening.webp', 'cover.webp'],
+]) {
+  fs.copyFileSync(source, path.join(publicGateAssets, target));
 }
 for (const file of ['showset-0.woff2', 'showset-4.woff2']) {
   const font = path.join(protectedSite, 'fonts', file);
@@ -56,7 +64,10 @@ for (const required of [
   path.join(publicGateAssets, 'gate.css'),
   path.join(publicGateAssets, 'gate.js'),
   path.join(publicGateAssets, 'pattern.svg'),
-  path.join(publicGateAssets, 'favicon.svg'),
+  path.join(publicGateAssets, 'approved-wordmark.png'),
+  path.join(publicGateAssets, 'approved-icon.png'),
+  path.join(publicGateAssets, 'pattern.svg'),
+  path.join(publicGateAssets, 'cover.webp'),
 ]) {
   if (!fs.existsSync(required)) {
     console.error('Preview package is incomplete: ' + path.relative(out, required));
