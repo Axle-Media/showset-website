@@ -180,7 +180,8 @@ if ($action === 'login') {
 
 if (gate_is_authorized()) {
     if ($path === 'api/showset/index.php') {
-        // Execute the real API only after the preview session has been checked.
+        // Persist the preview session, then let the Studio API open its own session.
+        session_write_close();
         require __DIR__ . '/api/showset/index.php';
         exit;
     }
