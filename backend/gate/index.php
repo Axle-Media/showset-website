@@ -294,37 +294,48 @@ $html = <<<'HTML'
   <meta name="csrf-token" content="%%CSRF%%">
   <title>SHOWSET | New website coming soon</title>
   <link rel="icon" href="/gate-assets/approved-icon.png" type="image/png">
-  <link rel="stylesheet" href="/gate-assets/gate.css?v=20261025-2">
-  <script src="/gate-assets/gate.js?v=20261025-2" defer></script>
+  <link rel="stylesheet" href="/gate-assets/gate.css?v=20261025-3">
+  <script src="/gate-assets/gate.js?v=20261025-3" defer></script>
 </head>
 <body data-open-modal="%%AUTOOPEN%%">
-  <main class="cover" aria-label="SHOWSET website announcement">
+  <main class="cover" aria-label="SHOWSET website">
     <div class="cover-pattern" aria-hidden="true"></div>
     <div class="cover-content">
-      <button class="gate-brand" id="open-access-modal" type="button" aria-label="Open private website access" aria-haspopup="dialog" aria-controls="access-modal">
-        <img src="/gate-assets/approved-wordmark.png" alt="SHOWSET. Events and experiences">
+      <button class="gate-brand" id="open-access-modal" type="button" aria-label="Open password access" aria-haspopup="dialog" aria-controls="access-modal">
+        <img src="/gate-assets/approved-wordmark.png" alt="SHOWSET">
       </button>
-      <p class="cover-message">We are building something exciting, new website is coming soon</p>
     </div>
+    <footer class="cover-footer" aria-label="Contact and social links">
+      <div class="cover-contact">
+        <a href="mailto:hello@showset.co.za">hello@showset.co.za</a>
+        <span class="footer-separator" aria-hidden="true"></span>
+        <a href="tel:+27682805777">+27 68 280 5777</a>
+        <span class="footer-separator" aria-hidden="true"></span>
+        <span>Cape Town, South Africa</span>
+      </div>
+      <nav class="footer-socials" aria-label="Social media">
+        <a class="footer-social" href="https://www.facebook.com/madebyshowset" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3"/></svg>
+        </a>
+        <a class="footer-social" href="https://www.instagram.com/madebyshowset" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+        </a>
+        <a class="footer-social" href="https://www.linkedin.com/company/madebyshowset" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </nav>
+    </footer>
   </main>
 
-  <dialog class="access-modal" id="access-modal" aria-labelledby="modal-title" aria-describedby="modal-description">
+  <dialog class="access-modal" id="access-modal" aria-label="Password access">
     <form class="modal-card" id="preview-login-form" method="post" action="/?action=login" novalidate>
-      <button class="modal-close" type="button" id="close-access-modal" aria-label="Close access window">×</button>
-      <span class="modal-kicker"><span class="modal-mark"></span> Private preview</span>
-      <h2 id="modal-title">Come on in.</h2>
-      <p class="modal-description" id="modal-description">Enter the preview password to explore our website.</p>
+      <button class="modal-close" type="button" id="close-access-modal" aria-label="Close">×</button>
       <input type="hidden" name="csrf" value="%%CSRF%%">
-      <label class="password-label" for="preview-password">Preview password</label>
-      <div class="password-field">
-        <input id="preview-password" name="password" type="password" autocomplete="current-password" placeholder="Enter password" required maxlength="512" aria-describedby="login-status">
-        <button class="password-visibility" id="toggle-password" type="button" aria-label="Show password" aria-pressed="false">Show</button>
-      </div>
-      <p class="login-status" id="login-status" role="status" aria-live="polite">%%NOTICE%%</p>
+      <input class="password-input" id="preview-password" name="password" type="password" autocomplete="current-password" placeholder="Password" aria-label="Password" required maxlength="512" aria-describedby="login-status">
+      <p class="login-status sr-only" id="login-status" role="status" aria-live="polite">%%NOTICE%%</p>
       <button class="modal-submit" id="submit-preview-login" type="submit">
-        <span class="submit-label">Enter website</span><span class="submit-arrow" aria-hidden="true">↗</span>
+        <span class="submit-label">Submit</span>
       </button>
-      <p class="modal-footnote">For the SHOWSET team only.</p>
     </form>
   </dialog>
 </body>
