@@ -8,6 +8,8 @@
   const visibility = document.getElementById("toggle-password");
   const status = document.getElementById("login-status");
   const submit = document.getElementById("submit-preview-login");
+  const coverMessage = document.querySelector(".cover-message");
+  if (coverMessage) coverMessage.textContent = "We are building something exciting, new website is coming soon";
   if (!modal || !form || !password || !status || !submit) return;
 
   const openModal = () => {
