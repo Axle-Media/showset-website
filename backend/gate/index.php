@@ -161,7 +161,8 @@ if ($action === 'login') {
     $configPath = __DIR__ . '/api/showset/config.local.php';
     $config = is_file($configPath) ? require $configPath : null;
     $hash = is_array($config) ? (string) ($config['preview_password_hash'] ?? '') : '';
-    if ($hash === '' || str_starts_with($hash, 'PASTE_') || password_get_info($hash)['algo'] === null) {
+    $hashInfo = $hash !== '' ? password_get_info($hash) : ['algoName' => 'unknown'];
+    if ($hash === '' || str_starts_with($hash, 'PASTE_') || ($hashInfo['algoName'] ?? 'unknown') === 'unknown') {
         gate_login_response(['ok' => false, 'error' => 'Preview access has not been configured on the server yet.'], 503, $jsonRequest);
     }
 
