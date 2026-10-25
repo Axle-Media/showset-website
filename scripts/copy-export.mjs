@@ -66,7 +66,6 @@ for (const required of [
   path.join(publicGateAssets, 'pattern.svg'),
   path.join(publicGateAssets, 'approved-wordmark.png'),
   path.join(publicGateAssets, 'approved-icon.png'),
-  path.join(publicGateAssets, 'pattern.svg'),
   path.join(publicGateAssets, 'cover.webp'),
 ]) {
   if (!fs.existsSync(required)) {
