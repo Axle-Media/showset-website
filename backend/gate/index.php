@@ -294,8 +294,8 @@ $html = <<<'HTML'
   <meta name="csrf-token" content="%%CSRF%%">
   <title>SHOWSET | New website coming soon</title>
   <link rel="icon" href="/gate-assets/approved-icon.png" type="image/png">
-  <link rel="stylesheet" href="/gate-assets/gate.css">
-  <script src="/gate-assets/gate.js" defer></script>
+  <link rel="stylesheet" href="/gate-assets/gate.css?v=20261025-2">
+  <script src="/gate-assets/gate.js?v=20261025-2" defer></script>
 </head>
 <body data-open-modal="%%AUTOOPEN%%">
   <main class="cover" aria-label="SHOWSET website announcement">
@@ -304,7 +304,7 @@ $html = <<<'HTML'
       <button class="gate-brand" id="open-access-modal" type="button" aria-label="Open private website access" aria-haspopup="dialog" aria-controls="access-modal">
         <img src="/gate-assets/approved-wordmark.png" alt="SHOWSET. Events and experiences">
       </button>
-      <p class="cover-message">SHOWSET copied to root, new website coming soon</p>
+      <p class="cover-message">We are building something exciting, new website is coming soon</p>
     </div>
   </main>
 
