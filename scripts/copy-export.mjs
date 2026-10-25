@@ -46,6 +46,22 @@ for (const file of ['showset-0.woff2', 'showset-4.woff2']) {
 }
 
 fs.mkdirSync(path.join(protectedSite, 'media', 'uploads'), { recursive: true });
+
+for (const required of [
+  path.join(out, 'index.php'),
+  path.join(out, '.htaccess'),
+  path.join(out, 'api', 'showset', 'index.php'),
+  path.join(protectedSite, 'index.html'),
+  path.join(protectedSite, '.htaccess'),
+  path.join(publicGateAssets, 'gate.css'),
+  path.join(publicGateAssets, 'gate.js'),
+  path.join(publicGateAssets, 'pattern.svg'),
+]) {
+  if (!fs.existsSync(required)) {
+    console.error('Preview package is incomplete: ' + path.relative(out, required));
+    process.exit(1);
+  }
+}
 console.log('xneelo package prepared in out/');
 console.log('Public entry: PHP password gate. Protected export: out/protected-site/');
 console.log('Configure api/showset/config.local.php on the server before enabling preview access.');
