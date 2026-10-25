@@ -34,3 +34,48 @@ button,input{font:inherit}button{color:inherit;cursor:pointer}button:focus-visib
 @keyframes modal-enter{from{opacity:0;transform:translateY(8px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(max-width:520px){.cover-pattern{background-size:350px auto}.cover-content{width:min(100% - 32px,420px)}.gate-brand{width:min(78vw,330px)}.cover-message{max-width:300px;margin-top:23px;font-size:13px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.gate-brand:hover{transform:none}}
+
+/* SHOWSET signature intro: the mark reveals from its centre, then the message follows. */
+.cover-pattern{
+  background-position:center center;
+  animation:pattern-intro 1.35s ease-out both,pattern-drift 42s ease-in-out 1.35s infinite alternate;
+}
+.cover-content{animation:cover-settle 1s cubic-bezier(.16,1,.3,1) both}
+.gate-brand img{
+  clip-path:circle(0% at 50% 50%);
+  opacity:0;
+  transform:scale(.86);
+  animation:logo-signature-reveal 1.5s cubic-bezier(.16,1,.3,1) .18s both;
+  will-change:clip-path,transform,opacity;
+}
+.cover-message{
+  opacity:0;
+  transform:translateY(12px);
+  animation:message-arrive .8s cubic-bezier(.16,1,.3,1) .88s both;
+}
+@keyframes pattern-intro{
+  from{opacity:0;transform:scale(1.045)}
+  to{opacity:.055;transform:scale(1)}
+}
+@keyframes pattern-drift{
+  from{background-position:center center}
+  to{background-position:calc(50% + 16px) calc(50% - 12px)}
+}
+@keyframes cover-settle{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes logo-signature-reveal{
+  0%{clip-path:circle(0% at 50% 50%);opacity:0;transform:scale(.86)}
+  65%{opacity:1}
+  100%{clip-path:circle(150% at 50% 50%);opacity:1;transform:scale(1)}
+}
+@keyframes message-arrive{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .cover-pattern,.cover-content,.gate-brand img,.cover-message{
+    animation:none!important;opacity:1!important;transform:none!important;clip-path:none!important
+  }
+}
