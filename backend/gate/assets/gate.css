@@ -79,3 +79,46 @@ button,input{font:inherit}button{color:inherit;cursor:pointer}button:focus-visib
     animation:none!important;opacity:1!important;transform:none!important;clip-path:none!important
   }
 }
+
+
+/* Cover footer and reduced password modal. Keep footer typography aligned with the site footer. */
+body{overflow-x:hidden;overflow-y:auto}
+.cover{display:flex;flex-direction:column;align-items:stretch;justify-content:stretch;min-height:100vh;min-height:100svh;padding:0 clamp(22px,4.2vw,64px) clamp(20px,2.5vw,30px)}
+.cover-content{flex:1;display:flex;align-items:center;justify-content:center;width:100%;max-width:none;margin:0;padding:30px 0}
+.cover-footer{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:28px;width:100%;padding-top:20px;border-top:1px solid rgba(250,249,253,.13);color:rgba(250,249,253,.68);font-family:var(--body);font-size:12px;font-weight:450;letter-spacing:.015em;line-height:1.5}
+.cover-contact{display:flex;align-items:center;gap:clamp(10px,1.35vw,19px);min-width:0;white-space:nowrap}
+.cover-contact a{color:inherit;text-decoration:none;transition:color .2s ease}
+.cover-contact a:hover{color:var(--teal)}
+.footer-separator{display:block;flex:none;width:3px;height:3px;border-radius:50%;background:var(--teal);opacity:.85}
+.footer-socials{display:flex;flex:none;align-items:center;justify-content:flex-end;gap:9px}
+.footer-social{display:grid;place-items:center;width:32px;height:32px;border:1px solid rgba(250,249,253,.17);border-radius:50%;color:rgba(250,249,253,.78);transition:color .2s ease,border-color .2s ease,background .2s ease,transform .2s ease}
+.footer-social svg{display:block;width:15px;height:15px}
+.footer-social:hover{color:var(--teal);border-color:rgba(18,186,175,.7);background:rgba(18,186,175,.07);transform:translateY(-2px)}
+.footer-social:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.access-modal{width:min(calc(100% - 32px),390px);max-width:390px;border:1px solid rgba(250,249,253,.15);border-radius:13px;background:#0d2f49}
+.modal-card{position:relative;display:flex;flex-direction:column;gap:12px;padding:55px 24px 24px;border-radius:13px;background:linear-gradient(145deg,#153b54,#0d2f49 70%)}
+.modal-close{top:12px;right:12px;width:30px;height:30px;font-size:20px;line-height:1}
+.password-input{display:block;width:100%;min-height:48px;padding:0 14px;border:1px solid rgba(250,249,253,.22);border-radius:7px;outline:none;background:rgba(4,21,34,.45);color:var(--white);font-family:var(--body);font-size:13px;letter-spacing:.015em}
+.password-input::placeholder{color:rgba(250,249,253,.48)}
+.password-input:focus{border-color:var(--teal);outline:2px solid rgba(18,186,175,.14);outline-offset:1px}
+.password-input[aria-invalid="true"]{border-color:#ff938a}
+.modal-submit{display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;padding:8px 16px;border:1px solid var(--teal);border-radius:999px;background:var(--teal);color:#062739;font-family:var(--body);font-size:12px;font-weight:800;letter-spacing:.025em}
+.modal-submit:hover{background:#43d8cf;border-color:#43d8cf}
+.modal-submit .submit-arrow{display:none}
+.login-status.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+@media(max-width:760px){
+  .cover{padding:0 22px 18px}
+  .cover-footer{align-items:flex-start;flex-direction:column;gap:13px;padding-top:15px}
+  .cover-contact{flex-wrap:wrap;gap:7px 11px;white-space:normal;font-size:11px}
+  .footer-socials{justify-content:flex-start;gap:8px}
+  .footer-social{width:30px;height:30px}
+}
+@media(max-width:390px){
+  .cover{padding-left:16px;padding-right:16px}
+  .cover-contact{font-size:10.5px}
+  .gate-brand{width:min(80vw,310px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .footer-social{transition:none!important}
+  .footer-social:hover{transform:none}
+}
