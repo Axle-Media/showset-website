@@ -1,0 +1,11 @@
+Options -Indexes -MultiViews
+DirectoryIndex index.php
+RewriteEngine On
+
+# The gate and its small public asset set are the only public entry points.
+RewriteRule ^index\.php$ - [L]
+RewriteRule ^gate-assets/ - [L]
+
+# Route every other request, including direct HTML and app-asset URLs, through
+# the PHP session check. This also intercepts the Studio API before execution.
+RewriteRule ^(.*)$ index.php?path=$1 [QSA,L]
