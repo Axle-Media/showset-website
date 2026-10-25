@@ -19,7 +19,12 @@
     if (openButton) openButton.focus();
   };
 
-  openButton?.addEventListener("click", openModal);
+  if (openButton) {
+    openButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      openModal();
+    });
+  }
   secondaryButton?.addEventListener("click", openModal);
   closeButton?.addEventListener("click", closeModal);
   modal.addEventListener("click", (event) => {
