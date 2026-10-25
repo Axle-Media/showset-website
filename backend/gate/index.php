@@ -292,49 +292,21 @@ $html = <<<'HTML'
   <meta name="theme-color" content="#0d2f49">
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="csrf-token" content="%%CSRF%%">
-  <title>SHOWSET | Private website preview</title>
+  <title>SHOWSET | New website coming soon</title>
   <link rel="icon" href="/gate-assets/approved-icon.png" type="image/png">
-  <meta name="description" content="Explore the SHOWSET website preview.">
   <link rel="stylesheet" href="/gate-assets/gate.css">
   <script src="/gate-assets/gate.js" defer></script>
 </head>
 <body data-open-modal="%%AUTOOPEN%%">
-  <div class="gate-pattern" aria-hidden="true"></div>
-  <div class="gate-shell">
-    <header class="gate-header">
-      <a class="gate-brand" href="/" aria-label="SHOWSET">
+  <main class="cover" aria-label="SHOWSET website announcement">
+    <div class="cover-pattern" aria-hidden="true"></div>
+    <div class="cover-content">
+      <button class="gate-brand" id="open-access-modal" type="button" aria-label="Open private website access" aria-haspopup="dialog" aria-controls="access-modal">
         <img src="/gate-assets/approved-wordmark.png" alt="SHOWSET. Events and experiences">
-      </a>
-      <p class="gate-preview-label"><span class="preview-dot"></span> Private website preview</p>
-    </header>
-
-    <main class="gate-layout">
-      <section class="gate-copy" aria-labelledby="gate-title">
-        <p class="gate-kicker">Events. Creative. Digital. Production.</p>
-        <h1 id="gate-title">Great ideas<br><em>move people.</em></h1>
-        <p class="gate-description">Our new website brings our events, creative, digital and production work together. Enter the private preview to take a look.</p>
-        <button class="gate-access-link" id="open-access-modal" type="button" aria-haspopup="dialog" aria-controls="access-modal">
-          <span>Explore the website</span><span class="access-arrow" aria-hidden="true">↗</span>
-        </button>
-        <div class="gate-services" aria-label="Our disciplines">
-          <span>Events &amp; experiences</span>
-          <span>Creative &amp; design</span>
-          <span>Digital &amp; marketing</span>
-          <span>Content &amp; production</span>
-        </div>
-      </section>
-
-      <figure class="gate-visual">
-        <img src="/gate-assets/cover.webp" alt="Guests gathered at an evening event in front of a SHOWSET-branded stage">
-        <figcaption>We make room for the unexpected, then plan every last detail around it.</figcaption>
-      </figure>
-    </main>
-
-    <footer class="gate-footer">
-      <span>SHOWSET</span>
-      <span>Ideas, brought to life.</span>
-    </footer>
-  </div>
+      </button>
+      <p class="cover-message">SHOWSET copied to root, new website coming soon</p>
+    </div>
+  </main>
 
   <dialog class="access-modal" id="access-modal" aria-labelledby="modal-title" aria-describedby="modal-description">
     <form class="modal-card" id="preview-login-form" method="post" action="/?action=login" novalidate>
