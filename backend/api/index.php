@@ -55,7 +55,7 @@ try {
  if($action==='upload') {require_post();require_auth();csrf();if(empty($_FILES['file'])||!is_uploaded_file($_FILES['file']['tmp_name']))respond(['ok'=>false,'error'=>'No image'],400);
   $f=$_FILES['file'];if($f['error']!==UPLOAD_ERR_OK||$f['size']>($config['max_upload_bytes']??5000000))respond(['ok'=>false,'error'=>'File too large'],413);
   $mime=(new finfo(FILEINFO_MIME_TYPE))->file($f['tmp_name']);$allowed=['image/png'=>'png','image/jpeg'=>'jpg','image/webp'=>'webp'];if(!isset($allowed[$mime])||!getimagesize($f['tmp_name']))respond(['ok'=>false,'error'=>'Unsupported image'],415);
-  $path=dirname(__DIR__,2).'/media/uploads';if(!is_dir($path)&&!mkdir($path,0755,true))respond(['ok'=>false,'error'=>'Upload directory unavailable'],503);
+  $base=dirname(__DIR__,2);$siteRoot=is_dir($base.'/protected-site')?$base.'/protected-site':$base;$path=$siteRoot.'/media/uploads';if(!is_dir($path)&&!mkdir($path,0755,true))respond(['ok'=>false,'error'=>'Upload directory unavailable'],503);
   $name=bin2hex(random_bytes(18)).'.'.$allowed[$mime];if(!move_uploaded_file($f['tmp_name'],$path.'/'.$name))respond(['ok'=>false,'error'=>'Unable to save image'],503);chmod($path.'/'.$name,0644);respond(['ok'=>true,'url'=>'/media/uploads/'.$name]);}
  if($action==='enquiry'){require_post();$ip=hash('sha256',$_SERVER['REMOTE_ADDR']??'unknown');if(!limit('contact:'.substr($ip,0,55),6,3600))respond(['ok'=>false,'error'=>'Too many requests'],429);
   $name=trim((string)($_POST['name']??''));$email=trim((string)($_POST['email']??''));$msg=trim((string)($_POST['message']??''));$trap=(string)($_POST['website']??'');

@@ -36,7 +36,7 @@ npm run lint:source
 npm run build
 ```
 
-The production build uses Next.js static export with directory-style URLs and writes to `out/`. The browser checks in `qa/` require Playwright and Chrome; see the refinement documentation for configuration. Existing contrast findings, physical-device testing and the preview form's non-delivery behaviour are documented honestly.
+The production build uses Next.js static export with directory-style URLs and writes to `out/`. Run `npm run package:xneelo` to assemble a PHP-gated preview package for standard xneelo hosting. It places the export in `out/protected-site/` and adds a server-side password gate, public cover assets and the PHP API. Configure `api/showset/config.local.php` on the server with a separately generated `preview_password_hash`; never commit that file or deploy the package before explicit approval. See [docs/XNEELO_PREVIEW_GATE.md](docs/XNEELO_PREVIEW_GATE.md) for setup and security details. The browser checks in `qa/` require Playwright and Chrome; see the refinement documentation for configuration. Existing contrast findings, physical-device testing and the preview form's non-delivery behaviour are documented honestly.
 
 ## Branches and collaboration
 
