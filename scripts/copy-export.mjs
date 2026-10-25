@@ -40,7 +40,6 @@ for (const [source, target] of [
   ['public/brand/approved-wordmark.png', 'approved-wordmark.png'],
   ['public/brand/approved-icon.png', 'approved-icon.png'],
   ['public/brand/pattern.svg', 'pattern.svg'],
-  ['public/media/evening.webp', 'cover.webp'],
 ]) {
   fs.copyFileSync(source, path.join(publicGateAssets, target));
 }
@@ -66,7 +65,8 @@ for (const required of [
   path.join(publicGateAssets, 'pattern.svg'),
   path.join(publicGateAssets, 'approved-wordmark.png'),
   path.join(publicGateAssets, 'approved-icon.png'),
-  path.join(publicGateAssets, 'cover.webp'),
+  path.join(publicGateAssets, 'fonts', 'showset-0.woff2'),
+  path.join(publicGateAssets, 'fonts', 'showset-4.woff2'),
 ]) {
   if (!fs.existsSync(required)) {
     console.error('Preview package is incomplete: ' + path.relative(out, required));
