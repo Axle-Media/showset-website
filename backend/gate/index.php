@@ -293,6 +293,7 @@ $html = <<<'HTML'
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="csrf-token" content="%%CSRF%%">
   <title>SHOWSET | A new chapter is taking shape</title>
+  <link rel="icon" href="/gate-assets/favicon.svg" type="image/svg+xml">
   <meta name="description" content="Our next chapter is taking shape.">
   <link rel="stylesheet" href="/gate-assets/gate.css">
   <script src="/gate-assets/gate.js" defer></script>
