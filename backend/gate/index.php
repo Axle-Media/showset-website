@@ -289,54 +289,59 @@ $html = <<<'HTML'
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#061b2b">
+  <meta name="theme-color" content="#0d2f49">
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="csrf-token" content="%%CSRF%%">
-  <title>SHOWSET | A new chapter is taking shape</title>
-  <link rel="icon" href="/gate-assets/favicon.svg" type="image/svg+xml">
-  <meta name="description" content="Our next chapter is taking shape.">
+  <title>SHOWSET | Private website preview</title>
+  <link rel="icon" href="/gate-assets/approved-icon.png" type="image/png">
+  <meta name="description" content="Explore the SHOWSET website preview.">
   <link rel="stylesheet" href="/gate-assets/gate.css">
   <script src="/gate-assets/gate.js" defer></script>
 </head>
 <body data-open-modal="%%AUTOOPEN%%">
-  <div class="gate-canvas" aria-hidden="true">
-    <div class="gate-glow gate-glow-one"></div>
-    <div class="gate-glow gate-glow-two"></div>
-    <div class="gate-pattern"></div>
-    <div class="gate-grid"></div>
-  </div>
-  <main class="gate-main">
-    <header class="gate-topline">
-      <span class="gate-eyebrow"><span class="status-light"></span> Events &amp; creative agency</span>
-      <span class="gate-index">THE NEXT CHAPTER <span>01 / 01</span></span>
+  <div class="gate-pattern" aria-hidden="true"></div>
+  <div class="gate-shell">
+    <header class="gate-header">
+      <a class="gate-brand" href="/" aria-label="SHOWSET">
+        <img src="/gate-assets/approved-wordmark.png" alt="SHOWSET. Events and experiences">
+      </a>
+      <p class="gate-preview-label"><span class="preview-dot"></span> Private website preview</p>
     </header>
 
-    <section class="gate-centre" aria-labelledby="gate-title">
-      <button class="gate-wordmark" id="open-access-modal" type="button" aria-haspopup="dialog" aria-controls="access-modal" aria-label="Open private website preview">
-        <span class="wordmark-text">showset<span class="wordmark-period">.</span></span>
-        <span class="wordmark-orbit" aria-hidden="true"><span></span></span>
-      </button>
-      <div class="gate-rule" aria-hidden="true"><span></span></div>
-      <p class="gate-kicker">Something good is taking shape</p>
-      <h1 id="gate-title">Great ideas<br><em>move people.</em></h1>
-      <p class="gate-description">We’re building what comes next. The work is underway, the details are coming together, and our next chapter is taking shape.</p>
-      <button class="gate-access-link" id="open-access-secondary" type="button" aria-controls="access-modal">
-        <span>Step inside</span><span class="access-arrow" aria-hidden="true">↗</span>
-      </button>
-    </section>
+    <main class="gate-layout">
+      <section class="gate-copy" aria-labelledby="gate-title">
+        <p class="gate-kicker">Events. Creative. Digital. Production.</p>
+        <h1 id="gate-title">Great ideas<br><em>move people.</em></h1>
+        <p class="gate-description">Our new website brings our events, creative, digital and production work together. Enter the private preview to take a look.</p>
+        <button class="gate-access-link" id="open-access-modal" type="button" aria-haspopup="dialog" aria-controls="access-modal">
+          <span>Explore the website</span><span class="access-arrow" aria-hidden="true">↗</span>
+        </button>
+        <div class="gate-services" aria-label="Our disciplines">
+          <span>Events &amp; experiences</span>
+          <span>Creative &amp; design</span>
+          <span>Digital &amp; marketing</span>
+          <span>Content &amp; production</span>
+        </div>
+      </section>
+
+      <figure class="gate-visual">
+        <img src="/gate-assets/cover.webp" alt="Guests gathered at an evening event in front of a SHOWSET-branded stage">
+        <figcaption>We make room for the unexpected, then plan every last detail around it.</figcaption>
+      </figure>
+    </main>
 
     <footer class="gate-footer">
-      <span>Think it through. Make it happen.</span>
-      <span class="gate-footer-right">Cape Town, South Africa <span class="footer-dot"></span></span>
+      <span>SHOWSET</span>
+      <span>Ideas, brought to life.</span>
     </footer>
-  </main>
+  </div>
 
   <dialog class="access-modal" id="access-modal" aria-labelledby="modal-title" aria-describedby="modal-description">
     <form class="modal-card" id="preview-login-form" method="post" action="/?action=login" novalidate>
       <button class="modal-close" type="button" id="close-access-modal" aria-label="Close access window">×</button>
       <span class="modal-kicker"><span class="modal-mark"></span> Private preview</span>
-      <h2 id="modal-title">A little further inside.</h2>
-      <p class="modal-description" id="modal-description">Enter the preview password to explore the website we’re building.</p>
+      <h2 id="modal-title">Come on in.</h2>
+      <p class="modal-description" id="modal-description">Enter the preview password to explore our website.</p>
       <input type="hidden" name="csrf" value="%%CSRF%%">
       <label class="password-label" for="preview-password">Preview password</label>
       <div class="password-field">
