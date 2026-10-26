@@ -132,17 +132,21 @@ function gate_login_response(array $data, int $status, bool $jsonRequest): never
         header('Location: /', true, 303);
         exit;
     }
-    header('Location: ' . gate_redirect_target(), true, 303);
+    $redirect = (string) ($data['redirect'] ?? '/');
+    if ($redirect === '' || $redirect[0] !== '/' || str_starts_with($redirect, '//') || str_contains($redirect, '\\')) {
+        $redirect = '/';
+    }
+    header('Location: ' . $redirect, true, 303);
     exit;
 }
 
-$action = (string) ($_GET['action'] ?? '');
+$gateAction = (string) ($_GET['gate'] ?? '');
 $path = (string) ($_GET['path'] ?? '');
 $path = ltrim($path, '/');
 $jsonRequest = strtolower((string) ($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '')) === 'xmlhttprequest'
     || str_contains(strtolower((string) ($_SERVER['HTTP_ACCEPT'] ?? '')), 'application/json');
 
-if ($action === 'login') {
+if ($gateAction === 'login') {
     if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
         gate_login_response(['ok' => false, 'error' => 'Please submit the form again.'], 405, $jsonRequest);
     }
@@ -186,7 +190,7 @@ if (gate_is_authorized()) {
         require __DIR__ . '/api/showset/index.php';
         exit;
     }
-    // Never expose backend PHP source or local configuration through the file gateway.
+    // Static responses do not need the gate session lock. Release it before disk I/O.\n    session_write_close();\n\n    // Never expose backend PHP source or local configuration through the file gateway.
     if (str_starts_with($path, 'api/showset/')) {
         gate_not_found();
     }
@@ -294,8 +298,8 @@ $html = <<<'HTML'
   <meta name="csrf-token" content="%%CSRF%%">
   <title>SHOWSET | New website coming soon</title>
   <link rel="icon" href="/gate-assets/approved-icon.png" type="image/png">
-  <link rel="stylesheet" href="/gate-assets/gate.css?v=20261025-3">
-  <script src="/gate-assets/gate.js?v=20261025-3" defer></script>
+  <link rel="stylesheet" href="/gate-assets/gate.css?v=20261026-1">
+  <script src="/gate-assets/gate.js?v=20261026-1" defer></script>
 </head>
 <body data-open-modal="%%AUTOOPEN%%">
   <main class="cover" aria-label="SHOWSET website">
@@ -328,7 +332,7 @@ $html = <<<'HTML'
   </main>
 
   <dialog class="access-modal" id="access-modal" aria-label="Password access">
-    <form class="modal-card" id="preview-login-form" method="post" action="/?action=login" novalidate>
+    <form class="modal-card" id="preview-login-form" method="post" action="/?gate=login" novalidate>
       <button class="modal-close" type="button" id="close-access-modal" aria-label="Close">×</button>
       <input type="hidden" name="csrf" value="%%CSRF%%">
       <input class="password-input" id="preview-password" name="password" type="password" autocomplete="current-password" placeholder="Password" aria-label="Password" required maxlength="512" aria-describedby="login-status">
