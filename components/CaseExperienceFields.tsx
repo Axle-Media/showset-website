@@ -39,7 +39,7 @@ export default function CaseExperienceFields({page,updatePage}:Props){
     <div className="studio-pane-title">{key[0].toUpperCase()+key.slice(1)}</div>
     {field("Heading",chapter.heading,v=>updateChapter(key,{...chapter,heading:v}))}
     {field("Body text",chapter.body,v=>updateChapter(key,{...chapter,body:v}),true)}
-    {key!=="approach"&&<>
+    {<>
      <p className="studio-hint">Optional supporting photos</p>
      {images.map((src,i)=><div key={i} className="studio-item">
       {field("Image "+(i+1)+" URL",src,v=>updateChapter(key,{...chapter,images:images.map((x,j)=>j===i?v:x)}))}
