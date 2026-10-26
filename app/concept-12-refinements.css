@@ -431,3 +431,27 @@
   .footer-social{transition:none}
   .footer-social[href]:hover{transform:none}
 }
+
+/* Homepage heading alignment: share the same responsive left gutter. */
+#home .hero-foreground,
+#home .hero-second,
+.home-view .hero-foreground,
+.home-view .hero-second {
+  left: var(--gutter);
+}
+#portfolio-section .portfolio-heading {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  justify-items: start;
+}
+#portfolio-section .portfolio-heading > .section-title {
+  justify-self: start;
+  text-align: left;
+  padding-left: 0;
+  margin-left: 0 !important;
+}
+@media (max-width: 800px) {
+  #portfolio-section .portfolio-heading { grid-template-columns: minmax(0, 1fr); }
+}
