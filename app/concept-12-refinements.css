@@ -433,10 +433,6 @@
 }
 
 /* Homepage heading alignment: share the same responsive left gutter. */
-.hero-foreground,
-.hero-second {
-  left: var(--gutter);
-}
 #portfolio-section .portfolio-heading {
   width: 100%;
   max-width: none;
