@@ -56,11 +56,10 @@ function gate_same_origin(): bool
     }
     $origin = parse_url((string) $_SERVER['HTTP_ORIGIN']);
     $host = strtolower((string) ($origin['host'] ?? ''));
-    $expected = strtolower((string) ($_SERVER['HTTP_HOST'] ?? ''));
-    if (str_contains($expected, ':')) {
-        $expected = explode(':', $expected, 2)[0];
-    }
-    return $host !== '' && hash_equals($expected, $host);
+    $expectedUrl = parse_url('http://' . (string) ($_SERVER['HTTP_HOST'] ?? ''));
+    $expected = strtolower((string) ($expectedUrl['host'] ?? ''));
+    return is_array($origin) && is_array($expectedUrl)
+        && $host !== '' && $expected !== '' && hash_equals($expected, $host);
 }
 
 function gate_rate_file(): string
@@ -132,17 +131,21 @@ function gate_login_response(array $data, int $status, bool $jsonRequest): never
         header('Location: /', true, 303);
         exit;
     }
-    header('Location: ' . gate_redirect_target(), true, 303);
+    $redirect = (string) ($data['redirect'] ?? '/');
+    if ($redirect === '' || $redirect[0] !== '/' || str_starts_with($redirect, '//') || str_contains($redirect, '\\')) {
+        $redirect = '/';
+    }
+    header('Location: ' . $redirect, true, 303);
     exit;
 }
 
-$action = (string) ($_GET['action'] ?? '');
+$gateAction = (string) ($_GET['gate'] ?? '');
 $path = (string) ($_GET['path'] ?? '');
 $path = ltrim($path, '/');
 $jsonRequest = strtolower((string) ($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '')) === 'xmlhttprequest'
     || str_contains(strtolower((string) ($_SERVER['HTTP_ACCEPT'] ?? '')), 'application/json');
 
-if ($action === 'login') {
+if ($gateAction === 'login') {
     if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
         gate_login_response(['ok' => false, 'error' => 'Please submit the form again.'], 405, $jsonRequest);
     }
@@ -186,13 +189,17 @@ if (gate_is_authorized()) {
         require __DIR__ . '/api/showset/index.php';
         exit;
     }
+    // Static responses do not need the gate session lock. Release it before disk I/O.
+    session_write_close();
+
     // Never expose backend PHP source or local configuration through the file gateway.
     if (str_starts_with($path, 'api/showset/')) {
         gate_not_found();
     }
     if ($path === 'protected-site' || str_starts_with($path, 'protected-site/')
         || str_contains($path, '\\') || str_contains($path, "\0")
-        || preg_match('~(^|/)\.\.?(/|$)~', $path)) {
+        || preg_match('~(^|/)\.\.?(/|$)~', $path)
+        || preg_match('~(^|/)\.[^/]+~', $path)) {
         gate_not_found();
     }
 
@@ -243,6 +250,9 @@ if (gate_is_authorized()) {
         'webmanifest' => 'application/manifest+json',
     ];
     $extension = strtolower(pathinfo($resolved, PATHINFO_EXTENSION));
+    if ($extension !== '' && !isset($types[$extension])) {
+        gate_not_found();
+    }
     header('Content-Type: ' . ($types[$extension] ?? 'application/octet-stream'));
     if ($extension === 'html') {
         header('Cache-Control: private, no-store, max-age=0');
@@ -289,65 +299,53 @@ $html = <<<'HTML'
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#061b2b">
+  <meta name="theme-color" content="#0d2f49">
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="csrf-token" content="%%CSRF%%">
-  <title>SHOWSET | A new chapter is taking shape</title>
-  <link rel="icon" href="/gate-assets/favicon.svg" type="image/svg+xml">
-  <meta name="description" content="Our next chapter is taking shape.">
-  <link rel="stylesheet" href="/gate-assets/gate.css">
-  <script src="/gate-assets/gate.js" defer></script>
+  <title>SHOWSET | New website coming soon</title>
+  <link rel="icon" href="/gate-assets/approved-icon.png" type="image/png">
+  <link rel="stylesheet" href="/gate-assets/gate.css?v=20261026-3">
+  <script src="/gate-assets/gate.js?v=20261026-1" defer></script>
 </head>
 <body data-open-modal="%%AUTOOPEN%%">
-  <div class="gate-canvas" aria-hidden="true">
-    <div class="gate-glow gate-glow-one"></div>
-    <div class="gate-glow gate-glow-two"></div>
-    <div class="gate-pattern"></div>
-    <div class="gate-grid"></div>
-  </div>
-  <main class="gate-main">
-    <header class="gate-topline">
-      <span class="gate-eyebrow"><span class="status-light"></span> Events &amp; creative agency</span>
-      <span class="gate-index">THE NEXT CHAPTER <span>01 / 01</span></span>
-    </header>
-
-    <section class="gate-centre" aria-labelledby="gate-title">
-      <button class="gate-wordmark" id="open-access-modal" type="button" aria-haspopup="dialog" aria-controls="access-modal" aria-label="Open private website preview">
-        <span class="wordmark-text">showset<span class="wordmark-period">.</span></span>
-        <span class="wordmark-orbit" aria-hidden="true"><span></span></span>
+  <main class="cover" aria-label="SHOWSET website">
+    <div class="cover-pattern" aria-hidden="true"></div>
+    <div class="cover-content">
+      <button class="gate-brand" id="open-access-modal" type="button" aria-label="Open password access" aria-haspopup="dialog" aria-controls="access-modal">
+        <img src="/gate-assets/showset-logo-white-teal.svg" alt="SHOWSET">
       </button>
-      <div class="gate-rule" aria-hidden="true"><span></span></div>
-      <p class="gate-kicker">Something good is taking shape</p>
-      <h1 id="gate-title">Great ideas<br><em>move people.</em></h1>
-      <p class="gate-description">We’re building what comes next. The work is underway, the details are coming together, and our next chapter is taking shape.</p>
-      <button class="gate-access-link" id="open-access-secondary" type="button" aria-controls="access-modal">
-        <span>Step inside</span><span class="access-arrow" aria-hidden="true">↗</span>
-      </button>
-    </section>
-
-    <footer class="gate-footer">
-      <span>Think it through. Make it happen.</span>
-      <span class="gate-footer-right">Cape Town, South Africa <span class="footer-dot"></span></span>
+    </div>
+    <footer class="cover-footer" aria-label="Contact and social links">
+      <div class="cover-contact">
+        <a href="mailto:hello@showset.co.za">hello@showset.co.za</a>
+        <span class="footer-separator" aria-hidden="true"></span>
+        <a href="tel:+27682805777">+27 68 280 5777</a>
+        <span class="footer-separator" aria-hidden="true"></span>
+        <span>Cape Town, South Africa</span>
+      </div>
+      <nav class="footer-socials" aria-label="Social media">
+        <a class="footer-social" href="https://www.facebook.com/madebyshowset" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3"/></svg>
+        </a>
+        <a class="footer-social" href="https://www.instagram.com/madebyshowset" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+        </a>
+        <a class="footer-social" href="https://www.linkedin.com/company/madebyshowset" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </nav>
     </footer>
   </main>
 
-  <dialog class="access-modal" id="access-modal" aria-labelledby="modal-title" aria-describedby="modal-description">
-    <form class="modal-card" id="preview-login-form" method="post" action="/?action=login" novalidate>
-      <button class="modal-close" type="button" id="close-access-modal" aria-label="Close access window">×</button>
-      <span class="modal-kicker"><span class="modal-mark"></span> Private preview</span>
-      <h2 id="modal-title">A little further inside.</h2>
-      <p class="modal-description" id="modal-description">Enter the preview password to explore the website we’re building.</p>
+  <dialog class="access-modal" id="access-modal" aria-label="Password access">
+    <form class="modal-card" id="preview-login-form" method="post" action="/?gate=login" novalidate>
+      <button class="modal-close" type="button" id="close-access-modal" aria-label="Close">×</button>
       <input type="hidden" name="csrf" value="%%CSRF%%">
-      <label class="password-label" for="preview-password">Preview password</label>
-      <div class="password-field">
-        <input id="preview-password" name="password" type="password" autocomplete="current-password" placeholder="Enter password" required maxlength="512" aria-describedby="login-status">
-        <button class="password-visibility" id="toggle-password" type="button" aria-label="Show password" aria-pressed="false">Show</button>
-      </div>
+      <input class="password-input" id="preview-password" name="password" type="password" autocomplete="current-password" placeholder="Password" aria-label="Password" required maxlength="512" aria-describedby="login-status">
       <p class="login-status" id="login-status" role="status" aria-live="polite">%%NOTICE%%</p>
       <button class="modal-submit" id="submit-preview-login" type="submit">
-        <span class="submit-label">Enter website</span><span class="submit-arrow" aria-hidden="true">↗</span>
+        <span class="submit-label">Submit</span>
       </button>
-      <p class="modal-footnote">For the SHOWSET team only.</p>
     </form>
   </dialog>
 </body>

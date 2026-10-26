@@ -1,11 +1,9 @@
 (() => {
   const modal = document.getElementById("access-modal");
   const openButton = document.getElementById("open-access-modal");
-  const secondaryButton = document.getElementById("open-access-secondary");
   const closeButton = document.getElementById("close-access-modal");
   const form = document.getElementById("preview-login-form");
   const password = document.getElementById("preview-password");
-  const visibility = document.getElementById("toggle-password");
   const status = document.getElementById("login-status");
   const submit = document.getElementById("submit-preview-login");
   if (!modal || !form || !password || !status || !submit) return;
@@ -19,34 +17,34 @@
     if (openButton) openButton.focus();
   };
 
-  openButton?.addEventListener("click", openModal);
-  secondaryButton?.addEventListener("click", openModal);
+  if (openButton) {
+    openButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      openModal();
+    });
+  }
   closeButton?.addEventListener("click", closeModal);
   modal.addEventListener("click", (event) => {
     if (event.target === modal) closeModal();
   });
-  visibility?.addEventListener("click", () => {
-    const show = password.type === "password";
-    password.type = show ? "text" : "password";
-    visibility.textContent = show ? "Hide" : "Show";
-    visibility.setAttribute("aria-label", show ? "Hide password" : "Show password");
-    visibility.setAttribute("aria-pressed", show ? "true" : "false");
-    password.focus();
-  });
+
+  if (status.textContent.trim()) password.setAttribute("aria-invalid", "true");
+  password.addEventListener("input", () => password.removeAttribute("aria-invalid"));
 
   if (document.body.dataset.openModal === "true") openModal();
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     status.textContent = "";
-    if (!password.value) {
+    if (!password.value.trim()) {
       status.textContent = "Enter the preview password to continue.";
+      password.setAttribute("aria-invalid", "true");
       password.focus();
       return;
     }
 
     submit.disabled = true;
-    submit.querySelector(".submit-label").textContent = "Checking access…";
+    submit.querySelector(".submit-label").textContent = "Submitting…";
     try {
       const response = await fetch(form.action, {
         method: "POST",
@@ -60,6 +58,7 @@
       const result = await response.json().catch(() => ({}));
       if (!response.ok || !result.ok) {
         status.textContent = result.error || "Access could not be verified. Please try again.";
+        password.setAttribute("aria-invalid", "true");
         password.select();
         return;
       }
@@ -69,9 +68,10 @@
       window.location.assign(destination);
     } catch (_error) {
       status.textContent = "We couldn’t reach the preview. Check your connection and try again.";
+      password.setAttribute("aria-invalid", "true");
     } finally {
       submit.disabled = false;
-      submit.querySelector(".submit-label").textContent = "Enter website";
+      submit.querySelector(".submit-label").textContent = "Submit";
     }
   });
 })();
