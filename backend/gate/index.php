@@ -304,7 +304,7 @@ $html = <<<'HTML'
   <meta name="csrf-token" content="%%CSRF%%">
   <title>SHOWSET | New website coming soon</title>
   <link rel="icon" href="/gate-assets/approved-icon.png" type="image/png">
-  <link rel="stylesheet" href="/gate-assets/gate.css?v=20261026-1">
+  <link rel="stylesheet" href="/gate-assets/gate.css?v=20261026-2">
   <script src="/gate-assets/gate.js?v=20261026-1" defer></script>
 </head>
 <body data-open-modal="%%AUTOOPEN%%">
@@ -312,7 +312,7 @@ $html = <<<'HTML'
     <div class="cover-pattern" aria-hidden="true"></div>
     <div class="cover-content">
       <button class="gate-brand" id="open-access-modal" type="button" aria-label="Open password access" aria-haspopup="dialog" aria-controls="access-modal">
-        <img src="/gate-assets/approved-wordmark.png" alt="SHOWSET">
+        <img src="/gate-assets/showset-logo-white-teal.svg" alt="SHOWSET">
       </button>
     </div>
     <footer class="cover-footer" aria-label="Contact and social links">
