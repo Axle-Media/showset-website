@@ -62,7 +62,24 @@ export interface ProjectModule {
   alt?: string;
   captions?: string;
 }
+export interface CaseStoryChapter { heading: string; body: string; images?: string[]; }
+export interface CaseExperience {
+  demo?: boolean;
+  openingTitle: string;
+  openingBody: string;
+  openingImage: string;
+  secondImage: string;
+  secondBody: string;
+  brief: CaseStoryChapter;
+  intention: CaseStoryChapter;
+  approach: CaseStoryChapter;
+  gallery: { src: string; alt: string }[];
+  bannerImage: string;
+  bannerAlt?: string;
+  partners?: { name: string; role?: string; logo?: string; href?: string }[];
+}
 export interface PageData {
+  caseExperience?: CaseExperience;
   projectModules?: ProjectModule[];
   slug: string;
   route: string;
