@@ -190,7 +190,10 @@ if (gate_is_authorized()) {
         require __DIR__ . '/api/showset/index.php';
         exit;
     }
-    // Static responses do not need the gate session lock. Release it before disk I/O.\n    session_write_close();\n\n    // Never expose backend PHP source or local configuration through the file gateway.
+    // Static responses do not need the gate session lock. Release it before disk I/O.
+    session_write_close();
+
+    // Never expose backend PHP source or local configuration through the file gateway.
     if (str_starts_with($path, 'api/showset/')) {
         gate_not_found();
     }
