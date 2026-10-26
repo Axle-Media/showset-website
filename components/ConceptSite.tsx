@@ -120,19 +120,42 @@ export function SiteLayout({
     const y = lastRoute.current === page.route ? scrollY : 0;
     lastRoute.current = page.route;
     // React owns the host; the upstream engine exclusively owns its descendants.
-    host.innerHTML = markup;
-    bindConcept(host, "home", {
-      catalog: { ...catalog, [page.slug]: page },
-      g,
-      editor,
-    });
-    if (routeKeys[page.route] && routeKeys[page.route] !== "home")
-      bindConcept(host, routeKeys[page.route], {
+    // Keep the server-rendered route as a recovery snapshot. A client-side
+    // animation error must not replace a complete page with hidden views.
+    const serverMarkup = initialMarkup || host.innerHTML;
+    let dispose: ReturnType<typeof mountConcept> = () => {};
+    try {
+      host.innerHTML = markup;
+      bindConcept(host, "home", {
         catalog: { ...catalog, [page.slug]: page },
         g,
         editor,
       });
-    const dispose = mountConcept(host, optionsFor(latest.current));
+      if (routeKeys[page.route] && routeKeys[page.route] !== "home")
+        bindConcept(host, routeKeys[page.route], {
+          catalog: { ...catalog, [page.slug]: page },
+          g,
+          editor,
+        });
+      dispose = mountConcept(host, optionsFor(latest.current));
+    } catch (error) {
+      console.error("SHOWSET interactive page failed; restoring static content", error);
+      host.innerHTML = serverMarkup;
+      host.dataset.caseMotion = "off";
+      host.querySelector("#route-curtain")?.remove();
+      // SSR already selects the active view. If the initial markup is not
+      // available, select it explicitly so the page remains readable.
+      if (!initialMarkup) {
+        const key = routeKeys[page.route] || "home";
+        const name = key.startsWith("case-") ? "case-study"
+          : ["events", "creative", "digital", "production"].includes(key) ? "service" : key;
+        host.querySelectorAll<HTMLElement>(".view").forEach(view => {
+          const active = view.dataset.view === name;
+          view.classList.toggle("is-current", active);
+          view.toggleAttribute("hidden", !active);
+        });
+      }
+    }
     engine.current=dispose;
     rendered.current=latest.current;
     const choose = (event: MouseEvent) => {
