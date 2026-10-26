@@ -1797,7 +1797,39 @@
     "seo": {
       "title": "Atmosphere is everything",
       "description": "A creative concept study exploring how spatial layout, lighting, styling and guest experience shape the atmosphere of an event."
-    }
+    },
+    "projectModules": [
+      {
+        "id": "atmosphere-intention",
+        "kind": "text",
+        "title": "The intention.",
+        "body": "Before we think about the stage or the styling, we think about the feeling. How should the room welcome people? Where should the energy build? What should stay with them after they leave?"
+      },
+      {
+        "id": "atmosphere-image-journey",
+        "kind": "image",
+        "title": "A feeling you can walk into.",
+        "body": "A sense of arrival begins long before the first word is spoken. The environment is part of the story.",
+        "src": "/media/planning.webp",
+        "alt": "Event floor plan and creative planning details",
+        "captions": "Creative exploration. Planning, environment and guest experience."
+      },
+      {
+        "id": "atmosphere-approach",
+        "kind": "text",
+        "title": "The approach.",
+        "body": "We explore the guest journey as one connected experience. Light, movement, sound, material and timing work together to shape an atmosphere that feels considered from arrival to the final moment."
+      },
+      {
+        "id": "atmosphere-image-light",
+        "kind": "image",
+        "title": "Every detail changes the room.",
+        "body": "Scale, texture and light can change the energy of a space. We look for the choices that make the experience feel connected.",
+        "src": "/media/rigging.webp",
+        "alt": "Stage rigging and production lighting",
+        "captions": "Creative exploration. Technical production and atmosphere."
+      }
+    ]
   },
   "made-to-be-remembered": {
     "slug": "made-to-be-remembered",
@@ -1880,7 +1912,39 @@
     "seo": {
       "title": "Made to be remembered",
       "description": "A creative identity study exploring how typography, colour, packaging and print come together in a recognisable design system."
-    }
+    },
+    "projectModules": [
+      {
+        "id": "identity-intention",
+        "kind": "text",
+        "title": "The intention.",
+        "body": "A recognisable identity needs more than a single strong mark. The idea has to carry through every encounter, from the smallest printed detail to the largest expression."
+      },
+      {
+        "id": "identity-image-application",
+        "kind": "image",
+        "title": "Make the idea travel.",
+        "body": "The identity should feel like itself on a screen, in a space or in someone's hands.",
+        "src": "/media/details.webp",
+        "alt": "Close-up of considered creative details",
+        "captions": "Creative exploration. Visual details and brand expression."
+      },
+      {
+        "id": "identity-approach",
+        "kind": "text",
+        "title": "The approach.",
+        "body": "We explore a visual language with enough consistency to feel familiar and enough flexibility to stay interesting. Typography, colour, composition and application all become part of the same story."
+      },
+      {
+        "id": "identity-image-system",
+        "kind": "image",
+        "title": "A thousand little encounters.",
+        "body": "The strongest systems are built to move. Consistency makes the connection, and variation keeps it alive.",
+        "src": "/media/planning.webp",
+        "alt": "Creative planning materials and layouts",
+        "captions": "Creative exploration. From the first sketch to a connected visual system."
+      }
+    ]
   },
   "behind-every-moment": {
     "slug": "behind-every-moment",
@@ -1963,7 +2027,39 @@
     "seo": {
       "title": "Behind every moment",
       "description": "A creative production study exploring how planning, lighting, sound, visuals and people shape memorable live experiences."
-    }
+    },
+    "projectModules": [
+      {
+        "id": "production-intention",
+        "kind": "text",
+        "title": "The intention.",
+        "body": "The best live moments feel effortless. Behind that ease is a chain of decisions that makes space for the audience to focus on what matters."
+      },
+      {
+        "id": "production-image-preparation",
+        "kind": "image",
+        "title": "Before the doors open.",
+        "body": "A production comes together in layers. Technical preparation gives the creative idea room to land.",
+        "src": "/media/rigging.webp",
+        "alt": "Technical event rigging during preparation",
+        "captions": "Creative exploration. The work before the moment."
+      },
+      {
+        "id": "production-approach",
+        "kind": "text",
+        "title": "The approach.",
+        "body": "We look at the cues, the technical requirements and the people who bring them together. Creative direction and production planning meet so that every transition feels natural."
+      },
+      {
+        "id": "production-image-live",
+        "kind": "image",
+        "title": "And then it happens.",
+        "body": "The planning disappears into the experience. What remains is the feeling of being there.",
+        "src": "/media/evening.webp",
+        "alt": "Warm lights and atmosphere at a live event",
+        "captions": "Creative exploration. The audience-facing experience."
+      }
+    ]
   },
   "contact": {
     "slug": "contact",

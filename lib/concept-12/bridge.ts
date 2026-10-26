@@ -1,4 +1,5 @@
 import { refineHeadingPeriods } from "./typography";
+import { renderProjectModules } from "./project-modules";
 import type { Block, Globals, PageData } from "@/lib/types";
 import { defaultPages, defaultGlobals } from "@/lib/data";
 import { safeHref } from "@/lib/safe";
@@ -470,6 +471,7 @@ export function bindConcept(
         action(".case-detail-next a", s);
       }
     });
+    renderProjectModules(host, page, catalog);
   } else if (key === "contact") {
     const s = page.sections[0];
     if (s) {
@@ -504,47 +506,6 @@ export function bindConcept(
         }
       }
     }
-  }
-  if (key.startsWith("case-") && page.projectModules?.length) {
-    const bodyNode = host.querySelector(".case-detail-body");
-    bodyNode?.querySelector("[data-saved-project-modules]")?.remove();
-    const modules = document.createElement("div");
-    modules.setAttribute("data-saved-project-modules", "");
-    page.projectModules.forEach((m) => {
-      const article = document.createElement("article");
-      article.dataset.projectModule = m.id;
-      article.innerHTML = `<h2 class="soft-rise">${rich(m.title)}</h2>${paragraphs(m.body || "")}`;
-      if (m.kind === "image" || m.kind === "comparison") {
-        const figure = document.createElement("div");
-        figure.className = "case-detail-visual";
-        figure.innerHTML =
-          `<img loading="lazy" src="${escape(safeHref(m.src))}" alt="${escape(m.alt || "")}">` +
-          (m.kind === "comparison"
-            ? `<img loading="lazy" src="${escape(safeHref(m.after))}" alt="${escape(m.alt || "")}">`
-            : "");
-        article.append(figure);
-      } else if (m.kind === "video") {
-        const video = document.createElement("video");
-        video.controls = true;
-        video.playsInline = true;
-        video.preload = "metadata";
-        video.src = safeHref(m.src);
-        if (m.captions) {
-          const track = document.createElement("track");
-          track.kind = "captions";
-          track.src = safeHref(m.captions);
-          track.srclang = "en";
-          track.label = "English";
-          video.append(track);
-        }
-        article.append(video);
-      }
-      modules.append(article);
-    });
-    bodyNode?.insertBefore(
-      modules,
-      bodyNode.querySelector(".case-detail-next"),
-    );
   }
   function bindWork(s: Block, selector: string) {
     if (changed(s, "items"))
