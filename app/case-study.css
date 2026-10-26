@@ -1,7 +1,7 @@
 /* Case studies inherit the approved homepage system. Only the opening display
    leading is deliberately tighter. Keep one rule per layout, not patch stacks. */
 .concept-12-root[data-concept-route^="case-"] #site-header:not(.scrolled):not(.menu-is-open){background:transparent;border-bottom-color:transparent;backdrop-filter:none}
-.case-experience{--case-ease:var(--easing);--case-hero-leading:.98;overflow:clip;background:var(--deep);color:var(--ice)}
+.case-experience{--case-ease:var(--easing);--case-hero-leading:1.045;overflow:clip;background:var(--deep);color:var(--ice)}
 .case-experience img{display:block;width:100%;height:100%;object-fit:cover}
 .case-scroll-opening{position:relative}
 .case-scroll-frame{position:relative;overflow:hidden;width:100%}
@@ -13,12 +13,14 @@
 /* !important is required only for heading metrics: the legacy global h1–h3
    reset uses it. These rules consume shared tokens; Studio inline edits win. */
 .concept-12-root .case-primary-heading{font-family:var(--display);font-size:clamp(43px,5.3vw,74px);font-weight:var(--refine-heading-weight);line-height:var(--case-hero-leading)!important;letter-spacing:var(--v12-head-tracking)!important;max-width:900px;text-wrap:balance;margin:0 0 24px}
-.case-primary-heading .wipe-line{display:block;max-width:100%;padding:.09em 0 .16em;margin:-.09em 0 -.16em;line-height:inherit}
-.case-primary-heading .wipe-line>span{font:inherit;letter-spacing:inherit;line-height:inherit;white-space:normal}
+.case-primary-heading .wipe-line{display:block;max-width:100%;overflow:hidden;padding:.07em .07em .29em .012em;margin:-.07em 0 -.13em -.012em;line-height:1.14}
+.case-primary-heading .wipe-line>span{font:inherit;letter-spacing:inherit;line-height:1.14;white-space:nowrap}
 .case-heading-line{display:block}
 .case-heading-accent{color:var(--teal)}
 .case-heading-period{color:var(--teal)}
 .case-heading-accent .case-heading-period{color:var(--ice)}
+.case-primary-heading .wipe-line::after{background:var(--teal)}
+.case-primary-heading .wipe-line.case-heading-accent::after{background:var(--ice)}
 .case-heading-measure{display:block;font:inherit;letter-spacing:inherit;line-height:inherit;text-wrap:balance;visibility:hidden}
 .case-heading-measure>span{display:inline-block;white-space:nowrap}
 .case-experience :is(.case-scene-copy>p,.case-body-copy p,.case-partners-intro p,.case-related-card-caption p){font-family:var(--body-font);font-size:var(--v12-body);font-weight:500;line-height:var(--v12-body-leading);letter-spacing:var(--v12-body-tracking);color:rgba(250,249,253,.8);margin:0 0 var(--v12-para-gap)}
@@ -30,21 +32,29 @@
 .case-scroll-narrative{position:relative;isolation:isolate;background:linear-gradient(150deg,var(--deep),var(--navy))}
 .case-narrative-stage{position:relative;isolation:isolate;min-height:100svh;padding:calc(var(--header-height) + 32px) var(--gutter) 72px}
 /* Artwork belongs to the sticky stage so it stays behind every act. */
-.case-narrative-stage::before{content:"";position:absolute;inset:0;background:url('/brand/closing-pattern.svg') center/980px auto repeat;opacity:var(--refine-pattern-opacity,.045);pointer-events:none;z-index:-1}
+/* Exactly the same baked-opacity pattern tile and scale as the homepage portfolio. */
+.case-narrative-stage::before{content:"";position:absolute;inset:0;background:url('/concept-12/bb1b857a951a4915479a.svg') center top/var(--showset-pattern-width,440px) auto repeat;opacity:1;pointer-events:none;z-index:-1}
 .case-chapter-stack{position:relative;width:100%;max-width:var(--max);margin:0 auto}
 .case-chapter{min-height:65svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.78fr);align-content:center;align-items:center;gap:clamp(24px,5vw,95px);padding:48px 0}
 .case-chapter-copy{min-width:0;max-width:750px}
+.case-chapter-eyebrow{display:block;color:var(--teal);font-family:var(--body-font);font-size:11px;font-weight:700;letter-spacing:.08em;line-height:1.4;text-transform:uppercase;margin:0 0 clamp(12px,1.7vw,20px)}
 .concept-12-root :is(.case-chapter h2,.case-related-heading h2){font-family:var(--display);font-size:var(--v12-h2);font-weight:var(--refine-heading-weight);letter-spacing:var(--v12-head-tracking)!important;line-height:var(--refine-heading-leading)!important;text-wrap:balance;margin:0 0 clamp(22px,3vw,40px)}
 .case-body-copy p{max-width:630px}
-.case-chapter-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center;min-width:0}
-.case-chapter-photos figure{margin:0;overflow:hidden;border-radius:var(--ui-radius,7px);aspect-ratio:4/5}
-.case-chapter-photos figure:nth-child(2){transform:translateY(24px);aspect-ratio:1}
+.case-chapter-photos{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);grid-template-rows:repeat(6,minmax(0,1fr));gap:clamp(8px,.9vw,14px);height:clamp(285px,43svh,460px);align-items:stretch;min-width:0}
+.case-chapter-photos figure{margin:0;min-width:0;min-height:0;height:auto;overflow:hidden;border-radius:var(--ui-radius,7px);aspect-ratio:auto;transform:none}
+.case-chapter-photos .case-collage-photo-1{grid-column:1;grid-row:1/span 4}
+.case-chapter-photos .case-collage-photo-2{grid-column:2;grid-row:1/span 3}
+.case-chapter-photos .case-collage-photo-3{grid-column:1;grid-row:5/span 2}
+.case-chapter-photos .case-collage-photo-4{grid-column:2;grid-row:4/span 3}
+.case-chapter-photos:has(figure:nth-child(2):last-child){grid-template-rows:1fr}
+.case-chapter-photos:has(figure:nth-child(2):last-child) figure{grid-row:1}
 .case-experience[data-case-ready="true"] .case-scroll-narrative{height:360svh}
 .case-experience[data-case-ready="true"] .case-narrative-stage{height:100svh;min-height:0;position:sticky;top:0;overflow:hidden}
 .case-experience[data-case-ready="true"] .case-chapter-stack{height:100%}
 .case-experience[data-case-ready="true"] .case-chapter{position:absolute;inset:0;min-height:0;margin:0;padding:0;opacity:0;visibility:hidden;pointer-events:none;will-change:opacity}
 .case-experience[data-case-ready="true"] .case-chapter:first-child{opacity:1;visibility:visible}
 .case-photo-gallery{position:relative;overflow:hidden;background:var(--deep);width:100%;min-width:0;padding-top:clamp(60px,7vw,100px);padding-bottom:clamp(60px,7vw,100px)}
+.concept-12-root .case-photo-gallery>.case-editorial-heading{font-size:var(--v12-h2);letter-spacing:var(--v12-head-tracking)!important;line-height:var(--refine-heading-leading)!important;font-weight:var(--refine-heading-weight);margin:0 0 clamp(32px,4.1vw,60px)}
 .case-gallery-viewport{display:flex;gap:clamp(12px,2vw,28px);width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none;scroll-snap-type:x proximity;touch-action:auto;cursor:grab;user-select:none}
 .case-gallery-viewport::-webkit-scrollbar{display:none}
 .case-gallery-viewport.is-dragging{cursor:grabbing;scroll-snap-type:none}
@@ -55,7 +65,7 @@
 .case-experience :is(a,button,[tabindex]):focus-visible,.case-lightbox :is(a,button):focus-visible{outline:2px solid var(--teal);outline-offset:4px}
 .case-partners{padding-top:clamp(65px,7vw,100px);padding-bottom:clamp(65px,7vw,100px);background:var(--deep2)}
 .case-partners-intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,6vw,85px);align-items:center;margin-bottom:clamp(33px,5vw,70px)}
-.concept-12-root .case-partners h2{font-size:var(--v12-h3);letter-spacing:var(--v12-head-tracking)!important;line-height:var(--refine-heading-leading)!important;margin:0}
+.concept-12-root .case-partners h2{font-size:var(--v12-h2);font-weight:var(--refine-heading-weight);letter-spacing:var(--v12-head-tracking)!important;line-height:var(--refine-heading-leading)!important;margin:0}
 .case-partners-intro p{max-width:410px;margin:0}
 .case-partner-list{border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
 .case-partner{min-width:0;min-height:175px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:10px;border-bottom:1px solid var(--line);padding:clamp(21px,3vw,32px) clamp(8px,2vw,26px) clamp(21px,3vw,32px) 0}
@@ -97,9 +107,9 @@ body.case-lightbox-open{overflow:hidden}
  .case-experience[data-case-ready="true"] .case-scroll-opening{height:200svh}
  .case-narrative-stage{padding-top:calc(var(--header-height) + 24px);padding-bottom:48px}
  .case-chapter{grid-template-columns:1fr;gap:25px}
- .case-chapter-photos{width:100%;max-width:520px;max-height:32svh}
- .case-chapter-photos figure{height:clamp(125px,24svh,240px);aspect-ratio:auto}
- .case-chapter-photos figure:nth-child(2){aspect-ratio:auto;transform:translateY(12px)}
+ .case-chapter-photos{width:100%;max-width:520px;height:clamp(195px,30svh,285px);max-height:none}
+ .case-chapter-photos figure{height:auto;aspect-ratio:auto}
+ .case-chapter-photos figure:nth-child(2){aspect-ratio:auto;transform:none}
  .case-gallery-item{flex-basis:69vw;aspect-ratio:1.07}
  .case-partner-list{grid-template-columns:repeat(2,minmax(0,1fr))}
  .case-partners-intro{grid-template-columns:1fr}
@@ -124,6 +134,22 @@ body.case-lightbox-open{overflow:hidden}
  .case-scene-copy{bottom:30px}
  .concept-12-root .case-primary-heading{font-size:clamp(32px,5vw,50px)}
 }
+/* Consistent exterior spacing matches the existing homepage closing CTA. */
+.case-experience{--case-section-top:clamp(100px,12vw,170px);--case-section-bottom:clamp(85px,8vw,125px)}
+.case-experience :is(.case-photo-gallery,.case-partners,.case-related){padding-top:var(--case-section-top);padding-bottom:var(--case-section-bottom)}
+@media(max-width:800px){
+ .case-experience :is(.case-photo-gallery,.case-partners,.case-related){padding-top:clamp(80px,13vw,110px);padding-bottom:clamp(75px,11vw,105px)}
+ .case-primary-heading .wipe-line>span{white-space:nowrap}
+}
+/* Enlarged text and image collages must never be hidden behind a pinned mobile stage. */
+@media(max-width:800px),(max-height:690px){
+ .case-experience[data-case-ready="true"] .case-scroll-narrative{height:auto}
+ .case-experience[data-case-ready="true"] .case-narrative-stage{position:relative;height:auto;min-height:0;overflow:visible;padding-top:0;padding-bottom:0}
+ .case-experience[data-case-ready="true"] .case-chapter-stack{height:auto}
+ .case-experience[data-case-ready="true"] .case-chapter{position:relative;min-height:0;opacity:1!important;visibility:visible!important;pointer-events:auto;padding:clamp(80px,11vw,125px) 0;border-bottom:1px solid var(--line)}
+ .case-experience[data-case-ready="true"] .case-chapter:last-child{border-bottom:none}
+}
+@media(max-width:540px){.case-chapter-photos{height:205px}}
 /* No-JS, Studio, disabled motion and reduced motion always retain visible text.
    The shared homepage still-mode rules also suppress every rectangular swipe. */
 .concept-12-root:not([data-concept-ready="true"]) .case-primary-heading .wipe-line>span,
