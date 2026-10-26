@@ -16,6 +16,7 @@ import type {
   ThemeTokens,
 } from "@/lib/types";
 import StudioCanvas from "./StudioCanvas";
+import CaseExperienceFields from "./CaseExperienceFields";
 import {compatiblePages,compatibleGlobals} from '@/lib/concept-12/compat';
 import "./studio.css";
 const blocks: BlockType[] = [
@@ -982,8 +983,9 @@ export default function Studio() {
               <>
                 {page.route.startsWith("/work/") && (
                   <>
+                    <CaseExperienceFields page={page} updatePage={updatePage} />
                     <div className="studio-pane-title">
-                      Project storytelling
+                      Legacy modules (not used by cinematic template)
                     </div>
                     <button
                       onClick={() =>
