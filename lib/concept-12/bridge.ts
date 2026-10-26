@@ -1,4 +1,5 @@
 import { refineHeadingPeriods } from "./typography";
+import { renderProjectModules } from "./project-modules";
 import type { Block, Globals, PageData } from "@/lib/types";
 import { defaultPages, defaultGlobals } from "@/lib/data";
 import { safeHref } from "@/lib/safe";
@@ -470,6 +471,7 @@ export function bindConcept(
         action(".case-detail-next a", s);
       }
     });
+    renderProjectModules(host, page);
   } else if (key === "contact") {
     const s = page.sections[0];
     if (s) {
