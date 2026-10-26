@@ -366,3 +366,25 @@ body.case-lightbox-open{overflow:hidden}
     display:none;
   }
 }
+
+/* Photo-specific copyright attribution is shown only inside its enlarged image. */
+.case-lightbox-figure figcaption{align-items:center;flex-wrap:wrap}
+.case-lightbox-figure figcaption .case-photo-credit{
+  font-family:var(--body-font);
+  font-size:11px;
+  color:rgba(255,255,255,.65);
+  line-height:1.5;
+}
+.case-photo-credit[hidden]{display:none!important}
+.case-photo-credit a{text-decoration:underline;text-underline-offset:3px}
+.case-photo-credit a:hover{color:var(--teal)}
+/* Never hide the primary heading if the client-side animation fails to mount. */
+.concept-12-root:not([data-concept-ready="true"]) .case-primary-heading .wipe-line>span,
+.concept-12-root[data-case-motion="off"] .case-primary-heading .wipe-line>span{
+  opacity:1!important;
+  transform:none!important;
+}
+.concept-12-root:not([data-concept-ready="true"]) .case-primary-heading .wipe-line::after,
+.concept-12-root[data-case-motion="off"] .case-primary-heading .wipe-line::after{
+  display:none!important;
+}
