@@ -304,7 +304,7 @@ $html = <<<'HTML'
   <meta name="csrf-token" content="%%CSRF%%">
   <title>SHOWSET | New website coming soon</title>
   <link rel="icon" href="/gate-assets/approved-icon.png" type="image/png">
-  <link rel="stylesheet" href="/gate-assets/gate.css?v=20261026-2">
+  <link rel="stylesheet" href="/gate-assets/gate.css?v=20261026-3">
   <script src="/gate-assets/gate.js?v=20261026-1" defer></script>
 </head>
 <body data-open-modal="%%AUTOOPEN%%">
