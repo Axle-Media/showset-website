@@ -684,3 +684,7 @@
   .case-next-visual img,.case-next-arrow { transition: none !important; }
   .case-detail-visual,.case-story-figure { clip-path: none !important; }
 }
+
+/* The page-transition mark is the approved vector, not a text approximation. */
+.route-curtain .curtain-brand { width: clamp(170px, 24vw, 380px); max-width: 78vw; }
+.route-curtain .curtain-brand img { display: block; width: 100%; height: auto; object-fit: contain; }
