@@ -26,6 +26,7 @@ export default function CaseExperienceFields({page,updatePage}:Props){
  return <div className="studio-item">
   <div className="studio-pane-title">Cinematic case study</div>
   <p className="studio-hint">Changes appear in the case-study preview. The homepage design system controls typography, colours and buttons.</p>
+  <label className="studio-check"><input type="checkbox" checked={Boolean(story.demo)} onChange={e=>set("demo",e.target.checked)}/> Fictional demonstration content (show disclaimer)</label>
   {field("Opening headline",story.openingTitle,v=>set("openingTitle",v))}
   {field("Opening paragraph",story.openingBody,v=>set("openingBody",v),true)}
   {field("Opening full-screen image URL",story.openingImage,v=>set("openingImage",v))}
