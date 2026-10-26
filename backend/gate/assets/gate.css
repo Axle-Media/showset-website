@@ -8,8 +8,7 @@ button,input{font:inherit}button{color:inherit;cursor:pointer}button:focus-visib
 .cover{position:relative;isolation:isolate;display:grid;width:100%;min-height:100vh;min-height:100svh;place-items:center;overflow:hidden;background:var(--navy)}
 .cover-pattern{position:absolute;z-index:-1;inset:0;background:url("/gate-assets/pattern.svg") repeat;background-size:520px auto;opacity:.22;pointer-events:none}
 .cover-content{display:flex;flex-direction:column;align-items:center;width:min(100% - 40px,760px);padding:36px 0;text-align:center}
-.gate-brand{display:inline-flex;align-items:center;justify-content:center;width:min(72vw,390px);margin:0;padding:0;border:0;border-radius:2px;background:transparent;cursor:pointer;transition:opacity .25s ease,transform .25s ease;-webkit-tap-highlight-color:transparent}
-.gate-brand:hover{opacity:.86;transform:translateY(-2px)}.gate-brand:active{transform:translateY(0)}
+.gate-brand{display:inline-flex;align-items:center;justify-content:center;width:min(72vw,390px);margin:0;padding:0;border:0;border-radius:2px;background:transparent;cursor:default;transition:none;-webkit-tap-highlight-color:transparent}
 .gate-brand img{display:block;width:100%;height:auto}
 .cover-message{margin:30px 0 0;color:var(--white);font-family:var(--display);font-size:clamp(13px,1.5vw,16px);font-weight:500;letter-spacing:.005em;line-height:1.65;text-align:center}
 .access-modal{width:min(calc(100% - 32px),450px);max-width:450px;max-height:calc(100% - 32px);padding:0;overflow:visible;border:1px solid rgba(250,249,253,.16);border-radius:16px;background:var(--navy);color:var(--white);box-shadow:0 28px 90px rgba(0,0,0,.4)}
@@ -33,7 +32,7 @@ button,input{font:inherit}button{color:inherit;cursor:pointer}button:focus-visib
 .modal-footnote{margin:16px 0 0;color:rgba(250,249,253,.45);font-size:10px}
 @keyframes modal-enter{from{opacity:0;transform:translateY(8px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
 @media(max-width:520px){.cover-pattern{background-size:350px auto}.cover-content{width:min(100% - 32px,420px)}.gate-brand{width:min(78vw,330px)}.cover-message{max-width:300px;margin-top:23px;font-size:13px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.gate-brand:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 
 /* SHOWSET signature intro: the mark reveals from its centre, then the message follows. */
 .cover-pattern{
