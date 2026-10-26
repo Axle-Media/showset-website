@@ -688,3 +688,15 @@
 /* The page-transition mark is the approved vector, not a text approximation. */
 .route-curtain .curtain-brand { width: clamp(170px, 24vw, 380px); max-width: 78vw; }
 .route-curtain .curtain-brand img { display: block; width: 100%; height: auto; object-fit: contain; }
+
+/* Recovery: case-study content stays readable if scroll observers fail to initialise. */
+.concept-12-root[data-concept-route^="case-"] .case-detail-header h1,
+.concept-12-root[data-concept-route^="case-"] .case-detail-header > p,
+.concept-12-root[data-concept-route^="case-"] .case-detail-introduction,
+.concept-12-root[data-concept-route^="case-"] .case-quote,
+.concept-12-root[data-concept-route^="case-"] .case-story-text,
+.concept-12-root[data-concept-route^="case-"] .case-story-media-caption {
+  opacity: 1;
+  transform: none;
+  clip-path: none;
+}
