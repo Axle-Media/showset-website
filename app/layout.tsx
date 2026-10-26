@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./fonts.css";
 import "./concept-12.css";
 import "./concept-12-refinements.css";
+import "./case-study.css";
 import "./concept-12-editor.css";
 import "./concept-12-accessibility.css";
 export const metadata: Metadata = {
