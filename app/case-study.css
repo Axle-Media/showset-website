@@ -1,7 +1,7 @@
 /* Case studies inherit the approved homepage system. Only the opening display
    leading is deliberately tighter. Keep one rule per layout, not patch stacks. */
 .concept-12-root[data-concept-route^="case-"] #site-header:not(.scrolled):not(.menu-is-open){background:transparent;border-bottom-color:transparent;backdrop-filter:none}
-.case-experience{--case-ease:var(--easing);--case-hero-leading:1.045;overflow:clip;background:var(--deep);color:var(--ice)}
+.case-experience{--case-ease:var(--easing);--case-hero-leading:1.045;--case-stage-inset:32px;--case-stage-bottom:72px;overflow:clip;background:var(--deep);color:var(--ice)}
 .case-experience img{display:block;width:100%;height:100%;object-fit:cover}
 .case-scroll-opening{position:relative}
 .case-scroll-frame{position:relative;overflow:hidden;width:100%}
@@ -12,14 +12,17 @@
 .case-scene-copy{position:absolute;left:var(--gutter);right:var(--gutter);bottom:clamp(70px,11svh,160px);max-width:860px}
 /* !important is required only for heading metrics: the legacy global h1–h3
    reset uses it. These rules consume shared tokens; Studio inline edits win. */
-.concept-12-root .case-primary-heading{font-family:var(--display);font-size:clamp(43px,5.3vw,74px);font-weight:var(--refine-heading-weight);line-height:var(--case-hero-leading)!important;letter-spacing:var(--v12-head-tracking)!important;max-width:900px;text-wrap:balance;margin:0 0 24px}
-.case-primary-heading .wipe-line{display:block;max-width:100%;overflow:hidden;padding:.07em .07em .29em .012em;margin:-.07em 0 -.13em -.012em;line-height:1.14}
-.case-primary-heading .wipe-line>span{font:inherit;letter-spacing:inherit;line-height:1.14;white-space:nowrap}
+.concept-12-root .case-primary-heading{font-family:var(--display);font-size:clamp(43px,5.3vw,74px);font-weight:var(--refine-heading-weight);line-height:var(--case-hero-leading)!important;letter-spacing:var(--v12-head-tracking)!important;max-width:min(100%,12em);text-wrap:balance;margin:0 0 24px}
+/* Expand the glyph mask, not the line pitch. Ink below the Poppins baseline
+   remains inside the animated child while the parent never crops its descent. */
+.case-opening-scene .case-primary-heading .wipe-line{display:flow-root;max-width:100%;overflow:visible;padding:0;margin:0;line-height:inherit}
+.case-opening-scene .case-primary-heading .wipe-line>span{font:inherit;letter-spacing:inherit;line-height:inherit;white-space:nowrap;padding:.15em .14em .25em;margin:-.15em -.14em -.25em}
 .case-heading-line{display:block}
 .case-heading-accent{color:var(--teal)}
 .case-heading-period{color:var(--teal)}
-.case-heading-accent .case-heading-period{color:var(--ice)}
+.case-heading-accent .case-heading-period,.case-primary-heading .case-heading-period{color:var(--ice)}
 .case-primary-heading .wipe-line::after{background:var(--teal)}
+.case-opening-scene .case-primary-heading .wipe-line::after{left:-.14em;right:-.14em;top:0;bottom:-.1em}
 .case-primary-heading .wipe-line.case-heading-accent::after{background:var(--ice)}
 .case-heading-measure{display:block;font:inherit;letter-spacing:inherit;line-height:inherit;text-wrap:balance;visibility:hidden}
 .case-heading-measure>span{display:inline-block;white-space:nowrap}
@@ -29,8 +32,8 @@
 .case-experience[data-case-ready="true"] .case-scroll-frame{position:sticky;top:0;height:100svh}
 .case-experience[data-case-ready="true"] .case-scroll-track{flex-direction:row;width:200vw;height:100%;will-change:transform}
 .case-experience[data-case-ready="true"] .case-opening-scene{width:100vw;flex:none;height:100svh;min-height:0}
-.case-scroll-narrative{position:relative;isolation:isolate;background:linear-gradient(150deg,var(--deep),var(--navy))}
-.case-narrative-stage{position:relative;isolation:isolate;min-height:100svh;padding:calc(var(--header-height) + 32px) var(--gutter) 72px}
+.case-scroll-narrative{position:relative;isolation:isolate;background:linear-gradient(135deg,#071e30,#0d2f49 65%,#0b263a)}
+.case-narrative-stage{position:relative;isolation:isolate;min-height:100svh;padding:calc(var(--header-height) + var(--case-stage-inset)) var(--gutter) var(--case-stage-bottom)}
 /* Artwork belongs to the sticky stage so it stays behind every act. */
 /* Exactly the same baked-opacity pattern tile and scale as the homepage portfolio. */
 .case-narrative-stage::before{content:"";position:absolute;inset:0;background:url('/concept-12/bb1b857a951a4915479a.svg') center top/var(--showset-pattern-width,440px) auto repeat;opacity:1;pointer-events:none;z-index:-1}
@@ -55,8 +58,9 @@
 .case-experience[data-case-ready="true"] .case-chapter:first-child{opacity:1;visibility:visible}
 .case-photo-gallery{position:relative;overflow:hidden;background:var(--deep);width:100%;min-width:0;padding-top:clamp(60px,7vw,100px);padding-bottom:clamp(60px,7vw,100px)}
 .concept-12-root .case-photo-gallery>.case-editorial-heading{font-size:var(--v12-h2);letter-spacing:var(--v12-head-tracking)!important;line-height:var(--refine-heading-leading)!important;font-weight:var(--refine-heading-weight);margin:0 0 clamp(32px,4.1vw,60px)}
-.case-gallery-viewport{display:flex;gap:clamp(12px,2vw,28px);width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none;scroll-snap-type:x proximity;touch-action:auto;cursor:grab;user-select:none}
+.case-gallery-viewport{display:flex;gap:clamp(12px,2vw,28px);width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none;scroll-snap-type:x proximity;overflow-anchor:none;touch-action:auto;cursor:grab;user-select:none}
 .case-gallery-viewport::-webkit-scrollbar{display:none}
+.case-gallery-viewport.is-looping{scroll-snap-type:none}
 .case-gallery-viewport.is-dragging{cursor:grabbing;scroll-snap-type:none}
 .case-gallery-item{flex:0 0 clamp(260px,39vw,540px);aspect-ratio:1.12;overflow:hidden;border:0;padding:0;position:relative;background:var(--navy2);scroll-snap-align:start;border-radius:var(--ui-radius,7px)}
 .case-gallery-item img{transition:transform .65s var(--case-ease);pointer-events:none}
@@ -67,8 +71,8 @@
 .case-partners-intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,6vw,85px);align-items:center;margin-bottom:clamp(33px,5vw,70px)}
 .concept-12-root .case-partners h2{font-size:var(--v12-h2);font-weight:var(--refine-heading-weight);letter-spacing:var(--v12-head-tracking)!important;line-height:var(--refine-heading-leading)!important;margin:0}
 .case-partners-intro p{max-width:410px;margin:0}
-.case-partner-list{border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.case-partner{min-width:0;min-height:175px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:10px;border-bottom:1px solid var(--line);padding:clamp(21px,3vw,32px) clamp(8px,2vw,26px) clamp(21px,3vw,32px) 0}
+.case-partner-list{border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(24,minmax(0,1fr));column-gap:0;max-width:var(--max);margin-inline:auto}
+.case-partner{grid-area:var(--partner-desktop);width:100%;max-width:360px;justify-self:center;min-width:0;min-height:175px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:10px;border-bottom:1px solid var(--line);padding:clamp(21px,3vw,32px) clamp(8px,2vw,26px) clamp(21px,3vw,32px) 0}
 .case-partner-logo{width:100%;height:62px;display:flex;align-items:center;margin-bottom:clamp(6px,1.3vw,17px)}
 .case-partner-logo img{width:auto;height:auto;max-width:min(100%,170px);max-height:55px;object-fit:contain;object-position:left center}
 .case-partner-name{font-family:var(--display);font-weight:var(--refine-heading-weight);font-size:clamp(16px,1.5vw,21px);line-height:1.2;letter-spacing:var(--v12-head-tracking);overflow-wrap:anywhere}
@@ -105,13 +109,13 @@ body.case-lightbox-open{overflow:hidden}
  .case-opening-scene{min-height:0}
  .case-scene-copy{bottom:clamp(70px,11svh,120px)}
  .case-experience[data-case-ready="true"] .case-scroll-opening{height:200svh}
- .case-narrative-stage{padding-top:calc(var(--header-height) + 24px);padding-bottom:48px}
+ .case-experience{--case-stage-inset:24px;--case-stage-bottom:48px}
  .case-chapter{grid-template-columns:1fr;gap:25px}
  .case-chapter-photos{width:100%;max-width:520px;height:clamp(195px,30svh,285px);max-height:none}
  .case-chapter-photos figure{height:auto;aspect-ratio:auto}
  .case-chapter-photos figure:nth-child(2){aspect-ratio:auto;transform:none}
  .case-gallery-item{flex-basis:69vw;aspect-ratio:1.07}
- .case-partner-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .case-partner{grid-area:var(--partner-tablet)}
  .case-partners-intro{grid-template-columns:1fr}
  .case-related-heading{align-items:flex-start;flex-direction:column}
  .case-related-photo{height:clamp(170px,25vw,230px)}
@@ -120,35 +124,26 @@ body.case-lightbox-open{overflow:hidden}
  .case-gallery-item{flex-basis:79vw;aspect-ratio:1}
  .case-partner-logo{height:50px}
  .case-partner-logo img{max-height:46px;max-width:min(100%,128px)}
+ .case-partner{grid-area:var(--partner-mobile)}
  .case-related-grid{grid-template-columns:1fr}
  .case-related-photo{height:clamp(170px,48vw,220px)}
  .case-lightbox{grid-template-columns:42px minmax(0,1fr) 42px;padding-inline:3px}
  .case-lightbox .case-lightbox-nav{width:36px;height:36px;font-size:21px}
 }
-/* Short viewports use readable document flow rather than clipping pinned copy. */
-@media(max-height:600px){
- .case-experience[data-case-ready="true"] .case-scroll-narrative{height:auto}
- .case-experience[data-case-ready="true"] .case-narrative-stage{position:relative;height:auto;overflow:visible}
- .case-experience[data-case-ready="true"] .case-chapter-stack{height:auto}
- .case-experience[data-case-ready="true"] .case-chapter{position:relative;opacity:1!important;visibility:visible!important;pointer-events:auto;padding:36px 0}
- .case-scene-copy{bottom:30px}
- .concept-12-root .case-primary-heading{font-size:clamp(32px,5vw,50px)}
-}
 /* Consistent exterior spacing matches the existing homepage closing CTA. */
-.case-experience{--case-section-top:clamp(100px,12vw,170px);--case-section-bottom:clamp(85px,8vw,125px)}
+.case-experience{--case-section-top:clamp(92px,9vw,128px);--case-section-bottom:clamp(100px,9vw,126px)}
 .case-experience :is(.case-photo-gallery,.case-partners,.case-related){padding-top:var(--case-section-top);padding-bottom:var(--case-section-bottom)}
 @media(max-width:800px){
- .case-experience :is(.case-photo-gallery,.case-partners,.case-related){padding-top:clamp(80px,13vw,110px);padding-bottom:clamp(75px,11vw,105px)}
+ .case-experience{--case-section-top:95px;--case-section-bottom:100px}
  .case-primary-heading .wipe-line>span{white-space:nowrap}
 }
-/* Enlarged text and image collages must never be hidden behind a pinned mobile stage. */
-@media(max-width:800px),(max-height:690px){
- .case-experience[data-case-ready="true"] .case-scroll-narrative{height:auto}
- .case-experience[data-case-ready="true"] .case-narrative-stage{position:relative;height:auto;min-height:0;overflow:visible;padding-top:0;padding-bottom:0}
- .case-experience[data-case-ready="true"] .case-chapter-stack{height:auto}
- .case-experience[data-case-ready="true"] .case-chapter{position:relative;min-height:0;opacity:1!important;visibility:visible!important;pointer-events:auto;padding:clamp(80px,11vw,125px) 0;border-bottom:1px solid var(--line)}
- .case-experience[data-case-ready="true"] .case-chapter:last-child{border-bottom:none}
-}
+/* Content fit, not animation, determines whether a stage can be pinned. */
+.case-experience[data-case-flow] .case-scroll-narrative{height:auto}
+.case-experience[data-case-flow] .case-narrative-stage{position:relative;height:auto;min-height:0;overflow:visible;padding-top:0;padding-bottom:0}
+.case-experience[data-case-flow] .case-chapter-stack{height:auto}
+.case-experience[data-case-flow] .case-chapter{position:relative;min-height:0;opacity:1!important;visibility:visible!important;pointer-events:auto;padding:var(--case-section-top) 0 var(--case-section-bottom);border-bottom:1px solid var(--line)}
+.case-experience[data-case-flow] .case-chapter:last-child{border-bottom:none}
+@media(max-height:600px){.case-scene-copy{bottom:30px}.concept-12-root .case-primary-heading{font-size:clamp(32px,5vw,50px)}}
 @media(max-width:540px){.case-chapter-photos{height:205px}}
 /* No-JS, Studio, disabled motion and reduced motion always retain visible text.
    The shared homepage still-mode rules also suppress every rectangular swipe. */
@@ -157,3 +152,5 @@ body.case-lightbox-open{overflow:hidden}
 .concept-12-root:not([data-concept-ready="true"]) .case-primary-heading .wipe-line::after,
 .concept-12-root[data-case-motion="off"] .case-primary-heading .wipe-line::after{display:none!important}
 @media(prefers-reduced-motion:reduce){.case-gallery-item img,.case-related-photo img{transition:none}}
+
+@media(max-width:359px){.case-partner{grid-area:auto / 1 / auto / -1;max-width:280px}}

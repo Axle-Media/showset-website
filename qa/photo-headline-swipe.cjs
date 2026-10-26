@@ -17,7 +17,7 @@ const targets = [
   ['/our-work/', '.simple-hero .block-heading'],
 ];
 async function styles(page, selector) {
-  return page.locator(selector).evaluate(h => {
+  return page.locator('.view.is-current '+selector).evaluate(h => {
     const line = h.querySelector('.wipe-line');
     if (!line) return null;
     const marker = getComputedStyle(line, '::after');
@@ -49,7 +49,7 @@ async function styles(page, selector) {
       ck(selector + ' has an active rectangular overlay on ' + path,
         o && o.markerDisplay !== 'none' && !['none', 'normal'].includes(o.markerContent)
         && o.textClip.startsWith('inset(') && o.textTransform === 'none', o);
-      await page.locator(selector).evaluate(h => h.classList.add('is-revealed'));
+      await page.locator('.view.is-current '+selector).evaluate(h => h.classList.add('is-revealed'));
       const active = await styles(page, selector);
       ck(selector + ' uses only the faster rectangular swipe',
         active?.markerAnimation.includes('showsetPhotoBlockSwipe')
@@ -108,6 +108,7 @@ async function styles(page, selector) {
     await scrollHeroTo(.85);
     await page.waitForTimeout(900);
     await scrollHeroTo(.12);
+    await page.waitForFunction(()=>window.__showsetReplayCounts.first>=2,null,{timeout:1500}).catch(()=>{});
     const firstReplay = await page.evaluate(() => window.__showsetReplayCounts.first);
     ck('Opening hero block reveal replays when scrolling back upwards', firstReplay >= 2, { firstReplay });
     await scrollHeroTo(.85);

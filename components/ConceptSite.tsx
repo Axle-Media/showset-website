@@ -199,6 +199,7 @@ export function SiteLayout({
       ref={root}
       className="concept-12-root"
       data-next-path={pathname}
+      data-concept-route={routeKeys[page.route] || "home"}
       data-static-motion={!g.motion.enabled || reduced || !!editor || undefined}
       data-circle-reveal-off={!g.motion.circleReveal || undefined}
       dangerouslySetInnerHTML={{ __html: initialMarkup || markup }}

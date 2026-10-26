@@ -60,11 +60,13 @@ export default function CaseExperienceFields({page,updatePage}:Props){
     <button type="button" onClick={()=>set("gallery",story.gallery.filter((_,j)=>j!==i))}>Remove</button>
    </div>
   </div>)}
-  <button type="button" onClick={()=>set("gallery",[...story.gallery,{src:"/media/details.webp",alt:"Event photograph"}])}>+ Add gallery photo</button>
+  <button type="button" onClick={()=>set("gallery",[...story.gallery,{id:crypto.randomUUID(),src:"/media/details.webp",alt:"Event photograph"}])}>+ Add gallery photo</button>
   <div className="studio-pane-title">Companies involved</div>
   <p className="studio-hint">This section hides automatically when there are no partners.</p>
   {(story.partners||[]).map((partner,i)=><div className="studio-item" key={i}>
    {(["name","role","logo","href"] as const).map(k=>field(k==="logo"?"Optional logo URL":k==="href"?"Optional website":k,partner[k]||"",v=>set("partners",(story.partners||[]).map((p,j)=>j===i?{...p,[k]:v}:p))))}
+   <button type="button" disabled={i===0} onClick={()=>{const next=[...(story.partners||[])];[next[i-1],next[i]]=[next[i],next[i-1]];set("partners",next)}}>Move company up</button>
+   <button type="button" disabled={i===(story.partners||[]).length-1} onClick={()=>{const next=[...(story.partners||[])];[next[i+1],next[i]]=[next[i],next[i+1]];set("partners",next)}}>Move company down</button>
    <button type="button" onClick={()=>set("partners",(story.partners||[]).filter((_,j)=>j!==i))}>Remove company</button>
   </div>)}
   <button type="button" onClick={()=>set("partners",[...(story.partners||[]),{name:"New partner",role:"",logo:"",href:""}])}>+ Add company</button>

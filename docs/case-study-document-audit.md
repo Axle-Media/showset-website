@@ -1,5 +1,7 @@
 # Case study document audit and verification
 
+Historical report for aa31bf6. The latest approved changes and results are in [the final audit](case-study-final-audit.md). The original eyebrow, gallery-heading and partner-heading requirements were superseded in the subsequent refinement briefs.
+
 This branch corrects the incomplete case-study implementation from PR #19 against all four pages and ten embedded screenshots in Case-Study-Changes.docx. The audit began on current main, `23f7044bfe4a4a325850c26e9218b05bfe129268`, before edits. Both the deployed page and actual local Next.js app were inspected at 1440, 768 and 390 pixels. The document was rendered with Word to a four-page PDF and every page inspected.
 
 The initial findings are in [the before audit](case-study-audit-before.md). The implementation preserves homepage copy, page order, photography and closing CTA. The only shared CSS change extends existing photo-swipe selectors to the case-study opening scenes. The case-study runtime controls its own reveals so the generic intersection observer cannot race its reverse-scroll state.

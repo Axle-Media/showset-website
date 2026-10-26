@@ -74,7 +74,7 @@ export interface CaseExperience {
   brief: CaseStoryChapter;
   intention: CaseStoryChapter;
   approach: CaseStoryChapter;
-  gallery: { src: string; alt: string; credit?: string; creditHref?: string; license?: string; licenseHref?: string }[];
+  gallery: { id?: string; src: string; alt: string; credit?: string; creditHref?: string; license?: string; licenseHref?: string }[];
   /** Legacy saved data only; the image-window component has been removed. */
   bannerImage?: string;
   bannerAlt?: string;

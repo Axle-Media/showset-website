@@ -1,0 +1,104 @@
+[
+  {
+    "suite": "case-study-final",
+    "exit": 0,
+    "passes": 196,
+    "failures": 0
+  },
+  {
+    "suite": "case-study-infinite",
+    "exit": 0,
+    "passes": 24,
+    "failures": 0
+  },
+  {
+    "suite": "case-study-document",
+    "exit": 0,
+    "passes": 123,
+    "failures": 0
+  },
+  {
+    "suite": "case-study-studio",
+    "exit": 0,
+    "passes": 12,
+    "failures": 0
+  },
+  {
+    "suite": "case-study-touch",
+    "exit": 0,
+    "passes": 2,
+    "failures": 0
+  },
+  {
+    "suite": "concept12-routes",
+    "exit": 0,
+    "passes": 117,
+    "failures": 0
+  },
+  {
+    "suite": "concept12-seo",
+    "exit": 0,
+    "passes": 24,
+    "failures": 0
+  },
+  {
+    "suite": "concept12-functional",
+    "exit": 0,
+    "passes": 50,
+    "failures": 0
+  },
+  {
+    "suite": "concept12-lifecycle",
+    "exit": 0,
+    "passes": 16,
+    "failures": 0
+  },
+  {
+    "suite": "concept12-global-editing",
+    "exit": 0,
+    "passes": 9,
+    "failures": 0
+  },
+  {
+    "suite": "concept12-accessibility",
+    "exit": 0,
+    "passes": 21,
+    "failures": 0
+  },
+  {
+    "suite": "concept12-refinements",
+    "exit": 0,
+    "passes": 22,
+    "failures": 0
+  },
+  {
+    "suite": "homepage-feedback",
+    "exit": 0,
+    "passes": 46,
+    "failures": 0
+  },
+  {
+    "suite": "integration-homepage",
+    "exit": 0,
+    "passes": 41,
+    "failures": 0
+  },
+  {
+    "suite": "photo-headline-swipe",
+    "exit": 0,
+    "passes": 24,
+    "failures": 0
+  },
+  {
+    "suite": "case-study-final-studio",
+    "exit": 0,
+    "passes": 12,
+    "failures": 0
+  },
+  {
+    "suite": "case-study-swipe-paint",
+    "exit": 0,
+    "passes": 10,
+    "failures": 0
+  }
+]
