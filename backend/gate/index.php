@@ -339,7 +339,7 @@ $html = <<<'HTML'
       <button class="modal-close" type="button" id="close-access-modal" aria-label="Close">×</button>
       <input type="hidden" name="csrf" value="%%CSRF%%">
       <input class="password-input" id="preview-password" name="password" type="password" autocomplete="current-password" placeholder="Password" aria-label="Password" required maxlength="512" aria-describedby="login-status">
-      <p class="login-status sr-only" id="login-status" role="status" aria-live="polite">%%NOTICE%%</p>
+      <p class="login-status" id="login-status" role="status" aria-live="polite">%%NOTICE%%</p>
       <button class="modal-submit" id="submit-preview-login" type="submit">
         <span class="submit-label">Submit</span>
       </button>
