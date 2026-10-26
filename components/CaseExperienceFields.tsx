@@ -41,12 +41,12 @@ export default function CaseExperienceFields({page,updatePage}:Props){
     {field("Heading",chapter.heading,v=>updateChapter(key,{...chapter,heading:v}))}
     {field("Body text",chapter.body,v=>updateChapter(key,{...chapter,body:v}),true)}
     {<>
-     <p className="studio-hint">Optional supporting photos</p>
+     <p className="studio-hint">Chapter collage photos, up to four</p>
      {images.map((src,i)=><div key={i} className="studio-item">
       {field("Image "+(i+1)+" URL",src,v=>updateChapter(key,{...chapter,images:images.map((x,j)=>j===i?v:x)}))}
       <button type="button" onClick={()=>updateChapter(key,{...chapter,images:images.filter((_,j)=>j!==i)})}>Remove photo</button>
      </div>)}
-     {images.length<2&&<button type="button" onClick={()=>updateChapter(key,{...chapter,images:[...images,"/media/evening.webp"]})}>+ Add supporting photo</button>}
+     {images.length<4&&<button type="button" onClick={()=>updateChapter(key,{...chapter,images:[...images,"/media/evening.webp"]})}>+ Add supporting photo</button>}
     </>}
    </div>;
   })}

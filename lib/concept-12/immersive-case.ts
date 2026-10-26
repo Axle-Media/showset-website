@@ -26,9 +26,9 @@ function storyFor(page:PageData):CaseExperience {
  return {...fallback,...page.caseExperience};
 }
 function chapter(c:CaseStoryChapter,i:number) {
- const photos=(c.images||[]).slice(0,2);
- const images=photos.length?'<div class="case-chapter-photos">'+photos.map((p,j)=>'<figure>'+img(p,c.heading+" photo "+(j+1))+'</figure>').join("")+'</div>':"";
- return '<article class="case-chapter" data-case-chapter="'+i+'"><div class="case-chapter-copy">'+heading(c.heading)+'<div class="case-body-copy">'+paras(c.body)+'</div></div>'+images+'</article>';
+ const photos=(c.images||[]).slice(0,4);
+ const images=photos.length?'<div class="case-chapter-photos">'+photos.map((p,j)=>'<figure class="case-collage-photo case-collage-photo-'+(j+1)+'">'+img(p,c.heading+" photo "+(j+1))+'</figure>').join("")+'</div>':"";
+ return '<article class="case-chapter" data-case-chapter="'+i+'"><div class="case-chapter-copy"><span class="case-chapter-eyebrow">'+["THE BRIEF","THE INTENTION","THE APPROACH"][i]+'</span>'+heading(c.heading)+'<div class="case-body-copy">'+paras(c.body)+'</div></div>'+images+'</article>';
 }
 export function renderImmersiveCase(host:HTMLElement,page:PageData,catalog:Record<string,PageData>) {
  const view=host.querySelector<HTMLElement>('.view[data-view="case-study"]');if(!view)return;
@@ -41,6 +41,7 @@ export function renderImmersiveCase(host:HTMLElement,page:PageData,catalog:Recor
  const chapters=[s.brief,s.intention,s.approach];
  const creditAttrs=(p:CaseExperience["gallery"][number])=>' data-photo-credit="'+esc(p.credit||'')+'" data-photo-credit-href="'+esc(safeHref(p.creditHref))+'" data-photo-license="'+esc(p.license||'')+'" data-photo-license-href="'+esc(safeHref(p.licenseHref))+'"';
  const galleryMarkup='<section class="case-photo-gallery section-gutter" aria-label="Event photography">'+
+   heading("Explore the moments.")+
    '<div class="case-gallery-viewport" data-case-gallery aria-label="Photograph carousel. Drag or swipe to see more" tabindex="0">'+
    gallery.map((p,j)=>'<button type="button" class="case-gallery-item" data-case-image="'+j+'"'+creditAttrs(p)+' aria-label="Enlarge photograph '+(j+1)+'">'+img(p.src,p.alt)+'<span class="case-gallery-expand" aria-hidden="true">↗</span></button>').join("")+'</div></section>';
  const others=Object.values(catalog).filter(p=>p.route.startsWith("/work/")&&p.route!==page.route).slice(0,2);

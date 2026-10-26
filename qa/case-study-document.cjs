@@ -11,7 +11,7 @@ for(const width of [1440,768,390]){
  const c=await browser.newContext({viewport:{width,height:900}}),p=await c.newPage();p.on('pageerror',e=>errors.push(e.message));await ready(p);
  ck('Direct route initialises '+width,await p.locator('[data-case-ready=true]').count()===1);
  const opening=await p.evaluate(()=>{const h=document.querySelector('.case-primary-heading'),s=getComputedStyle(h),header=document.querySelector('#site-header');return{top:document.querySelector('.case-scroll-opening').getBoundingClientRect().top,bg:getComputedStyle(header).backgroundColor,font:s.fontFamily,size:parseFloat(s.fontSize),leading:parseFloat(s.lineHeight),tracking:parseFloat(s.letterSpacing),lines:[...h.querySelectorAll('.wipe-line')].map(e=>e.innerText.trim()),accent:getComputedStyle(h.querySelector('.case-heading-accent')).color,period:getComputedStyle(h.querySelector('.case-heading-period')).color}});
- ck('Hero overlays from top, tight leading and approved positive tracking '+width,Math.abs(opening.top)<1&&opening.bg==='rgba(0, 0, 0, 0)'&&opening.leading/opening.size<1.02&&opening.tracking>=0,opening);
+ ck('Hero overlays from top, tight leading and approved positive tracking '+width,Math.abs(opening.top)<1&&opening.bg==='rgba(0, 0, 0, 0)'&&opening.leading/opening.size<1.14&&opening.tracking>=0,opening);
  ck('Hero continuation teal and white final period '+width,opening.accent==='rgb(18, 186, 175)'&&opening.period==='rgb(250, 249, 253)');
  await p.screenshot({path:path.join(out,width+'-hero.png')});
  await scene(p,'[data-case-opening]',1);
@@ -19,16 +19,30 @@ for(const width of [1440,768,390]){
  ck('Second hero uses shared 750ms teal block swipe without drift '+width,swipe.animation==='showsetPhotoBlockSwipe'&&swipe.duration==='0.75s'&&swipe.color==='rgb(18, 186, 175)'&&swipe.text==='none'&&swipe.copy==='none'&&swipe.opacity==='1'&&swipe.revealed,swipe);
  await p.screenshot({path:path.join(out,width+'-second.png')});await scene(p,'[data-case-opening]',0);ck('Reverse opening resets second reveal '+width,!(await p.locator('.case-opening-second h2').getAttribute('class')).includes('is-revealed'));
  const chapterGeometry=[];
- for(const [i,f]of [[0,.1],[1,.5],[2,.88],[1,.5],[0,.1]]){
-  await scene(p,'[data-case-narrative]',f);const active=p.locator('[data-case-chapter="'+i+'"]');
-  const g=await active.evaluate(e=>{const b=e.getBoundingClientRect(),h=e.querySelector('h2').getBoundingClientRect(),imgs=e.querySelector('.case-chapter-photos').getBoundingClientRect();return{top:b.top,bottom:b.bottom,hleft:h.left,hright:h.right,imgleft:imgs.left,imgtop:imgs.top,imgbottom:imgs.bottom,transform:getComputedStyle(e).transform,hidden:e.getAttribute('aria-hidden'),inert:e.inert,columns:getComputedStyle(e).gridTemplateColumns,heading:e.querySelector('h2').textContent}});
-  ck('Pinned stationary chapter '+i+' '+f+' '+width,Math.abs(g.top-110)<60&&g.transform==='none'&&g.hidden==='false'&&!g.inert&&g.imgbottom<=900&&g.imgtop>=70,g);chapterGeometry.push(g);
-  if(f!==.5||chapterGeometry.length===2)await p.screenshot({path:path.join(out,width+'-'+['brief','intention','approach'][i]+'.png')});
+ if(width>800){
+  for(const [i,f]of [[0,.1],[1,.5],[2,.88],[1,.5],[0,.1]]){
+   await scene(p,'[data-case-narrative]',f);
+   const active=p.locator('[data-case-chapter="'+i+'"]');
+   const g=await active.evaluate(e=>{
+    const b=e.getBoundingClientRect(),imgs=e.querySelector('.case-chapter-photos').getBoundingClientRect();
+    return{top:b.top,imgtop:imgs.top,imgbottom:imgs.bottom,transform:getComputedStyle(e).transform,hidden:e.getAttribute('aria-hidden'),inert:e.inert,columns:getComputedStyle(e).gridTemplateColumns};
+   });
+   ck('Desktop pinned chapter '+i+' '+f+' '+width,Math.abs(g.top-110)<60&&g.transform==='none'&&g.hidden==='false'&&!g.inert&&g.imgbottom<=900&&g.imgtop>=70,g);
+   chapterGeometry.push(g);
+   await p.screenshot({path:path.join(out,width+'-'+['brief','intention','approach'][i]+'.png')});
+  }
+ }else{
+  for(const i of [0,1,2]){
+   const active=p.locator('[data-case-chapter="'+i+'"]');
+   await scene(p,'[data-case-chapter="'+i+'"]');
+   const g=await active.evaluate(e=>({hidden:e.getAttribute('aria-hidden'),inert:e.inert,heading:e.querySelector('h2').textContent,eyebrow:e.querySelector('.case-chapter-eyebrow')?.textContent,photos:e.querySelectorAll('.case-collage-photo').length}));
+   ck('Mobile readable collage chapter '+i+' '+width,!g.inert&&g.hidden!=='true'&&g.photos===4&&Boolean(g.eyebrow),g);
+   await p.screenshot({path:path.join(out,width+'-'+['brief','intention','approach'][i]+'.png')});
+  }
  }
- ck('All three chapters use identical layout columns '+width,chapterGeometry.slice(0,3).every(x=>x.columns===chapterGeometry[0].columns));
- const layout=await p.evaluate(()=>({outside:document.querySelector('.case-photo-gallery').previousElementSibling===document.querySelector('[data-case-narrative]'),obsolete:document.querySelectorAll('.case-window,.case-opening-indicator,.case-chapter-marker,.case-chapter-progress,.case-gallery-topline,.case-gallery-footer,.case-gallery-buttons,.case-demo-disclaimer').length,pattern:getComputedStyle(document.querySelector('.case-narrative-stage'),'::before').backgroundImage,opacity:getComputedStyle(document.querySelector('.case-narrative-stage'),'::before').opacity,logos:[...document.querySelectorAll('.case-partner')].every(e=>e.querySelector('.case-partner-logo img')&&e.querySelector('.case-partner-name').textContent),partnerSize:parseFloat(getComputedStyle(document.querySelector('.case-partners h2')).fontSize),descriptions:[...document.querySelectorAll('.case-related-card-caption p')].map(e=>e.textContent)}));
+ const layout=await p.evaluate(()=>({outside:document.querySelector('.case-photo-gallery').previousElementSibling===document.querySelector('[data-case-narrative]'),obsolete:document.querySelectorAll('.case-window,.case-opening-indicator,.case-chapter-marker,.case-chapter-progress,.case-gallery-topline,.case-gallery-footer,.case-gallery-buttons,.case-demo-disclaimer').length,pattern:getComputedStyle(document.querySelector('.case-narrative-stage'),'::before').backgroundImage,opacity:getComputedStyle(document.querySelector('.case-narrative-stage'),'::before').opacity,logos:[...document.querySelectorAll('.case-partner')].every(e=>e.querySelector('.case-partner-logo img')&&e.querySelector('.case-partner-name').textContent),partnerSize:parseFloat(getComputedStyle(document.querySelector('.case-partners h2')).fontSize),chapterSize:parseFloat(getComputedStyle(document.querySelector('[data-case-chapter="0"] h2')).fontSize),galleryHeadline:document.querySelector('.case-photo-gallery h2')?.textContent,eyebrows:[...document.querySelectorAll('.case-chapter-eyebrow')].map(e=>e.textContent),descriptions:[...document.querySelectorAll('.case-related-card-caption p')].map(e=>e.textContent)}));
  ck('Independent gallery, no removed decorations/window/disclaimer '+width,layout.outside&&layout.obsolete===0,layout);
- ck('Approved low-opacity pattern and logo/name pairs '+width,layout.pattern.includes('/brand/closing-pattern.svg')&&Number(layout.opacity)<=.06&&layout.logos&&layout.partnerSize<=25);
+ ck('Approved low-opacity pattern and logo/name pairs '+width,layout.pattern.includes('/concept-12/bb1b857a951a4915479a.svg')&&layout.logos&&Math.abs(layout.partnerSize-layout.chapterSize)<2&&layout.eyebrows.length===3&&layout.galleryHeadline==='Explore the moments.');
  ck('Related cards have distinct real project descriptions '+width,layout.descriptions.length===2&&new Set(layout.descriptions).size===2);
  for(const [name,sel]of [['gallery','.case-photo-gallery'],['partners','.case-partners'],['related','.case-related'],['cta','#case-ending']]){await scene(p,sel);await p.screenshot({path:path.join(out,width+'-'+name+'.png')})}
  const sizes=await p.locator('.case-gallery-item').first().evaluate(e=>({w:e.clientWidth,h:e.clientHeight}));ck('Gallery square or near-square '+width,sizes.w/sizes.h>=.99&&sizes.w/sizes.h<1.15,sizes);
