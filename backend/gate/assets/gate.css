@@ -6,7 +6,7 @@ html,body{width:100%;min-width:280px;min-height:100%;margin:0;background:var(--n
 body{min-height:100vh;min-height:100svh;overflow:hidden;color:var(--white);font-family:var(--body);-webkit-font-smoothing:antialiased}
 button,input{font:inherit}button{color:inherit;cursor:pointer}button:focus-visible,input:focus-visible{outline:2px solid var(--teal);outline-offset:5px}
 .cover{position:relative;isolation:isolate;display:grid;width:100%;min-height:100vh;min-height:100svh;place-items:center;overflow:hidden;background:var(--navy)}
-.cover-pattern{position:absolute;z-index:-1;inset:0;background:url("/gate-assets/pattern.svg") repeat;background-size:520px auto;opacity:.055;pointer-events:none}
+.cover-pattern{position:absolute;z-index:-1;inset:0;background:url("/gate-assets/pattern.svg") repeat;background-size:520px auto;opacity:.22;pointer-events:none}
 .cover-content{display:flex;flex-direction:column;align-items:center;width:min(100% - 40px,760px);padding:36px 0;text-align:center}
 .gate-brand{display:inline-flex;align-items:center;justify-content:center;width:min(72vw,390px);margin:0;padding:0;border:0;border-radius:2px;background:transparent;cursor:pointer;transition:opacity .25s ease,transform .25s ease;-webkit-tap-highlight-color:transparent}
 .gate-brand:hover{opacity:.86;transform:translateY(-2px)}.gate-brand:active{transform:translateY(0)}
@@ -55,7 +55,7 @@ button,input{font:inherit}button{color:inherit;cursor:pointer}button:focus-visib
 }
 @keyframes pattern-intro{
   from{opacity:0;transform:scale(1.045)}
-  to{opacity:.055;transform:scale(1)}
+  to{opacity:.22;transform:scale(1)}
 }
 @keyframes pattern-drift{
   from{background-position:center center}
