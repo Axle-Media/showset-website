@@ -1797,7 +1797,21 @@
     "seo": {
       "title": "Atmosphere is everything",
       "description": "A creative concept study exploring how spatial layout, lighting, styling and guest experience shape the atmosphere of an event."
-    }
+    },
+    "projectModules": [
+      {
+        "id": "atmosphere-intention",
+        "kind": "text",
+        "title": "The intention.",
+        "body": "Before we think about the stage or the styling, we think about the feeling. How should the room welcome people? Where should the energy build? What should stay with them after they leave?"
+      },
+      {
+        "id": "atmosphere-approach",
+        "kind": "text",
+        "title": "The approach.",
+        "body": "We explore the guest journey as one connected experience. Light, movement, sound, material and timing work together to shape an atmosphere that feels considered from arrival to the final moment."
+      }
+    ]
   },
   "made-to-be-remembered": {
     "slug": "made-to-be-remembered",
@@ -1880,7 +1894,21 @@
     "seo": {
       "title": "Made to be remembered",
       "description": "A creative identity study exploring how typography, colour, packaging and print come together in a recognisable design system."
-    }
+    },
+    "projectModules": [
+      {
+        "id": "identity-intention",
+        "kind": "text",
+        "title": "The intention.",
+        "body": "A recognisable identity needs more than a single strong mark. The idea has to carry through every encounter, from the smallest printed detail to the largest expression."
+      },
+      {
+        "id": "identity-approach",
+        "kind": "text",
+        "title": "The approach.",
+        "body": "We explore a visual language with enough consistency to feel familiar and enough flexibility to stay interesting. Typography, colour, composition and application all become part of the same story."
+      }
+    ]
   },
   "behind-every-moment": {
     "slug": "behind-every-moment",
@@ -1963,7 +1991,21 @@
     "seo": {
       "title": "Behind every moment",
       "description": "A creative production study exploring how planning, lighting, sound, visuals and people shape memorable live experiences."
-    }
+    },
+    "projectModules": [
+      {
+        "id": "production-intention",
+        "kind": "text",
+        "title": "The intention.",
+        "body": "The best live moments feel effortless. Behind that ease is a chain of decisions that makes space for the audience to focus on what matters."
+      },
+      {
+        "id": "production-approach",
+        "kind": "text",
+        "title": "The approach.",
+        "body": "We look at the cues, the technical requirements and the people who bring them together. Creative direction and production planning meet so that every transition feels natural."
+      }
+    ]
   },
   "contact": {
     "slug": "contact",
