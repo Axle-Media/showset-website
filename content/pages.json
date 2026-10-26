@@ -1868,7 +1868,11 @@
         },
         {
           "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Red_carpet_at_81st_Academy_Awards_in_Kodak_Theatre.jpg?width=1600",
-          "alt": "Academy Awards red carpet, photograph by Greg Hernandez, CC BY 2.0"
+          "alt": "Academy Awards red carpet, photograph by Greg Hernandez, CC BY 2.0",
+          "credit": "Photo: Greg Hernandez",
+          "creditHref": "https://commons.wikimedia.org/wiki/File:Red_carpet_at_81st_Academy_Awards_in_Kodak_Theatre.jpg",
+          "license": "CC BY 2.0",
+          "licenseHref": "https://creativecommons.org/licenses/by/2.0/"
         },
         {
           "src": "/media/rigging.webp",

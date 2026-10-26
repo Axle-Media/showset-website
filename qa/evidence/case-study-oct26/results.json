@@ -1,0 +1,815 @@
+{
+  "base": "23f7044bfe4a4a325850c26e9218b05bfe129268",
+  "target": "Next.js production export served locally",
+  "document": [
+    {
+      "name": "Direct route initialises 1440",
+      "pass": true
+    },
+    {
+      "name": "Hero overlays from top, tight leading and approved positive tracking 1440",
+      "pass": true,
+      "detail": {
+        "top": 0,
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "Poppins, \"Inter Display\", Inter, \"Segoe UI\", sans-serif",
+        "size": 74,
+        "leading": 72.52,
+        "tracking": 0.296,
+        "lines": [
+          "A night made",
+          "for the spotlight."
+        ],
+        "accent": "rgb(18, 186, 175)",
+        "period": "rgb(250, 249, 253)"
+      }
+    },
+    {
+      "name": "Hero continuation teal and white final period 1440",
+      "pass": true
+    },
+    {
+      "name": "Second hero uses shared 750ms teal block swipe without drift 1440",
+      "pass": true,
+      "detail": {
+        "animation": "showsetPhotoBlockSwipe",
+        "duration": "0.75s",
+        "color": "rgb(18, 186, 175)",
+        "text": "none",
+        "copy": "none",
+        "opacity": "1",
+        "revealed": true
+      }
+    },
+    {
+      "name": "Reverse opening resets second reveal 1440",
+      "pass": true
+    },
+    {
+      "name": "Pinned stationary chapter 0 0.1 1440",
+      "pass": true,
+      "detail": {
+        "top": 110,
+        "bottom": 828,
+        "hleft": 90.71875,
+        "hright": 757.3125,
+        "imgleft": 829.3125,
+        "imgtop": 310.265625,
+        "imgbottom": 627.734375,
+        "transform": "none",
+        "hidden": "false",
+        "inert": false,
+        "columns": "666.594px 519.969px",
+        "heading": "Make every moment extraordinary."
+      }
+    },
+    {
+      "name": "Pinned stationary chapter 1 0.5 1440",
+      "pass": true,
+      "detail": {
+        "top": 110,
+        "bottom": 828,
+        "hleft": 90.71875,
+        "hright": 757.3125,
+        "imgleft": 829.3125,
+        "imgtop": 310.265625,
+        "imgbottom": 627.734375,
+        "transform": "none",
+        "hidden": "false",
+        "inert": false,
+        "columns": "666.594px 519.969px",
+        "heading": "More than a ceremony."
+      }
+    },
+    {
+      "name": "Pinned stationary chapter 2 0.88 1440",
+      "pass": true,
+      "detail": {
+        "top": 110,
+        "bottom": 828,
+        "hleft": 90.71875,
+        "hright": 757.3125,
+        "imgleft": 829.3125,
+        "imgtop": 310.265625,
+        "imgbottom": 627.734375,
+        "transform": "none",
+        "hidden": "false",
+        "inert": false,
+        "columns": "666.594px 519.969px",
+        "heading": "Every detail plays a part."
+      }
+    },
+    {
+      "name": "Pinned stationary chapter 1 0.5 1440",
+      "pass": true,
+      "detail": {
+        "top": 110,
+        "bottom": 828,
+        "hleft": 90.71875,
+        "hright": 757.3125,
+        "imgleft": 829.3125,
+        "imgtop": 310.265625,
+        "imgbottom": 627.734375,
+        "transform": "none",
+        "hidden": "false",
+        "inert": false,
+        "columns": "666.594px 519.969px",
+        "heading": "More than a ceremony."
+      }
+    },
+    {
+      "name": "Pinned stationary chapter 0 0.1 1440",
+      "pass": true,
+      "detail": {
+        "top": 110,
+        "bottom": 828,
+        "hleft": 90.71875,
+        "hright": 757.3125,
+        "imgleft": 829.3125,
+        "imgtop": 310.265625,
+        "imgbottom": 627.734375,
+        "transform": "none",
+        "hidden": "false",
+        "inert": false,
+        "columns": "666.594px 519.969px",
+        "heading": "Make every moment extraordinary."
+      }
+    },
+    {
+      "name": "All three chapters use identical layout columns 1440",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery, no removed decorations/window/disclaimer 1440",
+      "pass": true,
+      "detail": {
+        "outside": true,
+        "obsolete": 0,
+        "pattern": "url(\"http://127.0.0.1:3002/brand/closing-pattern.svg\")",
+        "opacity": "0.045",
+        "logos": true,
+        "partnerSize": 25,
+        "descriptions": [
+          "A visual study of how identity becomes something people recognise without having to think twice.",
+          "A creative study celebrating the work that makes a live experience run like it was meant to."
+        ]
+      }
+    },
+    {
+      "name": "Approved low-opacity pattern and logo/name pairs 1440",
+      "pass": true
+    },
+    {
+      "name": "Related cards have distinct real project descriptions 1440",
+      "pass": true
+    },
+    {
+      "name": "Gallery square or near-square 1440",
+      "pass": true,
+      "detail": {
+        "w": 540,
+        "h": 482
+      }
+    },
+    {
+      "name": "No horizontal overflow 1440",
+      "pass": true
+    },
+    {
+      "name": "Mouse drag scrolls without opening lightbox 1440",
+      "pass": true
+    },
+    {
+      "name": "Lightbox close focused 1440",
+      "pass": true
+    },
+    {
+      "name": "Lightbox next key and per-photo attribution 1440",
+      "pass": true
+    },
+    {
+      "name": "Lightbox focus wraps and includes attribution links 1440",
+      "pass": true
+    },
+    {
+      "name": "Escape restores focus and scroll 1440",
+      "pass": true
+    },
+    {
+      "name": "Gallery keyboard navigation 1440",
+      "pass": true
+    },
+    {
+      "name": "Loaded case-study images valid 1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Direct refresh retains case route 1440",
+      "pass": true
+    },
+    {
+      "name": "Direct route initialises 768",
+      "pass": true
+    },
+    {
+      "name": "Hero overlays from top, tight leading and approved positive tracking 768",
+      "pass": true,
+      "detail": {
+        "top": 0,
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "Poppins, \"Inter Display\", Inter, \"Segoe UI\", sans-serif",
+        "size": 52,
+        "leading": 50.96,
+        "tracking": 0.208,
+        "lines": [
+          "A night made",
+          "for the spotlight."
+        ],
+        "accent": "rgb(18, 186, 175)",
+        "period": "rgb(250, 249, 253)"
+      }
+    },
+    {
+      "name": "Hero continuation teal and white final period 768",
+      "pass": true
+    },
+    {
+      "name": "Second hero uses shared 750ms teal block swipe without drift 768",
+      "pass": true,
+      "detail": {
+        "animation": "showsetPhotoBlockSwipe",
+        "duration": "0.75s",
+        "color": "rgb(18, 186, 175)",
+        "text": "none",
+        "copy": "none",
+        "opacity": "1",
+        "revealed": true
+      }
+    },
+    {
+      "name": "Reverse opening resets second reveal 768",
+      "pass": true
+    },
+    {
+      "name": "Pinned stationary chapter 0 0.1 768",
+      "pass": true,
+      "detail": {
+        "top": 93,
+        "bottom": 852,
+        "hleft": 34.546875,
+        "hright": 733.453125,
+        "imgleft": 34.546875,
+        "imgtop": 489.1875,
+        "imgbottom": 705.1875,
+        "transform": "none",
+        "hidden": "false",
+        "inert": false,
+        "columns": "698.906px",
+        "heading": "Make every moment extraordinary."
+      }
+    },
+    {
+      "name": "Pinned stationary chapter 1 0.5 768",
+      "pass": true,
+      "detail": {
+        "top": 93,
+        "bottom": 852,
+        "hleft": 34.546875,
+        "hright": 733.453125,
+        "imgleft": 34.546875,
+        "imgtop": 467.203125,
+        "imgbottom": 683.203125,
+        "transform": "none",
+        "hidden": "false",
+        "inert": false,
+        "columns": "698.906px",
+        "heading": "More than a ceremony."
+      }
+    },
+    {
+      "name": "Pinned stationary chapter 2 0.88 768",
+      "pass": true,
+      "detail": {
+        "top": 93,
+        "bottom": 852,
+        "hleft": 34.546875,
+        "hright": 733.453125,
+        "imgleft": 34.546875,
+        "imgtop": 438.84375,
+        "imgbottom": 654.84375,
+        "transform": "none",
+        "hidden": "false",
+        "inert": false,
+        "columns": "698.906px",
+        "heading": "Every detail plays a part."
+      }
+    },
+    {
+      "name": "Pinned stationary chapter 1 0.5 768",
+      "pass": true,
+      "detail": {
+        "top": 93,
+        "bottom": 852,
+        "hleft": 34.546875,
+        "hright": 733.453125,
+        "imgleft": 34.546875,
+        "imgtop": 467.203125,
+        "imgbottom": 683.203125,
+        "transform": "none",
+        "hidden": "false",
+        "inert": false,
+        "columns": "698.906px",
+        "heading": "More than a ceremony."
+      }
+    },
+    {
+      "name": "Pinned stationary chapter 0 0.1 768",
+      "pass": true,
+      "detail": {
+        "top": 93,
+        "bottom": 852,
+        "hleft": 34.546875,
+        "hright": 733.453125,
+        "imgleft": 34.546875,
+        "imgtop": 489.1875,
+        "imgbottom": 705.1875,
+        "transform": "none",
+        "hidden": "false",
+        "inert": false,
+        "columns": "698.906px",
+        "heading": "Make every moment extraordinary."
+      }
+    },
+    {
+      "name": "All three chapters use identical layout columns 768",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery, no removed decorations/window/disclaimer 768",
+      "pass": true,
+      "detail": {
+        "outside": true,
+        "obsolete": 0,
+        "pattern": "url(\"http://127.0.0.1:3002/brand/closing-pattern.svg\")",
+        "opacity": "0.045",
+        "logos": true,
+        "partnerSize": 24,
+        "descriptions": [
+          "A visual study of how identity becomes something people recognise without having to think twice.",
+          "A creative study celebrating the work that makes a live experience run like it was meant to."
+        ]
+      }
+    },
+    {
+      "name": "Approved low-opacity pattern and logo/name pairs 768",
+      "pass": true
+    },
+    {
+      "name": "Related cards have distinct real project descriptions 768",
+      "pass": true
+    },
+    {
+      "name": "Gallery square or near-square 768",
+      "pass": true,
+      "detail": {
+        "w": 530,
+        "h": 495
+      }
+    },
+    {
+      "name": "No horizontal overflow 768",
+      "pass": true
+    },
+    {
+      "name": "Mouse drag scrolls without opening lightbox 768",
+      "pass": true
+    },
+    {
+      "name": "Lightbox close focused 768",
+      "pass": true
+    },
+    {
+      "name": "Lightbox next key and per-photo attribution 768",
+      "pass": true
+    },
+    {
+      "name": "Lightbox focus wraps and includes attribution links 768",
+      "pass": true
+    },
+    {
+      "name": "Escape restores focus and scroll 768",
+      "pass": true
+    },
+    {
+      "name": "Gallery keyboard navigation 768",
+      "pass": true
+    },
+    {
+      "name": "Loaded case-study images valid 768",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Direct refresh retains case route 768",
+      "pass": true
+    },
+    {
+      "name": "Direct route initialises 390",
+      "pass": true
+    },
+    {
+      "name": "Hero overlays from top, tight leading and approved positive tracking 390",
+      "pass": true,
+      "detail": {
+        "top": 0,
+        "bg": "rgba(0, 0, 0, 0)",
+        "font": "Poppins, \"Inter Display\", Inter, \"Segoe UI\", sans-serif",
+        "size": 36,
+        "leading": 35.28,
+        "tracking": 0.144,
+        "lines": [
+          "A night made",
+          "for the spotlight."
+        ],
+        "accent": "rgb(18, 186, 175)",
+        "period": "rgb(250, 249, 253)"
+      }
+    },
+    {
+      "name": "Hero continuation teal and white final period 390",
+      "pass": true
+    },
+    {
+      "name": "Second hero uses shared 750ms teal block swipe without drift 390",
+      "pass": true,
+      "detail": {
+        "animation": "showsetPhotoBlockSwipe",
+        "duration": "0.75s",
+        "color": "rgb(18, 186, 175)",
+        "text": "none",
+        "copy": "none",
+        "opacity": "1",
+        "revealed": true
+      }
+    },
+    {
+      "name": "Reverse opening resets second reveal 390",
+      "pass": true
+    },
+    {
+      "name": "Pinned stationary chapter 0 0.1 390",
+      "pass": true,
+      "detail": {
+        "top": 88,
+        "bottom": 852,
+        "hleft": 22,
+        "hright": 368,
+        "imgleft": 22,
+        "imgtop": 505.3125,
+        "imgbottom": 721.3125,
+        "transform": "none",
+        "hidden": "false",
+        "inert": false,
+        "columns": "346px",
+        "heading": "Make every moment extraordinary."
+      }
+    },
+    {
+      "name": "Pinned stationary chapter 1 0.5 390",
+      "pass": true,
+      "detail": {
+        "top": 88,
+        "bottom": 852,
+        "hleft": 22,
+        "hright": 368,
+        "imgleft": 22,
+        "imgtop": 494.8125,
+        "imgbottom": 710.8125,
+        "transform": "none",
+        "hidden": "false",
+        "inert": false,
+        "columns": "346px",
+        "heading": "More than a ceremony."
+      }
+    },
+    {
+      "name": "Pinned stationary chapter 2 0.88 390",
+      "pass": true,
+      "detail": {
+        "top": 88,
+        "bottom": 852,
+        "hleft": 22,
+        "hright": 368,
+        "imgleft": 22,
+        "imgtop": 466.3125,
+        "imgbottom": 682.3125,
+        "transform": "none",
+        "hidden": "false",
+        "inert": false,
+        "columns": "346px",
+        "heading": "Every detail plays a part."
+      }
+    },
+    {
+      "name": "Pinned stationary chapter 1 0.5 390",
+      "pass": true,
+      "detail": {
+        "top": 88,
+        "bottom": 852,
+        "hleft": 22,
+        "hright": 368,
+        "imgleft": 22,
+        "imgtop": 494.8125,
+        "imgbottom": 710.8125,
+        "transform": "none",
+        "hidden": "false",
+        "inert": false,
+        "columns": "346px",
+        "heading": "More than a ceremony."
+      }
+    },
+    {
+      "name": "Pinned stationary chapter 0 0.1 390",
+      "pass": true,
+      "detail": {
+        "top": 88,
+        "bottom": 852,
+        "hleft": 22,
+        "hright": 368,
+        "imgleft": 22,
+        "imgtop": 505.3125,
+        "imgbottom": 721.3125,
+        "transform": "none",
+        "hidden": "false",
+        "inert": false,
+        "columns": "346px",
+        "heading": "Make every moment extraordinary."
+      }
+    },
+    {
+      "name": "All three chapters use identical layout columns 390",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery, no removed decorations/window/disclaimer 390",
+      "pass": true,
+      "detail": {
+        "outside": true,
+        "obsolete": 0,
+        "pattern": "url(\"http://127.0.0.1:3002/brand/closing-pattern.svg\")",
+        "opacity": "0.045",
+        "logos": true,
+        "partnerSize": 19,
+        "descriptions": [
+          "A visual study of how identity becomes something people recognise without having to think twice.",
+          "A creative study celebrating the work that makes a live experience run like it was meant to."
+        ]
+      }
+    },
+    {
+      "name": "Approved low-opacity pattern and logo/name pairs 390",
+      "pass": true
+    },
+    {
+      "name": "Related cards have distinct real project descriptions 390",
+      "pass": true
+    },
+    {
+      "name": "Gallery square or near-square 390",
+      "pass": true,
+      "detail": {
+        "w": 308,
+        "h": 308
+      }
+    },
+    {
+      "name": "No horizontal overflow 390",
+      "pass": true
+    },
+    {
+      "name": "Mouse drag scrolls without opening lightbox 390",
+      "pass": true
+    },
+    {
+      "name": "Lightbox close focused 390",
+      "pass": true
+    },
+    {
+      "name": "Lightbox next key and per-photo attribution 390",
+      "pass": true
+    },
+    {
+      "name": "Lightbox focus wraps and includes attribution links 390",
+      "pass": true
+    },
+    {
+      "name": "Escape restores focus and scroll 390",
+      "pass": true
+    },
+    {
+      "name": "Gallery keyboard navigation 390",
+      "pass": true
+    },
+    {
+      "name": "Loaded case-study images valid 390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Direct refresh retains case route 390",
+      "pass": true
+    },
+    {
+      "name": "Fallback reveals all chapters {\"reducedMotion\":\"reduce\"}",
+      "pass": true
+    },
+    {
+      "name": "Fallback keeps both opening headings readable {\"reducedMotion\":\"reduce\"}",
+      "pass": true
+    },
+    {
+      "name": "Fallback reveals all chapters {\"javaScriptEnabled\":false}",
+      "pass": true
+    },
+    {
+      "name": "Fallback keeps both opening headings readable {\"javaScriptEnabled\":false}",
+      "pass": true
+    },
+    {
+      "name": "Reusable template /work/made-to-be-remembered/",
+      "pass": true
+    },
+    {
+      "name": "Reusable template /work/behind-every-moment/",
+      "pass": true
+    },
+    {
+      "name": "Approved homepage drawing-board section retained",
+      "pass": true
+    },
+    {
+      "name": "Actual editorial typography matches homepage tokens",
+      "pass": true,
+      "detail": {
+        "homeType": {
+          "font": "Poppins, \"Inter Display\", Inter, \"Segoe UI\", sans-serif",
+          "size": "42.88px",
+          "weight": "650",
+          "leading": "46.3104px",
+          "tracking": "0.17152px",
+          "bodyFont": "Manrope, Inter, \"Segoe UI\", Arial, sans-serif",
+          "bodySize": "14.848px",
+          "bodyLeading": "22.1235px",
+          "bodyTracking": "0.22272px"
+        },
+        "caseType": {
+          "font": "Poppins, \"Inter Display\", Inter, \"Segoe UI\", sans-serif",
+          "size": "42.88px",
+          "weight": "650",
+          "leading": "46.3104px",
+          "tracking": "0.17152px",
+          "bodyFont": "Manrope, Inter, \"Segoe UI\", Arial, sans-serif",
+          "bodySize": "14.848px",
+          "bodyLeading": "22.1235px",
+          "bodyTracking": "0.22272px"
+        }
+      }
+    },
+    {
+      "name": "Closing CTA matches homepage exactly",
+      "pass": true
+    },
+    {
+      "name": "Related project internal navigation",
+      "pass": true
+    },
+    {
+      "name": "Short landscape chapters remain readable and interactive",
+      "pass": true
+    },
+    {
+      "name": "Live reduced-motion toggle clears old hidden chapter state",
+      "pass": true
+    },
+    {
+      "name": "Motion resumes after live preference toggle",
+      "pass": true
+    },
+    {
+      "name": "No page runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "studio": [
+    {
+      "name": "Removed image-window controls absent",
+      "pass": true
+    },
+    {
+      "name": "Opening and second wording update same Studio components",
+      "pass": true
+    },
+    {
+      "name": "Approach copy and support image update",
+      "pass": true
+    },
+    {
+      "name": "Reordered gallery renders changed caption",
+      "pass": true
+    },
+    {
+      "name": "Partner own logo and website supported",
+      "pass": true
+    },
+    {
+      "name": "Draft headline and second headline persist",
+      "pass": true
+    },
+    {
+      "name": "Demo status and legacy stored fields preserved",
+      "pass": true
+    },
+    {
+      "name": "Photo attribution follows reordered image",
+      "pass": true
+    },
+    {
+      "name": "Published preview uses saved case content",
+      "pass": true
+    },
+    {
+      "name": "Published preview preserves Approach image",
+      "pass": true
+    },
+    {
+      "name": "Edited wrapped photo heading has teal continuation",
+      "pass": true
+    },
+    {
+      "name": "No Studio runtime errors",
+      "pass": true
+    }
+  ],
+  "touch": [
+    "Native Chrome touch-emulated swipe scrolls without opening lightbox",
+    "Horizontal trackpad-style wheel scrolls"
+  ],
+  "foundation": [
+    {
+      "suite": "concept12-routes",
+      "exit": 1,
+      "passes": 1,
+      "failures": 0
+    },
+    {
+      "suite": "concept12-seo",
+      "exit": 0,
+      "passes": 0,
+      "failures": 0
+    },
+    {
+      "suite": "concept12-functional",
+      "exit": 1,
+      "passes": 49,
+      "failures": 1
+    },
+    {
+      "suite": "concept12-lifecycle",
+      "exit": 0,
+      "passes": 16,
+      "failures": 0
+    },
+    {
+      "suite": "concept12-global-editing",
+      "exit": 0,
+      "passes": 9,
+      "failures": 0
+    },
+    {
+      "suite": "concept12-accessibility",
+      "exit": 0,
+      "passes": 21,
+      "failures": 0
+    },
+    {
+      "suite": "homepage-feedback",
+      "exit": 1,
+      "passes": 45,
+      "failures": 1
+    },
+    {
+      "suite": "integration-homepage",
+      "exit": 1,
+      "passes": 40,
+      "failures": 1
+    },
+    {
+      "suite": "photo-headline-swipe",
+      "exit": 1,
+      "passes": 8,
+      "failures": 0
+    }
+  ]
+}
