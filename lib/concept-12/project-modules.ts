@@ -2,23 +2,22 @@ import type { PageData, ProjectModule } from "@/lib/types";
 import { safeHref } from "@/lib/safe";
 
 /**
- * Case-study storytelling modules. Shared by the server-rendered public page,
- * the browser's route transitions, and the Studio preview.
- * Only safe DOM APIs are used for editable copy and media addresses.
+ * One case-study composition for SSR, browser navigation and SHOWSET Studio.
+ * Copy is inserted as text, and editable media URLs are validated.
  */
-export function renderProjectModules(host: HTMLElement, page: PageData) {
+export function renderProjectModules(
+  host: HTMLElement,
+  page: PageData,
+  catalog: Record<string, PageData>,
+) {
   const body = host.querySelector(".case-detail-body");
   const next = body?.querySelector(".case-detail-next");
   if (!body || !next) return;
 
   body.querySelector(".case-story-modules")?.remove();
+  body.querySelector(".case-next-project")?.remove();
   const modules = page.projectModules || [];
-  if (!modules.length) return;
-
   const doc = host.ownerDocument;
-  const collection = doc.createElement("div");
-  collection.className = "case-story-modules";
-  collection.setAttribute("aria-label", "Project story");
 
   const make = <K extends keyof HTMLElementTagNameMap>(tag: K, className?: string) => {
     const el = doc.createElement(tag);
@@ -39,7 +38,7 @@ export function renderProjectModules(host: HTMLElement, page: PageData) {
     });
     return wrap;
   };
-  const image = (src?: string, alt = "") => {
+  const image = (src: string, alt: string) => {
     const img = make("img");
     img.src = safeHref(src);
     img.alt = alt;
@@ -54,52 +53,92 @@ export function renderProjectModules(host: HTMLElement, page: PageData) {
     return figcaption;
   };
 
-  modules.forEach((module: ProjectModule, index) => {
-    const section = make("section", "case-story-module case-story-" + module.kind);
-    section.dataset.moduleId = module.id;
-    if (module.title) section.append(heading(module.title));
-    if (module.body) section.append(paragraphs(module.body));
+  if (modules.length) {
+    const collection = make("div", "case-story-modules");
+    collection.setAttribute("aria-label", "Project story");
 
-    if (module.kind === "image" && module.src && safeHref(module.src) !== "#") {
-      const figure = make("figure", "case-story-figure");
-      figure.append(image(module.src, module.alt || module.title));
-      const note = caption(module.captions);
-      if (note) figure.append(note);
-      section.append(figure);
+    modules.forEach((module: ProjectModule, index) => {
+      const section = make("section", "case-story-module case-story-" + module.kind);
+      section.dataset.moduleId = module.id;
+      section.dataset.moduleIndex = String(index);
+
+      if (module.kind === "text") {
+        if (module.title) section.append(heading(module.title));
+        if (module.body) section.append(paragraphs(module.body));
+      } else {
+        const hasSrc = !!module.src && safeHref(module.src) !== "#";
+        if (hasSrc) {
+          const figure = make("figure", "case-story-figure");
+          if (module.kind === "image") {
+            figure.append(image(module.src!, module.alt || module.title));
+          } else if (module.kind === "video") {
+            const video = make("video");
+            video.src = safeHref(module.src);
+            video.controls = true;
+            video.preload = "metadata";
+            video.playsInline = true;
+            video.setAttribute("aria-label", module.alt || module.title || "Project video");
+            figure.append(video);
+          } else if (module.kind === "comparison" && module.after &&
+              safeHref(module.after) !== "#") {
+            figure.classList.add("case-story-compare");
+            const before = make("div", "case-compare-before");
+            const after = make("div", "case-compare-after");
+            before.append(image(module.src!, module.alt ? module.alt + " before" : "Before"));
+            after.append(image(module.after, module.alt ? module.alt + " after" : "After"));
+            const beforeLabel = make("span", "case-compare-label");
+            beforeLabel.textContent = "Before";
+            const afterLabel = make("span", "case-compare-label");
+            afterLabel.textContent = "After";
+            before.append(beforeLabel);
+            after.append(afterLabel);
+            const slider = make("input", "case-compare-slider");
+            slider.type = "range";
+            slider.min = "0";
+            slider.max = "100";
+            slider.value = "50";
+            slider.setAttribute("aria-label", "Drag to compare before and after");
+            figure.append(before, after, slider);
+            figure.style.setProperty("--case-split", "50%");
+          }
+          const note = caption(module.captions);
+          if (note) figure.append(note);
+          if (figure.querySelector("img,video")) section.append(figure);
+        }
+        if (module.title || module.body) {
+          const description = make("div", "case-story-media-caption");
+          if (module.title) description.append(heading(module.title));
+          if (module.body) description.append(paragraphs(module.body));
+          section.append(description);
+        }
+      }
+      if (section.children.length) collection.append(section);
+    });
+    next.before(collection);
+  }
+
+  const studies = Object.values(catalog).filter(p => p.route.startsWith("/work/"));
+  const index = studies.findIndex(p => p.route === page.route);
+  if (index >= 0 && studies.length > 1) {
+    const following = studies[(index + 1) % studies.length];
+    const nextProject = make("a", "case-next-project");
+    nextProject.href = safeHref(following.route);
+    const photo = following.sections.find(s => s.type === "pagehero")?.image;
+    if (photo && safeHref(photo) !== "#") {
+      const visual = make("div", "case-next-visual");
+      visual.append(image(photo, ""));
+      nextProject.append(visual);
     }
-    if (module.kind === "video" && module.src && safeHref(module.src) !== "#") {
-      const figure = make("figure", "case-story-figure");
-      const video = make("video");
-      video.src = safeHref(module.src);
-      video.controls = true;
-      video.preload = "metadata";
-      video.playsInline = true;
-      video.setAttribute("aria-label", module.alt || module.title || "Project video");
-      figure.append(video);
-      const note = caption(module.captions);
-      if (note) figure.append(note);
-      section.append(figure);
-    }
-    if (module.kind === "comparison" && module.src && module.after &&
-        safeHref(module.src) !== "#" && safeHref(module.after) !== "#") {
-      const figure = make("figure", "case-story-comparison");
-      const before = make("div");
-      const after = make("div");
-      before.append(image(module.src, module.alt ? module.alt + " before" : "Before"));
-      after.append(image(module.after, module.alt ? module.alt + " after" : "After"));
-      const beforeLabel = make("span");
-      beforeLabel.textContent = "Before";
-      const afterLabel = make("span");
-      afterLabel.textContent = "After";
-      before.append(beforeLabel);
-      after.append(afterLabel);
-      figure.append(before, after);
-      const note = caption(module.captions);
-      if (note) figure.append(note);
-      section.append(figure);
-    }
-    section.dataset.moduleIndex = String(index);
-    collection.append(section);
-  });
-  next.before(collection);
+    const copy = make("div", "case-next-copy");
+    const line = make("p");
+    line.textContent = "Next story.";
+    const title = make("h2");
+    title.textContent = following.sections[0]?.headline || following.title;
+    const arrow = make("span", "case-next-arrow");
+    arrow.textContent = "↗";
+    arrow.setAttribute("aria-hidden", "true");
+    copy.append(line, title, arrow);
+    nextProject.append(copy);
+    next.after(nextProject);
+  }
 }
