@@ -56,11 +56,10 @@ function gate_same_origin(): bool
     }
     $origin = parse_url((string) $_SERVER['HTTP_ORIGIN']);
     $host = strtolower((string) ($origin['host'] ?? ''));
-    $expected = strtolower((string) ($_SERVER['HTTP_HOST'] ?? ''));
-    if (str_contains($expected, ':')) {
-        $expected = explode(':', $expected, 2)[0];
-    }
-    return $host !== '' && hash_equals($expected, $host);
+    $expectedUrl = parse_url('http://' . (string) ($_SERVER['HTTP_HOST'] ?? ''));
+    $expected = strtolower((string) ($expectedUrl['host'] ?? ''));
+    return is_array($origin) && is_array($expectedUrl)
+        && $host !== '' && $expected !== '' && hash_equals($expected, $host);
 }
 
 function gate_rate_file(): string
@@ -199,7 +198,8 @@ if (gate_is_authorized()) {
     }
     if ($path === 'protected-site' || str_starts_with($path, 'protected-site/')
         || str_contains($path, '\\') || str_contains($path, "\0")
-        || preg_match('~(^|/)\.\.?(/|$)~', $path)) {
+        || preg_match('~(^|/)\.\.?(/|$)~', $path)
+        || preg_match('~(^|/)\.[^/]+~', $path)) {
         gate_not_found();
     }
 
@@ -250,6 +250,9 @@ if (gate_is_authorized()) {
         'webmanifest' => 'application/manifest+json',
     ];
     $extension = strtolower(pathinfo($resolved, PATHINFO_EXTENSION));
+    if ($extension !== '' && !isset($types[$extension])) {
+        gate_not_found();
+    }
     header('Content-Type: ' . ($types[$extension] ?? 'application/octet-stream'));
     if ($extension === 'html') {
         header('Cache-Control: private, no-store, max-age=0');
