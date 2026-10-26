@@ -1795,8 +1795,8 @@
       }
     ],
     "seo": {
-      "title": "Atmosphere is everything",
-      "description": "A creative concept study exploring how spatial layout, lighting, styling and guest experience shape the atmosphere of an event."
+      "title": "Awards Night | Demonstration Case Study | SHOWSET",
+      "description": "A fictional cinematic awards-night concept study demonstrating SHOWSET's interactive case-study template."
     },
     "projectModules": [
       {
@@ -1829,7 +1829,82 @@
         "alt": "Stage rigging and production lighting",
         "captions": "Creative exploration. Technical production and atmosphere."
       }
-    ]
+    ],
+    "caseExperience": {
+      "demo": true,
+      "openingTitle": "A night made for the spotlight.",
+      "openingBody": "A cinematic concept study inspired by the world of the Academy Awards. The art of arrival, the electricity of anticipation and a room designed for unforgettable moments.",
+      "openingImage": "/media/evening.webp",
+      "secondImage": "/media/sound.webp",
+      "secondBody": "Behind every extraordinary evening is an extraordinary amount of thinking. Follow the ideas, people and little details that make an entire room feel something.",
+      "brief": {
+        "heading": "Make every moment extraordinary.",
+        "body": "Imagine an awards night where every entrance feels like the beginning of a film. Where guests move seamlessly from the anticipation of the red carpet to the energy of the ceremony.\n\nThe challenge was to imagine one connected experience: a celebration of cinema that feels ambitious, effortless and distinctly memorable.",
+        "images": [
+          "/media/planning.webp",
+          "/media/details.webp"
+        ]
+      },
+      "intention": {
+        "heading": "More than a ceremony.",
+        "body": "We wanted the entire evening to feel cinematic. That starts before the first spotlight hits the stage and lasts well beyond the final standing ovation.\n\nEvery transition, cue, colour and space was considered through one lens: how does it make someone feel?",
+        "images": [
+          "/media/brand.webp",
+          "/media/evening.webp"
+        ]
+      },
+      "approach": {
+        "heading": "Every detail plays a part.",
+        "body": "The guest journey became our script. Arrival, atmosphere, staging, lighting and the moments between moments were imagined as one continuous story.",
+        "images": []
+      },
+      "gallery": [
+        {
+          "src": "/media/evening.webp",
+          "alt": "An atmospheric event setting"
+        },
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Red_carpet_at_81st_Academy_Awards_in_Kodak_Theatre.jpg?width=1600",
+          "alt": "Academy Awards red carpet, photograph by Greg Hernandez, CC BY 2.0"
+        },
+        {
+          "src": "/media/rigging.webp",
+          "alt": "Lighting and technical production"
+        },
+        {
+          "src": "/media/details.webp",
+          "alt": "Decor and creative detailing"
+        },
+        {
+          "src": "/media/sound.webp",
+          "alt": "Sound and live production"
+        },
+        {
+          "src": "/media/planning.webp",
+          "alt": "Creative process and planning"
+        }
+      ],
+      "bannerImage": "/media/rigging.webp",
+      "bannerAlt": "Dramatic lighting rig at an event",
+      "partners": [
+        {
+          "name": "Northstar Experiences",
+          "role": "Concept and event direction (fictional)"
+        },
+        {
+          "name": "Framehouse Studio",
+          "role": "Creative and spatial design (fictional)"
+        },
+        {
+          "name": "Lumen Technical",
+          "role": "Lighting and audiovisual (fictional)"
+        },
+        {
+          "name": "Stagecraft Collective",
+          "role": "Stage production (fictional)"
+        }
+      ]
+    }
   },
   "made-to-be-remembered": {
     "slug": "made-to-be-remembered",

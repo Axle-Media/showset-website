@@ -258,8 +258,15 @@ export default function SiteShell({
       .then((r) => (r.ok ? r.json() : null))
       .then((j) => {
         if (j?.page?.sections) {
-          setPage(j.page);
-          setCatalog((x) => ({ ...x, [j.page.slug]: j.page }));
+          // Older published records predate the cinematic case-study fields.
+          // Retain canonical story data until an editor explicitly publishes it.
+          const incoming = {
+            ...initialPage,
+            ...j.page,
+            caseExperience: j.page.caseExperience ?? initialPage.caseExperience,
+          } as PageData;
+          setPage(incoming);
+          setCatalog((x) => ({ ...x, [incoming.slug]: incoming }));
         }
         if (j?.globals?.theme) setGlobals(j.globals);
       })

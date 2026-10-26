@@ -1,5 +1,5 @@
 import { refineHeadingPeriods } from "./typography";
-import { renderProjectModules } from "./project-modules";
+import { renderImmersiveCase } from "./immersive-case";
 import type { Block, Globals, PageData } from "@/lib/types";
 import { defaultPages, defaultGlobals } from "@/lib/data";
 import { safeHref } from "@/lib/safe";
@@ -443,35 +443,7 @@ export function bindConcept(
       }
     });
   } else if (key.startsWith("case-")) {
-    page.sections.forEach((s, i) => {
-      mark(
-        host.querySelector(
-          i === 0
-            ? ".case-detail-hero"
-            : s.type === "split"
-              ? ".case-detail-introduction"
-              : s.type === "visual"
-                ? ".case-detail-visual"
-                : ".case-detail-next",
-        ),
-        s,
-      );
-      if (i === 0) {
-        heading("#case-detail-title", s);
-        body("#case-detail-intro", s);
-        if (changed(s, "image")) image("#case-detail-image", s.image);
-      } else if (s.type === "split") {
-        heading("#case-detail-belief", s);
-        body("#case-detail-description", s);
-      } else if (s.type === "visual") {
-        if (changed(s, "image")) image("#case-detail-second-image", s.image);
-        if (changed(s, "headline")) text("#case-detail-quote", s.headline);
-      } else if (s.type === "cta") {
-        body(".case-detail-next>p", s);
-        action(".case-detail-next a", s);
-      }
-    });
-    try { renderProjectModules(host, page, catalog); } catch (error) { console.error('Case study module error', error); }
+    renderImmersiveCase(host, page, catalog);
   } else if (key === "contact") {
     const s = page.sections[0];
     if (s) {
