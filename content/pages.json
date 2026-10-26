@@ -1839,25 +1839,31 @@
       "secondBody": "Behind every extraordinary evening is an extraordinary amount of thinking. Follow the ideas, people and little details that make an entire room feel something.",
       "brief": {
         "heading": "Make every moment extraordinary.",
-        "body": "Imagine an awards night where every entrance feels like the beginning of a film. Where guests move seamlessly from the anticipation of the red carpet to the energy of the ceremony.\n\nThe challenge was to imagine one connected experience: a celebration of cinema that feels ambitious, effortless and distinctly memorable.",
+        "body": "Imagine an awards evening that feels cinematic from the very first invitation. An arrival that builds anticipation, a red-carpet experience that welcomes every guest into the story, and a ceremony where each moment has its own sense of occasion. Nothing should feel disconnected, from the first step inside to the final applause.\n\nFor this fictional concept, the brief was to bring every touchpoint together. Guest flow, visual identity, spatial planning, lighting, production and hospitality all had to feel part of one unmistakable evening. The ambition was not simply to fill a beautiful room. It was to give people a night they would remember.",
         "images": [
           "/media/planning.webp",
-          "/media/details.webp"
-        ]
-      },
-      "intention": {
-        "heading": "More than a ceremony.",
-        "body": "We wanted the entire evening to feel cinematic. That starts before the first spotlight hits the stage and lasts well beyond the final standing ovation.\n\nEvery transition, cue, colour and space was considered through one lens: how does it make someone feel?",
-        "images": [
+          "/media/details.webp",
           "/media/brand.webp",
           "/media/evening.webp"
         ]
       },
+      "intention": {
+        "heading": "More than a ceremony.",
+        "body": "The feeling was our starting point. Before imagining a stage, we imagined the excitement of arriving, the pause before the room goes dark and the collective energy when the spotlight finds its subject. We wanted those emotions to carry through the entire experience, not appear only during the main ceremony.\n\nWarmth and spectacle could exist together. Intimate details would bring guests closer, while scale, sound and light would give the evening its drama. Every visual cue and change in atmosphere had one purpose: make each guest feel part of the story unfolding around them.",
+        "images": [
+          "/media/evening.webp",
+          "/media/sound.webp",
+          "/media/details.webp",
+          "/media/brand.webp"
+        ]
+      },
       "approach": {
         "heading": "Every detail plays a part.",
-        "body": "The guest journey became our script. Arrival, atmosphere, staging, lighting and the moments between moments were imagined as one continuous story.",
+        "body": "We imagined the guest journey as a sequence of carefully connected scenes. First impressions began with the arrival and wayfinding. The room then opened up through layered lighting, thoughtful staging and a visual language that could move from printed details to giant screens without losing its character.\n\nBehind the atmosphere sat the practical work: layouts, technical cues, sound, guest movement and the timing of every transition. Creative direction and production planning informed each other from the first sketches. The aim was an experience that could feel effortless to a guest because every detail behind it had been considered.",
         "images": [
           "/media/rigging.webp",
+          "/media/planning.webp",
+          "/media/sound.webp",
           "/media/details.webp"
         ]
       },
@@ -1906,6 +1912,14 @@
           "name": "Stagecraft Collective",
           "role": "Stage production (fictional)"
         }
+      ],
+      "openingLines": [
+        "A night made",
+        "for the spotlight."
+      ],
+      "secondLines": [
+        "This is how we",
+        "made it happen."
       ]
     }
   },
