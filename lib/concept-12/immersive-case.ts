@@ -20,24 +20,39 @@ function storyFor(page:PageData):CaseExperience {
  };
  return {...fallback,...page.caseExperience};
 }
+// Two explicit reveal lines protect descenders and permit per-project typography.
+function heroRows(title:string, authored?:string[]) {
+ const words=title.trim().split(/\s+/);
+ let cut=Math.max(1,Math.floor(words.length/2));
+ let diff=Infinity;
+ for(let i=1;i<words.length;i++){
+   const d=Math.abs(words.slice(0,i).join(" ").length-words.slice(i).join(" ").length);
+   if(d<diff){diff=d;cut=i;}
+ }
+ const rows=authored?.length===2&&authored.every(Boolean)?authored:[words.slice(0,cut).join(" "),words.slice(cut).join(" ")];
+ const formatted=(s:string)=>esc(s).replace(/\.$/,'<span class="case-title-dot">.</span>');
+ return '<span class="wipe-line case-wipe-first"><span>'+formatted(rows[0])+'</span></span>'+
+   (rows[1]?'<span class="wipe-line case-wipe-second"><span>'+formatted(rows[1])+'</span></span>':'');
+}
 function chapter(c:CaseStoryChapter,i:number) {
- const photos=(c.images||[]).slice(0,2);
- const images=photos.length?'<div class="case-chapter-photos">'+photos.map((p,j)=>'<figure>'+img(p,c.heading+" photo "+(j+1))+'</figure>').join("")+'</div>':"";
- return '<article class="case-chapter" data-case-chapter="'+i+'"><div class="case-chapter-copy"><h2 class="section-title">'+esc(c.heading)+'</h2><div class="case-body-copy">'+paras(c.body)+'</div></div>'+images+'</article>';
+ const photos=(c.images||[]).slice(0,4);
+ const images=photos.length?'<div class="case-chapter-photos">'+photos.map((p,j)=>'<figure class="case-collage-photo case-collage-photo-'+(j+1)+'">'+img(p,c.heading+" photo "+(j+1))+'</figure>').join("")+'</div>':"";
+ return '<article class="case-chapter" data-case-chapter="'+i+'"><div class="case-chapter-copy"><span class="case-chapter-eyebrow">'+["THE BRIEF","THE INTENTION","THE APPROACH"][i]+'</span><h2 class="section-title">'+esc(c.heading)+'</h2><div class="case-body-copy">'+paras(c.body)+'</div></div>'+images+'</article>';
 }
 export function renderImmersiveCase(host:HTMLElement,page:PageData,catalog:Record<string,PageData>) {
  const view=host.querySelector<HTMLElement>('.view[data-view="case-study"]');if(!view)return;
  const s=storyFor(page),gallery=s.gallery.filter(p=>safeHref(p.src)!=="#");
  const chapters=[s.brief,s.intention,s.approach];
  const galleryMarkup='<section class="case-photo-gallery section-gutter" aria-label="Event photography">'+
+   '<h2 class="section-title case-gallery-heading">Explore the moments<span class="teal-dot">.</span></h2>'+
    '<div class="case-gallery-viewport" data-case-gallery aria-label="Photograph carousel. Drag or swipe to see more" tabindex="0">'+
    gallery.map((p,j)=>'<button type="button" class="case-gallery-item" data-case-image="'+j+'" aria-label="Enlarge photograph '+(j+1)+'">'+img(p.src,p.alt)+'<span class="case-gallery-expand" aria-hidden="true">↗</span></button>').join("")+'</div></section>';
  const others=Object.values(catalog).filter(p=>p.route.startsWith("/work/")&&p.route!==page.route).slice(0,2);
  const partners=s.partners||[];
  view.innerHTML='<div class="case-experience" data-case-experience>'+
   '<section class="case-scroll-opening" data-case-opening><div class="case-scroll-frame"><div class="case-scroll-track" data-case-track>'+
-  '<article class="case-opening-scene case-opening-first">'+img(s.openingImage,s.openingTitle,true)+'<div class="case-scene-shade"></div><div class="case-scene-copy"><h1 class="case-primary-heading block-heading"><span class="wipe-line"><span>'+esc(s.openingTitle)+'</span></span></h1><p>'+esc(s.openingBody)+'</p></div></article>'+
-  '<article class="case-opening-scene case-opening-second">'+img(s.secondImage,"Event story")+'<div class="case-scene-shade"></div><div class="case-scene-copy"><h2 class="case-primary-heading block-heading"><span class="wipe-line"><span>This is how we made it happen<span class="teal-dot">.</span></span></span></h2><p>'+esc(s.secondBody)+'</p></div></article>'+
+  '<article class="case-opening-scene case-opening-first">'+img(s.openingImage,s.openingTitle,true)+'<div class="case-scene-shade"></div><div class="case-scene-copy"><h1 class="case-primary-heading block-heading">'+heroRows(s.openingTitle,s.openingLines)+'</h1><p>'+esc(s.openingBody)+'</p></div></article>'+
+  '<article class="case-opening-scene case-opening-second">'+img(s.secondImage,"Event story")+'<div class="case-scene-shade"></div><div class="case-scene-copy"><h2 class="case-primary-heading block-heading">'+heroRows("This is how we made it happen.",s.secondLines)+'</h2><p>'+esc(s.secondBody)+'</p></div></article>'+
   '</div></div></section>'+
   '<section class="case-scroll-narrative" data-case-narrative><div class="case-narrative-stage"><div class="case-chapter-stack">'+chapters.map((c,i)=>chapter(c,i)).join("")+'</div></div></section>'+
   galleryMarkup+
