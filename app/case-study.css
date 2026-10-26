@@ -12,6 +12,7 @@
 .case-scene-copy>p{font-family:var(--body-font);font-weight:500;font-size:clamp(13px,1.12vw,16px);line-height:1.8;letter-spacing:inherit;color:rgba(255,255,255,.86);max-width:540px;margin:0}
 .case-opening-indicator{display:none;position:absolute;bottom:32px;left:var(--gutter);gap:13px;align-items:center;font-size:10px;letter-spacing:.13em;color:rgba(255,255,255,.7);font-weight:700}
 .case-opening-indicator>div{height:1px;background:rgba(255,255,255,.3);width:95px}.case-opening-indicator i{display:block;height:100%;background:var(--teal);transform-origin:left;transform:scaleX(0)}
+.case-experience[data-case-ready="true"] .case-opening-second .case-scene-copy{opacity:0;will-change:opacity,transform}
 .case-experience[data-case-ready="true"] .case-scroll-opening{height:225svh}
 .case-experience[data-case-ready="true"] .case-scroll-frame{position:sticky;top:0;height:100svh}
 .case-experience[data-case-ready="true"] .case-scroll-track{flex-direction:row;width:200vw;height:100%;will-change:transform}
