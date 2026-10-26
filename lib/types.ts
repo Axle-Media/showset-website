@@ -64,6 +64,8 @@ export interface ProjectModule {
 }
 export interface CaseStoryChapter { heading: string; body: string; images?: string[]; }
 export interface CaseExperience {
+  openingLines?: string[];
+  secondLines?: string[];
   demo?: boolean;
   openingTitle: string;
   openingBody: string;
