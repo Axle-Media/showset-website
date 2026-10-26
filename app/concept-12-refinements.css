@@ -431,3 +431,25 @@
   .footer-social{transition:none}
   .footer-social[href]:hover{transform:none}
 }
+
+/* Homepage heading alignment: share the same responsive left gutter. */
+#portfolio-section .portfolio-heading {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  justify-items: start;
+}
+#portfolio-section .portfolio-heading > .section-title {
+  justify-self: start;
+  text-align: left;
+  padding-left: 0;
+  margin-left: 0 !important;
+}
+@media (max-width: 800px) {
+  #portfolio-section .portfolio-heading { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Align only the second hero scene with the shared homepage headline grid.
+   Keep the first hero scene's original position and swipe geometry intact. */
+.hero-second { left: var(--gutter); }
