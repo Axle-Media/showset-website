@@ -21,11 +21,38 @@ function db():PDO {global $config;static $pdo=null;if($pdo)return $pdo;
  try{$pdo=new PDO($dsn,$config['db_user'],$config['db_pass'],[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC,PDO::ATTR_EMULATE_PREPARES=>false]);}catch(Throwable $e){respond(['ok'=>false,'error'=>'Database unavailable'],503);}return $pdo;}
 function authorized():bool{return !empty($_SESSION['showset_auth'])&&$_SESSION['showset_auth']===true;}
 function require_auth():void{if(!authorized())respond(['ok'=>false,'error'=>'Authentication required'],401);}
-function same_origin():bool {if(empty($_SERVER['HTTP_ORIGIN']))return true; $origin=parse_url($_SERVER['HTTP_ORIGIN']);return is_array($origin)&&strtolower($origin['host']??'')===strtolower(explode(':',$_SERVER['HTTP_HOST']??'')[0]);}
+function same_origin():bool {
+ if(empty($_SERVER['HTTP_ORIGIN']))return true;
+ $origin=parse_url((string)$_SERVER['HTTP_ORIGIN']);
+ $expected=parse_url('http://'.(string)($_SERVER['HTTP_HOST']??''));
+ $originHost=strtolower((string)($origin['host']??''));
+ $expectedHost=strtolower((string)($expected['host']??''));
+ return is_array($origin)&&is_array($expected)&&$originHost!==''&&$expectedHost!==''&&hash_equals($expectedHost,$originHost);
+}
 function require_post():void{if($_SERVER['REQUEST_METHOD']!=='POST')respond(['ok'=>false,'error'=>'POST required'],405);if(!same_origin())respond(['ok'=>false,'error'=>'Invalid origin'],403);}
 function csrf():void {if(empty($_SESSION['csrf'])||!hash_equals($_SESSION['csrf'],$_SERVER['HTTP_X_CSRF_TOKEN']??''))respond(['ok'=>false,'error'=>'Invalid security token'],403);}
 function payload():array{$raw=file_get_contents('php://input');if(strlen($raw)>1000000)respond(['ok'=>false,'error'=>'Payload too large'],413);$data=json_decode($raw,true);if(!is_array($data))respond(['ok'=>false,'error'=>'Invalid JSON'],400);return $data;}
-function limit(string $key,int $max,int $period):bool {$stmt=db()->prepare('SELECT count,window_start FROM showset_rate_limits WHERE limit_key=?');$stmt->execute([$key]);$v=$stmt->fetch();$now=time();if(!$v||$now-(int)$v['window_start']>$period){$q=db()->prepare('INSERT INTO showset_rate_limits(limit_key,count,window_start) VALUES (?,1,?) ON DUPLICATE KEY UPDATE count=1,window_start=?');$q->execute([$key,$now,$now]);return true;}if((int)$v['count']>=$max)return false;db()->prepare('UPDATE showset_rate_limits SET count=count+1 WHERE limit_key=?')->execute([$key]);return true;}
+function limit(string $key,int $max,int $period):bool {
+ $pdo=db();$now=time();
+ $pdo->beginTransaction();
+ try {
+  // Insert a row if needed, then lock it so concurrent requests cannot reset or skip the counter.
+  $pdo->prepare('INSERT IGNORE INTO showset_rate_limits(limit_key,count,window_start) VALUES (?,0,?)')->execute([$key,$now]);
+  $stmt=$pdo->prepare('SELECT count,window_start FROM showset_rate_limits WHERE limit_key=? FOR UPDATE');
+  $stmt->execute([$key]);$v=$stmt->fetch();
+  if(!$v)throw new RuntimeException('Rate limit row unavailable');
+  if($now-(int)$v['window_start']>$period){
+   $pdo->prepare('UPDATE showset_rate_limits SET count=1,window_start=? WHERE limit_key=?')->execute([$now,$key]);
+   $pdo->commit();return true;
+  }
+  if((int)$v['count']>=$max){$pdo->commit();return false;}
+  $pdo->prepare('UPDATE showset_rate_limits SET count=count+1 WHERE limit_key=?')->execute([$key]);
+  $pdo->commit();return true;
+ } catch(Throwable $e) {
+  if($pdo->inTransaction())$pdo->rollBack();
+  throw $e;
+ }
+}
 function slug(string $s):string{if(!preg_match('/^[a-z0-9-]{1,80}$/',$s))respond(['ok'=>false,'error'=>'Invalid page slug'],400);return $s;}
 function valid_page($d):bool{if(!is_array($d)||empty($d['sections'])||!is_array($d['sections'])||count($d['sections'])>65)return false;$valid=['hero','pagehero','split','story','services','work','dot','cta','visual','items','accordion','contact'];foreach($d['sections'] as $s){if(!is_array($s)||!in_array($s['type']??'',$valid,true))return false;if(strlen(json_encode($s))>220000)return false;}return true;}
 function get_entity(string $sql, array $params):?array{$q=db()->prepare($sql);$q->execute($params);$row=$q->fetch();return $row?:null;}
