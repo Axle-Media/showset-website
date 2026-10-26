@@ -123,7 +123,7 @@ export function SiteLayout({
     // Keep the server-rendered route as a recovery snapshot. A client-side
     // animation error must not replace a complete page with hidden views.
     const serverMarkup = initialMarkup || host.innerHTML;
-    let dispose: ReturnType<typeof mountConcept> = () => {};
+    let dispose: ReturnType<typeof mountConcept> | null = null;
     try {
       host.innerHTML = markup;
       bindConcept(host, "home", {
@@ -172,7 +172,7 @@ export function SiteLayout({
     if (y > 0) scrollTo({ top: y, behavior: "instant" });
     return () => {
       host.removeEventListener("click", choose, true);
-      dispose();
+      dispose?.();
       engine.current=null;
     };
   }, [page.route]);
