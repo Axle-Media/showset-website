@@ -26,11 +26,15 @@ export default function CaseExperienceFields({page,updatePage}:Props){
  return <div className="studio-item">
   <div className="studio-pane-title">Cinematic case study</div>
   <p className="studio-hint">Changes appear in the case-study preview. The homepage design system controls typography, colours and buttons.</p>
-  <label className="studio-check"><input type="checkbox" checked={Boolean(story.demo)} onChange={e=>set("demo",e.target.checked)}/> Fictional demonstration content (show disclaimer)</label>
+  <label className="studio-check"><input type="checkbox" checked={Boolean(story.demo)} onChange={e=>set("demo",e.target.checked)}/> Mark as fictional demonstration content</label>
   {field("Opening headline",story.openingTitle,v=>set("openingTitle",v))}
+  {field("Opening headline, first line",story.openingLines?.[0]||"",v=>set("openingLines",[v,story.openingLines?.[1]||""]))}
+  {field("Opening headline, second line",story.openingLines?.[1]||"",v=>set("openingLines",[story.openingLines?.[0]||"",v]))}
   {field("Opening paragraph",story.openingBody,v=>set("openingBody",v),true)}
   {field("Opening full-screen image URL",story.openingImage,v=>set("openingImage",v))}
   {field("Second scene image URL",story.secondImage,v=>set("secondImage",v))}
+  {field("Second scene heading, first line",story.secondLines?.[0]||"",v=>set("secondLines",[v,story.secondLines?.[1]||""]))}
+  {field("Second scene heading, second line",story.secondLines?.[1]||"",v=>set("secondLines",[story.secondLines?.[0]||"",v]))}
   {field("Second scene paragraph",story.secondBody,v=>set("secondBody",v),true)}
   {(["brief","intention","approach"] as const).map(key=>{
    const chapter=story[key];
@@ -40,12 +44,12 @@ export default function CaseExperienceFields({page,updatePage}:Props){
     {field("Heading",chapter.heading,v=>updateChapter(key,{...chapter,heading:v}))}
     {field("Body text",chapter.body,v=>updateChapter(key,{...chapter,body:v}),true)}
     {<>
-     <p className="studio-hint">Optional supporting photos</p>
+     <p className="studio-hint">Chapter collage photographs (up to four)</p>
      {images.map((src,i)=><div key={i} className="studio-item">
       {field("Image "+(i+1)+" URL",src,v=>updateChapter(key,{...chapter,images:images.map((x,j)=>j===i?v:x)}))}
       <button type="button" onClick={()=>updateChapter(key,{...chapter,images:images.filter((_,j)=>j!==i)})}>Remove photo</button>
      </div>)}
-     {images.length<2&&<button type="button" onClick={()=>updateChapter(key,{...chapter,images:[...images,"/media/evening.webp"]})}>+ Add supporting photo</button>}
+     {images.length<4&&<button type="button" onClick={()=>updateChapter(key,{...chapter,images:[...images,"/media/evening.webp"]})}>+ Add supporting photo</button>}
     </>}
    </div>;
   })}
@@ -59,9 +63,6 @@ export default function CaseExperienceFields({page,updatePage}:Props){
    </div>
   </div>)}
   <button type="button" onClick={()=>set("gallery",[...story.gallery,{src:"/media/details.webp",alt:"Event photograph"}])}>+ Add gallery photo</button>
-  <div className="studio-pane-title">Full-width image window</div>
-  {field("Image URL",story.bannerImage,v=>set("bannerImage",v))}
-  {field("Alternative text",story.bannerAlt||"",v=>set("bannerAlt",v))}
   <div className="studio-pane-title">Companies involved</div>
   <p className="studio-hint">This section hides automatically when there are no partners.</p>
   {(story.partners||[]).map((partner,i)=><div className="studio-item" key={i}>
