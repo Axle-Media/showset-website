@@ -471,7 +471,7 @@ export function bindConcept(
         action(".case-detail-next a", s);
       }
     });
-    renderProjectModules(host, page, catalog);
+    try { renderProjectModules(host, page, catalog); } catch (error) { console.error('Case study module error', error); }
   } else if (key === "contact") {
     const s = page.sections[0];
     if (s) {
