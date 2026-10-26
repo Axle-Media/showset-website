@@ -449,3 +449,7 @@
 @media (max-width: 800px) {
   #portfolio-section .portfolio-heading { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Align only the second hero scene with the shared homepage headline grid.
+   Keep the first hero scene's original position and swipe geometry intact. */
+.hero-second { left: var(--gutter); }
