@@ -453,3 +453,76 @@
 /* Align only the second hero scene with the shared homepage headline grid.
    Keep the first hero scene's original position and swipe geometry intact. */
 .hero-second { left: var(--gutter); }
+
+/* Reusable case-study storytelling modules, controlled by SHOWSET Studio. */
+.case-story-modules {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(70px, 9vw, 140px);
+  margin: clamp(75px, 9vw, 125px) 0;
+}
+.case-story-module { min-width: 0; }
+.case-story-text {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(24px, 6vw, 100px);
+}
+.case-story-heading {
+  margin: 0 0 22px;
+  font-size: clamp(30px, 3.6vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -.045em;
+  font-weight: 650;
+}
+.case-story-copy { max-width: 640px; }
+.case-story-copy p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: clamp(14px, 1.25vw, 17px);
+  line-height: 1.65 !important;
+}
+.case-story-figure, .case-story-comparison { margin: 28px 0 0; }
+.case-story-figure img, .case-story-figure video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 760px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.case-story-figure figcaption, .case-story-comparison figcaption {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 13px;
+}
+.case-story-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 26px);
+}
+.case-story-comparison > div { position: relative; min-width: 0; }
+.case-story-comparison img {
+  display: block;
+  width: 100%;
+  height: clamp(240px, 38vw, 600px);
+  object-fit: cover;
+  border-radius: 10px;
+}
+.case-story-comparison > div > span {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: var(--deep);
+  padding: 8px 13px;
+  border-radius: 24px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.case-story-comparison figcaption { grid-column: 1 / -1; }
+@media (max-width: 800px) {
+  .case-story-text { grid-template-columns: 1fr; gap: 0; }
+  .case-story-comparison { gap: 10px; }
+  .case-story-comparison img { height: clamp(180px, 40vw, 320px); }
+}
