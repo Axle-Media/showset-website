@@ -433,10 +433,8 @@
 }
 
 /* Homepage heading alignment: share the same responsive left gutter. */
-#home .hero-foreground,
-#home .hero-second,
-.home-view .hero-foreground,
-.home-view .hero-second {
+.hero-foreground,
+.hero-second {
   left: var(--gutter);
 }
 #portfolio-section .portfolio-heading {
