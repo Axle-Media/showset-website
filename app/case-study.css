@@ -151,21 +151,38 @@ body.case-lightbox-open{overflow:hidden}
 .case-experience .case-primary-heading {
   font-size:clamp(43px,5.3vw,74px);
   font-weight:650;
-  line-height:1.035!important;
+  line-height:1.045!important;
   letter-spacing:-.066em!important;
-  max-width:900px;
-  text-wrap:balance;
+  max-width:min(100%,1050px);
+  margin-bottom:clamp(23px,3vw,36px);
 }
-.case-experience .case-primary-heading .wipe-line{
+.case-experience .case-primary-heading .wipe-line {
+  display:block;
+  width:max-content;
   max-width:100%;
-  padding-bottom:.12em;
-  margin-bottom:-.10em;
+  overflow:hidden;
+  padding:.08em .12em .25em .012em;
+  margin:-.08em 0 -.14em -.012em;
 }
 .case-experience .case-primary-heading .wipe-line>span {
   font:inherit;
+  font-size:inherit;
+  font-weight:inherit;
   letter-spacing:inherit;
-  line-height:inherit;
-  white-space:normal;
+  line-height:1.14!important;
+  white-space:nowrap;
+}
+.case-experience .case-primary-heading .case-wipe-second>span {
+  color:var(--teal);
+}
+.case-experience .case-primary-heading .case-title-dot {
+  color:var(--ice);
+}
+.case-experience .case-primary-heading .case-wipe-first::after {
+  background:var(--teal);
+}
+.case-experience .case-primary-heading .case-wipe-second::after {
+  background:var(--ice);
 }
 .case-experience .case-scene-copy>p {
   font-family:var(--body-font);
@@ -209,19 +226,19 @@ body.case-lightbox-open{overflow:hidden}
 .case-experience .case-chapter[data-case-chapter="2"] .case-body-copy p {
   margin-bottom:16px;
 }
+/* Match the approved low-contrast tiled pattern used behind the homepage work section. */
 .case-experience .case-scroll-narrative {
   position:relative;
   isolation:isolate;
-  background:linear-gradient(150deg,#071f32,#0d2f49);
+  background-image:url('/concept-12/bb1b857a951a4915479a.svg'),
+    linear-gradient(135deg,#071e30,#0d2f49 65%,#0b263a);
+  background-repeat:repeat,no-repeat;
+  background-size:var(--showset-pattern-width,440px) auto,cover;
+  background-position:center top,center;
 }
 .case-experience .case-scroll-narrative::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:url('/brand/closing-pattern.svg') center center / clamp(420px,65vw,980px) auto repeat;
-  opacity:.045;
-  pointer-events:none;
-  z-index:-1;
+  content:none;
+  display:none;
 }
 .case-experience .case-narrative-stage {
   z-index:1;
@@ -231,9 +248,56 @@ body.case-lightbox-open{overflow:hidden}
   padding-top:24px;
   padding-bottom:24px;
 }
-.case-experience .case-chapter-photos figure {
-  border-radius:var(--ui-radius,7px);
+
+/* One editorial four-photo collage shared by Brief, Intention and Approach. */
+.case-experience .case-chapter-photos {
+  width:100%;
+  height:clamp(300px,46svh,490px);
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+  grid-template-rows:repeat(6,minmax(0,1fr));
+  gap:clamp(8px,.9vw,14px);
+  align-self:center;
+  align-items:stretch;
 }
+.case-experience .case-chapter-photos figure.case-collage-photo {
+  min-width:0;
+  min-height:0;
+  height:auto;
+  width:100%;
+  margin:0;
+  transform:none;
+  aspect-ratio:auto;
+  border-radius:var(--ui-radius,9px);
+  overflow:hidden;
+}
+.case-experience .case-collage-photo img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.case-experience .case-collage-photo-1 {grid-column:1;grid-row:1 / span 4}
+.case-experience .case-collage-photo-2 {grid-column:2;grid-row:1 / span 3}
+.case-experience .case-collage-photo-3 {grid-column:1;grid-row:5 / span 2}
+.case-experience .case-collage-photo-4 {grid-column:2;grid-row:4 / span 3}
+.case-experience .case-chapter-photos:has(figure:nth-child(2):last-child) {
+  grid-template-rows:1fr;
+}
+.case-experience .case-chapter-photos:has(figure:nth-child(2):last-child) figure {
+  grid-row:1;
+}
+.case-experience .case-chapter-copy .case-chapter-eyebrow {
+  display:block;
+  color:var(--teal);
+  font-family:var(--body-font);
+  font-size:11px;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin:0 0 clamp(13px,1.8vw,22px);
+}
+
 /* Photography gallery is a separate horizontal chapter after the approach. */
 .case-experience .case-photo-gallery {
   position:relative;
@@ -367,6 +431,82 @@ body.case-lightbox-open{overflow:hidden}
   }
 }
 
+/* Consistent section rhythm uses the existing homepage closing CTA's outer spacing. */
+.case-experience {
+  --case-section-top:clamp(100px,12vw,170px);
+  --case-section-bottom:clamp(85px,8vw,125px);
+}
+.case-experience .case-photo-gallery,
+.case-experience .case-partners,
+.case-experience .case-related {
+  padding-top:var(--case-section-top);
+  padding-bottom:var(--case-section-bottom);
+}
+.case-experience .case-gallery-heading {
+  font-family:var(--display);
+  font-size:clamp(44px,5.2vw,72px)!important;
+  line-height:1.07!important;
+  letter-spacing:-.055em!important;
+  font-weight:650;
+  margin:0 0 clamp(30px,4.2vw,62px);
+  max-width:940px;
+}
+.case-experience .case-partners h2 {
+  font-family:var(--display);
+  font-size:clamp(44px,5.2vw,72px)!important;
+  line-height:1.07!important;
+  letter-spacing:-.055em!important;
+  font-weight:650;
+}
+.case-experience .case-partners-intro {
+  align-items:end;
+}
+@media(max-width:800px){
+  .case-experience .case-primary-heading .wipe-line>span {
+    white-space:nowrap;
+  }
+  .case-experience .case-primary-heading {
+    font-size:clamp(30px,8.4vw,54px)!important;
+  }
+  .case-experience .case-chapter-photos {
+    width:100%;
+    height:clamp(190px,27svh,280px);
+  }
+  .case-experience .case-photo-gallery,
+  .case-experience .case-partners,
+  .case-experience .case-related {
+    padding-top:clamp(80px,13vw,110px);
+    padding-bottom:clamp(75px,11vw,105px);
+  }
+}
+@media(max-width:480px){
+  .case-experience .case-chapter-photos {height:190px}
+  .case-experience .case-chapter-copy .case-chapter-eyebrow {margin-bottom:12px}
+  .case-experience .case-gallery-heading,
+  .case-experience .case-partners h2 {font-size:clamp(35px,8vw,48px)!important}
+}
+/* Short/narrow screens read every chapter in sequence rather than cropping text inside a pinned viewport. */
+.case-experience[data-case-flow="true"] .case-scroll-narrative {height:auto!important}
+.case-experience[data-case-flow="true"] .case-narrative-stage {
+  position:relative!important;
+  height:auto!important;
+  min-height:0;
+  overflow:visible!important;
+  padding-top:0;
+  padding-bottom:0;
+}
+.case-experience[data-case-flow="true"] .case-chapter-stack {height:auto!important}
+.case-experience[data-case-flow="true"] .case-chapter {
+  position:relative!important;
+  min-height:0;
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  transform:none!important;
+  padding:clamp(85px,12vw,125px) 0!important;
+  border-bottom:1px solid rgba(250,249,253,.12);
+}
+.case-experience[data-case-flow="true"] .case-chapter:last-child {border-bottom:0}
 /* Photo-specific copyright attribution is shown only inside its enlarged image. */
 .case-lightbox-figure figcaption{align-items:center;flex-wrap:wrap}
 .case-lightbox-figure figcaption .case-photo-credit{
