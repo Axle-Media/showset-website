@@ -37,9 +37,9 @@ for (const file of ['gate.css', 'gate.js']) {
   fs.copyFileSync(path.join('backend', 'gate', 'assets', file), path.join(publicGateAssets, file));
 }
 for (const [source, target] of [
-  ['public/brand/approved-wordmark.png', 'approved-wordmark.png'],
+  ['backend/gate/assets/showset-logo-white-teal.svg', 'showset-logo-white-teal.svg'],
   ['public/brand/approved-icon.png', 'approved-icon.png'],
-  ['public/brand/pattern.svg', 'pattern.svg'],
+  ['backend/gate/assets/pattern.svg', 'pattern.svg'],
 ]) {
   fs.copyFileSync(source, path.join(publicGateAssets, target));
 }
@@ -63,7 +63,7 @@ for (const required of [
   path.join(publicGateAssets, 'gate.css'),
   path.join(publicGateAssets, 'gate.js'),
   path.join(publicGateAssets, 'pattern.svg'),
-  path.join(publicGateAssets, 'approved-wordmark.png'),
+  path.join(publicGateAssets, 'showset-logo-white-teal.svg'),
   path.join(publicGateAssets, 'approved-icon.png'),
   path.join(publicGateAssets, 'fonts', 'showset-0.woff2'),
   path.join(publicGateAssets, 'fonts', 'showset-4.woff2'),
