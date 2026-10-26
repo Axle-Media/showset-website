@@ -553,7 +553,7 @@
   align-items: start;
 }
 .case-story-media-caption .case-story-heading { font-size: clamp(30px, 3.4vw, 54px) !important; }
-.case-story-compare { --case-split: 50%; }
+.case-story-compare { --case-split: 50%; min-height: clamp(480px, 87svh, 950px); padding-bottom: 32px; }
 .case-compare-before,.case-compare-after {
   position: absolute;
   inset: 0 0 32px;
@@ -593,7 +593,7 @@
   z-index: 3;
   cursor: ew-resize;
 }
-.case-story-compare figcaption { padding-top: 0; }
+.case-story-compare figcaption { position: absolute; bottom: 0; left: 0; width: 100%; padding-top: 0; }
 .case-detail-next {
   border-top: 1px solid var(--line);
   padding-top: clamp(50px, 7vw, 90px);
