@@ -36,8 +36,8 @@
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     status.textContent = "";
-    if (!password.value) {
-      status.textContent = "";
+    if (!password.value.trim()) {
+      status.textContent = "Enter the preview password to continue.";
       password.setAttribute("aria-invalid", "true");
       password.focus();
       return;
