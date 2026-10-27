@@ -50,7 +50,7 @@ const servicePaths=['/events-experiences/','/creative-design/','/digital-marketi
      ck('Navigation has no overlap '+width,layout.logo.right+8<layout.navFirst&&layout.navLast+8<layout.cta.x,{logo:layout.logo,cta:layout.cta,navFirst:layout.navFirst,navLast:layout.navLast});
      ck('Navigation centred on viewport '+width,Math.abs(layout.navCentre-width/2)<=eps,{centre:layout.navCentre,viewportCentre:width/2});
      ck('Every desktop menu label is 14px '+width,layout.navSizes.length===6&&layout.navSizes.every(font=>font==='14px'),layout.navSizes);
-     ck('Menu item spacing increased '+width,layout.navGaps.length===5&&layout.navGaps.every(gap=>gap>=19),layout.navGaps);
+     ck('Menu item spacing increased '+width,layout.navGaps.length===5&&layout.navGaps.every(gap=>gap>=29),layout.navGaps);
    }else{
      ck('Responsive service navigation uses mobile menu '+width,!layout.nav.visible&&!layout.cta.visible&&layout.mobile.visible);
    }
