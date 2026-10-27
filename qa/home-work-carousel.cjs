@@ -39,6 +39,7 @@ const width=1440;
   await gallery.scrollIntoViewIfNeeded();
   await page.waitForTimeout(600);
   ck('Home creates accessible circular gallery',await gallery.getAttribute('data-case-loop')==='true');
+  ck('Home has no playback button',await page.locator('#case-carousel [data-case-gallery-motion-toggle], #case-carousel .case-home-motion-toggle').count()===0);
   // Ensure that scrolling the rail into view did not leave the browser's
   // pointer hovering over it. Hover intentionally suspends autoplay.
   await page.mouse.move(0,0);
@@ -64,13 +65,12 @@ const width=1440;
   const afterDrag=await gallery.evaluate(el=>el.scrollLeft);
   ck('Home gallery supports full-distance mouse drag',Math.abs(afterDrag-hovered)>80,{hovered,afterDrag});
   ck('Drag did not accidentally navigate',new URL(page.url()).pathname==='/');
-  const pause=page.locator('[data-case-gallery-motion-toggle]');
-  await pause.click();
-  ck('Autoplay pause control toggles',await pause.getAttribute('aria-pressed')==='true');
-  const stopped=await gallery.evaluate(el=>el.scrollLeft);
   await page.mouse.move(0,0);
-  await page.waitForTimeout(700);
-  ck('Manual pause stops movement',Math.abs((await gallery.evaluate(el=>el.scrollLeft))-stopped)<3);
+  await page.waitForTimeout(100);
+  const resumeStart=await gallery.evaluate(el=>el.scrollLeft);
+  await page.waitForTimeout(950);
+  const resumeEnd=await gallery.evaluate(el=>el.scrollLeft);
+  ck('Home auto-scroll resumes promptly after mouse moves away',resumeEnd-resumeStart>12,{resumeStart,resumeEnd});
   await cards.nth(1).click();
   await page.waitForURL(url=>url.pathname===pageUrl('made-to-be-remembered'));
   await page.waitForSelector('[data-case-experience]');
