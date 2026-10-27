@@ -65,7 +65,8 @@ export function renderImmersiveCase(host:HTMLElement,page:PageData,catalog:Recor
  const chapters=[s.brief,s.intention,s.approach];
  const creditAttrs=(p:CaseExperience["gallery"][number])=>' data-photo-credit="'+esc(p.credit||'')+'" data-photo-credit-href="'+esc(safeHref(p.creditHref))+'" data-photo-license="'+esc(p.license||'')+'" data-photo-license-href="'+esc(safeHref(p.licenseHref))+'"';
  const galleryMarkup=gallery.length?'<section class="case-photo-gallery section-gutter" aria-label="Event photography">'+
-   heading("Explore the moments.")+
+   '<div class="case-gallery-heading-row">'+heading("Explore the moments.")+
+   '<button type="button" class="case-gallery-motion-toggle" data-case-gallery-motion-toggle aria-label="Pause automatic carousel movement" aria-pressed="false"><span aria-hidden="true" data-case-gallery-motion-icon>Ⅱ</span><span class="case-gallery-motion-label" data-case-gallery-motion-label>Pause</span></button></div>'+
    '<div class="case-gallery-viewport" data-case-gallery role="group" aria-roledescription="carousel" aria-label="Photographs. Drag, swipe or use arrow keys" tabindex="0">'+
    gallery.map((p,j)=>'<button type="button" class="case-gallery-item" data-case-image="'+j+'" data-case-image-id="'+esc(p.id||photoId(p.src)+'-'+gallery.slice(0,j).filter(x=>x.src===p.src).length)+'"'+creditAttrs(p)+' aria-label="Enlarge photograph '+(j+1)+'">'+img(p.src,p.alt)+'</button>').join("")+'</div></section>':"";
  const others=Object.values(catalog).filter(p=>p.route.startsWith("/work/")&&p.route!==page.route).slice(0,2);
