@@ -17,9 +17,13 @@ const servicePaths=['/events-experiences/','/creative-design/','/digital-marketi
   const links=await page.locator('.desktop-navigation > a.nav-text').evaluateAll(els=>els.map(a=>new URL(a.href).pathname));
   ck('Four services are direct, first-class nav links',links.slice(0,4).join('|')===servicePaths.join('|'),links);
   ck('Studio, Work and Contact follow service pages',links.slice(4).join('|')==='/our-studio/|/our-work/|/contact/',links);
-  const manifestTitle=await page.locator('#discover .manifesto-heading-group h2').innerText();
-  ck('Editorial heading copy retained',manifestTitle.replace(/\\s+/g,' ').trim()==='Too good to leave on the drawing board.',manifestTitle);
-  ck('Hero heading copy retained',(await page.locator('.hero-title').innerText()).replace(/\\s+/g,' ').trim()==='Great ideas move people.');
+  const manifestoLines=await page.locator('#discover .manifesto-heading-group h2 .plain-line').evaluateAll(
+    lines=>lines.map(el=>el.textContent.trim()).join(' '));
+  ck('Editorial heading copy retained',manifestoLines==='Too good to leave on the drawing board.',manifestoLines);
+  const heroLines=await page.locator('.hero-title .line').evaluateAll(
+    lines=>lines.map(el=>el.textContent.trim()).join(' '));
+  ck('Hero heading copy retained',heroLines==='Great ideas move people.',heroLines);
+
 
   for(const width of [1920,1600,1440,1366,1351,1350,1100,851,600,390]){
    await page.setViewportSize({width,height:920});
@@ -54,6 +58,10 @@ const servicePaths=['/events-experiences/','/creative-design/','/digital-marketi
   await page.locator('#mobile-panel nav a[href="/creative-design/"]').click();
   await page.waitForURL(url=>url.pathname==='/creative-design/');
   ck('Mobile service link navigates to service page',new URL(page.url()).pathname==='/creative-design/');
+  // Navigation routes use an animated curtain; wait for it to settle before
+  // exercising the next desktop link rather than racing the transition.
+  await page.waitForFunction(()=>!document.querySelector('#route-curtain')?.classList.contains('enter'),null,{timeout:5000});
+  await page.waitForTimeout(900);
   await page.setViewportSize({width:1440,height:920});
   await page.screenshot({path:'qa-results/header-desktop.png',animations:'disabled'});
   await page.locator('.desktop-navigation a[href="/digital-marketing/"]').click();
