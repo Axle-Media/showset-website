@@ -667,6 +667,8 @@ export function bindConcept(
     ...g.header.services,
     ...g.header.links.filter(
       (item) => item.label.trim().toLowerCase() !== "what we do" &&
+        item.label.trim().toLowerCase() !== "contact" &&
+        safeHref(item.href) !== "/contact/" &&
         !g.header.services.some((service) => service.href === item.href),
     ),
   ];

@@ -16,7 +16,8 @@ const servicePaths=['/events-experiences/','/creative-design/','/digital-marketi
   ck('Legacy What we do dropdown removed',await page.locator('#nav-dropdown,#services-button,#nav-panel').count()===0);
   const links=await page.locator('.desktop-navigation > a.nav-text').evaluateAll(els=>els.map(a=>new URL(a.href).pathname));
   ck('Four services are direct, first-class nav links',links.slice(0,4).join('|')===servicePaths.join('|'),links);
-  ck('Studio, Work and Contact follow service pages',links.slice(4).join('|')==='/our-studio/|/our-work/|/contact/',links);
+  ck('Only Studio and Work follow service pages',links.length===6&&links.slice(4).join('|')==='/our-studio/|/our-work/',links);
+  ck('Contact remains available through the primary CTA',await page.locator('#site-header .header-cta').getAttribute('href')==='/contact/');
   const manifestoLines=await page.locator('#discover .manifesto-heading-group h2 .plain-line').evaluateAll(
     lines=>lines.map(el=>el.textContent.trim()).join(' '));
   ck('Editorial heading copy retained',manifestoLines==='Too good to leave on the drawing board.',manifestoLines);
@@ -33,8 +34,11 @@ const servicePaths=['/events-experiences/','/creative-design/','/digital-marketi
      const nav=rect('.desktop-navigation'),cta=rect('#site-header .header-cta'),logo=rect('#site-header .brand'),
        manifesto=rect('#discover .manifesto-heading-group h2'),portfolio=rect('#portfolio-section .portfolio-heading > .section-title'),
        mobile=rect('#mobile-toggle');
-     const navEnds=[...document.querySelectorAll('.desktop-navigation > a')].map(a=>a.getBoundingClientRect());
-     return {w:innerWidth,logo,cta,nav,mobile,manifesto,portfolio,navFirst:navEnds[0]?.left,navLast:navEnds.at(-1)?.right,documentWidth:document.documentElement.scrollWidth};
+     const navItems=[...document.querySelectorAll('.desktop-navigation > a')];
+     const navEnds=navItems.map(a=>a.getBoundingClientRect());
+     const navSizes=navItems.map(a=>getComputedStyle(a).fontSize);
+     const navGaps=navEnds.slice(1).map((r,i)=>r.left-navEnds[i].right);
+     return {w:innerWidth,logo,cta,nav,mobile,manifesto,portfolio,navFirst:navEnds[0]?.left,navLast:navEnds.at(-1)?.right,navCentre:(navEnds[0]?.left+navEnds.at(-1)?.right)/2,navSizes,navGaps,documentWidth:document.documentElement.scrollWidth};
    });
    const eps=1.25;
    ck('Logo and manifesto share left gutter '+width,Math.abs(layout.logo.x-layout.manifesto.x)<=eps,layout);
@@ -44,6 +48,9 @@ const servicePaths=['/events-experiences/','/creative-design/','/digital-marketi
      ck('Direct links and right-hand CTA visible '+width,layout.nav.visible&&layout.cta.visible&&!layout.mobile.visible);
      ck('Logo and CTA match outer-edge spacing '+width,Math.abs(layout.logo.x-(width-layout.cta.right))<=eps,{left:layout.logo.x,right:width-layout.cta.right});
      ck('Navigation has no overlap '+width,layout.logo.right+8<layout.navFirst&&layout.navLast+8<layout.cta.x,{logo:layout.logo,cta:layout.cta,navFirst:layout.navFirst,navLast:layout.navLast});
+     ck('Navigation centred on viewport '+width,Math.abs(layout.navCentre-width/2)<=eps,{centre:layout.navCentre,viewportCentre:width/2});
+     ck('Every desktop menu label is 14px '+width,layout.navSizes.length===6&&layout.navSizes.every(font=>font==='14px'),layout.navSizes);
+     ck('Menu item spacing increased '+width,layout.navGaps.length===5&&layout.navGaps.every(gap=>gap>=19),layout.navGaps);
    }else{
      ck('Responsive service navigation uses mobile menu '+width,!layout.nav.visible&&!layout.cta.visible&&layout.mobile.visible);
    }
@@ -52,6 +59,7 @@ const servicePaths=['/events-experiences/','/creative-design/','/digital-marketi
   fs.mkdirSync('qa-results',{recursive:true});
   await page.screenshot({path:'qa-results/header-mobile.png',animations:'disabled'});
   await page.getByRole('button',{name:'Open menu'}).click();
+  ck('Contact removed from the mobile menu',await page.locator('#mobile-panel nav a[href="/contact/"]').count()===0);
   ck('Mobile menu opens and exposes four service pages',
     await page.locator('#mobile-panel').getAttribute('aria-hidden')==='false'&&
     (await page.locator('#mobile-panel nav > a').evaluateAll(els=>els.map(el=>new URL(el.href).pathname).slice(1,5))).join('|')===servicePaths.join('|'));
