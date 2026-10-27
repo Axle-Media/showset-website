@@ -49,8 +49,6 @@
   .case-explore,
   .select-trigger,
   .select-option,
-  .case-home-motion-toggle,
-  .case-gallery-motion-toggle,
   button[type="submit"]
 ){
   font-size:14px!important;
