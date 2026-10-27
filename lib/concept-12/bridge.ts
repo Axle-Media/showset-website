@@ -661,45 +661,39 @@ export function bindConcept(
         "</span> " +
         rich(g.footer.copyright);
   }
-  if (!equal(g.header.links, defaultGlobals.header.links)) {
-    const nav = host.querySelector(".desktop-navigation");
-    nav?.querySelectorAll("a.nav-text").forEach((a) => a.remove());
-    g.header.links.slice(1).forEach((x) => {
-      const a = document.createElement("a");
-      a.className = "nav-text";
-      a.textContent = x.label;
-      a.href = safeHref(x.href);
-      nav?.append(a);
-    });
-    const button = host.querySelector("#services-button");
-    if (button?.firstChild)
-      button.firstChild.textContent = g.header.links[0]?.label || "What we do";
+  // Keep all authored navigation links except the obsolete dropdown trigger.
+  // This also handles already-published Studio globals with the old link array.
+  const primaryLinks = [
+    ...g.header.services,
+    ...g.header.links.filter(
+      (item) => item.label.trim().toLowerCase() !== "what we do" &&
+        !g.header.services.some((service) => service.href === item.href),
+    ),
+  ];
+  const nav = host.querySelector<HTMLElement>(".desktop-navigation");
+  if (nav) {
+    nav.innerHTML = primaryLinks
+      .map((item) => {
+        const href = safeHref(item.href);
+        const route = routeKeys[href] || "";
+        return '<a class="nav-text" href="' + escape(href) +
+          '" data-route-key="' + escape(route) + '">' +
+          escape(plain(item.label)) + '</a>';
+      })
+      .join("");
   }
-  if (!equal(g.header.services, defaultGlobals.header.services)) {
-    const panel = host.querySelector("#nav-panel");
-    if (panel)
-      panel.innerHTML = g.header.services
-        .map(
-          (x) =>
-            `<a href="${escape(safeHref(x.href))}">${rich(x.label)} <b>â†—</b></a>`,
-        )
-        .join("");
-  }
-  if (
-    !equal(g.header.links, defaultGlobals.header.links) ||
-    !equal(g.header.services, defaultGlobals.header.services)
-  ) {
-    const mobile = host.querySelector("#mobile-panel nav");
-    if (mobile)
-      mobile.innerHTML = [
-        { label: "Home", href: "/" },
-        ...g.header.services,
-        ...g.header.links.slice(1),
-      ]
-        .map(
-          (x) => `<a href="${escape(safeHref(x.href))}">${rich(x.label)}</a>`,
-        )
-        .join("");
+  const mobile = host.querySelector<HTMLElement>("#mobile-panel nav");
+  if (mobile) {
+    mobile.innerHTML = [
+      { label: "Home", href: "/" },
+      ...primaryLinks,
+    ]
+      .map(
+        (item) =>
+          '<a href="' + escape(safeHref(item.href)) + '">' +
+          escape(plain(item.label)) + '</a>',
+      )
+      .join("");
   }
   if (!equal(g.footer.links, defaultGlobals.footer.links)) {
     const group = host.querySelector(".footer-links>div");
