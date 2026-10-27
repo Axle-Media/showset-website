@@ -1,5 +1,7 @@
 # SHOWSET case study final audit
 
+> Historical audit at 9763abd. The later [interactive storytelling refinement](case-study-storytelling.md) replaces the four-photo collages and their Studio controls with one primary photograph per chapter. The counts below describe that earlier revision.
+
 This report supersedes the earlier PR20 document audit. Work continued on `fix/case-study-document-audit`, safely fast-forwarded from `aa31bf6` to the existing refinement `845b100`, before adding final fixes. No reset, replacement project, main merge or production deployment was performed. The existing preview ZIP and prior local-work stash remain untouched.
 
 ## Result

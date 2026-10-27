@@ -4,7 +4,8 @@ const {chromium}=require(process.env.SHOWSET_PLAYWRIGHT_MODULE||'playwright'),fs
 for(const mode of ['mouse','wheel','touch']){const touch=mode==='touch',c=await b.newContext({viewport:{width:touch?390:1440,height:900},hasTouch:touch,isMobile:touch}),p=await c.newPage();await p.goto(base+'/work/atmosphere-is-everything/');await p.waitForSelector('[data-case-ready=true]');await p.evaluate(()=>document.fonts.ready);const g=p.locator('[data-case-gallery]');await g.scrollIntoViewIfNeeded();await p.waitForTimeout(300);const period=await g.evaluate(e=>[...e.querySelectorAll('[data-case-image]')].reduce((n,el)=>n+el.getBoundingClientRect().width+parseFloat(getComputedStyle(e).columnGap),0));const box=await g.boundingBox(),y=Math.max(100,box.y+Math.min(130,box.height*.4)),cd=touch?await c.newCDPSession(p):null;
 let lastDirection=0;
 for(const dir of [1,-1]){let distance=0,wraps=0,gestures=0;
- while(distance*dir<period*3.05&&gestures<85){const before=await g.evaluate(e=>e.scrollLeft);
+ // Native inertia can cross a boundary between samples: meet both independent requirements before stopping.
+ while((distance*dir<period*3.05||wraps<3)&&gestures<85){const before=await g.evaluate(e=>e.scrollLeft);
  if(mode==='wheel'){await g.hover();await p.mouse.wheel(dir*600,0);await p.waitForTimeout(65)}
  else if(mode==='mouse'){const a=box.x+box.width*(dir===1?.85:.15),z=box.x+box.width*(dir===1?.15:.85);await p.mouse.move(a,y);await p.mouse.down();await p.mouse.move(z,y,{steps:10});await p.mouse.up();await p.waitForTimeout(135)}
  else{const a=dir===1?330:60,z=dir===1?60:330;await cd.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:a,y}]});for(let i=1;i<=12;i++){await cd.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:a+(z-a)*i/12,y}]});await p.waitForTimeout(10)}await p.waitForTimeout(40);await cd.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await p.waitForTimeout(90)}

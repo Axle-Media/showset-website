@@ -1,4 +1,5 @@
 "use client";
+import { primaryChapterImage } from "@/lib/concept-12/chapter-image";
 import type { CaseExperience, CaseStoryChapter, PageData } from "@/lib/types";
 
 type Props={page:PageData;updatePage:(updater:(page:PageData)=>PageData)=>void};
@@ -40,14 +41,10 @@ export default function CaseExperienceFields({page,updatePage}:Props){
     <div className="studio-pane-title">{key[0].toUpperCase()+key.slice(1)}</div>
     {field("Heading",chapter.heading,v=>updateChapter(key,{...chapter,heading:v}))}
     {field("Body text",chapter.body,v=>updateChapter(key,{...chapter,body:v}),true)}
-    {<>
-     <p className="studio-hint">Chapter collage photos, up to four</p>
-     {images.map((src,i)=><div key={i} className="studio-item">
-      {field("Image "+(i+1)+" URL",src,v=>updateChapter(key,{...chapter,images:images.map((x,j)=>j===i?v:x)}))}
-      <button type="button" onClick={()=>updateChapter(key,{...chapter,images:images.filter((_,j)=>j!==i)})}>Remove photo</button>
-     </div>)}
-     {images.length<4&&<button type="button" onClick={()=>updateChapter(key,{...chapter,images:[...images,"/media/evening.webp"]})}>+ Add supporting photo</button>}
-    </>}
+    {field("Primary photograph URL",chapter.image??primaryChapterImage(chapter),v=>updateChapter(key,{...chapter,image:v}))}
+    {field("Photograph description",chapter.imageAlt||"",v=>updateChapter(key,{...chapter,imageAlt:v}))}
+    {images.length>0&&<p className="studio-hint">Previous chapter photos are retained. Changing the primary photograph does not remove them.</p>}
+
    </div>;
   })}
   <div className="studio-pane-title">Photography gallery after the story</div>

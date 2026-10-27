@@ -1,0 +1,42 @@
+[
+  {
+    "name": "One mapped primary field brief",
+    "pass": true
+  },
+  {
+    "name": "One mapped primary field intention",
+    "pass": true
+  },
+  {
+    "name": "One mapped primary field approach",
+    "pass": true
+  },
+  {
+    "name": "Shared editor preview uses new primary and alt",
+    "pass": true
+  },
+  {
+    "name": "Static editor shows one photo beside each chapter",
+    "pass": true
+  },
+  {
+    "name": "All legacy chapter arrays retained after save",
+    "pass": true
+  },
+  {
+    "name": "New primary fields saved without replacing legacy media",
+    "pass": true
+  },
+  {
+    "name": "Primary and description persist on reload",
+    "pass": true
+  },
+  {
+    "name": "Published shared frame renders saved photographs",
+    "pass": true
+  },
+  {
+    "name": "Publishing preserves every original stored photo",
+    "pass": true
+  }
+]

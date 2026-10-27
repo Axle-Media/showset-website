@@ -24,7 +24,7 @@ for(const width of [1440,1024,768,390,320]){
    await scene(p,'[data-case-narrative]',f);
    const active=p.locator('[data-case-chapter="'+i+'"]');
    const g=await active.evaluate(e=>{
-    const b=e.getBoundingClientRect(),imgs=e.querySelector('.case-chapter-photos').getBoundingClientRect();
+    const b=e.getBoundingClientRect(),imgs=e.closest('.case-chapter-stack').querySelector('.case-story-visual').getBoundingClientRect();
     return{top:b.top,imgtop:imgs.top,imgbottom:imgs.bottom,transform:getComputedStyle(e).transform,hidden:e.getAttribute('aria-hidden'),inert:e.inert,columns:getComputedStyle(e).gridTemplateColumns};
    });
    ck('Desktop pinned chapter '+i+' '+f+' '+width,Math.abs(g.top-110)<60&&g.transform==='none'&&g.hidden==='false'&&!g.inert&&g.imgbottom<=900&&g.imgtop>=70,g);
@@ -35,8 +35,8 @@ for(const width of [1440,1024,768,390,320]){
   for(const i of [0,1,2]){
    const active=p.locator('[data-case-chapter="'+i+'"]');
    await scene(p,'[data-case-chapter="'+i+'"]');
-   const g=await active.evaluate(e=>({hidden:e.getAttribute('aria-hidden'),inert:e.inert,heading:e.querySelector('h2').textContent,eyebrow:e.querySelector('.case-chapter-eyebrow')?.textContent,photos:e.querySelectorAll('.case-collage-photo').length}));
-   ck('Mobile readable collage chapter '+i+' '+width,!g.inert&&g.hidden!=='true'&&g.photos===4&&Boolean(g.eyebrow),g);
+   const g=await active.evaluate(e=>({hidden:e.getAttribute('aria-hidden'),inert:e.inert,heading:e.querySelector('h2').textContent,eyebrow:e.querySelector('.case-chapter-eyebrow')?.textContent,photos:e.querySelectorAll('.case-chapter-photo img').length}));
+   ck('Mobile readable single-photo chapter '+i+' '+width,!g.inert&&g.hidden!=='true'&&g.photos===1&&Boolean(g.eyebrow),g);
    await p.screenshot({path:path.join(out,width+'-'+['brief','intention','approach'][i]+'.png')});
   }
  }

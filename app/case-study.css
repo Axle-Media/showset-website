@@ -1,7 +1,7 @@
 /* Case studies inherit the approved homepage system. Only the opening display
    leading is deliberately tighter. Keep one rule per layout, not patch stacks. */
 .concept-12-root[data-concept-route^="case-"] #site-header:not(.scrolled):not(.menu-is-open){background:transparent;border-bottom-color:transparent;backdrop-filter:none}
-.case-experience{--case-ease:var(--easing);--case-hero-leading:1.045;--case-stage-inset:32px;--case-stage-bottom:72px;overflow:clip;background:var(--deep);color:var(--ice)}
+.case-experience{--case-ease:var(--easing);--case-hero-leading:1.045;--case-stage-inset:32px;--case-stage-bottom:72px;--case-story-gap:clamp(24px,5vw,95px);overflow:clip;background:var(--deep);color:var(--ice)}
 .case-experience img{display:block;width:100%;height:100%;object-fit:cover}
 .case-scroll-opening{position:relative}
 .case-scroll-frame{position:relative;overflow:hidden;width:100%}
@@ -38,23 +38,28 @@
 /* Exactly the same baked-opacity pattern tile and scale as the homepage portfolio. */
 .case-narrative-stage::before{content:"";position:absolute;inset:0;background:url('/concept-12/bb1b857a951a4915479a.svg') center top/var(--showset-pattern-width,440px) auto repeat;opacity:1;pointer-events:none;z-index:-1}
 .case-chapter-stack{position:relative;width:100%;max-width:var(--max);margin:0 auto}
-.case-chapter{min-height:65svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.78fr);align-content:center;align-items:center;gap:clamp(24px,5vw,95px);padding:48px 0}
+.case-chapter{min-height:65svh;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:center;align-items:center;gap:var(--case-story-gap);padding:48px 0}
 .case-chapter-copy{min-width:0;max-width:750px}
-.case-chapter-eyebrow{display:block;color:var(--teal);font-family:var(--body-font);font-size:11px;font-weight:700;letter-spacing:.08em;line-height:1.4;text-transform:uppercase;margin:0 0 clamp(12px,1.7vw,20px)}
+.case-chapter-eyebrow{display:block;color:var(--teal);font-family:var(--body-font);font-size:13px;font-weight:650;letter-spacing:.06em;line-height:1.4;text-transform:uppercase;margin:0 0 clamp(12px,1.7vw,20px)}
 .concept-12-root :is(.case-chapter h2,.case-related-heading h2){font-family:var(--display);font-size:var(--v12-h2);font-weight:var(--refine-heading-weight);letter-spacing:var(--v12-head-tracking)!important;line-height:var(--refine-heading-leading)!important;text-wrap:balance;margin:0 0 clamp(22px,3vw,40px)}
 .case-body-copy p{max-width:630px}
-.case-chapter-photos{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);grid-template-rows:repeat(6,minmax(0,1fr));gap:clamp(8px,.9vw,14px);height:clamp(285px,43svh,460px);align-items:stretch;min-width:0}
-.case-chapter-photos figure{margin:0;min-width:0;min-height:0;height:auto;overflow:hidden;border-radius:var(--ui-radius,7px);aspect-ratio:auto;transform:none}
-.case-chapter-photos .case-collage-photo-1{grid-column:1;grid-row:1/span 4}
-.case-chapter-photos .case-collage-photo-2{grid-column:2;grid-row:1/span 3}
-.case-chapter-photos .case-collage-photo-3{grid-column:1;grid-row:5/span 2}
-.case-chapter-photos .case-collage-photo-4{grid-column:2;grid-row:4/span 3}
-.case-chapter-photos:has(figure:nth-child(2):last-child){grid-template-rows:1fr}
-.case-chapter-photos:has(figure:nth-child(2):last-child) figure{grid-row:1}
+/* One stationary frame, with the same restrained opacity philosophy as services.
+   Full-opacity lower layers prevent dark dips during the scroll-scrubbed blend. */
+.case-story-visual{display:none;position:absolute;right:0;top:50%;translate:0 -50%;width:calc((100% - var(--case-story-gap))/2);height:min(62svh,680px,100%);margin:0;overflow:hidden;border-radius:6px;background:var(--navy)}
+.case-story-image{position:absolute;inset:0;opacity:0;background:var(--navy);will-change:opacity}
+.case-story-image:first-child{opacity:1}
+.case-story-image img{width:100%;height:100%;object-fit:cover}
+.case-story-image.is-unavailable img{visibility:hidden}
+.case-chapter-photo{position:relative;width:100%;height:clamp(320px,58svh,560px);overflow:hidden;margin:0;border-radius:6px;background:var(--navy)}
+.case-chapter-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.case-experience[data-case-ready="true"]:not([data-case-flow]) .case-story-visual{display:block}
+.case-experience[data-case-ready="true"]:not([data-case-flow]) .case-chapter-photo{display:none}
 .case-experience[data-case-ready="true"] .case-scroll-narrative{height:360svh}
 .case-experience[data-case-ready="true"] .case-narrative-stage{height:100svh;min-height:0;position:sticky;top:0;overflow:hidden}
 .case-experience[data-case-ready="true"] .case-chapter-stack{height:100%}
 .case-experience[data-case-ready="true"] .case-chapter{position:absolute;inset:0;min-height:0;margin:0;padding:0;opacity:0;visibility:hidden;pointer-events:none;will-change:opacity}
+.case-experience[data-case-ready="true"]:not([data-case-flow]) .case-chapter{align-content:start}
+.case-experience[data-case-ready="true"]:not([data-case-flow]) .case-chapter-copy{align-self:start;margin-top:var(--case-copy-top,0px)}
 .case-experience[data-case-ready="true"] .case-chapter:first-child{opacity:1;visibility:visible}
 .case-photo-gallery{position:relative;overflow:hidden;background:var(--deep);width:100%;min-width:0;padding-top:clamp(60px,7vw,100px);padding-bottom:clamp(60px,7vw,100px)}
 .concept-12-root .case-photo-gallery>.case-editorial-heading{font-size:var(--v12-h2);letter-spacing:var(--v12-head-tracking)!important;line-height:var(--refine-heading-leading)!important;font-weight:var(--refine-heading-weight);margin:0 0 clamp(32px,4.1vw,60px)}
@@ -111,9 +116,8 @@ body.case-lightbox-open{overflow:hidden}
  .case-experience[data-case-ready="true"] .case-scroll-opening{height:200svh}
  .case-experience{--case-stage-inset:24px;--case-stage-bottom:48px}
  .case-chapter{grid-template-columns:1fr;gap:25px}
- .case-chapter-photos{width:100%;max-width:520px;height:clamp(195px,30svh,285px);max-height:none}
- .case-chapter-photos figure{height:auto;aspect-ratio:auto}
- .case-chapter-photos figure:nth-child(2){aspect-ratio:auto;transform:none}
+ .case-chapter-photo{height:auto;aspect-ratio:4/3}
+ .case-chapter-eyebrow{font-size:12px}
  .case-gallery-item{flex-basis:69vw;aspect-ratio:1.07}
  .case-partner{grid-area:var(--partner-tablet)}
  .case-partners-intro{grid-template-columns:1fr}
@@ -141,10 +145,9 @@ body.case-lightbox-open{overflow:hidden}
 .case-experience[data-case-flow] .case-scroll-narrative{height:auto}
 .case-experience[data-case-flow] .case-narrative-stage{position:relative;height:auto;min-height:0;overflow:visible;padding-top:0;padding-bottom:0}
 .case-experience[data-case-flow] .case-chapter-stack{height:auto}
-.case-experience[data-case-flow] .case-chapter{position:relative;min-height:0;opacity:1!important;visibility:visible!important;pointer-events:auto;padding:var(--case-section-top) 0 var(--case-section-bottom);border-bottom:1px solid var(--line)}
-.case-experience[data-case-flow] .case-chapter:last-child{border-bottom:none}
+.case-experience[data-case-flow] .case-chapter{position:relative;min-height:0;opacity:1!important;visibility:visible!important;pointer-events:auto;align-content:start;align-items:start;padding:var(--case-section-top) 0 var(--case-section-bottom);border-bottom:1px solid var(--line)}
+.case-experience[data-case-flow] .case-chapter:last-of-type{border-bottom:none}
 @media(max-height:600px){.case-scene-copy{bottom:30px}.concept-12-root .case-primary-heading{font-size:clamp(32px,5vw,50px)}}
-@media(max-width:540px){.case-chapter-photos{height:205px}}
 /* No-JS, Studio, disabled motion and reduced motion always retain visible text.
    The shared homepage still-mode rules also suppress every rectangular swipe. */
 .concept-12-root:not([data-concept-ready="true"]) .case-primary-heading .wipe-line>span,

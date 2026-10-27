@@ -62,7 +62,7 @@ export interface ProjectModule {
   alt?: string;
   captions?: string;
 }
-export interface CaseStoryChapter { heading: string; body: string; images?: string[]; }
+export interface CaseStoryChapter { heading: string; body: string; image?: string; imageAlt?: string; /** Retained legacy media; first valid photo maps to image when unset. */ images?: string[]; }
 export interface CaseExperience {
   demo?: boolean;
   openingTitle: string;
