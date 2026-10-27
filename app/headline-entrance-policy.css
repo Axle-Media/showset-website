@@ -1,0 +1,62 @@
+/* SHOWSET motion rule: typography over flat, patterned, graphic or editorial
+   backgrounds is immediately readable. The rectangular block-swipe remains
+   exclusive to headings that actually sit over photography.
+   Loaded AFTER service-experience.css to override legacy !important reveals. */
+
+/* Old secondary-page entrance motion is retained for non-heading UI only. */
+.concept-12-root :is(h1,h2,h3,h4,h5,h6).soft-rise{
+  opacity:1!important;
+  transform:none!important;
+  translate:none!important;
+  animation:none!important;
+  transition:none!important;
+  clip-path:none!important;
+}
+
+/* Legacy wipe markup is still used for text layout and Studio editing.
+   Stop masking and animating it when the parent is not a photo scene. */
+.concept-12-root :is(.block-heading,.wipe-heading):not([data-service-reveal]):not(
+  :is(.hero-second *, .film-step *, .category-hero *, .simple-hero *,
+      .category-banner *, .case-opening-scene *)
+) .wipe-line>span{
+  opacity:1!important;
+  transform:none!important;
+  translate:none!important;
+  clip-path:none!important;
+  animation:none!important;
+  transition:none!important;
+  will-change:auto!important;
+}
+.concept-12-root :is(.block-heading,.wipe-heading):not([data-service-reveal]):not(
+  :is(.hero-second *, .film-step *, .category-hero *, .simple-hero *,
+      .category-banner *, .case-opening-scene *)
+) .wipe-line::before,
+.concept-12-root :is(.block-heading,.wipe-heading):not([data-service-reveal]):not(
+  :is(.hero-second *, .film-step *, .category-hero *, .simple-hero *,
+      .category-banner *, .case-opening-scene *)
+) .wipe-line::after{
+  content:none!important;
+  display:none!important;
+  animation:none!important;
+}
+
+/* Service-page headings on ordinary backgrounds do not reveal or wait for
+   scroll. Keep existing Poppins/Manrope metrics and teal punctuation. */
+.concept-12-root [data-service-reveal="editorial"] .wipe-line>span,
+.concept-12-root [data-service-pinned="false"] [data-service-reveal="scene"] .wipe-line>span{
+  opacity:1!important;
+  transform:none!important;
+  translate:none!important;
+  clip-path:none!important;
+  animation:none!important;
+  transition:none!important;
+  will-change:auto!important;
+}
+.concept-12-root [data-service-reveal="editorial"] .wipe-line::before,
+.concept-12-root [data-service-reveal="editorial"] .wipe-line::after,
+.concept-12-root [data-service-pinned="false"] [data-service-reveal="scene"] .wipe-line::before,
+.concept-12-root [data-service-pinned="false"] [data-service-reveal="scene"] .wipe-line::after{
+  content:none!important;
+  display:none!important;
+  animation:none!important;
+}

@@ -142,9 +142,10 @@ async function styles(page, selector) {
       filmMovement.transform === 'none' && parseFloat(filmMovement.duration) === 0, filmMovement);
     const other = await page.locator('.portfolio-heading .block-heading .wipe-line').first().evaluate(el => {
       const marker = getComputedStyle(el, '::after');
-      return { display: marker.display, content: marker.content };
+      const text = getComputedStyle(el.querySelector('span'));
+      return { display: marker.display, content: marker.content, clip: text.clipPath, animation: text.animationName, opacity: text.opacity, transform: text.transform };
     });
-    ck('Non-photo Work-section heading keeps its original circle', other.display === 'none', other);
+    ck('Non-photo Work-section heading has no intro animation', other.display === 'none' && other.clip === 'none' && other.animation === 'none' && other.opacity === '1' && other.transform === 'none', other);
     ck('Service photo description remains a paragraph, never a swipe heading',
       await page.locator('.service-image-information>p').count() === 1);
 

@@ -8,6 +8,7 @@ import "./concept-12-accessibility.css";
 import "./site-typography.css";
 import "./editorial-columns.css";
 import "./service-experience.css";
+import "./headline-entrance-policy.css";
 export const metadata: Metadata = {
   title: "SHOWSET | Events & Creative Agency",
   description:
