@@ -17,7 +17,7 @@ jobs:
   verify:
     name: Typecheck, content checks, static build
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -34,3 +34,22 @@ jobs:
         run: npm run check:seo
       - name: Static Next.js build
         run: npm run build
+      - name: Browser acceptance checks (featured projects and infinite carousel)
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+          python3 -m http.server 3001 --directory out >/tmp/showset-qa-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:3001/ >/dev/null; then break; fi
+            sleep 1
+          done
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/home-work-carousel.cjs
+      - name: Archive browser QA results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: showset-home-work-browser-qa
+          path: qa-results/home-work-carousel.json
+          if-no-files-found: ignore

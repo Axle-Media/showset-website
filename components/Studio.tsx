@@ -660,6 +660,14 @@ export default function Studio() {
                         + Add
                       </button>
                     </div>
+                    {section.type === "work" && (
+                      <p className="studio-hint">
+                        Linked case studies automatically use their own opening
+                        featured image on the homepage and Our Work page.
+                        To change a linked project's image, edit its case-study
+                        opening photo. The item image is a fallback for unlinked entries.
+                      </p>
+                    )}
                     {section.items.map((item, i) => (
                       <div className="studio-item" key={item.id}>
                         <strong>
