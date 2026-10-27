@@ -1,0 +1,79 @@
+/* Wider editorial copy columns for heading + body rows.
+   Maintain every heading's start edge, the shared page gutter and the mobile
+   reading order. Reduce needless column gaps rather than stretching type. */
+@media (min-width: 1001px) {
+  /* Home: idea manifesto and featured-work introduction. */
+  .concept-12-root .manifesto-grid,
+  .concept-12-root #portfolio-section .portfolio-heading,
+  .concept-12-root .services-intro {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: clamp(32px, 3.6vw, 68px);
+  }
+  .concept-12-root .manifesto-copy,
+  .concept-12-root .portfolio-intro {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    justify-self: stretch;
+  }
+  .concept-12-root .manifesto-copy > p,
+  .concept-12-root .portfolio-intro p,
+  .concept-12-root .services-intro-copy {
+    width: 100%;
+    max-width: min(100%, 760px);
+  }
+
+  /* Studio: belief, partnerships, FAQs and closing invitation. */
+  .concept-12-root .studio-belief,
+  .concept-12-root .studio-partnership,
+  .concept-12-root .studio-faq-heading {
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    column-gap: clamp(28px, 3.6vw, 65px);
+  }
+  .concept-12-root .studio-belief > p,
+  .concept-12-root .studio-partnership > div,
+  .concept-12-root .studio-faq-heading > p {
+    min-width: 0;
+    width: 100%;
+    max-width: 760px;
+  }
+  .concept-12-root .studio-partnership > div > p {
+    width: 100%;
+    max-width: 100%;
+  }
+  .concept-12-root .studio-final-inner {
+    max-width: min(100%, 1240px);
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    column-gap: clamp(28px, 3.6vw, 65px);
+  }
+  .concept-12-root .studio-final-inner > p {
+    min-width: 0;
+    width: 100%;
+    max-width: 760px;
+  }
+
+  /* Service-page heading and supporting copy within the feature row. */
+  .concept-12-root .category-feature {
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    column-gap: clamp(24px, 3.1vw, 60px);
+  }
+  .concept-12-root .category-feature > p {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Legacy split case-study sections, where present. The cinematic chapter
+     and gallery modules retain their approved independent layouts. */
+  .concept-12-root .case-detail-introduction,
+  .concept-12-root .case-story-text,
+  .concept-12-root .case-story-media-caption {
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    column-gap: clamp(28px, 3.6vw, 65px);
+  }
+  .concept-12-root .case-detail-introduction > p,
+  .concept-12-root .case-story-copy,
+  .concept-12-root .case-body-copy p {
+    max-width: min(100%, 760px);
+  }
+}
