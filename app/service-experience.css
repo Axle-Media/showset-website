@@ -131,46 +131,50 @@
 .service-process--production li{flex:1;padding-top:30px;border-top:2px solid var(--teal)}
 .service-process--production li:nth-child(2){margin-top:75px}.service-process--production li:nth-child(3){margin-top:150px}
 .service-process--production .service-process-number{font-size:18px;margin-bottom:45px}
-/* Quiet editorial service overview: no toggles, numeric prefixes, or detail copy.
-   Category labels stay plain; service names are readable at a glance. */
+/* Capability cards follow the provided visual reference: understated outline,
+   clear heading, small teal period and short rule, concise visible service names.
+   These are editorial cards, not clickable controls. */
 .service-expertise.service-gutter{
-  padding-top:clamp(60px,6vw,92px);
-  padding-bottom:clamp(65px,7vw,108px);
+  padding-top:clamp(64px,6vw,94px);
+  padding-bottom:clamp(72px,7vw,110px);
 }
-.service-expertise .service-editorial-row{margin-bottom:clamp(36px,4vw,58px)}
+.service-expertise .service-editorial-row{margin-bottom:clamp(36px,4vw,57px)}
 .service-expertise-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  column-gap:clamp(40px,5vw,92px);
-  row-gap:42px;
-  align-items:start;
+  align-items:stretch;
+  gap:clamp(18px,2vw,30px);
+  width:min(100%,1160px);
 }
-.service-expertise-grid--events{grid-template-columns:repeat(4,minmax(0,1fr))}
 .service-capability-group{
-  position:relative;
   min-width:0;
-  border-top:1px solid var(--service-line);
-  padding-top:20px;
+  position:relative;
+  border:1px solid rgba(51,109,141,.56);
+  border-radius:9px;
+  padding:clamp(25px,2.55vw,37px);
+  background:rgba(4,22,37,.16);
 }
-.service-capability-group:before{
-  content:'';
-  position:absolute;
-  inset:-1px auto auto 0;
-  width:100%;
-  height:1px;
-  background:var(--teal);
-  transform:scaleX(var(--service-rule-progress,1));
-  transform-origin:left;
-}
-.service-capability-group h3{
+.service-expertise .service-capability-group h3{
   font-family:var(--display);
-  font-size:clamp(19px,1.55vw,23px);
+  font-size:clamp(20px,1.65vw,24px);
   font-weight:var(--refine-heading-weight);
   line-height:var(--refine-heading-leading)!important;
   letter-spacing:var(--v12-head-tracking)!important;
   color:var(--ice);
-  margin:0 0 25px;
+  margin:0 0 18px;
   text-wrap:balance;
+}
+.service-capability-period{color:var(--teal)}
+.service-expertise .service-capability-group h3:after{
+  content:'';
+  display:block;
+  width:52px;
+  max-width:100%;
+  height:2px;
+  margin-top:13px;
+  background:var(--teal);
+  transform:scaleX(var(--service-rule-progress,1));
+  transform-origin:left;
 }
 .service-capability-list{
   list-style:none;
@@ -178,27 +182,20 @@
   margin:0;
   display:flex;
   flex-direction:column;
-  gap:clamp(14px,1.4vw,22px);
+  gap:8px;
 }
 .service-capability{margin:0;padding:0;min-width:0;break-inside:avoid}
 .service-capability-name{
   display:block;
   font-family:var(--body-font);
-  font-size:17px;
+  font-size:15px;
   font-weight:500;
-  line-height:var(--v12-body-leading);
+  line-height:1.5;
   letter-spacing:var(--v12-body-tracking);
-  color:rgba(250,249,253,.86);
+  color:var(--ice);
 }
-.service-expertise-grid--production{grid-template-columns:minmax(0,1fr)}
-.service-capability-group--plain{border:0;padding-top:0}
-.service-capability-group--plain:before{display:none}
-.service-expertise-grid--production .service-capability-list{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:clamp(30px,4vw,74px);
-}
-.service-expertise-grid--production .service-capability{border-top:1px solid var(--service-line);padding-top:21px}
+.service-capability-group--plain{border:1px solid rgba(51,109,141,.56)}
+.service-expertise-grid--production{grid-template-columns:repeat(2,minmax(0,1fr))}
 .service-work{background:linear-gradient(135deg,#071e30,#0d2f49)}
 .service-work header{margin-bottom:50px}
 .service-work-card{display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:6vw}
@@ -237,7 +234,7 @@
  .service-group-list,.service-experience--creative .service-group-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:35px 30px}.service-experience--creative .service-group-list{margin-top:40px}
  .service-process--creative ol{grid-template-columns:1fr;gap:40px}.service-process--creative li{display:grid;grid-template-columns:95px 1fr;gap:25px}.service-process--creative .service-process-number{font-size:80px;margin-bottom:0}.service-process--events li{grid-template-columns:70px 1fr;gap:25px}.service-process--digital li{grid-template-columns:65px 1fr;gap:25px}.service-process--digital li>div{display:block}.service-process--digital h3{margin-bottom:20px}
  .service-process--production ol{display:block}.service-process--production li:nth-child(n){margin-top:35px}.service-process--production .service-process-number{margin-bottom:20px}
- .service-expertise .service-editorial-row{margin-bottom:34px}.service-expertise-grid--events{grid-template-columns:repeat(2,minmax(0,1fr))}.service-expertise-grid{gap:38px 34px}
+ 
  .service-work-card{grid-template-columns:1fr;gap:30px}.service-work-card figure{aspect-ratio:1.2}.service-work-card h3{font-size:34px}.service-connected nav{display:block}.service-connected a{justify-content:space-between;padding:17px 0}.service-close{min-height:85svh;padding:90px var(--gutter)}.service-close .service-heading{font-size:clamp(36px,7vw,58px)}
 }
 @media(max-width:480px){.service-hero .service-heading{font-size:clamp(35px,9.4vw,46px)}.service-hero-actions{align-items:flex-start;flex-direction:column;gap:18px}.service-hero--events{min-height:900px;min-height:max(100svh,780px)}.service-hero--production{min-height:max(100svh,800px)}.service-group-list,.service-experience--creative .service-group-list{grid-template-columns:1fr}.service-process--creative li{grid-template-columns:70px 1fr;gap:20px}.service-process--creative .service-process-number{font-size:65px}.service-scene-copy h3{font-size:30px}.service-work-caption{font-size:12px;left:18px;right:18px}.service-close .service-heading{font-size:36px}}
@@ -337,14 +334,25 @@
 @media(max-width:800px){.service-experience--creative .service-close .wipe-line{margin-left:0}}
 
 
-@media(max-width:1199px){.service-expertise-grid--events{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:950px){.service-expertise-grid--production .service-capability-list{grid-template-columns:minmax(0,1fr);gap:20px}}
+/* Cards remain side-by-side at tablet widths, with an unforced single-column
+   layout on phones. No sideways scroll or invisible descriptions. */
+@media(max-width:800px){
+  .service-expertise.service-gutter{padding-top:70px;padding-bottom:80px}
+  .service-expertise .service-editorial-row{margin-bottom:34px}
+  .service-expertise-grid{gap:18px}
+  .service-capability-group{padding:25px 23px}
+  .service-expertise .service-capability-group h3{font-size:21px;margin-bottom:16px}
+  .service-capability-name{font-size:15px}
+}
 @media(max-width:640px){
-  .service-expertise.service-gutter{padding-top:58px;padding-bottom:70px}
-  .service-expertise-grid,.service-expertise-grid--events{grid-template-columns:minmax(0,1fr);row-gap:34px}
-  .service-capability-group{padding-top:17px}
-  .service-capability-group h3{font-size:20px;margin-bottom:18px}
-  .service-capability-list{gap:12px}
-  .service-expertise-grid--production .service-capability-list{grid-template-columns:minmax(0,1fr);gap:17px}
-  .service-expertise-grid--production .service-capability{padding-top:15px}
+  .service-expertise.service-gutter{padding-top:58px;padding-bottom:72px}
+  .service-expertise-grid,
+  .service-expertise-grid--production{grid-template-columns:minmax(0,1fr);gap:15px}
+  .service-capability-group{padding:24px}
+  .service-expertise .service-capability-group h3{font-size:21px;margin-bottom:16px}
+  .service-capability-list{gap:8px}
+}
+@media(max-width:360px){
+  .service-capability-group{padding:21px}
+  .service-expertise .service-capability-group h3{font-size:20px}
 }

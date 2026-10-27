@@ -39,11 +39,11 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
  const renderExpertise=(s:Block)=>{
   const groups=groupServiceCapabilities(kind,s.items);
   const list=groups.map(group=>
-   '<div class="service-capability-group'+(group.title?'':' service-capability-group--plain')+'">'+
-   (group.title?'<h3>'+text(group.title)+'</h3>':'')+
+   '<article class="service-capability-group'+(group.title?'':' service-capability-group--plain')+'">'+
+   (group.title?'<h3>'+text(group.title)+'<span class="service-capability-period" aria-hidden="true">.</span></h3>':'')+
    '<ul class="service-capability-list">'+group.items.map(item=>
     '<li class="service-capability" data-service-capability data-capability-id="'+esc(item.id)+'"><span class="service-capability-name">'+text(item.title)+'</span></li>'
-   ).join('')+'</ul></div>'
+   ).join('')+'</ul></article>'
   ).join('');
   return section(s,'service-expertise service-gutter',
    '<header class="service-editorial-row"><div>'+heading(s)+'</div><div>'+paras(s.body)+'</div></header>'+
