@@ -77,3 +77,11 @@
     max-width: min(100%, 760px);
   }
 }
+
+/* The FAQ introduction remained two cramped columns at tablet widths in the
+   legacy rules. Give its copy a full readable row before the mobile layout. */
+@media (max-width: 1000px) {
+  .concept-12-root .studio-faq-heading {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
