@@ -1,0 +1,1064 @@
+{
+  "checks": [
+    {
+      "name": "Unique authored hero atmosphere-is-everything-1440",
+      "pass": true
+    },
+    {
+      "name": "Complete shared template atmosphere-is-everything-1440",
+      "pass": true
+    },
+    {
+      "name": "Approved second scene atmosphere-is-everything-1440",
+      "pass": true
+    },
+    {
+      "name": "Pinned matching chapter atmosphere-is-everything-1440 0",
+      "pass": true,
+      "detail": {
+        "x": 705.609375,
+        "y": 0,
+        "w": 734.390625,
+        "h": 900,
+        "active": "false",
+        "src": "/media/planning.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter atmosphere-is-everything-1440 1",
+      "pass": true,
+      "detail": {
+        "x": 705.609375,
+        "y": 0,
+        "w": 734.390625,
+        "h": 900,
+        "active": "false",
+        "src": "/media/evening.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter atmosphere-is-everything-1440 2",
+      "pass": true,
+      "detail": {
+        "x": 705.609375,
+        "y": 0,
+        "w": 734.390625,
+        "h": 900,
+        "active": "false",
+        "src": "/media/rigging.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter atmosphere-is-everything-1440 1",
+      "pass": true,
+      "detail": {
+        "x": 705.609375,
+        "y": 0,
+        "w": 734.390625,
+        "h": 900,
+        "active": "false",
+        "src": "/media/evening.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter atmosphere-is-everything-1440 0",
+      "pass": true,
+      "detail": {
+        "x": 705.609375,
+        "y": 0,
+        "w": 734.390625,
+        "h": 900,
+        "active": "false",
+        "src": "/media/planning.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Same physical frame throughout atmosphere-is-everything-1440",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery atmosphere-is-everything-1440",
+      "pass": true
+    },
+    {
+      "name": "Slow autoplay advances atmosphere-is-everything-1440",
+      "pass": true
+    },
+    {
+      "name": "Hover pauses autoplay atmosphere-is-everything-1440",
+      "pass": true
+    },
+    {
+      "name": "Explicit Pause persists atmosphere-is-everything-1440",
+      "pass": true
+    },
+    {
+      "name": "Play resumes atmosphere-is-everything-1440",
+      "pass": true
+    },
+    {
+      "name": "Lightbox previous wraps atmosphere-is-everything-1440",
+      "pass": true
+    },
+    {
+      "name": "Lightbox next wraps atmosphere-is-everything-1440",
+      "pass": true
+    },
+    {
+      "name": "Lightbox Escape closes atmosphere-is-everything-1440",
+      "pass": true
+    },
+    {
+      "name": "Related projects exclude self atmosphere-is-everything-1440",
+      "pass": true
+    },
+    {
+      "name": "No overflow or broken loaded media atmosphere-is-everything-1440",
+      "pass": true
+    },
+    {
+      "name": "Unique authored hero atmosphere-is-everything-1024",
+      "pass": true
+    },
+    {
+      "name": "Complete shared template atmosphere-is-everything-1024",
+      "pass": true
+    },
+    {
+      "name": "Approved second scene atmosphere-is-everything-1024",
+      "pass": true
+    },
+    {
+      "name": "Pinned matching chapter atmosphere-is-everything-1024 0",
+      "pass": true,
+      "detail": {
+        "x": 501.765625,
+        "y": 0,
+        "w": 522.234375,
+        "h": 900,
+        "active": "false",
+        "src": "/media/planning.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter atmosphere-is-everything-1024 1",
+      "pass": true,
+      "detail": {
+        "x": 501.765625,
+        "y": 0,
+        "w": 522.234375,
+        "h": 900,
+        "active": "false",
+        "src": "/media/evening.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter atmosphere-is-everything-1024 2",
+      "pass": true,
+      "detail": {
+        "x": 501.765625,
+        "y": 0,
+        "w": 522.234375,
+        "h": 900,
+        "active": "false",
+        "src": "/media/rigging.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter atmosphere-is-everything-1024 1",
+      "pass": true,
+      "detail": {
+        "x": 501.765625,
+        "y": 0,
+        "w": 522.234375,
+        "h": 900,
+        "active": "false",
+        "src": "/media/evening.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter atmosphere-is-everything-1024 0",
+      "pass": true,
+      "detail": {
+        "x": 501.765625,
+        "y": 0,
+        "w": 522.234375,
+        "h": 900,
+        "active": "false",
+        "src": "/media/planning.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Same physical frame throughout atmosphere-is-everything-1024",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery atmosphere-is-everything-1024",
+      "pass": true
+    },
+    {
+      "name": "Related projects exclude self atmosphere-is-everything-1024",
+      "pass": true
+    },
+    {
+      "name": "No overflow or broken loaded media atmosphere-is-everything-1024",
+      "pass": true
+    },
+    {
+      "name": "Unique authored hero atmosphere-is-everything-768",
+      "pass": true
+    },
+    {
+      "name": "Complete shared template atmosphere-is-everything-768",
+      "pass": true
+    },
+    {
+      "name": "Approved second scene atmosphere-is-everything-768",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order atmosphere-is-everything-768 0",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order atmosphere-is-everything-768 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order atmosphere-is-everything-768 2",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order atmosphere-is-everything-768 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order atmosphere-is-everything-768 0",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery atmosphere-is-everything-768",
+      "pass": true
+    },
+    {
+      "name": "Related projects exclude self atmosphere-is-everything-768",
+      "pass": true
+    },
+    {
+      "name": "No overflow or broken loaded media atmosphere-is-everything-768",
+      "pass": true
+    },
+    {
+      "name": "Unique authored hero atmosphere-is-everything-390",
+      "pass": true
+    },
+    {
+      "name": "Complete shared template atmosphere-is-everything-390",
+      "pass": true
+    },
+    {
+      "name": "Approved second scene atmosphere-is-everything-390",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order atmosphere-is-everything-390 0",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order atmosphere-is-everything-390 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order atmosphere-is-everything-390 2",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order atmosphere-is-everything-390 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order atmosphere-is-everything-390 0",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery atmosphere-is-everything-390",
+      "pass": true
+    },
+    {
+      "name": "Related projects exclude self atmosphere-is-everything-390",
+      "pass": true
+    },
+    {
+      "name": "No overflow or broken loaded media atmosphere-is-everything-390",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion stops autoplay and reveals chapters atmosphere-is-everything-390",
+      "pass": true
+    },
+    {
+      "name": "Unique authored hero atmosphere-is-everything-320",
+      "pass": true
+    },
+    {
+      "name": "Complete shared template atmosphere-is-everything-320",
+      "pass": true
+    },
+    {
+      "name": "Approved second scene atmosphere-is-everything-320",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order atmosphere-is-everything-320 0",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order atmosphere-is-everything-320 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order atmosphere-is-everything-320 2",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order atmosphere-is-everything-320 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order atmosphere-is-everything-320 0",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery atmosphere-is-everything-320",
+      "pass": true
+    },
+    {
+      "name": "Related projects exclude self atmosphere-is-everything-320",
+      "pass": true
+    },
+    {
+      "name": "No overflow or broken loaded media atmosphere-is-everything-320",
+      "pass": true
+    },
+    {
+      "name": "Unique authored hero made-to-be-remembered-1440",
+      "pass": true
+    },
+    {
+      "name": "Complete shared template made-to-be-remembered-1440",
+      "pass": true
+    },
+    {
+      "name": "Approved second scene made-to-be-remembered-1440",
+      "pass": true
+    },
+    {
+      "name": "Pinned matching chapter made-to-be-remembered-1440 0",
+      "pass": true,
+      "detail": {
+        "x": 705.609375,
+        "y": 0,
+        "w": 734.390625,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/identity-process.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter made-to-be-remembered-1440 1",
+      "pass": true,
+      "detail": {
+        "x": 705.609375,
+        "y": 0,
+        "w": 734.390625,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/identity-detail.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter made-to-be-remembered-1440 2",
+      "pass": true,
+      "detail": {
+        "x": 705.609375,
+        "y": 0,
+        "w": 734.390625,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/identity-hero.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter made-to-be-remembered-1440 1",
+      "pass": true,
+      "detail": {
+        "x": 705.609375,
+        "y": 0,
+        "w": 734.390625,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/identity-detail.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter made-to-be-remembered-1440 0",
+      "pass": true,
+      "detail": {
+        "x": 705.609375,
+        "y": 0,
+        "w": 734.390625,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/identity-process.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Same physical frame throughout made-to-be-remembered-1440",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery made-to-be-remembered-1440",
+      "pass": true
+    },
+    {
+      "name": "Slow autoplay advances made-to-be-remembered-1440",
+      "pass": true
+    },
+    {
+      "name": "Hover pauses autoplay made-to-be-remembered-1440",
+      "pass": true
+    },
+    {
+      "name": "Explicit Pause persists made-to-be-remembered-1440",
+      "pass": true
+    },
+    {
+      "name": "Play resumes made-to-be-remembered-1440",
+      "pass": true
+    },
+    {
+      "name": "Lightbox previous wraps made-to-be-remembered-1440",
+      "pass": true
+    },
+    {
+      "name": "Lightbox next wraps made-to-be-remembered-1440",
+      "pass": true
+    },
+    {
+      "name": "Lightbox Escape closes made-to-be-remembered-1440",
+      "pass": true
+    },
+    {
+      "name": "Related projects exclude self made-to-be-remembered-1440",
+      "pass": true
+    },
+    {
+      "name": "No overflow or broken loaded media made-to-be-remembered-1440",
+      "pass": true
+    },
+    {
+      "name": "Unique authored hero made-to-be-remembered-1024",
+      "pass": true
+    },
+    {
+      "name": "Complete shared template made-to-be-remembered-1024",
+      "pass": true
+    },
+    {
+      "name": "Approved second scene made-to-be-remembered-1024",
+      "pass": true
+    },
+    {
+      "name": "Pinned matching chapter made-to-be-remembered-1024 0",
+      "pass": true,
+      "detail": {
+        "x": 501.765625,
+        "y": 0,
+        "w": 522.234375,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/identity-process.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter made-to-be-remembered-1024 1",
+      "pass": true,
+      "detail": {
+        "x": 501.765625,
+        "y": 0,
+        "w": 522.234375,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/identity-detail.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter made-to-be-remembered-1024 2",
+      "pass": true,
+      "detail": {
+        "x": 501.765625,
+        "y": 0,
+        "w": 522.234375,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/identity-hero.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter made-to-be-remembered-1024 1",
+      "pass": true,
+      "detail": {
+        "x": 501.765625,
+        "y": 0,
+        "w": 522.234375,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/identity-detail.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter made-to-be-remembered-1024 0",
+      "pass": true,
+      "detail": {
+        "x": 501.765625,
+        "y": 0,
+        "w": 522.234375,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/identity-process.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Same physical frame throughout made-to-be-remembered-1024",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery made-to-be-remembered-1024",
+      "pass": true
+    },
+    {
+      "name": "Related projects exclude self made-to-be-remembered-1024",
+      "pass": true
+    },
+    {
+      "name": "No overflow or broken loaded media made-to-be-remembered-1024",
+      "pass": true
+    },
+    {
+      "name": "Unique authored hero made-to-be-remembered-768",
+      "pass": true
+    },
+    {
+      "name": "Complete shared template made-to-be-remembered-768",
+      "pass": true
+    },
+    {
+      "name": "Approved second scene made-to-be-remembered-768",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order made-to-be-remembered-768 0",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order made-to-be-remembered-768 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order made-to-be-remembered-768 2",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order made-to-be-remembered-768 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order made-to-be-remembered-768 0",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery made-to-be-remembered-768",
+      "pass": true
+    },
+    {
+      "name": "Related projects exclude self made-to-be-remembered-768",
+      "pass": true
+    },
+    {
+      "name": "No overflow or broken loaded media made-to-be-remembered-768",
+      "pass": true
+    },
+    {
+      "name": "Unique authored hero made-to-be-remembered-390",
+      "pass": true
+    },
+    {
+      "name": "Complete shared template made-to-be-remembered-390",
+      "pass": true
+    },
+    {
+      "name": "Approved second scene made-to-be-remembered-390",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order made-to-be-remembered-390 0",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order made-to-be-remembered-390 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order made-to-be-remembered-390 2",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order made-to-be-remembered-390 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order made-to-be-remembered-390 0",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery made-to-be-remembered-390",
+      "pass": true
+    },
+    {
+      "name": "Related projects exclude self made-to-be-remembered-390",
+      "pass": true
+    },
+    {
+      "name": "No overflow or broken loaded media made-to-be-remembered-390",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion stops autoplay and reveals chapters made-to-be-remembered-390",
+      "pass": true
+    },
+    {
+      "name": "Unique authored hero made-to-be-remembered-320",
+      "pass": true
+    },
+    {
+      "name": "Complete shared template made-to-be-remembered-320",
+      "pass": true
+    },
+    {
+      "name": "Approved second scene made-to-be-remembered-320",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order made-to-be-remembered-320 0",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order made-to-be-remembered-320 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order made-to-be-remembered-320 2",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order made-to-be-remembered-320 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order made-to-be-remembered-320 0",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery made-to-be-remembered-320",
+      "pass": true
+    },
+    {
+      "name": "Related projects exclude self made-to-be-remembered-320",
+      "pass": true
+    },
+    {
+      "name": "No overflow or broken loaded media made-to-be-remembered-320",
+      "pass": true
+    },
+    {
+      "name": "Unique authored hero behind-every-moment-1440",
+      "pass": true
+    },
+    {
+      "name": "Complete shared template behind-every-moment-1440",
+      "pass": true
+    },
+    {
+      "name": "Approved second scene behind-every-moment-1440",
+      "pass": true
+    },
+    {
+      "name": "Pinned matching chapter behind-every-moment-1440 0",
+      "pass": true,
+      "detail": {
+        "x": 705.609375,
+        "y": 0,
+        "w": 734.390625,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/production-process.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter behind-every-moment-1440 1",
+      "pass": true,
+      "detail": {
+        "x": 705.609375,
+        "y": 0,
+        "w": 734.390625,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/production-detail.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter behind-every-moment-1440 2",
+      "pass": true,
+      "detail": {
+        "x": 705.609375,
+        "y": 0,
+        "w": 734.390625,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/production-hero.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter behind-every-moment-1440 1",
+      "pass": true,
+      "detail": {
+        "x": 705.609375,
+        "y": 0,
+        "w": 734.390625,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/production-detail.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter behind-every-moment-1440 0",
+      "pass": true,
+      "detail": {
+        "x": 705.609375,
+        "y": 0,
+        "w": 734.390625,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/production-process.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Same physical frame throughout behind-every-moment-1440",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery behind-every-moment-1440",
+      "pass": true
+    },
+    {
+      "name": "Slow autoplay advances behind-every-moment-1440",
+      "pass": true
+    },
+    {
+      "name": "Hover pauses autoplay behind-every-moment-1440",
+      "pass": true
+    },
+    {
+      "name": "Explicit Pause persists behind-every-moment-1440",
+      "pass": true
+    },
+    {
+      "name": "Play resumes behind-every-moment-1440",
+      "pass": true
+    },
+    {
+      "name": "Lightbox previous wraps behind-every-moment-1440",
+      "pass": true
+    },
+    {
+      "name": "Lightbox next wraps behind-every-moment-1440",
+      "pass": true
+    },
+    {
+      "name": "Lightbox Escape closes behind-every-moment-1440",
+      "pass": true
+    },
+    {
+      "name": "Related projects exclude self behind-every-moment-1440",
+      "pass": true
+    },
+    {
+      "name": "No overflow or broken loaded media behind-every-moment-1440",
+      "pass": true
+    },
+    {
+      "name": "Unique authored hero behind-every-moment-1024",
+      "pass": true
+    },
+    {
+      "name": "Complete shared template behind-every-moment-1024",
+      "pass": true
+    },
+    {
+      "name": "Approved second scene behind-every-moment-1024",
+      "pass": true
+    },
+    {
+      "name": "Pinned matching chapter behind-every-moment-1024 0",
+      "pass": true,
+      "detail": {
+        "x": 501.765625,
+        "y": 0,
+        "w": 522.234375,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/production-process.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter behind-every-moment-1024 1",
+      "pass": true,
+      "detail": {
+        "x": 501.765625,
+        "y": 0,
+        "w": 522.234375,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/production-detail.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter behind-every-moment-1024 2",
+      "pass": true,
+      "detail": {
+        "x": 501.765625,
+        "y": 0,
+        "w": 522.234375,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/production-hero.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter behind-every-moment-1024 1",
+      "pass": true,
+      "detail": {
+        "x": 501.765625,
+        "y": 0,
+        "w": 522.234375,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/production-detail.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Pinned matching chapter behind-every-moment-1024 0",
+      "pass": true,
+      "detail": {
+        "x": 501.765625,
+        "y": 0,
+        "w": 522.234375,
+        "h": 900,
+        "active": "false",
+        "src": "/media/cases/production-process.webp",
+        "visible": 1
+      }
+    },
+    {
+      "name": "Same physical frame throughout behind-every-moment-1024",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery behind-every-moment-1024",
+      "pass": true
+    },
+    {
+      "name": "Related projects exclude self behind-every-moment-1024",
+      "pass": true
+    },
+    {
+      "name": "No overflow or broken loaded media behind-every-moment-1024",
+      "pass": true
+    },
+    {
+      "name": "Unique authored hero behind-every-moment-768",
+      "pass": true
+    },
+    {
+      "name": "Complete shared template behind-every-moment-768",
+      "pass": true
+    },
+    {
+      "name": "Approved second scene behind-every-moment-768",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order behind-every-moment-768 0",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order behind-every-moment-768 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order behind-every-moment-768 2",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order behind-every-moment-768 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order behind-every-moment-768 0",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery behind-every-moment-768",
+      "pass": true
+    },
+    {
+      "name": "Related projects exclude self behind-every-moment-768",
+      "pass": true
+    },
+    {
+      "name": "No overflow or broken loaded media behind-every-moment-768",
+      "pass": true
+    },
+    {
+      "name": "Unique authored hero behind-every-moment-390",
+      "pass": true
+    },
+    {
+      "name": "Complete shared template behind-every-moment-390",
+      "pass": true
+    },
+    {
+      "name": "Approved second scene behind-every-moment-390",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order behind-every-moment-390 0",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order behind-every-moment-390 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order behind-every-moment-390 2",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order behind-every-moment-390 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order behind-every-moment-390 0",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery behind-every-moment-390",
+      "pass": true
+    },
+    {
+      "name": "Related projects exclude self behind-every-moment-390",
+      "pass": true
+    },
+    {
+      "name": "No overflow or broken loaded media behind-every-moment-390",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion stops autoplay and reveals chapters behind-every-moment-390",
+      "pass": true
+    },
+    {
+      "name": "Unique authored hero behind-every-moment-320",
+      "pass": true
+    },
+    {
+      "name": "Complete shared template behind-every-moment-320",
+      "pass": true
+    },
+    {
+      "name": "Approved second scene behind-every-moment-320",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order behind-every-moment-320 0",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order behind-every-moment-320 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order behind-every-moment-320 2",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order behind-every-moment-320 1",
+      "pass": true
+    },
+    {
+      "name": "Mobile reading order behind-every-moment-320 0",
+      "pass": true
+    },
+    {
+      "name": "Independent gallery behind-every-moment-320",
+      "pass": true
+    },
+    {
+      "name": "Related projects exclude self behind-every-moment-320",
+      "pass": true
+    },
+    {
+      "name": "No overflow or broken loaded media behind-every-moment-320",
+      "pass": true
+    },
+    {
+      "name": "No shared gallery arrays / repeated project photography",
+      "pass": true
+    },
+    {
+      "name": "No runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

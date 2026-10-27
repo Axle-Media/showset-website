@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Covered swipe conceals all glyph ink 1440 scene 0",
+    "pass": true,
+    "changedPixels": 0
+  },
+  {
+    "name": "Covered swipe conceals all glyph ink 1440 scene 1",
+    "pass": true,
+    "changedPixels": 0
+  },
+  {
+    "name": "Covered swipe conceals all glyph ink 1024 scene 0",
+    "pass": true,
+    "changedPixels": 0
+  },
+  {
+    "name": "Covered swipe conceals all glyph ink 1024 scene 1",
+    "pass": true,
+    "changedPixels": 0
+  },
+  {
+    "name": "Covered swipe conceals all glyph ink 768 scene 0",
+    "pass": true,
+    "changedPixels": 0
+  },
+  {
+    "name": "Covered swipe conceals all glyph ink 768 scene 1",
+    "pass": true,
+    "changedPixels": 0
+  },
+  {
+    "name": "Covered swipe conceals all glyph ink 390 scene 0",
+    "pass": true,
+    "changedPixels": 0
+  },
+  {
+    "name": "Covered swipe conceals all glyph ink 390 scene 1",
+    "pass": true,
+    "changedPixels": 0
+  },
+  {
+    "name": "Covered swipe conceals all glyph ink 320 scene 0",
+    "pass": true,
+    "changedPixels": 0
+  },
+  {
+    "name": "Covered swipe conceals all glyph ink 320 scene 1",
+    "pass": true,
+    "changedPixels": 0
+  }
+]

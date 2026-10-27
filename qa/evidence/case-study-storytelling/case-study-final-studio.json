@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Studio automatically lays out fifth company",
+    "pass": true
+  },
+  {
+    "name": "Company reorder updates shared preview",
+    "pass": true
+  },
+  {
+    "name": "Company deletion recomputes layout",
+    "pass": true
+  },
+  {
+    "name": "One editable primary photograph",
+    "pass": true
+  },
+  {
+    "name": "Primary photograph updates actual preview",
+    "pass": true
+  },
+  {
+    "name": "Repeated editing does not accumulate ResizeObservers",
+    "pass": true,
+    "detail": {
+      "baseline": 2,
+      "after": 2
+    }
+  },
+  {
+    "name": "Editing does not accumulate gallery clones",
+    "pass": true
+  },
+  {
+    "name": "Company add/remove/reorder survives draft reload",
+    "pass": true
+  },
+  {
+    "name": "Primary photograph persists",
+    "pass": true
+  },
+  {
+    "name": "Published preview matches company order",
+    "pass": true
+  },
+  {
+    "name": "Published gallery retains circular behaviour",
+    "pass": true
+  },
+  {
+    "name": "Switching projects cleans up observers and clones",
+    "pass": true,
+    "detail": [
+      {
+        "observers": 2,
+        "clones": 0,
+        "originals": 2
+      },
+      {
+        "observers": 2,
+        "clones": 12,
+        "originals": 6
+      },
+      {
+        "observers": 2,
+        "clones": 0,
+        "originals": 2
+      },
+      {
+        "observers": 2,
+        "clones": 12,
+        "originals": 6
+      },
+      {
+        "observers": 2,
+        "clones": 0,
+        "originals": 2
+      },
+      {
+        "observers": 2,
+        "clones": 12,
+        "originals": 6
+      }
+    ]
+  }
+]

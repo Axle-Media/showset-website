@@ -18,6 +18,8 @@ export const routeKeys: Record<string, string> = {
   "/work/behind-every-moment/": "case-production",
   "/services/": "home",
 };
+/** Preserve approved route keys, while new Studio projects need no route-map edits. */
+export const keyForRoute=(route:string):string=>routeKeys[route]||(route.startsWith('/work/')?'case-project-'+route.split('/').filter(Boolean).slice(1).join('-'):'home');
 const homeSelectors: Record<string, string> = {
   hero: "#hero-track",
   split: "#discover",
@@ -66,7 +68,7 @@ export function bindConcept(
   const document = host.ownerDocument;
   const page =
     Object.values(catalog).find(
-      (p) => routeKeys[p.route] === key && p.route !== "/services/",
+      (p) => keyForRoute(p.route) === key && p.route !== "/services/",
     ) || catalog.home;
   const seed = defaultPages[page?.slug];
   if (!page) return;

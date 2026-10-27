@@ -43,7 +43,7 @@ async function position(page, selector, fraction = 0) {
       const accent = hero.querySelector('.hero-accent-phrase>span');
       const period = hero.querySelector('.hero-period');
       return {
-        title: hero.textContent.replace(/\s+/g, ' ').trim(),
+        title: hero.innerText.replace(/\s+/g, ' ').trim(),
         accent: getComputedStyle(accent).color,
         period: getComputedStyle(period).color,
         secondHidden: document.querySelector('#hero-second').inert,

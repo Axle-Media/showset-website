@@ -1,0 +1,1307 @@
+[
+  {
+    "name": "No collage markup 1440",
+    "pass": true
+  },
+  {
+    "name": "One shared image frame 1440",
+    "pass": true
+  },
+  {
+    "name": "Synchronized stationary chapter 0 0.1 1440",
+    "pass": true,
+    "detail": {
+      "x": 756,
+      "y": 190,
+      "w": 593.28125,
+      "h": 558,
+      "copyTop": 239,
+      "copyBottom": 698.71875,
+      "active": true,
+      "src": "/media/planning.webp",
+      "photoActive": true,
+      "opacity": "1",
+      "radius": "6px",
+      "inline": true,
+      "eyebrow": "13px"
+    }
+  },
+  {
+    "name": "Same physical image container 1440",
+    "pass": true
+  },
+  {
+    "name": "Synchronized stationary chapter 1 0.5 1440",
+    "pass": true,
+    "detail": {
+      "x": 756,
+      "y": 190,
+      "w": 593.28125,
+      "h": 558,
+      "copyTop": 239,
+      "copyBottom": 624.140625,
+      "active": true,
+      "src": "/media/evening.webp",
+      "photoActive": true,
+      "opacity": "1",
+      "radius": "6px",
+      "inline": true,
+      "eyebrow": "13px"
+    }
+  },
+  {
+    "name": "Same physical image container 1440",
+    "pass": true
+  },
+  {
+    "name": "Synchronized stationary chapter 2 0.88 1440",
+    "pass": true,
+    "detail": {
+      "x": 756,
+      "y": 190,
+      "w": 593.28125,
+      "h": 558,
+      "copyTop": 239,
+      "copyBottom": 698.71875,
+      "active": true,
+      "src": "/media/rigging.webp",
+      "photoActive": true,
+      "opacity": "1",
+      "radius": "6px",
+      "inline": true,
+      "eyebrow": "13px"
+    }
+  },
+  {
+    "name": "Same physical image container 1440",
+    "pass": true
+  },
+  {
+    "name": "Synchronized stationary chapter 1 0.5 1440",
+    "pass": true,
+    "detail": {
+      "x": 756,
+      "y": 190,
+      "w": 593.28125,
+      "h": 558,
+      "copyTop": 239,
+      "copyBottom": 624.140625,
+      "active": true,
+      "src": "/media/evening.webp",
+      "photoActive": true,
+      "opacity": "1",
+      "radius": "6px",
+      "inline": true,
+      "eyebrow": "13px"
+    }
+  },
+  {
+    "name": "Same physical image container 1440",
+    "pass": true
+  },
+  {
+    "name": "Synchronized stationary chapter 0 0.1 1440",
+    "pass": true,
+    "detail": {
+      "x": 756,
+      "y": 190,
+      "w": 593.28125,
+      "h": 558,
+      "copyTop": 239,
+      "copyBottom": 698.71875,
+      "active": true,
+      "src": "/media/planning.webp",
+      "photoActive": true,
+      "opacity": "1",
+      "radius": "6px",
+      "inline": true,
+      "eyebrow": "13px"
+    }
+  },
+  {
+    "name": "Same physical image container 1440",
+    "pass": true
+  },
+  {
+    "name": "Identical frame dimensions/position and text start 1440",
+    "pass": true,
+    "detail": [
+      {
+        "x": 756,
+        "y": 190,
+        "w": 593.28125,
+        "h": 558,
+        "copyTop": 239,
+        "copyBottom": 698.71875,
+        "active": true,
+        "src": "/media/planning.webp",
+        "photoActive": true,
+        "opacity": "1",
+        "radius": "6px",
+        "inline": true,
+        "eyebrow": "13px"
+      },
+      {
+        "x": 756,
+        "y": 190,
+        "w": 593.28125,
+        "h": 558,
+        "copyTop": 239,
+        "copyBottom": 624.140625,
+        "active": true,
+        "src": "/media/evening.webp",
+        "photoActive": true,
+        "opacity": "1",
+        "radius": "6px",
+        "inline": true,
+        "eyebrow": "13px"
+      },
+      {
+        "x": 756,
+        "y": 190,
+        "w": 593.28125,
+        "h": 558,
+        "copyTop": 239,
+        "copyBottom": 698.71875,
+        "active": true,
+        "src": "/media/rigging.webp",
+        "photoActive": true,
+        "opacity": "1",
+        "radius": "6px",
+        "inline": true,
+        "eyebrow": "13px"
+      },
+      {
+        "x": 756,
+        "y": 190,
+        "w": 593.28125,
+        "h": 558,
+        "copyTop": 239,
+        "copyBottom": 624.140625,
+        "active": true,
+        "src": "/media/evening.webp",
+        "photoActive": true,
+        "opacity": "1",
+        "radius": "6px",
+        "inline": true,
+        "eyebrow": "13px"
+      },
+      {
+        "x": 756,
+        "y": 190,
+        "w": 593.28125,
+        "h": 558,
+        "copyTop": 239,
+        "copyBottom": 698.71875,
+        "active": true,
+        "src": "/media/planning.webp",
+        "photoActive": true,
+        "opacity": "1",
+        "radius": "6px",
+        "inline": true,
+        "eyebrow": "13px"
+      }
+    ]
+  },
+  {
+    "name": "Continuous reversible blend 1440 0.29",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.224122,
+        0
+      ],
+      "text": [
+        0.551757,
+        0,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1440 0.3",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.333333,
+        0
+      ],
+      "text": [
+        0.333333,
+        0,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1440 0.315",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.499525,
+        0
+      ],
+      "text": [
+        0.000949668,
+        0,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1440 0.33",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.665717,
+        0
+      ],
+      "text": [
+        0,
+        0.331434,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1440 0.34",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.779677,
+        0
+      ],
+      "text": [
+        0,
+        0.559354,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1440 0.63",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        1,
+        0.221273
+      ],
+      "text": [
+        0,
+        0.557455,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1440 0.655",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        1,
+        0.501425
+      ],
+      "text": [
+        0,
+        0,
+        0.002849
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1440 0.68",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        1,
+        0.776828
+      ],
+      "text": [
+        0,
+        0,
+        0.553656
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1440 0.655",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        1,
+        0.501425
+      ],
+      "text": [
+        0,
+        0,
+        0.002849
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1440 0.63",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        1,
+        0.221273
+      ],
+      "text": [
+        0,
+        0.557455,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1440 0.34",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.779677,
+        0
+      ],
+      "text": [
+        0,
+        0.559354,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1440 0.33",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.665717,
+        0
+      ],
+      "text": [
+        0,
+        0.331434,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1440 0.315",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.499525,
+        0
+      ],
+      "text": [
+        0.000949668,
+        0,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1440 0.3",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.333333,
+        0
+      ],
+      "text": [
+        0.333333,
+        0,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1440 0.29",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.224122,
+        0
+      ],
+      "text": [
+        0.551757,
+        0,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "No horizontal overflow 1440",
+    "pass": true
+  },
+  {
+    "name": "No collage markup 1024",
+    "pass": true
+  },
+  {
+    "name": "One shared image frame 1024",
+    "pass": true
+  },
+  {
+    "name": "Synchronized stationary chapter 0 0.1 1024",
+    "pass": true,
+    "detail": {
+      "x": 537.609375,
+      "y": 190,
+      "w": 440.3125,
+      "h": 558,
+      "copyTop": 258.5,
+      "copyBottom": 679.1875,
+      "active": true,
+      "src": "/media/planning.webp",
+      "photoActive": true,
+      "opacity": "1",
+      "radius": "6px",
+      "inline": true,
+      "eyebrow": "13px"
+    }
+  },
+  {
+    "name": "Same physical image container 1024",
+    "pass": true
+  },
+  {
+    "name": "Synchronized stationary chapter 1 0.5 1024",
+    "pass": true,
+    "detail": {
+      "x": 537.609375,
+      "y": 190,
+      "w": 440.3125,
+      "h": 558,
+      "copyTop": 258.5,
+      "copyBottom": 600.4375,
+      "active": true,
+      "src": "/media/evening.webp",
+      "photoActive": true,
+      "opacity": "1",
+      "radius": "6px",
+      "inline": true,
+      "eyebrow": "13px"
+    }
+  },
+  {
+    "name": "Same physical image container 1024",
+    "pass": true
+  },
+  {
+    "name": "Synchronized stationary chapter 2 0.88 1024",
+    "pass": true,
+    "detail": {
+      "x": 537.609375,
+      "y": 190,
+      "w": 440.3125,
+      "h": 558,
+      "copyTop": 258.5,
+      "copyBottom": 621.296875,
+      "active": true,
+      "src": "/media/rigging.webp",
+      "photoActive": true,
+      "opacity": "1",
+      "radius": "6px",
+      "inline": true,
+      "eyebrow": "13px"
+    }
+  },
+  {
+    "name": "Same physical image container 1024",
+    "pass": true
+  },
+  {
+    "name": "Synchronized stationary chapter 1 0.5 1024",
+    "pass": true,
+    "detail": {
+      "x": 537.609375,
+      "y": 190,
+      "w": 440.3125,
+      "h": 558,
+      "copyTop": 258.5,
+      "copyBottom": 600.4375,
+      "active": true,
+      "src": "/media/evening.webp",
+      "photoActive": true,
+      "opacity": "1",
+      "radius": "6px",
+      "inline": true,
+      "eyebrow": "13px"
+    }
+  },
+  {
+    "name": "Same physical image container 1024",
+    "pass": true
+  },
+  {
+    "name": "Synchronized stationary chapter 0 0.1 1024",
+    "pass": true,
+    "detail": {
+      "x": 537.609375,
+      "y": 190,
+      "w": 440.3125,
+      "h": 558,
+      "copyTop": 258.5,
+      "copyBottom": 679.1875,
+      "active": true,
+      "src": "/media/planning.webp",
+      "photoActive": true,
+      "opacity": "1",
+      "radius": "6px",
+      "inline": true,
+      "eyebrow": "13px"
+    }
+  },
+  {
+    "name": "Same physical image container 1024",
+    "pass": true
+  },
+  {
+    "name": "Identical frame dimensions/position and text start 1024",
+    "pass": true,
+    "detail": [
+      {
+        "x": 537.609375,
+        "y": 190,
+        "w": 440.3125,
+        "h": 558,
+        "copyTop": 258.5,
+        "copyBottom": 679.1875,
+        "active": true,
+        "src": "/media/planning.webp",
+        "photoActive": true,
+        "opacity": "1",
+        "radius": "6px",
+        "inline": true,
+        "eyebrow": "13px"
+      },
+      {
+        "x": 537.609375,
+        "y": 190,
+        "w": 440.3125,
+        "h": 558,
+        "copyTop": 258.5,
+        "copyBottom": 600.4375,
+        "active": true,
+        "src": "/media/evening.webp",
+        "photoActive": true,
+        "opacity": "1",
+        "radius": "6px",
+        "inline": true,
+        "eyebrow": "13px"
+      },
+      {
+        "x": 537.609375,
+        "y": 190,
+        "w": 440.3125,
+        "h": 558,
+        "copyTop": 258.5,
+        "copyBottom": 621.296875,
+        "active": true,
+        "src": "/media/rigging.webp",
+        "photoActive": true,
+        "opacity": "1",
+        "radius": "6px",
+        "inline": true,
+        "eyebrow": "13px"
+      },
+      {
+        "x": 537.609375,
+        "y": 190,
+        "w": 440.3125,
+        "h": 558,
+        "copyTop": 258.5,
+        "copyBottom": 600.4375,
+        "active": true,
+        "src": "/media/evening.webp",
+        "photoActive": true,
+        "opacity": "1",
+        "radius": "6px",
+        "inline": true,
+        "eyebrow": "13px"
+      },
+      {
+        "x": 537.609375,
+        "y": 190,
+        "w": 440.3125,
+        "h": 558,
+        "copyTop": 258.5,
+        "copyBottom": 679.1875,
+        "active": true,
+        "src": "/media/planning.webp",
+        "photoActive": true,
+        "opacity": "1",
+        "radius": "6px",
+        "inline": true,
+        "eyebrow": "13px"
+      }
+    ]
+  },
+  {
+    "name": "Continuous reversible blend 1024 0.29",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.224122,
+        0
+      ],
+      "text": [
+        0.551757,
+        0,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1024 0.3",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.333333,
+        0
+      ],
+      "text": [
+        0.333333,
+        0,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1024 0.315",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.499525,
+        0
+      ],
+      "text": [
+        0.000949668,
+        0,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1024 0.33",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.665717,
+        0
+      ],
+      "text": [
+        0,
+        0.331434,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1024 0.34",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.779677,
+        0
+      ],
+      "text": [
+        0,
+        0.559354,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1024 0.63",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        1,
+        0.221273
+      ],
+      "text": [
+        0,
+        0.557455,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1024 0.655",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        1,
+        0.501425
+      ],
+      "text": [
+        0,
+        0,
+        0.002849
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1024 0.68",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        1,
+        0.776828
+      ],
+      "text": [
+        0,
+        0,
+        0.553656
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1024 0.655",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        1,
+        0.501425
+      ],
+      "text": [
+        0,
+        0,
+        0.002849
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1024 0.63",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        1,
+        0.221273
+      ],
+      "text": [
+        0,
+        0.557455,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1024 0.34",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.779677,
+        0
+      ],
+      "text": [
+        0,
+        0.559354,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1024 0.33",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.665717,
+        0
+      ],
+      "text": [
+        0,
+        0.331434,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1024 0.315",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.499525,
+        0
+      ],
+      "text": [
+        0.000949668,
+        0,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1024 0.3",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.333333,
+        0
+      ],
+      "text": [
+        0.333333,
+        0,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "Continuous reversible blend 1024 0.29",
+    "pass": true,
+    "detail": {
+      "base": 1,
+      "blend": [
+        1,
+        0.224122,
+        0
+      ],
+      "text": [
+        0.551757,
+        0,
+        0
+      ],
+      "transform": true
+    }
+  },
+  {
+    "name": "No horizontal overflow 1024",
+    "pass": true
+  },
+  {
+    "name": "No collage markup 768",
+    "pass": true
+  },
+  {
+    "name": "One shared image frame 768",
+    "pass": true
+  },
+  {
+    "name": "Natural one-photo chapter 0 768",
+    "pass": true,
+    "detail": {
+      "images": 1,
+      "hidden": "false",
+      "inert": false,
+      "afterText": true,
+      "radius": "6px",
+      "eyebrow": "12px"
+    }
+  },
+  {
+    "name": "Natural one-photo chapter 1 768",
+    "pass": true,
+    "detail": {
+      "images": 1,
+      "hidden": "false",
+      "inert": false,
+      "afterText": true,
+      "radius": "6px",
+      "eyebrow": "12px"
+    }
+  },
+  {
+    "name": "Natural one-photo chapter 2 768",
+    "pass": true,
+    "detail": {
+      "images": 1,
+      "hidden": "false",
+      "inert": false,
+      "afterText": true,
+      "radius": "6px",
+      "eyebrow": "12px"
+    }
+  },
+  {
+    "name": "Shared frame hidden in reading flow 768",
+    "pass": true
+  },
+  {
+    "name": "No horizontal overflow 768",
+    "pass": true
+  },
+  {
+    "name": "No collage markup 390",
+    "pass": true
+  },
+  {
+    "name": "One shared image frame 390",
+    "pass": true
+  },
+  {
+    "name": "Natural one-photo chapter 0 390",
+    "pass": true,
+    "detail": {
+      "images": 1,
+      "hidden": "false",
+      "inert": false,
+      "afterText": true,
+      "radius": "6px",
+      "eyebrow": "12px"
+    }
+  },
+  {
+    "name": "Natural one-photo chapter 1 390",
+    "pass": true,
+    "detail": {
+      "images": 1,
+      "hidden": "false",
+      "inert": false,
+      "afterText": true,
+      "radius": "6px",
+      "eyebrow": "12px"
+    }
+  },
+  {
+    "name": "Natural one-photo chapter 2 390",
+    "pass": true,
+    "detail": {
+      "images": 1,
+      "hidden": "false",
+      "inert": false,
+      "afterText": true,
+      "radius": "6px",
+      "eyebrow": "12px"
+    }
+  },
+  {
+    "name": "Shared frame hidden in reading flow 390",
+    "pass": true
+  },
+  {
+    "name": "No horizontal overflow 390",
+    "pass": true
+  },
+  {
+    "name": "No collage markup 320",
+    "pass": true
+  },
+  {
+    "name": "One shared image frame 320",
+    "pass": true
+  },
+  {
+    "name": "Natural one-photo chapter 0 320",
+    "pass": true,
+    "detail": {
+      "images": 1,
+      "hidden": "false",
+      "inert": false,
+      "afterText": true,
+      "radius": "6px",
+      "eyebrow": "12px"
+    }
+  },
+  {
+    "name": "Natural one-photo chapter 1 320",
+    "pass": true,
+    "detail": {
+      "images": 1,
+      "hidden": "false",
+      "inert": false,
+      "afterText": true,
+      "radius": "6px",
+      "eyebrow": "12px"
+    }
+  },
+  {
+    "name": "Natural one-photo chapter 2 320",
+    "pass": true,
+    "detail": {
+      "images": 1,
+      "hidden": "false",
+      "inert": false,
+      "afterText": true,
+      "radius": "6px",
+      "eyebrow": "12px"
+    }
+  },
+  {
+    "name": "Shared frame hidden in reading flow 320",
+    "pass": true
+  },
+  {
+    "name": "No horizontal overflow 320",
+    "pass": true
+  },
+  {
+    "name": "Readable 30 words at 1440",
+    "pass": true,
+    "detail": {
+      "flow": false,
+      "top": 239,
+      "bottom": 484.125,
+      "overflow": 0,
+      "paras": 1
+    }
+  },
+  {
+    "name": "Readable 30 words at 1024",
+    "pass": true,
+    "detail": {
+      "flow": false,
+      "top": 258.5,
+      "bottom": 481.140625,
+      "overflow": 0,
+      "paras": 1
+    }
+  },
+  {
+    "name": "Readable 30 words at 390",
+    "pass": true,
+    "detail": {
+      "flow": true,
+      "top": 209.921875,
+      "bottom": 464.34375,
+      "overflow": 0,
+      "paras": 1
+    }
+  },
+  {
+    "name": "Readable 120 words at 1440",
+    "pass": true,
+    "detail": {
+      "flow": false,
+      "top": 217,
+      "bottom": 721.28125,
+      "overflow": 0,
+      "paras": 2
+    }
+  },
+  {
+    "name": "Readable 120 words at 1024",
+    "pass": true,
+    "detail": {
+      "flow": false,
+      "top": 214.5,
+      "bottom": 723.3125,
+      "overflow": 0,
+      "paras": 2
+    }
+  },
+  {
+    "name": "Readable 120 words at 390",
+    "pass": true,
+    "detail": {
+      "flow": true,
+      "top": 33.921875,
+      "bottom": 639.34375,
+      "overflow": 0,
+      "paras": 2
+    }
+  },
+  {
+    "name": "Readable 250 words at 1440",
+    "pass": true,
+    "detail": {
+      "flow": true,
+      "top": 26,
+      "bottom": 953.28125,
+      "overflow": 0,
+      "paras": 4
+    }
+  },
+  {
+    "name": "All 250 words retained 1440",
+    "pass": true
+  },
+  {
+    "name": "Readable 250 words at 1024",
+    "pass": true,
+    "detail": {
+      "flow": true,
+      "top": 27.3125,
+      "bottom": 941.59375,
+      "overflow": 0,
+      "paras": 4
+    }
+  },
+  {
+    "name": "All 250 words retained 1024",
+    "pass": true
+  },
+  {
+    "name": "Readable 250 words at 390",
+    "pass": true,
+    "detail": {
+      "flow": true,
+      "top": -222.078125,
+      "bottom": 896.34375,
+      "overflow": 0,
+      "paras": 4
+    }
+  },
+  {
+    "name": "All 250 words retained 390",
+    "pass": true
+  },
+  {
+    "name": "Readable 500 words at 1440",
+    "pass": true,
+    "detail": {
+      "flow": true,
+      "top": -351,
+      "bottom": 1329.921875,
+      "overflow": 0,
+      "paras": 7
+    }
+  },
+  {
+    "name": "Readable 500 words at 1024",
+    "pass": true,
+    "detail": {
+      "flow": true,
+      "top": -359.6875,
+      "bottom": 1329.671875,
+      "overflow": 0,
+      "paras": 7
+    }
+  },
+  {
+    "name": "Readable 500 words at 390",
+    "pass": true,
+    "detail": {
+      "flow": true,
+      "top": -717.078125,
+      "bottom": 1391.34375,
+      "overflow": 0,
+      "paras": 7
+    }
+  },
+  {
+    "name": "First valid legacy image maps to primary",
+    "pass": true
+  },
+  {
+    "name": "Read-time mapping does not alter stored arrays",
+    "pass": true
+  },
+  {
+    "name": "Readable static chapters {\"reducedMotion\":\"reduce\"}",
+    "pass": true
+  },
+  {
+    "name": "One inline photograph per static chapter {\"reducedMotion\":\"reduce\"}",
+    "pass": true
+  },
+  {
+    "name": "Static mode hides shared layered frame {\"reducedMotion\":\"reduce\"}",
+    "pass": true
+  },
+  {
+    "name": "Readable static chapters {\"javaScriptEnabled\":false}",
+    "pass": true
+  },
+  {
+    "name": "One inline photograph per static chapter {\"javaScriptEnabled\":false}",
+    "pass": true
+  },
+  {
+    "name": "Static mode hides shared layered frame {\"javaScriptEnabled\":false}",
+    "pass": true
+  },
+  {
+    "name": "Undecoded incoming image retains current coherent chapter",
+    "pass": true
+  },
+  {
+    "name": "Late decoded image crossfades instead of swapping",
+    "pass": true
+  },
+  {
+    "name": "Decode completion synchronizes new text and photo",
+    "pass": true
+  },
+  {
+    "name": "No runtime exceptions",
+    "pass": true,
+    "detail": []
+  }
+]

@@ -1,0 +1,2355 @@
+[
+  {
+    "name": "Initial SSR overlay 1440 /work/atmosphere-is-everything/",
+    "pass": true,
+    "detail": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "top": 0,
+      "route": "case-events"
+    }
+  },
+  {
+    "name": "Initial SSR overlay 1440 /work/made-to-be-remembered/",
+    "pass": true,
+    "detail": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "top": 0,
+      "route": "case-identity"
+    }
+  },
+  {
+    "name": "Initial SSR overlay 1440 /work/behind-every-moment/",
+    "pass": true,
+    "detail": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "top": 0,
+      "route": "case-production"
+    }
+  },
+  {
+    "name": "Initial SSR overlay 1024 /work/atmosphere-is-everything/",
+    "pass": true,
+    "detail": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "top": 0,
+      "route": "case-events"
+    }
+  },
+  {
+    "name": "Initial SSR overlay 1024 /work/made-to-be-remembered/",
+    "pass": true,
+    "detail": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "top": 0,
+      "route": "case-identity"
+    }
+  },
+  {
+    "name": "Initial SSR overlay 1024 /work/behind-every-moment/",
+    "pass": true,
+    "detail": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "top": 0,
+      "route": "case-production"
+    }
+  },
+  {
+    "name": "Initial SSR overlay 768 /work/atmosphere-is-everything/",
+    "pass": true,
+    "detail": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "top": 0,
+      "route": "case-events"
+    }
+  },
+  {
+    "name": "Initial SSR overlay 768 /work/made-to-be-remembered/",
+    "pass": true,
+    "detail": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "top": 0,
+      "route": "case-identity"
+    }
+  },
+  {
+    "name": "Initial SSR overlay 768 /work/behind-every-moment/",
+    "pass": true,
+    "detail": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "top": 0,
+      "route": "case-production"
+    }
+  },
+  {
+    "name": "Initial SSR overlay 390 /work/atmosphere-is-everything/",
+    "pass": true,
+    "detail": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "top": 0,
+      "route": "case-events"
+    }
+  },
+  {
+    "name": "Initial SSR overlay 390 /work/made-to-be-remembered/",
+    "pass": true,
+    "detail": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "top": 0,
+      "route": "case-identity"
+    }
+  },
+  {
+    "name": "Initial SSR overlay 390 /work/behind-every-moment/",
+    "pass": true,
+    "detail": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "top": 0,
+      "route": "case-production"
+    }
+  },
+  {
+    "name": "Initial SSR overlay 320 /work/atmosphere-is-everything/",
+    "pass": true,
+    "detail": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "top": 0,
+      "route": "case-events"
+    }
+  },
+  {
+    "name": "Initial SSR overlay 320 /work/made-to-be-remembered/",
+    "pass": true,
+    "detail": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "top": 0,
+      "route": "case-identity"
+    }
+  },
+  {
+    "name": "Initial SSR overlay 320 /work/behind-every-moment/",
+    "pass": true,
+    "detail": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "top": 0,
+      "route": "case-production"
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 1440 scene 0 A night made for the spotlight.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 1440 0",
+    "pass": true,
+    "detail": {
+      "font": 74,
+      "leading": 77.33,
+      "steps": [
+        77.328125
+      ],
+      "heights": [
+        77.328125,
+        77.328125
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 1440 0",
+    "pass": true,
+    "detail": {
+      "top": 529.984375,
+      "bottom": 684.640625,
+      "w": 860,
+      "client": 860
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 1440 scene 1 A night made for the spotlight.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 1440 1",
+    "pass": true,
+    "detail": {
+      "font": 74,
+      "leading": 77.33,
+      "steps": [
+        77.328125
+      ],
+      "heights": [
+        77.328125,
+        77.328125
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 1440 1",
+    "pass": true,
+    "detail": {
+      "top": 529.984375,
+      "bottom": 684.640625,
+      "w": 860,
+      "client": 860
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 768 scene 0 A night made for the spotlight.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 1
+    }
+  },
+  {
+    "name": "Actual tight line pitch 768 0",
+    "pass": true,
+    "detail": {
+      "font": 52,
+      "leading": 54.34,
+      "steps": [
+        54.328125
+      ],
+      "heights": [
+        54.328125,
+        54.328125
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 768 0",
+    "pass": true,
+    "detail": {
+      "top": 590.765625,
+      "bottom": 699.421875,
+      "w": 624,
+      "client": 624
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 768 scene 1 A night made for the spotlight.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 1
+    }
+  },
+  {
+    "name": "Actual tight line pitch 768 1",
+    "pass": true,
+    "detail": {
+      "font": 52,
+      "leading": 54.34,
+      "steps": [
+        54.328125
+      ],
+      "heights": [
+        54.328125,
+        54.328125
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 768 1",
+    "pass": true,
+    "detail": {
+      "top": 590.765625,
+      "bottom": 699.421875,
+      "w": 624,
+      "client": 624
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 390 scene 0 A night made for the spotlight.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 390 0",
+    "pass": true,
+    "detail": {
+      "font": 36,
+      "leading": 37.62,
+      "steps": [
+        37.609375
+      ],
+      "heights": [
+        37.609375,
+        37.609375
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 390 0",
+    "pass": true,
+    "detail": {
+      "top": 602.78125,
+      "bottom": 678,
+      "w": 346,
+      "client": 346
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 390 scene 1 A night made for the spotlight.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 390 1",
+    "pass": true,
+    "detail": {
+      "font": 36,
+      "leading": 37.62,
+      "steps": [
+        37.609375
+      ],
+      "heights": [
+        37.609375,
+        37.609375
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 390 1",
+    "pass": true,
+    "detail": {
+      "top": 602.78125,
+      "bottom": 678,
+      "w": 346,
+      "client": 346
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 320 scene 0 A night made for the spotlight.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 320 0",
+    "pass": true,
+    "detail": {
+      "font": 36,
+      "leading": 37.62,
+      "steps": [
+        37.609375,
+        37.609375
+      ],
+      "heights": [
+        37.609375,
+        37.609375,
+        37.609375
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 320 0",
+    "pass": true,
+    "detail": {
+      "top": 544.171875,
+      "bottom": 657,
+      "w": 276,
+      "client": 276
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 320 scene 1 A night made for the spotlight.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 320 1",
+    "pass": true,
+    "detail": {
+      "font": 36,
+      "leading": 37.62,
+      "steps": [
+        37.609375,
+        37.609375
+      ],
+      "heights": [
+        37.609375,
+        37.609375,
+        37.609375
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 320 1",
+    "pass": true,
+    "detail": {
+      "top": 565.171875,
+      "bottom": 678,
+      "w": 276,
+      "client": 276
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 1440 scene 0 Big typography, happy people and good company.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 1
+    }
+  },
+  {
+    "name": "Actual tight line pitch 1440 0",
+    "pass": true,
+    "detail": {
+      "font": 74,
+      "leading": 77.33,
+      "steps": [
+        77.328125,
+        77.328125
+      ],
+      "heights": [
+        77.328125,
+        77.328125,
+        77.328125
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 1440 0",
+    "pass": true,
+    "detail": {
+      "top": 452.65625,
+      "bottom": 684.640625,
+      "w": 860,
+      "client": 860
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 1440 scene 1 Big typography, happy people and good company.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 1440 1",
+    "pass": true,
+    "detail": {
+      "font": 74,
+      "leading": 77.33,
+      "steps": [
+        77.328125,
+        77.328125
+      ],
+      "heights": [
+        77.328125,
+        77.328125,
+        77.328125
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 1440 1",
+    "pass": true,
+    "detail": {
+      "top": 452.65625,
+      "bottom": 684.640625,
+      "w": 860,
+      "client": 860
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 768 scene 0 Big typography, happy people and good company.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 768 0",
+    "pass": true,
+    "detail": {
+      "font": 52,
+      "leading": 54.34,
+      "steps": [
+        54.328125,
+        54.328125
+      ],
+      "heights": [
+        54.328125,
+        54.328125,
+        54.328125
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 768 0",
+    "pass": true,
+    "detail": {
+      "top": 536.4375,
+      "bottom": 699.421875,
+      "w": 624,
+      "client": 624
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 768 scene 1 Big typography, happy people and good company.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 768 1",
+    "pass": true,
+    "detail": {
+      "font": 52,
+      "leading": 54.34,
+      "steps": [
+        54.328125,
+        54.328125
+      ],
+      "heights": [
+        54.328125,
+        54.328125,
+        54.328125
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 768 1",
+    "pass": true,
+    "detail": {
+      "top": 536.4375,
+      "bottom": 699.421875,
+      "w": 624,
+      "client": 624
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 390 scene 0 Big typography, happy people and good company.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 390 0",
+    "pass": true,
+    "detail": {
+      "font": 36,
+      "leading": 37.62,
+      "steps": [
+        37.609375,
+        37.609375
+      ],
+      "heights": [
+        37.609375,
+        37.609375,
+        37.609375
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 390 0",
+    "pass": true,
+    "detail": {
+      "top": 565.171875,
+      "bottom": 678,
+      "w": 346,
+      "client": 346
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 390 scene 1 Big typography, happy people and good company.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 1
+    }
+  },
+  {
+    "name": "Actual tight line pitch 390 1",
+    "pass": true,
+    "detail": {
+      "font": 36,
+      "leading": 37.62,
+      "steps": [
+        37.609375,
+        37.609375
+      ],
+      "heights": [
+        37.609375,
+        37.609375,
+        37.609375
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 390 1",
+    "pass": true,
+    "detail": {
+      "top": 565.171875,
+      "bottom": 678,
+      "w": 346,
+      "client": 346
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 320 scene 0 Big typography, happy people and good company.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 320 0",
+    "pass": true,
+    "detail": {
+      "font": 36,
+      "leading": 37.62,
+      "steps": [
+        37.609375,
+        37.609375,
+        37.609375,
+        37.609375
+      ],
+      "heights": [
+        37.609375,
+        37.609375,
+        37.609375,
+        37.609375,
+        37.609375
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 320 0",
+    "pass": true,
+    "detail": {
+      "top": 468.953125,
+      "bottom": 657,
+      "w": 276,
+      "client": 276
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 320 scene 1 Big typography, happy people and good company.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 320 1",
+    "pass": true,
+    "detail": {
+      "font": 36,
+      "leading": 37.62,
+      "steps": [
+        37.609375,
+        37.609375,
+        37.609375,
+        37.609375
+      ],
+      "heights": [
+        37.609375,
+        37.609375,
+        37.609375,
+        37.609375,
+        37.609375
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 320 1",
+    "pass": true,
+    "detail": {
+      "top": 489.953125,
+      "bottom": 678,
+      "w": 276,
+      "client": 276
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 1440 scene 0 Quietly shaping genuinely joyful gatherings.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 1
+    }
+  },
+  {
+    "name": "Actual tight line pitch 1440 0",
+    "pass": true,
+    "detail": {
+      "font": 74,
+      "leading": 77.33,
+      "steps": [
+        77.328125,
+        77.328125
+      ],
+      "heights": [
+        77.328125,
+        77.328125,
+        77.328125
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 1440 0",
+    "pass": true,
+    "detail": {
+      "top": 452.65625,
+      "bottom": 684.640625,
+      "w": 860,
+      "client": 860
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 1440 scene 1 Quietly shaping genuinely joyful gatherings.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 1440 1",
+    "pass": true,
+    "detail": {
+      "font": 74,
+      "leading": 77.33,
+      "steps": [
+        77.328125,
+        77.328125
+      ],
+      "heights": [
+        77.328125,
+        77.328125,
+        77.328125
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 1440 1",
+    "pass": true,
+    "detail": {
+      "top": 452.65625,
+      "bottom": 684.640625,
+      "w": 860,
+      "client": 860
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 768 scene 0 Quietly shaping genuinely joyful gatherings.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 768 0",
+    "pass": true,
+    "detail": {
+      "font": 52,
+      "leading": 54.34,
+      "steps": [
+        54.328125,
+        54.328125
+      ],
+      "heights": [
+        54.328125,
+        54.328125,
+        54.328125
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 768 0",
+    "pass": true,
+    "detail": {
+      "top": 536.4375,
+      "bottom": 699.421875,
+      "w": 624,
+      "client": 624
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 768 scene 1 Quietly shaping genuinely joyful gatherings.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 768 1",
+    "pass": true,
+    "detail": {
+      "font": 52,
+      "leading": 54.34,
+      "steps": [
+        54.328125,
+        54.328125
+      ],
+      "heights": [
+        54.328125,
+        54.328125,
+        54.328125
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 768 1",
+    "pass": true,
+    "detail": {
+      "top": 536.4375,
+      "bottom": 699.421875,
+      "w": 624,
+      "client": 624
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 390 scene 0 Quietly shaping genuinely joyful gatherings.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 390 0",
+    "pass": true,
+    "detail": {
+      "font": 36,
+      "leading": 37.62,
+      "steps": [
+        37.609375,
+        37.609375
+      ],
+      "heights": [
+        37.609375,
+        37.609375,
+        37.609375
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 390 0",
+    "pass": true,
+    "detail": {
+      "top": 565.171875,
+      "bottom": 678,
+      "w": 346,
+      "client": 346
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 390 scene 1 Quietly shaping genuinely joyful gatherings.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 390 1",
+    "pass": true,
+    "detail": {
+      "font": 36,
+      "leading": 37.62,
+      "steps": [
+        37.609375,
+        37.609375
+      ],
+      "heights": [
+        37.609375,
+        37.609375,
+        37.609375
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 390 1",
+    "pass": true,
+    "detail": {
+      "top": 565.171875,
+      "bottom": 678,
+      "w": 346,
+      "client": 346
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 320 scene 0 Quietly shaping genuinely joyful gatherings.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 320 0",
+    "pass": true,
+    "detail": {
+      "font": 36,
+      "leading": 37.62,
+      "steps": [
+        37.609375,
+        37.609375,
+        37.609375,
+        37.609375
+      ],
+      "heights": [
+        37.609375,
+        37.609375,
+        37.609375,
+        37.609375,
+        37.609375
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 320 0",
+    "pass": true,
+    "detail": {
+      "top": 468.953125,
+      "bottom": 657,
+      "w": 276,
+      "client": 276
+    }
+  },
+  {
+    "name": "Actual glyph paint retained 320 scene 1 Quietly shaping genuinely joyful gatherings.",
+    "pass": true,
+    "detail": {
+      "changed": 0,
+      "maxDelta": 0
+    }
+  },
+  {
+    "name": "Actual tight line pitch 320 1",
+    "pass": true,
+    "detail": {
+      "font": 36,
+      "leading": 37.62,
+      "steps": [
+        37.609375,
+        37.609375,
+        37.609375,
+        37.609375
+      ],
+      "heights": [
+        37.609375,
+        37.609375,
+        37.609375,
+        37.609375,
+        37.609375
+      ]
+    }
+  },
+  {
+    "name": "Edited title fits hero 320 1",
+    "pass": true,
+    "detail": {
+      "top": 489.953125,
+      "bottom": 678,
+      "w": 276,
+      "client": 276
+    }
+  },
+  {
+    "name": "Zero partners hides section 1440",
+    "pass": true
+  },
+  {
+    "name": "Zero partners hides section 768",
+    "pass": true
+  },
+  {
+    "name": "Zero partners hides section 390",
+    "pass": true
+  },
+  {
+    "name": "Zero partners hides section 320",
+    "pass": true
+  },
+  {
+    "name": "Balanced partners 1 at 1440",
+    "pass": true,
+    "detail": [
+      {
+        "count": 1,
+        "centre": 720
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 1 at 768",
+    "pass": true,
+    "detail": [
+      {
+        "count": 1,
+        "centre": 384
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 1 at 390",
+    "pass": true,
+    "detail": [
+      {
+        "count": 1,
+        "centre": 195
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 1 at 320",
+    "pass": true,
+    "detail": [
+      {
+        "count": 1,
+        "centre": 160
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 2 at 1440",
+    "pass": true,
+    "detail": [
+      {
+        "count": 2,
+        "centre": 720
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 2 at 768",
+    "pass": true,
+    "detail": [
+      {
+        "count": 2,
+        "centre": 384
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 2 at 390",
+    "pass": true,
+    "detail": [
+      {
+        "count": 2,
+        "centre": 195
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 2 at 320",
+    "pass": true,
+    "detail": [
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 3 at 1440",
+    "pass": true,
+    "detail": [
+      {
+        "count": 3,
+        "centre": 719.9921875
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 3 at 768",
+    "pass": true,
+    "detail": [
+      {
+        "count": 3,
+        "centre": 384
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 3 at 390",
+    "pass": true,
+    "detail": [
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 1,
+        "centre": 195
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 3 at 320",
+    "pass": true,
+    "detail": [
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 4 at 1440",
+    "pass": true,
+    "detail": [
+      {
+        "count": 4,
+        "centre": 720
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 4 at 768",
+    "pass": true,
+    "detail": [
+      {
+        "count": 2,
+        "centre": 384
+      },
+      {
+        "count": 2,
+        "centre": 384
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 4 at 390",
+    "pass": true,
+    "detail": [
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 4 at 320",
+    "pass": true,
+    "detail": [
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 5 at 1440",
+    "pass": true,
+    "detail": [
+      {
+        "count": 3,
+        "centre": 719.9921875
+      },
+      {
+        "count": 2,
+        "centre": 719.9921875
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 5 at 768",
+    "pass": true,
+    "detail": [
+      {
+        "count": 3,
+        "centre": 384
+      },
+      {
+        "count": 2,
+        "centre": 384
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 5 at 390",
+    "pass": true,
+    "detail": [
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 1,
+        "centre": 195
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 5 at 320",
+    "pass": true,
+    "detail": [
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 6 at 1440",
+    "pass": true,
+    "detail": [
+      {
+        "count": 3,
+        "centre": 719.9921875
+      },
+      {
+        "count": 3,
+        "centre": 719.9921875
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 6 at 768",
+    "pass": true,
+    "detail": [
+      {
+        "count": 3,
+        "centre": 384
+      },
+      {
+        "count": 3,
+        "centre": 384
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 6 at 390",
+    "pass": true,
+    "detail": [
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 6 at 320",
+    "pass": true,
+    "detail": [
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 7 at 1440",
+    "pass": true,
+    "detail": [
+      {
+        "count": 4,
+        "centre": 720
+      },
+      {
+        "count": 3,
+        "centre": 719.9921875
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 7 at 768",
+    "pass": true,
+    "detail": [
+      {
+        "count": 3,
+        "centre": 384
+      },
+      {
+        "count": 2,
+        "centre": 384
+      },
+      {
+        "count": 2,
+        "centre": 384
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 7 at 390",
+    "pass": true,
+    "detail": [
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 1,
+        "centre": 195
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 7 at 320",
+    "pass": true,
+    "detail": [
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 8 at 1440",
+    "pass": true,
+    "detail": [
+      {
+        "count": 4,
+        "centre": 720
+      },
+      {
+        "count": 4,
+        "centre": 720
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 8 at 768",
+    "pass": true,
+    "detail": [
+      {
+        "count": 3,
+        "centre": 384
+      },
+      {
+        "count": 3,
+        "centre": 384
+      },
+      {
+        "count": 2,
+        "centre": 384
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 8 at 390",
+    "pass": true,
+    "detail": [
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 8 at 320",
+    "pass": true,
+    "detail": [
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 9 at 1440",
+    "pass": true,
+    "detail": [
+      {
+        "count": 3,
+        "centre": 719.9921875
+      },
+      {
+        "count": 3,
+        "centre": 719.9921875
+      },
+      {
+        "count": 3,
+        "centre": 719.9921875
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 9 at 768",
+    "pass": true,
+    "detail": [
+      {
+        "count": 3,
+        "centre": 384
+      },
+      {
+        "count": 3,
+        "centre": 384
+      },
+      {
+        "count": 3,
+        "centre": 384
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 9 at 390",
+    "pass": true,
+    "detail": [
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 1,
+        "centre": 195
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 9 at 320",
+    "pass": true,
+    "detail": [
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 10 at 1440",
+    "pass": true,
+    "detail": [
+      {
+        "count": 4,
+        "centre": 720
+      },
+      {
+        "count": 3,
+        "centre": 719.9921875
+      },
+      {
+        "count": 3,
+        "centre": 719.9921875
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 10 at 768",
+    "pass": true,
+    "detail": [
+      {
+        "count": 3,
+        "centre": 384
+      },
+      {
+        "count": 3,
+        "centre": 384
+      },
+      {
+        "count": 2,
+        "centre": 384
+      },
+      {
+        "count": 2,
+        "centre": 384
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 10 at 390",
+    "pass": true,
+    "detail": [
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 10 at 320",
+    "pass": true,
+    "detail": [
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 11 at 1440",
+    "pass": true,
+    "detail": [
+      {
+        "count": 4,
+        "centre": 720
+      },
+      {
+        "count": 4,
+        "centre": 720
+      },
+      {
+        "count": 3,
+        "centre": 719.9921875
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 11 at 768",
+    "pass": true,
+    "detail": [
+      {
+        "count": 3,
+        "centre": 384
+      },
+      {
+        "count": 3,
+        "centre": 384
+      },
+      {
+        "count": 3,
+        "centre": 384
+      },
+      {
+        "count": 2,
+        "centre": 384
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 11 at 390",
+    "pass": true,
+    "detail": [
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 1,
+        "centre": 195
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 11 at 320",
+    "pass": true,
+    "detail": [
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 12 at 1440",
+    "pass": true,
+    "detail": [
+      {
+        "count": 4,
+        "centre": 720
+      },
+      {
+        "count": 4,
+        "centre": 720
+      },
+      {
+        "count": 4,
+        "centre": 720
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 12 at 768",
+    "pass": true,
+    "detail": [
+      {
+        "count": 3,
+        "centre": 384
+      },
+      {
+        "count": 3,
+        "centre": 384
+      },
+      {
+        "count": 3,
+        "centre": 384
+      },
+      {
+        "count": 3,
+        "centre": 384
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 12 at 390",
+    "pass": true,
+    "detail": [
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      },
+      {
+        "count": 2,
+        "centre": 195
+      }
+    ]
+  },
+  {
+    "name": "Balanced partners 12 at 320",
+    "pass": true,
+    "detail": [
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      },
+      {
+        "count": 1,
+        "centre": 160
+      }
+    ]
+  },
+  {
+    "name": "Empty gallery hides safely 1440",
+    "pass": true
+  },
+  {
+    "name": "Empty gallery hides safely 390",
+    "pass": true
+  },
+  {
+    "name": "Gallery count 1 at 1440",
+    "pass": true,
+    "detail": {
+      "loop": "false",
+      "originals": 1,
+      "ids": [
+        "fixture-0"
+      ],
+      "clones": 0
+    }
+  },
+  {
+    "name": "Unique accessible photographs 1 1440",
+    "pass": true
+  },
+  {
+    "name": "No autoplay 1 1440",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps last to first 1 1440",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps first to last 1 1440",
+    "pass": true
+  },
+  {
+    "name": "Gallery count 1 at 390",
+    "pass": true,
+    "detail": {
+      "loop": "false",
+      "originals": 1,
+      "ids": [
+        "fixture-0"
+      ],
+      "clones": 0
+    }
+  },
+  {
+    "name": "Unique accessible photographs 1 390",
+    "pass": true
+  },
+  {
+    "name": "No autoplay 1 390",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps last to first 1 390",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps first to last 1 390",
+    "pass": true
+  },
+  {
+    "name": "Gallery count 2 at 1440",
+    "pass": true,
+    "detail": {
+      "loop": "false",
+      "originals": 2,
+      "ids": [
+        "fixture-0",
+        "fixture-1"
+      ],
+      "clones": 0
+    }
+  },
+  {
+    "name": "Unique accessible photographs 2 1440",
+    "pass": true
+  },
+  {
+    "name": "No autoplay 2 1440",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps last to first 2 1440",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps first to last 2 1440",
+    "pass": true
+  },
+  {
+    "name": "Gallery count 2 at 390",
+    "pass": true,
+    "detail": {
+      "loop": "true",
+      "originals": 2,
+      "ids": [
+        "fixture-0",
+        "fixture-1"
+      ],
+      "clones": 4
+    }
+  },
+  {
+    "name": "Unique accessible photographs 2 390",
+    "pass": true
+  },
+  {
+    "name": "No autoplay 2 390",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps last to first 2 390",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps first to last 2 390",
+    "pass": true
+  },
+  {
+    "name": "Gallery count 3 at 1440",
+    "pass": true,
+    "detail": {
+      "loop": "true",
+      "originals": 3,
+      "ids": [
+        "fixture-0",
+        "fixture-1",
+        "fixture-2"
+      ],
+      "clones": 6
+    }
+  },
+  {
+    "name": "Unique accessible photographs 3 1440",
+    "pass": true
+  },
+  {
+    "name": "No autoplay 3 1440",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps last to first 3 1440",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps first to last 3 1440",
+    "pass": true
+  },
+  {
+    "name": "Gallery count 3 at 390",
+    "pass": true,
+    "detail": {
+      "loop": "true",
+      "originals": 3,
+      "ids": [
+        "fixture-0",
+        "fixture-1",
+        "fixture-2"
+      ],
+      "clones": 6
+    }
+  },
+  {
+    "name": "Unique accessible photographs 3 390",
+    "pass": true
+  },
+  {
+    "name": "No autoplay 3 390",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps last to first 3 390",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps first to last 3 390",
+    "pass": true
+  },
+  {
+    "name": "Gallery count 6 at 1440",
+    "pass": true,
+    "detail": {
+      "loop": "true",
+      "originals": 6,
+      "ids": [
+        "fixture-0",
+        "fixture-1",
+        "fixture-2",
+        "fixture-3",
+        "fixture-4",
+        "fixture-5"
+      ],
+      "clones": 12
+    }
+  },
+  {
+    "name": "Unique accessible photographs 6 1440",
+    "pass": true
+  },
+  {
+    "name": "No autoplay 6 1440",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps last to first 6 1440",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps first to last 6 1440",
+    "pass": true
+  },
+  {
+    "name": "Gallery count 6 at 390",
+    "pass": true,
+    "detail": {
+      "loop": "true",
+      "originals": 6,
+      "ids": [
+        "fixture-0",
+        "fixture-1",
+        "fixture-2",
+        "fixture-3",
+        "fixture-4",
+        "fixture-5"
+      ],
+      "clones": 12
+    }
+  },
+  {
+    "name": "Unique accessible photographs 6 390",
+    "pass": true
+  },
+  {
+    "name": "No autoplay 6 390",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps last to first 6 390",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps first to last 6 390",
+    "pass": true
+  },
+  {
+    "name": "Gallery count 9 at 1440",
+    "pass": true,
+    "detail": {
+      "loop": "true",
+      "originals": 9,
+      "ids": [
+        "fixture-0",
+        "fixture-1",
+        "fixture-2",
+        "fixture-3",
+        "fixture-4",
+        "fixture-5",
+        "fixture-6",
+        "fixture-7",
+        "fixture-8"
+      ],
+      "clones": 18
+    }
+  },
+  {
+    "name": "Unique accessible photographs 9 1440",
+    "pass": true
+  },
+  {
+    "name": "No autoplay 9 1440",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps last to first 9 1440",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps first to last 9 1440",
+    "pass": true
+  },
+  {
+    "name": "Gallery count 9 at 390",
+    "pass": true,
+    "detail": {
+      "loop": "true",
+      "originals": 9,
+      "ids": [
+        "fixture-0",
+        "fixture-1",
+        "fixture-2",
+        "fixture-3",
+        "fixture-4",
+        "fixture-5",
+        "fixture-6",
+        "fixture-7",
+        "fixture-8"
+      ],
+      "clones": 18
+    }
+  },
+  {
+    "name": "Unique accessible photographs 9 390",
+    "pass": true
+  },
+  {
+    "name": "No autoplay 9 390",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps last to first 9 390",
+    "pass": true
+  },
+  {
+    "name": "Lightbox wraps first to last 9 390",
+    "pass": true
+  },
+  {
+    "name": "Hydrated hero retains initial geometry",
+    "pass": true
+  },
+  {
+    "name": "Section spacing matches approved CTA",
+    "pass": true,
+    "detail": [
+      {
+        "top": "128px",
+        "bottom": "126px"
+      },
+      {
+        "top": "128px",
+        "bottom": "126px"
+      },
+      {
+        "top": "128px",
+        "bottom": "126px"
+      },
+      {
+        "top": "128px",
+        "bottom": "126px"
+      }
+    ]
+  },
+  {
+    "name": "Pattern matches thinking-section tile/scale/repeat/position",
+    "pass": true,
+    "detail": {
+      "casePattern": {
+        "image": "url(\"http://127.0.0.1:3002/concept-12/bb1b857a951a4915479a.svg\")",
+        "size": "440px auto",
+        "repeat": "repeat",
+        "position": "50% 0%",
+        "opacity": "1"
+      },
+      "pattern": {
+        "image": "url(\"http://127.0.0.1:3002/concept-12/bb1b857a951a4915479a.svg\"), linear-gradient(135deg, rgb(7, 30, 48), rgb(13, 47, 73) 65%, rgb(11, 38, 58))",
+        "size": "440px auto, cover",
+        "repeat": "repeat, no-repeat",
+        "position": "50% 0%, 50% 50%"
+      }
+    }
+  },
+  {
+    "name": "Long editable chapter falls back to readable flow",
+    "pass": true
+  },
+  {
+    "name": "No runtime errors",
+    "pass": true,
+    "detail": []
+  }
+]

@@ -62,19 +62,21 @@ export interface ProjectModule {
   alt?: string;
   captions?: string;
 }
-export interface CaseStoryChapter { heading: string; body: string; images?: string[]; }
+export interface CaseStoryChapter { heading: string; body: string; image?: string; imageAlt?: string; /** Retained legacy media; first valid photo maps to image when unset. */ images?: string[]; }
 export interface CaseExperience {
   demo?: boolean;
   openingTitle: string;
   openingBody: string;
   openingImage: string;
+  secondTitle?: string;
   secondImage: string;
   secondBody: string;
   brief: CaseStoryChapter;
   intention: CaseStoryChapter;
   approach: CaseStoryChapter;
-  gallery: { src: string; alt: string }[];
-  bannerImage: string;
+  gallery: { id?: string; src: string; alt: string; credit?: string; creditHref?: string; license?: string; licenseHref?: string }[];
+  /** Legacy saved data only; the image-window component has been removed. */
+  bannerImage?: string;
   bannerAlt?: string;
   partners?: { name: string; role?: string; logo?: string; href?: string }[];
 }

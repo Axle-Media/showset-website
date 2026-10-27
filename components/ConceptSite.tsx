@@ -2,10 +2,11 @@
 import { usePathname } from "next/navigation";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { Globals, PageData } from "@/lib/types";
+import {publishingBackendAvailable} from "@/lib/deployment";
 import { apiEndpoint, defaultPages } from "@/lib/data";
 import markup from "@/lib/concept-12/markup.json";
 import { mountConcept } from "@/lib/concept-12/runtime";
-import { bindConcept, routeKeys } from "@/lib/concept-12/bridge";
+import { bindConcept, keyForRoute } from "@/lib/concept-12/bridge";
 import { conceptMetadata } from "@/lib/concept-12/metadata";
 import { patchConcept } from "@/lib/concept-12/patch";
 import { safeHref } from "@/lib/safe";
@@ -49,11 +50,12 @@ export function SiteLayout({
   function optionsFor(context: typeof latest.current) {
     const {page,g,catalog,editor,reduced}=context;
     return {
-      route: routeKeys[page.route] || "home",
+      route: keyForRoute(page.route),
+      casePaths: Object.fromEntries(Object.values({...catalog,[page.slug]:page}).filter(p=>p.route.startsWith("/work/")).map(p=>[keyForRoute(p.route),p.route])),
       getMetadata: (key: string) => {
         const pages = { ...catalog, [page.slug]: page };
-        const entry = Object.values(pages).find(p => routeKeys[p.route] === key && p.route === location.pathname)
-          || Object.values(pages).find(p => routeKeys[p.route] === key);
+        const entry = Object.values(pages).find(p => keyForRoute(p.route) === key && p.route === location.pathname)
+          || Object.values(pages).find(p => keyForRoute(p.route) === key);
         return entry ? conceptMetadata(entry) : undefined;
       },
       editor: !!editor,
@@ -131,8 +133,8 @@ export function SiteLayout({
         g,
         editor,
       });
-      if (routeKeys[page.route] && routeKeys[page.route] !== "home")
-        bindConcept(host, routeKeys[page.route], {
+      if (keyForRoute(page.route) && keyForRoute(page.route) !== "home")
+        bindConcept(host, keyForRoute(page.route), {
           catalog: { ...catalog, [page.slug]: page },
           g,
           editor,
@@ -146,7 +148,7 @@ export function SiteLayout({
       // SSR already selects the active view. If the initial markup is not
       // available, select it explicitly so the page remains readable.
       if (!initialMarkup) {
-        const key = routeKeys[page.route] || "home";
+        const key = keyForRoute(page.route) || "home";
         const name = key.startsWith("case-") ? "case-study"
           : ["events", "creative", "digital", "production"].includes(key) ? "service" : key;
         host.querySelectorAll<HTMLElement>(".view").forEach(view => {
@@ -180,7 +182,7 @@ export function SiteLayout({
     const host=root.current;
     if (!host || !engine.current || rendered.current===latest.current) return;
     const context=latest.current;
-    patchConcept(host, host.dataset.conceptRoute || routeKeys[page.route] || "home", {catalog:{...catalog,[page.slug]:page},g,editor});
+    patchConcept(host, host.dataset.conceptRoute || keyForRoute(page.route) || "home", {catalog:{...catalog,[page.slug]:page},g,editor});
     engine.current.refresh(optionsFor(context));
     rendered.current=context;
   }, [page,g,catalog,editor,reduced]);
@@ -199,6 +201,7 @@ export function SiteLayout({
       ref={root}
       className="concept-12-root"
       data-next-path={pathname}
+      data-concept-route={keyForRoute(page.route) || "home"}
       data-static-motion={!g.motion.enabled || reduced || !!editor || undefined}
       data-circle-reveal-off={!g.motion.circleReveal || undefined}
       dangerouslySetInnerHTML={{ __html: initialMarkup || markup }}
@@ -250,6 +253,7 @@ export default function SiteShell({
       }
       return;
     }
+    if(!publishingBackendAvailable(location.hostname))return;
     const controller = new AbortController();
     fetch(
       `${apiEndpoint}?action=published&slug=${encodeURIComponent(initialPage.slug)}`,
@@ -258,12 +262,12 @@ export default function SiteShell({
       .then((r) => (r.ok ? r.json() : null))
       .then((j) => {
         if (j?.page?.sections) {
-          // Older published records predate the cinematic case-study fields.
-          // Retain canonical story data until an editor explicitly publishes it.
+          // The shared story read-model derives missing fields from published
+          // records themselves; never substitute demonstration seed copy.
           const incoming = {
             ...initialPage,
             ...j.page,
-            caseExperience: j.page.caseExperience ?? initialPage.caseExperience,
+            caseExperience: j.page.caseExperience,
           } as PageData;
           setPage(incoming);
           setCatalog((x) => ({ ...x, [incoming.slug]: incoming }));

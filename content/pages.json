@@ -1839,25 +1839,31 @@
       "secondBody": "Behind every extraordinary evening is an extraordinary amount of thinking. Follow the ideas, people and little details that make an entire room feel something.",
       "brief": {
         "heading": "Make every moment extraordinary.",
-        "body": "Imagine an awards night where every entrance feels like the beginning of a film. Where guests move seamlessly from the anticipation of the red carpet to the energy of the ceremony.\n\nThe challenge was to imagine one connected experience: a celebration of cinema that feels ambitious, effortless and distinctly memorable.",
+        "body": "Imagine an awards evening that feels cinematic from the very first invitation. An arrival that builds anticipation, a red-carpet experience that welcomes every guest into the story, and a ceremony where each moment has its own sense of occasion. Nothing should feel disconnected, from the first step inside to the final applause.\n\nFor this fictional concept, the brief was to bring every touchpoint together. Guest flow, visual identity, spatial planning, lighting, production and hospitality all had to feel part of one unmistakable evening. The ambition was not simply to fill a beautiful room. It was to give people a night they would remember.",
         "images": [
           "/media/planning.webp",
-          "/media/details.webp"
-        ]
-      },
-      "intention": {
-        "heading": "More than a ceremony.",
-        "body": "We wanted the entire evening to feel cinematic. That starts before the first spotlight hits the stage and lasts well beyond the final standing ovation.\n\nEvery transition, cue, colour and space was considered through one lens: how does it make someone feel?",
-        "images": [
+          "/media/details.webp",
           "/media/brand.webp",
           "/media/evening.webp"
         ]
       },
+      "intention": {
+        "heading": "More than a ceremony.",
+        "body": "The feeling was our starting point. Before imagining a stage, we imagined the excitement of arriving, the pause before the room goes dark and the collective energy when the spotlight finds its subject. We wanted those emotions to carry through the entire experience, not appear only during the main ceremony.\n\nWarmth and spectacle could exist together. Intimate details would bring guests closer, while scale, sound and light would give the evening its drama. Every visual cue and change in atmosphere had one purpose: make each guest feel part of the story unfolding around them.",
+        "images": [
+          "/media/evening.webp",
+          "/media/sound.webp",
+          "/media/details.webp",
+          "/media/brand.webp"
+        ]
+      },
       "approach": {
         "heading": "Every detail plays a part.",
-        "body": "The guest journey became our script. Arrival, atmosphere, staging, lighting and the moments between moments were imagined as one continuous story.",
+        "body": "We imagined the guest journey as a sequence of carefully connected scenes. First impressions began with the arrival and wayfinding. The room then opened up through layered lighting, thoughtful staging and a visual language that could move from printed details to giant screens without losing its character.\n\nBehind the atmosphere sat the practical work: layouts, technical cues, sound, guest movement and the timing of every transition. Creative direction and production planning informed each other from the first sketches. The aim was an experience that could feel effortless to a guest because every detail behind it had been considered.",
         "images": [
           "/media/rigging.webp",
+          "/media/planning.webp",
+          "/media/sound.webp",
           "/media/details.webp"
         ]
       },
@@ -1868,7 +1874,11 @@
         },
         {
           "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Red_carpet_at_81st_Academy_Awards_in_Kodak_Theatre.jpg?width=1600",
-          "alt": "Academy Awards red carpet, photograph by Greg Hernandez, CC BY 2.0"
+          "alt": "Academy Awards red carpet, photograph by Greg Hernandez, CC BY 2.0",
+          "credit": "Photo: Greg Hernandez",
+          "creditHref": "https://commons.wikimedia.org/wiki/File:Red_carpet_at_81st_Academy_Awards_in_Kodak_Theatre.jpg",
+          "license": "CC BY 2.0",
+          "licenseHref": "https://creativecommons.org/licenses/by/2.0/"
         },
         {
           "src": "/media/rigging.webp",
@@ -2022,7 +2032,64 @@
         "alt": "Creative planning materials and layouts",
         "captions": "Creative exploration. From the first sketch to a connected visual system."
       }
-    ]
+    ],
+    "caseExperience": {
+      "demo": true,
+      "openingTitle": "Made to be remembered.",
+      "openingBody": "A visual study of how identity becomes something people recognise without having to think twice. This fictional identity study explores a visual system in print, packaging and space.",
+      "openingImage": "/media/cases/identity-hero.webp",
+      "secondTitle": "This is how we made it happen.",
+      "secondImage": "/media/cases/identity-process.webp",
+      "secondBody": "From a paper sample to a complete identity system, this concept follows one idea through its many expressions. It is an imagined design exercise, not a commissioned client project.",
+      "brief": {
+        "heading": "Consistency with a pulse.",
+        "body": "An identity needs more than one beautiful logo. It needs a character strong enough to travel. Through type and colour, packaging and print, screens and spaces, big statements and tiny bits of useful information. This concept study looks at how a flexible visual system can bring every encounter back to the same idea while leaving space for expression. The goal is not for everything to look identical. It is for everything to feel unmistakably connected.\n\nThis fictional identity study explores a visual system in print, packaging and space.",
+        "image": "/media/cases/identity-process.webp",
+        "imageAlt": "Synthetic concept photograph of identity print proofs and materials"
+      },
+      "intention": {
+        "heading": "Familiar, never predictable.",
+        "body": "A recognisable identity needs more than a single strong mark. The idea has to carry through every encounter, from the smallest printed detail to the largest expression.\n\nIn this imagined system, recognition comes from the relationship between colour, proportion and material. Each application can have its own rhythm while carrying the same character.",
+        "image": "/media/cases/identity-detail.webp",
+        "imageAlt": "Synthetic concept photograph of geometric brand applications"
+      },
+      "approach": {
+        "heading": "Let the system travel.",
+        "body": "We explore a visual language with enough consistency to feel familiar and enough flexibility to stay interesting. Typography, colour, composition and application all become part of the same story.\n\nThe fictional process moves from sketches and print tests to a small family of applications. Looking at those pieces together reveals where a rule needs to hold and where variation can make the identity more useful.",
+        "image": "/media/cases/identity-hero.webp",
+        "imageAlt": "Synthetic concept photograph of a coordinated stationery and packaging system"
+      },
+      "gallery": [
+        {
+          "id": "made-to-be-remembered-concept-1",
+          "src": "/media/cases/identity-hero.webp",
+          "alt": "Synthetic identity concept: the complete visual setting",
+          "credit": "AI-generated concept imagery; not a completed client project"
+        },
+        {
+          "id": "made-to-be-remembered-concept-2",
+          "src": "/media/cases/identity-process.webp",
+          "alt": "Synthetic identity concept: the working process",
+          "credit": "AI-generated concept imagery; not a completed client project"
+        },
+        {
+          "id": "made-to-be-remembered-concept-3",
+          "src": "/media/cases/identity-detail.webp",
+          "alt": "Synthetic identity concept: material and technical details",
+          "credit": "AI-generated concept imagery; not a completed client project"
+        }
+      ],
+      "partners": [
+        {
+          "name": "Paperline Workshop",
+          "role": "Print and material exploration (fictional test partner)"
+        },
+        {
+          "name": "Form & Field Lab",
+          "role": "Identity applications (fictional test partner)"
+        }
+      ]
+    }
   },
   "behind-every-moment": {
     "slug": "behind-every-moment",
@@ -2137,7 +2204,68 @@
         "alt": "Warm lights and atmosphere at a live event",
         "captions": "Creative exploration. The audience-facing experience."
       }
-    ]
+    ],
+    "caseExperience": {
+      "demo": true,
+      "openingTitle": "Behind every moment.",
+      "openingBody": "A creative study celebrating the work that makes a live experience run like it was meant to. This fictional production study explores the preparation behind a live stage experience.",
+      "openingImage": "/media/cases/production-hero.webp",
+      "secondTitle": "This is how we made it happen.",
+      "secondImage": "/media/cases/production-process.webp",
+      "secondBody": "Before the lights come up, every cue needs a place in the plan. This imagined production follows preparation, rehearsal and the handover to a live moment; it does not document a completed SHOWSET event.",
+      "brief": {
+        "heading": "The invisible is important.",
+        "body": "The audience comes for the experience. The cables, cue sheets, timing checks and technical conversations are not the headline. They are what allows the headline to happen. This study explores the relationship between creative vision and production craft. How lighting, sound, visuals, people and precision come together to create a moment that feels natural. Our favourite kind of technical excellence is the kind you do not have to think about while you are enjoying the show.\n\nThis fictional production study explores the preparation behind a live stage experience.",
+        "image": "/media/cases/production-process.webp",
+        "imageAlt": "Synthetic concept photograph of a live-production control desk"
+      },
+      "intention": {
+        "heading": "Give the moment room.",
+        "body": "The best live moments feel effortless. Behind that ease is a chain of decisions that makes space for the audience to focus on what matters.\n\nIn the concept, the audience should be free to follow the story rather than notice the equipment. Technical clarity supports that ease: a clean signal path, an understood cue and a team ready for the next change.",
+        "image": "/media/cases/production-detail.webp",
+        "imageAlt": "Synthetic concept photograph of safely secured theater lighting"
+      },
+      "approach": {
+        "heading": "Prepare for the unexpected.",
+        "body": "We look at the cues, the technical requirements and the people who bring them together. Creative direction and production planning meet so that every transition feels natural.\n\nThe imagined workflow brings the production plan, rehearsals and equipment checks into one conversation. Each department can see how its decisions affect the next, so the eventual audience-facing moment has a coherent shape.",
+        "image": "/media/cases/production-hero.webp",
+        "imageAlt": "Synthetic concept photograph of a backstage lighting setup"
+      },
+      "gallery": [
+        {
+          "id": "behind-every-moment-concept-1",
+          "src": "/media/cases/production-hero.webp",
+          "alt": "Synthetic production concept: the complete visual setting",
+          "credit": "AI-generated concept imagery; not a completed client project"
+        },
+        {
+          "id": "behind-every-moment-concept-2",
+          "src": "/media/cases/production-process.webp",
+          "alt": "Synthetic production concept: the working process",
+          "credit": "AI-generated concept imagery; not a completed client project"
+        },
+        {
+          "id": "behind-every-moment-concept-3",
+          "src": "/media/cases/production-detail.webp",
+          "alt": "Synthetic production concept: material and technical details",
+          "credit": "AI-generated concept imagery; not a completed client project"
+        }
+      ],
+      "partners": [
+        {
+          "name": "Cuepoint Collective",
+          "role": "Production planning (fictional test partner)"
+        },
+        {
+          "name": "Signalroom Workshop",
+          "role": "Audio and control (fictional test partner)"
+        },
+        {
+          "name": "Beamline Lab",
+          "role": "Lighting exploration (fictional test partner)"
+        }
+      ]
+    }
   },
   "contact": {
     "slug": "contact",

@@ -5,14 +5,14 @@ import { defaultPages } from "@/lib/data";
 import markup from "./markup.json";
 import services from "./data.json";
 import cases from "./caseStudies.json";
-import { bindConcept, routeKeys } from "./bridge";
+import { bindConcept, routeKeys, keyForRoute } from "./bridge";
 import { populateCategory, populateCaseStudy, selectCurrentView } from "./route-content";
 /** Build-time only: the browser receives route-specific HTML, not a DOM parser. */
 export function conceptDocument(page: PageData, g: Globals): string {
   const { document } = parseHTML("<!doctype html><html><body><div id=ssr-host></div></body></html>");
   const host = document.getElementById("ssr-host")!;
   host.innerHTML = markup;
-  const key = routeKeys[page.route] || "home";
+  const key = keyForRoute(page.route);
   if (key in services) populateCategory(host, key, services);
   if (key in cases) populateCaseStudy(host, key, cases);
   const catalog = { ...defaultPages, [page.slug]: page };

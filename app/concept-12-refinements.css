@@ -222,17 +222,17 @@
 /* ONLY headings placed over actual photographs: scroll scenes, category/studio/work
    hero photographs and the photographic service banner. The original rectangular
    mask replaces the later circular reveal on these headings alone. */
-:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner,.case-opening-scene)
   :is(.wipe-heading,.block-heading) .wipe-line {
   overflow:hidden;
   isolation:isolate;
 }
-:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner,.case-opening-scene)
   :is(.wipe-heading,.block-heading) .wipe-line::before {
   content:none!important;
   display:none!important;
 }
-:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner,.case-opening-scene)
   :is(.wipe-heading,.block-heading) .wipe-line::after {
   content:""!important;
   display:block!important;
@@ -246,14 +246,14 @@
   pointer-events:none;
   will-change:clip-path;
 }
-:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner,.case-opening-scene)
   :is(.wipe-heading,.block-heading) .wipe-line.accent-line::after {
   background:var(--sand);
 }
 /* Text stays physically still. The only perceived reveal is the coloured swipe:
    a synchronized discrete clip releases the stationary glyphs once the bar covers
    them, with no rising, sliding, fading or radial text movement. */
-:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner,.case-opening-scene)
   :is(.wipe-heading,.block-heading) .wipe-line>span {
   opacity:1!important;
   transform:none!important;
@@ -262,27 +262,27 @@
   transition:none!important;
   will-change:clip-path;
 }
-:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner,.case-opening-scene)
   :is(.wipe-heading,.block-heading).is-revealed .wipe-line>span {
   animation:showsetPhotoTextUnmask .75s linear both!important;
 }
-:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner,.case-opening-scene)
   :is(.wipe-heading,.block-heading).is-revealed .wipe-line:nth-child(2)>span {
   animation-delay:.12s!important;
 }
-:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner,.case-opening-scene)
   :is(.wipe-heading,.block-heading).is-revealed .wipe-line:nth-child(3)>span {
   animation-delay:.22s!important;
 }
-:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner,.case-opening-scene)
   :is(.wipe-heading,.block-heading).is-revealed .wipe-line::after {
   animation:showsetPhotoBlockSwipe .75s cubic-bezier(.75,.06,.23,.95) both!important;
 }
-:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner,.case-opening-scene)
   :is(.wipe-heading,.block-heading).is-revealed .wipe-line:nth-child(2)::after {
   animation-delay:.12s!important;
 }
-:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+:is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner,.case-opening-scene)
   :is(.wipe-heading,.block-heading).is-revealed .wipe-line:nth-child(3)::after {
   animation-delay:.22s!important;
 }
@@ -341,14 +341,14 @@
 /* No swipe may obscure reading or keyboard access in reduced-motion/Studio still
    mode, even though the later global circular-text animation uses !important. */
 :is([data-static-motion],[data-circle-reveal-off],.c12-reveal-off)
-  :is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+  :is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner,.case-opening-scene)
   :is(.wipe-heading,.block-heading) .wipe-line>span,
 [data-scene="still"] :is(.wipe-heading,.block-heading) .wipe-line>span {
   opacity:1!important;transform:none!important;
   animation:none!important;transition:none!important;clip-path:none!important;
 }
 :is([data-static-motion],[data-circle-reveal-off],.c12-reveal-off)
-  :is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+  :is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner,.case-opening-scene)
   :is(.wipe-heading,.block-heading) .wipe-line::after,
 [data-scene="still"] :is(.wipe-heading,.block-heading) .wipe-line::after,
 :is([data-static-motion],[data-circle-reveal-off],.c12-reveal-off)
@@ -356,12 +356,12 @@
   display:none!important;animation:none!important;
 }
 @media(prefers-reduced-motion:reduce){
-  :is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+  :is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner,.case-opening-scene)
     :is(.wipe-heading,.block-heading) .wipe-line>span {
     opacity:1!important;transform:none!important;
     animation:none!important;transition:none!important;clip-path:none!important;
   }
-  :is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner)
+  :is(.hero-second,.film-step,.category-hero,.simple-hero,.category-banner,.case-opening-scene)
     :is(.wipe-heading,.block-heading) .wipe-line::after,
   .hero-title .line::after{display:none!important;animation:none!important}
 }

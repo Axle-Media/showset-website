@@ -37,7 +37,7 @@ const recovery=await l.evaluate(()=>JSON.parse(localStorage.getItem('showset-hom
 ck('Compatibility migration retains exact raw records before editing',JSON.stringify(recovery?.records)===JSON.stringify(records));
 ck('Reading legacy records does not overwrite draft or publish storage',await l.evaluate(records=>Object.entries(records).every(([k,v])=>localStorage.getItem(k)===v),records));
 ck('Legacy custom content survives new defaults',(await l.frameLocator('iframe').locator('.hero-foreground>p').innerText()).includes('Owner custom copy')&&(await l.frameLocator('iframe').locator('.footer-identity>p').innerText()).includes('Owner custom footer'));
-ck('Untouched legacy hero defaults adopt new teal phrase markup',await l.frameLocator('iframe').locator('.hero-accent-phrase>span').evaluateAll(es=>es.length===2&&es.every(e=>getComputedStyle(e).color==='rgb(18, 186, 175)')),await l.frameLocator('iframe').locator('.hero-title').innerHTML());
+ck('Untouched legacy hero defaults adopt new teal phrase markup',await l.frameLocator('iframe').locator('.hero-accent-phrase>span').evaluateAll(es=>es.length===1&&es.every(e=>getComputedStyle(e).color==='rgb(18, 186, 175)')),await l.frameLocator('iframe').locator('.hero-title').innerHTML());
 ck('No runtime errors',!errors.length,errors);
 }finally{await b.close();fs.mkdirSync('qa-results',{recursive:true});fs.writeFileSync('qa-results/integration-homepage.json',JSON.stringify({checks,errors},null,2));if(checks.some(x=>!x.pass)||errors.length)process.exitCode=1}})().catch(e=>{console.error(e);process.exitCode=1});
 
