@@ -11,6 +11,10 @@ const motionStyles = ["transform","opacity","clip-path","pointer-events","transi
 /** Patch content in place; never replace the host or restart its animation engine. */
 export function patchConcept(host: HTMLElement, key: string, context: Parameters<typeof bindConcept>[2]) {
   const selections=Array.from(host.querySelectorAll("select"),element=>({element,value:element.value}));
+  // The homepage's circular gallery owns two transient sets of clones.
+  // Remove those before morphdom reconciles authored cards, then let the
+  // running carousel rebuild fresh clones during engine.refresh().
+  host.querySelectorAll("#case-rail > .case-gallery-clone").forEach(node=>node.remove());
   const target=host.ownerDocument.createElement("div");
   target.className=host.className;
   target.innerHTML=markup;
@@ -22,15 +26,6 @@ export function patchConcept(host: HTMLElement, key: string, context: Parameters
     bindConcept(target,"home",context);
     if(key!=="home") bindConcept(target,key,context);
     selectCurrentView(target,key);
-    // Match the source engine's seamless loop, without accumulating more clones.
-    const rail=target.querySelector("#case-rail");
-    target.querySelectorAll("[data-case-slide]").forEach(slide=>{
-      const clone=slide.cloneNode(true) as HTMLElement;
-      clone.removeAttribute("data-case-slide");
-      clone.setAttribute("aria-hidden","true");
-      clone.tabIndex=-1;
-      rail?.append(clone);
-    });
     morphdom(host,target,{
       childrenOnly:true,
       onBeforeElUpdated(from,to) {
