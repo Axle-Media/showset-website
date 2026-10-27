@@ -5,6 +5,7 @@ import "./concept-12-refinements.css";
 import "./case-study.css";
 import "./concept-12-editor.css";
 import "./concept-12-accessibility.css";
+import "./site-typography.css";
 export const metadata: Metadata = {
   title: "SHOWSET | Events & Creative Agency",
   description:
