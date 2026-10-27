@@ -1,0 +1,20 @@
+[
+  {
+    "suite": "all-case-studies",
+    "exit": 1,
+    "passes": 19,
+    "failures": 0
+  },
+  {
+    "suite": "all-case-studio",
+    "exit": 0,
+    "passes": 12,
+    "failures": 0
+  },
+  {
+    "suite": "case-study-final",
+    "exit": 0,
+    "passes": 196,
+    "failures": 0
+  }
+]

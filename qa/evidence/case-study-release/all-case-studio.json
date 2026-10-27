@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "name": "Blank new project never borrows demonstration copy",
+      "pass": true
+    },
+    {
+      "name": "New project automatically renders cinematic case template",
+      "pass": true
+    },
+    {
+      "name": "New project has automatic related projects",
+      "pass": true
+    },
+    {
+      "name": "New draft keeps case route and complete content",
+      "pass": true
+    },
+    {
+      "name": "New project fields persist on reload",
+      "pass": true
+    },
+    {
+      "name": "New project uses shared animation runtime",
+      "pass": true
+    },
+    {
+      "name": "Publishing preserves newly created case model",
+      "pass": true
+    },
+    {
+      "name": "Legacy published headline remains authoritative",
+      "pass": true
+    },
+    {
+      "name": "Legacy narrative derives from its own modules",
+      "pass": true
+    },
+    {
+      "name": "Read-time migration does not rewrite stored page",
+      "pass": true
+    },
+    {
+      "name": "Legacy editor exposes complete controls without enable step",
+      "pass": true
+    },
+    {
+      "name": "Saving migration retains original modules and identifiers",
+      "pass": true
+    },
+    {
+      "name": "No Studio runtime exceptions",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

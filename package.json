@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --hostname 0.0.0.0",
-    "build": "next build",
-    "lint:source": "node scripts/check-source.mjs",
+    "build": "next build && node scripts/write-release.mjs",
+    "lint:source": "node scripts/check-source.mjs && node scripts/check-case-studies.mjs",
     "check": "tsc --noEmit",
     "export:assets": "node scripts/copy-export.mjs",
     "package:xneelo": "npm run build && node scripts/copy-export.mjs",

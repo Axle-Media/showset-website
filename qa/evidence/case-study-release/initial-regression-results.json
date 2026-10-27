@@ -1,0 +1,74 @@
+[
+  {
+    "suite": "case-study-storytelling",
+    "exit": 0,
+    "passes": 147,
+    "failures": 0
+  },
+  {
+    "suite": "case-study-story-studio",
+    "exit": 0,
+    "passes": 10,
+    "failures": 0
+  },
+  {
+    "suite": "case-study-story-fallbacks",
+    "exit": 0,
+    "passes": 9,
+    "failures": 0
+  },
+  {
+    "suite": "case-study-document",
+    "exit": 0,
+    "passes": 123,
+    "failures": 0
+  },
+  {
+    "suite": "case-study-studio",
+    "exit": 0,
+    "passes": 12,
+    "failures": 0
+  },
+  {
+    "suite": "case-study-final-studio",
+    "exit": 0,
+    "passes": 12,
+    "failures": 0
+  },
+  {
+    "suite": "case-study-infinite",
+    "exit": 0,
+    "passes": 24,
+    "failures": 0
+  },
+  {
+    "suite": "concept12-lifecycle",
+    "exit": 0,
+    "passes": 16,
+    "failures": 0
+  },
+  {
+    "suite": "concept12-accessibility",
+    "exit": 0,
+    "passes": 21,
+    "failures": 0
+  },
+  {
+    "suite": "concept12-functional",
+    "exit": 0,
+    "passes": 50,
+    "failures": 0
+  },
+  {
+    "suite": "concept12-routes",
+    "exit": 0,
+    "passes": 117,
+    "failures": 0
+  },
+  {
+    "suite": "photo-headline-swipe",
+    "exit": 1,
+    "passes": 0,
+    "failures": 0
+  }
+]

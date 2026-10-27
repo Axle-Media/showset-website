@@ -16,6 +16,8 @@ import type {
   ThemeTokens,
 } from "@/lib/types";
 import StudioCanvas from "./StudioCanvas";
+import {caseExperienceFor} from "@/lib/concept-12/case-content";
+import {publishingBackendAvailable} from "@/lib/deployment";
 import CaseExperienceFields from "./CaseExperienceFields";
 import {compatiblePages,compatibleGlobals} from '@/lib/concept-12/compat';
 import "./studio.css";
@@ -74,6 +76,7 @@ export default function Studio() {
       } catch {}
       return;
     }
+    if(!publishingBackendAvailable(location.hostname)){setMode("unavailable");return;}
     (async () => {
       try {
         const r = await fetch(`${apiEndpoint}?action=session`, {
@@ -160,7 +163,7 @@ export default function Studio() {
       return { ...p, sections: a };
     });
   };
-  const createPage = () => {
+  const createPage = (caseStudy=false) => {
     const name = prompt("New page title");
     if (!name) return;
     const key = name
@@ -174,11 +177,12 @@ export default function Studio() {
     }
     const fresh: PageData = {
       slug: key,
-      route: `/${key}/`,
+      route: caseStudy?`/work/${key}/`:`/${key}/`,
       title: name,
       sections: [newBlock("pagehero"), newBlock("cta")],
       seo: { title: name + " | SHOWSET", description: "" },
     };
+    if(caseStudy){fresh.sections[0]={...fresh.sections[0],headline:name,body:"",image:""};fresh.caseExperience=caseExperienceFor(fresh);}
     setPages((p) => ({ ...p, [key]: fresh }));
     setSlug(key);
     setSelected(null);
@@ -1295,9 +1299,10 @@ export default function Studio() {
                 </div>
                 <div className="studio-pane-title">
                   Existing pages{" "}
-                  <button type="button" onClick={createPage}>
+                  <button type="button" onClick={()=>createPage()}>
                     + New
                   </button>
+                  <button type="button" onClick={()=>createPage(true)}>+ New case study</button>
                 </div>
                 {Object.values(pages).map((p) => (
                   <button

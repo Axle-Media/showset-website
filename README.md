@@ -2,7 +2,7 @@
 
 SHOWSET Concept 12 website and its local content editor. The restored Concept 12 implementation and approved UI refinements share the same components, styles and motion system.
 
-Shared private repository: https://github.com/Axle-Media/showset-website
+Shared repository: https://github.com/Axle-Media/showset-website
 
 ## Local development
 
@@ -51,6 +51,6 @@ Use feature branches and pull requests targeting `main`. Review changes before m
 
 ## Deployment and secrets
 
-Hosting changes require a separate explicit deployment task. Static hosting must use a reviewed public-only artifact, keep Studio private until a secure authenticated backend exists, and target only the authorised staging directory. The legacy `package:xneelo` command includes PHP backend files and editor routes; it is not the public-only staging package.
+Production deployment is authorised for the reviewed `main` branch at https://showset-website.vercel.app/. Vercel deploys after an approved PR merge. This does not authorise publishing to showset.co.za or changing xneelo/WordPress. Studio saves locally on localhost; the static Vercel deployment has no authenticated PHP publishing backend. The legacy `package:xneelo` command includes PHP backend files and editor routes; it is not the public-only staging package.
 
-This repository connection does not deploy anything, enable deployment workflows or modify live websites. Environment files, private keys, local credentials, dependencies, build outputs, database dumps and temporary backups stay out of Git. Only placeholder configuration examples and the source database schema are intentionally tracked. Keep hosting and GitHub credentials in secure stores, never in source or chat.
+New case studies use **+ New case study** in Studio and automatically receive the shared cinematic template. Static URLs and SEO require a content export and site rebuild; adding a project needs no custom component, route-map entry or motion code. See [case-study release audit](docs/case-study-production-audit.md) for the production candidate and verification. Environment files, private keys, local credentials, dependencies, build outputs, database dumps and temporary backups stay out of Git. Only placeholder configuration examples and the source database schema are intentionally tracked. Keep hosting and GitHub credentials in secure stores, never in source or chat.

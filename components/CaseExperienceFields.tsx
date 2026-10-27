@@ -1,4 +1,5 @@
 "use client";
+import { caseExperienceFor } from "@/lib/concept-12/case-content";
 import { primaryChapterImage } from "@/lib/concept-12/chapter-image";
 import type { CaseExperience, CaseStoryChapter, PageData } from "@/lib/types";
 
@@ -10,18 +11,8 @@ const field=(label:string,value:string,onChange:(value:string)=>void,multiline=f
  </label>
 );
 export default function CaseExperienceFields({page,updatePage}:Props){
- const story=page.caseExperience;
+ const story=caseExperienceFor(page);
  const save=(next:CaseExperience)=>updatePage(p=>({...p,caseExperience:next}));
- if(!story)return <div className="studio-item"><div className="studio-pane-title">Cinematic case study</div>
-  <p className="studio-hint">Create an editable story to use the pinned chapter template and gallery.</p>
-  <button type="button" onClick={()=>save({
-   openingTitle:page.sections[0]?.headline||page.title,openingBody:page.sections[0]?.body||"",
-   openingImage:page.sections[0]?.image||"/media/evening.webp",
-   secondImage:"/media/rigging.webp",secondBody:"Discover how the idea came to life.",
-   brief:{heading:"The brief.",body:"",images:[]},
-   intention:{heading:"The intention.",body:"",images:[]},
-   approach:{heading:"The approach.",body:"",images:[]},
-   gallery:[],partners:[]})}>+ Enable cinematic story editing</button></div>;
  const set=(key:keyof CaseExperience,value:unknown)=>save({...story,[key]:value});
  const updateChapter=(key:"brief"|"intention"|"approach",chapter:CaseStoryChapter)=>set(key,chapter);
  return <div className="studio-item">
@@ -58,6 +49,7 @@ export default function CaseExperienceFields({page,updatePage}:Props){
    </div>
   </div>)}
   <button type="button" onClick={()=>set("gallery",[...story.gallery,{id:crypto.randomUUID(),src:"/media/details.webp",alt:"Event photograph"}])}>+ Add gallery photo</button>
+  <p className="studio-hint">Related projects automatically show the next two other case studies in the catalogue. The current project is excluded.</p>
   <div className="studio-pane-title">Companies involved</div>
   <p className="studio-hint">This section hides automatically when there are no partners.</p>
   {(story.partners||[]).map((partner,i)=><div className="studio-item" key={i}>

@@ -1,10 +1,11 @@
 import type { PageData, CaseExperience, CaseStoryChapter } from "@/lib/types";
 import { safeHref } from "@/lib/safe";
 import { primaryChapterImage } from "./chapter-image";
+import { caseExperienceFor } from "./case-content";
 import { defaultPages } from "@/lib/data";
 
 const esc=(v:string="")=>String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
-const src=(v?:string)=>{const s=safeHref(v||"");return s==="#"?"/media/evening.webp":s;};
+const src=(v?:string)=>{const s=safeHref(v||"");return s==="#"?"/brand/showset-approved.svg":s;};
 const img=(v:string,alt="",eager=false)=>'<img src="'+esc(src(v))+'" alt="'+esc(alt)+'" '+(eager?'fetchpriority="high"':'loading="lazy"')+' decoding="async">';
 const paras=(s:string)=>s.split(/\n\s*\n/).filter(Boolean).map(v=>"<p>"+esc(v)+"</p>").join("");
 
@@ -28,20 +29,6 @@ function partnerLayouts(count:number) {
  return {desktop:partnerPositions(count,desktop),tablet:partnerPositions(count,count===4?2:Math.min(3,count)),mobile:partnerPositions(count,Math.min(2,count))};
 }
 
-function storyFor(page:PageData):CaseExperience {
- const hero=page.sections[0], split=page.sections.find(s=>s.type==="split"), visual=page.sections.find(s=>s.type==="visual");
- const pictures=(page.projectModules||[]).filter(m=>m.kind==="image"&&m.src).map(m=>({src:m.src!,alt:m.alt||m.title}));
- const fallback:CaseExperience={
-  openingTitle:hero?.headline||page.title,openingBody:hero?.body||"",openingImage:hero?.image||"/media/evening.webp",
-  secondImage:visual?.image||"/media/details.webp",secondBody:"Every remarkable moment begins long before anyone arrives. Explore the thinking and the making behind the experience.",
-  brief:{heading:"The brief.",body:split?.body||"It begins with understanding what matters.",images:pictures.slice(0,2).map(p=>p.src)},
-  intention:{heading:"The intention.",body:page.projectModules?.find(m=>m.kind==="text")?.body||"Every moment should make people feel something.",images:[]},
-  approach:{heading:"The approach.",body:page.projectModules?.filter(m=>m.kind==="text")[1]?.body||"We turn thoughtful creative into remarkable experiences.",images:[]},
-  gallery:pictures.length?pictures:[{src:hero?.image||"/media/evening.webp",alt:page.title},{src:"/media/rigging.webp",alt:"Production details"},{src:"/media/details.webp",alt:"Event atmosphere"}],
-  partners:[],demo:false
- };
- return {...fallback,...page.caseExperience};
-}
 function chapter(c:CaseStoryChapter,i:number) {
  const photo=primaryChapterImage(c);
  const image=photo?'<figure class="case-chapter-photo">'+img(photo,c.imageAlt||c.heading+' photograph')+'</figure>':"";
@@ -56,7 +43,7 @@ function storyVisual(chapters:CaseStoryChapter[]) {
 
 export function renderImmersiveCase(host:HTMLElement,page:PageData,catalog:Record<string,PageData>) {
  const view=host.querySelector<HTMLElement>('.view[data-view="case-study"]');if(!view)return;
- const s=storyFor(page),gallery=s.gallery.filter(p=>safeHref(p.src)!=="#").map(photo=>({
+ const s=caseExperienceFor(page),gallery=s.gallery.filter(p=>safeHref(p.src)!=="#").map(photo=>({
   // Old local drafts predate per-image credits. Retain the matching seed credit
   // without replacing custom copy, order, media or explicitly edited credit data.
   ...defaultPages[page.slug]?.caseExperience?.gallery.find(seed=>seed.src===photo.src),
@@ -69,7 +56,9 @@ export function renderImmersiveCase(host:HTMLElement,page:PageData,catalog:Recor
    '<button type="button" class="case-gallery-motion-toggle" data-case-gallery-motion-toggle aria-label="Pause automatic carousel movement" aria-pressed="false"><span aria-hidden="true" data-case-gallery-motion-icon>Ⅱ</span><span class="case-gallery-motion-label" data-case-gallery-motion-label>Pause</span></button></div>'+
    '<div class="case-gallery-viewport" data-case-gallery role="group" aria-roledescription="carousel" aria-label="Photographs. Drag, swipe or use arrow keys" tabindex="0">'+
    gallery.map((p,j)=>'<button type="button" class="case-gallery-item" data-case-image="'+j+'" data-case-image-id="'+esc(p.id||photoId(p.src)+'-'+gallery.slice(0,j).filter(x=>x.src===p.src).length)+'"'+creditAttrs(p)+' aria-label="Enlarge photograph '+(j+1)+'">'+img(p.src,p.alt)+'</button>').join("")+'</div></section>':"";
- const others=Object.values(catalog).filter(p=>p.route.startsWith("/work/")&&p.route!==page.route).slice(0,2);
+ const studies=Object.values(catalog).filter(p=>p.route.startsWith("/work/"));
+ const index=studies.findIndex(p=>p.route===page.route);
+ const others=Array.from({length:Math.min(2,Math.max(0,studies.length-1))},(_,i)=>studies[(index+i+1)%studies.length]).filter(p=>p.route!==page.route);
  const partners=s.partners||[];
  const positions=partners.length?partnerLayouts(partners.length):null;
  const partnerStyle=(i:number)=>' style="--partner-desktop:'+positions!.desktop[i]+';--partner-tablet:'+positions!.tablet[i]+';--partner-mobile:'+positions!.mobile[i]+'"';
@@ -81,7 +70,7 @@ export function renderImmersiveCase(host:HTMLElement,page:PageData,catalog:Recor
   '<section class="case-scroll-narrative" data-case-narrative><div class="case-narrative-stage"><div class="case-chapter-stack">'+chapters.map((c,i)=>chapter(c,i)).join("")+storyVisual(chapters)+'</div></div></section>'+
   galleryMarkup+
   (partners.length?'<section class="case-partners section-gutter"><div class="case-partners-intro"><h2>Made possible together<span class="teal-dot">.</span></h2><p>Great experiences take great people. These are the teams behind the moment.</p></div><div class="case-partner-list">'+partners.map((p,i)=>{const part='<div class="case-partner-logo">'+img(p.logo||'/brand/showset-approved.svg',p.logo?p.name+' logo':'SHOWSET placeholder logo')+'</div><span class="case-partner-name">'+esc(p.name)+'</span><span class="case-partner-role">'+esc(p.role||"")+'</span>';const href=safeHref(p.href||"");return href==="#"?'<div class="case-partner"'+partnerStyle(i)+'>'+part+'</div>':'<a class="case-partner"'+partnerStyle(i)+' href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+part+'</a>';}).join("")+'</div></section>':"")+
-  (others.length?'<section class="case-related section-gutter"><div class="case-related-heading">'+heading("More stories worth exploring.")+'<a class="understated-link" href="/our-work/">Explore our work <span aria-hidden="true">↗</span></a></div><div class="case-related-grid">'+others.map(p=>'<a class="case-related-card" href="'+esc(safeHref(p.route))+'"><div class="case-related-photo">'+img(p.sections[0]?.image||"/media/evening.webp")+'</div><div class="case-related-card-caption"><div>'+heading(p.sections[0]?.headline||p.title,"h3")+'<p>'+esc(p.sections[0]?.body||p.seo?.description||'Explore the story behind the experience.')+'</p></div><span aria-hidden="true">↗</span></div></a>').join("")+'</div></section>':"")+
+  (others.length?'<section class="case-related section-gutter"><div class="case-related-heading">'+heading("More stories worth exploring.")+'<a class="understated-link" href="/our-work/">Explore our work <span aria-hidden="true">↗</span></a></div><div class="case-related-grid">'+others.map(p=>'<a class="case-related-card" href="'+esc(safeHref(p.route))+'"><div class="case-related-photo">'+img(caseExperienceFor(p).openingImage)+'</div><div class="case-related-card-caption"><div>'+heading(caseExperienceFor(p).openingTitle||p.title,"h3")+'<p>'+esc(caseExperienceFor(p).openingBody||p.seo?.description||'')+'</p></div><span aria-hidden="true">↗</span></div></a>').join("")+'</div></section>':"")+
   '</div><div class="case-lightbox" data-case-lightbox role="dialog" aria-modal="true" aria-label="Image viewer" hidden><button type="button" data-case-close class="case-lightbox-close" aria-label="Close image viewer">✕</button><button type="button" class="case-lightbox-nav case-lightbox-prev" data-case-lightbox-prev aria-label="Previous image">←</button><figure class="case-lightbox-figure"><img data-case-lightbox-image src="'+esc(src(gallery[0]?.src))+'" alt=""><figcaption><span data-case-lightbox-caption></span><span data-case-lightbox-count></span><span class="case-photo-credit" data-case-photo-credit hidden></span></figcaption></figure><button type="button" class="case-lightbox-nav case-lightbox-next" data-case-lightbox-next aria-label="Next image">→</button></div>';
  const original=host.querySelector<HTMLElement>("#ending");
  if(original){const cloned=original.cloneNode(true) as HTMLElement;cloned.id="case-ending";view.querySelector(".case-experience")?.append(cloned);}
