@@ -67,7 +67,7 @@ export function renderImmersiveCase(host:HTMLElement,page:PageData,catalog:Recor
  const galleryMarkup=gallery.length?'<section class="case-photo-gallery section-gutter" aria-label="Event photography">'+
    heading("Explore the moments.")+
    '<div class="case-gallery-viewport" data-case-gallery role="group" aria-roledescription="carousel" aria-label="Photographs. Drag, swipe or use arrow keys" tabindex="0">'+
-   gallery.map((p,j)=>'<button type="button" class="case-gallery-item" data-case-image="'+j+'" data-case-image-id="'+esc(p.id||photoId(p.src)+'-'+gallery.slice(0,j).filter(x=>x.src===p.src).length)+'"'+creditAttrs(p)+' aria-label="Enlarge photograph '+(j+1)+'">'+img(p.src,p.alt)+'<span class="case-gallery-expand" aria-hidden="true">↗</span></button>').join("")+'</div></section>':"";
+   gallery.map((p,j)=>'<button type="button" class="case-gallery-item" data-case-image="'+j+'" data-case-image-id="'+esc(p.id||photoId(p.src)+'-'+gallery.slice(0,j).filter(x=>x.src===p.src).length)+'"'+creditAttrs(p)+' aria-label="Enlarge photograph '+(j+1)+'">'+img(p.src,p.alt)+'</button>').join("")+'</div></section>':"";
  const others=Object.values(catalog).filter(p=>p.route.startsWith("/work/")&&p.route!==page.route).slice(0,2);
  const partners=s.partners||[];
  const positions=partners.length?partnerLayouts(partners.length):null;
