@@ -45,6 +45,8 @@ const servicePaths=['/events-experiences/','/creative-design/','/digital-marketi
    }
   }
   await page.setViewportSize({width:390,height:844});
+  fs.mkdirSync('qa-results',{recursive:true});
+  await page.screenshot({path:'qa-results/header-mobile.png',animations:'disabled'});
   await page.getByRole('button',{name:'Open menu'}).click();
   ck('Mobile menu opens and exposes four service pages',
     await page.locator('#mobile-panel').getAttribute('aria-hidden')==='false'&&
@@ -53,6 +55,7 @@ const servicePaths=['/events-experiences/','/creative-design/','/digital-marketi
   await page.waitForURL(url=>url.pathname==='/creative-design/');
   ck('Mobile service link navigates to service page',new URL(page.url()).pathname==='/creative-design/');
   await page.setViewportSize({width:1440,height:920});
+  await page.screenshot({path:'qa-results/header-desktop.png',animations:'disabled'});
   await page.locator('.desktop-navigation a[href="/digital-marketing/"]').click();
   await page.waitForURL(url=>url.pathname==='/digital-marketing/');
   ck('Desktop direct service link navigates to service page',new URL(page.url()).pathname==='/digital-marketing/');
