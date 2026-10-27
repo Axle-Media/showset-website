@@ -50,6 +50,7 @@ jobs:
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/header-navigation-alignment.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/site-typography.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/editorial-columns.cjs
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/case-related-descriptions.cjs
       - name: Archive browser QA results
         if: always()
         uses: actions/upload-artifact@v4
@@ -61,6 +62,9 @@ jobs:
             qa-results/header-navigation-alignment.json
             qa-results/site-typography.json
             qa-results/editorial-columns.json
+            qa-results/case-related-descriptions.json
+            qa-results/case-related-1796.png
+            qa-results/case-related-390.png
             qa-results/header-desktop.png
             qa-results/header-mobile.png
           if-no-files-found: ignore
