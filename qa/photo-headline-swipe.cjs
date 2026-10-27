@@ -11,8 +11,8 @@ function ck(name, ok, details = null) {
 const targets = [
   ['/', '.hero-second .wipe-heading'],
   ['/', '.film-step.is-on .wipe-heading'],
-  ['/events-experiences/', '.category-hero .block-heading'],
-  ['/events-experiences/', '.category-banner .block-heading'],
+  ['/work/atmosphere-is-everything/', '.case-opening-first .block-heading'],
+  ['/work/made-to-be-remembered/', '.case-opening-first .block-heading'],
   ['/our-studio/', '.simple-hero .block-heading'],
   ['/our-work/', '.simple-hero .block-heading'],
 ];
@@ -146,9 +146,9 @@ async function styles(page, selector) {
       await page.locator('.service-image-information>p').count() === 1);
 
     await page.emulateMedia({ reducedMotion: 'reduce' });
-    await page.goto(base + '/events-experiences/');
+    await page.goto(base + '/work/atmosphere-is-everything/');
     await page.waitForSelector('[data-concept-ready="true"]');
-    const still = await styles(page, '.category-hero .block-heading');
+    const still = await styles(page, '.case-opening-first .block-heading');
     ck('Reduced motion disables photo block and leaves text fully visible',
       still?.markerDisplay === 'none' && Number(still.textOpacity) > .99
         && still.textTransform === 'none' && still.textClip === 'none', still);

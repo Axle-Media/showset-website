@@ -1,0 +1,424 @@
+{
+  "checks": [
+    {
+      "name": "All paragraphs and list copy are 17px / @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px / @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Visible desktop menu typography remains 14px / @1440",
+      "pass": true
+    },
+    {
+      "name": "Body inputs are 17px / @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow / @1440",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "Approved homepage heading unchanged @1440",
+      "pass": true,
+      "detail": "Great ideas move people."
+    },
+    {
+      "name": "Hero paragraph and CTA do not overlap @1440",
+      "pass": true
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /events-experiences/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /events-experiences/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Visible desktop menu typography remains 14px /events-experiences/ @1440",
+      "pass": true
+    },
+    {
+      "name": "Body inputs are 17px /events-experiences/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /events-experiences/ @1440",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /creative-design/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /creative-design/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Visible desktop menu typography remains 14px /creative-design/ @1440",
+      "pass": true
+    },
+    {
+      "name": "Body inputs are 17px /creative-design/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /creative-design/ @1440",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /digital-marketing/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /digital-marketing/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Visible desktop menu typography remains 14px /digital-marketing/ @1440",
+      "pass": true
+    },
+    {
+      "name": "Body inputs are 17px /digital-marketing/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /digital-marketing/ @1440",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /content-production/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /content-production/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Visible desktop menu typography remains 14px /content-production/ @1440",
+      "pass": true
+    },
+    {
+      "name": "Body inputs are 17px /content-production/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /content-production/ @1440",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /our-studio/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /our-studio/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Visible desktop menu typography remains 14px /our-studio/ @1440",
+      "pass": true
+    },
+    {
+      "name": "Body inputs are 17px /our-studio/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /our-studio/ @1440",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /our-work/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /our-work/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Visible desktop menu typography remains 14px /our-work/ @1440",
+      "pass": true
+    },
+    {
+      "name": "Body inputs are 17px /our-work/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /our-work/ @1440",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /contact/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /contact/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Visible desktop menu typography remains 14px /contact/ @1440",
+      "pass": true
+    },
+    {
+      "name": "Body inputs are 17px /contact/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /contact/ @1440",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /work/atmosphere-is-everything/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /work/atmosphere-is-everything/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Visible desktop menu typography remains 14px /work/atmosphere-is-everything/ @1440",
+      "pass": true
+    },
+    {
+      "name": "Body inputs are 17px /work/atmosphere-is-everything/ @1440",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /work/atmosphere-is-everything/ @1440",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "All paragraphs and list copy are 17px / @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px / @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Body inputs are 17px / @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow / @390",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "Approved homepage heading unchanged @390",
+      "pass": true,
+      "detail": "Great ideas move people."
+    },
+    {
+      "name": "Hero paragraph and CTA do not overlap @390",
+      "pass": true
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /events-experiences/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /events-experiences/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Body inputs are 17px /events-experiences/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /events-experiences/ @390",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /creative-design/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /creative-design/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Body inputs are 17px /creative-design/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /creative-design/ @390",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /digital-marketing/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /digital-marketing/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Body inputs are 17px /digital-marketing/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /digital-marketing/ @390",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /content-production/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /content-production/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Body inputs are 17px /content-production/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /content-production/ @390",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /our-studio/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /our-studio/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Body inputs are 17px /our-studio/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /our-studio/ @390",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /our-work/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /our-work/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Body inputs are 17px /our-work/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /our-work/ @390",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /contact/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /contact/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Body inputs are 17px /contact/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /contact/ @390",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "All paragraphs and list copy are 17px /work/atmosphere-is-everything/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Button and CTA labels are 14px /work/atmosphere-is-everything/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Body inputs are 17px /work/atmosphere-is-everything/ @390",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "No horizontal document overflow /work/atmosphere-is-everything/ @390",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "No browser exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

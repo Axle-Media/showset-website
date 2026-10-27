@@ -236,10 +236,10 @@
       {
         "id": "section-1",
         "type": "pagehero",
-        "headline": "We make the room",
-        "accent": "feel something.",
+        "headline": "From a spark",
+        "accent": "to a room alive.",
         "body": "The room. The crowd. The goosebumps. The perfectly timed reveal. We bring bold ideas and meticulous planning together to turn gatherings into experiences.",
-        "image": "/media/evening.webp",
+        "image": "/media/cases/production-hero.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "Plan something brilliant",
@@ -265,6 +265,49 @@
         "secondaryLabel": "",
         "secondaryHref": "",
         "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "service-story",
+        "type": "story",
+        "headline": "A thought. A world. A feeling.",
+        "accent": "",
+        "body": "We start with an idea on a page. We shape the space around it. Then we make the whole room part of the story.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "service-scene-1",
+            "title": "First, the possibility.",
+            "description": "We ask what the gathering should mean, then turn the answer into a concept, a guest journey and a plan.",
+            "image": "/media/planning.webp",
+            "href": "",
+            "category": "Concept"
+          },
+          {
+            "id": "service-scene-2",
+            "title": "Then, the world.",
+            "description": "We bring staging, light, sound, styling and movement into the same conversation. The details begin to belong together.",
+            "image": "/media/rigging.webp",
+            "href": "",
+            "category": "Environment"
+          },
+          {
+            "id": "service-scene-3",
+            "title": "Finally, the feeling.",
+            "description": "We coordinate the live experience so people can be present for it. The plan does its work quietly. The room comes alive.",
+            "image": "/media/evening.webp",
+            "href": "",
+            "category": "Experience"
+          }
+        ],
         "speed": 6,
         "formTitle": "",
         "helperText": ""
@@ -545,19 +588,27 @@
         "helperText": ""
       },
       {
-        "id": "section-7",
-        "type": "visual",
-        "headline": "We plan for the practical. And leave room for the magic",
+        "id": "service-work",
+        "type": "work",
+        "headline": "The thinking, made visible.",
         "accent": "",
-        "body": "",
-        "image": "/media/rigging.webp",
+        "body": "Explore a creative concept study.",
+        "image": "",
         "pattern": false,
         "reveal": true,
-        "buttonLabel": "Bring us your brief",
-        "buttonHref": "/contact/",
+        "buttonLabel": "",
+        "buttonHref": "",
         "secondaryLabel": "",
         "secondaryHref": "",
-        "items": [],
+        "items": [
+          {
+            "id": "service-related-study",
+            "title": "Atmosphere is everything",
+            "description": "",
+            "image": "/media/details.webp",
+            "href": "/work/atmosphere-is-everything/"
+          }
+        ],
         "speed": 6,
         "formTitle": "",
         "helperText": ""
@@ -579,6 +630,24 @@
         "speed": 6,
         "formTitle": "",
         "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "visual",
+        "headline": "Let’s make a room",
+        "accent": "worth remembering.",
+        "body": "",
+        "image": "/media/rigging.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Bring us your brief",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
       }
     ],
     "seo": {
@@ -594,10 +663,10 @@
       {
         "id": "section-1",
         "type": "pagehero",
-        "headline": "Make it look",
-        "accent": "like nobody else.",
+        "headline": "Ideas made",
+        "accent": "tangible.",
         "body": "We build identities, ideas and design systems with a clear point of view. Not design for the sake of decoration. Design that gives people something to recognise, believe in and come back to.",
-        "image": "/media/brand.webp",
+        "image": "/media/cases/identity-hero.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "Make something distinctive",
@@ -623,6 +692,49 @@
         "secondaryLabel": "",
         "secondaryHref": "",
         "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "service-story",
+        "type": "story",
+        "headline": "One idea. A world of possibilities.",
+        "accent": "",
+        "body": "We give an idea a character, a visual language and somewhere to go. The system holds together. The applications have room to play.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "service-scene-1",
+            "title": "A point of view.",
+            "description": "We find the thinking that makes a brand itself. Strategy and creative direction give the design something to stand for.",
+            "image": "/media/cases/identity-process.webp",
+            "href": "",
+            "category": "Thinking"
+          },
+          {
+            "id": "service-scene-2",
+            "title": "A visual language.",
+            "description": "We bring type, colour, form and composition into a recognisable system, with clear rules and enough room for expression.",
+            "image": "/media/cases/identity-detail.webp",
+            "href": "",
+            "category": "Identity"
+          },
+          {
+            "id": "service-scene-3",
+            "title": "A life beyond the logo.",
+            "description": "We take the idea into packaging, print, screens and spaces. It should feel familiar wherever people meet it.",
+            "image": "/media/brand.webp",
+            "href": "",
+            "category": "Application"
+          }
+        ],
         "speed": 6,
         "formTitle": "",
         "helperText": ""
@@ -799,19 +911,27 @@
         "helperText": ""
       },
       {
-        "id": "section-7",
-        "type": "visual",
-        "headline": "Good design gets noticed. Great design gets remembered",
+        "id": "service-work",
+        "type": "work",
+        "headline": "The thinking, made visible.",
         "accent": "",
-        "body": "",
-        "image": "/media/details.webp",
+        "body": "Explore a creative concept study.",
+        "image": "",
         "pattern": false,
         "reveal": true,
-        "buttonLabel": "Give the idea a look",
-        "buttonHref": "/contact/",
+        "buttonLabel": "",
+        "buttonHref": "",
         "secondaryLabel": "",
         "secondaryHref": "",
-        "items": [],
+        "items": [
+          {
+            "id": "service-related-study",
+            "title": "Made to be remembered",
+            "description": "",
+            "image": "/media/cases/identity-hero.webp",
+            "href": "/work/made-to-be-remembered/"
+          }
+        ],
         "speed": 6,
         "formTitle": "",
         "helperText": ""
@@ -833,6 +953,24 @@
         "speed": 6,
         "formTitle": "",
         "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "visual",
+        "headline": "Give your next idea",
+        "accent": "a point of view.",
+        "body": "",
+        "image": "/media/details.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Give the idea a look",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
       }
     ],
     "seo": {
@@ -848,10 +986,10 @@
       {
         "id": "section-1",
         "type": "pagehero",
-        "headline": "Make the screen",
-        "accent": "do more.",
+        "headline": "Creativity that",
+        "accent": "travels further.",
         "body": "We create websites, campaigns, platforms and content with a purpose beyond being online. Clearer experiences, smarter connections and useful reasons to come back.",
-        "image": "/media/planning.webp",
+        "image": "/media/brand.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "Build what’s next",
@@ -877,6 +1015,49 @@
         "secondaryLabel": "",
         "secondaryHref": "",
         "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "service-story",
+        "type": "story",
+        "headline": "One idea. More ways to connect.",
+        "accent": "",
+        "body": "We connect the places people meet a brand. A useful website, a considered campaign and an ongoing conversation should feel like parts of the same idea.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "service-scene-1",
+            "title": "A place to land.",
+            "description": "We design clear websites and useful digital experiences. Structure, content and design work together to help people find their way.",
+            "image": "",
+            "href": "",
+            "category": "Website"
+          },
+          {
+            "id": "service-scene-2",
+            "title": "A reason to care.",
+            "description": "We shape campaigns around a real objective and an audience. The message belongs to the channel, without losing the idea.",
+            "image": "",
+            "href": "",
+            "category": "Campaign"
+          },
+          {
+            "id": "service-scene-3",
+            "title": "A conversation that continues.",
+            "description": "We plan content, social rhythms and ongoing creative support. Each encounter adds to a recognisable voice.",
+            "image": "",
+            "href": "",
+            "category": "Content"
+          }
+        ],
         "speed": 6,
         "formTitle": "",
         "helperText": ""
@@ -1053,19 +1234,27 @@
         "helperText": ""
       },
       {
-        "id": "section-7",
-        "type": "visual",
-        "headline": "Built for humans. Clever under the hood",
+        "id": "service-work",
+        "type": "work",
+        "headline": "The thinking, made visible.",
         "accent": "",
-        "body": "",
-        "image": "/media/planning.webp",
+        "body": "Explore a creative concept study.",
+        "image": "",
         "pattern": false,
         "reveal": true,
-        "buttonLabel": "Tell us what needs fixing",
-        "buttonHref": "/contact/",
+        "buttonLabel": "",
+        "buttonHref": "",
         "secondaryLabel": "",
         "secondaryHref": "",
-        "items": [],
+        "items": [
+          {
+            "id": "service-related-study",
+            "title": "Made to be remembered",
+            "description": "",
+            "image": "/media/cases/identity-detail.webp",
+            "href": "/work/made-to-be-remembered/"
+          }
+        ],
         "speed": 6,
         "formTitle": "",
         "helperText": ""
@@ -1087,6 +1276,24 @@
         "speed": 6,
         "formTitle": "",
         "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "visual",
+        "headline": "Let’s make something",
+        "accent": "people connect with.",
+        "body": "",
+        "image": "/media/planning.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Tell us what needs fixing",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
       }
     ],
     "seo": {
@@ -1102,10 +1309,10 @@
       {
         "id": "section-1",
         "type": "pagehero",
-        "headline": "Make people look.",
-        "accent": "Then look again.",
+        "headline": "Every frame",
+        "accent": "has a purpose.",
         "body": "Stories deserve more than a nice shot. We bring ideas to life through motion, video, photography, creative production and the technical details that make everything land.",
-        "image": "/media/sound.webp",
+        "image": "/media/cases/production-detail.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "Bring the story to life",
@@ -1131,6 +1338,49 @@
         "secondaryLabel": "",
         "secondaryHref": "",
         "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "service-story",
+        "type": "story",
+        "headline": "The thinking. The making. The moment.",
+        "accent": "",
+        "body": "We work backwards from what people should see, hear and feel. Every creative and technical decision has a job to do.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "service-scene-1",
+            "title": "Find the story.",
+            "description": "We decide what matters, how it should feel and the shots, sounds or movement that will carry it.",
+            "image": "/media/planning.webp",
+            "href": "",
+            "category": "Pre-production"
+          },
+          {
+            "id": "service-scene-2",
+            "title": "Make it happen.",
+            "description": "We bring photography, film, motion and technical production into one considered process. Craft serves the idea.",
+            "image": "/media/cases/production-process.webp",
+            "href": "",
+            "category": "Production"
+          },
+          {
+            "id": "service-scene-3",
+            "title": "Shape the final frame.",
+            "description": "We refine the edit, finish the details and adapt the content for the formats and places it needs to live.",
+            "image": "/media/sound.webp",
+            "href": "",
+            "category": "Post-production"
+          }
+        ],
         "speed": 6,
         "formTitle": "",
         "helperText": ""
@@ -1291,19 +1541,27 @@
         "helperText": ""
       },
       {
-        "id": "section-7",
-        "type": "visual",
-        "headline": "Roll camera. Cue the lights. Make it count",
+        "id": "service-work",
+        "type": "work",
+        "headline": "The thinking, made visible.",
         "accent": "",
-        "body": "",
-        "image": "/media/rigging.webp",
+        "body": "Explore a creative concept study.",
+        "image": "",
         "pattern": false,
         "reveal": true,
-        "buttonLabel": "Let’s get producing",
-        "buttonHref": "/contact/",
+        "buttonLabel": "",
+        "buttonHref": "",
         "secondaryLabel": "",
         "secondaryHref": "",
-        "items": [],
+        "items": [
+          {
+            "id": "service-related-study",
+            "title": "Behind every moment",
+            "description": "",
+            "image": "/media/cases/production-hero.webp",
+            "href": "/work/behind-every-moment/"
+          }
+        ],
         "speed": 6,
         "formTitle": "",
         "helperText": ""
@@ -1319,6 +1577,24 @@
         "reveal": true,
         "buttonLabel": "",
         "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "visual",
+        "headline": "What should your",
+        "accent": "next frame say?",
+        "body": "",
+        "image": "/media/rigging.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Let’s get producing",
+        "buttonHref": "/contact/",
         "secondaryLabel": "",
         "secondaryHref": "",
         "items": [],

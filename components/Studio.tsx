@@ -15,6 +15,7 @@ import type {
   Globals,
   ThemeTokens,
 } from "@/lib/types";
+import {servicePage} from "@/lib/concept-12/service-content";
 import StudioCanvas from "./StudioCanvas";
 import {caseExperienceFor} from "@/lib/concept-12/case-content";
 import {publishingBackendAvailable} from "@/lib/deployment";
@@ -62,7 +63,7 @@ export default function Studio() {
   const [busy, setBusy] = useState(false);
   const [dragId, setDragId] = useState<string | null>(null);
   const [undo, setUndo] = useState<PageData[]>([]);
-  const page = pages[slug] || initialPages.home;
+  const page = servicePage(pages[slug] || initialPages.home);
   const section = page.sections.find((s) => s.id === selected);
   const isDemo = mode === "demo";
   useEffect(() => {
@@ -112,7 +113,7 @@ export default function Studio() {
   );
   const updatePage = (fn: (p: PageData) => PageData) => {
     setPages((prev) => {
-      const old = prev[slug];
+      const old = prev[slug]?servicePage(prev[slug]):undefined;
       if (!old) return prev;
       setUndo((hist) => [...hist.slice(-14), structuredClone(old)]);
       return { ...prev, [slug]: fn(structuredClone(old)) };

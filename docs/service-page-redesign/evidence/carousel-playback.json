@@ -1,0 +1,231 @@
+[
+  {
+    "name": "Homepage has no play/pause buttons",
+    "pass": true
+  },
+  {
+    "name": "Homepage has an infinite looping track",
+    "pass": true
+  },
+  {
+    "name": "Homepage automatically scrolls without interaction",
+    "pass": true,
+    "details": {
+      "start": 1289,
+      "after": 1314
+    }
+  },
+  {
+    "name": "Homepage track is measurable",
+    "pass": true,
+    "details": {
+      "box": {
+        "x": 90.71875,
+        "y": 200.140625,
+        "width": 1258.5625,
+        "height": 578.296875
+      }
+    }
+  },
+  {
+    "name": "Homepage freezes during mouse hover",
+    "pass": true,
+    "details": {
+      "hovering": 1314,
+      "hovered": 1314
+    }
+  },
+  {
+    "name": "Homepage resumes after the mouse leaves",
+    "pass": true,
+    "details": {
+      "left": 1317,
+      "resumed": 1340
+    }
+  },
+  {
+    "name": "atmosphere-is-everything has no play/pause buttons",
+    "pass": true
+  },
+  {
+    "name": "atmosphere-is-everything has an infinite looping track",
+    "pass": true
+  },
+  {
+    "name": "atmosphere-is-everything automatically scrolls without interaction",
+    "pass": true,
+    "details": {
+      "start": 3415,
+      "after": 3441
+    }
+  },
+  {
+    "name": "atmosphere-is-everything track is measurable",
+    "pass": true,
+    "details": {
+      "box": {
+        "x": 90.71875,
+        "y": 247.78125,
+        "width": 1258.5625,
+        "height": 482.140625
+      }
+    }
+  },
+  {
+    "name": "atmosphere-is-everything freezes during mouse hover",
+    "pass": true,
+    "details": {
+      "hovering": 3441,
+      "hovered": 3441
+    }
+  },
+  {
+    "name": "atmosphere-is-everything resumes after the mouse leaves",
+    "pass": true,
+    "details": {
+      "left": 3444,
+      "resumed": 3467
+    }
+  },
+  {
+    "name": "made-to-be-remembered has no play/pause buttons",
+    "pass": true
+  },
+  {
+    "name": "made-to-be-remembered has an infinite looping track",
+    "pass": true
+  },
+  {
+    "name": "made-to-be-remembered automatically scrolls without interaction",
+    "pass": true,
+    "details": {
+      "start": 1710,
+      "after": 1735
+    }
+  },
+  {
+    "name": "made-to-be-remembered track is measurable",
+    "pass": true,
+    "details": {
+      "box": {
+        "x": 90.71875,
+        "y": 247.78125,
+        "width": 1258.5625,
+        "height": 482.140625
+      }
+    }
+  },
+  {
+    "name": "made-to-be-remembered freezes during mouse hover",
+    "pass": true,
+    "details": {
+      "hovering": 1736,
+      "hovered": 1736
+    }
+  },
+  {
+    "name": "made-to-be-remembered resumes after the mouse leaves",
+    "pass": true,
+    "details": {
+      "left": 1738,
+      "resumed": 1761
+    }
+  },
+  {
+    "name": "behind-every-moment has no play/pause buttons",
+    "pass": true
+  },
+  {
+    "name": "behind-every-moment has an infinite looping track",
+    "pass": true
+  },
+  {
+    "name": "behind-every-moment automatically scrolls without interaction",
+    "pass": true,
+    "details": {
+      "start": 1710,
+      "after": 1736
+    }
+  },
+  {
+    "name": "behind-every-moment track is measurable",
+    "pass": true,
+    "details": {
+      "box": {
+        "x": 90.71875,
+        "y": 247.78125,
+        "width": 1258.5625,
+        "height": 482.140625
+      }
+    }
+  },
+  {
+    "name": "behind-every-moment freezes during mouse hover",
+    "pass": true,
+    "details": {
+      "hovering": 1736,
+      "hovered": 1736
+    }
+  },
+  {
+    "name": "behind-every-moment resumes after the mouse leaves",
+    "pass": true,
+    "details": {
+      "left": 1739,
+      "resumed": 1762
+    }
+  },
+  {
+    "name": "Mouse drag does not permanently pause homepage autoplay",
+    "pass": true,
+    "details": {
+      "dragStart": 2317,
+      "dragEnd": 2340
+    }
+  },
+  {
+    "name": "Homepage respects reduced motion",
+    "pass": true,
+    "details": {
+      "before": 1283,
+      "after": 1283
+    }
+  },
+  {
+    "name": "Homepage hides no essential controls on reduced motion",
+    "pass": true
+  },
+  {
+    "name": "atmosphere-is-everything respects reduced motion",
+    "pass": true,
+    "details": {
+      "before": 3408,
+      "after": 3408
+    }
+  },
+  {
+    "name": "atmosphere-is-everything hides no essential controls on reduced motion",
+    "pass": true
+  },
+  {
+    "name": "Mobile case-study gallery autoscrolls",
+    "pass": true,
+    "details": {
+      "touchBefore": 1923,
+      "touchAfter": 1948
+    }
+  },
+  {
+    "name": "Mobile gallery resumes after touch and lightbox close",
+    "pass": true,
+    "details": {
+      "touchResumeStart": 1957,
+      "touchResumeEnd": 1983
+    }
+  },
+  {
+    "name": "No uncaught browser errors",
+    "pass": true,
+    "details": []
+  }
+]

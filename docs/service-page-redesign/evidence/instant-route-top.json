@@ -1,0 +1,474 @@
+{
+  "checks": [
+    {
+      "name": "In-page anchors retain CSS smooth-scroll",
+      "pass": true
+    },
+    {
+      "name": "Deep Home to Events starts scrolled down",
+      "pass": true,
+      "detail": {
+        "start": 11961
+      }
+    },
+    {
+      "name": "Deep Home to Events entered an animated curtain",
+      "pass": true,
+      "detail": {
+        "entered": true,
+        "left": true,
+        "atReveal": 0,
+        "scrollAfterReveal": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "Deep Home to Events switched to expected route",
+      "pass": true,
+      "detail": {
+        "actual": "/events-experiences/",
+        "expectedPath": "/events-experiences/"
+      }
+    },
+    {
+      "name": "Deep Home to Events was AT TOP before reveal",
+      "pass": true,
+      "detail": {
+        "atReveal": 0,
+        "start": 11961
+      }
+    },
+    {
+      "name": "Deep Home to Events remains at top during reveal",
+      "pass": true,
+      "detail": {
+        "duringReveal": 0
+      }
+    },
+    {
+      "name": "Deep Home to Events disables native scroll restoration",
+      "pass": true,
+      "detail": "manual"
+    },
+    {
+      "name": "Deep Home to Events never animates scroll after reveal",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "maxScroll": 0
+      }
+    },
+    {
+      "name": "Deep Events to Our Work starts scrolled down",
+      "pass": true,
+      "detail": {
+        "start": 9339
+      }
+    },
+    {
+      "name": "Deep Events to Our Work entered an animated curtain",
+      "pass": true,
+      "detail": {
+        "entered": true,
+        "left": true,
+        "atReveal": 0,
+        "scrollAfterReveal": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "Deep Events to Our Work switched to expected route",
+      "pass": true,
+      "detail": {
+        "actual": "/our-work/",
+        "expectedPath": "/our-work/"
+      }
+    },
+    {
+      "name": "Deep Events to Our Work was AT TOP before reveal",
+      "pass": true,
+      "detail": {
+        "atReveal": 0,
+        "start": 9339
+      }
+    },
+    {
+      "name": "Deep Events to Our Work remains at top during reveal",
+      "pass": true,
+      "detail": {
+        "duringReveal": 0
+      }
+    },
+    {
+      "name": "Deep Events to Our Work disables native scroll restoration",
+      "pass": true,
+      "detail": "manual"
+    },
+    {
+      "name": "Deep Events to Our Work never animates scroll after reveal",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "maxScroll": 0
+      }
+    },
+    {
+      "name": "Deep Work to Studio starts scrolled down",
+      "pass": true,
+      "detail": {
+        "start": 2144
+      }
+    },
+    {
+      "name": "Deep Work to Studio entered an animated curtain",
+      "pass": true,
+      "detail": {
+        "entered": true,
+        "left": true,
+        "atReveal": 0,
+        "scrollAfterReveal": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "Deep Work to Studio switched to expected route",
+      "pass": true,
+      "detail": {
+        "actual": "/our-studio/",
+        "expectedPath": "/our-studio/"
+      }
+    },
+    {
+      "name": "Deep Work to Studio was AT TOP before reveal",
+      "pass": true,
+      "detail": {
+        "atReveal": 0,
+        "start": 2144
+      }
+    },
+    {
+      "name": "Deep Work to Studio remains at top during reveal",
+      "pass": true,
+      "detail": {
+        "duringReveal": 0
+      }
+    },
+    {
+      "name": "Deep Work to Studio disables native scroll restoration",
+      "pass": true,
+      "detail": "manual"
+    },
+    {
+      "name": "Deep Work to Studio never animates scroll after reveal",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "maxScroll": 0
+      }
+    },
+    {
+      "name": "Back from deep Studio to Work starts scrolled down",
+      "pass": true,
+      "detail": {
+        "start": 3622
+      }
+    },
+    {
+      "name": "Back from deep Studio to Work entered an animated curtain",
+      "pass": true,
+      "detail": {
+        "entered": true,
+        "left": true,
+        "atReveal": 0,
+        "scrollAfterReveal": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "Back from deep Studio to Work switched to expected route",
+      "pass": true,
+      "detail": {
+        "actual": "/our-work/",
+        "expectedPath": "/our-work/"
+      }
+    },
+    {
+      "name": "Back from deep Studio to Work was AT TOP before reveal",
+      "pass": true,
+      "detail": {
+        "atReveal": 0,
+        "start": 3622
+      }
+    },
+    {
+      "name": "Back from deep Studio to Work remains at top during reveal",
+      "pass": true,
+      "detail": {
+        "duringReveal": 0
+      }
+    },
+    {
+      "name": "Back from deep Studio to Work disables native scroll restoration",
+      "pass": true,
+      "detail": "manual"
+    },
+    {
+      "name": "Back from deep Studio to Work never animates scroll after reveal",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "maxScroll": 0
+      }
+    },
+    {
+      "name": "Forward from deep Work to Studio starts scrolled down",
+      "pass": true,
+      "detail": {
+        "start": 2144
+      }
+    },
+    {
+      "name": "Forward from deep Work to Studio entered an animated curtain",
+      "pass": true,
+      "detail": {
+        "entered": true,
+        "left": true,
+        "atReveal": 0,
+        "scrollAfterReveal": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "Forward from deep Work to Studio switched to expected route",
+      "pass": true,
+      "detail": {
+        "actual": "/our-studio/",
+        "expectedPath": "/our-studio/"
+      }
+    },
+    {
+      "name": "Forward from deep Work to Studio was AT TOP before reveal",
+      "pass": true,
+      "detail": {
+        "atReveal": 0,
+        "start": 2144
+      }
+    },
+    {
+      "name": "Forward from deep Work to Studio remains at top during reveal",
+      "pass": true,
+      "detail": {
+        "duringReveal": 0
+      }
+    },
+    {
+      "name": "Forward from deep Work to Studio disables native scroll restoration",
+      "pass": true,
+      "detail": "manual"
+    },
+    {
+      "name": "Forward from deep Work to Studio never animates scroll after reveal",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "maxScroll": 0
+      }
+    },
+    {
+      "name": "Deep case study to related case starts scrolled down",
+      "pass": true,
+      "detail": {
+        "start": 6852
+      }
+    },
+    {
+      "name": "Deep case study to related case entered an animated curtain",
+      "pass": true,
+      "detail": {
+        "entered": true,
+        "left": true,
+        "atReveal": 0,
+        "scrollAfterReveal": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "Deep case study to related case switched to expected route",
+      "pass": true,
+      "detail": {
+        "actual": "/work/made-to-be-remembered/",
+        "expectedPath": "/work/made-to-be-remembered/"
+      }
+    },
+    {
+      "name": "Deep case study to related case was AT TOP before reveal",
+      "pass": true,
+      "detail": {
+        "atReveal": 0,
+        "start": 6852
+      }
+    },
+    {
+      "name": "Deep case study to related case remains at top during reveal",
+      "pass": true,
+      "detail": {
+        "duringReveal": 0
+      }
+    },
+    {
+      "name": "Deep case study to related case disables native scroll restoration",
+      "pass": true,
+      "detail": "manual"
+    },
+    {
+      "name": "Deep case study to related case never animates scroll after reveal",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "maxScroll": 0
+      }
+    },
+    {
+      "name": "Deep case study to Home starts scrolled down",
+      "pass": true,
+      "detail": {
+        "start": 6852
+      }
+    },
+    {
+      "name": "Deep case study to Home entered an animated curtain",
+      "pass": true,
+      "detail": {
+        "entered": true,
+        "left": true,
+        "atReveal": 0,
+        "scrollAfterReveal": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "Deep case study to Home switched to expected route",
+      "pass": true,
+      "detail": {
+        "actual": "/",
+        "expectedPath": "/"
+      }
+    },
+    {
+      "name": "Deep case study to Home was AT TOP before reveal",
+      "pass": true,
+      "detail": {
+        "atReveal": 0,
+        "start": 6852
+      }
+    },
+    {
+      "name": "Deep case study to Home remains at top during reveal",
+      "pass": true,
+      "detail": {
+        "duringReveal": 0
+      }
+    },
+    {
+      "name": "Deep case study to Home disables native scroll restoration",
+      "pass": true,
+      "detail": "manual"
+    },
+    {
+      "name": "Deep case study to Home never animates scroll after reveal",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "maxScroll": 0
+      }
+    },
+    {
+      "name": "Current-page navigation resets immediately",
+      "pass": true,
+      "detail": {
+        "beforeSame": 11961,
+        "same": 0
+      }
+    },
+    {
+      "name": "Page still uses smooth anchor scrolling",
+      "pass": true
+    },
+    {
+      "name": "Mobile deep Home to Creative starts scrolled down",
+      "pass": true,
+      "detail": {
+        "start": 8512
+      }
+    },
+    {
+      "name": "Mobile deep Home to Creative entered an animated curtain",
+      "pass": true,
+      "detail": {
+        "entered": true,
+        "left": true,
+        "atReveal": 0,
+        "scrollAfterReveal": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "Mobile deep Home to Creative switched to expected route",
+      "pass": true,
+      "detail": {
+        "actual": "/creative-design/",
+        "expectedPath": "/creative-design/"
+      }
+    },
+    {
+      "name": "Mobile deep Home to Creative was AT TOP before reveal",
+      "pass": true,
+      "detail": {
+        "atReveal": 0,
+        "start": 8512
+      }
+    },
+    {
+      "name": "Mobile deep Home to Creative remains at top during reveal",
+      "pass": true,
+      "detail": {
+        "duringReveal": 0
+      }
+    },
+    {
+      "name": "Mobile deep Home to Creative disables native scroll restoration",
+      "pass": true,
+      "detail": "manual"
+    },
+    {
+      "name": "Mobile deep Home to Creative never animates scroll after reveal",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "maxScroll": 0
+      }
+    },
+    {
+      "name": "Reduced-motion navigation still starts at top",
+      "pass": true,
+      "detail": {
+        "reducedBefore": 4930,
+        "after": 0
+      }
+    },
+    {
+      "name": "No browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}
