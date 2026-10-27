@@ -8,10 +8,6 @@
     "buttonHref": "/contact/",
     "links": [
       {
-        "label": "What we do",
-        "href": "/events-experiences/"
-      },
-      {
         "label": "Our studio",
         "href": "/our-studio/"
       },
@@ -26,19 +22,19 @@
     ],
     "services": [
       {
-        "label": "Events & experiences",
+        "label": "Events & Experiences",
         "href": "/events-experiences/"
       },
       {
-        "label": "Creative & design",
+        "label": "Creative & Design",
         "href": "/creative-design/"
       },
       {
-        "label": "Digital & marketing",
+        "label": "Digital & Marketing",
         "href": "/digital-marketing/"
       },
       {
-        "label": "Content & production",
+        "label": "Content & Production",
         "href": "/content-production/"
       }
     ]
