@@ -1,5 +1,6 @@
 import { refineHeadingPeriods } from "./typography";
 import { renderImmersiveCase } from "./immersive-case";
+import { caseExperienceFor } from "./case-content";
 import type { Block, Globals, PageData } from "@/lib/types";
 import { defaultPages, defaultGlobals } from "@/lib/data";
 import { safeHref } from "@/lib/safe";
@@ -508,6 +509,25 @@ export function bindConcept(
         if (e) {
           e.href = safeHref(x.href);
           delete e.dataset.routeKey;
+        }
+      }
+
+      // Featured project photography comes from the case study itself, not
+      // a second, potentially stale copy in homepage or Our Work content.
+      // The matching project controls its hero image on both index pages.
+      const linkedRoute = card.matches("a")
+        ? (card as HTMLAnchorElement).getAttribute("href")
+        : card.querySelector<HTMLAnchorElement>("a")?.getAttribute("href");
+      const project = Object.values(catalog).find((p) =>
+        p.route.startsWith("/work/") &&
+        (p.route === linkedRoute || p.route === x.href)
+      );
+      if (project) {
+        const featured = safeHref(caseExperienceFor(project).openingImage);
+        const photo = card.querySelector<HTMLImageElement>("img");
+        if (photo && featured !== "#") {
+          photo.setAttribute("src", featured);
+          photo.alt = project.title + " project featured photograph";
         }
       }
     });
