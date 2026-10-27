@@ -8,7 +8,7 @@ const routes=['atmosphere-is-everything','made-to-be-remembered','behind-every-m
 const pageUrl=id=>'/work/'+id+'/';
 const width=1440;
 (async()=>{
- const browser=await chromium.launch({channel:'chrome',headless:true});
+ const browser=await chromium.launch({channel:process.env.SHOWSET_PLAYWRIGHT_CHANNEL||'chrome',headless:true});
  try {
   const context=await browser.newContext({viewport:{width,height:900}});
   const page=await context.newPage();
@@ -25,6 +25,10 @@ const width=1440;
   await page.waitForSelector('[data-concept-ready="true"]');
   const cards=page.locator('#case-rail > [data-case-slide]');
   ck('Home has all 3 unique original cards',await cards.count()===3);
+  // These images are intentionally lazy-loaded; scroll to the rail before
+  // checking the decoded asset instead of racing the browser's loader.
+  await page.locator('#case-rail').scrollIntoViewIfNeeded();
+  await page.waitForFunction(()=>[...document.querySelectorAll('#case-rail > [data-case-slide] img')].every(img=>img.complete&&img.naturalWidth>0),null,{timeout:10000});
   for(let i=0;i<routes.length;i++){
    const src=await cards.nth(i).locator('img').getAttribute('src');
    ck('Home featured photo matches '+routes[i],src===expected[routes[i]],src);
@@ -77,6 +81,8 @@ const width=1440;
   ck('Our Work has all 3 cases',await work.count()===3);
   for(let i=0;i<routes.length;i++){
    const src=await work.nth(i).locator('img').getAttribute('src');
+   await work.nth(i).scrollIntoViewIfNeeded();
+   await page.waitForFunction(index=>{const img=document.querySelectorAll('.case-index-item img')[index];return !!img&&img.complete&&img.naturalWidth>0},i,{timeout:10000});
    ck('Our Work featured photo matches '+routes[i],src===expected[routes[i]],src);
    ck('Our Work image loads '+routes[i],await work.nth(i).locator('img').evaluate(i=>i.complete&&i.naturalWidth>0));
   }
