@@ -55,4 +55,6 @@ jobs:
           path: |
             qa-results/home-work-carousel.json
             qa-results/header-navigation-alignment.json
+            qa-results/header-desktop.png
+            qa-results/header-mobile.png
           if-no-files-found: ignore
