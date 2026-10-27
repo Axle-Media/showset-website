@@ -8,7 +8,7 @@
  /* Identical side tracks keep the six links centred on the viewport,
     independently of the logo and CTA widths. */
  .site-header .header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:20px}
- .site-header .desktop-navigation{display:flex;justify-self:center;margin:0;white-space:nowrap;gap:clamp(20px,1.5vw,28px)}
+ .site-header .desktop-navigation{display:flex;justify-self:center;margin:0;white-space:nowrap;gap:clamp(30px,2.2vw,42px)}
  .site-header .desktop-navigation>.nav-text{font-size:14px}
  .site-header .header-inner>.brand{justify-self:start;min-width:0}
  .site-header .header-cta{justify-self:end}
