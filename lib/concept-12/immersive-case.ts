@@ -45,7 +45,7 @@ function storyFor(page:PageData):CaseExperience {
 function chapter(c:CaseStoryChapter,i:number) {
  const photo=primaryChapterImage(c);
  const image=photo?'<figure class="case-chapter-photo">'+img(photo,c.imageAlt||c.heading+' photograph')+'</figure>':"";
- return '<article class="case-chapter" data-case-chapter="'+i+'"><div class="case-chapter-copy"><span class="case-chapter-eyebrow">'+["THE BRIEF","THE INTENTION","THE APPROACH"][i]+'</span>'+heading(c.heading)+'<div class="case-body-copy">'+paras(c.body)+'</div></div>'+image+'</article>';
+ return '<article class="case-chapter" data-case-chapter="'+i+'"><div class="case-chapter-reading"><div class="case-chapter-copy"><span class="case-chapter-eyebrow">'+["THE BRIEF","THE INTENTION","THE APPROACH"][i]+'</span>'+heading(c.heading)+'<div class="case-body-copy">'+paras(c.body)+'</div></div></div>'+image+'</article>';
 }
 function storyVisual(chapters:CaseStoryChapter[]) {
  return '<figure class="case-story-visual" aria-label="Chapter photography">'+chapters.map((c,i)=>{

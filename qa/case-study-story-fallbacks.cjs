@@ -11,8 +11,8 @@ const check=(name,pass)=>{checks.push({name,pass:!!pass});console.log(pass?'PASS
    const page=await browser.newPage({viewport});page.on('pageerror',e=>errors.push(e.message));
    await page.goto(base+'/work/atmosphere-is-everything/');
    await page.waitForSelector('[data-case-ready=true]');await page.evaluate(()=>document.fonts.ready);
-   check('Readable fallback '+viewport.width+'x'+viewport.height,await page.locator('[data-case-experience]').evaluate(e=>e.hasAttribute('data-case-flow')));
-   check('All chapters visible in fallback '+viewport.height,await page.locator('[data-case-chapter]').evaluateAll(es=>es.every(e=>!e.inert&&getComputedStyle(e).visibility==='visible'&&getComputedStyle(e).opacity==='1')));
+   check('Short desktop remains pinned '+viewport.width+'x'+viewport.height,await page.locator('[data-case-experience]').evaluate(e=>!e.hasAttribute('data-case-flow')));
+   check('Only one short-screen chapter active '+viewport.height,await page.locator('[data-case-chapter]').evaluateAll(es=>es.filter(e=>!e.inert&&e.getAttribute('aria-hidden')!=='true').length===1));
    await page.locator('[data-case-chapter="0"]').scrollIntoViewIfNeeded();
    await page.screenshot({path:path.join(out,'short-'+viewport.width+'x'+viewport.height+'.png')});await page.close();
   }

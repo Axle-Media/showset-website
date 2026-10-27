@@ -45,7 +45,7 @@
 .case-body-copy p{max-width:630px}
 /* One stationary frame, with the same restrained opacity philosophy as services.
    Full-opacity lower layers prevent dark dips during the scroll-scrubbed blend. */
-.case-story-visual{display:none;position:absolute;right:0;top:50%;translate:0 -50%;width:calc((100% - var(--case-story-gap))/2);height:min(62svh,680px,100%);margin:0;overflow:hidden;border-radius:6px;background:var(--navy)}
+.case-story-visual{display:none;position:absolute;right:0;top:0;width:51%;height:100%;margin:0;overflow:hidden;border-radius:0;background:var(--navy)}
 .case-story-image{position:absolute;inset:0;opacity:0;background:var(--navy);will-change:opacity}
 .case-story-image:first-child{opacity:1}
 .case-story-image img{width:100%;height:100%;object-fit:cover}
@@ -54,12 +54,13 @@
 .case-chapter-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .case-experience[data-case-ready="true"]:not([data-case-flow]) .case-story-visual{display:block}
 .case-experience[data-case-ready="true"]:not([data-case-flow]) .case-chapter-photo{display:none}
-.case-experience[data-case-ready="true"] .case-scroll-narrative{height:360svh}
-.case-experience[data-case-ready="true"] .case-narrative-stage{height:100svh;min-height:0;position:sticky;top:0;overflow:hidden}
-.case-experience[data-case-ready="true"] .case-chapter-stack{height:100%}
+.case-experience[data-case-ready="true"] .case-scroll-narrative{height:calc(360svh + var(--case-story-extra,0px))}
+.case-experience[data-case-ready="true"] .case-narrative-stage{height:100svh;min-height:0;position:sticky;top:0;overflow:hidden;padding:0}
+.case-experience[data-case-ready="true"]:not([data-case-flow]) .case-chapter-stack{height:100%;max-width:none}
 .case-experience[data-case-ready="true"] .case-chapter{position:absolute;inset:0;min-height:0;margin:0;padding:0;opacity:0;visibility:hidden;pointer-events:none;will-change:opacity}
-.case-experience[data-case-ready="true"]:not([data-case-flow]) .case-chapter{align-content:start}
-.case-experience[data-case-ready="true"]:not([data-case-flow]) .case-chapter-copy{align-self:start;margin-top:var(--case-copy-top,0px)}
+.case-experience[data-case-ready="true"]:not([data-case-flow]) .case-chapter{display:block;border:0}
+.case-experience[data-case-ready="true"]:not([data-case-flow]) .case-chapter-reading{position:absolute;top:calc(var(--header-height) + var(--case-stage-inset));bottom:var(--case-stage-bottom);left:var(--gutter);right:calc(51% + 4vw);overflow:clip}
+.case-experience[data-case-ready="true"]:not([data-case-flow]) .case-chapter-copy{margin-top:var(--case-copy-top,0px);will-change:transform}
 .case-experience[data-case-ready="true"] .case-chapter:first-child{opacity:1;visibility:visible}
 .case-photo-gallery{position:relative;overflow:hidden;background:var(--deep);width:100%;min-width:0;padding-top:clamp(60px,7vw,100px);padding-bottom:clamp(60px,7vw,100px)}
 .concept-12-root .case-photo-gallery>.case-editorial-heading{font-size:var(--v12-h2);letter-spacing:var(--v12-head-tracking)!important;line-height:var(--refine-heading-leading)!important;font-weight:var(--refine-heading-weight);margin:0 0 clamp(32px,4.1vw,60px)}
@@ -141,9 +142,9 @@ body.case-lightbox-open{overflow:hidden}
  .case-experience{--case-section-top:95px;--case-section-bottom:100px}
  .case-primary-heading .wipe-line>span{white-space:nowrap}
 }
-/* Content fit, not animation, determines whether a stage can be pinned. */
+/* Mobile and reduced motion use the natural reading-order adaptation. */
 .case-experience[data-case-flow] .case-scroll-narrative{height:auto}
-.case-experience[data-case-flow] .case-narrative-stage{position:relative;height:auto;min-height:0;overflow:visible;padding-top:0;padding-bottom:0}
+.case-experience[data-case-flow] .case-narrative-stage{position:relative;height:auto;min-height:0;overflow:visible;padding:0 var(--gutter)}
 .case-experience[data-case-flow] .case-chapter-stack{height:auto}
 .case-experience[data-case-flow] .case-chapter{position:relative;min-height:0;opacity:1!important;visibility:visible!important;pointer-events:auto;align-content:start;align-items:start;padding:var(--case-section-top) 0 var(--case-section-bottom);border-bottom:1px solid var(--line)}
 .case-experience[data-case-flow] .case-chapter:last-of-type{border-bottom:none}

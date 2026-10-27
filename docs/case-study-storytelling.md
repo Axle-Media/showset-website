@@ -1,5 +1,7 @@
 # Case-study interactive storytelling refinement
 
+> Historical report at 01f5d45. The [corrected pinned split](case-study-pinned-split.md) supersedes its inset image card and desktop content-fit fallback. Desktop now retains the pinned sequence for long copy and short windows.
+
 This update continues PR #20 on `fix/case-study-document-audit` from `9763abd`. It supersedes the four-photo collage acceptance in the [previous audit](case-study-final-audit.md); that report and its evidence remain historical records.
 
 ## Result

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Short desktop remains pinned 1440x650",
+    "pass": true
+  },
+  {
+    "name": "Only one short-screen chapter active 650",
+    "pass": true
+  },
+  {
+    "name": "Short desktop remains pinned 1024x690",
+    "pass": true
+  },
+  {
+    "name": "Only one short-screen chapter active 690",
+    "pass": true
+  },
+  {
+    "name": "Native touch scroll advances readable mobile page",
+    "pass": true
+  },
+  {
+    "name": "Touch flow keeps all chapters accessible",
+    "pass": true
+  },
+  {
+    "name": "Live reduced motion exposes all text",
+    "pass": true
+  },
+  {
+    "name": "Motion restores one shared frame",
+    "pass": true
+  },
+  {
+    "name": "No fallback runtime exceptions",
+    "pass": true
+  }
+]
