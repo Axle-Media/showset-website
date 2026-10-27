@@ -96,6 +96,39 @@ const width=1440;
    ck('Our Work featured photo matches '+routes[i],src===expected[routes[i]],src);
    ck('Our Work image loads '+routes[i],await work.nth(i).locator('img').evaluate(i=>i.complete&&i.naturalWidth>0));
   }
+  // Local Studio publish preview: modifying a case study's opening photo must
+  // update both indices without editing their duplicated image fields.
+  // Also exercise a future case study explicitly linked from each work section.
+  const published=JSON.parse(fs.readFileSync('content/pages.json','utf8'));
+  published['made-to-be-remembered'].caseExperience.openingImage='/media/cases/production-hero.webp';
+  const next=structuredClone(published['made-to-be-remembered']);
+  next.slug='future-creative-exploration';
+  next.route='/work/future-creative-exploration/';
+  next.title='Future creative exploration';
+  next.caseExperience.openingImage='/media/cases/identity-hero.webp';
+  published[next.slug]=next;
+  for(const index of [published.home,published['our-work']]){
+   const section=index.sections.find(section=>section.type==='work');
+   section.items.push({...structuredClone(section.items[0]),title:next.title,href:next.route,image:'/media/evening.webp'});
+  }
+  const preview=await browser.newContext({viewport:{width,height:900}});
+  await preview.addInitScript(data=>localStorage.setItem('showset-preview-published-pages',JSON.stringify(data)),published);
+  const previewPage=await preview.newPage();
+  previewPage.on('pageerror',e=>errors.push(e.message));
+  await previewPage.goto(base+'/');
+  await previewPage.waitForSelector('[data-concept-ready="true"]');
+  await previewPage.waitForFunction(()=>document.querySelectorAll('#case-rail > [data-case-slide]').length===4);
+  const homePreview=previewPage.locator('#case-rail > [data-case-slide]');
+  ck('Studio preview picks up a modified case opening image',await homePreview.nth(1).locator('img').getAttribute('src')==='/media/cases/production-hero.webp');
+  ck('Future case uses its own opening image on Home',await homePreview.nth(3).locator('img').getAttribute('src')==='/media/cases/identity-hero.webp');
+  ck('Future homepage card keeps its project name and period',(await homePreview.nth(3).getAttribute('aria-label'))==='Explore creative study: '+next.title&&await homePreview.nth(3).locator('h3 .teal-dot').count()===1);
+  await previewPage.goto(base+'/our-work/');
+  await previewPage.waitForSelector('[data-concept-ready="true"]');
+  await previewPage.waitForFunction(()=>document.querySelectorAll('.case-index-item').length===4);
+  const workPreview=previewPage.locator('.case-index-item');
+  ck('Studio preview picks up modified opening image on Our Work',await workPreview.nth(1).locator('img').getAttribute('src')==='/media/cases/production-hero.webp');
+  ck('Future case uses its own opening image on Our Work',await workPreview.nth(3).locator('img').getAttribute('src')==='/media/cases/identity-hero.webp');
+  await preview.close();
   ck('No browser errors',!errors.length,errors);
   await context.close();
  }finally {
