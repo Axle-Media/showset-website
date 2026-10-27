@@ -1,0 +1,135 @@
+[
+  {
+    "name": "Shared renderer updates story events-experiences",
+    "pass": true
+  },
+  {
+    "name": "Scene image updates events-experiences",
+    "pass": true
+  },
+  {
+    "name": "Section styling and motion editable events-experiences",
+    "pass": true
+  },
+  {
+    "name": "Shared renderer updates story creative-design",
+    "pass": true
+  },
+  {
+    "name": "Scene image updates creative-design",
+    "pass": true
+  },
+  {
+    "name": "Section styling and motion editable creative-design",
+    "pass": true
+  },
+  {
+    "name": "Shared renderer updates story digital-marketing",
+    "pass": true
+  },
+  {
+    "name": "Section styling and motion editable digital-marketing",
+    "pass": true
+  },
+  {
+    "name": "Shared renderer updates story content-production",
+    "pass": true
+  },
+  {
+    "name": "Scene image updates content-production",
+    "pass": true
+  },
+  {
+    "name": "Section styling and motion editable content-production",
+    "pass": true
+  },
+  {
+    "name": "Saved draft survives reload events-experiences",
+    "pass": true
+  },
+  {
+    "name": "Saved draft survives reload creative-design",
+    "pass": true
+  },
+  {
+    "name": "Saved draft survives reload digital-marketing",
+    "pass": true
+  },
+  {
+    "name": "Saved draft survives reload content-production",
+    "pass": true
+  },
+  {
+    "name": "Published preview uses Studio content events-experiences",
+    "pass": true
+  },
+  {
+    "name": "Published section still mode is readable events-experiences",
+    "pass": true
+  },
+  {
+    "name": "Published preview uses Studio content creative-design",
+    "pass": true
+  },
+  {
+    "name": "Published section still mode is readable creative-design",
+    "pass": true
+  },
+  {
+    "name": "Published preview uses Studio content digital-marketing",
+    "pass": true
+  },
+  {
+    "name": "Published section still mode is readable digital-marketing",
+    "pass": true
+  },
+  {
+    "name": "Published preview uses Studio content content-production",
+    "pass": true
+  },
+  {
+    "name": "Published section still mode is readable content-production",
+    "pass": true
+  },
+  {
+    "name": "Unedited homepage and cases preserved",
+    "pass": true
+  },
+  {
+    "name": "Legacy content and additive sections events-experiences",
+    "pass": true
+  },
+  {
+    "name": "Legacy update preserves capability IDs events-experiences",
+    "pass": true
+  },
+  {
+    "name": "Legacy content and additive sections creative-design",
+    "pass": true
+  },
+  {
+    "name": "Legacy update preserves capability IDs creative-design",
+    "pass": true
+  },
+  {
+    "name": "Legacy content and additive sections digital-marketing",
+    "pass": true
+  },
+  {
+    "name": "Legacy update preserves capability IDs digital-marketing",
+    "pass": true
+  },
+  {
+    "name": "Legacy content and additive sections content-production",
+    "pass": true
+  },
+  {
+    "name": "Legacy update preserves capability IDs content-production",
+    "pass": true
+  },
+  {
+    "name": "No Studio runtime exceptions",
+    "pass": true,
+    "detail": []
+  }
+]

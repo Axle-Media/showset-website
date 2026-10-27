@@ -1,0 +1,78 @@
+[
+  {
+    "slug": "events-experiences",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "slug": "creative-design",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "slug": "digital-marketing",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "slug": "content-production",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "slug": "events-experiences",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "slug": "events-experiences",
+    "width": 390,
+    "touch": {
+      "y": 2488,
+      "pinned": "false",
+      "overflow": false
+    }
+  },
+  {
+    "slug": "creative-design",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "slug": "creative-design",
+    "width": 390,
+    "touch": {
+      "y": 2497,
+      "pinned": "false",
+      "overflow": false
+    }
+  },
+  {
+    "slug": "digital-marketing",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "slug": "digital-marketing",
+    "width": 390,
+    "touch": {
+      "y": 2506,
+      "pinned": "false",
+      "overflow": false
+    }
+  },
+  {
+    "slug": "content-production",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "slug": "content-production",
+    "width": 390,
+    "touch": {
+      "y": 2510,
+      "pinned": "false",
+      "overflow": false
+    }
+  }
+]

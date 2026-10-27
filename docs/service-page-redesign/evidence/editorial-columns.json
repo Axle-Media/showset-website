@@ -1,0 +1,1972 @@
+[
+  {
+    "name": "Editorial row exists Home manifesto @1440",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Home manifesto @1440",
+    "pass": true,
+    "detail": [
+      603.359,
+      603.375
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Home manifesto @1440",
+    "pass": true,
+    "detail": {
+      "width": 603.375,
+      "rightTrack": 603.375,
+      "target": 603.375
+    }
+  },
+  {
+    "name": "Columns do not overlap Home manifesto @1440",
+    "pass": true,
+    "detail": {
+      "headingEnd": 627.046875,
+      "copyStart": 745.90625
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Home manifesto @1440",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Home featured work @1440",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Home featured work @1440",
+    "pass": true,
+    "detail": [
+      603.359,
+      603.375
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Home featured work @1440",
+    "pass": true,
+    "detail": {
+      "width": 603.375,
+      "rightTrack": 603.375,
+      "target": 603.375
+    }
+  },
+  {
+    "name": "Columns do not overlap Home featured work @1440",
+    "pass": true,
+    "detail": {
+      "headingEnd": 508.328125,
+      "copyStart": 745.90625
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Home featured work @1440",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow / @1440",
+    "pass": true,
+    "detail": {
+      "width": 1440,
+      "documentWidth": 1440
+    }
+  },
+  {
+    "name": "Approved hero headline unchanged",
+    "pass": true,
+    "detail": "Great ideas move people."
+  },
+  {
+    "name": "Editorial row exists Studio belief @1440",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Studio belief @1440",
+    "pass": true,
+    "detail": [
+      573.188,
+      633.531
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Studio belief @1440",
+    "pass": true,
+    "detail": {
+      "width": 633.53125,
+      "rightTrack": 633.531,
+      "target": 633.531
+    }
+  },
+  {
+    "name": "Columns do not overlap Studio belief @1440",
+    "pass": true,
+    "detail": {
+      "headingEnd": 663.90625,
+      "copyStart": 715.734375
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio belief @1440",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Studio partnerships @1440",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Studio partnerships @1440",
+    "pass": true,
+    "detail": [
+      573.188,
+      633.531
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Studio partnerships @1440",
+    "pass": true,
+    "detail": {
+      "width": 633.53125,
+      "rightTrack": 633.531,
+      "target": 633.531
+    }
+  },
+  {
+    "name": "Columns do not overlap Studio partnerships @1440",
+    "pass": true,
+    "detail": {
+      "headingEnd": 663.90625,
+      "copyStart": 715.734375
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio partnerships @1440",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Studio FAQ @1440",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Studio FAQ @1440",
+    "pass": true,
+    "detail": [
+      573.188,
+      633.531
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Studio FAQ @1440",
+    "pass": true,
+    "detail": {
+      "width": 633.53125,
+      "rightTrack": 633.531,
+      "target": 633.531
+    }
+  },
+  {
+    "name": "Columns do not overlap Studio FAQ @1440",
+    "pass": true,
+    "detail": {
+      "headingEnd": 663.90625,
+      "copyStart": 715.734375
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio FAQ @1440",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Studio closing invitation @1440",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Studio closing invitation @1440",
+    "pass": true,
+    "detail": [
+      564.375,
+      623.797
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Studio closing invitation @1440",
+    "pass": true,
+    "detail": {
+      "width": 623.796875,
+      "rightTrack": 623.797,
+      "target": 623.797
+    }
+  },
+  {
+    "name": "Columns do not overlap Studio closing invitation @1440",
+    "pass": true,
+    "detail": {
+      "headingEnd": 655.09375,
+      "copyStart": 706.921875
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio closing invitation @1440",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /our-studio/ @1440",
+    "pass": true,
+    "detail": {
+      "width": 1440,
+      "documentWidth": 1440
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @1440",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Service feature @1440",
+    "pass": true,
+    "detail": [
+      603.359,
+      603.375
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Service feature @1440",
+    "pass": true,
+    "detail": {
+      "width": 603.375,
+      "rightTrack": 603.375,
+      "target": 603.375
+    }
+  },
+  {
+    "name": "Columns do not overlap Service feature @1440",
+    "pass": true,
+    "detail": {
+      "headingEnd": 694.078125,
+      "copyStart": 745.90625
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @1440",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /events-experiences/ @1440",
+    "pass": true,
+    "detail": {
+      "width": 1440,
+      "documentWidth": 1440
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @1440",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Service feature @1440",
+    "pass": true,
+    "detail": [
+      603.359,
+      603.375
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Service feature @1440",
+    "pass": true,
+    "detail": {
+      "width": 603.375,
+      "rightTrack": 603.375,
+      "target": 603.375
+    }
+  },
+  {
+    "name": "Columns do not overlap Service feature @1440",
+    "pass": true,
+    "detail": {
+      "headingEnd": 694.078125,
+      "copyStart": 745.90625
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @1440",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /creative-design/ @1440",
+    "pass": true,
+    "detail": {
+      "width": 1440,
+      "documentWidth": 1440
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @1440",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Service feature @1440",
+    "pass": true,
+    "detail": [
+      603.359,
+      603.375
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Service feature @1440",
+    "pass": true,
+    "detail": {
+      "width": 603.375,
+      "rightTrack": 603.375,
+      "target": 603.375
+    }
+  },
+  {
+    "name": "Columns do not overlap Service feature @1440",
+    "pass": true,
+    "detail": {
+      "headingEnd": 694.078125,
+      "copyStart": 745.90625
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @1440",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /digital-marketing/ @1440",
+    "pass": true,
+    "detail": {
+      "width": 1440,
+      "documentWidth": 1440
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @1440",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Service feature @1440",
+    "pass": true,
+    "detail": [
+      603.359,
+      603.375
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Service feature @1440",
+    "pass": true,
+    "detail": {
+      "width": 603.375,
+      "rightTrack": 603.375,
+      "target": 603.375
+    }
+  },
+  {
+    "name": "Columns do not overlap Service feature @1440",
+    "pass": true,
+    "detail": {
+      "headingEnd": 694.078125,
+      "copyStart": 745.90625
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @1440",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /content-production/ @1440",
+    "pass": true,
+    "detail": {
+      "width": 1440,
+      "documentWidth": 1440
+    }
+  },
+  {
+    "name": "Editorial row exists Home manifesto @1600",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Home manifesto @1600",
+    "pass": true,
+    "detail": [
+      671.203,
+      671.203
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Home manifesto @1600",
+    "pass": true,
+    "detail": {
+      "width": 671.203125,
+      "rightTrack": 671.203,
+      "target": 671.203
+    }
+  },
+  {
+    "name": "Columns do not overlap Home manifesto @1600",
+    "pass": true,
+    "detail": {
+      "headingEnd": 636.328125,
+      "copyStart": 828.796875
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Home manifesto @1600",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Home featured work @1600",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Home featured work @1600",
+    "pass": true,
+    "detail": [
+      671.203,
+      671.203
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Home featured work @1600",
+    "pass": true,
+    "detail": {
+      "width": 671.203125,
+      "rightTrack": 671.203,
+      "target": 671.203
+    }
+  },
+  {
+    "name": "Columns do not overlap Home featured work @1600",
+    "pass": true,
+    "detail": {
+      "headingEnd": 517.609375,
+      "copyStart": 828.796875
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Home featured work @1600",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow / @1600",
+    "pass": true,
+    "detail": {
+      "width": 1600,
+      "documentWidth": 1600
+    }
+  },
+  {
+    "name": "Editorial row exists Studio belief @1600",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Studio belief @1600",
+    "pass": true,
+    "detail": [
+      637.641,
+      704.75
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Studio belief @1600",
+    "pass": true,
+    "detail": {
+      "width": 704.75,
+      "rightTrack": 704.75,
+      "target": 704.75
+    }
+  },
+  {
+    "name": "Columns do not overlap Studio belief @1600",
+    "pass": true,
+    "detail": {
+      "headingEnd": 737.640625,
+      "copyStart": 795.234375
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio belief @1600",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Studio partnerships @1600",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Studio partnerships @1600",
+    "pass": true,
+    "detail": [
+      637.641,
+      704.75
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Studio partnerships @1600",
+    "pass": true,
+    "detail": {
+      "width": 704.75,
+      "rightTrack": 704.75,
+      "target": 704.75
+    }
+  },
+  {
+    "name": "Columns do not overlap Studio partnerships @1600",
+    "pass": true,
+    "detail": {
+      "headingEnd": 737.640625,
+      "copyStart": 795.234375
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio partnerships @1600",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Studio FAQ @1600",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Studio FAQ @1600",
+    "pass": true,
+    "detail": [
+      637.641,
+      704.75
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Studio FAQ @1600",
+    "pass": true,
+    "detail": {
+      "width": 704.75,
+      "rightTrack": 704.75,
+      "target": 704.75
+    }
+  },
+  {
+    "name": "Columns do not overlap Studio FAQ @1600",
+    "pass": true,
+    "detail": {
+      "headingEnd": 737.640625,
+      "copyStart": 795.234375
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio FAQ @1600",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Studio closing invitation @1600",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Studio closing invitation @1600",
+    "pass": true,
+    "detail": [
+      561.641,
+      620.75
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Studio closing invitation @1600",
+    "pass": true,
+    "detail": {
+      "width": 620.75,
+      "rightTrack": 620.75,
+      "target": 620.75
+    }
+  },
+  {
+    "name": "Columns do not overlap Studio closing invitation @1600",
+    "pass": true,
+    "detail": {
+      "headingEnd": 661.640625,
+      "copyStart": 719.234375
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio closing invitation @1600",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /our-studio/ @1600",
+    "pass": true,
+    "detail": {
+      "width": 1600,
+      "documentWidth": 1600
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @1600",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Service feature @1600",
+    "pass": true,
+    "detail": [
+      671.203,
+      671.203
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Service feature @1600",
+    "pass": true,
+    "detail": {
+      "width": 671.203125,
+      "rightTrack": 671.203,
+      "target": 671.203
+    }
+  },
+  {
+    "name": "Columns do not overlap Service feature @1600",
+    "pass": true,
+    "detail": {
+      "headingEnd": 771.203125,
+      "copyStart": 828.796875
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @1600",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /events-experiences/ @1600",
+    "pass": true,
+    "detail": {
+      "width": 1600,
+      "documentWidth": 1600
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @1600",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Service feature @1600",
+    "pass": true,
+    "detail": [
+      671.203,
+      671.203
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Service feature @1600",
+    "pass": true,
+    "detail": {
+      "width": 671.203125,
+      "rightTrack": 671.203,
+      "target": 671.203
+    }
+  },
+  {
+    "name": "Columns do not overlap Service feature @1600",
+    "pass": true,
+    "detail": {
+      "headingEnd": 771.203125,
+      "copyStart": 828.796875
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @1600",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /creative-design/ @1600",
+    "pass": true,
+    "detail": {
+      "width": 1600,
+      "documentWidth": 1600
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @1600",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Service feature @1600",
+    "pass": true,
+    "detail": [
+      671.203,
+      671.203
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Service feature @1600",
+    "pass": true,
+    "detail": {
+      "width": 671.203125,
+      "rightTrack": 671.203,
+      "target": 671.203
+    }
+  },
+  {
+    "name": "Columns do not overlap Service feature @1600",
+    "pass": true,
+    "detail": {
+      "headingEnd": 771.203125,
+      "copyStart": 828.796875
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @1600",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /digital-marketing/ @1600",
+    "pass": true,
+    "detail": {
+      "width": 1600,
+      "documentWidth": 1600
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @1600",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Service feature @1600",
+    "pass": true,
+    "detail": [
+      671.203,
+      671.203
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Service feature @1600",
+    "pass": true,
+    "detail": {
+      "width": 671.203125,
+      "rightTrack": 671.203,
+      "target": 671.203
+    }
+  },
+  {
+    "name": "Columns do not overlap Service feature @1600",
+    "pass": true,
+    "detail": {
+      "headingEnd": 771.203125,
+      "copyStart": 828.796875
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @1600",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /content-production/ @1600",
+    "pass": true,
+    "detail": {
+      "width": 1600,
+      "documentWidth": 1600
+    }
+  },
+  {
+    "name": "Editorial row exists Home manifesto @1920",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Home manifesto @1920",
+    "pass": true,
+    "detail": [
+      826,
+      826
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Home manifesto @1920",
+    "pass": true,
+    "detail": {
+      "width": 760,
+      "rightTrack": 826,
+      "target": 760
+    }
+  },
+  {
+    "name": "Columns do not overlap Home manifesto @1920",
+    "pass": true,
+    "detail": {
+      "headingEnd": 636.328125,
+      "copyStart": 994
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Home manifesto @1920",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Home featured work @1920",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Home featured work @1920",
+    "pass": true,
+    "detail": [
+      826,
+      826
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Home featured work @1920",
+    "pass": true,
+    "detail": {
+      "width": 760,
+      "rightTrack": 826,
+      "target": 760
+    }
+  },
+  {
+    "name": "Columns do not overlap Home featured work @1920",
+    "pass": true,
+    "detail": {
+      "headingEnd": 517.609375,
+      "copyStart": 994
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Home featured work @1920",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow / @1920",
+    "pass": true,
+    "detail": {
+      "width": 1920,
+      "documentWidth": 1920
+    }
+  },
+  {
+    "name": "Editorial row exists Studio belief @1920",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Studio belief @1920",
+    "pass": true,
+    "detail": [
+      786.125,
+      868.859
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Studio belief @1920",
+    "pass": true,
+    "detail": {
+      "width": 760,
+      "rightTrack": 868.859,
+      "target": 760
+    }
+  },
+  {
+    "name": "Columns do not overlap Studio belief @1920",
+    "pass": true,
+    "detail": {
+      "headingEnd": 886.125,
+      "copyStart": 951.125
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio belief @1920",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Studio partnerships @1920",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Studio partnerships @1920",
+    "pass": true,
+    "detail": [
+      786.125,
+      868.859
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Studio partnerships @1920",
+    "pass": true,
+    "detail": {
+      "width": 760,
+      "rightTrack": 868.859,
+      "target": 760
+    }
+  },
+  {
+    "name": "Columns do not overlap Studio partnerships @1920",
+    "pass": true,
+    "detail": {
+      "headingEnd": 886.125,
+      "copyStart": 951.125
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio partnerships @1920",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Studio FAQ @1920",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Studio FAQ @1920",
+    "pass": true,
+    "detail": [
+      786.125,
+      868.859
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Studio FAQ @1920",
+    "pass": true,
+    "detail": {
+      "width": 760,
+      "rightTrack": 868.859,
+      "target": 760
+    }
+  },
+  {
+    "name": "Columns do not overlap Studio FAQ @1920",
+    "pass": true,
+    "detail": {
+      "headingEnd": 886.125,
+      "copyStart": 951.125
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio FAQ @1920",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Studio closing invitation @1920",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Studio closing invitation @1920",
+    "pass": true,
+    "detail": [
+      558.125,
+      616.875
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Studio closing invitation @1920",
+    "pass": true,
+    "detail": {
+      "width": 616.875,
+      "rightTrack": 616.875,
+      "target": 616.875
+    }
+  },
+  {
+    "name": "Columns do not overlap Studio closing invitation @1920",
+    "pass": true,
+    "detail": {
+      "headingEnd": 658.125,
+      "copyStart": 723.125
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio closing invitation @1920",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /our-studio/ @1920",
+    "pass": true,
+    "detail": {
+      "width": 1920,
+      "documentWidth": 1920
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @1920",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Service feature @1920",
+    "pass": true,
+    "detail": [
+      826,
+      826
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Service feature @1920",
+    "pass": true,
+    "detail": {
+      "width": 760,
+      "rightTrack": 826,
+      "target": 760
+    }
+  },
+  {
+    "name": "Columns do not overlap Service feature @1920",
+    "pass": true,
+    "detail": {
+      "headingEnd": 926,
+      "copyStart": 994
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @1920",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /events-experiences/ @1920",
+    "pass": true,
+    "detail": {
+      "width": 1920,
+      "documentWidth": 1920
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @1920",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Service feature @1920",
+    "pass": true,
+    "detail": [
+      826,
+      826
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Service feature @1920",
+    "pass": true,
+    "detail": {
+      "width": 760,
+      "rightTrack": 826,
+      "target": 760
+    }
+  },
+  {
+    "name": "Columns do not overlap Service feature @1920",
+    "pass": true,
+    "detail": {
+      "headingEnd": 926,
+      "copyStart": 994
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @1920",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /creative-design/ @1920",
+    "pass": true,
+    "detail": {
+      "width": 1920,
+      "documentWidth": 1920
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @1920",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Service feature @1920",
+    "pass": true,
+    "detail": [
+      826,
+      826
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Service feature @1920",
+    "pass": true,
+    "detail": {
+      "width": 760,
+      "rightTrack": 826,
+      "target": 760
+    }
+  },
+  {
+    "name": "Columns do not overlap Service feature @1920",
+    "pass": true,
+    "detail": {
+      "headingEnd": 926,
+      "copyStart": 994
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @1920",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /digital-marketing/ @1920",
+    "pass": true,
+    "detail": {
+      "width": 1920,
+      "documentWidth": 1920
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @1920",
+    "pass": true
+  },
+  {
+    "name": "Two-column editorial row Service feature @1920",
+    "pass": true,
+    "detail": [
+      826,
+      826
+    ]
+  },
+  {
+    "name": "Paragraph fills available right column Service feature @1920",
+    "pass": true,
+    "detail": {
+      "width": 760,
+      "rightTrack": 826,
+      "target": 760
+    }
+  },
+  {
+    "name": "Columns do not overlap Service feature @1920",
+    "pass": true,
+    "detail": {
+      "headingEnd": 926,
+      "copyStart": 994
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @1920",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /content-production/ @1920",
+    "pass": true,
+    "detail": {
+      "width": 1920,
+      "documentWidth": 1920
+    }
+  },
+  {
+    "name": "Editorial row exists Home manifesto @768",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Home manifesto @768",
+    "pass": true,
+    "detail": [
+      698.906
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Home manifesto @768",
+    "pass": true,
+    "detail": {
+      "name": "Home manifesto",
+      "display": "grid",
+      "columns": [
+        698.906
+      ],
+      "paragraphWidth": 480,
+      "headingLeft": 34.546875,
+      "headingRight": 498.984375,
+      "paragraphLeft": 34.546875,
+      "paragraphRight": 514.546875,
+      "parentLeft": 34.546875,
+      "parentRight": 733.453125,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Home manifesto @768",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Home featured work @768",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Home featured work @768",
+    "pass": true,
+    "detail": [
+      698.906
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Home featured work @768",
+    "pass": true,
+    "detail": {
+      "name": "Home featured work",
+      "display": "grid",
+      "columns": [
+        698.906
+      ],
+      "paragraphWidth": 620,
+      "headingLeft": 34.546875,
+      "headingRight": 396.171875,
+      "paragraphLeft": 34.546875,
+      "paragraphRight": 654.546875,
+      "parentLeft": 34.546875,
+      "parentRight": 733.453125,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Home featured work @768",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow / @768",
+    "pass": true,
+    "detail": {
+      "width": 768,
+      "documentWidth": 768
+    }
+  },
+  {
+    "name": "Editorial row exists Studio belief @768",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Studio belief @768",
+    "pass": true,
+    "detail": [
+      698.906
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Studio belief @768",
+    "pass": true,
+    "detail": {
+      "name": "Studio belief",
+      "display": "grid",
+      "columns": [
+        698.906
+      ],
+      "paragraphWidth": 600,
+      "headingLeft": 34.546875,
+      "headingRight": 733.453125,
+      "paragraphLeft": 34.546875,
+      "paragraphRight": 634.546875,
+      "parentLeft": 0,
+      "parentRight": 768,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio belief @768",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Studio partnerships @768",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Studio partnerships @768",
+    "pass": true,
+    "detail": [
+      698.906
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Studio partnerships @768",
+    "pass": true,
+    "detail": {
+      "name": "Studio partnerships",
+      "display": "grid",
+      "columns": [
+        698.906
+      ],
+      "paragraphWidth": 600,
+      "headingLeft": 34.546875,
+      "headingRight": 733.453125,
+      "paragraphLeft": 34.546875,
+      "paragraphRight": 634.546875,
+      "parentLeft": 0,
+      "parentRight": 768,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio partnerships @768",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Studio FAQ @768",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Studio FAQ @768",
+    "pass": true,
+    "detail": [
+      698.906
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Studio FAQ @768",
+    "pass": true,
+    "detail": {
+      "name": "Studio FAQ",
+      "display": "grid",
+      "columns": [
+        698.906
+      ],
+      "paragraphWidth": 698.90625,
+      "headingLeft": 34.546875,
+      "headingRight": 733.453125,
+      "paragraphLeft": 34.546875,
+      "paragraphRight": 733.453125,
+      "parentLeft": 34.546875,
+      "parentRight": 733.453125,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio FAQ @768",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Studio closing invitation @768",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Studio closing invitation @768",
+    "pass": true,
+    "detail": [
+      698.906
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Studio closing invitation @768",
+    "pass": true,
+    "detail": {
+      "name": "Studio closing invitation",
+      "display": "grid",
+      "columns": [
+        698.906
+      ],
+      "paragraphWidth": 698.90625,
+      "headingLeft": 34.546875,
+      "headingRight": 733.453125,
+      "paragraphLeft": 34.546875,
+      "paragraphRight": 733.453125,
+      "parentLeft": 34.546875,
+      "parentRight": 733.453125,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio closing invitation @768",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /our-studio/ @768",
+    "pass": true,
+    "detail": {
+      "width": 768,
+      "documentWidth": 768
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @768",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Service feature @768",
+    "pass": true,
+    "detail": [
+      698.906
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Service feature @768",
+    "pass": true,
+    "detail": {
+      "name": "Service feature",
+      "display": "grid",
+      "columns": [
+        698.906
+      ],
+      "paragraphWidth": 698.90625,
+      "headingLeft": 34.546875,
+      "headingRight": 733.453125,
+      "paragraphLeft": 34.546875,
+      "paragraphRight": 733.453125,
+      "parentLeft": 34.546875,
+      "parentRight": 733.453125,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @768",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /events-experiences/ @768",
+    "pass": true,
+    "detail": {
+      "width": 768,
+      "documentWidth": 768
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @768",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Service feature @768",
+    "pass": true,
+    "detail": [
+      698.906
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Service feature @768",
+    "pass": true,
+    "detail": {
+      "name": "Service feature",
+      "display": "grid",
+      "columns": [
+        698.906
+      ],
+      "paragraphWidth": 698.90625,
+      "headingLeft": 34.546875,
+      "headingRight": 733.453125,
+      "paragraphLeft": 34.546875,
+      "paragraphRight": 733.453125,
+      "parentLeft": 34.546875,
+      "parentRight": 733.453125,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @768",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /creative-design/ @768",
+    "pass": true,
+    "detail": {
+      "width": 768,
+      "documentWidth": 768
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @768",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Service feature @768",
+    "pass": true,
+    "detail": [
+      698.906
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Service feature @768",
+    "pass": true,
+    "detail": {
+      "name": "Service feature",
+      "display": "grid",
+      "columns": [
+        698.906
+      ],
+      "paragraphWidth": 698.90625,
+      "headingLeft": 34.546875,
+      "headingRight": 733.453125,
+      "paragraphLeft": 34.546875,
+      "paragraphRight": 733.453125,
+      "parentLeft": 34.546875,
+      "parentRight": 733.453125,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @768",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /digital-marketing/ @768",
+    "pass": true,
+    "detail": {
+      "width": 768,
+      "documentWidth": 768
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @768",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Service feature @768",
+    "pass": true,
+    "detail": [
+      698.906
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Service feature @768",
+    "pass": true,
+    "detail": {
+      "name": "Service feature",
+      "display": "grid",
+      "columns": [
+        698.906
+      ],
+      "paragraphWidth": 698.90625,
+      "headingLeft": 34.546875,
+      "headingRight": 733.453125,
+      "paragraphLeft": 34.546875,
+      "paragraphRight": 733.453125,
+      "parentLeft": 34.546875,
+      "parentRight": 733.453125,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @768",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /content-production/ @768",
+    "pass": true,
+    "detail": {
+      "width": 768,
+      "documentWidth": 768
+    }
+  },
+  {
+    "name": "Editorial row exists Home manifesto @390",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Home manifesto @390",
+    "pass": true,
+    "detail": [
+      346
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Home manifesto @390",
+    "pass": true,
+    "detail": {
+      "name": "Home manifesto",
+      "display": "grid",
+      "columns": [
+        346
+      ],
+      "paragraphWidth": 346,
+      "headingLeft": 22,
+      "headingRight": 352.921875,
+      "paragraphLeft": 22,
+      "paragraphRight": 368,
+      "parentLeft": 22,
+      "parentRight": 368,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Home manifesto @390",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Home featured work @390",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Home featured work @390",
+    "pass": true,
+    "detail": [
+      346
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Home featured work @390",
+    "pass": true,
+    "detail": {
+      "name": "Home featured work",
+      "display": "grid",
+      "columns": [
+        346
+      ],
+      "paragraphWidth": 346,
+      "headingLeft": 22,
+      "headingRight": 279.65625,
+      "paragraphLeft": 22,
+      "paragraphRight": 368,
+      "parentLeft": 22,
+      "parentRight": 368,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Home featured work @390",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow / @390",
+    "pass": true,
+    "detail": {
+      "width": 390,
+      "documentWidth": 390
+    }
+  },
+  {
+    "name": "Editorial row exists Studio belief @390",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Studio belief @390",
+    "pass": true,
+    "detail": [
+      346
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Studio belief @390",
+    "pass": true,
+    "detail": {
+      "name": "Studio belief",
+      "display": "grid",
+      "columns": [
+        346
+      ],
+      "paragraphWidth": 346,
+      "headingLeft": 22,
+      "headingRight": 368,
+      "paragraphLeft": 22,
+      "paragraphRight": 368,
+      "parentLeft": 0,
+      "parentRight": 390,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio belief @390",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Studio partnerships @390",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Studio partnerships @390",
+    "pass": true,
+    "detail": [
+      346
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Studio partnerships @390",
+    "pass": true,
+    "detail": {
+      "name": "Studio partnerships",
+      "display": "grid",
+      "columns": [
+        346
+      ],
+      "paragraphWidth": 346,
+      "headingLeft": 22,
+      "headingRight": 368,
+      "paragraphLeft": 22,
+      "paragraphRight": 368,
+      "parentLeft": 0,
+      "parentRight": 390,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio partnerships @390",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Studio FAQ @390",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Studio FAQ @390",
+    "pass": true,
+    "detail": [
+      346
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Studio FAQ @390",
+    "pass": true,
+    "detail": {
+      "name": "Studio FAQ",
+      "display": "grid",
+      "columns": [
+        346
+      ],
+      "paragraphWidth": 346,
+      "headingLeft": 22,
+      "headingRight": 368,
+      "paragraphLeft": 22,
+      "paragraphRight": 368,
+      "parentLeft": 22,
+      "parentRight": 368,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio FAQ @390",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "Editorial row exists Studio closing invitation @390",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Studio closing invitation @390",
+    "pass": true,
+    "detail": [
+      346
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Studio closing invitation @390",
+    "pass": true,
+    "detail": {
+      "name": "Studio closing invitation",
+      "display": "grid",
+      "columns": [
+        346
+      ],
+      "paragraphWidth": 346,
+      "headingLeft": 22,
+      "headingRight": 368,
+      "paragraphLeft": 22,
+      "paragraphRight": 368,
+      "parentLeft": 22,
+      "parentRight": 368,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Studio closing invitation @390",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /our-studio/ @390",
+    "pass": true,
+    "detail": {
+      "width": 390,
+      "documentWidth": 390
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @390",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Service feature @390",
+    "pass": true,
+    "detail": [
+      346
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Service feature @390",
+    "pass": true,
+    "detail": {
+      "name": "Service feature",
+      "display": "grid",
+      "columns": [
+        346
+      ],
+      "paragraphWidth": 346,
+      "headingLeft": 22,
+      "headingRight": 368,
+      "paragraphLeft": 22,
+      "paragraphRight": 368,
+      "parentLeft": 22,
+      "parentRight": 368,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @390",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /events-experiences/ @390",
+    "pass": true,
+    "detail": {
+      "width": 390,
+      "documentWidth": 390
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @390",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Service feature @390",
+    "pass": true,
+    "detail": [
+      346
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Service feature @390",
+    "pass": true,
+    "detail": {
+      "name": "Service feature",
+      "display": "grid",
+      "columns": [
+        346
+      ],
+      "paragraphWidth": 346,
+      "headingLeft": 22,
+      "headingRight": 368,
+      "paragraphLeft": 22,
+      "paragraphRight": 368,
+      "parentLeft": 22,
+      "parentRight": 368,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @390",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /creative-design/ @390",
+    "pass": true,
+    "detail": {
+      "width": 390,
+      "documentWidth": 390
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @390",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Service feature @390",
+    "pass": true,
+    "detail": [
+      346
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Service feature @390",
+    "pass": true,
+    "detail": {
+      "name": "Service feature",
+      "display": "grid",
+      "columns": [
+        346
+      ],
+      "paragraphWidth": 346,
+      "headingLeft": 22,
+      "headingRight": 368,
+      "paragraphLeft": 22,
+      "paragraphRight": 368,
+      "parentLeft": 22,
+      "parentRight": 368,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @390",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /digital-marketing/ @390",
+    "pass": true,
+    "detail": {
+      "width": 390,
+      "documentWidth": 390
+    }
+  },
+  {
+    "name": "Editorial row exists Service feature @390",
+    "pass": true
+  },
+  {
+    "name": "Editorial row remains stacked on mobile/tablet Service feature @390",
+    "pass": true,
+    "detail": [
+      346
+    ]
+  },
+  {
+    "name": "Mobile paragraph stays in viewport Service feature @390",
+    "pass": true,
+    "detail": {
+      "name": "Service feature",
+      "display": "grid",
+      "columns": [
+        346
+      ],
+      "paragraphWidth": 346,
+      "headingLeft": 22,
+      "headingRight": 368,
+      "paragraphLeft": 22,
+      "paragraphRight": 368,
+      "parentLeft": 22,
+      "parentRight": 368,
+      "font": "17px"
+    }
+  },
+  {
+    "name": "Paragraph retains approved 17px Service feature @390",
+    "pass": true,
+    "detail": "17px"
+  },
+  {
+    "name": "No horizontal overflow /content-production/ @390",
+    "pass": true,
+    "detail": {
+      "width": 390,
+      "documentWidth": 390
+    }
+  },
+  {
+    "name": "No browser exceptions",
+    "pass": true,
+    "detail": []
+  }
+]

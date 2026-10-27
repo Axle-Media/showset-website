@@ -1,0 +1,1375 @@
+{
+  "checks": [
+    {
+      "name": "Two related cards exist /work/atmosphere-is-everything/ @1796",
+      "pass": true
+    },
+    {
+      "name": "Only related-card copy is 14px /work/atmosphere-is-everything/ card 1 @1796",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/atmosphere-is-everything/ card 1 @1796",
+      "pass": true,
+      "detail": {
+        "paragraph": 744.046875,
+        "caption": 783,
+        "arrow": 18.953125,
+        "content": 744.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/atmosphere-is-everything/ card 1 @1796",
+      "pass": true,
+      "detail": "25px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/atmosphere-is-everything/ card 1 @1796",
+      "pass": true,
+      "detail": {
+        "copyLeft": 100,
+        "titleLeft": 100
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/atmosphere-is-everything/ card 1 @1796",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 844.046875,
+        "arrowLeft": 864.046875,
+        "arrowRight": 883
+      }
+    },
+    {
+      "name": "Only related-card copy is 14px /work/atmosphere-is-everything/ card 2 @1796",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/atmosphere-is-everything/ card 2 @1796",
+      "pass": true,
+      "detail": {
+        "paragraph": 744.046875,
+        "caption": 783,
+        "arrow": 18.953125,
+        "content": 744.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/atmosphere-is-everything/ card 2 @1796",
+      "pass": true,
+      "detail": "25px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/atmosphere-is-everything/ card 2 @1796",
+      "pass": true,
+      "detail": {
+        "copyLeft": 913,
+        "titleLeft": 913
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/atmosphere-is-everything/ card 2 @1796",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 1657.046875,
+        "arrowLeft": 1677.046875,
+        "arrowRight": 1696
+      }
+    },
+    {
+      "name": "Other case-story paragraphs remain 17px /work/atmosphere-is-everything/ @1796",
+      "pass": true,
+      "detail": "17px"
+    },
+    {
+      "name": "No page overflow /work/atmosphere-is-everything/ @1796",
+      "pass": true,
+      "detail": {
+        "docWidth": 1796,
+        "width": 1796
+      }
+    },
+    {
+      "name": "Two related cards exist /work/made-to-be-remembered/ @1796",
+      "pass": true
+    },
+    {
+      "name": "Only related-card copy is 14px /work/made-to-be-remembered/ card 1 @1796",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/made-to-be-remembered/ card 1 @1796",
+      "pass": true,
+      "detail": {
+        "paragraph": 744.046875,
+        "caption": 783,
+        "arrow": 18.953125,
+        "content": 744.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/made-to-be-remembered/ card 1 @1796",
+      "pass": true,
+      "detail": "25px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/made-to-be-remembered/ card 1 @1796",
+      "pass": true,
+      "detail": {
+        "copyLeft": 100,
+        "titleLeft": 100
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/made-to-be-remembered/ card 1 @1796",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 844.046875,
+        "arrowLeft": 864.046875,
+        "arrowRight": 883
+      }
+    },
+    {
+      "name": "Only related-card copy is 14px /work/made-to-be-remembered/ card 2 @1796",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/made-to-be-remembered/ card 2 @1796",
+      "pass": true,
+      "detail": {
+        "paragraph": 744.046875,
+        "caption": 783,
+        "arrow": 18.953125,
+        "content": 744.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/made-to-be-remembered/ card 2 @1796",
+      "pass": true,
+      "detail": "25px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/made-to-be-remembered/ card 2 @1796",
+      "pass": true,
+      "detail": {
+        "copyLeft": 913,
+        "titleLeft": 913
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/made-to-be-remembered/ card 2 @1796",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 1657.046875,
+        "arrowLeft": 1677.046875,
+        "arrowRight": 1696
+      }
+    },
+    {
+      "name": "Other case-story paragraphs remain 17px /work/made-to-be-remembered/ @1796",
+      "pass": true,
+      "detail": "17px"
+    },
+    {
+      "name": "No page overflow /work/made-to-be-remembered/ @1796",
+      "pass": true,
+      "detail": {
+        "docWidth": 1796,
+        "width": 1796
+      }
+    },
+    {
+      "name": "Two related cards exist /work/behind-every-moment/ @1796",
+      "pass": true
+    },
+    {
+      "name": "Only related-card copy is 14px /work/behind-every-moment/ card 1 @1796",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/behind-every-moment/ card 1 @1796",
+      "pass": true,
+      "detail": {
+        "paragraph": 744.046875,
+        "caption": 783,
+        "arrow": 18.953125,
+        "content": 744.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/behind-every-moment/ card 1 @1796",
+      "pass": true,
+      "detail": "25px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/behind-every-moment/ card 1 @1796",
+      "pass": true,
+      "detail": {
+        "copyLeft": 100,
+        "titleLeft": 100
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/behind-every-moment/ card 1 @1796",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 844.046875,
+        "arrowLeft": 864.046875,
+        "arrowRight": 883
+      }
+    },
+    {
+      "name": "Only related-card copy is 14px /work/behind-every-moment/ card 2 @1796",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/behind-every-moment/ card 2 @1796",
+      "pass": true,
+      "detail": {
+        "paragraph": 744.046875,
+        "caption": 783,
+        "arrow": 18.953125,
+        "content": 744.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/behind-every-moment/ card 2 @1796",
+      "pass": true,
+      "detail": "25px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/behind-every-moment/ card 2 @1796",
+      "pass": true,
+      "detail": {
+        "copyLeft": 913,
+        "titleLeft": 913
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/behind-every-moment/ card 2 @1796",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 1657.046875,
+        "arrowLeft": 1677.046875,
+        "arrowRight": 1696
+      }
+    },
+    {
+      "name": "Other case-story paragraphs remain 17px /work/behind-every-moment/ @1796",
+      "pass": true,
+      "detail": "17px"
+    },
+    {
+      "name": "No page overflow /work/behind-every-moment/ @1796",
+      "pass": true,
+      "detail": {
+        "docWidth": 1796,
+        "width": 1796
+      }
+    },
+    {
+      "name": "Two related cards exist /work/atmosphere-is-everything/ @1440",
+      "pass": true
+    },
+    {
+      "name": "Only related-card copy is 14px /work/atmosphere-is-everything/ card 1 @1440",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/atmosphere-is-everything/ card 1 @1440",
+      "pass": true,
+      "detail": {
+        "paragraph": 575.921875,
+        "caption": 614.875,
+        "arrow": 18.953125,
+        "content": 575.921875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/atmosphere-is-everything/ card 1 @1440",
+      "pass": true,
+      "detail": "25px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/atmosphere-is-everything/ card 1 @1440",
+      "pass": true,
+      "detail": {
+        "copyLeft": 90.71875,
+        "titleLeft": 90.71875
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/atmosphere-is-everything/ card 1 @1440",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 666.640625,
+        "arrowLeft": 686.640625,
+        "arrowRight": 705.59375
+      }
+    },
+    {
+      "name": "Only related-card copy is 14px /work/atmosphere-is-everything/ card 2 @1440",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/atmosphere-is-everything/ card 2 @1440",
+      "pass": true,
+      "detail": {
+        "paragraph": 575.9375,
+        "caption": 614.890625,
+        "arrow": 18.953125,
+        "content": 575.9375
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/atmosphere-is-everything/ card 2 @1440",
+      "pass": true,
+      "detail": "25px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/atmosphere-is-everything/ card 2 @1440",
+      "pass": true,
+      "detail": {
+        "copyLeft": 734.390625,
+        "titleLeft": 734.390625
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/atmosphere-is-everything/ card 2 @1440",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 1310.328125,
+        "arrowLeft": 1330.328125,
+        "arrowRight": 1349.28125
+      }
+    },
+    {
+      "name": "Other case-story paragraphs remain 17px /work/atmosphere-is-everything/ @1440",
+      "pass": true,
+      "detail": "17px"
+    },
+    {
+      "name": "No page overflow /work/atmosphere-is-everything/ @1440",
+      "pass": true,
+      "detail": {
+        "docWidth": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "name": "Two related cards exist /work/made-to-be-remembered/ @1440",
+      "pass": true
+    },
+    {
+      "name": "Only related-card copy is 14px /work/made-to-be-remembered/ card 1 @1440",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/made-to-be-remembered/ card 1 @1440",
+      "pass": true,
+      "detail": {
+        "paragraph": 575.921875,
+        "caption": 614.875,
+        "arrow": 18.953125,
+        "content": 575.921875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/made-to-be-remembered/ card 1 @1440",
+      "pass": true,
+      "detail": "25px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/made-to-be-remembered/ card 1 @1440",
+      "pass": true,
+      "detail": {
+        "copyLeft": 90.71875,
+        "titleLeft": 90.71875
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/made-to-be-remembered/ card 1 @1440",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 666.640625,
+        "arrowLeft": 686.640625,
+        "arrowRight": 705.59375
+      }
+    },
+    {
+      "name": "Only related-card copy is 14px /work/made-to-be-remembered/ card 2 @1440",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/made-to-be-remembered/ card 2 @1440",
+      "pass": true,
+      "detail": {
+        "paragraph": 575.9375,
+        "caption": 614.890625,
+        "arrow": 18.953125,
+        "content": 575.9375
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/made-to-be-remembered/ card 2 @1440",
+      "pass": true,
+      "detail": "25px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/made-to-be-remembered/ card 2 @1440",
+      "pass": true,
+      "detail": {
+        "copyLeft": 734.390625,
+        "titleLeft": 734.390625
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/made-to-be-remembered/ card 2 @1440",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 1310.328125,
+        "arrowLeft": 1330.328125,
+        "arrowRight": 1349.28125
+      }
+    },
+    {
+      "name": "Other case-story paragraphs remain 17px /work/made-to-be-remembered/ @1440",
+      "pass": true,
+      "detail": "17px"
+    },
+    {
+      "name": "No page overflow /work/made-to-be-remembered/ @1440",
+      "pass": true,
+      "detail": {
+        "docWidth": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "name": "Two related cards exist /work/behind-every-moment/ @1440",
+      "pass": true
+    },
+    {
+      "name": "Only related-card copy is 14px /work/behind-every-moment/ card 1 @1440",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/behind-every-moment/ card 1 @1440",
+      "pass": true,
+      "detail": {
+        "paragraph": 575.921875,
+        "caption": 614.875,
+        "arrow": 18.953125,
+        "content": 575.921875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/behind-every-moment/ card 1 @1440",
+      "pass": true,
+      "detail": "25px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/behind-every-moment/ card 1 @1440",
+      "pass": true,
+      "detail": {
+        "copyLeft": 90.71875,
+        "titleLeft": 90.71875
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/behind-every-moment/ card 1 @1440",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 666.640625,
+        "arrowLeft": 686.640625,
+        "arrowRight": 705.59375
+      }
+    },
+    {
+      "name": "Only related-card copy is 14px /work/behind-every-moment/ card 2 @1440",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/behind-every-moment/ card 2 @1440",
+      "pass": true,
+      "detail": {
+        "paragraph": 575.9375,
+        "caption": 614.890625,
+        "arrow": 18.953125,
+        "content": 575.9375
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/behind-every-moment/ card 2 @1440",
+      "pass": true,
+      "detail": "25px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/behind-every-moment/ card 2 @1440",
+      "pass": true,
+      "detail": {
+        "copyLeft": 734.390625,
+        "titleLeft": 734.390625
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/behind-every-moment/ card 2 @1440",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 1310.328125,
+        "arrowLeft": 1330.328125,
+        "arrowRight": 1349.28125
+      }
+    },
+    {
+      "name": "Other case-story paragraphs remain 17px /work/behind-every-moment/ @1440",
+      "pass": true,
+      "detail": "17px"
+    },
+    {
+      "name": "No page overflow /work/behind-every-moment/ @1440",
+      "pass": true,
+      "detail": {
+        "docWidth": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "name": "Two related cards exist /work/atmosphere-is-everything/ @768",
+      "pass": true
+    },
+    {
+      "name": "Only related-card copy is 14px /work/atmosphere-is-everything/ card 1 @768",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/atmosphere-is-everything/ card 1 @768",
+      "pass": true,
+      "detail": {
+        "paragraph": 302.8125,
+        "caption": 341.765625,
+        "arrow": 18.953125,
+        "content": 302.8125
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/atmosphere-is-everything/ card 1 @768",
+      "pass": true,
+      "detail": "24px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/atmosphere-is-everything/ card 1 @768",
+      "pass": true,
+      "detail": {
+        "copyLeft": 34.546875,
+        "titleLeft": 34.546875
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/atmosphere-is-everything/ card 1 @768",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 337.359375,
+        "arrowLeft": 357.359375,
+        "arrowRight": 376.3125
+      }
+    },
+    {
+      "name": "Only related-card copy is 14px /work/atmosphere-is-everything/ card 2 @768",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/atmosphere-is-everything/ card 2 @768",
+      "pass": true,
+      "detail": {
+        "paragraph": 302.828125,
+        "caption": 341.78125,
+        "arrow": 18.953125,
+        "content": 302.828125
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/atmosphere-is-everything/ card 2 @768",
+      "pass": true,
+      "detail": "24px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/atmosphere-is-everything/ card 2 @768",
+      "pass": true,
+      "detail": {
+        "copyLeft": 391.671875,
+        "titleLeft": 391.671875
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/atmosphere-is-everything/ card 2 @768",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 694.5,
+        "arrowLeft": 714.5,
+        "arrowRight": 733.453125
+      }
+    },
+    {
+      "name": "Other case-story paragraphs remain 17px /work/atmosphere-is-everything/ @768",
+      "pass": true,
+      "detail": "17px"
+    },
+    {
+      "name": "No page overflow /work/atmosphere-is-everything/ @768",
+      "pass": true,
+      "detail": {
+        "docWidth": 768,
+        "width": 768
+      }
+    },
+    {
+      "name": "Two related cards exist /work/made-to-be-remembered/ @768",
+      "pass": true
+    },
+    {
+      "name": "Only related-card copy is 14px /work/made-to-be-remembered/ card 1 @768",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/made-to-be-remembered/ card 1 @768",
+      "pass": true,
+      "detail": {
+        "paragraph": 302.8125,
+        "caption": 341.765625,
+        "arrow": 18.953125,
+        "content": 302.8125
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/made-to-be-remembered/ card 1 @768",
+      "pass": true,
+      "detail": "24px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/made-to-be-remembered/ card 1 @768",
+      "pass": true,
+      "detail": {
+        "copyLeft": 34.546875,
+        "titleLeft": 34.546875
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/made-to-be-remembered/ card 1 @768",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 337.359375,
+        "arrowLeft": 357.359375,
+        "arrowRight": 376.3125
+      }
+    },
+    {
+      "name": "Only related-card copy is 14px /work/made-to-be-remembered/ card 2 @768",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/made-to-be-remembered/ card 2 @768",
+      "pass": true,
+      "detail": {
+        "paragraph": 302.828125,
+        "caption": 341.78125,
+        "arrow": 18.953125,
+        "content": 302.828125
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/made-to-be-remembered/ card 2 @768",
+      "pass": true,
+      "detail": "24px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/made-to-be-remembered/ card 2 @768",
+      "pass": true,
+      "detail": {
+        "copyLeft": 391.671875,
+        "titleLeft": 391.671875
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/made-to-be-remembered/ card 2 @768",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 694.5,
+        "arrowLeft": 714.5,
+        "arrowRight": 733.453125
+      }
+    },
+    {
+      "name": "Other case-story paragraphs remain 17px /work/made-to-be-remembered/ @768",
+      "pass": true,
+      "detail": "17px"
+    },
+    {
+      "name": "No page overflow /work/made-to-be-remembered/ @768",
+      "pass": true,
+      "detail": {
+        "docWidth": 768,
+        "width": 768
+      }
+    },
+    {
+      "name": "Two related cards exist /work/behind-every-moment/ @768",
+      "pass": true
+    },
+    {
+      "name": "Only related-card copy is 14px /work/behind-every-moment/ card 1 @768",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/behind-every-moment/ card 1 @768",
+      "pass": true,
+      "detail": {
+        "paragraph": 302.8125,
+        "caption": 341.765625,
+        "arrow": 18.953125,
+        "content": 302.8125
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/behind-every-moment/ card 1 @768",
+      "pass": true,
+      "detail": "24px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/behind-every-moment/ card 1 @768",
+      "pass": true,
+      "detail": {
+        "copyLeft": 34.546875,
+        "titleLeft": 34.546875
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/behind-every-moment/ card 1 @768",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 337.359375,
+        "arrowLeft": 357.359375,
+        "arrowRight": 376.3125
+      }
+    },
+    {
+      "name": "Only related-card copy is 14px /work/behind-every-moment/ card 2 @768",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/behind-every-moment/ card 2 @768",
+      "pass": true,
+      "detail": {
+        "paragraph": 302.828125,
+        "caption": 341.78125,
+        "arrow": 18.953125,
+        "content": 302.828125
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/behind-every-moment/ card 2 @768",
+      "pass": true,
+      "detail": "24px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/behind-every-moment/ card 2 @768",
+      "pass": true,
+      "detail": {
+        "copyLeft": 391.671875,
+        "titleLeft": 391.671875
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/behind-every-moment/ card 2 @768",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 694.5,
+        "arrowLeft": 714.5,
+        "arrowRight": 733.453125
+      }
+    },
+    {
+      "name": "Other case-story paragraphs remain 17px /work/behind-every-moment/ @768",
+      "pass": true,
+      "detail": "17px"
+    },
+    {
+      "name": "No page overflow /work/behind-every-moment/ @768",
+      "pass": true,
+      "detail": {
+        "docWidth": 768,
+        "width": 768
+      }
+    },
+    {
+      "name": "Two related cards exist /work/atmosphere-is-everything/ @390",
+      "pass": true
+    },
+    {
+      "name": "Only related-card copy is 14px /work/atmosphere-is-everything/ card 1 @390",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/atmosphere-is-everything/ card 1 @390",
+      "pass": true,
+      "detail": {
+        "paragraph": 307.046875,
+        "caption": 346,
+        "arrow": 18.953125,
+        "content": 307.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/atmosphere-is-everything/ card 1 @390",
+      "pass": true,
+      "detail": "19px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/atmosphere-is-everything/ card 1 @390",
+      "pass": true,
+      "detail": {
+        "copyLeft": 22,
+        "titleLeft": 22
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/atmosphere-is-everything/ card 1 @390",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 329.046875,
+        "arrowLeft": 349.046875,
+        "arrowRight": 368
+      }
+    },
+    {
+      "name": "Only related-card copy is 14px /work/atmosphere-is-everything/ card 2 @390",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/atmosphere-is-everything/ card 2 @390",
+      "pass": true,
+      "detail": {
+        "paragraph": 307.046875,
+        "caption": 346,
+        "arrow": 18.953125,
+        "content": 307.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/atmosphere-is-everything/ card 2 @390",
+      "pass": true,
+      "detail": "19px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/atmosphere-is-everything/ card 2 @390",
+      "pass": true,
+      "detail": {
+        "copyLeft": 22,
+        "titleLeft": 22
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/atmosphere-is-everything/ card 2 @390",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 329.046875,
+        "arrowLeft": 349.046875,
+        "arrowRight": 368
+      }
+    },
+    {
+      "name": "Other case-story paragraphs remain 17px /work/atmosphere-is-everything/ @390",
+      "pass": true,
+      "detail": "17px"
+    },
+    {
+      "name": "No page overflow /work/atmosphere-is-everything/ @390",
+      "pass": true,
+      "detail": {
+        "docWidth": 390,
+        "width": 390
+      }
+    },
+    {
+      "name": "Two related cards exist /work/made-to-be-remembered/ @390",
+      "pass": true
+    },
+    {
+      "name": "Only related-card copy is 14px /work/made-to-be-remembered/ card 1 @390",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/made-to-be-remembered/ card 1 @390",
+      "pass": true,
+      "detail": {
+        "paragraph": 307.046875,
+        "caption": 346,
+        "arrow": 18.953125,
+        "content": 307.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/made-to-be-remembered/ card 1 @390",
+      "pass": true,
+      "detail": "19px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/made-to-be-remembered/ card 1 @390",
+      "pass": true,
+      "detail": {
+        "copyLeft": 22,
+        "titleLeft": 22
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/made-to-be-remembered/ card 1 @390",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 329.046875,
+        "arrowLeft": 349.046875,
+        "arrowRight": 368
+      }
+    },
+    {
+      "name": "Only related-card copy is 14px /work/made-to-be-remembered/ card 2 @390",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/made-to-be-remembered/ card 2 @390",
+      "pass": true,
+      "detail": {
+        "paragraph": 307.046875,
+        "caption": 346,
+        "arrow": 18.953125,
+        "content": 307.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/made-to-be-remembered/ card 2 @390",
+      "pass": true,
+      "detail": "19px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/made-to-be-remembered/ card 2 @390",
+      "pass": true,
+      "detail": {
+        "copyLeft": 22,
+        "titleLeft": 22
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/made-to-be-remembered/ card 2 @390",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 329.046875,
+        "arrowLeft": 349.046875,
+        "arrowRight": 368
+      }
+    },
+    {
+      "name": "Other case-story paragraphs remain 17px /work/made-to-be-remembered/ @390",
+      "pass": true,
+      "detail": "17px"
+    },
+    {
+      "name": "No page overflow /work/made-to-be-remembered/ @390",
+      "pass": true,
+      "detail": {
+        "docWidth": 390,
+        "width": 390
+      }
+    },
+    {
+      "name": "Two related cards exist /work/behind-every-moment/ @390",
+      "pass": true
+    },
+    {
+      "name": "Only related-card copy is 14px /work/behind-every-moment/ card 1 @390",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/behind-every-moment/ card 1 @390",
+      "pass": true,
+      "detail": {
+        "paragraph": 307.046875,
+        "caption": 346,
+        "arrow": 18.953125,
+        "content": 307.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/behind-every-moment/ card 1 @390",
+      "pass": true,
+      "detail": "19px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/behind-every-moment/ card 1 @390",
+      "pass": true,
+      "detail": {
+        "copyLeft": 22,
+        "titleLeft": 22
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/behind-every-moment/ card 1 @390",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 329.046875,
+        "arrowLeft": 349.046875,
+        "arrowRight": 368
+      }
+    },
+    {
+      "name": "Only related-card copy is 14px /work/behind-every-moment/ card 2 @390",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/behind-every-moment/ card 2 @390",
+      "pass": true,
+      "detail": {
+        "paragraph": 307.046875,
+        "caption": 346,
+        "arrow": 18.953125,
+        "content": 307.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/behind-every-moment/ card 2 @390",
+      "pass": true,
+      "detail": "19px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/behind-every-moment/ card 2 @390",
+      "pass": true,
+      "detail": {
+        "copyLeft": 22,
+        "titleLeft": 22
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/behind-every-moment/ card 2 @390",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 329.046875,
+        "arrowLeft": 349.046875,
+        "arrowRight": 368
+      }
+    },
+    {
+      "name": "Other case-story paragraphs remain 17px /work/behind-every-moment/ @390",
+      "pass": true,
+      "detail": "17px"
+    },
+    {
+      "name": "No page overflow /work/behind-every-moment/ @390",
+      "pass": true,
+      "detail": {
+        "docWidth": 390,
+        "width": 390
+      }
+    },
+    {
+      "name": "Two related cards exist /work/atmosphere-is-everything/ @320",
+      "pass": true
+    },
+    {
+      "name": "Only related-card copy is 14px /work/atmosphere-is-everything/ card 1 @320",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/atmosphere-is-everything/ card 1 @320",
+      "pass": true,
+      "detail": {
+        "paragraph": 237.046875,
+        "caption": 276,
+        "arrow": 18.953125,
+        "content": 237.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/atmosphere-is-everything/ card 1 @320",
+      "pass": true,
+      "detail": "19px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/atmosphere-is-everything/ card 1 @320",
+      "pass": true,
+      "detail": {
+        "copyLeft": 22,
+        "titleLeft": 22
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/atmosphere-is-everything/ card 1 @320",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 259.046875,
+        "arrowLeft": 279.046875,
+        "arrowRight": 298
+      }
+    },
+    {
+      "name": "Only related-card copy is 14px /work/atmosphere-is-everything/ card 2 @320",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/atmosphere-is-everything/ card 2 @320",
+      "pass": true,
+      "detail": {
+        "paragraph": 237.046875,
+        "caption": 276,
+        "arrow": 18.953125,
+        "content": 237.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/atmosphere-is-everything/ card 2 @320",
+      "pass": true,
+      "detail": "19px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/atmosphere-is-everything/ card 2 @320",
+      "pass": true,
+      "detail": {
+        "copyLeft": 22,
+        "titleLeft": 22
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/atmosphere-is-everything/ card 2 @320",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 259.046875,
+        "arrowLeft": 279.046875,
+        "arrowRight": 298
+      }
+    },
+    {
+      "name": "Other case-story paragraphs remain 17px /work/atmosphere-is-everything/ @320",
+      "pass": true,
+      "detail": "17px"
+    },
+    {
+      "name": "No page overflow /work/atmosphere-is-everything/ @320",
+      "pass": true,
+      "detail": {
+        "docWidth": 320,
+        "width": 320
+      }
+    },
+    {
+      "name": "Two related cards exist /work/made-to-be-remembered/ @320",
+      "pass": true
+    },
+    {
+      "name": "Only related-card copy is 14px /work/made-to-be-remembered/ card 1 @320",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/made-to-be-remembered/ card 1 @320",
+      "pass": true,
+      "detail": {
+        "paragraph": 237.046875,
+        "caption": 276,
+        "arrow": 18.953125,
+        "content": 237.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/made-to-be-remembered/ card 1 @320",
+      "pass": true,
+      "detail": "19px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/made-to-be-remembered/ card 1 @320",
+      "pass": true,
+      "detail": {
+        "copyLeft": 22,
+        "titleLeft": 22
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/made-to-be-remembered/ card 1 @320",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 259.046875,
+        "arrowLeft": 279.046875,
+        "arrowRight": 298
+      }
+    },
+    {
+      "name": "Only related-card copy is 14px /work/made-to-be-remembered/ card 2 @320",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/made-to-be-remembered/ card 2 @320",
+      "pass": true,
+      "detail": {
+        "paragraph": 237.046875,
+        "caption": 276,
+        "arrow": 18.953125,
+        "content": 237.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/made-to-be-remembered/ card 2 @320",
+      "pass": true,
+      "detail": "19px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/made-to-be-remembered/ card 2 @320",
+      "pass": true,
+      "detail": {
+        "copyLeft": 22,
+        "titleLeft": 22
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/made-to-be-remembered/ card 2 @320",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 259.046875,
+        "arrowLeft": 279.046875,
+        "arrowRight": 298
+      }
+    },
+    {
+      "name": "Other case-story paragraphs remain 17px /work/made-to-be-remembered/ @320",
+      "pass": true,
+      "detail": "17px"
+    },
+    {
+      "name": "No page overflow /work/made-to-be-remembered/ @320",
+      "pass": true,
+      "detail": {
+        "docWidth": 320,
+        "width": 320
+      }
+    },
+    {
+      "name": "Two related cards exist /work/behind-every-moment/ @320",
+      "pass": true
+    },
+    {
+      "name": "Only related-card copy is 14px /work/behind-every-moment/ card 1 @320",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/behind-every-moment/ card 1 @320",
+      "pass": true,
+      "detail": {
+        "paragraph": 237.046875,
+        "caption": 276,
+        "arrow": 18.953125,
+        "content": 237.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/behind-every-moment/ card 1 @320",
+      "pass": true,
+      "detail": "19px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/behind-every-moment/ card 1 @320",
+      "pass": true,
+      "detail": {
+        "copyLeft": 22,
+        "titleLeft": 22
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/behind-every-moment/ card 1 @320",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 259.046875,
+        "arrowLeft": 279.046875,
+        "arrowRight": 298
+      }
+    },
+    {
+      "name": "Only related-card copy is 14px /work/behind-every-moment/ card 2 @320",
+      "pass": true,
+      "detail": "14px"
+    },
+    {
+      "name": "Card description fills available width /work/behind-every-moment/ card 2 @320",
+      "pass": true,
+      "detail": {
+        "paragraph": 237.046875,
+        "caption": 276,
+        "arrow": 18.953125,
+        "content": 237.046875
+      }
+    },
+    {
+      "name": "Related heading retains larger size /work/behind-every-moment/ card 2 @320",
+      "pass": true,
+      "detail": "19px"
+    },
+    {
+      "name": "Card copy and title retain left alignment /work/behind-every-moment/ card 2 @320",
+      "pass": true,
+      "detail": {
+        "copyLeft": 22,
+        "titleLeft": 22
+      }
+    },
+    {
+      "name": "Arrow stays at right without overlapping text /work/behind-every-moment/ card 2 @320",
+      "pass": true,
+      "detail": {
+        "paragraphRight": 259.046875,
+        "arrowLeft": 279.046875,
+        "arrowRight": 298
+      }
+    },
+    {
+      "name": "Other case-story paragraphs remain 17px /work/behind-every-moment/ @320",
+      "pass": true,
+      "detail": "17px"
+    },
+    {
+      "name": "No page overflow /work/behind-every-moment/ @320",
+      "pass": true,
+      "detail": {
+        "docWidth": 320,
+        "width": 320
+      }
+    },
+    {
+      "name": "No uncaught browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

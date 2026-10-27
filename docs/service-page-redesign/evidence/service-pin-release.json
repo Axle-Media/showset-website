@@ -1,0 +1,242 @@
+[
+  {
+    "slug": "events-experiences",
+    "width": 1920,
+    "phase": "release",
+    "pass": true,
+    "detail": {
+      "phase": "leaving",
+      "y": -120.296875
+    }
+  },
+  {
+    "slug": "events-experiences",
+    "width": 1920,
+    "phase": "reverse",
+    "pass": true,
+    "detail": {
+      "phase": "active",
+      "y": 0
+    }
+  },
+  {
+    "slug": "creative-design",
+    "width": 1920,
+    "phase": "release",
+    "pass": true,
+    "detail": {
+      "phase": "leaving",
+      "y": -119.625
+    }
+  },
+  {
+    "slug": "creative-design",
+    "width": 1920,
+    "phase": "reverse",
+    "pass": true,
+    "detail": {
+      "phase": "active",
+      "y": 0
+    }
+  },
+  {
+    "slug": "digital-marketing",
+    "width": 1920,
+    "phase": "release",
+    "pass": true,
+    "detail": {
+      "phase": "leaving",
+      "y": -120.296875
+    }
+  },
+  {
+    "slug": "digital-marketing",
+    "width": 1920,
+    "phase": "reverse",
+    "pass": true,
+    "detail": {
+      "phase": "active",
+      "y": 0
+    }
+  },
+  {
+    "slug": "content-production",
+    "width": 1920,
+    "phase": "release",
+    "pass": true,
+    "detail": {
+      "phase": "leaving",
+      "y": -120.4375
+    }
+  },
+  {
+    "slug": "content-production",
+    "width": 1920,
+    "phase": "reverse",
+    "pass": true,
+    "detail": {
+      "phase": "active",
+      "y": 0
+    }
+  },
+  {
+    "slug": "events-experiences",
+    "width": 1440,
+    "phase": "release",
+    "pass": true,
+    "detail": {
+      "phase": "leaving",
+      "y": -120.1875
+    }
+  },
+  {
+    "slug": "events-experiences",
+    "width": 1440,
+    "phase": "reverse",
+    "pass": true,
+    "detail": {
+      "phase": "active",
+      "y": 0
+    }
+  },
+  {
+    "slug": "creative-design",
+    "width": 1440,
+    "phase": "release",
+    "pass": true,
+    "detail": {
+      "phase": "leaving",
+      "y": -119.5625
+    }
+  },
+  {
+    "slug": "creative-design",
+    "width": 1440,
+    "phase": "reverse",
+    "pass": true,
+    "detail": {
+      "phase": "active",
+      "y": 0
+    }
+  },
+  {
+    "slug": "digital-marketing",
+    "width": 1440,
+    "phase": "release",
+    "pass": true,
+    "detail": {
+      "phase": "leaving",
+      "y": -119.859375
+    }
+  },
+  {
+    "slug": "digital-marketing",
+    "width": 1440,
+    "phase": "reverse",
+    "pass": true,
+    "detail": {
+      "phase": "active",
+      "y": 0
+    }
+  },
+  {
+    "slug": "content-production",
+    "width": 1440,
+    "phase": "release",
+    "pass": true,
+    "detail": {
+      "phase": "leaving",
+      "y": -120.328125
+    }
+  },
+  {
+    "slug": "content-production",
+    "width": 1440,
+    "phase": "reverse",
+    "pass": true,
+    "detail": {
+      "phase": "active",
+      "y": 0
+    }
+  },
+  {
+    "slug": "events-experiences",
+    "width": 1024,
+    "phase": "release",
+    "pass": true,
+    "detail": {
+      "phase": "leaving",
+      "y": -120.234375
+    }
+  },
+  {
+    "slug": "events-experiences",
+    "width": 1024,
+    "phase": "reverse",
+    "pass": true,
+    "detail": {
+      "phase": "active",
+      "y": 0
+    }
+  },
+  {
+    "slug": "creative-design",
+    "width": 1024,
+    "phase": "release",
+    "pass": true,
+    "detail": {
+      "phase": "leaving",
+      "y": -119.5625
+    }
+  },
+  {
+    "slug": "creative-design",
+    "width": 1024,
+    "phase": "reverse",
+    "pass": true,
+    "detail": {
+      "phase": "active",
+      "y": 0
+    }
+  },
+  {
+    "slug": "digital-marketing",
+    "width": 1024,
+    "phase": "release",
+    "pass": true,
+    "detail": {
+      "phase": "leaving",
+      "y": -119.90625
+    }
+  },
+  {
+    "slug": "digital-marketing",
+    "width": 1024,
+    "phase": "reverse",
+    "pass": true,
+    "detail": {
+      "phase": "active",
+      "y": 0
+    }
+  },
+  {
+    "slug": "content-production",
+    "width": 1024,
+    "phase": "release",
+    "pass": true,
+    "detail": {
+      "phase": "leaving",
+      "y": -120.375
+    }
+  },
+  {
+    "slug": "content-production",
+    "width": 1024,
+    "phase": "reverse",
+    "pass": true,
+    "detail": {
+      "phase": "active",
+      "y": 0
+    }
+  }
+]

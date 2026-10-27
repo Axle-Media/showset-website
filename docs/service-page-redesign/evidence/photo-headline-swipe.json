@@ -1,0 +1,512 @@
+[
+  {
+    "name": ".hero-second .wipe-heading has an active rectangular overlay on /",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "none",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "none",
+      "textAnimationDuration": "0s",
+      "markerDuration": "0s"
+    }
+  },
+  {
+    "name": ".hero-second .wipe-heading uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".film-step.is-on .wipe-heading has an active rectangular overlay on /",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "none",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "none",
+      "textAnimationDuration": "0s",
+      "markerDuration": "0s"
+    }
+  },
+  {
+    "name": ".film-step.is-on .wipe-heading uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".case-opening-first .block-heading has an active rectangular overlay on /work/atmosphere-is-everything/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".case-opening-first .block-heading uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".case-opening-first .block-heading has an active rectangular overlay on /work/made-to-be-remembered/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".case-opening-first .block-heading uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".service-hero [data-service-reveal=\"photo\"] has an active rectangular overlay on /events-experiences/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".service-hero [data-service-reveal=\"photo\"] uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".service-hero [data-service-reveal=\"photo\"] has an active rectangular overlay on /content-production/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".service-hero [data-service-reveal=\"photo\"] uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] has an active rectangular overlay on /events-experiences/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "none",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "none",
+      "textAnimationDuration": "0s",
+      "markerDuration": "0s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] has an active rectangular overlay on /creative-design/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "none",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "none",
+      "textAnimationDuration": "0s",
+      "markerDuration": "0s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] has an active rectangular overlay on /digital-marketing/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "none",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "none",
+      "textAnimationDuration": "0s",
+      "markerDuration": "0s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] has an active rectangular overlay on /content-production/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "none",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "none",
+      "textAnimationDuration": "0s",
+      "markerDuration": "0s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".simple-hero .block-heading has an active rectangular overlay on /our-studio/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".simple-hero .block-heading uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".simple-hero .block-heading has an active rectangular overlay on /our-work/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".simple-hero .block-heading uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": "Second photographic hero uses a teal first block and sand second block",
+    "pass": true,
+    "details": {
+      "first": "rgb(18, 186, 175)",
+      "accent": "rgb(229, 216, 195)"
+    }
+  },
+  {
+    "name": "Original hero uses only the faster swipe, without the rising-line movement",
+    "pass": true,
+    "details": {
+      "animation": "showsetPhotoBlockSwipe",
+      "duration": "0.75s",
+      "content": "\"\"",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textTransform": "none",
+      "textTransition": "0s"
+    }
+  },
+  {
+    "name": "Opening hero block reveal replays when scrolling back upwards",
+    "pass": true,
+    "details": {
+      "firstReplay": 2
+    }
+  },
+  {
+    "name": "Second hero block reveal replays after returning from the next section",
+    "pass": true,
+    "details": {
+      "secondBefore": 4,
+      "secondAfter": 6
+    }
+  },
+  {
+    "name": "Both scroll hero scenes stay stationary while photography moves",
+    "pass": true,
+    "details": {
+      "first": "none",
+      "second": "none"
+    }
+  },
+  {
+    "name": "Film headline scene has no secondary slide or fade",
+    "pass": true,
+    "details": {
+      "transform": "none",
+      "transition": "none",
+      "duration": "0s"
+    }
+  },
+  {
+    "name": "Non-photo Work-section heading keeps its original circle",
+    "pass": true,
+    "details": {
+      "display": "none",
+      "content": "none"
+    }
+  },
+  {
+    "name": "Service photo description remains a paragraph, never a swipe heading",
+    "pass": true,
+    "details": null
+  },
+  {
+    "name": "Reduced motion disables photo block and leaves text fully visible",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "none",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "none",
+      "textClip": "none",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "none",
+      "textAnimationDuration": "0s",
+      "markerDuration": "0s"
+    }
+  },
+  {
+    "name": "Reduced-motion initial hero is legible without any swipe or clipping",
+    "pass": true,
+    "details": {
+      "clip": "none",
+      "animation": "none"
+    }
+  },
+  {
+    "name": "Mobile photo animation introduces no horizontal overflow",
+    "pass": true,
+    "details": {
+      "width": 0
+    }
+  },
+  {
+    "name": "No runtime exceptions",
+    "pass": true,
+    "details": []
+  }
+]

@@ -1,0 +1,1932 @@
+{
+  "checks": [
+    {
+      "name": "Heading is genuinely masked before entry .service-hero h1",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px 100% 0px 0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 100% 0px 0px)",
+        "animation": "none",
+        "barAnimation": "none"
+      }
+    },
+    {
+      "name": "Heading becomes readable after entry .service-hero h1",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 0px 0px 100%)",
+        "animation": "showsetPhotoTextUnmask",
+        "barAnimation": "showsetPhotoBlockSwipe"
+      }
+    },
+    {
+      "name": "Heading glyphs never rise, fade or translate .service-hero h1",
+      "pass": true
+    },
+    {
+      "name": "Approved rectangular bar traverses the type .service-hero h1",
+      "pass": true,
+      "detail": [
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 100% 0px 0px)",
+          "animation": "none",
+          "barAnimation": "none"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 89.2476% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 12.1877% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 0.59692%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 17.206%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 88.1347%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 99.8438%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        }
+      ]
+    },
+    {
+      "name": "Photo text uses discrete approved unmask .service-hero h1",
+      "pass": true
+    },
+    {
+      "name": "Global heading/body/action tokens events-experiences-1440",
+      "pass": true,
+      "detail": {
+        "headings": true,
+        "body": true,
+        "buttons": true,
+        "eyebrows": 2
+      }
+    },
+    {
+      "name": "Only selected contextual eyebrows events-experiences-1440",
+      "pass": true,
+      "detail": {
+        "headings": true,
+        "body": true,
+        "buttons": true,
+        "eyebrows": 2
+      }
+    },
+    {
+      "name": "Active photographic story heading is readable events-experiences-1440 0.1",
+      "pass": true
+    },
+    {
+      "name": "Active photographic story heading is readable events-experiences-1440 0.5",
+      "pass": true
+    },
+    {
+      "name": "Active photographic story heading is readable events-experiences-1440 0.9",
+      "pass": true
+    },
+    {
+      "name": "Active photographic story heading is readable events-experiences-1440 0.5",
+      "pass": true
+    },
+    {
+      "name": "Active photographic story heading is readable events-experiences-1440 0.1",
+      "pass": true
+    },
+    {
+      "name": "Signature changes during actual forward scroll events-experiences-1440",
+      "pass": true,
+      "detail": [
+        {
+          "p": "0.10008012820512821",
+          "proof": "0.0018584270269097177",
+          "channel": "",
+          "film": "",
+          "rail": "",
+          "active": [
+            "false",
+            "true",
+            "true"
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.5000801282051283",
+          "proof": "0.5376186132768327",
+          "channel": "",
+          "film": "",
+          "rail": "",
+          "active": [
+            "true",
+            "false",
+            "true"
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.9000801282051282",
+          "proof": "1",
+          "channel": "",
+          "film": "",
+          "rail": "",
+          "active": [
+            "true",
+            "true",
+            "false"
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.5000801282051283",
+          "proof": "0.5376186132768327",
+          "channel": "",
+          "film": "",
+          "rail": "",
+          "active": [
+            "true",
+            "false",
+            "true"
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.10008012820512821",
+          "proof": "0.0018584270269097177",
+          "channel": "",
+          "film": "",
+          "rail": "",
+          "active": [
+            "false",
+            "true",
+            "true"
+          ],
+          "pinned": "true"
+        }
+      ]
+    },
+    {
+      "name": "Signature returns to its prior reverse state events-experiences-1440",
+      "pass": true,
+      "detail": [
+        {
+          "p": "0.10008012820512821",
+          "proof": "0.0018584270269097177",
+          "channel": "",
+          "film": "",
+          "rail": "",
+          "active": [
+            "false",
+            "true",
+            "true"
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.5000801282051283",
+          "proof": "0.5376186132768327",
+          "channel": "",
+          "film": "",
+          "rail": "",
+          "active": [
+            "true",
+            "false",
+            "true"
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.9000801282051282",
+          "proof": "1",
+          "channel": "",
+          "film": "",
+          "rail": "",
+          "active": [
+            "true",
+            "true",
+            "false"
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.5000801282051283",
+          "proof": "0.5376186132768327",
+          "channel": "",
+          "film": "",
+          "rail": "",
+          "active": [
+            "true",
+            "false",
+            "true"
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.10008012820512821",
+          "proof": "0.0018584270269097177",
+          "channel": "",
+          "film": "",
+          "rail": "",
+          "active": [
+            "false",
+            "true",
+            "true"
+          ],
+          "pinned": "true"
+        }
+      ]
+    },
+    {
+      "name": "Process assembly follows reading progress events-experiences-1440",
+      "pass": true,
+      "detail": {
+        "a": "0.37539799471254703",
+        "z": "1"
+      }
+    },
+    {
+      "name": "Related image mask opens with actual scroll events-experiences-1440",
+      "pass": true,
+      "detail": {
+        "before": "inset(15.8027% 7.90137%)",
+        "after": "inset(0%)"
+      }
+    },
+    {
+      "name": "Heading is genuinely masked before entry .service-close h2",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px 100% 0px 0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 100% 0px 0px)",
+        "animation": "none",
+        "barAnimation": "none"
+      }
+    },
+    {
+      "name": "Heading becomes readable after entry .service-close h2",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 0px 0px 100%)",
+        "animation": "showsetPhotoTextUnmask",
+        "barAnimation": "showsetPhotoBlockSwipe"
+      }
+    },
+    {
+      "name": "Heading glyphs never rise, fade or translate .service-close h2",
+      "pass": true
+    },
+    {
+      "name": "Approved rectangular bar traverses the type .service-close h2",
+      "pass": true,
+      "detail": [
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 100% 0px 0px)",
+          "animation": "none",
+          "barAnimation": "none"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 92.362% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 23.503% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 1.15622% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 7.66001%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 73.8351%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 98.2652%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        }
+      ]
+    },
+    {
+      "name": "Photo text uses discrete approved unmask .service-close h2",
+      "pass": true
+    },
+    {
+      "name": "Wrapped type and punctuation fit each line events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "No document overflow events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "Pinned story releases cleanly events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "Heading is genuinely masked before entry [data-service-scene=\"1\"] h3",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px 100% 0px 0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 100% 0px 0px)",
+        "animation": "none",
+        "barAnimation": "none"
+      }
+    },
+    {
+      "name": "Heading becomes readable after entry [data-service-scene=\"1\"] h3",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 0px 0px 100%)",
+        "animation": "showsetPhotoTextUnmask",
+        "barAnimation": "showsetPhotoBlockSwipe"
+      }
+    },
+    {
+      "name": "Heading glyphs never rise, fade or translate [data-service-scene=\"1\"] h3",
+      "pass": true
+    },
+    {
+      "name": "Approved rectangular bar traverses the type [data-service-scene=\"1\"] h3",
+      "pass": true,
+      "detail": [
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 100% 0px 0px)",
+          "animation": "none",
+          "barAnimation": "none"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 90.9222% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 19.8562% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0.787347% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 9.0345%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 77.696%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 98.6973%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        }
+      ]
+    },
+    {
+      "name": "Photo text uses discrete approved unmask [data-service-scene=\"1\"] h3",
+      "pass": true
+    },
+    {
+      "name": "Heading is genuinely masked before entry [data-service-scene=\"0\"] h3",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px 100% 0px 0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 100% 0px 0px)",
+        "animation": "none",
+        "barAnimation": "none"
+      }
+    },
+    {
+      "name": "Heading becomes readable after entry [data-service-scene=\"0\"] h3",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 0px 0px 100%)",
+        "animation": "showsetPhotoTextUnmask",
+        "barAnimation": "showsetPhotoBlockSwipe"
+      }
+    },
+    {
+      "name": "Heading glyphs never rise, fade or translate [data-service-scene=\"0\"] h3",
+      "pass": true
+    },
+    {
+      "name": "Approved rectangular bar traverses the type [data-service-scene=\"0\"] h3",
+      "pass": true,
+      "detail": [
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 100% 0px 0px)",
+          "animation": "none",
+          "barAnimation": "none"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 89.2426% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 14.3268% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0.247902% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 0.107456%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 12.5411%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 83.7593%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 99.386%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        }
+      ]
+    },
+    {
+      "name": "Photo text uses discrete approved unmask [data-service-scene=\"0\"] h3",
+      "pass": true
+    },
+    {
+      "name": "Heading is genuinely masked before entry .service-intro h2",
+      "pass": true,
+      "detail": {
+        "clip": "circle(0% at 0% 50%)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "circle(0% at -8% 50%)",
+        "animation": "none",
+        "barAnimation": "none"
+      }
+    },
+    {
+      "name": "Heading becomes readable after entry .service-intro h2",
+      "pass": true,
+      "detail": {
+        "clip": "circle(160% at 0% 50%)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "circle(0% at -8% 50%)",
+        "animation": "showsetRadialTypeReveal",
+        "barAnimation": "showsetCircleReveal"
+      }
+    },
+    {
+      "name": "Heading glyphs never rise, fade or translate .service-intro h2",
+      "pass": true
+    },
+    {
+      "name": "Editorial heading uses the quieter shared reveal .service-intro h2",
+      "pass": true
+    },
+    {
+      "name": "Global heading/body/action tokens creative-design-1440",
+      "pass": true,
+      "detail": {
+        "headings": true,
+        "body": true,
+        "buttons": true,
+        "eyebrows": 2
+      }
+    },
+    {
+      "name": "Only selected contextual eyebrows creative-design-1440",
+      "pass": true,
+      "detail": {
+        "headings": true,
+        "body": true,
+        "buttons": true,
+        "eyebrows": 2
+      }
+    },
+    {
+      "name": "Signature changes during actual forward scroll creative-design-1440",
+      "pass": true,
+      "detail": [
+        {
+          "p": "0.09962606837606838",
+          "proof": "0.0017760134868149444",
+          "channel": "",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.4996260683760684",
+          "proof": "0.536769348442402",
+          "channel": "",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.8996260683760684",
+          "proof": "1",
+          "channel": "",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.4996260683760684",
+          "proof": "0.536769348442402",
+          "channel": "",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.09962606837606838",
+          "proof": "0.0017760134868149444",
+          "channel": "",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        }
+      ]
+    },
+    {
+      "name": "Signature returns to its prior reverse state creative-design-1440",
+      "pass": true,
+      "detail": [
+        {
+          "p": "0.09962606837606838",
+          "proof": "0.0017760134868149444",
+          "channel": "",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.4996260683760684",
+          "proof": "0.536769348442402",
+          "channel": "",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.8996260683760684",
+          "proof": "1",
+          "channel": "",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.4996260683760684",
+          "proof": "0.536769348442402",
+          "channel": "",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.09962606837606838",
+          "proof": "0.0017760134868149444",
+          "channel": "",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        }
+      ]
+    },
+    {
+      "name": "Process assembly follows reading progress creative-design-1440",
+      "pass": true,
+      "detail": {
+        "a": "0",
+        "z": "1"
+      }
+    },
+    {
+      "name": "Related image mask opens with actual scroll creative-design-1440",
+      "pass": true,
+      "detail": {
+        "before": "inset(15.808% 7.90402%)",
+        "after": "inset(0%)"
+      }
+    },
+    {
+      "name": "Heading is genuinely masked before entry .service-close h2",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px 100% 0px 0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 100% 0px 0px)",
+        "animation": "none",
+        "barAnimation": "none"
+      }
+    },
+    {
+      "name": "Heading becomes readable after entry .service-close h2",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 0px 0px 100%)",
+        "animation": "showsetPhotoTextUnmask",
+        "barAnimation": "showsetPhotoBlockSwipe"
+      }
+    },
+    {
+      "name": "Heading glyphs never rise, fade or translate .service-close h2",
+      "pass": true
+    },
+    {
+      "name": "Approved rectangular bar traverses the type .service-close h2",
+      "pass": true,
+      "detail": [
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 100% 0px 0px)",
+          "animation": "none",
+          "barAnimation": "none"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 93.6308% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 27.9759% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 1.57722% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 6.45746%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 68.9722%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 97.7624%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        }
+      ]
+    },
+    {
+      "name": "Photo text uses discrete approved unmask .service-close h2",
+      "pass": true
+    },
+    {
+      "name": "Wrapped type and punctuation fit each line creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "No document overflow creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "Pinned story releases cleanly creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "Heading is genuinely masked before entry .service-intro h2",
+      "pass": true,
+      "detail": {
+        "clip": "circle(0% at 0% 50%)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "circle(0% at -8% 50%)",
+        "animation": "none",
+        "barAnimation": "none"
+      }
+    },
+    {
+      "name": "Heading becomes readable after entry .service-intro h2",
+      "pass": true,
+      "detail": {
+        "clip": "circle(160% at 0% 50%)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "circle(0% at -8% 50%)",
+        "animation": "showsetRadialTypeReveal",
+        "barAnimation": "showsetCircleReveal"
+      }
+    },
+    {
+      "name": "Heading glyphs never rise, fade or translate .service-intro h2",
+      "pass": true
+    },
+    {
+      "name": "Editorial heading uses the quieter shared reveal .service-intro h2",
+      "pass": true
+    },
+    {
+      "name": "Global heading/body/action tokens digital-marketing-1440",
+      "pass": true,
+      "detail": {
+        "headings": true,
+        "body": true,
+        "buttons": true,
+        "eyebrows": 2
+      }
+    },
+    {
+      "name": "Only selected contextual eyebrows digital-marketing-1440",
+      "pass": true,
+      "detail": {
+        "headings": true,
+        "body": true,
+        "buttons": true,
+        "eyebrows": 2
+      }
+    },
+    {
+      "name": "Signature changes during actual forward scroll digital-marketing-1440",
+      "pass": true,
+      "detail": [
+        {
+          "p": "0.09990808823529412",
+          "proof": "0.0018269850025345886",
+          "channel": "0.3333333333333333",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.4999080882352941",
+          "proof": "0.5372968443006597",
+          "channel": "0.6666666666666666",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.8999080882352941",
+          "proof": "1",
+          "channel": "1",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.4999080882352941",
+          "proof": "0.5372968443006597",
+          "channel": "0.6666666666666666",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.09990808823529412",
+          "proof": "0.0018269850025345886",
+          "channel": "0.3333333333333333",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        }
+      ]
+    },
+    {
+      "name": "Signature returns to its prior reverse state digital-marketing-1440",
+      "pass": true,
+      "detail": [
+        {
+          "p": "0.09990808823529412",
+          "proof": "0.0018269850025345886",
+          "channel": "0.3333333333333333",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.4999080882352941",
+          "proof": "0.5372968443006597",
+          "channel": "0.6666666666666666",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.8999080882352941",
+          "proof": "1",
+          "channel": "1",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.4999080882352941",
+          "proof": "0.5372968443006597",
+          "channel": "0.6666666666666666",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        },
+        {
+          "p": "0.09990808823529412",
+          "proof": "0.0018269850025345886",
+          "channel": "0.3333333333333333",
+          "film": "",
+          "active": [],
+          "pinned": "true"
+        }
+      ]
+    },
+    {
+      "name": "Channel selection links path and active response digital-marketing-1440",
+      "pass": true,
+      "detail": {
+        "a": "0.627913px",
+        "z": "0%"
+      }
+    },
+    {
+      "name": "Channel keyboard selection digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "Process assembly follows reading progress digital-marketing-1440",
+      "pass": true,
+      "detail": {
+        "a": "0",
+        "z": "1"
+      }
+    },
+    {
+      "name": "Related image mask opens with actual scroll digital-marketing-1440",
+      "pass": true,
+      "detail": {
+        "before": "inset(15.8124% 7.90622%)",
+        "after": "inset(0%)"
+      }
+    },
+    {
+      "name": "Heading is genuinely masked before entry .service-close h2",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px 100% 0px 0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 100% 0px 0px)",
+        "animation": "none",
+        "barAnimation": "none"
+      }
+    },
+    {
+      "name": "Heading becomes readable after entry .service-close h2",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 0px 0px 100%)",
+        "animation": "showsetPhotoTextUnmask",
+        "barAnimation": "showsetPhotoBlockSwipe"
+      }
+    },
+    {
+      "name": "Heading glyphs never rise, fade or translate .service-close h2",
+      "pass": true
+    },
+    {
+      "name": "Approved rectangular bar traverses the type .service-close h2",
+      "pass": true,
+      "detail": [
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 100% 0px 0px)",
+          "animation": "none",
+          "barAnimation": "none"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 94.7594% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 33.6068% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 2.10064% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 5.37861%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 62.8941%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 97.1657%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        }
+      ]
+    },
+    {
+      "name": "Photo text uses discrete approved unmask .service-close h2",
+      "pass": true
+    },
+    {
+      "name": "Wrapped type and punctuation fit each line digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "No document overflow digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "Pinned story releases cleanly digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "Heading is genuinely masked before entry .service-hero h1",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px 100% 0px 0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 100% 0px 0px)",
+        "animation": "none",
+        "barAnimation": "none"
+      }
+    },
+    {
+      "name": "Heading becomes readable after entry .service-hero h1",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 0px 0px 100%)",
+        "animation": "showsetPhotoTextUnmask",
+        "barAnimation": "showsetPhotoBlockSwipe"
+      }
+    },
+    {
+      "name": "Heading glyphs never rise, fade or translate .service-hero h1",
+      "pass": true
+    },
+    {
+      "name": "Approved rectangular bar traverses the type .service-hero h1",
+      "pass": true,
+      "detail": [
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 100% 0px 0px)",
+          "animation": "none",
+          "barAnimation": "none"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 89.2637% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0.496497% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 1.31999%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 73.7224%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 99.8422%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        }
+      ]
+    },
+    {
+      "name": "Photo text uses discrete approved unmask .service-hero h1",
+      "pass": true
+    },
+    {
+      "name": "Global heading/body/action tokens content-production-1440",
+      "pass": true,
+      "detail": {
+        "headings": true,
+        "body": true,
+        "buttons": true,
+        "eyebrows": 2
+      }
+    },
+    {
+      "name": "Only selected contextual eyebrows content-production-1440",
+      "pass": true,
+      "detail": {
+        "headings": true,
+        "body": true,
+        "buttons": true,
+        "eyebrows": 2
+      }
+    },
+    {
+      "name": "Signature changes during actual forward scroll content-production-1440",
+      "pass": true,
+      "detail": [
+        {
+          "p": "0.10014022435897436",
+          "proof": "0.0018694723160763884",
+          "channel": "",
+          "film": "0.3493176383801384",
+          "rail": "translate3d(-4.79529%, 0px, 0px)",
+          "active": [
+            null,
+            null,
+            null
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.5001402243589743",
+          "proof": "0.5377310087521384",
+          "channel": "",
+          "film": "0.6667779558404557",
+          "rail": "translate3d(-100.033%, 0px, 0px)",
+          "active": [
+            null,
+            null,
+            null
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.9001402243589743",
+          "proof": "1",
+          "channel": "",
+          "film": "0.9842382733007734",
+          "rail": "translate3d(-195.271%, 0px, 0px)",
+          "active": [
+            null,
+            null,
+            null
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.5001402243589743",
+          "proof": "0.5377310087521384",
+          "channel": "",
+          "film": "0.6667779558404557",
+          "rail": "translate3d(-100.033%, 0px, 0px)",
+          "active": [
+            null,
+            null,
+            null
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.10014022435897436",
+          "proof": "0.0018694723160763884",
+          "channel": "",
+          "film": "0.3493176383801384",
+          "rail": "translate3d(-4.79529%, 0px, 0px)",
+          "active": [
+            null,
+            null,
+            null
+          ],
+          "pinned": "true"
+        }
+      ]
+    },
+    {
+      "name": "Signature returns to its prior reverse state content-production-1440",
+      "pass": true,
+      "detail": [
+        {
+          "p": "0.10014022435897436",
+          "proof": "0.0018694723160763884",
+          "channel": "",
+          "film": "0.3493176383801384",
+          "rail": "translate3d(-4.79529%, 0px, 0px)",
+          "active": [
+            null,
+            null,
+            null
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.5001402243589743",
+          "proof": "0.5377310087521384",
+          "channel": "",
+          "film": "0.6667779558404557",
+          "rail": "translate3d(-100.033%, 0px, 0px)",
+          "active": [
+            null,
+            null,
+            null
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.9001402243589743",
+          "proof": "1",
+          "channel": "",
+          "film": "0.9842382733007734",
+          "rail": "translate3d(-195.271%, 0px, 0px)",
+          "active": [
+            null,
+            null,
+            null
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.5001402243589743",
+          "proof": "0.5377310087521384",
+          "channel": "",
+          "film": "0.6667779558404557",
+          "rail": "translate3d(-100.033%, 0px, 0px)",
+          "active": [
+            null,
+            null,
+            null
+          ],
+          "pinned": "true"
+        },
+        {
+          "p": "0.10014022435897436",
+          "proof": "0.0018694723160763884",
+          "channel": "",
+          "film": "0.3493176383801384",
+          "rail": "translate3d(-4.79529%, 0px, 0px)",
+          "active": [
+            null,
+            null,
+            null
+          ],
+          "pinned": "true"
+        }
+      ]
+    },
+    {
+      "name": "Process assembly follows reading progress content-production-1440",
+      "pass": true,
+      "detail": {
+        "a": "0",
+        "z": "1"
+      }
+    },
+    {
+      "name": "Related image mask opens with actual scroll content-production-1440",
+      "pass": true,
+      "detail": {
+        "before": "inset(15.8074% 7.9037%)",
+        "after": "inset(0%)"
+      }
+    },
+    {
+      "name": "Heading is genuinely masked before entry .service-close h2",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px 100% 0px 0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 100% 0px 0px)",
+        "animation": "none",
+        "barAnimation": "none"
+      }
+    },
+    {
+      "name": "Heading becomes readable after entry .service-close h2",
+      "pass": true,
+      "detail": {
+        "clip": "inset(0px)",
+        "transform": "none",
+        "translate": "none",
+        "opacity": "1",
+        "marker": "inset(0px 0px 0px 100%)",
+        "animation": "showsetPhotoTextUnmask",
+        "barAnimation": "showsetPhotoBlockSwipe"
+      }
+    },
+    {
+      "name": "Heading glyphs never rise, fade or translate .service-close h2",
+      "pass": true
+    },
+    {
+      "name": "Approved rectangular bar traverses the type .service-close h2",
+      "pass": true,
+      "detail": [
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 100% 0px 0px)",
+          "animation": "none",
+          "barAnimation": "none"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 92.3547% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 23.5394% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px 100% 0px 0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 1.15983% 0px 0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 7.68566%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 73.7955%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 98.2677%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        },
+        {
+          "clip": "inset(0px)",
+          "transform": "none",
+          "translate": "none",
+          "opacity": "1",
+          "marker": "inset(0px 0px 0px 100%)",
+          "animation": "showsetPhotoTextUnmask",
+          "barAnimation": "showsetPhotoBlockSwipe"
+        }
+      ]
+    },
+    {
+      "name": "Photo text uses discrete approved unmask .service-close h2",
+      "pass": true
+    },
+    {
+      "name": "Wrapped type and punctuation fit each line content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "No document overflow content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "Pinned story releases cleanly content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "All heading glyphs readable without motion events-experiences {\"reducedMotion\":\"reduce\"}",
+      "pass": true
+    },
+    {
+      "name": "All heading glyphs readable without motion creative-design {\"reducedMotion\":\"reduce\"}",
+      "pass": true
+    },
+    {
+      "name": "All heading glyphs readable without motion digital-marketing {\"reducedMotion\":\"reduce\"}",
+      "pass": true
+    },
+    {
+      "name": "All heading glyphs readable without motion content-production {\"reducedMotion\":\"reduce\"}",
+      "pass": true
+    },
+    {
+      "name": "All heading glyphs readable without motion events-experiences {\"javaScriptEnabled\":false}",
+      "pass": true
+    },
+    {
+      "name": "All heading glyphs readable without motion creative-design {\"javaScriptEnabled\":false}",
+      "pass": true
+    },
+    {
+      "name": "All heading glyphs readable without motion digital-marketing {\"javaScriptEnabled\":false}",
+      "pass": true
+    },
+    {
+      "name": "All heading glyphs readable without motion content-production {\"javaScriptEnabled\":false}",
+      "pass": true
+    },
+    {
+      "name": "No console, hydration or runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

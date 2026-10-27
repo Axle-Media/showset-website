@@ -1,3 +1,5 @@
+import {renderServiceExperience} from "./service-experience";
+import type {ServiceKind} from "./service-content";
 import { refineHeadingPeriods } from "./typography";
 import { renderImmersiveCase } from "./immersive-case";
 import { caseExperienceFor } from "./case-content";
@@ -317,64 +319,7 @@ export function bindConcept(
       });
     }
   } else if (["events", "creative", "digital", "production"].includes(key)) {
-    const ss = page.sections;
-    ss.forEach((s, i) => {
-      const selectors = [
-        ".category-hero",
-        ".category-detail",
-        ".category-clusters",
-        "#category-feature-title",
-        ".category-process",
-        ".category-capabilities",
-        ".category-banner",
-        ".category-more",
-      ];
-      mark(host.querySelector(selectors[i] || "__none__"), s);
-      if (s.type === "pagehero") {
-        heading("#category-title", s);
-        body("#category-description", s);
-        if (changed(s, "image")) image("#category-image", s.image);
-        action(".category-inner .solid-link", s);
-      } else if (i === 1) {
-        heading("#category-belief", s);
-        body("#category-belief-copy", s);
-      } else if (i === 3) {
-        heading("#category-feature-title", s);
-        body("#category-feature-copy", s);
-      } else if (s.type === "visual") {
-        heading(".category-banner h2", s);
-        if (changed(s, "image")) image("#category-banner", s.image);
-        action(".category-banner .solid-link", s);
-      } else if (s.type === "items") {
-        heading(
-          i === 2 ? ".category-clusters-title h2" : ".category-process>h2",
-          s,
-        );
-        if (i === 2) body(".category-clusters-title>p", s);
-        const target = host.querySelector(
-          i === 2 ? "#category-clusters" : "#category-process-list",
-        );
-        if (target && changed(s, "items"))
-          target.innerHTML = s.items
-            .map(
-              (x) =>
-                `<article><h3>${rich(x.title)}</h3><p>${rich(x.description)}</p></article>`,
-            )
-            .join("");
-      } else if (s.type === "accordion") {
-        heading(".category-capabilities-head h2", s);
-        body(".category-capabilities-head>p", s);
-        const e = host.querySelector("#category-capabilities-list");
-        if (e && changed(s, "items"))
-          e.innerHTML = s.items
-            .map(
-              (x) =>
-                `<details><summary>${rich(x.title)}<span aria-hidden="true">+</span></summary><p>${rich(x.description)}</p></details>`,
-            )
-            .join("");
-      }
-      if (s.type === "cta") heading(".category-more h2", s);
-    });
+    renderServiceExperience(host,page,key as ServiceKind,catalog,mark);
   } else if (key === "studio") {
     const selectors = [
       ".studio-hero",

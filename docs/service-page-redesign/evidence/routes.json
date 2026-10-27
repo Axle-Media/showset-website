@@ -1,0 +1,498 @@
+{
+  "checks": [
+    {
+      "name": "Direct public route / JS=false",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading / JS=false",
+      "pass": true,
+      "detail": "Great ideasmove people."
+    },
+    {
+      "name": "One primary route document / JS=false",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body / JS=false",
+      "pass": true
+    },
+    {
+      "name": "Real hrefs before hydration /",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /events-experiences/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /events-experiences/ JS=false",
+      "pass": true,
+      "detail": "From a sparkto a room alive."
+    },
+    {
+      "name": "One primary route document /events-experiences/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /events-experiences/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Real hrefs before hydration /events-experiences/",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /creative-design/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /creative-design/ JS=false",
+      "pass": true,
+      "detail": "Ideas madetangible."
+    },
+    {
+      "name": "One primary route document /creative-design/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /creative-design/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Real hrefs before hydration /creative-design/",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /digital-marketing/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /digital-marketing/ JS=false",
+      "pass": true,
+      "detail": "Creativity thattravels further."
+    },
+    {
+      "name": "One primary route document /digital-marketing/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /digital-marketing/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Real hrefs before hydration /digital-marketing/",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /content-production/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /content-production/ JS=false",
+      "pass": true,
+      "detail": "Every framehas a purpose."
+    },
+    {
+      "name": "One primary route document /content-production/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /content-production/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Real hrefs before hydration /content-production/",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /our-studio/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /our-studio/ JS=false",
+      "pass": true,
+      "detail": "Curious minds.Capable hands."
+    },
+    {
+      "name": "One primary route document /our-studio/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /our-studio/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Real hrefs before hydration /our-studio/",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /our-work/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /our-work/ JS=false",
+      "pass": true,
+      "detail": "The story isin the making."
+    },
+    {
+      "name": "One primary route document /our-work/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /our-work/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Real hrefs before hydration /our-work/",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /work/atmosphere-is-everything/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /work/atmosphere-is-everything/ JS=false",
+      "pass": true,
+      "detail": "A night made for the spotlight."
+    },
+    {
+      "name": "One primary route document /work/atmosphere-is-everything/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /work/atmosphere-is-everything/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Real hrefs before hydration /work/atmosphere-is-everything/",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /work/made-to-be-remembered/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /work/made-to-be-remembered/ JS=false",
+      "pass": true,
+      "detail": "Made to be remembered."
+    },
+    {
+      "name": "One primary route document /work/made-to-be-remembered/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /work/made-to-be-remembered/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Real hrefs before hydration /work/made-to-be-remembered/",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /work/behind-every-moment/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /work/behind-every-moment/ JS=false",
+      "pass": true,
+      "detail": "Behind every moment."
+    },
+    {
+      "name": "One primary route document /work/behind-every-moment/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /work/behind-every-moment/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Real hrefs before hydration /work/behind-every-moment/",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /contact/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /contact/ JS=false",
+      "pass": true,
+      "detail": "Somethingbrewing?"
+    },
+    {
+      "name": "One primary route document /contact/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /contact/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Real hrefs before hydration /contact/",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /services/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /services/ JS=false",
+      "pass": true,
+      "detail": "Great ideasmove people."
+    },
+    {
+      "name": "One primary route document /services/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /services/ JS=false",
+      "pass": true
+    },
+    {
+      "name": "Real hrefs before hydration /services/",
+      "pass": true
+    },
+    {
+      "name": "Direct public route / JS=true",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading / JS=true",
+      "pass": true,
+      "detail": "Great ideasmove people."
+    },
+    {
+      "name": "One primary route document / JS=true",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body / JS=true",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /events-experiences/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /events-experiences/ JS=true",
+      "pass": true,
+      "detail": "From a sparkto a room alive."
+    },
+    {
+      "name": "One primary route document /events-experiences/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /events-experiences/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /creative-design/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /creative-design/ JS=true",
+      "pass": true,
+      "detail": "Ideas madetangible."
+    },
+    {
+      "name": "One primary route document /creative-design/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /creative-design/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /digital-marketing/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /digital-marketing/ JS=true",
+      "pass": true,
+      "detail": "Creativity thattravels further."
+    },
+    {
+      "name": "One primary route document /digital-marketing/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /digital-marketing/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /content-production/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /content-production/ JS=true",
+      "pass": true,
+      "detail": "Every framehas a purpose."
+    },
+    {
+      "name": "One primary route document /content-production/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /content-production/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /our-studio/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /our-studio/ JS=true",
+      "pass": true,
+      "detail": "Curious minds.Capable hands."
+    },
+    {
+      "name": "One primary route document /our-studio/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /our-studio/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /our-work/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /our-work/ JS=true",
+      "pass": true,
+      "detail": "The story isin the making."
+    },
+    {
+      "name": "One primary route document /our-work/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /our-work/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /work/atmosphere-is-everything/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /work/atmosphere-is-everything/ JS=true",
+      "pass": true,
+      "detail": "A night made for the spotlight."
+    },
+    {
+      "name": "One primary route document /work/atmosphere-is-everything/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /work/atmosphere-is-everything/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /work/made-to-be-remembered/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /work/made-to-be-remembered/ JS=true",
+      "pass": true,
+      "detail": "Made to be remembered."
+    },
+    {
+      "name": "One primary route document /work/made-to-be-remembered/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /work/made-to-be-remembered/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /work/behind-every-moment/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /work/behind-every-moment/ JS=true",
+      "pass": true,
+      "detail": "Behind every moment."
+    },
+    {
+      "name": "One primary route document /work/behind-every-moment/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /work/behind-every-moment/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /contact/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /contact/ JS=true",
+      "pass": true,
+      "detail": "Somethingbrewing?"
+    },
+    {
+      "name": "One primary route document /contact/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /contact/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Direct public route /services/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Correct visible primary heading /services/ JS=true",
+      "pass": true,
+      "detail": "Great ideasmove people."
+    },
+    {
+      "name": "One primary route document /services/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Meaningful route body /services/ JS=true",
+      "pass": true
+    },
+    {
+      "name": "Native history updates Next pathname state",
+      "pass": true
+    },
+    {
+      "name": "Curtain navigation retains route heading",
+      "pass": true
+    },
+    {
+      "name": "Route navigation moves focus to its heading",
+      "pass": true
+    },
+    {
+      "name": "Back restores home route",
+      "pass": true
+    },
+    {
+      "name": "Forward restores studio route",
+      "pass": true
+    },
+    {
+      "name": "Secondary route refresh stays on route",
+      "pass": true
+    },
+    {
+      "name": "Rapid links do not desynchronise URL and page",
+      "pass": true
+    },
+    {
+      "name": "Back during a curtain settles on the actual URL",
+      "pass": true
+    },
+    {
+      "name": "No runtime or hydration errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

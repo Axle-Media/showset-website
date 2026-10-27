@@ -1,0 +1,1280 @@
+[
+  {
+    "name": "Legacy What we do dropdown removed",
+    "pass": true
+  },
+  {
+    "name": "Four services are direct, first-class nav links",
+    "pass": true,
+    "details": [
+      "/events-experiences/",
+      "/creative-design/",
+      "/digital-marketing/",
+      "/content-production/",
+      "/our-studio/",
+      "/our-work/"
+    ]
+  },
+  {
+    "name": "Only Studio and Work follow service pages",
+    "pass": true,
+    "details": [
+      "/events-experiences/",
+      "/creative-design/",
+      "/digital-marketing/",
+      "/content-production/",
+      "/our-studio/",
+      "/our-work/"
+    ]
+  },
+  {
+    "name": "Contact remains available through the primary CTA",
+    "pass": true
+  },
+  {
+    "name": "Editorial heading copy retained",
+    "pass": true,
+    "details": "Too good to leave on the drawing board."
+  },
+  {
+    "name": "Hero heading copy retained",
+    "pass": true,
+    "details": "Great ideas move people."
+  },
+  {
+    "name": "Logo and manifesto share left gutter 1920",
+    "pass": true,
+    "details": {
+      "w": 1920,
+      "logo": {
+        "x": 100,
+        "right": 250,
+        "width": 150,
+        "visible": true
+      },
+      "cta": {
+        "x": 1684.65625,
+        "right": 1820,
+        "width": 135.34375,
+        "visible": true
+      },
+      "nav": {
+        "x": 500.765625,
+        "right": 1419.234375,
+        "width": 918.46875,
+        "visible": true
+      },
+      "mobile": {
+        "x": 0,
+        "right": 0,
+        "width": 0,
+        "visible": false
+      },
+      "manifesto": {
+        "x": 100,
+        "right": 636.328125,
+        "width": 536.328125,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 100,
+        "right": 517.609375,
+        "width": 417.609375,
+        "visible": true
+      },
+      "navFirst": 500.765625,
+      "navLast": 1419.234375,
+      "navCentre": 960,
+      "navSizes": [
+        "14px",
+        "14px",
+        "14px",
+        "14px",
+        "14px",
+        "14px"
+      ],
+      "navGaps": [
+        42,
+        42,
+        42,
+        42,
+        42
+      ],
+      "documentWidth": 1920
+    }
+  },
+  {
+    "name": "Manifesto aligns with Work heading 1920",
+    "pass": true,
+    "details": {
+      "manifesto": {
+        "x": 100,
+        "right": 636.328125,
+        "width": 536.328125,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 100,
+        "right": 517.609375,
+        "width": 417.609375,
+        "visible": true
+      }
+    }
+  },
+  {
+    "name": "Header fits viewport 1920",
+    "pass": true,
+    "details": {
+      "documentWidth": 1920,
+      "width": 1920
+    }
+  },
+  {
+    "name": "Direct links and right-hand CTA visible 1920",
+    "pass": true
+  },
+  {
+    "name": "Logo and CTA match outer-edge spacing 1920",
+    "pass": true,
+    "details": {
+      "left": 100,
+      "right": 100
+    }
+  },
+  {
+    "name": "Navigation has no overlap 1920",
+    "pass": true,
+    "details": {
+      "logo": {
+        "x": 100,
+        "right": 250,
+        "width": 150,
+        "visible": true
+      },
+      "cta": {
+        "x": 1684.65625,
+        "right": 1820,
+        "width": 135.34375,
+        "visible": true
+      },
+      "navFirst": 500.765625,
+      "navLast": 1419.234375
+    }
+  },
+  {
+    "name": "Navigation centred on viewport 1920",
+    "pass": true,
+    "details": {
+      "centre": 960,
+      "viewportCentre": 960
+    }
+  },
+  {
+    "name": "Every desktop menu label is 14px 1920",
+    "pass": true,
+    "details": [
+      "14px",
+      "14px",
+      "14px",
+      "14px",
+      "14px",
+      "14px"
+    ]
+  },
+  {
+    "name": "Menu item spacing increased 1920",
+    "pass": true,
+    "details": [
+      42,
+      42,
+      42,
+      42,
+      42
+    ]
+  },
+  {
+    "name": "Logo and manifesto share left gutter 1600",
+    "pass": true,
+    "details": {
+      "w": 1600,
+      "logo": {
+        "x": 100,
+        "right": 250,
+        "width": 150,
+        "visible": true
+      },
+      "cta": {
+        "x": 1364.65625,
+        "right": 1500,
+        "width": 135.34375,
+        "visible": true
+      },
+      "nav": {
+        "x": 357.796875,
+        "right": 1242.203125,
+        "width": 884.40625,
+        "visible": true
+      },
+      "mobile": {
+        "x": 0,
+        "right": 0,
+        "width": 0,
+        "visible": false
+      },
+      "manifesto": {
+        "x": 100,
+        "right": 636.328125,
+        "width": 536.328125,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 100,
+        "right": 517.609375,
+        "width": 417.609375,
+        "visible": true
+      },
+      "navFirst": 357.796875,
+      "navLast": 1242.203125,
+      "navCentre": 800,
+      "navSizes": [
+        "14px",
+        "14px",
+        "14px",
+        "14px",
+        "14px",
+        "14px"
+      ],
+      "navGaps": [
+        35.1875,
+        35.1875,
+        35.1875,
+        35.1875,
+        35.1875
+      ],
+      "documentWidth": 1600
+    }
+  },
+  {
+    "name": "Manifesto aligns with Work heading 1600",
+    "pass": true,
+    "details": {
+      "manifesto": {
+        "x": 100,
+        "right": 636.328125,
+        "width": 536.328125,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 100,
+        "right": 517.609375,
+        "width": 417.609375,
+        "visible": true
+      }
+    }
+  },
+  {
+    "name": "Header fits viewport 1600",
+    "pass": true,
+    "details": {
+      "documentWidth": 1600,
+      "width": 1600
+    }
+  },
+  {
+    "name": "Direct links and right-hand CTA visible 1600",
+    "pass": true
+  },
+  {
+    "name": "Logo and CTA match outer-edge spacing 1600",
+    "pass": true,
+    "details": {
+      "left": 100,
+      "right": 100
+    }
+  },
+  {
+    "name": "Navigation has no overlap 1600",
+    "pass": true,
+    "details": {
+      "logo": {
+        "x": 100,
+        "right": 250,
+        "width": 150,
+        "visible": true
+      },
+      "cta": {
+        "x": 1364.65625,
+        "right": 1500,
+        "width": 135.34375,
+        "visible": true
+      },
+      "navFirst": 357.796875,
+      "navLast": 1242.203125
+    }
+  },
+  {
+    "name": "Navigation centred on viewport 1600",
+    "pass": true,
+    "details": {
+      "centre": 800,
+      "viewportCentre": 800
+    }
+  },
+  {
+    "name": "Every desktop menu label is 14px 1600",
+    "pass": true,
+    "details": [
+      "14px",
+      "14px",
+      "14px",
+      "14px",
+      "14px",
+      "14px"
+    ]
+  },
+  {
+    "name": "Menu item spacing increased 1600",
+    "pass": true,
+    "details": [
+      35.1875,
+      35.1875,
+      35.1875,
+      35.1875,
+      35.1875
+    ]
+  },
+  {
+    "name": "Logo and manifesto share left gutter 1440",
+    "pass": true,
+    "details": {
+      "w": 1440,
+      "logo": {
+        "x": 90.71875,
+        "right": 240.71875,
+        "width": 150,
+        "visible": true
+      },
+      "cta": {
+        "x": 1213.9375,
+        "right": 1349.28125,
+        "width": 135.34375,
+        "visible": true
+      },
+      "nav": {
+        "x": 286.578125,
+        "right": 1153.40625,
+        "width": 866.828125,
+        "visible": true
+      },
+      "mobile": {
+        "x": 0,
+        "right": 0,
+        "width": 0,
+        "visible": false
+      },
+      "manifesto": {
+        "x": 90.71875,
+        "right": 627.046875,
+        "width": 536.328125,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 90.71875,
+        "right": 508.328125,
+        "width": 417.609375,
+        "visible": true
+      },
+      "navFirst": 286.578125,
+      "navLast": 1153.40625,
+      "navCentre": 719.9921875,
+      "navSizes": [
+        "14px",
+        "14px",
+        "14px",
+        "14px",
+        "14px",
+        "14px"
+      ],
+      "navGaps": [
+        31.671875,
+        31.671875,
+        31.671875,
+        31.671875,
+        31.671875
+      ],
+      "documentWidth": 1440
+    }
+  },
+  {
+    "name": "Manifesto aligns with Work heading 1440",
+    "pass": true,
+    "details": {
+      "manifesto": {
+        "x": 90.71875,
+        "right": 627.046875,
+        "width": 536.328125,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 90.71875,
+        "right": 508.328125,
+        "width": 417.609375,
+        "visible": true
+      }
+    }
+  },
+  {
+    "name": "Header fits viewport 1440",
+    "pass": true,
+    "details": {
+      "documentWidth": 1440,
+      "width": 1440
+    }
+  },
+  {
+    "name": "Direct links and right-hand CTA visible 1440",
+    "pass": true
+  },
+  {
+    "name": "Logo and CTA match outer-edge spacing 1440",
+    "pass": true,
+    "details": {
+      "left": 90.71875,
+      "right": 90.71875
+    }
+  },
+  {
+    "name": "Navigation has no overlap 1440",
+    "pass": true,
+    "details": {
+      "logo": {
+        "x": 90.71875,
+        "right": 240.71875,
+        "width": 150,
+        "visible": true
+      },
+      "cta": {
+        "x": 1213.9375,
+        "right": 1349.28125,
+        "width": 135.34375,
+        "visible": true
+      },
+      "navFirst": 286.578125,
+      "navLast": 1153.40625
+    }
+  },
+  {
+    "name": "Navigation centred on viewport 1440",
+    "pass": true,
+    "details": {
+      "centre": 719.9921875,
+      "viewportCentre": 720
+    }
+  },
+  {
+    "name": "Every desktop menu label is 14px 1440",
+    "pass": true,
+    "details": [
+      "14px",
+      "14px",
+      "14px",
+      "14px",
+      "14px",
+      "14px"
+    ]
+  },
+  {
+    "name": "Menu item spacing increased 1440",
+    "pass": true,
+    "details": [
+      31.671875,
+      31.671875,
+      31.671875,
+      31.671875,
+      31.671875
+    ]
+  },
+  {
+    "name": "Logo and manifesto share left gutter 1366",
+    "pass": true,
+    "details": {
+      "w": 1366,
+      "logo": {
+        "x": 86.046875,
+        "right": 233.640625,
+        "width": 147.59375,
+        "visible": true
+      },
+      "cta": {
+        "x": 1144.609375,
+        "right": 1279.953125,
+        "width": 135.34375,
+        "visible": true
+      },
+      "nav": {
+        "x": 253.640625,
+        "right": 1112.34375,
+        "width": 858.703125,
+        "visible": true
+      },
+      "mobile": {
+        "x": 0,
+        "right": 0,
+        "width": 0,
+        "visible": false
+      },
+      "manifesto": {
+        "x": 86.046875,
+        "right": 608.234375,
+        "width": 522.1875,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 86.046875,
+        "right": 492.640625,
+        "width": 406.59375,
+        "visible": true
+      },
+      "navFirst": 253.640625,
+      "navLast": 1112.34375,
+      "navCentre": 682.9921875,
+      "navSizes": [
+        "14px",
+        "14px",
+        "14px",
+        "14px",
+        "14px",
+        "14px"
+      ],
+      "navGaps": [
+        30.046875,
+        30.046875,
+        30.046875,
+        30.046875,
+        30.046875
+      ],
+      "documentWidth": 1366
+    }
+  },
+  {
+    "name": "Manifesto aligns with Work heading 1366",
+    "pass": true,
+    "details": {
+      "manifesto": {
+        "x": 86.046875,
+        "right": 608.234375,
+        "width": 522.1875,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 86.046875,
+        "right": 492.640625,
+        "width": 406.59375,
+        "visible": true
+      }
+    }
+  },
+  {
+    "name": "Header fits viewport 1366",
+    "pass": true,
+    "details": {
+      "documentWidth": 1366,
+      "width": 1366
+    }
+  },
+  {
+    "name": "Direct links and right-hand CTA visible 1366",
+    "pass": true
+  },
+  {
+    "name": "Logo and CTA match outer-edge spacing 1366",
+    "pass": true,
+    "details": {
+      "left": 86.046875,
+      "right": 86.046875
+    }
+  },
+  {
+    "name": "Navigation has no overlap 1366",
+    "pass": true,
+    "details": {
+      "logo": {
+        "x": 86.046875,
+        "right": 233.640625,
+        "width": 147.59375,
+        "visible": true
+      },
+      "cta": {
+        "x": 1144.609375,
+        "right": 1279.953125,
+        "width": 135.34375,
+        "visible": true
+      },
+      "navFirst": 253.640625,
+      "navLast": 1112.34375
+    }
+  },
+  {
+    "name": "Navigation centred on viewport 1366",
+    "pass": true,
+    "details": {
+      "centre": 682.9921875,
+      "viewportCentre": 683
+    }
+  },
+  {
+    "name": "Every desktop menu label is 14px 1366",
+    "pass": true,
+    "details": [
+      "14px",
+      "14px",
+      "14px",
+      "14px",
+      "14px",
+      "14px"
+    ]
+  },
+  {
+    "name": "Menu item spacing increased 1366",
+    "pass": true,
+    "details": [
+      30.046875,
+      30.046875,
+      30.046875,
+      30.046875,
+      30.046875
+    ]
+  },
+  {
+    "name": "Logo and manifesto share left gutter 1351",
+    "pass": true,
+    "details": {
+      "w": 1351,
+      "logo": {
+        "x": 85.109375,
+        "right": 226.265625,
+        "width": 141.15625,
+        "visible": true
+      },
+      "cta": {
+        "x": 1130.546875,
+        "right": 1265.890625,
+        "width": 135.34375,
+        "visible": true
+      },
+      "nav": {
+        "x": 246.265625,
+        "right": 1104.734375,
+        "width": 858.46875,
+        "visible": true
+      },
+      "mobile": {
+        "x": 0,
+        "right": 0,
+        "width": 0,
+        "visible": false
+      },
+      "manifesto": {
+        "x": 85.109375,
+        "right": 601.484375,
+        "width": 516.375,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 85.109375,
+        "right": 487.171875,
+        "width": 402.0625,
+        "visible": true
+      },
+      "navFirst": 246.265625,
+      "navLast": 1104.734375,
+      "navCentre": 675.5,
+      "navSizes": [
+        "14px",
+        "14px",
+        "14px",
+        "14px",
+        "14px",
+        "14px"
+      ],
+      "navGaps": [
+        30,
+        30,
+        30,
+        30,
+        30
+      ],
+      "documentWidth": 1351
+    }
+  },
+  {
+    "name": "Manifesto aligns with Work heading 1351",
+    "pass": true,
+    "details": {
+      "manifesto": {
+        "x": 85.109375,
+        "right": 601.484375,
+        "width": 516.375,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 85.109375,
+        "right": 487.171875,
+        "width": 402.0625,
+        "visible": true
+      }
+    }
+  },
+  {
+    "name": "Header fits viewport 1351",
+    "pass": true,
+    "details": {
+      "documentWidth": 1351,
+      "width": 1351
+    }
+  },
+  {
+    "name": "Direct links and right-hand CTA visible 1351",
+    "pass": true
+  },
+  {
+    "name": "Logo and CTA match outer-edge spacing 1351",
+    "pass": true,
+    "details": {
+      "left": 85.109375,
+      "right": 85.109375
+    }
+  },
+  {
+    "name": "Navigation has no overlap 1351",
+    "pass": true,
+    "details": {
+      "logo": {
+        "x": 85.109375,
+        "right": 226.265625,
+        "width": 141.15625,
+        "visible": true
+      },
+      "cta": {
+        "x": 1130.546875,
+        "right": 1265.890625,
+        "width": 135.34375,
+        "visible": true
+      },
+      "navFirst": 246.265625,
+      "navLast": 1104.734375
+    }
+  },
+  {
+    "name": "Navigation centred on viewport 1351",
+    "pass": true,
+    "details": {
+      "centre": 675.5,
+      "viewportCentre": 675.5
+    }
+  },
+  {
+    "name": "Every desktop menu label is 14px 1351",
+    "pass": true,
+    "details": [
+      "14px",
+      "14px",
+      "14px",
+      "14px",
+      "14px",
+      "14px"
+    ]
+  },
+  {
+    "name": "Menu item spacing increased 1351",
+    "pass": true,
+    "details": [
+      30,
+      30,
+      30,
+      30,
+      30
+    ]
+  },
+  {
+    "name": "Logo and manifesto share left gutter 1350",
+    "pass": true,
+    "details": {
+      "w": 1350,
+      "logo": {
+        "x": 85.046875,
+        "right": 235.046875,
+        "width": 150,
+        "visible": true
+      },
+      "cta": {
+        "x": 0,
+        "right": 0,
+        "width": 0,
+        "visible": false
+      },
+      "nav": {
+        "x": 0,
+        "right": 0,
+        "width": 0,
+        "visible": false
+      },
+      "mobile": {
+        "x": 1221.953125,
+        "right": 1264.953125,
+        "width": 43,
+        "visible": true
+      },
+      "manifesto": {
+        "x": 85.046875,
+        "right": 601.0625,
+        "width": 516.015625,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 85.046875,
+        "right": 486.828125,
+        "width": 401.78125,
+        "visible": true
+      },
+      "navFirst": 0,
+      "navLast": 0,
+      "navCentre": 0,
+      "navSizes": [
+        "12px",
+        "12px",
+        "12px",
+        "12px",
+        "12px",
+        "12px"
+      ],
+      "navGaps": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "documentWidth": 1350
+    }
+  },
+  {
+    "name": "Manifesto aligns with Work heading 1350",
+    "pass": true,
+    "details": {
+      "manifesto": {
+        "x": 85.046875,
+        "right": 601.0625,
+        "width": 516.015625,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 85.046875,
+        "right": 486.828125,
+        "width": 401.78125,
+        "visible": true
+      }
+    }
+  },
+  {
+    "name": "Header fits viewport 1350",
+    "pass": true,
+    "details": {
+      "documentWidth": 1350,
+      "width": 1350
+    }
+  },
+  {
+    "name": "Responsive service navigation uses mobile menu 1350",
+    "pass": true
+  },
+  {
+    "name": "Logo and manifesto share left gutter 1100",
+    "pass": true,
+    "details": {
+      "w": 1100,
+      "logo": {
+        "x": 69.296875,
+        "right": 219.296875,
+        "width": 150,
+        "visible": true
+      },
+      "cta": {
+        "x": 0,
+        "right": 0,
+        "width": 0,
+        "visible": false
+      },
+      "nav": {
+        "x": 0,
+        "right": 0,
+        "width": 0,
+        "visible": false
+      },
+      "mobile": {
+        "x": 987.703125,
+        "right": 1030.703125,
+        "width": 43,
+        "visible": true
+      },
+      "manifesto": {
+        "x": 69.296875,
+        "right": 489.703125,
+        "width": 420.40625,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 69.296875,
+        "right": 396.640625,
+        "width": 327.34375,
+        "visible": true
+      },
+      "navFirst": 0,
+      "navLast": 0,
+      "navCentre": 0,
+      "navSizes": [
+        "12px",
+        "12px",
+        "12px",
+        "12px",
+        "12px",
+        "12px"
+      ],
+      "navGaps": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "documentWidth": 1100
+    }
+  },
+  {
+    "name": "Manifesto aligns with Work heading 1100",
+    "pass": true,
+    "details": {
+      "manifesto": {
+        "x": 69.296875,
+        "right": 489.703125,
+        "width": 420.40625,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 69.296875,
+        "right": 396.640625,
+        "width": 327.34375,
+        "visible": true
+      }
+    }
+  },
+  {
+    "name": "Header fits viewport 1100",
+    "pass": true,
+    "details": {
+      "documentWidth": 1100,
+      "width": 1100
+    }
+  },
+  {
+    "name": "Responsive service navigation uses mobile menu 1100",
+    "pass": true
+  },
+  {
+    "name": "Logo and manifesto share left gutter 851",
+    "pass": true,
+    "details": {
+      "w": 851,
+      "logo": {
+        "x": 38.28125,
+        "right": 188.28125,
+        "width": 150,
+        "visible": true
+      },
+      "cta": {
+        "x": 0,
+        "right": 0,
+        "width": 0,
+        "visible": false
+      },
+      "nav": {
+        "x": 0,
+        "right": 0,
+        "width": 0,
+        "visible": false
+      },
+      "mobile": {
+        "x": 769.71875,
+        "right": 812.71875,
+        "width": 43,
+        "visible": true
+      },
+      "manifesto": {
+        "x": 38.28125,
+        "right": 403.4375,
+        "width": 365.15625,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 38.28125,
+        "right": 322.609375,
+        "width": 284.328125,
+        "visible": true
+      },
+      "navFirst": 0,
+      "navLast": 0,
+      "navCentre": 0,
+      "navSizes": [
+        "12px",
+        "12px",
+        "12px",
+        "12px",
+        "12px",
+        "12px"
+      ],
+      "navGaps": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "documentWidth": 851
+    }
+  },
+  {
+    "name": "Manifesto aligns with Work heading 851",
+    "pass": true,
+    "details": {
+      "manifesto": {
+        "x": 38.28125,
+        "right": 403.4375,
+        "width": 365.15625,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 38.28125,
+        "right": 322.609375,
+        "width": 284.328125,
+        "visible": true
+      }
+    }
+  },
+  {
+    "name": "Header fits viewport 851",
+    "pass": true,
+    "details": {
+      "documentWidth": 851,
+      "width": 851
+    }
+  },
+  {
+    "name": "Responsive service navigation uses mobile menu 851",
+    "pass": true
+  },
+  {
+    "name": "Logo and manifesto share left gutter 600",
+    "pass": true,
+    "details": {
+      "w": 600,
+      "logo": {
+        "x": 22,
+        "right": 158,
+        "width": 136,
+        "visible": true
+      },
+      "cta": {
+        "x": 0,
+        "right": 0,
+        "width": 0,
+        "visible": false
+      },
+      "nav": {
+        "x": 0,
+        "right": 0,
+        "width": 0,
+        "visible": false
+      },
+      "mobile": {
+        "x": 535,
+        "right": 578,
+        "width": 43,
+        "visible": true
+      },
+      "manifesto": {
+        "x": 22,
+        "right": 432.796875,
+        "width": 410.796875,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 22,
+        "right": 341.859375,
+        "width": 319.859375,
+        "visible": true
+      },
+      "navFirst": 0,
+      "navLast": 0,
+      "navCentre": 0,
+      "navSizes": [
+        "12px",
+        "12px",
+        "12px",
+        "12px",
+        "12px",
+        "12px"
+      ],
+      "navGaps": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "documentWidth": 600
+    }
+  },
+  {
+    "name": "Manifesto aligns with Work heading 600",
+    "pass": true,
+    "details": {
+      "manifesto": {
+        "x": 22,
+        "right": 432.796875,
+        "width": 410.796875,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 22,
+        "right": 341.859375,
+        "width": 319.859375,
+        "visible": true
+      }
+    }
+  },
+  {
+    "name": "Header fits viewport 600",
+    "pass": true,
+    "details": {
+      "documentWidth": 600,
+      "width": 600
+    }
+  },
+  {
+    "name": "Responsive service navigation uses mobile menu 600",
+    "pass": true
+  },
+  {
+    "name": "Logo and manifesto share left gutter 390",
+    "pass": true,
+    "details": {
+      "w": 390,
+      "logo": {
+        "x": 22,
+        "right": 158,
+        "width": 136,
+        "visible": true
+      },
+      "cta": {
+        "x": 0,
+        "right": 0,
+        "width": 0,
+        "visible": false
+      },
+      "nav": {
+        "x": 0,
+        "right": 0,
+        "width": 0,
+        "visible": false
+      },
+      "mobile": {
+        "x": 325,
+        "right": 368,
+        "width": 43,
+        "visible": true
+      },
+      "manifesto": {
+        "x": 22,
+        "right": 352.921875,
+        "width": 330.921875,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 22,
+        "right": 279.65625,
+        "width": 257.65625,
+        "visible": true
+      },
+      "navFirst": 0,
+      "navLast": 0,
+      "navCentre": 0,
+      "navSizes": [
+        "12px",
+        "12px",
+        "12px",
+        "12px",
+        "12px",
+        "12px"
+      ],
+      "navGaps": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "documentWidth": 390
+    }
+  },
+  {
+    "name": "Manifesto aligns with Work heading 390",
+    "pass": true,
+    "details": {
+      "manifesto": {
+        "x": 22,
+        "right": 352.921875,
+        "width": 330.921875,
+        "visible": true
+      },
+      "portfolio": {
+        "x": 22,
+        "right": 279.65625,
+        "width": 257.65625,
+        "visible": true
+      }
+    }
+  },
+  {
+    "name": "Header fits viewport 390",
+    "pass": true,
+    "details": {
+      "documentWidth": 390,
+      "width": 390
+    }
+  },
+  {
+    "name": "Responsive service navigation uses mobile menu 390",
+    "pass": true
+  },
+  {
+    "name": "Contact removed from the mobile menu",
+    "pass": true
+  },
+  {
+    "name": "Mobile menu opens and exposes four service pages",
+    "pass": true
+  },
+  {
+    "name": "Mobile service link navigates to service page",
+    "pass": true
+  },
+  {
+    "name": "Desktop direct service link navigates to service page",
+    "pass": true
+  },
+  {
+    "name": "No browser errors",
+    "pass": true,
+    "details": []
+  }
+]

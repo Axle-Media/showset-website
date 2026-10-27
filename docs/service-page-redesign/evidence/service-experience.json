@@ -1,0 +1,2158 @@
+{
+  "checks": [
+    {
+      "name": "Authored hero events-experiences-1920",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography events-experiences-1920",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered events-experiences-1920",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory events-experiences-1920",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls events-experiences-1920",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation events-experiences-1920",
+      "pass": true
+    },
+    {
+      "name": "Pinned reversible stage events-experiences-1920 0",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.00012686965811965813
+      }
+    },
+    {
+      "name": "Pinned reversible stage events-experiences-1920 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.5001268696581197
+      }
+    },
+    {
+      "name": "Pinned reversible stage events-experiences-1920 0.98",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.9800413995726496
+      }
+    },
+    {
+      "name": "Pinned reversible stage events-experiences-1920 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.5001268696581197
+      }
+    },
+    {
+      "name": "Pinned reversible stage events-experiences-1920 0",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.00012686965811965813
+      }
+    },
+    {
+      "name": "Stage restores forward/reverse geometry events-experiences-1920",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index events-experiences-1920",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest events-experiences-1920",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability events-experiences-1920",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control events-experiences-1920",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid events-experiences-1920",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images events-experiences-1920",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping events-experiences-1920",
+      "pass": true,
+      "detail": {
+        "headingBottom": -6439.015625,
+        "copyTop": -6409.015625,
+        "headingWidth": 797.609375,
+        "client": 1180,
+        "inkInside": true,
+        "maskScrollWidth": 1180
+      }
+    },
+    {
+      "name": "Authored hero creative-design-1920",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography creative-design-1920",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered creative-design-1920",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory creative-design-1920",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls creative-design-1920",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation creative-design-1920",
+      "pass": true
+    },
+    {
+      "name": "Pinned reversible stage creative-design-1920 0",
+      "pass": true,
+      "detail": {
+        "y": 0.375,
+        "h": 900,
+        "progress": 0
+      }
+    },
+    {
+      "name": "Pinned reversible stage creative-design-1920 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.4996794871794872
+      }
+    },
+    {
+      "name": "Pinned reversible stage creative-design-1920 0.98",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.9800213675213675
+      }
+    },
+    {
+      "name": "Pinned reversible stage creative-design-1920 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.4996794871794872
+      }
+    },
+    {
+      "name": "Pinned reversible stage creative-design-1920 0",
+      "pass": true,
+      "detail": {
+        "y": 0.375,
+        "h": 900,
+        "progress": 0
+      }
+    },
+    {
+      "name": "Stage restores forward/reverse geometry creative-design-1920",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index creative-design-1920",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest creative-design-1920",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability creative-design-1920",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control creative-design-1920",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid creative-design-1920",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images creative-design-1920",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping creative-design-1920",
+      "pass": true,
+      "detail": {
+        "headingBottom": -5435.90625,
+        "copyTop": -5405.90625,
+        "headingWidth": 574.53125,
+        "client": 912,
+        "inkInside": true,
+        "maskScrollWidth": 912
+      }
+    },
+    {
+      "name": "Authored hero digital-marketing-1920",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography digital-marketing-1920",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered digital-marketing-1920",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory digital-marketing-1920",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls digital-marketing-1920",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation digital-marketing-1920",
+      "pass": true
+    },
+    {
+      "name": "Pinned reversible stage digital-marketing-1920 0",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.0001940359477124183
+      }
+    },
+    {
+      "name": "Pinned reversible stage digital-marketing-1920 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.5001940359477124
+      }
+    },
+    {
+      "name": "Pinned reversible stage digital-marketing-1920 0.98",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.9799325980392157
+      }
+    },
+    {
+      "name": "Pinned reversible stage digital-marketing-1920 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.5001940359477124
+      }
+    },
+    {
+      "name": "Pinned reversible stage digital-marketing-1920 0",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.0001940359477124183
+      }
+    },
+    {
+      "name": "Stage restores forward/reverse geometry digital-marketing-1920",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index digital-marketing-1920",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest digital-marketing-1920",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability digital-marketing-1920",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control digital-marketing-1920",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid digital-marketing-1920",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images digital-marketing-1920",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping digital-marketing-1920",
+      "pass": true,
+      "detail": {
+        "headingBottom": -5892.421875,
+        "copyTop": -5862.421875,
+        "headingWidth": 775.21875,
+        "client": 1100,
+        "inkInside": true,
+        "maskScrollWidth": 1100
+      }
+    },
+    {
+      "name": "Authored hero content-production-1920",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography content-production-1920",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered content-production-1920",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory content-production-1920",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls content-production-1920",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation content-production-1920",
+      "pass": true
+    },
+    {
+      "name": "Pinned reversible stage content-production-1920 0",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.00018696581196581198
+      }
+    },
+    {
+      "name": "Pinned reversible stage content-production-1920 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.5001869658119659
+      }
+    },
+    {
+      "name": "Pinned reversible stage content-production-1920 0.98",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.9801014957264957
+      }
+    },
+    {
+      "name": "Pinned reversible stage content-production-1920 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.5001869658119659
+      }
+    },
+    {
+      "name": "Pinned reversible stage content-production-1920 0",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.00018696581196581198
+      }
+    },
+    {
+      "name": "Stage restores forward/reverse geometry content-production-1920",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index content-production-1920",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest content-production-1920",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability content-production-1920",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control content-production-1920",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid content-production-1920",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images content-production-1920",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping content-production-1920",
+      "pass": true,
+      "detail": {
+        "headingBottom": -6477.015625,
+        "copyTop": -6447.015625,
+        "headingWidth": 762.3125,
+        "client": 1100,
+        "inkInside": true,
+        "maskScrollWidth": 1100
+      }
+    },
+    {
+      "name": "Authored hero events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "Pinned reversible stage events-experiences-1440 0",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.00008012820512820513
+      }
+    },
+    {
+      "name": "Pinned reversible stage events-experiences-1440 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.5000801282051283
+      }
+    },
+    {
+      "name": "Pinned reversible stage events-experiences-1440 0.98",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.9799946581196581
+      }
+    },
+    {
+      "name": "Pinned reversible stage events-experiences-1440 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.5000801282051283
+      }
+    },
+    {
+      "name": "Pinned reversible stage events-experiences-1440 0",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.00008012820512820513
+      }
+    },
+    {
+      "name": "Stage restores forward/reverse geometry events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "Events scene synchronizes 0",
+      "pass": true
+    },
+    {
+      "name": "Events scene synchronizes 1",
+      "pass": true
+    },
+    {
+      "name": "Events scene synchronizes 2",
+      "pass": true
+    },
+    {
+      "name": "Events scene synchronizes 1",
+      "pass": true
+    },
+    {
+      "name": "Events scene synchronizes 0",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images events-experiences-1440",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping events-experiences-1440",
+      "pass": true,
+      "detail": {
+        "headingBottom": -6342.015625,
+        "copyTop": -6312.015625,
+        "headingWidth": 758.046875,
+        "client": 1180,
+        "inkInside": true,
+        "maskScrollWidth": 1180
+      }
+    },
+    {
+      "name": "Authored hero creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "Pinned reversible stage creative-design-1440 0",
+      "pass": true,
+      "detail": {
+        "y": 0.4375,
+        "h": 900,
+        "progress": 0
+      }
+    },
+    {
+      "name": "Pinned reversible stage creative-design-1440 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.4996260683760684
+      }
+    },
+    {
+      "name": "Pinned reversible stage creative-design-1440 0.98",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.9799679487179487
+      }
+    },
+    {
+      "name": "Pinned reversible stage creative-design-1440 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.4996260683760684
+      }
+    },
+    {
+      "name": "Pinned reversible stage creative-design-1440 0",
+      "pass": true,
+      "detail": {
+        "y": 0.4375,
+        "h": 900,
+        "progress": 0
+      }
+    },
+    {
+      "name": "Stage restores forward/reverse geometry creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "Creative proof unfolds with scroll",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images creative-design-1440",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping creative-design-1440",
+      "pass": true,
+      "detail": {
+        "headingBottom": -5372,
+        "copyTop": -5342,
+        "headingWidth": 545.6875,
+        "client": 692,
+        "inkInside": true,
+        "maskScrollWidth": 692
+      }
+    },
+    {
+      "name": "Authored hero digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "Pinned reversible stage digital-marketing-1440 0",
+      "pass": true,
+      "detail": {
+        "y": 0.140625,
+        "h": 900,
+        "progress": 0
+      }
+    },
+    {
+      "name": "Pinned reversible stage digital-marketing-1440 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.4999080882352941
+      }
+    },
+    {
+      "name": "Pinned reversible stage digital-marketing-1440 0.98",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.9803002450980393
+      }
+    },
+    {
+      "name": "Pinned reversible stage digital-marketing-1440 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.4999080882352941
+      }
+    },
+    {
+      "name": "Pinned reversible stage digital-marketing-1440 0",
+      "pass": true,
+      "detail": {
+        "y": 0.140625,
+        "h": 900,
+        "progress": 0
+      }
+    },
+    {
+      "name": "Stage restores forward/reverse geometry digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "Digital channel choice responds",
+      "pass": true
+    },
+    {
+      "name": "Digital choice is keyboard accessible",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images digital-marketing-1440",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping digital-marketing-1440",
+      "pass": true,
+      "detail": {
+        "headingBottom": -5776.78125,
+        "copyTop": -5746.78125,
+        "headingWidth": 736.765625,
+        "client": 805,
+        "inkInside": true,
+        "maskScrollWidth": 805
+      }
+    },
+    {
+      "name": "Authored hero content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "Pinned reversible stage content-production-1440 0",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.00014022435897435896
+      }
+    },
+    {
+      "name": "Pinned reversible stage content-production-1440 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.5001402243589743
+      }
+    },
+    {
+      "name": "Pinned reversible stage content-production-1440 0.98",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.9800547542735043
+      }
+    },
+    {
+      "name": "Pinned reversible stage content-production-1440 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.5001402243589743
+      }
+    },
+    {
+      "name": "Pinned reversible stage content-production-1440 0",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.00014022435897435896
+      }
+    },
+    {
+      "name": "Stage restores forward/reverse geometry content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "Production photographic sequence advances",
+      "pass": true
+    },
+    {
+      "name": "Production sequence reverses",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images content-production-1440",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping content-production-1440",
+      "pass": true,
+      "detail": {
+        "headingBottom": -6373.015625,
+        "copyTop": -6343.015625,
+        "headingWidth": 724.5,
+        "client": 1045,
+        "inkInside": true,
+        "maskScrollWidth": 1045
+      }
+    },
+    {
+      "name": "Authored hero events-experiences-1024",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography events-experiences-1024",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered events-experiences-1024",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory events-experiences-1024",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls events-experiences-1024",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation events-experiences-1024",
+      "pass": true
+    },
+    {
+      "name": "Pinned reversible stage events-experiences-1024 0",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.00010016025641025641
+      }
+    },
+    {
+      "name": "Pinned reversible stage events-experiences-1024 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.5001001602564102
+      }
+    },
+    {
+      "name": "Pinned reversible stage events-experiences-1024 0.98",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.9800146901709401
+      }
+    },
+    {
+      "name": "Pinned reversible stage events-experiences-1024 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.5001001602564102
+      }
+    },
+    {
+      "name": "Pinned reversible stage events-experiences-1024 0",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.00010016025641025641
+      }
+    },
+    {
+      "name": "Stage restores forward/reverse geometry events-experiences-1024",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index events-experiences-1024",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest events-experiences-1024",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability events-experiences-1024",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control events-experiences-1024",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid events-experiences-1024",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images events-experiences-1024",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping events-experiences-1024",
+      "pass": true,
+      "detail": {
+        "headingBottom": -6288.015625,
+        "copyTop": -6258.015625,
+        "headingWidth": 539.03125,
+        "client": 932,
+        "inkInside": true,
+        "maskScrollWidth": 932
+      }
+    },
+    {
+      "name": "Authored hero creative-design-1024",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography creative-design-1024",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered creative-design-1024",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory creative-design-1024",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls creative-design-1024",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation creative-design-1024",
+      "pass": true
+    },
+    {
+      "name": "Pinned reversible stage creative-design-1024 0",
+      "pass": true,
+      "detail": {
+        "y": 0.4375,
+        "h": 900,
+        "progress": 0
+      }
+    },
+    {
+      "name": "Pinned reversible stage creative-design-1024 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.4996260683760684
+      }
+    },
+    {
+      "name": "Pinned reversible stage creative-design-1024 0.98",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.9799679487179487
+      }
+    },
+    {
+      "name": "Pinned reversible stage creative-design-1024 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.4996260683760684
+      }
+    },
+    {
+      "name": "Pinned reversible stage creative-design-1024 0",
+      "pass": true,
+      "detail": {
+        "y": 0.4375,
+        "h": 900,
+        "progress": 0
+      }
+    },
+    {
+      "name": "Stage restores forward/reverse geometry creative-design-1024",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index creative-design-1024",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest creative-design-1024",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability creative-design-1024",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control creative-design-1024",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid creative-design-1024",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images creative-design-1024",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping creative-design-1024",
+      "pass": true,
+      "detail": {
+        "headingBottom": -5017.859375,
+        "copyTop": -4987.859375,
+        "headingWidth": 388,
+        "client": 540,
+        "inkInside": true,
+        "maskScrollWidth": 540
+      }
+    },
+    {
+      "name": "Authored hero digital-marketing-1024",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography digital-marketing-1024",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered digital-marketing-1024",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory digital-marketing-1024",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls digital-marketing-1024",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation digital-marketing-1024",
+      "pass": true
+    },
+    {
+      "name": "Pinned reversible stage digital-marketing-1024 0",
+      "pass": true,
+      "detail": {
+        "y": 0.09375,
+        "h": 900,
+        "progress": 0
+      }
+    },
+    {
+      "name": "Pinned reversible stage digital-marketing-1024 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.4999387254901961
+      }
+    },
+    {
+      "name": "Pinned reversible stage digital-marketing-1024 0.98",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.9796772875816994
+      }
+    },
+    {
+      "name": "Pinned reversible stage digital-marketing-1024 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.4999387254901961
+      }
+    },
+    {
+      "name": "Pinned reversible stage digital-marketing-1024 0",
+      "pass": true,
+      "detail": {
+        "y": 0.09375,
+        "h": 900,
+        "progress": 0
+      }
+    },
+    {
+      "name": "Stage restores forward/reverse geometry digital-marketing-1024",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index digital-marketing-1024",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest digital-marketing-1024",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability digital-marketing-1024",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control digital-marketing-1024",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid digital-marketing-1024",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images digital-marketing-1024",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping digital-marketing-1024",
+      "pass": true,
+      "detail": {
+        "headingBottom": -5422.4375,
+        "copyTop": -5392.4375,
+        "headingWidth": 523.890625,
+        "client": 634,
+        "inkInside": true,
+        "maskScrollWidth": 634
+      }
+    },
+    {
+      "name": "Authored hero content-production-1024",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography content-production-1024",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered content-production-1024",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory content-production-1024",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls content-production-1024",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation content-production-1024",
+      "pass": true
+    },
+    {
+      "name": "Pinned reversible stage content-production-1024 0",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.00016025641025641026
+      }
+    },
+    {
+      "name": "Pinned reversible stage content-production-1024 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.5001602564102564
+      }
+    },
+    {
+      "name": "Pinned reversible stage content-production-1024 0.98",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.9800747863247863
+      }
+    },
+    {
+      "name": "Pinned reversible stage content-production-1024 0.5",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.5001602564102564
+      }
+    },
+    {
+      "name": "Pinned reversible stage content-production-1024 0",
+      "pass": true,
+      "detail": {
+        "y": 0,
+        "h": 900,
+        "progress": 0.00016025641025641026
+      }
+    },
+    {
+      "name": "Stage restores forward/reverse geometry content-production-1024",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index content-production-1024",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest content-production-1024",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability content-production-1024",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control content-production-1024",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid content-production-1024",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images content-production-1024",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping content-production-1024",
+      "pass": true,
+      "detail": {
+        "headingBottom": -6004.015625,
+        "copyTop": -5974.015625,
+        "headingWidth": 515.171875,
+        "client": 743,
+        "inkInside": true,
+        "maskScrollWidth": 743
+      }
+    },
+    {
+      "name": "Authored hero events-experiences-768",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography events-experiences-768",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered events-experiences-768",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory events-experiences-768",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls events-experiences-768",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation events-experiences-768",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index events-experiences-768",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest events-experiences-768",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability events-experiences-768",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control events-experiences-768",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid events-experiences-768",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images events-experiences-768",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping events-experiences-768",
+      "pass": true,
+      "detail": {
+        "headingBottom": -5502.015625,
+        "copyTop": -5472.015625,
+        "headingWidth": 518.453125,
+        "client": 699,
+        "inkInside": true,
+        "maskScrollWidth": 699
+      }
+    },
+    {
+      "name": "Authored hero creative-design-768",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography creative-design-768",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered creative-design-768",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory creative-design-768",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls creative-design-768",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation creative-design-768",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index creative-design-768",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest creative-design-768",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability creative-design-768",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control creative-design-768",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid creative-design-768",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images creative-design-768",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping creative-design-768",
+      "pass": true,
+      "detail": {
+        "headingBottom": -6401.828125,
+        "copyTop": -6371.828125,
+        "headingWidth": 397.28125,
+        "client": 699,
+        "inkInside": true,
+        "maskScrollWidth": 699
+      }
+    },
+    {
+      "name": "Authored hero digital-marketing-768",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography digital-marketing-768",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered digital-marketing-768",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory digital-marketing-768",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls digital-marketing-768",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation digital-marketing-768",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index digital-marketing-768",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest digital-marketing-768",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability digital-marketing-768",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control digital-marketing-768",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid digital-marketing-768",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images digital-marketing-768",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping digital-marketing-768",
+      "pass": true,
+      "detail": {
+        "headingBottom": -3903.828125,
+        "copyTop": -3873.828125,
+        "headingWidth": 503.890625,
+        "client": 699,
+        "inkInside": true,
+        "maskScrollWidth": 699
+      }
+    },
+    {
+      "name": "Authored hero content-production-768",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography content-production-768",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered content-production-768",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory content-production-768",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls content-production-768",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation content-production-768",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index content-production-768",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest content-production-768",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability content-production-768",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control content-production-768",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid content-production-768",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images content-production-768",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping content-production-768",
+      "pass": true,
+      "detail": {
+        "headingBottom": -5448.015625,
+        "copyTop": -5418.015625,
+        "headingWidth": 495.5,
+        "client": 699,
+        "inkInside": true,
+        "maskScrollWidth": 699
+      }
+    },
+    {
+      "name": "Authored hero events-experiences-390",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography events-experiences-390",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered events-experiences-390",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory events-experiences-390",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls events-experiences-390",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation events-experiences-390",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index events-experiences-390",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest events-experiences-390",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability events-experiences-390",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control events-experiences-390",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid events-experiences-390",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images events-experiences-390",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping events-experiences-390",
+      "pass": true,
+      "detail": {
+        "headingBottom": -5881.03125,
+        "copyTop": -5851.03125,
+        "headingWidth": 292.421875,
+        "client": 346,
+        "inkInside": true,
+        "maskScrollWidth": 346
+      }
+    },
+    {
+      "name": "Authored hero creative-design-390",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography creative-design-390",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered creative-design-390",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory creative-design-390",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls creative-design-390",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation creative-design-390",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index creative-design-390",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest creative-design-390",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability creative-design-390",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control creative-design-390",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid creative-design-390",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images creative-design-390",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping creative-design-390",
+      "pass": true,
+      "detail": {
+        "headingBottom": -6184.046875,
+        "copyTop": -6154.046875,
+        "headingWidth": 224.078125,
+        "client": 346,
+        "inkInside": true,
+        "maskScrollWidth": 346
+      }
+    },
+    {
+      "name": "Authored hero digital-marketing-390",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography digital-marketing-390",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered digital-marketing-390",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory digital-marketing-390",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls digital-marketing-390",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation digital-marketing-390",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index digital-marketing-390",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest digital-marketing-390",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability digital-marketing-390",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control digital-marketing-390",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid digital-marketing-390",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images digital-marketing-390",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping digital-marketing-390",
+      "pass": true,
+      "detail": {
+        "headingBottom": -5021.046875,
+        "copyTop": -4991.046875,
+        "headingWidth": 284.21875,
+        "client": 346,
+        "inkInside": true,
+        "maskScrollWidth": 346
+      }
+    },
+    {
+      "name": "Authored hero content-production-390",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography content-production-390",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered content-production-390",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory content-production-390",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls content-production-390",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation content-production-390",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index content-production-390",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest content-production-390",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability content-production-390",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control content-production-390",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid content-production-390",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images content-production-390",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping content-production-390",
+      "pass": true,
+      "detail": {
+        "headingBottom": -5687.53125,
+        "copyTop": -5657.53125,
+        "headingWidth": 279.484375,
+        "client": 346,
+        "inkInside": true,
+        "maskScrollWidth": 346
+      }
+    },
+    {
+      "name": "Authored hero events-experiences-320",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography events-experiences-320",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered events-experiences-320",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory events-experiences-320",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls events-experiences-320",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation events-experiences-320",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index events-experiences-320",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest events-experiences-320",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability events-experiences-320",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control events-experiences-320",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid events-experiences-320",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images events-experiences-320",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping events-experiences-320",
+      "pass": true,
+      "detail": {
+        "headingBottom": -6358.53125,
+        "copyTop": -6328.53125,
+        "headingWidth": 237.453125,
+        "client": 276,
+        "inkInside": true,
+        "maskScrollWidth": 281
+      }
+    },
+    {
+      "name": "Authored hero creative-design-320",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography creative-design-320",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered creative-design-320",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory creative-design-320",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls creative-design-320",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation creative-design-320",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index creative-design-320",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest creative-design-320",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability creative-design-320",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control creative-design-320",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid creative-design-320",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images creative-design-320",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping creative-design-320",
+      "pass": true,
+      "detail": {
+        "headingBottom": -6412.609375,
+        "copyTop": -6382.609375,
+        "headingWidth": 213.921875,
+        "client": 276,
+        "inkInside": true,
+        "maskScrollWidth": 276
+      }
+    },
+    {
+      "name": "Authored hero digital-marketing-320",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography digital-marketing-320",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered digital-marketing-320",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory digital-marketing-320",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls digital-marketing-320",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation digital-marketing-320",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index digital-marketing-320",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest digital-marketing-320",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability digital-marketing-320",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control digital-marketing-320",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid digital-marketing-320",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images digital-marketing-320",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping digital-marketing-320",
+      "pass": true,
+      "detail": {
+        "headingBottom": -5677.609375,
+        "copyTop": -5647.609375,
+        "headingWidth": 271.328125,
+        "client": 276,
+        "inkInside": true,
+        "maskScrollWidth": 276
+      }
+    },
+    {
+      "name": "Authored hero content-production-320",
+      "pass": true
+    },
+    {
+      "name": "Shared design typography content-production-320",
+      "pass": true
+    },
+    {
+      "name": "All editable sections rendered content-production-320",
+      "pass": true
+    },
+    {
+      "name": "Full expertise inventory content-production-320",
+      "pass": true
+    },
+    {
+      "name": "No video placeholders or playback controls content-production-320",
+      "pass": true
+    },
+    {
+      "name": "Dedicated mobile reading adaptation content-production-320",
+      "pass": true
+    },
+    {
+      "name": "Expertise search narrows the index content-production-320",
+      "pass": true
+    },
+    {
+      "name": "No-results message is honest content-production-320",
+      "pass": true
+    },
+    {
+      "name": "Clear restores every capability content-production-320",
+      "pass": true
+    },
+    {
+      "name": "Native expertise keyboard control content-production-320",
+      "pass": true
+    },
+    {
+      "name": "Contact and connected links valid content-production-320",
+      "pass": true
+    },
+    {
+      "name": "No horizontal overflow / broken loaded images content-production-320",
+      "pass": true
+    },
+    {
+      "name": "Opening has no text overlap or clipping content-production-320",
+      "pass": true,
+      "detail": {
+        "headingBottom": -6063.03125,
+        "copyTop": -6033.03125,
+        "headingWidth": 266.8125,
+        "client": 276,
+        "inkInside": true,
+        "maskScrollWidth": 276
+      }
+    },
+    {
+      "name": "Readable static story events-experiences {\"reducedMotion\":\"reduce\"}",
+      "pass": true
+    },
+    {
+      "name": "Static expertise remains available events-experiences",
+      "pass": true
+    },
+    {
+      "name": "Readable static story creative-design {\"reducedMotion\":\"reduce\"}",
+      "pass": true
+    },
+    {
+      "name": "Static expertise remains available creative-design",
+      "pass": true
+    },
+    {
+      "name": "Readable static story digital-marketing {\"reducedMotion\":\"reduce\"}",
+      "pass": true
+    },
+    {
+      "name": "Static expertise remains available digital-marketing",
+      "pass": true
+    },
+    {
+      "name": "Readable static story content-production {\"reducedMotion\":\"reduce\"}",
+      "pass": true
+    },
+    {
+      "name": "Static expertise remains available content-production",
+      "pass": true
+    },
+    {
+      "name": "Readable static story events-experiences {\"javaScriptEnabled\":false}",
+      "pass": true
+    },
+    {
+      "name": "Static expertise remains available events-experiences",
+      "pass": true
+    },
+    {
+      "name": "Readable static story creative-design {\"javaScriptEnabled\":false}",
+      "pass": true
+    },
+    {
+      "name": "Static expertise remains available creative-design",
+      "pass": true
+    },
+    {
+      "name": "Readable static story digital-marketing {\"javaScriptEnabled\":false}",
+      "pass": true
+    },
+    {
+      "name": "Static expertise remains available digital-marketing",
+      "pass": true
+    },
+    {
+      "name": "Readable static story content-production {\"javaScriptEnabled\":false}",
+      "pass": true
+    },
+    {
+      "name": "Static expertise remains available content-production",
+      "pass": true
+    },
+    {
+      "name": "250-word edited story stays readable events-experiences",
+      "pass": true
+    },
+    {
+      "name": "250-word edited story stays readable creative-design",
+      "pass": true
+    },
+    {
+      "name": "250-word edited story stays readable digital-marketing",
+      "pass": true
+    },
+    {
+      "name": "250-word edited story stays readable content-production",
+      "pass": true
+    },
+    {
+      "name": "No service runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

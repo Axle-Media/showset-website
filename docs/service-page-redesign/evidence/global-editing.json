@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Inspector reflects refined heading default",
+    "pass": true
+  },
+  {
+    "name": "Inspector reflects standard CTA default",
+    "pass": true
+  },
+  {
+    "name": "Custom heading leading overrides default styles",
+    "pass": true,
+    "detail": {
+      "line": 1.2999999999999998,
+      "tracking": 0.02
+    }
+  },
+  {
+    "name": "Custom heading tracking overrides default styles",
+    "pass": true,
+    "detail": {
+      "line": 1.2999999999999998,
+      "tracking": 0.02
+    }
+  },
+  {
+    "name": "Both primary CTA heights remain editable",
+    "pass": true
+  },
+  {
+    "name": "Global typography draft survives reload",
+    "pass": true
+  },
+  {
+    "name": "Published preview keeps edited heading leading",
+    "pass": true
+  },
+  {
+    "name": "Published preview keeps pattern opacity edit",
+    "pass": true
+  },
+  {
+    "name": "Approved artwork remains default after publishing",
+    "pass": true
+  }
+]

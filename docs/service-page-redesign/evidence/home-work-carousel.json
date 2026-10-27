@@ -1,0 +1,179 @@
+[
+  {
+    "name": "atmosphere-is-everything opening photo loaded",
+    "pass": true,
+    "details": "/media/evening.webp"
+  },
+  {
+    "name": "made-to-be-remembered opening photo loaded",
+    "pass": true,
+    "details": "/media/cases/identity-hero.webp"
+  },
+  {
+    "name": "behind-every-moment opening photo loaded",
+    "pass": true,
+    "details": "/media/cases/production-hero.webp"
+  },
+  {
+    "name": "Home has all 3 unique original cards",
+    "pass": true
+  },
+  {
+    "name": "Home featured photo matches atmosphere-is-everything",
+    "pass": true,
+    "details": "/media/evening.webp"
+  },
+  {
+    "name": "Home image loads atmosphere-is-everything",
+    "pass": true
+  },
+  {
+    "name": "Home card links to atmosphere-is-everything",
+    "pass": true
+  },
+  {
+    "name": "Home featured photo matches made-to-be-remembered",
+    "pass": true,
+    "details": "/media/cases/identity-hero.webp"
+  },
+  {
+    "name": "Home image loads made-to-be-remembered",
+    "pass": true
+  },
+  {
+    "name": "Home card links to made-to-be-remembered",
+    "pass": true
+  },
+  {
+    "name": "Home featured photo matches behind-every-moment",
+    "pass": true,
+    "details": "/media/cases/production-hero.webp"
+  },
+  {
+    "name": "Home image loads behind-every-moment",
+    "pass": true
+  },
+  {
+    "name": "Home card links to behind-every-moment",
+    "pass": true
+  },
+  {
+    "name": "Home creates accessible circular gallery",
+    "pass": true
+  },
+  {
+    "name": "Home has no playback button",
+    "pass": true
+  },
+  {
+    "name": "Home gallery drifts continuously",
+    "pass": true,
+    "details": {
+      "start": 1341,
+      "end": 1384,
+      "diagnostic": {
+        "viewport": 1259,
+        "scrollWidth": 3823,
+        "loop": "true",
+        "hovered": false,
+        "focused": false,
+        "reduced": false,
+        "hidden": false,
+        "rect": {
+          "x": 90.71875,
+          "y": 200.140625,
+          "width": 1258.5625,
+          "height": 578.296875
+        }
+      }
+    }
+  },
+  {
+    "name": "Autoplay pauses on hover",
+    "pass": true
+  },
+  {
+    "name": "Home gallery supports full-distance mouse drag",
+    "pass": true,
+    "details": {
+      "hovered": 1385,
+      "afterDrag": 2454
+    }
+  },
+  {
+    "name": "Drag did not accidentally navigate",
+    "pass": true
+  },
+  {
+    "name": "Home auto-scroll resumes promptly after mouse moves away",
+    "pass": true,
+    "details": {
+      "resumeStart": 2457,
+      "resumeEnd": 2480
+    }
+  },
+  {
+    "name": "Homepage card retains project page transition",
+    "pass": true
+  },
+  {
+    "name": "Reduced motion disables automatic gallery travel",
+    "pass": true
+  },
+  {
+    "name": "Our Work has all 3 cases",
+    "pass": true
+  },
+  {
+    "name": "Our Work featured photo matches atmosphere-is-everything",
+    "pass": true,
+    "details": "/media/evening.webp"
+  },
+  {
+    "name": "Our Work image loads atmosphere-is-everything",
+    "pass": true
+  },
+  {
+    "name": "Our Work featured photo matches made-to-be-remembered",
+    "pass": true,
+    "details": "/media/cases/identity-hero.webp"
+  },
+  {
+    "name": "Our Work image loads made-to-be-remembered",
+    "pass": true
+  },
+  {
+    "name": "Our Work featured photo matches behind-every-moment",
+    "pass": true,
+    "details": "/media/cases/production-hero.webp"
+  },
+  {
+    "name": "Our Work image loads behind-every-moment",
+    "pass": true
+  },
+  {
+    "name": "Studio preview picks up a modified case opening image",
+    "pass": true
+  },
+  {
+    "name": "Future case uses its own opening image on Home",
+    "pass": true
+  },
+  {
+    "name": "Future homepage card keeps its project name and period",
+    "pass": true
+  },
+  {
+    "name": "Studio preview picks up modified opening image on Our Work",
+    "pass": true
+  },
+  {
+    "name": "Future case uses its own opening image on Our Work",
+    "pass": true
+  },
+  {
+    "name": "No browser errors",
+    "pass": true,
+    "details": []
+  }
+]

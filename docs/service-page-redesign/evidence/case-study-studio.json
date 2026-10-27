@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Removed image-window controls absent",
+    "pass": true
+  },
+  {
+    "name": "Retired partner editor is absent",
+    "pass": true
+  },
+  {
+    "name": "Opening and second wording update same Studio components",
+    "pass": true
+  },
+  {
+    "name": "Approach copy and support image update",
+    "pass": true
+  },
+  {
+    "name": "Reordered gallery renders changed caption",
+    "pass": true
+  },
+  {
+    "name": "All case studies hide retired partner section",
+    "pass": true
+  },
+  {
+    "name": "Draft headline and second headline persist",
+    "pass": true
+  },
+  {
+    "name": "Demo status and legacy partner metadata preserved",
+    "pass": true
+  },
+  {
+    "name": "Photo attribution follows reordered image",
+    "pass": true
+  },
+  {
+    "name": "Published preview uses saved case content",
+    "pass": true
+  },
+  {
+    "name": "Published preview preserves Approach image",
+    "pass": true
+  },
+  {
+    "name": "Edited wrapped photo heading has teal continuation",
+    "pass": true
+  },
+  {
+    "name": "No Studio runtime errors",
+    "pass": true
+  }
+]

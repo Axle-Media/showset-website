@@ -1,0 +1,247 @@
+[
+  {
+    "name": "Ordinary Studio updates do not restart the visible reveal events-experiences",
+    "pass": true,
+    "detail": {
+      "animationBefore": {
+        "time": 437.9849999968428,
+        "clip": "inset(0px)"
+      },
+      "animationAfter": {
+        "time": 437.9849999968428,
+        "clip": "inset(0px)"
+      }
+    }
+  },
+  {
+    "name": "Repeated service edits preserve nodes, focus and query events-experiences",
+    "pass": true,
+    "detail": {
+      "y": 6828,
+      "same": true,
+      "focus": "service-search-input",
+      "query": "design",
+      "scroll": 2,
+      "resize": 2,
+      "observers": 2
+    }
+  },
+  {
+    "name": "Repeated service edits keep scroll and resources bounded events-experiences",
+    "pass": true,
+    "detail": {
+      "before": {
+        "y": 6828,
+        "scroll": 2,
+        "resize": 2,
+        "observers": 2
+      },
+      "after": {
+        "y": 6828,
+        "same": true,
+        "focus": "service-search-input",
+        "query": "design",
+        "scroll": 2,
+        "resize": 2,
+        "observers": 2
+      }
+    }
+  },
+  {
+    "name": "Ordinary Studio updates do not restart the visible reveal creative-design",
+    "pass": true,
+    "detail": {
+      "animationBefore": {
+        "time": 3889.269000006607,
+        "clip": "circle(160% at 0% 50%)"
+      },
+      "animationAfter": {
+        "time": 3889.269000006607,
+        "clip": "circle(160% at 0% 50%)"
+      }
+    }
+  },
+  {
+    "name": "Repeated service edits preserve nodes, focus and query creative-design",
+    "pass": true,
+    "detail": {
+      "y": 5533,
+      "same": true,
+      "focus": "service-search-input",
+      "query": "design",
+      "scroll": 2,
+      "resize": 2,
+      "observers": 2
+    }
+  },
+  {
+    "name": "Repeated service edits keep scroll and resources bounded creative-design",
+    "pass": true,
+    "detail": {
+      "before": {
+        "y": 5533,
+        "scroll": 2,
+        "resize": 2,
+        "observers": 2
+      },
+      "after": {
+        "y": 5533,
+        "same": true,
+        "focus": "service-search-input",
+        "query": "design",
+        "scroll": 2,
+        "resize": 2,
+        "observers": 2
+      }
+    }
+  },
+  {
+    "name": "Ordinary Studio updates do not restart the visible reveal digital-marketing",
+    "pass": true,
+    "detail": {
+      "animationBefore": {
+        "time": 7277.957000012975,
+        "clip": "circle(160% at 0% 50%)"
+      },
+      "animationAfter": {
+        "time": 7277.957000012975,
+        "clip": "circle(160% at 0% 50%)"
+      }
+    }
+  },
+  {
+    "name": "Repeated service edits preserve nodes, focus and query digital-marketing",
+    "pass": true,
+    "detail": {
+      "y": 5935,
+      "same": true,
+      "focus": "service-search-input",
+      "query": "design",
+      "scroll": 2,
+      "resize": 2,
+      "observers": 2
+    }
+  },
+  {
+    "name": "Repeated service edits keep scroll and resources bounded digital-marketing",
+    "pass": true,
+    "detail": {
+      "before": {
+        "y": 5935,
+        "scroll": 2,
+        "resize": 2,
+        "observers": 2
+      },
+      "after": {
+        "y": 5935,
+        "same": true,
+        "focus": "service-search-input",
+        "query": "design",
+        "scroll": 2,
+        "resize": 2,
+        "observers": 2
+      }
+    }
+  },
+  {
+    "name": "Ordinary Studio updates do not restart the visible reveal content-production",
+    "pass": true,
+    "detail": {
+      "animationBefore": {
+        "time": 10715.499000012642,
+        "clip": "inset(0px)"
+      },
+      "animationAfter": {
+        "time": 10715.499000012642,
+        "clip": "inset(0px)"
+      }
+    }
+  },
+  {
+    "name": "Repeated service edits preserve nodes, focus and query content-production",
+    "pass": true,
+    "detail": {
+      "y": 6609,
+      "same": true,
+      "focus": "service-search-input",
+      "query": "design",
+      "scroll": 2,
+      "resize": 2,
+      "observers": 2
+    }
+  },
+  {
+    "name": "Repeated service edits keep scroll and resources bounded content-production",
+    "pass": true,
+    "detail": {
+      "before": {
+        "y": 6609,
+        "scroll": 2,
+        "resize": 2,
+        "observers": 2
+      },
+      "after": {
+        "y": 6609,
+        "same": true,
+        "focus": "service-search-input",
+        "query": "design",
+        "scroll": 2,
+        "resize": 2,
+        "observers": 2
+      }
+    }
+  },
+  {
+    "name": "Live OS reduced-motion change releases pin events-experiences",
+    "pass": true
+  },
+  {
+    "name": "Motion can resume after OS preference changes events-experiences",
+    "pass": true
+  },
+  {
+    "name": "Short landscape uses readable flow events-experiences",
+    "pass": true
+  },
+  {
+    "name": "Live OS reduced-motion change releases pin creative-design",
+    "pass": true
+  },
+  {
+    "name": "Motion can resume after OS preference changes creative-design",
+    "pass": true
+  },
+  {
+    "name": "Short landscape uses readable flow creative-design",
+    "pass": true
+  },
+  {
+    "name": "Live OS reduced-motion change releases pin digital-marketing",
+    "pass": true
+  },
+  {
+    "name": "Motion can resume after OS preference changes digital-marketing",
+    "pass": true
+  },
+  {
+    "name": "Short landscape uses readable flow digital-marketing",
+    "pass": true
+  },
+  {
+    "name": "Live OS reduced-motion change releases pin content-production",
+    "pass": true
+  },
+  {
+    "name": "Motion can resume after OS preference changes content-production",
+    "pass": true
+  },
+  {
+    "name": "Short landscape uses readable flow content-production",
+    "pass": true
+  },
+  {
+    "name": "No lifecycle errors",
+    "pass": true,
+    "detail": []
+  }
+]
