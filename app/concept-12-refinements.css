@@ -1,11 +1,14 @@
 /* Requested Concept 12 UI refinements. Source choreography remains in concept-12.css. */
 .concept-12-root { --refine-heading-weight:650; --refine-heading-leading:1.08; }
 .concept-12-root :is(h1,h2,h3) { font-weight:var(--refine-heading-weight); line-height:var(--refine-heading-leading)!important; }
-/* Equal side tracks keep navigation on the viewport centre, independent of labels. */
-@media(min-width:1001px){
- .header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:24px}
- .desktop-navigation{margin:0;justify-self:center;white-space:nowrap;gap:clamp(18px,2.3vw,36px)}
- .header-inner>.brand{justify-self:start}.header-cta{justify-self:end}
+/* Match the shared page gutter on BOTH ends, even on ultra-wide screens.
+   The hero headline itself deliberately keeps its approved original position. */
+.site-header .header-inner{width:100%;max-width:none;padding-inline:var(--gutter)}
+@media(min-width:1351px){
+ .site-header .header-inner{display:flex;align-items:center;gap:clamp(18px,1.5vw,30px)}
+ .site-header .desktop-navigation{display:flex;margin-left:auto;white-space:nowrap;gap:clamp(10px,1vw,20px)}
+ .site-header .header-inner>.brand{flex:none}
+ .site-header .header-cta{flex:none}
 }
 .brand .approved-wordmark{display:block;width:150px;max-width:100%;height:auto;aspect-ratio:962/250;object-fit:contain}
 .footer .brand .approved-wordmark{width:180px}
@@ -14,6 +17,14 @@
 .concept-12-root :is(.solid-link,.header-cta)>span{display:inline-block;width:auto;height:auto;line-height:1;font-size:15px;border:0;border-radius:0;background:transparent;transform:none;transition:none}
 .concept-12-root :is(.solid-link,.header-cta):hover{background:#38d6cb;transform:translateY(-2px)}
 .concept-12-root :is(.solid-link,.header-cta):focus-visible{outline:2px solid var(--ivory,#faf9fd);outline-offset:4px}
+/* Seven top-level navigation links need room to breathe.
+   At smaller widths, retain every service page in the existing mobile menu. */
+@media(max-width:1350px){
+ .concept-12-root .site-header .desktop-navigation,
+ .concept-12-root .site-header .header-cta{display:none}
+ .concept-12-root .site-header .mobile-toggle{display:block;margin-left:auto}
+}
+
 /* Independent translate leaves the original scroll-controlled transform untouched. */
 .hero-foreground{top:51%;translate:0 -50%}
 .hero-title .line{display:block;white-space:nowrap}
@@ -86,6 +97,10 @@
 /* Editorial link belongs beneath its heading, rather than the copy column. */
 .manifesto-grid{align-items:center;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,6vw,90px)}
 .manifesto-heading-group{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:clamp(25px,3vw,43px)}
+/* Do not centre the manifesto inside a narrower max-width wrapper.
+   It must share the exact start line of other .section-gutter sections. */
+.manifesto .manifesto-grid{max-width:none;margin-inline:0}
+.manifesto .manifesto-heading-group{margin-inline:0;padding-inline:0;text-align:left}
 .manifesto-copy{padding-bottom:0}
 .manifesto-copy>p{max-width:480px;margin-bottom:0}
 
