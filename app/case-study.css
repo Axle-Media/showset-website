@@ -90,7 +90,9 @@
 .case-partner-logo img{width:auto;height:auto;max-width:min(100%,170px);max-height:55px;object-fit:contain;object-position:left center}
 .case-partner-name{font-family:var(--display);font-weight:var(--refine-heading-weight);font-size:clamp(16px,1.5vw,21px);line-height:1.2;letter-spacing:var(--v12-head-tracking);overflow-wrap:anywhere}
 .case-partner-role{font-family:var(--body-font);letter-spacing:var(--v12-body-tracking);font-size:11px;line-height:var(--v12-body-leading);color:var(--muted)}
-.case-related{padding-top:clamp(80px,9vw,130px);padding-bottom:clamp(80px,9vw,130px)}
+/* Related work repeats the approved pinned-story backdrop, including its subtle tile. */
+.case-related{position:relative;isolation:isolate;background:linear-gradient(135deg,#071e30,#0d2f49 65%,#0b263a);padding-top:clamp(80px,9vw,130px);padding-bottom:clamp(80px,9vw,130px)}
+.case-related::before{content:"";position:absolute;inset:0;background:url('/concept-12/bb1b857a951a4915479a.svg') center top/var(--showset-pattern-width,440px) auto repeat;opacity:1;pointer-events:none;z-index:-1}
 .case-related-heading{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:40px}
 .case-related-heading h2{max-width:760px;margin-bottom:0}
 .case-related-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,30px)}
