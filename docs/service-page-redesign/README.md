@@ -1,5 +1,7 @@
 # SHOWSET service pages: design and verification
 
+**Latest:** [Motion and design-system refinement report](refinement.md), including before/after notes and native-scroll recordings.
+
 Branch: `feat/cinematic-service-pages`, based on main `8989ea1d3acd51413b60a98f30c7be65beb6556f`.
 
 ## Four connected, distinct experiences

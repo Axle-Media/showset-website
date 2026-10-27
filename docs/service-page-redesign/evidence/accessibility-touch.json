@@ -42,26 +42,26 @@
     "slug": "creative-design",
     "width": 390,
     "touch": {
-      "y": 2503,
-      "pinned": "false",
-      "overflow": false
-    }
-  },
-  {
-    "slug": "digital-marketing",
-    "width": 390,
-    "violations": []
-  },
-  {
-    "slug": "digital-marketing",
-    "width": 390,
-    "touch": {
       "y": 2497,
       "pinned": "false",
       "overflow": false
     }
   },
   {
+    "slug": "digital-marketing",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "slug": "digital-marketing",
+    "width": 390,
+    "touch": {
+      "y": 2506,
+      "pinned": "false",
+      "overflow": false
+    }
+  },
+  {
     "slug": "content-production",
     "width": 390,
     "violations": []
@@ -70,7 +70,7 @@
     "slug": "content-production",
     "width": 390,
     "touch": {
-      "y": 2509,
+      "y": 2510,
       "pinned": "false",
       "overflow": false
     }

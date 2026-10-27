@@ -96,8 +96,8 @@
     "name": "Home gallery supports full-distance mouse drag",
     "pass": true,
     "details": {
-      "hovered": 1384,
-      "afterDrag": 2453
+      "hovered": 1385,
+      "afterDrag": 2454
     }
   },
   {
@@ -108,8 +108,8 @@
     "name": "Home auto-scroll resumes promptly after mouse moves away",
     "pass": true,
     "details": {
-      "resumeStart": 2456,
-      "resumeEnd": 2479
+      "resumeStart": 2457,
+      "resumeEnd": 2480
     }
   },
   {

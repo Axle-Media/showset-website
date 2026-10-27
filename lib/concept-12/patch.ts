@@ -29,6 +29,16 @@ export function patchConcept(host: HTMLElement, key: string, context: Parameters
     morphdom(host,target,{
       childrenOnly:true,
       onBeforeElUpdated(from,to) {
+        if(from.closest('[data-service-experience]')) {
+          ['data-service-ready','data-service-motion','data-service-pinned','data-service-phase','data-channel-active','data-frame-active','data-process-active'].forEach(name=>{
+            if(from.hasAttribute(name))to.setAttribute(name,from.getAttribute(name)!);
+          });
+          if(from instanceof HTMLElement&&to instanceof HTMLElement) {
+            Array.from(from.style).filter(name=>/^--(service|proof|process|channel|plan)-/.test(name)).forEach(name=>{
+              if(!to.style.getPropertyValue(name))to.style.setProperty(name,from.style.getPropertyValue(name));
+            });
+          }
+        }
         motionClasses.forEach(name=>to.classList.toggle(name,from.classList.contains(name)));
         if(from instanceof HTMLElement && to instanceof HTMLElement) {
           motionStyles.forEach(name=>{

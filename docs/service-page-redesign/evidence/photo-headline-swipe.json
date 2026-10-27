@@ -136,6 +136,210 @@
     }
   },
   {
+    "name": ".service-hero [data-service-reveal=\"photo\"] has an active rectangular overlay on /events-experiences/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".service-hero [data-service-reveal=\"photo\"] uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".service-hero [data-service-reveal=\"photo\"] has an active rectangular overlay on /content-production/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".service-hero [data-service-reveal=\"photo\"] uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] has an active rectangular overlay on /events-experiences/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "none",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "none",
+      "textAnimationDuration": "0s",
+      "markerDuration": "0s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] has an active rectangular overlay on /creative-design/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "none",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "none",
+      "textAnimationDuration": "0s",
+      "markerDuration": "0s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] has an active rectangular overlay on /digital-marketing/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "none",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "none",
+      "textAnimationDuration": "0s",
+      "markerDuration": "0s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] has an active rectangular overlay on /content-production/",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "none",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "none",
+      "textAnimationDuration": "0s",
+      "markerDuration": "0s"
+    }
+  },
+  {
+    "name": ".service-close [data-service-reveal=\"photo\"] uses only the faster rectangular swipe",
+    "pass": true,
+    "details": {
+      "markerContent": "\"\"",
+      "markerDisplay": "block",
+      "markerBackground": "rgb(18, 186, 175)",
+      "markerAnimation": "showsetPhotoBlockSwipe",
+      "textClip": "inset(0px 100% 0px 0px)",
+      "textOpacity": "1",
+      "textTransform": "none",
+      "textTransition": "0s",
+      "textAnimation": "showsetPhotoTextUnmask",
+      "textAnimationDuration": "0.75s",
+      "markerDuration": "0.75s"
+    }
+  },
+  {
     "name": ".simple-hero .block-heading has an active rectangular overlay on /our-studio/",
     "pass": true,
     "details": {

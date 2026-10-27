@@ -34,7 +34,7 @@ jobs:
         run: npm run check:seo
       - name: Static Next.js build
         run: npm run build
-      - name: Browser acceptance checks (featured projects and infinite carousel)
+      - name: Browser acceptance checks (homepage, cases, services and Studio)
         run: |
           npm install --no-save --no-package-lock playwright
           npx playwright install --with-deps chromium
@@ -55,12 +55,16 @@ jobs:
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/service-experience.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/service-studio.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/service-lifecycle.cjs
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/service-motion-design.cjs
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/photo-headline-swipe.cjs
       - name: Archive browser QA results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: showset-home-work-browser-qa
           path: |
+            qa-results/service-motion/
+            qa-results/photo-headline-swipe.json
             qa-results/services/
             qa-results/service-studio.json
             qa-results/service-lifecycle.json

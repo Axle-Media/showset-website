@@ -175,14 +175,14 @@
     "name": "touch immediate direction reversal",
     "pass": true,
     "detail": {
-      "delta": 326
+      "delta": 265
     }
   },
   {
     "name": "touch three full cycles forward",
     "pass": true,
     "detail": {
-      "distance": 6005.6875,
+      "distance": 5865.6875,
       "period": 1920.5625,
       "wraps": 3,
       "gestures": 17
@@ -196,17 +196,17 @@
     "name": "touch immediate direction reversal",
     "pass": true,
     "detail": {
-      "delta": -288
+      "delta": -357.5625
     }
   },
   {
     "name": "touch three full cycles reverse",
     "pass": true,
     "detail": {
-      "distance": -5952.6875,
+      "distance": -5983.25,
       "period": 1920.5625,
-      "wraps": 3,
-      "gestures": 18
+      "wraps": 4,
+      "gestures": 17
     }
   },
   {

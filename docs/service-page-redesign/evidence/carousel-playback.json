@@ -55,8 +55,8 @@
     "name": "atmosphere-is-everything automatically scrolls without interaction",
     "pass": true,
     "details": {
-      "start": 3415,
-      "after": 3441
+      "start": 3413,
+      "after": 3439
     }
   },
   {
@@ -75,16 +75,16 @@
     "name": "atmosphere-is-everything freezes during mouse hover",
     "pass": true,
     "details": {
-      "hovering": 3441,
-      "hovered": 3441
+      "hovering": 3439,
+      "hovered": 3439
     }
   },
   {
     "name": "atmosphere-is-everything resumes after the mouse leaves",
     "pass": true,
     "details": {
-      "left": 3444,
-      "resumed": 3467
+      "left": 3442,
+      "resumed": 3465
     }
   },
   {
@@ -100,7 +100,7 @@
     "pass": true,
     "details": {
       "start": 1710,
-      "after": 1735
+      "after": 1736
     }
   },
   {
@@ -127,8 +127,8 @@
     "name": "made-to-be-remembered resumes after the mouse leaves",
     "pass": true,
     "details": {
-      "left": 1738,
-      "resumed": 1761
+      "left": 1739,
+      "resumed": 1763
     }
   },
   {
@@ -144,7 +144,7 @@
     "pass": true,
     "details": {
       "start": 1710,
-      "after": 1736
+      "after": 1735
     }
   },
   {
@@ -219,7 +219,7 @@
     "name": "Mobile gallery resumes after touch and lightbox close",
     "pass": true,
     "details": {
-      "touchResumeStart": 1957,
+      "touchResumeStart": 1958,
       "touchResumeEnd": 1983
     }
   },

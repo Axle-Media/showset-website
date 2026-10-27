@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "events-experiences",
+    "direction": 1,
+    "progress": 1,
+    "pass": true
+  },
+  {
+    "slug": "events-experiences",
+    "direction": -1,
+    "progress": 0.00008012820512820513,
+    "pass": true
+  },
+  {
+    "slug": "creative-design",
+    "direction": 1,
+    "progress": 0.9996260683760684,
+    "pass": true
+  },
+  {
+    "slug": "creative-design",
+    "direction": -1,
+    "progress": 0,
+    "pass": true
+  },
+  {
+    "slug": "digital-marketing",
+    "direction": 1,
+    "progress": 0.9999080882352941,
+    "pass": true
+  },
+  {
+    "slug": "digital-marketing",
+    "direction": -1,
+    "progress": 0,
+    "pass": true
+  },
+  {
+    "slug": "content-production",
+    "direction": 1,
+    "progress": 1,
+    "pass": true
+  },
+  {
+    "slug": "content-production",
+    "direction": -1,
+    "progress": 0.00014022435897435896,
+    "pass": true
+  }
+]

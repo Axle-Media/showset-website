@@ -13,6 +13,9 @@ const targets = [
   ['/', '.film-step.is-on .wipe-heading'],
   ['/work/atmosphere-is-everything/', '.case-opening-first .block-heading'],
   ['/work/made-to-be-remembered/', '.case-opening-first .block-heading'],
+  ['/events-experiences/', '.service-hero [data-service-reveal="photo"]'],
+  ['/content-production/', '.service-hero [data-service-reveal="photo"]'],
+  ...['events-experiences','creative-design','digital-marketing','content-production'].map(slug=>['/'+slug+'/', '.service-close [data-service-reveal="photo"]']),
   ['/our-studio/', '.simple-hero .block-heading'],
   ['/our-work/', '.simple-hero .block-heading'],
 ];
