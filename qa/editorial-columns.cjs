@@ -37,7 +37,7 @@ const sections=[
      if(!h||!p)return {name,error:'Heading or paragraph not found'};
      const a=h.getBoundingClientRect(),b=p.getBoundingClientRect(),box=wrap.getBoundingClientRect();
      const style=getComputedStyle(wrap);
-     const cols=style.gridTemplateColumns.split(/\\s+/).map(parseFloat);
+     const cols=style.gridTemplateColumns.split(/\s+/).map(parseFloat);
      return {name,display:style.display,columns:cols,paragraphWidth:b.width,headingLeft:a.left,
        headingRight:a.right,paragraphLeft:b.left,paragraphRight:b.right,
        parentLeft:box.left,parentRight:box.right,font:getComputedStyle(p).fontSize};
