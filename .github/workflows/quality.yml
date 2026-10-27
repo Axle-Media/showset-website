@@ -46,10 +46,13 @@ jobs:
             sleep 1
           done
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/home-work-carousel.cjs
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/header-navigation-alignment.cjs
       - name: Archive browser QA results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: showset-home-work-browser-qa
-          path: qa-results/home-work-carousel.json
+          path: |
+            qa-results/home-work-carousel.json
+            qa-results/header-navigation-alignment.json
           if-no-files-found: ignore
