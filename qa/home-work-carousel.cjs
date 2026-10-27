@@ -62,7 +62,7 @@ const width=1440;
   await page.mouse.move(box.x+box.width*.67,box.y+box.height*.5,{steps:12});
   await page.mouse.up();
   const afterDrag=await gallery.evaluate(el=>el.scrollLeft);
-  ck('Home gallery supports mouse drag',Math.abs(afterDrag-hovered)>12,{hovered,afterDrag});
+  ck('Home gallery supports full-distance mouse drag',Math.abs(afterDrag-hovered)>80,{hovered,afterDrag});
   ck('Drag did not accidentally navigate',new URL(page.url()).pathname==='/');
   const pause=page.locator('[data-case-gallery-motion-toggle]');
   await pause.click();
