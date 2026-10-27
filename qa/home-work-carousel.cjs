@@ -39,10 +39,20 @@ const width=1440;
   await gallery.scrollIntoViewIfNeeded();
   await page.waitForTimeout(600);
   ck('Home creates accessible circular gallery',await gallery.getAttribute('data-case-loop')==='true');
+  // Ensure that scrolling the rail into view did not leave the browser's
+  // pointer hovering over it. Hover intentionally suspends autoplay.
+  await page.mouse.move(0,0);
+  await page.waitForTimeout(1700);
   const start=await gallery.evaluate(el=>el.scrollLeft);
-  await page.waitForTimeout(1600);
+  await page.waitForTimeout(1800);
   const end=await gallery.evaluate(el=>el.scrollLeft);
-  ck('Home gallery drifts continuously',end-start>15,{start,end});
+  const diagnostic=await gallery.evaluate(el=>({
+    viewport:el.clientWidth,scrollWidth:el.scrollWidth,loop:el.dataset.caseLoop,
+    hovered:el.matches(':hover'),focused:el.contains(document.activeElement),
+    reduced:matchMedia('(prefers-reduced-motion: reduce)').matches,
+    hidden:document.hidden,rect:(()=>{const r=el.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height}})()
+  }));
+  ck('Home gallery drifts continuously',end-start>15,{start,end,diagnostic});
   const box=await gallery.boundingBox();
   await page.mouse.move(box.x+box.width*.5,box.y+box.height*.5);
   const hovered=await gallery.evaluate(el=>el.scrollLeft);
