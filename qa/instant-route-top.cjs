@@ -84,6 +84,18 @@ const expectedHash='#discover';
   // Hash-section navigation is intentionally NOT changed to an instant snap.
   ck('Page still uses smooth anchor scrolling',await page.evaluate(()=>getComputedStyle(document.documentElement).scrollBehavior)==='smooth');
 
+  // The mobile menu uses the same router; deep-page navigation must still
+  // reset before the new service view is revealed.
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(base+'/');
+  await page.waitForSelector('[data-concept-ready="true"]');
+  await deep();
+  await assertTransition('Mobile deep Home to Creative','/creative-design/',async()=>{
+    await page.getByRole('button',{name:'Open menu'}).click();
+    await page.locator('#mobile-panel nav a[href="/creative-design/"]').click();
+  });
+  await page.setViewportSize({width:1440,height:900});
+
   // Reduced-motion route changes also snap to top without a curtain.
   const reduced=await browser.newContext({viewport:{width:1440,height:900},reducedMotion:'reduce'});
   const rp=await reduced.newPage();
