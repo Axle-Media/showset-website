@@ -119,8 +119,12 @@ export function SiteLayout({
   useLayoutEffect(() => {
     const host = root.current;
     if (!host) return;
-    const y = lastRoute.current === page.route ? scrollY : 0;
+    const changingRoute = lastRoute.current !== page.route;
+    const y = changingRoute ? 0 : scrollY;
     lastRoute.current = page.route;
+    // React-driven route updates must also start at the top before replacing
+    // the page content. Keep same-page Studio refresh scroll position intact.
+    if (changingRoute) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     // React owns the host; the upstream engine exclusively owns its descendants.
     // Keep the server-rendered route as a recovery snapshot. A client-side
     // animation error must not replace a complete page with hidden views.
