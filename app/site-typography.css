@@ -1,0 +1,57 @@
+/* SHOWSET shared reading and action typography.
+   Display headings, navigation, eyebrows, numerical markers and icon-only
+   controls retain their established scale. Apply after the legacy stylesheets
+   so these site-wide values cannot drift between the homepage and case studies. */
+.concept-12-root{
+  --v12-body:17px;
+  font-size:17px;
+}
+
+/* Content paragraphs, descriptive list entries and readable editorial copy.
+   This includes Studio-published sections and future case studies. */
+.concept-12-root :is(p,li,blockquote),
+.concept-12-root :is(
+  .category-description,
+  .category-belief-copy,
+  .services-intro-copy,
+  .hero-second-copy,
+  .category-feature p,
+  .category-inner p,
+  .category-detail-bottom p,
+  .service-image-information > p,
+  .film-step > p,
+  .case-body-copy,
+  .case-scene-copy > p,
+  .case-related-card-caption p,
+  .contact-form input:not([type="checkbox"]):not([type="radio"]),
+  .contact-form textarea,
+  .contact-form select
+){
+  font-size:17px!important;
+}
+
+/* The Studio's explicit per-section typography edits still take precedence
+   over the site default when a section has an authored custom body size. */
+.concept-12-root .c12-custom-body p{
+  font-size:var(--c12-body)!important;
+}
+
+/* Only readable button labels and CTA links are resized.
+   Exclude decorative icons, hamburger bars and image/lightbox controls. */
+.concept-12-root :is(
+  .solid-link,
+  .header-cta,
+  .text-arrow-link,
+  .understated-link,
+  .end-link,
+  .service-image-information > a,
+  .case-slide-link,
+  .case-explore,
+  .select-trigger,
+  .select-option,
+  .case-home-motion-toggle,
+  .case-gallery-motion-toggle,
+  button[type="submit"]
+){
+  font-size:14px!important;
+}
