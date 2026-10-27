@@ -30,13 +30,18 @@ const capabilityLayout=await p.locator('.service-expertise-grid').evaluate(grid=
  const flat=grid.classList.contains('service-expertise-grid--production');
  const innerList=grid.querySelector('.service-capability-list');
  return {
-  titles:groups.flatMap(g=>[...g.querySelectorAll(':scope > h3')].map(h=>h.textContent.trim())),
+  titles:groups.flatMap(g=>[...g.querySelectorAll(':scope > h3')].map(h=>h.textContent.trim().replace(/\.$/,''))),
   groupCount:groups.length,
   count:entries.length,
   ids:entries.map(el=>el.dataset.capabilityId),
   itemTexts:entries.map(el=>el.textContent.trim()),
   descriptionAbsent:!grid.querySelector('.service-capability-description,.service-search'),
   groupTitlesSimple:groups.every(g=>[...g.querySelectorAll(':scope > h3')].every(h=>!/^\s*[\d\-–—]/.test(h.textContent))),
+  periods:groups.every(g=>g.querySelector('h3 .service-capability-period')?.textContent==='.'),
+  tealPeriods:groups.every(g=>getComputedStyle(g.querySelector('.service-capability-period')).color==='rgb(18, 186, 175)'),
+  rules:groups.every(g=>{const rule=getComputedStyle(g.querySelector('h3'),'::after');return rule.content!=='none'&&rule.width==='52px'&&rule.height==='2px'&&rule.backgroundColor==='rgb(18, 186, 175)'}),
+  cards:groups.every(g=>{const style=getComputedStyle(g);return style.borderTopWidth==='1px'&&parseFloat(style.borderRadius)>=8&&style.backgroundColor!=='rgba(0, 0, 0, 0)'}),
+  headings:groups.flatMap(g=>[...g.querySelectorAll(':scope > h3')].map(h=>({fontSize:getComputedStyle(h).fontSize,letterSpacing:getComputedStyle(h).letterSpacing}))),
   fontSizes:names.map(el=>getComputedStyle(el).fontSize),
   allVisible:names.every(el=>el.getBoundingClientRect().height>8&&getComputedStyle(el).visibility==='visible'),
   columns:tracks.length,
@@ -49,17 +54,19 @@ const expectedGroupTitles={
  'events-experiences':['Concept & Design','Planning & People','Space & Production','The Experience'],
  'creative-design':['Strategy & Identity','Design & Production'],
  'digital-marketing':['Websites & Technology','Marketing & Content'],
- 'content-production':[]
+ 'content-production':['Film & Content','Technical Production']
 };
-ck('Compact category headings have no numbers or dashes '+tag,
- capabilityLayout.groupTitlesSimple&&JSON.stringify(capabilityLayout.titles)===JSON.stringify(expectedGroupTitles[slug]),capabilityLayout.titles);
+ck('Cards have plain names, with only the brand full stop '+tag,
+ capabilityLayout.groupTitlesSimple&&JSON.stringify(capabilityLayout.titles)===JSON.stringify(expectedGroupTitles[slug])&&capabilityLayout.periods,capabilityLayout.titles);
+ck('Service cards match reference outlines and short teal rules '+tag,
+ capabilityLayout.cards&&capabilityLayout.tealPeriods&&capabilityLayout.rules,capabilityLayout);
 ck('All capability names remain visible without paragraphs '+tag,
  capabilityLayout.allVisible&&capabilityLayout.descriptionAbsent&&capabilityLayout.count===caps.items.length,capabilityLayout);
 ck('All stable item IDs are retained exactly once '+tag,
  JSON.stringify([...capabilityLayout.ids].sort())===JSON.stringify(caps.items.map(x=>x.id).sort()),capabilityLayout.ids);
-ck('Service names follow the approved 17px copy baseline '+tag,capabilityLayout.fontSizes.every(x=>x==='17px'),capabilityLayout.fontSizes);
-const expectedGrid=slug==='events-experiences'?(width>=1200?4:width>640?2:1):slug==='content-production'?1:(width>640?2:1);
-const expectedInner=slug==='content-production'?(width>950?3:1):null;
+ck('Service names use compact 15px list typography '+tag,capabilityLayout.fontSizes.every(x=>x==='15px'),capabilityLayout.fontSizes);
+const expectedGrid=width>640?2:1;
+const expectedInner=slug==='content-production'?1:null;
 ck('Compact responsive groups fit with no overlap '+tag,
  capabilityLayout.withinViewport&&capabilityLayout.groupsDontOverlap&&capabilityLayout.columns===expectedGrid&&(expectedInner===null||capabilityLayout.innerColumns===expectedInner),
  {expectedGrid,expectedInner,layout:capabilityLayout});
