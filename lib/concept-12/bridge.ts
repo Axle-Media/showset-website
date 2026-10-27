@@ -492,8 +492,15 @@ export function bindConcept(
     host.querySelectorAll(selector).forEach((card, i) => {
       const x = s.items[i];
       if (!x) return;
-      if (itemChanged(s, i, "title"))
-        card.querySelector("h2,h3")!.textContent = x.title;
+      if (itemChanged(s, i, "title")) {
+        const heading = card.querySelector("h2,h3");
+        if (heading) {
+          // Preserve the approved teal period when Studio adds a new card.
+          const period = heading.querySelector(".teal-dot");
+          heading.textContent = period ? x.title.trim().replace(/\\.$/, "") : x.title;
+          if (period) heading.append(period);
+        }
+      }
       if (itemChanged(s, i, "description")) {
         const e = card.querySelector("p");
         if (e) e.textContent = x.description;
@@ -523,6 +530,12 @@ export function bindConcept(
         (p.route === linkedRoute || p.route === x.href)
       );
       if (project) {
+        // Newly repeated homepage cards retain a project-specific accessible label.
+        const projectLink = card.matches("a")
+          ? (card as HTMLAnchorElement)
+          : card.querySelector<HTMLAnchorElement>("a");
+        if (projectLink?.hasAttribute("aria-label"))
+          projectLink.setAttribute("aria-label", "Explore creative study: " + project.title);
         const featured = safeHref(caseExperienceFor(project).openingImage);
         const photo = card.querySelector<HTMLImageElement>("img");
         if (photo && featured !== "#") {
