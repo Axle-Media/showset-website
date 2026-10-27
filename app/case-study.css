@@ -62,7 +62,7 @@
 .case-experience[data-case-ready="true"]:not([data-case-flow]) .case-chapter-reading{position:absolute;top:calc(var(--header-height) + var(--case-stage-inset));bottom:var(--case-stage-bottom);left:var(--gutter);right:calc(51% + 4vw);overflow:clip}
 .case-experience[data-case-ready="true"]:not([data-case-flow]) .case-chapter-copy{margin-top:var(--case-copy-top,0px);will-change:transform}
 .case-experience[data-case-ready="true"] .case-chapter:first-child{opacity:1;visibility:visible}
-.case-photo-gallery{position:relative;overflow:hidden;background:var(--deep);width:100%;min-width:0;padding-top:clamp(60px,7vw,100px);padding-bottom:clamp(60px,7vw,100px)}
+.case-photo-gallery{position:relative;overflow:hidden;background:linear-gradient(138deg,#143952,#0b293e 80%);width:100%;min-width:0;padding-top:clamp(60px,7vw,100px);padding-bottom:clamp(60px,7vw,100px)}
 .concept-12-root .case-photo-gallery>.case-editorial-heading{font-size:var(--v12-h2);letter-spacing:var(--v12-head-tracking)!important;line-height:var(--refine-heading-leading)!important;font-weight:var(--refine-heading-weight);margin:0 0 clamp(32px,4.1vw,60px)}
 .case-gallery-viewport{display:flex;gap:clamp(12px,2vw,28px);width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none;scroll-snap-type:x proximity;overflow-anchor:none;touch-action:auto;cursor:grab;user-select:none}
 .case-gallery-viewport::-webkit-scrollbar{display:none}
@@ -71,7 +71,7 @@
 .case-gallery-item{flex:0 0 clamp(260px,39vw,540px);aspect-ratio:1.12;overflow:hidden;border:0;padding:0;position:relative;background:var(--navy2);scroll-snap-align:start;border-radius:var(--ui-radius,7px)}
 .case-gallery-item img{transition:transform .65s var(--case-ease);pointer-events:none}
 .case-gallery-item:hover img{transform:scale(1.055)}
-.case-gallery-expand{position:absolute;right:16px;bottom:14px;font-size:20px;color:var(--ice);background:rgba(6,27,42,.6);width:37px;height:37px;border-radius:50%;display:grid;place-items:center}
+
 .case-experience :is(a,button,[tabindex]):focus-visible,.case-lightbox :is(a,button):focus-visible{outline:2px solid var(--teal);outline-offset:4px}
 .case-partners{padding-top:clamp(65px,7vw,100px);padding-bottom:clamp(65px,7vw,100px);background:var(--deep2)}
 .case-partners-intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,6vw,85px);align-items:center;margin-bottom:clamp(33px,5vw,70px)}
