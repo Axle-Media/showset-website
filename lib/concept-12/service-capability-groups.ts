@@ -59,10 +59,11 @@ const definitions:Record<ServiceKind,GroupDefinition[]>={
   ]}
  ],
  production:[
-  // Three services require no redundant subheadings.
-  {title:'',ids:[
+  {title:'Film & Content',ids:[
    'motion-graphics--video---mul-0',
-   'photography---videography-1',
+   'photography---videography-1'
+  ]},
+  {title:'Technical Production',ids:[
    'lighting--sound---audiovisua-2'
   ]}
  ]
