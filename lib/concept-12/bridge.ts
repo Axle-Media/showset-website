@@ -661,13 +661,13 @@ export function bindConcept(
         "</span> " +
         rich(g.footer.copyright);
   }
-  // Render direct service links in one consistent order across SSR, hydration
-  // and Studio previews. The former first "What we do" link was the dropdown
-  // trigger, so keep its underlying destination in the services list only.
+  // Keep all authored navigation links except the obsolete dropdown trigger.
+  // This also handles already-published Studio globals with the old link array.
   const primaryLinks = [
     ...g.header.services,
-    ...g.header.links.slice(1).filter(
-      (item) => !g.header.services.some((service) => service.href === item.href),
+    ...g.header.links.filter(
+      (item) => item.label.trim().toLowerCase() !== "what we do" &&
+        !g.header.services.some((service) => service.href === item.href),
     ),
   ];
   const nav = host.querySelector<HTMLElement>(".desktop-navigation");
@@ -675,7 +675,7 @@ export function bindConcept(
     nav.innerHTML = primaryLinks
       .map((item) => {
         const href = safeHref(item.href);
-        const route = keyForRoute(href);
+        const route = routeKeys[href] || "";
         return '<a class="nav-text" href="' + escape(href) +
           '" data-route-key="' + escape(route) + '">' +
           escape(plain(item.label)) + '</a>';
