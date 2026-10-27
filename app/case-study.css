@@ -26,7 +26,7 @@
 .case-primary-heading .wipe-line.case-heading-accent::after{background:var(--ice)}
 .case-heading-measure{display:block;font:inherit;letter-spacing:inherit;line-height:inherit;text-wrap:balance;visibility:hidden}
 .case-heading-measure>span{display:inline-block;white-space:nowrap}
-.case-experience :is(.case-scene-copy>p,.case-body-copy p,.case-partners-intro p,.case-related-card-caption p){font-family:var(--body-font);font-size:var(--v12-body);font-weight:500;line-height:var(--v12-body-leading);letter-spacing:var(--v12-body-tracking);color:rgba(250,249,253,.8);margin:0 0 var(--v12-para-gap)}
+.case-experience :is(.case-scene-copy>p,.case-body-copy p,.case-related-card-caption p){font-family:var(--body-font);font-size:var(--v12-body);font-weight:500;line-height:var(--v12-body-leading);letter-spacing:var(--v12-body-tracking);color:rgba(250,249,253,.8);margin:0 0 var(--v12-para-gap)}
 .case-scene-copy>p{max-width:540px;margin-bottom:0}
 .case-experience[data-case-ready="true"] .case-scroll-opening{height:225svh}
 .case-experience[data-case-ready="true"] .case-scroll-frame{position:sticky;top:0;height:100svh}
@@ -80,16 +80,6 @@
 .case-gallery-item:hover img{transform:scale(1.055)}
 
 .case-experience :is(a,button,[tabindex]):focus-visible,.case-lightbox :is(a,button):focus-visible{outline:2px solid var(--teal);outline-offset:4px}
-.case-partners{padding-top:clamp(65px,7vw,100px);padding-bottom:clamp(65px,7vw,100px);background:var(--deep2)}
-.case-partners-intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,6vw,85px);align-items:center;margin-bottom:clamp(33px,5vw,70px)}
-.concept-12-root .case-partners h2{font-size:var(--v12-h2);font-weight:var(--refine-heading-weight);letter-spacing:var(--v12-head-tracking)!important;line-height:var(--refine-heading-leading)!important;margin:0}
-.case-partners-intro p{max-width:410px;margin:0}
-.case-partner-list{border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(24,minmax(0,1fr));column-gap:0;max-width:var(--max);margin-inline:auto}
-.case-partner{grid-area:var(--partner-desktop);width:100%;max-width:360px;justify-self:center;min-width:0;min-height:175px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:10px;border-bottom:1px solid var(--line);padding:clamp(21px,3vw,32px) clamp(8px,2vw,26px) clamp(21px,3vw,32px) 0}
-.case-partner-logo{width:100%;height:62px;display:flex;align-items:center;margin-bottom:clamp(6px,1.3vw,17px)}
-.case-partner-logo img{width:auto;height:auto;max-width:min(100%,170px);max-height:55px;object-fit:contain;object-position:left center}
-.case-partner-name{font-family:var(--display);font-weight:var(--refine-heading-weight);font-size:clamp(16px,1.5vw,21px);line-height:1.2;letter-spacing:var(--v12-head-tracking);overflow-wrap:anywhere}
-.case-partner-role{font-family:var(--body-font);letter-spacing:var(--v12-body-tracking);font-size:11px;line-height:var(--v12-body-leading);color:var(--muted)}
 /* Related work repeats the approved pinned-story backdrop, including its subtle tile. */
 .case-related{position:relative;isolation:isolate;background:linear-gradient(135deg,#071e30,#0d2f49 65%,#0b263a);padding-top:clamp(80px,9vw,130px);padding-bottom:clamp(80px,9vw,130px)}
 .case-related::before{content:"";position:absolute;inset:0;background:url('/concept-12/bb1b857a951a4915479a.svg') center top/var(--showset-pattern-width,440px) auto repeat;opacity:1;pointer-events:none;z-index:-1}
@@ -129,16 +119,11 @@ body.case-lightbox-open{overflow:hidden}
  .case-chapter-photo{height:auto;aspect-ratio:4/3}
  .case-chapter-eyebrow{font-size:12px}
  .case-gallery-item{flex-basis:69vw;aspect-ratio:1.07}
- .case-partner{grid-area:var(--partner-tablet)}
- .case-partners-intro{grid-template-columns:1fr}
  .case-related-heading{align-items:flex-start;flex-direction:column}
  .case-related-photo{height:clamp(170px,25vw,230px)}
 }
 @media(max-width:540px){
  .case-gallery-item{flex-basis:79vw;aspect-ratio:1}
- .case-partner-logo{height:50px}
- .case-partner-logo img{max-height:46px;max-width:min(100%,128px)}
- .case-partner{grid-area:var(--partner-mobile)}
  .case-related-grid{grid-template-columns:1fr}
  .case-related-photo{height:clamp(170px,48vw,220px)}
  .case-lightbox{grid-template-columns:42px minmax(0,1fr) 42px;padding-inline:3px}
@@ -146,7 +131,7 @@ body.case-lightbox-open{overflow:hidden}
 }
 /* Consistent exterior spacing matches the existing homepage closing CTA. */
 .case-experience{--case-section-top:clamp(92px,9vw,128px);--case-section-bottom:clamp(100px,9vw,126px)}
-.case-experience :is(.case-photo-gallery,.case-partners,.case-related){padding-top:var(--case-section-top);padding-bottom:var(--case-section-bottom)}
+.case-experience :is(.case-photo-gallery,.case-related){padding-top:var(--case-section-top);padding-bottom:var(--case-section-bottom)}
 @media(max-width:800px){
  .case-experience{--case-section-top:95px;--case-section-bottom:100px}
  .case-primary-heading .wipe-line>span{white-space:nowrap}
@@ -165,5 +150,3 @@ body.case-lightbox-open{overflow:hidden}
 .concept-12-root:not([data-concept-ready="true"]) .case-primary-heading .wipe-line::after,
 .concept-12-root[data-case-motion="off"] .case-primary-heading .wipe-line::after{display:none!important}
 @media(prefers-reduced-motion:reduce){.case-gallery-item img,.case-related-photo img{transition:none}}
-
-@media(max-width:359px){.case-partner{grid-area:auto / 1 / auto / -1;max-width:280px}}
