@@ -60,3 +60,7 @@ The previous [pinned split comparison](case-study-pinned-split.md) records the e
 The user's finalisation brief explicitly authorises merging PR #20 after validation, and production deployment only to https://showset-website.vercel.app/. The merge must use the verified head SHA and normal repository checks. The Vercel production Ready status, merged SHA, `/release.json` match and read-only browser results are recorded in the final PR delivery update after deployment, rather than asserted in advance here.
 
 `qa/production-smoke.cjs` verifies the commit marker, all three production routes and refreshes, forward/reverse stories, autoplay and Pause, native touch, lightbox, related cards, shared CTA, homepage, static Studio state and console/runtime errors. It writes no forms, published data or user storage. No deployment to showset.co.za, xneelo or WordPress is authorised or performed.
+
+## Production marker adapter correction
+
+PR #20 merged as `979dbc0f6602a7f028d5677100047026dd801ae4`, and Vercel reported the deployment successful. Live HTML and the new project assets were confirmed. The post-build `out/release.json` file was omitted by Vercel's framework adapter, so it is replaced by a force-static App Router GET route. This preserves the read-only payload and makes the marker part of Next.js's own output manifest. The follow-up changes no page content, design, media, Studio or motion. Final live verification is recorded in the PR delivery update.

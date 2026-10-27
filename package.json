@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --hostname 0.0.0.0",
-    "build": "next build && node scripts/write-release.mjs",
+    "build": "next build",
     "lint:source": "node scripts/check-source.mjs && node scripts/check-case-studies.mjs",
     "check": "tsc --noEmit",
     "export:assets": "node scripts/copy-export.mjs",
