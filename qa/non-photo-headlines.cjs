@@ -7,7 +7,7 @@ const slugs=['','our-studio','our-work','events-experiences','creative-design','
 const checks=[],errors=[];
 const ck=(name,pass,details)=>{checks.push({name,pass:!!pass,details});console.log(pass?'PASS':'FAIL',name,details??'')};
 const sample=async(page,selector)=>page.locator(selector).evaluateAll(elements=>elements.map(el=>{
- const target=el.matches('.soft-rise')?el:el.querySelector('.wipe-line>span');
+ const target=el.matches('.soft-rise')?el:(el.querySelector('.wipe-line>span')||el.querySelector('.case-heading-line>span'));
  if(!target)return {missing:true};
  const s=getComputedStyle(target);
  const bar=el.querySelector('.wipe-line')?getComputedStyle(el.querySelector('.wipe-line'),'::after'):null;
