@@ -22,12 +22,17 @@
   .film-step > p,
   .case-body-copy,
   .case-scene-copy > p,
-  .case-related-card-caption p,
   .contact-form input:not([type="checkbox"]):not([type="radio"]),
   .contact-form textarea,
   .contact-form select
 ){
   font-size:17px!important;
+}
+
+/* Exception: only the descriptions under 'More stories worth exploring.'
+   use the smaller 14px card-copy size. All other body text remains 17px. */
+.concept-12-root .case-related-card-caption p{
+  font-size:14px!important;
 }
 
 /* The Studio's explicit per-section typography edits still take precedence

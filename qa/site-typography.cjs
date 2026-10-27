@@ -20,7 +20,7 @@ const routes=['/','/events-experiences/','/creative-design/','/digital-marketing
     const actual=await page.evaluate(()=>{
       const root=document.querySelector('.concept-12-root');
       const style=el=>getComputedStyle(el);
-      const paragraphs=[...root.querySelectorAll('p,li,blockquote')].filter(el=>!el.closest('.c12-custom-body'));
+      const paragraphs=[...root.querySelectorAll('p,li,blockquote')].filter(el=>!el.closest('.c12-custom-body,.case-related-card-caption'));
       const copy=paragraphs.map(el=>({tag:el.localName,className:el.className,px:style(el).fontSize})).filter(el=>el.px!=='17px');
       const buttons=[...root.querySelectorAll('.solid-link,.header-cta,.text-arrow-link,.understated-link,.end-link,.service-image-information > a,.case-slide-link,.case-explore,.select-trigger,.select-option,.case-home-motion-toggle,.case-gallery-motion-toggle,button[type="submit"]')];
       const wrongButtons=buttons.filter(el=>style(el).fontSize!=='14px').map(el=>({tag:el.localName,className:el.className,size:style(el).fontSize}));

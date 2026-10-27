@@ -86,9 +86,9 @@
 .case-related-photo img{transition:transform .8s var(--case-ease)}
 .case-related-card:hover img{transform:scale(1.055)}
 .case-related-card-caption{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-top:17px}
-.case-related-card-caption>div{min-width:0}
+.case-related-card-caption>div{min-width:0;flex:1 1 auto}
 .concept-12-root .case-related-card-caption h3{font-family:var(--display);font-size:var(--v12-h3);letter-spacing:var(--v12-head-tracking)!important;line-height:var(--refine-heading-leading)!important;font-weight:var(--refine-heading-weight);margin:0 0 9px}
-.case-related-card-caption p{font-size:var(--v12-small);max-width:520px;margin:0}
+.case-related-card-caption p{width:100%;max-width:none;margin:0}
 .case-related-card-caption>span{color:var(--teal);font-size:24px;flex:none}
 .case-experience #case-ending{width:100%}
 .case-lightbox[hidden]{display:none!important}
