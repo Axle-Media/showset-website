@@ -745,31 +745,3 @@
 #portfolio-section .case-rail .case-slide{flex-shrink:0;user-select:none}
 #portfolio-section .case-rail .case-slide img{pointer-events:none;user-select:none;-webkit-user-drag:none}
 #portfolio-section .case-rail .case-slide:not(.is-active) .case-photo img{transform:scale(1.02)}
-#portfolio-section .case-controls{justify-content:flex-end;padding-top:18px;min-height:54px}
-#portfolio-section .case-home-motion-toggle{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  border:1px solid rgba(250,249,253,.28);
-  border-radius:999px;
-  background:transparent;
-  color:var(--ice);
-  min-width:90px;
-  min-height:38px;
-  padding:0 13px;
-  font:600 11px/1 var(--body-font);
-  letter-spacing:.025em;
-  cursor:pointer;
-  transition:background-color .2s,border-color .2s;
-}
-#portfolio-section .case-home-motion-toggle:hover{background:rgba(250,249,253,.1);border-color:rgba(250,249,253,.55)}
-#portfolio-section .case-home-motion-toggle:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
-#portfolio-section .case-home-motion-toggle[hidden]{display:none!important}
-#portfolio-section .case-home-motion-toggle [data-case-gallery-motion-icon]{font-size:13px}
-@media(max-width:640px){
-  #portfolio-section .case-home-motion-toggle{min-width:38px;width:38px;padding:0}
-  #portfolio-section .case-home-motion-toggle [data-case-gallery-motion-label]{
-    position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap
-  }
-}
