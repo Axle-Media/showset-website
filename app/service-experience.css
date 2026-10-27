@@ -131,61 +131,74 @@
 .service-process--production li{flex:1;padding-top:30px;border-top:2px solid var(--teal)}
 .service-process--production li:nth-child(2){margin-top:75px}.service-process--production li:nth-child(3){margin-top:150px}
 .service-process--production .service-process-number{font-size:18px;margin-bottom:45px}
-/* Editorial capabilities index: every description stays visible.
-   Two independent balanced columns prevent paired rows creating blank space. */
-.service-expertise .service-editorial-row{margin-bottom:clamp(46px,5vw,80px)}
-.service-expertise-list{
-  columns:2;
-  column-gap:clamp(44px,5.5vw,105px);
-  list-style:none;
-  margin:0;
-  padding:0;
+/* Quiet editorial service overview: no toggles, numeric prefixes, or detail copy.
+   Category labels stay plain; service names are readable at a glance. */
+.service-expertise.service-gutter{
+  padding-top:clamp(60px,6vw,92px);
+  padding-bottom:clamp(65px,7vw,108px);
 }
-.service-capability{
-  display:block;
-  break-inside:avoid;
-  -webkit-column-break-inside:avoid;
+.service-expertise .service-editorial-row{margin-bottom:clamp(36px,4vw,58px)}
+.service-expertise-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  column-gap:clamp(40px,5vw,92px);
+  row-gap:42px;
+  align-items:start;
+}
+.service-expertise-grid--events{grid-template-columns:repeat(4,minmax(0,1fr))}
+.service-capability-group{
   position:relative;
   min-width:0;
   border-top:1px solid var(--service-line);
-  padding:clamp(23px,2.3vw,32px) 0 clamp(35px,3.4vw,56px);
+  padding-top:20px;
 }
-.service-capability:before{
+.service-capability-group:before{
   content:'';
   position:absolute;
-  left:0;
-  top:-1px;
+  inset:-1px auto auto 0;
   width:100%;
   height:1px;
   background:var(--teal);
   transform:scaleX(var(--service-rule-progress,1));
   transform-origin:left;
 }
-.service-capability-heading{
-  display:grid;
-  grid-template-columns:34px minmax(0,1fr);
-  column-gap:clamp(15px,2vw,30px);
-  align-items:baseline;
-  margin-bottom:17px;
-}
-.service-capability-heading h3{
-  font-size:clamp(19px,1.8vw,27px);
+.service-capability-group h3{
+  font-family:var(--display);
+  font-size:clamp(19px,1.55vw,23px);
+  font-weight:var(--refine-heading-weight);
   line-height:var(--refine-heading-leading)!important;
   letter-spacing:var(--v12-head-tracking)!important;
+  color:var(--ice);
+  margin:0 0 25px;
+  text-wrap:balance;
+}
+.service-capability-list{
+  list-style:none;
+  padding:0;
   margin:0;
-  max-width:22em;
+  display:flex;
+  flex-direction:column;
+  gap:clamp(14px,1.4vw,22px);
 }
-.service-capability-description{
-  padding-left:calc(34px + clamp(15px,2vw,30px));
-  max-width:690px;
+.service-capability{margin:0;padding:0;min-width:0;break-inside:avoid}
+.service-capability-name{
+  display:block;
+  font-family:var(--body-font);
+  font-size:17px;
+  font-weight:500;
+  line-height:var(--v12-body-leading);
+  letter-spacing:var(--v12-body-tracking);
+  color:rgba(250,249,253,.86);
 }
-.service-capability-description p{
-  font-size:17px!important;
-  line-height:var(--v12-body-leading)!important;
-  letter-spacing:var(--v12-body-tracking)!important;
-  color:rgba(250,249,253,.8);
-  margin:0;
+.service-expertise-grid--production{grid-template-columns:minmax(0,1fr)}
+.service-capability-group--plain{border:0;padding-top:0}
+.service-capability-group--plain:before{display:none}
+.service-expertise-grid--production .service-capability-list{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(30px,4vw,74px);
 }
+.service-expertise-grid--production .service-capability{border-top:1px solid var(--service-line);padding-top:21px}
 .service-work{background:linear-gradient(135deg,#071e30,#0d2f49)}
 .service-work header{margin-bottom:50px}
 .service-work-card{display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:6vw}
@@ -224,7 +237,7 @@
  .service-group-list,.service-experience--creative .service-group-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:35px 30px}.service-experience--creative .service-group-list{margin-top:40px}
  .service-process--creative ol{grid-template-columns:1fr;gap:40px}.service-process--creative li{display:grid;grid-template-columns:95px 1fr;gap:25px}.service-process--creative .service-process-number{font-size:80px;margin-bottom:0}.service-process--events li{grid-template-columns:70px 1fr;gap:25px}.service-process--digital li{grid-template-columns:65px 1fr;gap:25px}.service-process--digital li>div{display:block}.service-process--digital h3{margin-bottom:20px}
  .service-process--production ol{display:block}.service-process--production li:nth-child(n){margin-top:35px}.service-process--production .service-process-number{margin-bottom:20px}
- .service-expertise .service-editorial-row{margin-bottom:38px}.service-expertise-list{columns:1}.service-capability{padding:23px 0 36px}.service-capability-heading{column-gap:14px;grid-template-columns:28px minmax(0,1fr);margin-bottom:13px}.service-capability-heading h3{font-size:21px}.service-capability-description{padding-left:42px}
+ .service-expertise .service-editorial-row{margin-bottom:34px}.service-expertise-grid--events{grid-template-columns:repeat(2,minmax(0,1fr))}.service-expertise-grid{gap:38px 34px}
  .service-work-card{grid-template-columns:1fr;gap:30px}.service-work-card figure{aspect-ratio:1.2}.service-work-card h3{font-size:34px}.service-connected nav{display:block}.service-connected a{justify-content:space-between;padding:17px 0}.service-close{min-height:85svh;padding:90px var(--gutter)}.service-close .service-heading{font-size:clamp(36px,7vw,58px)}
 }
 @media(max-width:480px){.service-hero .service-heading{font-size:clamp(35px,9.4vw,46px)}.service-hero-actions{align-items:flex-start;flex-direction:column;gap:18px}.service-hero--events{min-height:900px;min-height:max(100svh,780px)}.service-hero--production{min-height:max(100svh,800px)}.service-group-list,.service-experience--creative .service-group-list{grid-template-columns:1fr}.service-process--creative li{grid-template-columns:70px 1fr;gap:20px}.service-process--creative .service-process-number{font-size:65px}.service-scene-copy h3{font-size:30px}.service-work-caption{font-size:12px;left:18px;right:18px}.service-close .service-heading{font-size:36px}}
@@ -322,3 +335,16 @@
 
 .service-experience--creative .service-close .wipe-line{margin-left:auto}
 @media(max-width:800px){.service-experience--creative .service-close .wipe-line{margin-left:0}}
+
+
+@media(max-width:1199px){.service-expertise-grid--events{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:950px){.service-expertise-grid--production .service-capability-list{grid-template-columns:minmax(0,1fr);gap:20px}}
+@media(max-width:640px){
+  .service-expertise.service-gutter{padding-top:58px;padding-bottom:70px}
+  .service-expertise-grid,.service-expertise-grid--events{grid-template-columns:minmax(0,1fr);row-gap:34px}
+  .service-capability-group{padding-top:17px}
+  .service-capability-group h3{font-size:20px;margin-bottom:18px}
+  .service-capability-list{gap:12px}
+  .service-expertise-grid--production .service-capability-list{grid-template-columns:minmax(0,1fr);gap:17px}
+  .service-expertise-grid--production .service-capability{padding-top:15px}
+}

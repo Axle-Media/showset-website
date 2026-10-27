@@ -13,7 +13,7 @@ Branch: `feat/cinematic-service-pages`, based on main `8989ea1d3acd51413b60a98f3
 | Digital & Marketing | A brand arrow and editorial channel labels; a connected composition follows website, campaign and content. Native buttons allow deliberate keyboard/touch selection. No invented devices or performance dashboards. | [Opening](screenshots/digital-marketing-1440-hero.png) | [Opening](screenshots/digital-marketing-390-hero.png) | [Channels](screenshots/digital-marketing-1440-story-0.5.png) |
 | Content & Production | A tightly cropped photographic opening; a contact sequence moves between planning, production and the final frame, with a restrained progress line. No unavailable video placeholders. | [Opening](screenshots/content-production-1440-hero.png) | [Opening](screenshots/content-production-390-hero.png) | [Sequence](screenshots/content-production-1440-story-0.5.png) |
 
-Each page includes its own process treatment, an always-visible editorial capabilities index with no search or accordion controls, related concept study, cross-service links and photographic contact invitation. All 31 original expertise entries remain, including their IDs and wording. Existing group/process items are also retained. Related work is explicitly labelled as a creative concept study.
+Each page includes its own process treatment, a compact, unnumbered capability overview grouped under plain headings, with no search, accordion or lengthy visible item descriptions, related concept study, cross-service links and photographic contact invitation. All 31 original expertise entries remain, including their IDs and wording. Existing group/process items are also retained. Related work is explicitly labelled as a creative concept study.
 
 Mobile has individual opening compositions and inline story content. Pinning is disabled at 800px and below, on short landscape screens, for long edited copy, with reduced motion, or with the Studio still preset. Essential content is also present in static HTML without JavaScript. There is no wheel interception or automatically moving service carousel.
 
@@ -30,7 +30,7 @@ Studio tests cover editing story headings, descriptions, categories, images, typ
 ## Validation
 
 - TypeScript, source/content, SEO and optimised Next.js static build pass. Twelve authored routes and 74 sections validate.
-- `qa/service-experience.cjs`: service-page browser assertions across 1920, 1440, 1024, 768, 390 and 320px. Includes actual rendered screenshots, forward/reverse progress, scene/channel interactions, visible service descriptions, independently balanced columns, link destinations, overflow, image loading, reduced motion, no-JS output and 250-word edited stories.
+- `qa/service-experience.cjs`: service-page browser assertions across 1920, 1440, 1024, 768, 390 and 320px. Includes actual rendered screenshots, forward/reverse progress, scene/channel interactions, grouped capability names, preserved item IDs and responsive category columns, link destinations, overflow, image loading, reduced motion, no-JS output and 250-word edited stories.
 - `qa/service-studio.cjs`: 33 assertions pass for all four editors and legacy draft compatibility.
 - `qa/service-lifecycle.cjs`: repeated editing, resource cleanup, live OS motion preference changes and short landscape checks pass.
 - Existing regression suites pass: header navigation alignment (76), typography (86), editorial columns (262), instant route top/back/forward (61), homepage/Our Work carousel (35), carousel playback (32), case descriptions (196), route-first HTML/navigation (117), global editing (9), photo heading swipe (24), case storytelling (147), case infinite-gallery mouse/wheel/touch checks and case Studio (13).
@@ -41,9 +41,9 @@ The initial concurrent regression run hit browser timeouts; the affected suites 
 
 ## Editorial expertise layout refinement
 
-The previous two-column native accordion and its search field were removed after design review: opening a detail caused an empty paired grid cell, and search made straightforward capabilities harder to browse. Every service description is now visible in a calm, numbered editorial index. Wide viewports use two independent, balanced CSS columns with break-inside protection so no entry opens blank space opposite another; tablet and mobile stack into one column. All 31 authored capability IDs, headings and descriptions survive unchanged and remain editable in Studio.
+The previous two-column native accordion and search were replaced after design review. A further revision removed individual visible description paragraphs and numeric prefixes to avoid overwhelming visitors. Events uses four simply named groups, Creative and Digital use two each, and Production displays its three entries directly without unnecessary subheadings. Wide screens use compact columns, tablets adapt the grid, and phones use a single column. All 31 original capability IDs, names and descriptions remain in authored content and SHOWSET Studio; description edits do not disappear from stored content. Newly added services are shown in a fallback group rather than omitted.
 
-The replacement reuses the established 17px body font, heading tracking and line-height, existing gutters and the shared understated rule-draw motion. No new JS interaction is required. Browser QA checks inventory, removal of obsolete search/accordion UI, visible copy, typography and column overlap.
+The replacement reuses the established 17px type, heading tracking, line-height and gutters with understated category divider motion. No new interactions are required. Browser QA checks the complete service inventory, simple unnumbered group headings, absence of search/accordion controls and per-item descriptions, computed typography, adaptive grid and overlap.
 
 ## Preservation and review limits
 

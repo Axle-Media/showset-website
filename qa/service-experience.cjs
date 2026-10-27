@@ -8,7 +8,7 @@ for(const width of[1920,1440,1024,768,390,320])for(const slug of slugs){const c=
 ck('Authored hero '+tag,(await p.locator('.service-hero h1').innerText()).replace(/\s+/g,'').trim()===(hero.headline+hero.accent).replace(/\s+/g,''));
 ck('Shared design typography '+tag,await p.locator('.service-hero-copy p').first().evaluate(e=>getComputedStyle(e).fontSize==='17px')&&await p.locator('.service-hero .solid-link').evaluate(e=>getComputedStyle(e).fontSize==='14px'));
 ck('All editable sections rendered '+tag,await p.locator('[data-service-section]').count()===page.sections.length);
-ck('Full expertise inventory '+tag,await p.locator('[data-service-capability] .service-capability-heading h3').allTextContents().then(xs=>xs.length===caps.items.length&&xs.every((text,i)=>text.trim()===caps.items[i].title)));
+ck('Full expertise inventory '+tag,await p.locator('[data-service-capability]').evaluateAll((els,items)=>els.length===items.length&&els.every(el=>items.some(item=>item.id===el.dataset.capabilityId&&item.title===el.textContent.trim())),caps.items));
 ck('No video placeholders or playback controls '+tag,await p.locator('.service-experience video,.service-experience button[aria-label*="Pause"],.service-experience button[aria-label*="Play"]').count()===0);
 await p.screenshot({path:path.join(out,tag+'-hero.png')});
 const pinned=await p.locator('[data-service-story-track]').getAttribute('data-service-pinned')==='true';ck('Dedicated mobile reading adaptation '+tag,width>800||!pinned);
@@ -19,21 +19,50 @@ if(slug==='creative-design'){await progress(p,0);const start=await p.locator('.s
 if(slug==='digital-marketing'){await progress(p,.5);await p.getByRole('button',{name:'Content',exact:true}).click();ck('Digital channel choice responds',await p.getByRole('button',{name:'Content',exact:true}).getAttribute('aria-pressed')==='true');await p.getByRole('button',{name:'Website',exact:true}).focus();await p.keyboard.press('Space');ck('Digital choice is keyboard accessible',await p.getByRole('button',{name:'Website',exact:true}).getAttribute('aria-pressed')==='true')}
 if(slug==='content-production'){await progress(p,0);const a=await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform);await progress(p,.5);const z=await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform);ck('Production photographic sequence advances',pinned&&a!==z);await progress(p,0);ck('Production sequence reverses',await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform)===a)}}
 for(const selector of['.service-intro','.service-groups','.service-process','.service-expertise','.service-work','.service-close']){await p.locator(selector).scrollIntoViewIfNeeded();await p.waitForTimeout(100);if(width===1440||width===390)await p.screenshot({path:path.join(out,tag+'-'+selector.slice(1)+'.png')})}
-ck('Expertise uses a fully visible editorial index, not search or accordion '+tag,await p.locator('#service-search-input,.service-search,.service-search-empty,.service-expertise details,.service-expertise summary,.service-summary-icon,[data-service-search]').count()===0);
-const capabilityLayout=await p.locator('.service-expertise-list').evaluate(list=>{
- const items=[...list.querySelectorAll('[data-service-capability]')],elRects=items.map(el=>el.getBoundingClientRect());
- const copy=items.map(el=>el.querySelector('.service-capability-description p'));
- return {columnCount:parseInt(getComputedStyle(list).columnCount,10),count:items.length,
-   visible:copy.every((el,i)=>!!el&&getComputedStyle(el).display!=='none'&&getComputedStyle(el).visibility!=='hidden'&&el.getBoundingClientRect().height>0),
-   copySizes:copy.map(el=>el&&getComputedStyle(el).fontSize),
-   columnLefts:[...new Set(elRects.map(r=>Math.round(r.left)))],
-   withinBounds:elRects.every(r=>r.width>0&&r.left>=-1&&r.right<=innerWidth+1),
-   noColumnOverlap:elRects.every((r,i)=>elRects.slice(i+1).every(q=>r.right<=q.left+1||q.right<=r.left+1||r.bottom<=q.top+1||q.bottom<=r.top+1))
+ck('Expertise has no search, accordion, or unnecessary controls '+tag,await p.locator('.service-expertise input,.service-expertise button,.service-expertise details,.service-expertise summary,.service-expertise [data-service-search]').count()===0);
+const capabilityLayout=await p.locator('.service-expertise-grid').evaluate(grid=>{
+ const groups=[...grid.querySelectorAll('.service-capability-group')];
+ const entries=[...grid.querySelectorAll('[data-service-capability]')];
+ const names=entries.map(el=>el.querySelector('.service-capability-name'));
+ const rects=groups.map(el=>el.getBoundingClientRect());
+ const cellRects=entries.map(el=>el.getBoundingClientRect());
+ const tracks=getComputedStyle(grid).gridTemplateColumns.trim().split(/\s+/);
+ const flat=grid.classList.contains('service-expertise-grid--production');
+ const innerList=grid.querySelector('.service-capability-list');
+ return {
+  titles:groups.flatMap(g=>[...g.querySelectorAll(':scope > h3')].map(h=>h.textContent.trim())),
+  groupCount:groups.length,
+  count:entries.length,
+  ids:entries.map(el=>el.dataset.capabilityId),
+  itemTexts:entries.map(el=>el.textContent.trim()),
+  descriptionAbsent:!grid.querySelector('.service-capability-description,.service-search'),
+  groupTitlesSimple:groups.every(g=>[...g.querySelectorAll(':scope > h3')].every(h=>!/^\s*[\d\-–—]/.test(h.textContent))),
+  fontSizes:names.map(el=>getComputedStyle(el).fontSize),
+  allVisible:names.every(el=>el.getBoundingClientRect().height>8&&getComputedStyle(el).visibility==='visible'),
+  columns:tracks.length,
+  innerColumns:flat?getComputedStyle(innerList).gridTemplateColumns.trim().split(/\s+/).length:null,
+  withinViewport:[...rects,...cellRects].every(r=>r.width>0&&r.left>=-1&&r.right<=innerWidth+1),
+  groupsDontOverlap:rects.every((r,i)=>rects.slice(i+1).every(q=>r.right<=q.left+1||q.right<=r.left+1||r.bottom<=q.top+1||q.bottom<=r.top+1))
  };
 });
-ck('All service descriptions visibly readable without interaction '+tag,capabilityLayout.visible&&capabilityLayout.count===caps.items.length,capabilityLayout);
-ck('Capability descriptions retain approved 17px typography '+tag,capabilityLayout.copySizes.every(x=>x==='17px'),capabilityLayout.copySizes);
-ck('Editorial columns fit the viewport without overlap '+tag,capabilityLayout.withinBounds&&capabilityLayout.noColumnOverlap&&capabilityLayout.columnCount===(width>800?2:1),capabilityLayout);
+const expectedGroupTitles={
+ 'events-experiences':['Concept & Design','Planning & People','Space & Production','The Experience'],
+ 'creative-design':['Strategy & Identity','Design & Production'],
+ 'digital-marketing':['Websites & Technology','Marketing & Content'],
+ 'content-production':[]
+};
+ck('Compact category headings have no numbers or dashes '+tag,
+ capabilityLayout.groupTitlesSimple&&JSON.stringify(capabilityLayout.titles)===JSON.stringify(expectedGroupTitles[slug]),capabilityLayout.titles);
+ck('All capability names remain visible without paragraphs '+tag,
+ capabilityLayout.allVisible&&capabilityLayout.descriptionAbsent&&capabilityLayout.count===caps.items.length,capabilityLayout);
+ck('All stable item IDs are retained exactly once '+tag,
+ JSON.stringify([...capabilityLayout.ids].sort())===JSON.stringify(caps.items.map(x=>x.id).sort()),capabilityLayout.ids);
+ck('Service names follow the approved 17px copy baseline '+tag,capabilityLayout.fontSizes.every(x=>x==='17px'),capabilityLayout.fontSizes);
+const expectedGrid=slug==='events-experiences'?(width>=1200?4:width>640?2:1):slug==='content-production'?1:(width>640?2:1);
+const expectedInner=slug==='content-production'?(width>950?3:1):null;
+ck('Compact responsive groups fit with no overlap '+tag,
+ capabilityLayout.withinViewport&&capabilityLayout.groupsDontOverlap&&capabilityLayout.columns===expectedGrid&&(expectedInner===null||capabilityLayout.innerColumns===expectedInner),
+ {expectedGrid,expectedInner,layout:capabilityLayout});
 ck('Contact and connected links valid '+tag,await p.locator('.service-close .solid-link').getAttribute('href')==='/contact/'&&await p.locator('.service-connected a').count()===3&&await p.locator('.service-work-card').getAttribute('href').then(x=>Object.values(seed).some(p=>p.route===x)));
 ck('No horizontal overflow / broken loaded images '+tag,await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1&&[...document.querySelectorAll('.service-experience img')].every(e=>!e.getBoundingClientRect().width||!e.complete||e.naturalWidth>0)));
 const overlap=await p.locator('.service-hero').evaluate(e=>{const head=e.querySelector('h1'),h=head.getBoundingClientRect(),p=e.querySelector('.service-hero-copy').getBoundingClientRect(),walker=document.createTreeWalker(head,NodeFilter.SHOW_TEXT),rects=[];let node;while(node=walker.nextNode()){if(!node.textContent.trim())continue;const r=document.createRange();r.selectNodeContents(node);rects.push(...r.getClientRects())}return{headingBottom:h.bottom,copyTop:p.top,headingWidth:Math.max(...rects.map(r=>r.right))-Math.min(...rects.map(r=>r.left)),client:head.clientWidth,inkInside:rects.every(r=>r.left>=h.left-1&&r.right<=h.right+1),maskScrollWidth:head.scrollWidth}});ck('Opening has no text overlap or clipping '+tag,overlap.headingBottom<=overlap.copyTop+1&&overlap.headingWidth<=overlap.client+1&&overlap.inkInside,overlap);await c.close();}

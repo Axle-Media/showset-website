@@ -1,6 +1,7 @@
 import type {Block,BlockItem,PageData} from '@/lib/types';
 import {safeHref} from '@/lib/safe';
 import {servicePage,serviceNames,serviceRoutes,type ServiceKind} from './service-content';
+import {groupServiceCapabilities} from './service-capability-groups';
 
 const esc=(v:string='')=>String(v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 const text=(v:string='')=>esc(v).replace(/&lt;br\s*\/?&gt;/gi,'<br>').replace(/&lt;(\/?)em&gt;/gi,'<$1em>');
@@ -35,7 +36,20 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
   return section(s,'service-story service-story--'+kind,intro+'<div class="service-story-track" data-service-story-track><div class="service-story-stage">'+body+'</div></div>');
  };
  const renderGroups=(s:Block)=>section(s,'service-groups service-gutter','<header>'+heading(s)+paras(s.body)+'</header><div class="service-group-list">'+s.items.map((item,i)=>'<article><span class="service-index" aria-hidden="true">0'+(i+1)+'</span><h3>'+text(item.title)+'</h3>'+paras(item.description)+'</article>').join('')+'</div>');
- const renderExpertise=(s:Block)=>section(s,'service-expertise service-gutter','<header class="service-editorial-row"><div>'+heading(s)+'</div><div>'+paras(s.body)+'</div></header><ol class="service-expertise-list">'+s.items.map((item,i)=>'<li class="service-capability" data-service-capability><div class="service-capability-heading"><span class="service-index" aria-hidden="true">'+String(i+1).padStart(2,'0')+'</span><h3>'+text(item.title)+'</h3></div><div class="service-capability-description">'+paras(item.description)+'</div></li>').join('')+'</ol>','id="service-expertise"');
+ const renderExpertise=(s:Block)=>{
+  const groups=groupServiceCapabilities(kind,s.items);
+  const list=groups.map(group=>
+   '<div class="service-capability-group'+(group.title?'':' service-capability-group--plain')+'">'+
+   (group.title?'<h3>'+text(group.title)+'</h3>':'')+
+   '<ul class="service-capability-list">'+group.items.map(item=>
+    '<li class="service-capability" data-service-capability data-capability-id="'+esc(item.id)+'"><span class="service-capability-name">'+text(item.title)+'</span></li>'
+   ).join('')+'</ul></div>'
+  ).join('');
+  return section(s,'service-expertise service-gutter',
+   '<header class="service-editorial-row"><div>'+heading(s)+'</div><div>'+paras(s.body)+'</div></header>'+
+   '<div class="service-expertise-grid service-expertise-grid--'+kind+'">'+list+'</div>',
+   'id="service-expertise"');
+ };
  const renderProcess=(s:Block)=>section(s,'service-process service-gutter service-process--'+kind,'<header>'+heading(s)+paras(s.body)+'</header><ol>'+s.items.map((item,i)=>'<li>'+(kind==='creative'&&story?.items[i]?.image?'<figure class="service-process-proof">'+photo(story.items[i].image||'',story.items[i].title)+'</figure>':'')+'<span class="service-process-number" aria-hidden="true">'+String(i+1).padStart(2,'0')+'</span><div><h3>'+text(item.title)+'</h3>'+paras(item.description)+'</div></li>').join('')+'</ol>');
  const renderWork=(s:Block)=>section(s,'service-work service-gutter','<header>'+(kind!=='production'?label(kind==='creative'?'Identity in context':kind==='digital'?'Across the channels':'A creative exploration'):'')+heading(s)+paras(s.body)+'</header><div class="service-work-list">'+s.items.map(item=>{
   const project=Object.values(catalog).find(p=>p.route===safeHref(item.href));
