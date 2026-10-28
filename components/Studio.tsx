@@ -180,6 +180,7 @@ export default function Studio() {
       slug: key,
       route: caseStudy?`/work/${key}/`:`/${key}/`,
       title: name,
+      ...(caseStudy ? {publishedAt: new Date().toISOString()} : {}),
       sections: [newBlock("pagehero"), newBlock("cta")],
       seo: { title: name + " | SHOWSET", description: "" },
     };
@@ -996,6 +997,27 @@ export default function Studio() {
               <>
                 {page.route.startsWith("/work/") && (
                   <>
+                    <div className="studio-pane-title">Portfolio settings</div>
+                    <p className="studio-hint">These tags control the Our Work filters. Use Events, Creative, Digital or Content; multiple tags are allowed.</p>
+                    <TextField
+                      label="Case study tags (comma-separated)"
+                      value={(page.caseExperience?.tags || []).join(", ")}
+                      onChange={(value) => updatePage((p) => ({
+                        ...p,
+                        caseExperience: {
+                          ...caseExperienceFor(p),
+                          tags: [...new Set(value.split(",").map(x => x.trim()).filter(Boolean))],
+                        },
+                      }))}
+                    />
+                    <TextField
+                      label="Published date (ISO 8601, newest first)"
+                      value={page.publishedAt || ""}
+                      onChange={(value) => updatePage((p) => ({
+                        ...p,
+                        publishedAt: value.trim() || undefined,
+                      }))}
+                    />
                     <CaseExperienceFields page={page} updatePage={updatePage} />
                     <div className="studio-pane-title">
                       Legacy modules (not used by cinematic template)
