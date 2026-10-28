@@ -558,7 +558,7 @@
         "type": "pagehero",
         "headline": "Ideas made",
         "accent": "tangible.",
-        "body": "We build identities, ideas and design systems with a clear point of view. Not design for the sake of decoration. Design that gives people something to recognise, believe in and come back to.",
+        "body": "We give ideas a point of view, then bring them into the world. From brand identities and campaigns to packaging, print and the spaces people experience, we make design that looks distinctive and works wherever it needs to live.",
         "image": "/media/cases/identity-hero.webp",
         "pattern": false,
         "reveal": true,
@@ -574,12 +574,12 @@
       {
         "id": "section-2",
         "type": "split",
-        "headline": "Pretty is easy. Personality takes thinking.",
-        "accent": "",
-        "body": "A colour palette is not a personality. A logo is not the whole story. We start by understanding what you stand for, who you are speaking to and what people should feel when they meet your brand. Then we build a visual world that can hold its own anywhere. From strategy and identity to packaging, print, presentations, event branding, spatial design and campaign artwork, we make sure everything belongs to the same story. A billboard and a business card should feel like relatives, not strangers.",
+        "headline": "Pretty is easy.",
+        "accent": "Personality takes thinking.",
+        "body": "A logo is a starting point. A colour palette is not a personality. And looking good is only half the job.\n\nWe get to know what makes a brand tick, who it needs to connect with and what it should stand for. Then we translate that thinking into a visual language with enough character to be recognised and enough flexibility to work in the real world.\n\nFrom the first sketch to the final print file, we connect strategy, art direction, design and production. A business card, a billboard, a presentation and an entire environment should all feel like they come from the same imagination.",
         "image": "",
-        "pattern": true,
-        "reveal": true,
+        "pattern": false,
+        "reveal": false,
         "buttonLabel": "",
         "buttonHref": "",
         "secondaryLabel": "",
@@ -592,12 +592,12 @@
       {
         "id": "service-story",
         "type": "story",
-        "headline": "One idea. A world of possibilities.",
-        "accent": "",
-        "body": "We give an idea a character, a visual language and somewhere to go. The system holds together. The applications have room to play.",
+        "headline": "One idea.",
+        "accent": "A world of possibilities.",
+        "body": "Good design is never one isolated graphic. Explore how clear thinking becomes a distinctive identity, then takes on a life across everything people see, hold and step into.",
         "image": "",
         "pattern": false,
-        "reveal": true,
+        "reveal": false,
         "buttonLabel": "",
         "buttonHref": "",
         "secondaryLabel": "",
@@ -606,7 +606,7 @@
           {
             "id": "service-scene-1",
             "title": "A point of view.",
-            "description": "We find the thinking that makes a brand itself. Strategy and creative direction give the design something to stand for.",
+            "description": "Before we choose a colour or draw a mark, we find the idea worth building on. We ask better questions, challenge the obvious and give the creative work a direction that makes sense.",
             "image": "/media/cases/identity-process.webp",
             "href": "",
             "category": "Thinking"
@@ -614,7 +614,7 @@
           {
             "id": "service-scene-2",
             "title": "A visual language.",
-            "description": "We bring type, colour, form and composition into a recognisable system, with clear rules and enough room for expression.",
+            "description": "Then the idea gets its own visual DNA. Typography, colour, form, imagery and composition come together as a recognisable system, with rules that keep it consistent and room for it to have personality.",
             "image": "/media/cases/identity-detail.webp",
             "href": "",
             "category": "Identity"
@@ -622,7 +622,7 @@
           {
             "id": "service-scene-3",
             "title": "A life beyond the logo.",
-            "description": "We take the idea into packaging, print, screens and spaces. It should feel familiar wherever people meet it.",
+            "description": "This is where the design proves itself. We bring the same thinking into packaging, print, campaigns, digital touchpoints and physical spaces so each encounter feels unmistakably connected.",
             "image": "/media/brand.webp",
             "href": "",
             "category": "Application"
@@ -633,126 +633,14 @@
         "helperText": ""
       },
       {
-        "id": "section-3",
-        "type": "items",
-        "headline": "How we bring it together.",
-        "accent": "",
-        "body": "Different parts. One connected idea.",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [
-          {
-            "id": "find-your-point-of-view-0",
-            "title": "Find your point of view",
-            "accent": "",
-            "description": "Brand thinking, positioning, naming support, identity and creative strategy.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "build-a-visual-world-1",
-            "title": "Build a visual world",
-            "accent": "",
-            "description": "Art direction, identity systems, campaigns, visual assets and design guidelines.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "make-it-physical-2",
-            "title": "Make it physical",
-            "accent": "",
-            "description": "Packaging, retail, print, signage, event environments and experiences you can walk into.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "keep-it-consistent-3",
-            "title": "Keep it consistent",
-            "accent": "",
-            "description": "Everyday design, creative production and dependable support that protects the big idea.",
-            "image": "",
-            "href": ""
-          }
-        ],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-4",
-        "type": "split",
-        "headline": "Every touchpoint is a chance to say something.",
-        "accent": "",
-        "body": "The box someone opens. The slide that makes a complicated point instantly clear. The way a festival wristband, website and entrance sign look like they came from the same imagination. We care about the entire system, not just the hero graphic.",
-        "image": "",
-        "pattern": true,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-5",
-        "type": "items",
-        "headline": "From the first thought to the final detail.",
-        "accent": "",
-        "body": "",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [
-          {
-            "id": "discover-the-character--0",
-            "title": "Discover the character.",
-            "accent": "",
-            "description": "We get to the truth beneath the brief.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "draw-the-world--1",
-            "title": "Draw the world.",
-            "accent": "",
-            "description": "We explore the visual language, refine the right direction and build the system.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "make-it-travel--2",
-            "title": "Make it travel.",
-            "accent": "",
-            "description": "We adapt the design across the places and formats it needs to live.",
-            "image": "",
-            "href": ""
-          }
-        ],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
         "id": "section-6",
         "type": "accordion",
-        "headline": "Explore the possibilities.",
-        "accent": "",
-        "body": "More ways we can help, depending on your brief.",
+        "headline": "What we can put",
+        "accent": "our minds to.",
+        "body": "From the thinking behind a brand to the smallest production detail, we bring everything together. Choose the parts you need or give us the whole creative challenge.",
         "image": "",
         "pattern": false,
-        "reveal": true,
+        "reveal": false,
         "buttonLabel": "",
         "buttonHref": "",
         "secondaryLabel": "",
@@ -760,9 +648,33 @@
         "items": [
           {
             "id": "brand-strategy---identity-0",
-            "title": "Brand strategy & identity",
+            "title": "Brand strategy & visual identity",
             "accent": "",
             "description": "We find the character behind the business and give it a clear voice, visual identity and rules worth following. The goal is not just recognition, but a brand that knows how to show up.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "marketing-strategy---creativ-4",
+            "title": "Creative strategy & brand positioning",
+            "accent": "",
+            "description": "We challenge the brief, find the sharpest opportunity and put a direction behind the work. Good creative decisions are easier when the thinking is clear.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-naming-20261028",
+            "title": "Naming & brand personality",
+            "accent": "",
+            "description": "Naming support, tone and verbal personality help the brand sound as distinctive as it looks.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-brand-guidelines-20261028",
+            "title": "Brand guidelines & design systems",
+            "accent": "",
+            "description": "We build usable rules and creative systems that keep the work recognisable as it grows.",
             "image": "",
             "href": ""
           },
@@ -775,10 +687,58 @@
             "href": ""
           },
           {
+            "id": "creative-campaign-art-direction-20261028",
+            "title": "Campaign concepts & art direction",
+            "accent": "",
+            "description": "One sharp idea, applied across the visual assets and formats that make a campaign land.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-presentations-20261028",
+            "title": "Presentations, pitch decks & proposals",
+            "accent": "",
+            "description": "We turn complicated stories and ambitious pitches into presentations people can follow.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-illustration-20261028",
+            "title": "Illustration & custom graphic artwork",
+            "accent": "",
+            "description": "Illustrations, iconography and bespoke graphic assets with their own character.",
+            "image": "",
+            "href": ""
+          },
+          {
             "id": "packaging--print---retail-de-2",
             "title": "Packaging, print & retail design",
             "accent": "",
             "description": "We give physical touchpoints their own personality, from packaging and print collateral to retail displays. Something people pick up can make as strong an impression as something they scroll past.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-print-collateral-20261028",
+            "title": "Brochures, catalogues & print collateral",
+            "accent": "",
+            "description": "Thoughtful printed pieces that make ideas tangible and useful.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-retail-pos-20261028",
+            "title": "Retail displays & point-of-sale artwork",
+            "accent": "",
+            "description": "Graphics and display systems that help brands show up with confidence in-store.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-production-artwork-20261028",
+            "title": "Print-ready artwork & production files",
+            "accent": "",
+            "description": "Practical artwork preparation that respects the details of print and fabrication.",
             "image": "",
             "href": ""
           },
@@ -791,10 +751,26 @@
             "href": ""
           },
           {
-            "id": "marketing-strategy---creativ-4",
-            "title": "Marketing strategy & creative consulting",
+            "id": "creative-event-branding-20261028",
+            "title": "Event branding & signage",
             "accent": "",
-            "description": "We challenge the brief, find the sharpest opportunity and put a direction behind the work. Good creative decisions are easier when the thinking is clear.",
+            "description": "Visual identities and all the signs, backdrops and touchpoints that bring an event together.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-spatial-visuals-20261028",
+            "title": "Spatial concepts, layouts & 3D visualisation",
+            "accent": "",
+            "description": "Layouts, concepts and 3D previews that make a physical idea easier to picture and plan.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-branded-installations-20261028",
+            "title": "Branded environments & installations",
+            "accent": "",
+            "description": "Visual worlds that move from screens and paper into real spaces.",
             "image": "",
             "href": ""
           }
@@ -804,32 +780,14 @@
         "helperText": ""
       },
       {
-        "id": "section-8",
-        "type": "cta",
-        "headline": "Keep exploring",
-        "accent": "",
-        "body": "",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
         "id": "section-7",
         "type": "visual",
         "headline": "Give your next idea",
         "accent": "a point of view.",
-        "body": "",
-        "image": "/media/details.webp",
+        "body": "Got an idea that deserves more than another template?\n\nWhether you need a new identity, a campaign with character or a design partner to make everything feel connected, we can take it from the first thought to the finished piece.",
+        "image": "",
         "pattern": false,
-        "reveal": true,
+        "reveal": false,
         "buttonLabel": "Give the idea a look",
         "buttonHref": "/contact/",
         "secondaryLabel": "",
