@@ -1110,7 +1110,7 @@
         "type": "pagehero",
         "headline": "Every frame",
         "accent": "has a purpose.",
-        "body": "Stories deserve more than a nice shot. We bring ideas to life through motion, video, photography, creative production and the technical details that make everything land.",
+        "body": "Stories deserve more than a good-looking shot.\n\nWe bring ideas to life through film, photography, animation, live streaming and technical production. From a story worth telling to the very last cue, we make each detail count.",
         "image": "/media/cases/production-detail.webp",
         "pattern": false,
         "reveal": true,
@@ -1126,12 +1126,12 @@
       {
         "id": "section-2",
         "type": "split",
-        "headline": "The magic has a call sheet.",
-        "accent": "",
-        "body": "You see the final frame. We see the planning behind it. The storyboard, the light, the pace, the audio, the edit and the hundred decisions that make a piece feel like it was always meant to be that way. We work across digital content, branded video, motion design, multimedia and event production, connecting creative direction with what it takes to deliver. Some stories need to fill a screen. Others need to fill an entire room. Either way, we make sure the execution gives the idea its moment.",
+        "headline": "The magic has",
+        "accent": "a call sheet.",
+        "body": "The final result might last thirty seconds, fill a screen or transform an entire room. What makes it memorable happens long before anyone presses record.\n\nWe bring together creative thinking, production planning and technical know-how to make every frame, sound and detail count. From finding the story and capturing the moment to editing, animating, broadcasting live and preparing the finished work, we connect the people and processes behind the scenes.\n\nSometimes the brief calls for a polished film. Sometimes it needs cameras, a live audience and a reliable stream reaching people somewhere else entirely. We think through the format, crew, equipment, schedules, platforms and final deliverables before the action starts. Because the best production doesn't draw attention to how complicated it was. It makes everything feel exactly as it should.",
         "image": "",
-        "pattern": true,
-        "reveal": true,
+        "pattern": false,
+        "reveal": false,
         "buttonLabel": "",
         "buttonHref": "",
         "secondaryLabel": "",
@@ -1144,12 +1144,12 @@
       {
         "id": "service-story",
         "type": "story",
-        "headline": "The thinking. The making. The moment.",
-        "accent": "",
-        "body": "We work backwards from what people should see, hear and feel. Every creative and technical decision has a job to do.",
+        "headline": "The anatomy",
+        "accent": "of a moment.",
+        "body": "Three stages. Hundreds of decisions. One finished experience. Explore how we take the story from the first sketch to the final frame, whether it's captured, animated or happening live.",
         "image": "",
         "pattern": false,
-        "reveal": true,
+        "reveal": false,
         "buttonLabel": "",
         "buttonHref": "",
         "secondaryLabel": "",
@@ -1158,138 +1158,29 @@
           {
             "id": "service-scene-1",
             "title": "Find the story.",
-            "description": "We decide what matters, how it should feel and the shots, sounds or movement that will carry it.",
+            "description": "We work out what the audience should see, hear and feel before the first shot. Creative direction, scripting, storyboards, shot lists, production plans and technical requirements turn an exciting idea into something ready to make.",
             "image": "/media/planning.webp",
             "href": "",
-            "category": "Pre-production"
+            "category": "Pre-production",
+            "accent": ""
           },
           {
             "id": "service-scene-2",
             "title": "Make it happen.",
-            "description": "We bring photography, film, motion and technical production into one considered process. Craft serves the idea.",
+            "description": "Cameras roll. Lights change. The crew, sound and technical elements work together. We capture the planned moments and the unexpected ones, keeping the creative direction intact whether it's a studio shoot, an event or a live broadcast.",
             "image": "/media/cases/production-process.webp",
             "href": "",
-            "category": "Production"
+            "category": "Production",
+            "accent": ""
           },
           {
             "id": "service-scene-3",
-            "title": "Shape the final frame.",
-            "description": "We refine the edit, finish the details and adapt the content for the formats and places it needs to live.",
+            "title": "Finish with purpose.",
+            "description": "We shape the edit, animation, graphics, colour and sound until every piece feels intentional. Then we deliver the right formats, captions, recordings, highlights and cutdowns for the screens and audiences that matter.",
             "image": "/media/sound.webp",
             "href": "",
-            "category": "Post-production"
-          }
-        ],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-3",
-        "type": "items",
-        "headline": "How we bring it together.",
-        "accent": "",
-        "body": "Different parts. One connected idea.",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [
-          {
-            "id": "plan-the-story-0",
-            "title": "Plan the story",
-            "accent": "",
-            "description": "Creative direction, concepts, scripts, storyboards and production thinking.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "make-the-assets-1",
-            "title": "Make the assets",
-            "accent": "",
-            "description": "Photography, film, motion graphics, editing, animation and multimedia content.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "take-it-live-2",
-            "title": "Take it live",
-            "accent": "",
-            "description": "Stage visuals, on-screen content, technical event production, lighting, sound and AV coordination.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "make-it-work-everywhere-3",
-            "title": "Make it work everywhere",
-            "accent": "",
-            "description": "Cutdowns, platform-ready versions, event recaps, campaign assets and content libraries.",
-            "image": "",
-            "href": ""
-          }
-        ],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-4",
-        "type": "split",
-        "headline": "Good production knows when to disappear.",
-        "accent": "",
-        "body": "The edit should feel natural. The sound should be right. The presentation should land without a hiccup. We spend time on the things nobody is supposed to notice, so everyone can pay attention to the story.",
-        "image": "",
-        "pattern": true,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-5",
-        "type": "items",
-        "headline": "From the first thought to the final detail.",
-        "accent": "",
-        "body": "",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [
-          {
-            "id": "frame-it--0",
-            "title": "Frame it.",
-            "accent": "",
-            "description": "We decide what the audience needs to see, hear and feel.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "produce-it--1",
-            "title": "Produce it.",
-            "accent": "",
-            "description": "We bring the creative and technical parts into one deliberate process.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "finish-it-properly--2",
-            "title": "Finish it properly.",
-            "accent": "",
-            "description": "We polish, adapt and prepare the final work for where it will be seen.",
-            "image": "",
-            "href": ""
+            "category": "Post-production",
+            "accent": ""
           }
         ],
         "speed": 6,
@@ -1299,60 +1190,162 @@
       {
         "id": "section-6",
         "type": "accordion",
-        "headline": "Explore the possibilities.",
-        "accent": "",
-        "body": "More ways we can help, depending on your brief.",
+        "headline": "Everything behind",
+        "accent": "the final frame.",
+        "body": "From one creative asset to a complete production, we connect the thinking, technical preparation and finishing work. Tell us the outcome you're aiming for and we'll bring the right disciplines together.",
         "image": "",
         "pattern": false,
-        "reveal": true,
+        "reveal": false,
         "buttonLabel": "",
         "buttonHref": "",
         "secondaryLabel": "",
         "secondaryHref": "",
         "items": [
           {
-            "id": "motion-graphics--video---mul-0",
-            "title": "Motion graphics, video & multimedia",
-            "accent": "",
-            "description": "We use movement, sound and storytelling to give ideas a different kind of energy, whether it is a product film, animation, presentation visual or content series.",
+            "id": "production-concepts-20261028",
+            "title": "Creative concepts & production direction",
+            "description": "We shape the story, tone, format and visual approach before a camera or computer gets involved.",
             "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-scripting-20261028",
+            "title": "Scripts, treatments & storyboards",
+            "description": "Scripts, visual treatments and storyboards give the crew and client a clear picture of the finished idea.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-planning-20261028",
+            "title": "Production planning & coordination",
+            "description": "We plan schedules, locations, crew, equipment, call sheets and the practical details that keep a shoot moving.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-shoot-design-20261028",
+            "title": "Shot lists, locations & production design",
+            "description": "We plan what to capture and the settings, sets and details that help the story look and feel right.",
+            "image": "",
+            "accent": "",
             "href": ""
           },
           {
             "id": "photography---videography-1",
             "title": "Photography & videography",
             "accent": "",
-            "description": "We plan how the event will be captured, from the headline moments to the small human details worth keeping and sharing.",
+            "description": "We capture the hero moments and the subtle details, with considered shooting plans for brands, campaigns, events and productions.",
             "image": "",
+            "href": ""
+          },
+          {
+            "id": "production-branded-film-20261028",
+            "title": "Brand films & campaign video",
+            "description": "Purposeful films, interviews and campaign footage that communicate clearly and feel distinctive to the brand.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-event-coverage-20261028",
+            "title": "Event photography & highlight films",
+            "description": "Coverage of the energy, people and moments worth remembering, with photographs and recap films prepared for sharing.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-content-shoot-20261028",
+            "title": "Product, lifestyle & social content shoots",
+            "description": "Planned shoots and reusable visual assets shaped for the platforms and campaigns where they will appear.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "motion-graphics--video---mul-0",
+            "title": "Motion graphics, video & multimedia",
+            "accent": "",
+            "description": "We create animation, motion graphics and multimedia pieces that make information easier to understand and stories more compelling.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "production-animation-20261028",
+            "title": "2D animation & animated content",
+            "description": "Titles, illustrations, transitions and animated sequences built around the brand's own visual language.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-editing-20261028",
+            "title": "Video editing, colour & sound finishing",
+            "description": "We give footage its rhythm and finish with refined editing, colour treatment, audio and graphic details.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-cutdowns-20261028",
+            "title": "Platform-ready edits, subtitles & cutdowns",
+            "description": "We prepare useful versions of each production, including aspect ratios, captions, highlights and channel-specific deliverables.",
+            "image": "",
+            "accent": "",
             "href": ""
           },
           {
             "id": "lighting--sound---audiovisua-2",
             "title": "Lighting, sound & audiovisual production",
             "accent": "",
-            "description": "We bring technical requirements into the creative plan, coordinating sound, light, screens and AV so the experience feels as good as it looks.",
+            "description": "We coordinate lighting, sound, screens and audiovisual systems so the production supports the story and works as planned.",
             "image": "",
+            "href": ""
+          },
+          {
+            "id": "production-live-streaming-20261028",
+            "title": "Live Streaming",
+            "description": "We plan and produce live streams for events, launches, presentations and hybrid experiences. Depending on the brief, that includes streaming-platform setup, camera feeds, live switching, audio checks, stream graphics, remote participation, monitoring, recording and replay-ready delivery.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-multicamera-20261028",
+            "title": "Multi-camera live direction & switching",
+            "description": "We plan camera positions and manage a coordinated live feed, moving between speakers, stages, demonstrations and audience moments.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-hybrid-20261028",
+            "title": "Hybrid events & remote contributors",
+            "description": "We help connect on-site and online audiences, including remote speakers, presentation feeds, participation requirements and the technical running order.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-live-visuals-20261028",
+            "title": "Live screen visuals & broadcast graphics",
+            "description": "Branded overlays, lower thirds, presentation playback, stage-screen content and visual cues that make a live production feel cohesive.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-stream-recording-20261028",
+            "title": "Live recording, replay & highlights",
+            "description": "We coordinate stream recording and provide usable footage, replays, short highlights and platform-ready content after the live moment.",
+            "image": "",
+            "accent": "",
             "href": ""
           }
         ],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-8",
-        "type": "cta",
-        "headline": "Keep exploring",
-        "accent": "",
-        "body": "",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
         "speed": 6,
         "formTitle": "",
         "helperText": ""
@@ -1362,11 +1355,11 @@
         "type": "visual",
         "headline": "What should your",
         "accent": "next frame say?",
-        "body": "",
-        "image": "/media/rigging.webp",
+        "body": "Got something worth showing the world?\n\nA brand story, a content series, a live stream or a room full of people. Whatever the format, we can help you plan it properly, bring it to life and deliver something you're proud to share.",
+        "image": "",
         "pattern": false,
-        "reveal": true,
-        "buttonLabel": "Let’s get producing",
+        "reveal": false,
+        "buttonLabel": "Let's get producing",
         "buttonHref": "/contact/",
         "secondaryLabel": "",
         "secondaryHref": "",
