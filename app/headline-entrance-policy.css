@@ -16,7 +16,7 @@
 /* Legacy wipe markup is still used for text layout and Studio editing.
    Stop masking and animating it when the parent is not a photo scene. */
 .concept-12-root :is(.block-heading,.wipe-heading):not([data-service-reveal]):not(
-  :is(.hero-second *, .film-step *, .category-hero *, .simple-hero *,
+  :is(.hero-second *, .film-step *, .category-hero *, .simple-hero *, .studio-hero-track *,
       .category-banner *, .case-opening-scene *)
 ) .wipe-line>span{
   opacity:1!important;
@@ -28,11 +28,11 @@
   will-change:auto!important;
 }
 .concept-12-root :is(.block-heading,.wipe-heading):not([data-service-reveal]):not(
-  :is(.hero-second *, .film-step *, .category-hero *, .simple-hero *,
+  :is(.hero-second *, .film-step *, .category-hero *, .simple-hero *, .studio-hero-track *,
       .category-banner *, .case-opening-scene *)
 ) .wipe-line::before,
 .concept-12-root :is(.block-heading,.wipe-heading):not([data-service-reveal]):not(
-  :is(.hero-second *, .film-step *, .category-hero *, .simple-hero *,
+  :is(.hero-second *, .film-step *, .category-hero *, .simple-hero *, .studio-hero-track *,
       .category-banner *, .case-opening-scene *)
 ) .wipe-line::after{
   content:none!important;
