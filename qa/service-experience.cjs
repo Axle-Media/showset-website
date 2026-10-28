@@ -6,6 +6,30 @@ async function progress(p,f){await p.locator('[data-service-story-track]').evalu
 (async()=>{const b=await chromium.launch({channel:process.env.SHOWSET_PLAYWRIGHT_CHANNEL||'chrome',headless:true});try{
 for(const width of[1920,1440,1024,768,390,320])for(const slug of slugs){const c=await b.newContext({viewport:{width,height:900}}),p=await c.newPage();p.on('pageerror',e=>errors.push(e.message));const page=seed[slug],hero=page.sections.find(s=>s.id==='section-1'),caps=page.sections.find(s=>s.id==='section-6');await ready(p,slug);const tag=slug+'-'+width;
 ck('No repeated case studies on service pages '+tag,await p.locator('.service-work,.service-work-card').count()===0);
+if(slug==='events-experiences'){
+ const closing=await p.locator('.service-close--editorial').evaluate(el=>{
+   const h=el.querySelector('h2'),pseudo=getComputedStyle(el,'::before');
+   return {
+     height:el.getBoundingClientRect().height,
+     viewport:innerHeight,
+     photoCount:el.querySelectorAll('img,.service-close-art').length,
+     headline:h.textContent.trim().replace(/\\s+/g,' '),
+     copy:el.querySelector('.service-close-description')?.textContent.trim()||'',
+     button:el.querySelector('.solid-link')?.textContent.trim()||'',
+     pattern:pseudo.backgroundImage,
+     patternRight:pseudo.right
+   };
+ });
+ ck('Events closing matches compact homepage editorial CTA and keeps original copy '+tag,
+   closing.height<closing.viewport
+   &&closing.photoCount===0
+   &&closing.headline==="Let's make a roomworth remembering."
+   &&closing.copy.includes("Got an idea worth getting excited about?")
+   &&closing.copy.includes("Bring us the possibilities.")
+   &&closing.button.includes("Bring us your brief")
+   &&closing.pattern.includes('closing-pattern.svg'),closing);
+}
+
 if(slug==='events-experiences')ck('Approved five-section Events journey '+tag,
 page.sections.map(s=>s.id).join(',')==='section-1,section-2,service-story,section-6,section-7'
 &&await p.locator('.service-event-types li').count()===6
