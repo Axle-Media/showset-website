@@ -31,8 +31,9 @@
 .contact-refined .contact-form textarea{height:auto;min-height:130px;resize:vertical;display:block}
 .contact-refined .contact-form :is(input,textarea,.select-trigger):focus-visible,.contact-refined .contact-form :is(input,textarea):focus,.contact-refined .contact-form .select-trigger[aria-expanded="true"]{border-color:#12BAAF;outline:none}
 .contact-refined .contact-form .select-trigger{display:flex;align-items:center;justify-content:space-between;text-align:left;font-weight:500;margin:0!important;gap:12px}
+.contact-refined .contact-form button.select-trigger{font-size:14px!important}
 .contact-refined .contact-form .select-trigger:hover{background:transparent;border-color:#12BAAF}
-.contact-refined .contact-form .select-trigger>span{color:rgba(250,249,253,.78);font-size:17px}
+.contact-refined .contact-form .select-trigger>span{color:rgba(250,249,253,.78);font-size:14px}
 .contact-refined .contact-form .select-panel{border-radius:3px}
 .contact-refined .contact-form .select-option{font-size:14px!important}
 .contact-refined .contact-form .select-option:focus-visible{outline:2px solid #12BAAF;outline-offset:-2px}
