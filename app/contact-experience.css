@@ -1,0 +1,104 @@
+/* SHOWSET Contact: one editorial conversation, no generic card or hero reveal.
+   Scoped to the redesigned contact page. Approved global typography stays intact. */
+.concept-12-root .view[data-view="contact"]{background:#061b2b;overflow:clip}
+.concept-12-root .contact-view.contact-refined{position:relative;padding-top:calc(var(--header-height) + clamp(48px,6vw,95px));padding-bottom:clamp(75px,8vw,128px);background:radial-gradient(ellipse at 8% 30%,rgba(18,186,175,.055),transparent 45%),linear-gradient(127deg,#08273d,#061b2b 75%)}
+.contact-refined .contact-shell{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.93fr) minmax(0,1.07fr);gap:clamp(52px,8vw,150px);align-items:stretch}
+.contact-refined .contact-left{min-width:0;display:flex;flex-direction:column;isolation:isolate;min-height:760px;position:relative}
+.contact-refined .contact-intro{position:relative;z-index:3;padding-top:clamp(7px,2vw,32px)}
+.contact-refined .contact-editorial-heading{margin:0 0 clamp(22px,2.5vw,37px);max-width:740px;font-size:clamp(40px,4.8vw,67px);line-height:1.09!important;letter-spacing:var(--heading-tracking);font-weight:650}
+.contact-refined .contact-editorial-heading>.plain-line{display:block;color:#FAF9FD}
+.contact-refined .contact-editorial-heading>.accent-text{color:#12BAAF}
+.contact-refined .contact-editorial-heading .service-period{color:#FAF9FD!important}
+.contact-refined .contact-editorial-heading,.contact-refined .contact-editorial-heading *{opacity:1!important;transform:none!important;translate:none!important;animation:none!important;clip-path:none!important}
+.contact-refined .contact-intro>p{max-width:480px;margin:0;color:rgba(250,249,253,.82);font-size:17px;line-height:1.66}
+.contact-refined .contact-photo{position:absolute;inset:clamp(265px,31%,350px) -4vw 0 -3vw;z-index:1;pointer-events:none;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 30%,#000 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 30%,#000 100%)}
+.contact-refined .contact-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,27,43,.46),rgba(6,27,43,.06)),linear-gradient(0deg,rgba(6,27,43,.36),transparent 40%);pointer-events:none;transition:opacity 1s ease}
+.contact-refined .contact-photo img{height:100%;width:100%;object-fit:cover;object-position:center;display:block;filter:brightness(.73) saturate(.84);transform:scale(1.025);animation:none;transition:filter 1s cubic-bezier(.2,.75,.2,1),transform 1.2s cubic-bezier(.2,.75,.2,1)}
+.contact-refined .contact-shell:focus-within .contact-photo img{filter:brightness(.86) saturate(1.02);transform:scale(1.015)}
+.contact-refined .contact-photo-line{position:absolute;bottom:28px;left:clamp(15px,3vw,45px);height:1px;width:clamp(70px,8vw,110px);background:rgba(250,249,253,.65);z-index:2}
+.contact-refined .contact-photo-line:after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;background:#12BAAF;border-radius:50%}
+.contact-refined .contact-form{position:relative;min-width:0;padding:0;margin:0;background:transparent;border:0;border-radius:0;box-shadow:none;align-self:start}
+.contact-refined .contact-form-head{padding-bottom:clamp(27px,3.5vw,46px);border-bottom:1px solid rgba(250,249,253,.24);margin-bottom:clamp(20px,2.4vw,35px)}
+.contact-refined .contact-form-head h2{margin:0 0 10px;font-size:clamp(26px,2.8vw,42px);line-height:1.18!important;letter-spacing:var(--heading-tracking);font-weight:650;max-width:none}
+.contact-refined .contact-form-head>p{margin:0;color:rgba(250,249,253,.75);line-height:1.5;font-size:17px}
+.contact-refined .contact-two-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.5vw,24px)}
+.contact-refined .contact-field{min-width:0;margin-bottom:clamp(18px,2vw,29px)}
+.contact-refined .contact-field label{display:flex;align-items:baseline;gap:7px;font-size:14px;line-height:1.3;font-weight:600;letter-spacing:0;color:rgba(250,249,253,.94);margin:0 0 10px}
+.contact-refined .contact-field label>span:not(.optional-mark){color:#12BAAF}
+.contact-refined .contact-field .optional-mark{margin-left:auto;color:rgba(250,249,253,.45);font-size:11px;font-weight:500;letter-spacing:0}
+.contact-refined .contact-form input,.contact-refined .contact-form textarea,.contact-refined .contact-form .native-select-fallback,.contact-refined .contact-form .select-trigger{width:100%;min-height:49px;padding:12px 1px!important;background:transparent;border:0;border-bottom:1px solid rgba(250,249,253,.32);border-radius:0;box-shadow:none;outline:0;color:#FAF9FD;font-size:17px!important;line-height:1.4;transition:border-color .28s ease,background .28s ease}
+.contact-refined .contact-form input::placeholder,.contact-refined .contact-form textarea::placeholder{color:rgba(250,249,253,.47);opacity:1}
+.contact-refined .contact-form textarea{height:auto;min-height:130px;resize:vertical;display:block}
+.contact-refined .contact-form :is(input,textarea,.select-trigger):focus-visible,.contact-refined .contact-form :is(input,textarea):focus,.contact-refined .contact-form .select-trigger[aria-expanded="true"]{border-color:#12BAAF;outline:none}
+.contact-refined .contact-form .select-trigger{display:flex;align-items:center;justify-content:space-between;text-align:left;font-weight:500;margin:0!important;gap:12px}
+.contact-refined .contact-form button.select-trigger{font-size:14px!important}
+.contact-refined .contact-form .select-trigger:hover{background:transparent;border-color:#12BAAF}
+.contact-refined .contact-form .select-trigger>span{color:rgba(250,249,253,.78);font-size:14px}
+.contact-refined .contact-form .select-panel{border-radius:3px}
+.contact-refined .contact-form .select-option{font-size:14px!important}
+.contact-refined .contact-form .select-option:focus-visible{outline:2px solid #12BAAF;outline-offset:-2px}
+.contact-refined .contact-options-intro{padding-top:1px;margin-bottom:clamp(16px,1.7vw,25px);font-size:14px;color:rgba(250,249,253,.65)}
+.contact-refined .contact-optional-fields{display:grid;grid-template-columns:minmax(0,1.1fr) repeat(2,minmax(0,.9fr));gap:clamp(12px,1.3vw,22px)}
+.contact-refined .contact-optional-fields .contact-field{margin-bottom:0}
+.contact-refined .contact-optional-fields .contact-field label{font-size:12px;gap:4px;flex-wrap:wrap}
+.contact-refined .contact-optional-fields .optional-mark{font-size:10px}
+.contact-refined .contact-optional-fields input{font-size:17px!important}
+.contact-refined .contact-honeypot{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;opacity:0!important;pointer-events:none!important}
+.contact-refined .contact-submit-area{margin-top:clamp(27px,3.5vw,50px);display:flex;flex-direction:column;align-items:flex-start}
+.contact-refined .contact-form .contact-submit{margin:0!important;min-height:var(--button-height,48px);display:inline-flex;align-items:center;justify-content:space-between;gap:25px;font-size:14px!important;line-height:1.2;cursor:pointer}
+.contact-refined .contact-form .contact-submit>span{font-size:18px;transition:transform .3s ease}
+.contact-refined .contact-form .contact-submit:hover>span,.contact-refined .contact-form .contact-submit:focus-visible>span{transform:translate(3px,-3px)}
+.contact-refined .contact-form .contact-submit:disabled{cursor:progress;opacity:.65}
+.contact-refined .contact-form .form-note{font-size:13px;line-height:1.55;color:rgba(250,249,253,.62);margin:16px 0 0;max-width:440px}
+.contact-refined .contact-form .form-result{font-size:14px;line-height:1.6;margin:13px 0 0;min-height:1.6em;color:#FAF9FD}
+.contact-refined .contact-form .form-result:empty{min-height:0;margin:0}
+.concept-12-root .contact-direct{background:linear-gradient(125deg,#0d2f49,#08263b);padding-top:clamp(55px,6.5vw,100px);padding-bottom:clamp(58px,7vw,110px);position:relative}
+.concept-12-root .contact-direct:before{content:"";position:absolute;inset:0;background:url('/concept-12/bb1b857a951a4915479a.svg') center/440px auto repeat;opacity:.12;pointer-events:none}
+.concept-12-root .contact-direct-inner{position:relative;z-index:1;max-width:1500px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(45px,8vw,145px);align-items:start}
+.concept-12-root .contact-direct-heading h2{font-size:clamp(31px,3.2vw,48px);line-height:1.12!important;letter-spacing:var(--heading-tracking);margin:0 0 19px}
+.concept-12-root .contact-direct-heading .service-period{color:#FAF9FD!important}
+.concept-12-root .contact-direct-heading>p{font-size:17px;line-height:1.58;color:rgba(250,249,253,.75);margin:0;max-width:380px}
+.concept-12-root .contact-direct-links{display:grid;grid-template-columns:1fr;min-width:0}
+.concept-12-root .contact-direct-link{position:relative;display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;column-gap:20px;row-gap:8px;min-width:0;padding:21px 0 24px;border-top:1px solid rgba(250,249,253,.25);color:#FAF9FD;text-decoration:none}
+.concept-12-root .contact-direct-link:last-child{border-bottom:1px solid rgba(250,249,253,.25)}
+.concept-12-root .contact-direct-caption{grid-column:1;color:rgba(250,249,253,.55);text-transform:uppercase;letter-spacing:.08em;font-size:11px;font-weight:650}
+.concept-12-root .contact-direct-value{grid-column:1;font-size:clamp(20px,2vw,31px);line-height:1.25;letter-spacing:var(--heading-tracking);font-weight:580;overflow-wrap:anywhere}
+.concept-12-root .contact-direct-arrow{grid-column:2;grid-row:1/span 2;justify-self:end;align-self:center;font-size:24px;color:#12BAAF;transition:transform .28s ease}
+.concept-12-root .contact-direct-link:hover .contact-direct-arrow,.concept-12-root .contact-direct-link:focus-visible .contact-direct-arrow{transform:translate(4px,-4px)}
+.concept-12-root .contact-direct-link:focus-visible{outline:2px solid #12BAAF;outline-offset:7px}
+@media(max-width:1100px){
+ .contact-refined .contact-shell{grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(30px,4vw,60px)}
+ .contact-refined .contact-left{min-height:700px}
+ .contact-refined .contact-optional-fields{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .contact-refined .contact-optional-fields>.contact-field:first-child{grid-column:1/-1}
+}
+@media(max-width:800px){
+ .concept-12-root .contact-view.contact-refined{padding-top:calc(var(--header-height) + 48px);padding-bottom:clamp(65px,8vw,100px)}
+ .contact-refined .contact-shell{grid-template-columns:1fr;gap:clamp(35px,6vw,58px)}
+ .contact-refined .contact-left{min-height:0;padding-bottom:clamp(105px,19vw,180px)}
+ .contact-refined .contact-editorial-heading{font-size:clamp(37px,9.1vw,48px);margin-bottom:19px}
+ .contact-refined .contact-intro>p{max-width:540px}
+ .contact-refined .contact-photo{top:auto;bottom:0;height:clamp(105px,24vw,180px);left:0;right:0;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 50%);mask-image:linear-gradient(to bottom,transparent,#000 50%)}
+ .contact-refined .contact-photo-line{bottom:13px;left:0}
+ .contact-refined .contact-two-fields{grid-template-columns:1fr;gap:0}
+ .contact-refined .contact-optional-fields{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .contact-refined .contact-optional-fields>.contact-field:first-child{grid-column:1/-1}
+ .concept-12-root .contact-direct-inner{grid-template-columns:1fr;gap:32px}
+}
+@media(max-width:450px){
+ .contact-refined .contact-left{padding-bottom:100px}
+ .contact-refined .contact-photo{height:125px}
+ .contact-refined .contact-optional-fields{grid-template-columns:1fr;gap:16px}
+ .contact-refined .contact-optional-fields>.contact-field:first-child{grid-column:auto}
+ .contact-refined .contact-form-head h2{font-size:clamp(24px,6.6vw,31px)}
+ .contact-refined .contact-form-head{padding-bottom:24px}
+ .contact-refined .contact-form .contact-field{margin-bottom:22px}
+ .contact-refined .contact-form .contact-optional-fields .contact-field{margin-bottom:0}
+ .concept-12-root .contact-direct-value{font-size:clamp(19px,5.3vw,27px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .contact-refined .contact-photo img,.contact-refined .contact-photo:after,
+ .contact-refined .contact-form :is(input,textarea,.select-trigger),
+ .contact-refined .contact-form .contact-submit>span,.concept-12-root .contact-direct-arrow{animation:none!important;transition:none!important;transform:none!important}
+}
+.concept-12-root[data-static-motion] .contact-refined .contact-photo img,.concept-12-root[data-static-motion] .contact-refined .contact-form .contact-submit>span{animation:none!important;transition:none!important;transform:none!important}
