@@ -1,0 +1,140 @@
+/* SHOWSET / Our Studio
+   A deliberate echo of the approved homepage hero: one photograph, an inset
+   frame becoming full-bleed, then a second heading following the first upwards.
+   No extra orbit shapes, decorative cards or non-photo headline animations.
+   Scoped to Studio; no changes to the other routes. */
+
+.editorial-page.studio-rebuilt .studio-hero-track{
+  display:block;position:relative;isolation:isolate;
+  height:218svh;min-height:0;background:#061b2b;overflow:visible;
+  scroll-margin-top:0;
+}
+.editorial-page.studio-rebuilt .studio-hero-stage{
+  position:sticky;top:0;height:100svh;min-height:0;
+  isolation:isolate;overflow:hidden;background:
+  radial-gradient(ellipse at 25% 40%,rgba(18,186,175,.085),transparent 51%),#08273d;
+}
+.editorial-page.studio-rebuilt .studio-hero-photo{
+  position:absolute;z-index:0;
+  inset:14% 7.4% 10%;
+  overflow:hidden;isolation:isolate;border-radius:12px;
+  box-shadow:0 38px 105px rgba(0,0,0,.28);
+  will-change:inset,border-radius;
+}
+.editorial-page.studio-rebuilt .studio-hero-photo img{
+  display:block;width:100%;height:100%;object-fit:cover;
+  object-position:var(--c12-crop,center);
+  filter:saturate(.9) contrast(1.035);
+  transform:scale(1.095);will-change:transform;
+}
+.editorial-page.studio-rebuilt .studio-hero-shade{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(3,16,28,.85) 0%,rgba(3,16,28,.6) 51%,rgba(3,16,28,.2) 100%),
+  linear-gradient(0deg,rgba(3,16,28,.54),transparent 53%);
+}
+.editorial-page.studio-rebuilt .studio-hero-scene{
+  position:absolute;z-index:2;left:clamp(28px,10.5vw,200px);right:var(--gutter);
+  width:min(850px,calc(100% - clamp(28px,10.5vw,200px) - var(--gutter)));
+  pointer-events:none;
+}
+.editorial-page.studio-rebuilt .studio-hero-scene-first{top:30%;opacity:1}
+.editorial-page.studio-rebuilt .studio-hero-scene-follow{bottom:19%;opacity:0;transform:translate3d(0,70px,0)}
+.editorial-page.studio-rebuilt .studio-scroll-heading{
+  font-family:var(--display);font-size:var(--homepage-hero-size,clamp(40px,4.8vw,67px));
+  font-weight:var(--refine-heading-weight,650);letter-spacing:var(--v12-head-tracking,.018em)!important;
+  line-height:var(--refine-heading-leading,1.06)!important;
+  margin:0 0 25px;max-width:100%;color:#FAF9FD;
+}
+.editorial-page.studio-rebuilt .studio-scroll-heading .wipe-line{
+  display:block;max-width:100%;width:fit-content;
+  margin-bottom:-.08em;padding-bottom:.1em;padding-right:.09em;
+}
+.editorial-page.studio-rebuilt .studio-scroll-heading .accent-line>span{color:#12BAAF}
+.editorial-page.studio-rebuilt .studio-scroll-heading .hero-period{color:#FAF9FD!important}
+.editorial-page.studio-rebuilt .studio-hero-scene>p{
+  font-size:17px!important;line-height:1.68;
+  color:rgba(250,249,253,.87);max-width:530px;margin:0;
+}
+.editorial-page.studio-rebuilt .studio-hero-scene-follow>p{max-width:585px}
+.editorial-page.studio-rebuilt .studio-hero-stage::after{
+  content:"";position:absolute;z-index:4;left:var(--gutter);right:var(--gutter);bottom:0;
+  height:1px;background:rgba(250,249,253,.07);pointer-events:none;
+}
+/* Without JS, in Studio editor, and with reduced motion, keep BOTH messages
+   readable in normal flow rather than pinning hidden animated layers. */
+.editorial-page.studio-rebuilt .studio-hero-track:not([data-studio-motion="on"]){
+  height:auto;min-height:100svh;
+}
+.editorial-page.studio-rebuilt .studio-hero-track:not([data-studio-motion="on"]) .studio-hero-stage{
+  position:relative;height:auto;min-height:100svh;
+  display:flex;flex-direction:column;justify-content:center;
+  gap:clamp(36px,6vh,74px);
+  padding:calc(var(--header-height) + 100px) var(--gutter) clamp(65px,8vw,110px);
+}
+.editorial-page.studio-rebuilt .studio-hero-track:not([data-studio-motion="on"]) .studio-hero-photo{
+  inset:0;border-radius:0;box-shadow:none;will-change:auto;
+}
+.editorial-page.studio-rebuilt .studio-hero-track:not([data-studio-motion="on"]) .studio-hero-scene{
+  position:relative;left:auto;right:auto;top:auto;bottom:auto;
+  width:min(100%,850px);opacity:1!important;transform:none!important;
+  margin:0;pointer-events:auto;
+}
+.editorial-page.studio-rebuilt .studio-hero-track:not([data-studio-motion="on"]) .studio-scroll-heading .wipe-line>span{
+  opacity:1!important;transform:none!important;transition:none!important;
+}
+.editorial-page.studio-rebuilt .studio-hero-track:not([data-studio-motion="on"]) .studio-scroll-heading .wipe-line:after{
+  animation:none!important;display:none!important;
+}
+/* Tighten the handover so this reads as a connected editorial story, not
+   five oversized generic sections. */
+.editorial-page.studio-rebuilt .studio-manifesto{
+  padding-block:clamp(78px,8vw,126px);background:linear-gradient(135deg,#092a40,#0d2f49);
+}
+.editorial-page.studio-rebuilt .studio-manifesto-body p{font-size:17px;line-height:1.75}
+.editorial-page.studio-rebuilt .studio-exploration{padding-block:clamp(78px,8vw,126px)}
+.editorial-page.studio-rebuilt .studio-exploration-intro>p{font-size:17px}
+.editorial-page.studio-rebuilt .studio-story-entry p{font-size:17px;line-height:1.7}
+.editorial-page.studio-rebuilt .studio-story-visual{background:#0d2f49}
+.editorial-page.studio-rebuilt .studio-story-frame img{object-fit:cover}
+.editorial-page.studio-rebuilt .studio-outlook{padding-block:clamp(78px,8vw,126px)}
+.editorial-page.studio-rebuilt .studio-partnership-body>p{font-size:17px;line-height:1.75}
+.editorial-page.studio-rebuilt .studio-final{padding-block:clamp(75px,8vw,118px)}
+@media(max-width:800px){
+  .editorial-page.studio-rebuilt .studio-hero-track{height:194svh}
+  .editorial-page.studio-rebuilt .studio-hero-photo{inset:17% 5% 12%}
+  .editorial-page.studio-rebuilt .studio-hero-scene{
+    left:8%;right:7%;width:85%;
+  }
+  .editorial-page.studio-rebuilt .studio-hero-scene-first{top:31%}
+  .editorial-page.studio-rebuilt .studio-hero-scene-follow{bottom:25%}
+  .editorial-page.studio-rebuilt .studio-scroll-heading{font-size:clamp(38px,7.1vw,55px)}
+  .editorial-page.studio-rebuilt .studio-hero-scene>p{max-width:490px}
+  .editorial-page.studio-rebuilt .studio-hero-track:not([data-studio-motion="on"]) .studio-hero-stage{padding-top:calc(var(--header-height) + 78px)}
+}
+@media(max-width:540px){
+  .editorial-page.studio-rebuilt .studio-hero-track{height:190svh}
+  .editorial-page.studio-rebuilt .studio-hero-photo{inset:19% 4.5% 13%}
+  .editorial-page.studio-rebuilt .studio-hero-shade{
+    background:linear-gradient(90deg,rgba(3,16,28,.87),rgba(3,16,28,.52) 85%),
+     linear-gradient(0deg,rgba(3,16,28,.62),transparent 75%);
+  }
+  .editorial-page.studio-rebuilt .studio-hero-scene{left:9%;right:7%;width:84%}
+  .editorial-page.studio-rebuilt .studio-hero-scene-first{top:30%}
+  .editorial-page.studio-rebuilt .studio-hero-scene-follow{bottom:25%}
+  .editorial-page.studio-rebuilt .studio-scroll-heading{
+    font-size:clamp(36px,9.2vw,50px);
+    line-height:1.1!important;margin-bottom:18px;
+  }
+  .editorial-page.studio-rebuilt .studio-hero-scene>p{font-size:17px!important;line-height:1.6}
+  .editorial-page.studio-rebuilt .studio-hero-track:not([data-studio-motion="on"]) .studio-hero-stage{
+    padding:calc(var(--header-height) + 60px) 9% 85px;gap:55px;
+  }
+  .editorial-page.studio-rebuilt .studio-story-entry p{font-size:17px}
+}
+@media(prefers-reduced-motion:reduce){
+  .editorial-page.studio-rebuilt .studio-hero-track{height:auto!important}
+  .editorial-page.studio-rebuilt .studio-hero-stage{position:relative!important;height:auto!important;min-height:100svh}
+  .editorial-page.studio-rebuilt .studio-hero-photo{will-change:auto}
+  .editorial-page.studio-rebuilt .studio-hero-photo img{will-change:auto}
+  .editorial-page.studio-rebuilt .studio-hero-scene{transition:none!important}
+}
