@@ -70,7 +70,22 @@ ck('All capability names remain visible without paragraphs '+tag,
 ck('All stable item IDs are retained exactly once '+tag,
  JSON.stringify([...capabilityLayout.ids].sort())===JSON.stringify(caps.items.map(x=>x.id).sort()),capabilityLayout.ids);
 ck('Service names use compact 15px list typography '+tag,capabilityLayout.fontSizes.every(x=>x==='15px'),capabilityLayout.fontSizes);
-const expectedGrid=width>640?2:1;
+if(slug==='events-experiences'){
+ const palette=await p.locator('.service-expertise').evaluate(section=>{
+  const style=getComputedStyle(section);
+  return {
+   section:style.backgroundColor,
+   cards:[...section.querySelectorAll('.service-capability-group')].map(card=>{
+    const c=getComputedStyle(card);
+    return {background:c.backgroundColor,border:c.borderTopColor};
+   })
+  };
+ });
+ ck('Events capability cards use the approved navy palette and white borders '+tag,
+   palette.section==='rgb(13, 47, 73)'&&palette.cards.length===4&&palette.cards.every(card=>card.background==='rgb(21, 59, 84)'&&card.border==='rgb(255, 255, 255)'),palette);
+}
+
+const expectedGrid=slug==='events-experiences'&&width>=1180?4:width>640?2:1;
 const expectedInner=slug==='content-production'?1:null;
 ck('Compact responsive groups fit with no overlap '+tag,
  capabilityLayout.withinViewport&&capabilityLayout.groupsDontOverlap&&capabilityLayout.columns===expectedGrid&&(expectedInner===null||capabilityLayout.innerColumns===expectedInner),
