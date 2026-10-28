@@ -84,7 +84,7 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
      '<ellipse class="service-digital-orbit service-digital-orbit--inner" cx="360" cy="280" rx="157" ry="142"/>'+
      '<circle class="service-digital-core-ambient" cx="360" cy="280" r="157"/>'+
      routes.map((route,i)=>'<path id="showset-digital-route-'+i+'" data-digital-network-path="'+i+'" d="'+route.d+'" pathLength="1"/>').join('')+
-     routes.map((route,i)=>'<use href="#showset-digital-route-'+i+'" class="service-digital-signal" data-digital-signal="'+i+'" pathLength="1"/>').join('')+
+     routes.map((route,i)=>'<circle class="service-digital-signal" data-digital-signal="'+i+'" r="3.5"><animateMotion dur="3s" repeatCount="indefinite" path="'+route.d+'"/></circle>').join('')+
      routes.map(route=>'<circle class="service-digital-route-endpoint" cx="'+route.x+'" cy="'+route.y+'" r="3.5"/>').join('')+
      '<circle class="service-digital-hub-ring" cx="360" cy="280" r="101"/>'+
      '<circle class="service-digital-hub-inner" cx="360" cy="280" r="89"/>'+
