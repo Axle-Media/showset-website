@@ -394,18 +394,10 @@ export function bindConcept(
         }
       }
       if (scope.matches(".studio-exploration") && changed(s, "items")) {
-        // Photos and captions stay in one continuous visual journey.
-        // All descriptions remain visible, including without pointer interaction.
-        const visual = scope.querySelector<HTMLElement>(".studio-storyboard-images");
-        const narrative = scope.querySelector<HTMLElement>(".studio-storyboard-narrative");
-        if (visual) {
-          visual.innerHTML = s.items.map((item, index) =>
-            `<figure class="studio-storyboard-shot" data-studio-shot="${index}"><img src="${escape(safeHref(item.image || "/media/planning.webp"))}" alt="" loading="lazy" decoding="async"></figure>`
-          ).join("");
-        }
-        if (narrative) {
-          narrative.innerHTML = s.items.map((item) =>
-            `<article class="studio-storyboard-chapter"><h3>${rich(item.title)}</h3><p>${rich(item.description)}</p></article>`
+        const journey = scope.querySelector<HTMLElement>("[data-studio-storyboard]");
+        if (journey) {
+          journey.innerHTML = s.items.map((item, index) =>
+            `<article class="studio-storyboard-chapter"><figure class="studio-storyboard-shot" data-studio-shot="${index}"><img src="${escape(safeHref(item.image || "/media/planning.webp"))}" alt="${escape(item.title)} at SHOWSET" loading="lazy" decoding="async"></figure><div class="studio-storyboard-copy"><h3>${rich(item.title)}</h3><p>${rich(item.description)}</p></div></article>`
           ).join("");
         }
       }
