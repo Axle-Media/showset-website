@@ -102,6 +102,16 @@ export function bindConcept(
     if (!changed(s, "headline") && !changed(s, "accent")) return;
     const e = host.querySelector(selector);
     if (!e) return;
+    if (e.classList.contains("studio-editorial-heading") || e.classList.contains("work-intro-title")) {
+      // Keep Studio edits in the same two-line typography as the published page.
+      // Editorial punctuation stays ivory; only the wording is turquoise.
+      const punctuation = s.accent.match(/[.!?]$/)?.[0] || "";
+      const accent = punctuation ? s.accent.slice(0, -1) : s.accent;
+      e.innerHTML = '<span class="plain-line">' + rich(s.headline) + '</span>' +
+        (s.accent ? '<span class="plain-line accent-text">' + rich(accent) +
+          (punctuation ? '<span class="service-period">' + punctuation + '</span>' : '') + '</span>' : '');
+      return;
+    }
     if (e.classList.contains("services-panel-heading")) {
       const head = rich(s.headline).replace(/\.$/, "");
       const period = s.headline.endsWith(".") ? '<span class="service-heading-period">.</span>' : "";
@@ -321,18 +331,17 @@ export function bindConcept(
   } else if (["events", "creative", "digital", "production"].includes(key)) {
     renderServiceExperience(host,page,key as ServiceKind,catalog,mark);
   } else if (key === "studio") {
-    const selectors = [
-      ".studio-hero",
-      ".studio-copy",
-      ".values",
-      ".studio-belief",
-      ".studio-rhythm",
-      ".studio-partnership",
-      ".studio-faq",
-      ".studio-final",
-    ];
+    // Stable IDs keep older published Studio records from shifting the page
+    // composition if they still contain archived FAQ/process sections.
+    const scopes: Record<string, string> = {
+      "section-1": ".studio-hero",
+      "section-2": ".studio-manifesto",
+      "section-3": ".studio-exploration",
+      "section-5": ".studio-outlook",
+      "section-7": ".studio-final",
+    };
     page.sections.forEach((s, i) => {
-      const scope = host.querySelector(selectors[i] || "__none__");
+      const scope = host.querySelector<HTMLElement>(scopes[s.id] || "__none__");
       mark(scope, s);
       if (!scope) return;
       const h = scope.querySelector("h1,h2");
@@ -344,30 +353,33 @@ export function bindConcept(
       if (s.type === "pagehero" && changed(s, "image"))
         image(".studio-hero .simple-bg img", s.image);
       if (changed(s, "body")) {
-        const e = scope.querySelector("p");
-        if (e) e.innerHTML = rich(s.body);
+        const content = scope.querySelector<HTMLElement>(
+          scope.matches(".studio-manifesto") ? ".studio-manifesto-body" :
+          scope.matches(".studio-outlook") ? ".studio-partnership-body" :
+          scope.matches(".studio-final") ? ".studio-final-copy" :
+          scope.matches(".studio-exploration") ? ".studio-exploration-intro>p" :
+          ".simple-hero-content>p"
+        );
+        if (content) {
+          content.innerHTML = scope.matches(".studio-manifesto,.studio-outlook,.studio-final")
+            ? paragraphs(s.body) : rich(s.body);
+        }
       }
-      if (changed(s, "items")) {
-        const list = scope.matches(".values")
-          ? scope
-          : scope.querySelector(".rhythm-grid");
-        if (list)
-          list.innerHTML = s.items
-            .map(
-              (x, j) =>
-                `<article>${scope.matches(".values") ? "<span>0" + (j + 1) + "</span>" : ""}<h3>${rich(x.title)}</h3><p>${rich(x.description)}</p></article>`,
-            )
-            .join("");
-        const faq = scope.querySelector(".studio-faq-list");
-        if (faq)
-          faq.innerHTML = s.items
-            .map(
-              (x) =>
-                `<details><summary>${rich(x.title)}<span aria-hidden="true">+</span></summary><p>${rich(x.description)}</p></details>`,
-            )
-            .join("");
+      if (scope.matches(".studio-exploration") && changed(s, "items")) {
+        const visual = scope.querySelector<HTMLElement>(".studio-story-visual");
+        const entries = scope.querySelector<HTMLElement>(".studio-story-choices");
+        if (visual) {
+          visual.innerHTML = s.items.map((x, j) =>
+            `<figure class="studio-story-frame${j === 0 ? " is-active" : ""}" data-studio-frame="${j}" data-active="${j === 0}"><img src="${escape(safeHref(x.image || "/media/planning.webp"))}" alt="" loading="lazy"></figure>`
+          ).join("") + '<div class="studio-story-visual-mark" aria-hidden="true"><span></span></div>';
+        }
+        if (entries) {
+          entries.innerHTML = s.items.map((x, j) =>
+            `<div class="studio-story-entry${j === 0 ? " is-active" : ""}" data-studio-entry="${j}"><button type="button" class="studio-story-choice" data-studio-choice="${j}" aria-pressed="${j === 0}"><span>${rich(x.title)}</span><span class="studio-story-choice-indicator" aria-hidden="true">↗</span></button><p>${rich(x.description)}</p></div>`
+          ).join("");
+        }
       }
-      const a = scope.querySelector("a:not(.page-back)");
+      const a = scope.querySelector<HTMLAnchorElement>("a.editorial-action");
       if (a) {
         const id = a.id || `c12-studio-action-${i}`;
         a.id = id;
@@ -382,12 +394,20 @@ export function bindConcept(
         body(".work-hero .simple-hero-content>p", s);
         if (changed(s, "image")) image(".work-hero .simple-bg img", s.image);
       } else if (s.type === "split") {
-        mark(host.querySelector(".work-editorial-note"), s);
+        mark(host.querySelector(".work-page-intro"), s);
         heading(".work-intro-title", s);
-        body(".work-editorial-note>p", s);
+        if (changed(s, "body")) {
+          const copy = host.querySelector<HTMLElement>(".work-intro-copy");
+          if (copy) copy.innerHTML = paragraphs(s.body);
+        }
       } else if (s.type === "work") {
         mark(host.querySelector(".work-page-gallery"), s);
         bindWork(s, ".work-page-gallery .case-index-item");
+      } else if (s.type === "cta") {
+        mark(host.querySelector(".work-final"), s);
+        heading(".work-final h2", s);
+        body(".work-final-copy", s);
+        action(".work-final .editorial-action", s);
       }
     });
   } else if (key.startsWith("case-")) {

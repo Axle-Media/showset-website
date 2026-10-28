@@ -9,6 +9,7 @@ import "./site-typography.css";
 import "./editorial-columns.css";
 import "./service-experience.css";
 import "./headline-entrance-policy.css";
+import "./editorial-experiences.css";
 export const metadata: Metadata = {
   title: "SHOWSET | Events & Creative Agency",
   description:
