@@ -51,10 +51,21 @@ const isStill=x=>!x.missing&&x.opacity==='1'&&x.transform==='none'&&x.clip==='no
     if(['events-experiences','creative-design','digital-marketing','content-production'].includes(slug)){
      const editorial=await sample(page,scope+' [data-service-reveal="editorial"]');
      ck('Service editorial headlines never mask '+path+' '+width,editorial.length>0&&editorial.every(isStill),editorial);
-     const photo=await page.locator(scope+' .service-close [data-service-reveal="photo"] .wipe-line').first().evaluate(el=>({
-       overlay:getComputedStyle(el,'::after').display,mask:getComputedStyle(el.querySelector('span')).clipPath
-     }));
-     ck('Photographic closing CTA retains swipe '+path+' '+width,photo.overlay!=='none'&&photo.mask.startsWith('inset('),photo);
+     if(slug==='events-experiences'){
+       const closing=await page.locator(scope+' .service-close--editorial h2').evaluate(el=>({
+         first:getComputedStyle(el.querySelector('.plain-line:first-child')).color,
+         second:getComputedStyle(el.querySelector('.plain-line:last-child')).color,
+         period:getComputedStyle(el.querySelector('.service-period')).color
+       }));
+       ck('Events editorial CTA has no photographic swipe and uses the two-tone headline '+path+' '+width,
+         await page.locator(scope+' .service-close--editorial .service-close-art').count()===0
+         &&closing.second==='rgb(18, 186, 175)'&&closing.period==='rgb(250, 249, 253)',closing);
+     }else{
+       const photo=await page.locator(scope+' .service-close [data-service-reveal="photo"] .wipe-line').first().evaluate(el=>({
+         overlay:getComputedStyle(el,'::after').display,mask:getComputedStyle(el.querySelector('span')).clipPath
+       }));
+       ck('Photographic closing CTA retains swipe '+path+' '+width,photo.overlay!=='none'&&photo.mask.startsWith('inset('),photo);
+     }
      if(width===390){
        const track=await page.locator('[data-service-story-track]').getAttribute('data-service-pinned');
        if(track==='false'){
