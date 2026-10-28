@@ -72,6 +72,7 @@ jobs:
             qa-results/non-photo-headlines.json
             qa-results/heading-accent-lines.json
             qa-results/editorial-pages.json
+            qa-results/editorial/
             qa-results/services/
             qa-results/service-studio.json
             qa-results/service-lifecycle.json
