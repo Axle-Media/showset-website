@@ -72,7 +72,21 @@ if(slug==='events-experiences'&&width===1440){
 }
 if(width<=390){ck('Mobile cards are readable without tapping a control '+tag,await p.locator('.service-capability-name').first().evaluate(el=>getComputedStyle(el).visibility==='visible'&&el.getBoundingClientRect().height>10)&&await p.locator('.service-expertise button,.service-expertise summary').count()===0&&await p.locator('.service-capability-group').first().evaluate(el=>{const width=parseFloat(getComputedStyle(el).borderTopWidth);return width>0&&width<=1}))}await p.screenshot({path:path.join(out,tag+'-expertise.png')});
 ck('No redundant related-work section '+tag,await p.locator('.service-work,.service-work-card').count()===0);
-await sampleHeading(p,'.service-close h2',true);await p.screenshot({path:path.join(out,tag+'-closing.png')});
+if(slug==='events-experiences'){
+ const close=await p.locator('.service-close--editorial').evaluate(el=>({
+   height:el.getBoundingClientRect().height,
+   viewport:innerHeight,
+   imageCount:el.querySelectorAll('img,.service-close-art').length,
+   headingAnimation:getComputedStyle(el.querySelector('h2')).animationName,
+   accent:getComputedStyle(el.querySelector('h2 .accent-text')).color,
+   period:getComputedStyle(el.querySelector('h2 .service-period')).color
+ }));
+ ck('Events closing CTA is compact, static and uses the homepage editorial layout '+tag,
+   close.imageCount===0&&close.headingAnimation==='none'
+   &&close.accent==='rgb(18, 186, 175)'&&close.period==='rgb(250, 249, 253)'
+   &&close.height<close.viewport,close);
+}else await sampleHeading(p,'.service-close h2',true);
+await p.screenshot({path:path.join(out,tag+'-closing.png')});
 ck('Wrapped type and punctuation fit each line '+tag,await p.locator('[data-service-reveal] .wipe-line').evaluateAll(es=>es.every(e=>{const span=e.firstElementChild,r=document.createRange();r.selectNodeContents(span);const ink=r.getBoundingClientRect(),box=span.getBoundingClientRect();return ink.left>=box.left-1&&ink.right<=box.right+1&&ink.top>=box.top-1&&ink.bottom<=box.bottom+1})));ck('No document overflow '+tag,await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
 if(width>800&&slug!=='events-experiences'){await p.locator('[data-service-story-track]').evaluate(e=>scrollTo({top:scrollY+e.getBoundingClientRect().bottom-innerHeight+120,behavior:'instant'}));await p.waitForTimeout(120);ck('Pinned story releases cleanly '+tag,await p.locator('.service-story-stage').evaluate(e=>e.dataset.servicePhase==='leaving'&&e.getBoundingClientRect().top< -100));}
 if(width===1440&&slug==='events-experiences')ck('Events no longer has pinned photo headlines '+tag,await p.locator('.service-event-triptych-note .wipe-line').count()===0);
