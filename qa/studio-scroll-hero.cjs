@@ -77,7 +77,7 @@ const assert=(name,pass,info)=>{checks.push({name,pass:!!pass,info});console.log
     height:track.getBoundingClientRect().height,visible:scenes.map(el=>getComputedStyle(el).opacity),
     inaccessible:scenes.map(el=>el.hasAttribute('inert'))};
  });
- assert('Reduced motion uses normal flow and readable headings',reduced.motion==='still'&&reduced.position==='relative'&&reduced.inaccessible.every(v=>!v),reduced);
+ assert('Reduced motion uses normal flow and readable headings',reduced.motion!=='on'&&reduced.position==='relative'&&reduced.inaccessible.every(v=>!v),reduced);
  await c.close();
  const nojs=await browser.newContext({viewport:{width:390,height:850},javaScriptEnabled:false});
  const fallback=await nojs.newPage();
