@@ -103,6 +103,29 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
   await page.goto(base+'/contact/');
   await page.waitForSelector('[data-concept-ready="true"]');
   ck('Compact Contact single composition '+width,await page.locator('.view.is-current[data-view="contact"]>section').count()===1);
+  const contactGeometry=await page.locator('.view.is-current .contact-view').evaluate(el=>{
+    const shell=el.querySelector('.contact-shell'),card=el.querySelector('.contact-form');
+    return {
+      minHeight:getComputedStyle(el).minHeight,
+      columns:getComputedStyle(shell).gridTemplateColumns.split(' ').length,
+      panel:getComputedStyle(card).backgroundColor,
+      panelRadius:parseFloat(getComputedStyle(card).borderTopLeftRadius),
+      hasPhoto:!!el.querySelector('.contact-photo'),
+      visibleDate:el.querySelector('#project-date')?.getClientRects().length>0,
+      visibleBudget:el.querySelector('#project-budget')?.getClientRects().length>0,
+      headingSize:parseFloat(getComputedStyle(el.querySelector('h1')).fontSize)
+    };
+  });
+  ck('Contact uses a content-height layout, not a full-screen hero '+width,
+    contactGeometry.minHeight==='0px'&&!contactGeometry.hasPhoto,contactGeometry);
+  ck('Contact uses responsive two-column composition '+width,
+    contactGeometry.columns===(width>740?2:1),contactGeometry);
+  ck('Contact uses ivory rounded panel and visible optional date and budget '+width,
+    contactGeometry.panel==='rgb(250, 249, 253)'&&contactGeometry.panelRadius>=17&&
+    contactGeometry.visibleDate&&contactGeometry.visibleBudget,contactGeometry);
+  ck('WhatsApp shortcut uses published business phone '+width,
+    await page.locator('.view.is-current [data-contact-whatsapp]').getAttribute('href')==='https://wa.me/27682805777');
+
   ck('Direct email and phone are visible '+width,await page.locator('.view.is-current [data-contact-email]').getAttribute('href')==='mailto:hello@showset.co.za'&&await page.locator('.view.is-current [data-contact-phone]').getAttribute('href')?.then(x=>x.startsWith('tel:+27')));
   const fields=await page.locator('#contact-form').evaluate(form=>({required:[...form.querySelectorAll('[required]')].map(x=>x.name),optionalCollapsed:!form.querySelector('.contact-extra').open}));
   ck('Only name, email and message required '+width,JSON.stringify(fields.required)===JSON.stringify(['name','email','message'])&&fields.optionalCollapsed,fields);
@@ -111,6 +134,9 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
   await page.locator('#full-name').fill('SHOWSET Test');
   await page.locator('#email').fill('visitor@example.com');
   await page.locator('#message').fill('Testing a new creative project.');
+  await page.locator('#project-date').fill('March 2027');
+  await page.locator('#project-budget').selectOption({label:'R50 000 – R150 000'});
+  await page.locator('.view.is-current .contact-extra summary').click();
   await page.locator('#project-trigger').click();
   await page.locator('.select-option[data-value="An event or experience"]').click();
   await page.evaluate(()=>document.addEventListener('click',event=>{
@@ -122,6 +148,8 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
   }));
   ck('Contact does not falsely claim a message was delivered '+width,draft.text.includes('Nothing has been submitted')&&draft.href?.startsWith('mailto:hello@showset.co.za?'),draft);
   ck('Prepared email includes visitor details '+width,draft.href?.includes('SHOWSET%20Test')&&draft.href?.includes('visitor%40example.com'));
+  ck('Email draft includes the visible timing and budget inputs '+width,
+    draft.href?.includes('March%202027')&&draft.href?.includes('R50%20000')&&draft.href?.includes('An%20event%20or%20experience'));
   ck('Contact no horizontal overflow '+width,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
   if([1440,390].includes(width))await page.screenshot({path:'qa-results/editorial/contact-'+width+'.png',fullPage:true});
   await context.close();
