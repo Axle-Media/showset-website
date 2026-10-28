@@ -1,0 +1,203 @@
+/* SHOWSET's single closing-CTA design source of truth.
+ *
+ * The user's approved Studio image is the visual reference for all four
+ * service endings and Our Studio. Scope is intentionally limited to these
+ * five closing sections; no home, work or service-body styles are altered.
+ *
+ * Use exactly one artwork, opacity, inset, heading scale, copy width and
+ * button treatment so future page changes cannot silently diverge. */
+:is(
+  .service-experience .service-close.service-close--editorial,
+  .editorial-page.studio-rebuilt .studio-final.studio-final-pattern
+){
+  --showset-close-font:clamp(37px,4.15vw,68px);
+  --showset-close-inline:max(var(--gutter),calc((100vw - 1500px)/2));
+  --showset-close-top:clamp(78px,7vw,113px);
+  --showset-close-bottom:clamp(75px,7vw,115px);
+  --showset-close-content-width:850px;
+  --showset-close-pattern-size:clamp(660px,66vw,1100px);
+  --showset-close-pattern-opacity:.76;
+  --showset-close-pattern-position:right -85px center;
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  display:block;
+  text-align:left;
+  justify-content:initial;
+  align-items:initial;
+  box-sizing:border-box;
+  min-height:clamp(420px,37vw,565px);
+  padding:var(--showset-close-top) var(--showset-close-inline) var(--showset-close-bottom);
+  background:linear-gradient(116deg,#0c2b42 0%,#0b293f 64%,#09253b 100%);
+  /* The legacy .end-section sets a repeated SVG + gradient with !important.
+     Explicitly replace that background ONLY on the five shared CTAs. */
+  background-image:linear-gradient(116deg,#0c2b42 0%,#0b293f 64%,#09253b 100%)!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  background-size:cover!important;
+  color:#FAF9FD;
+}
+:is(
+  .service-experience .service-close.service-close--editorial,
+  .editorial-page.studio-rebuilt .studio-final.studio-final-pattern
+)::before{
+  content:"";
+  display:block;
+  position:absolute;
+  inset:0 0 auto;
+  width:auto;
+  /* Reset the older .end-section pseudo-element's 48% width. */
+  /* Use the Studio reference canvas height, not each page's prose height.
+     This keeps the SVG at the same actual Y coordinate even when the
+     service description contains more lines than Studio's. */
+  height:clamp(420px,37vw,565px);
+  z-index:0;
+  pointer-events:none;
+  background-image:url('/media/studio-cta-pattern.svg');
+  background-repeat:no-repeat;
+  background-size:var(--showset-close-pattern-size) auto;
+  background-position:var(--showset-close-pattern-position);
+  opacity:var(--showset-close-pattern-opacity);
+}
+.service-experience .service-close--editorial>.service-pattern{
+  display:none;
+}
+.service-experience .service-close--editorial> :is(h2,.end-bottom),
+.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-final-inner{
+  position:relative;
+  z-index:1;
+}
+.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-final-inner{
+  max-width:none;
+  width:100%;
+  margin:0;
+}
+.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-final-inner>div{
+  max-width:none;
+  width:100%;
+}
+:is(
+  .service-experience .service-close.service-close--editorial .service-heading,
+  .editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-editorial-heading
+){
+  display:block;
+  width:min(100%,var(--showset-close-content-width));
+  max-width:var(--showset-close-content-width);
+  padding:0;
+  margin:0;
+  font-family:var(--display);
+  font-size:var(--showset-close-font);
+  font-weight:var(--refine-heading-weight);
+  letter-spacing:var(--v12-head-tracking,.018em);
+  line-height:var(--refine-heading-leading,1.1)!important;
+  text-align:left;
+  text-wrap:initial;
+  color:#FAF9FD;
+}
+:is(
+  .service-experience .service-close.service-close--editorial .service-heading,
+  .editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-editorial-heading
+)> .plain-line{
+  display:block;
+  color:#FAF9FD;
+}
+:is(
+  .service-experience .service-close.service-close--editorial .service-heading,
+  .editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-editorial-heading
+)> .accent-text{
+  color:#12BAAF;
+}
+:is(
+  .service-experience .service-close.service-close--editorial .service-heading,
+  .editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-editorial-heading
+) .service-period{
+  color:#FAF9FD!important;
+}
+/* Service pages retain their own prose, but every closing page uses the same
+   body scale, available width and distance from its title. */
+.service-experience .service-close--editorial .end-bottom,
+.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-final-copy{
+  margin:clamp(24px,2.8vw,40px) 0 0;
+  padding:0;
+  border:0;
+  max-width:645px;
+}
+.service-experience .service-close--editorial .end-bottom{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:0;
+}
+.service-experience .service-close--editorial .service-close-description,
+.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-final-copy{
+  width:100%;
+  max-width:645px;
+}
+.service-experience .service-close--editorial .service-close-description p,
+.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-final-copy p{
+  color:rgba(250,249,253,.78);
+  font-family:var(--body-font);
+  font-weight:500;
+  font-size:17px;
+  line-height:1.55;
+  letter-spacing:var(--v12-body-tracking,.012em);
+  max-width:645px;
+  margin:0 0 var(--v12-para-gap,18px);
+}
+.service-experience .service-close--editorial .service-close-description p:last-child,
+.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-final-copy p:last-child{
+  margin-bottom:0;
+}
+.service-experience .service-close--editorial .end-link.solid-link,
+.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .editorial-action.solid-link{
+  position:relative;
+  align-self:flex-start;
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  min-height:43px;
+  width:max-content;
+  max-width:100%;
+  margin:clamp(21px,2.5vw,31px) 0 0;
+  padding:11px 15px 11px 17px;
+  border:1px solid #12BAAF;
+  border-radius:100px!important;
+  background:#12BAAF;
+  color:#062739;
+  font-family:var(--body-font);
+  font-size:14px!important;
+  font-weight:650;
+  letter-spacing:normal;
+  line-height:1.3!important;
+  white-space:normal;
+  text-decoration:none;
+  text-align:left;
+}
+.service-experience .service-close--editorial .end-link.solid-link:is(:hover,:focus-visible),
+.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .editorial-action.solid-link:is(:hover,:focus-visible){
+  background:#39d4c8;
+}
+@media(max-width:600px){
+  :is(
+    .service-experience .service-close.service-close--editorial,
+    .editorial-page.studio-rebuilt .studio-final.studio-final-pattern
+  ){
+    padding-block:75px 86px;
+    min-height:0;
+    --showset-close-font:clamp(37px,9vw,48px);
+    --showset-close-pattern-size:590px;
+    --showset-close-pattern-position:calc(100% + 225px) center;
+    --showset-close-pattern-opacity:.44;
+  }
+}
+@media(min-width:601px) and (max-width:800px){
+  :is(
+    .service-experience .service-close.service-close--editorial,
+    .editorial-page.studio-rebuilt .studio-final.studio-final-pattern
+  ){
+    --showset-close-pattern-size:750px;
+    --showset-close-pattern-position:calc(100% + 230px) center;
+    --showset-close-pattern-opacity:.58;
+  }
+}
