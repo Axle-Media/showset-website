@@ -88,12 +88,18 @@ if(slug==='events-experiences'){
    section:style.backgroundColor,
    cards:[...section.querySelectorAll('.service-capability-group')].map(card=>{
     const c=getComputedStyle(card);
-    return {background:c.backgroundColor,border:c.borderTopColor,width:parseFloat(c.borderTopWidth)};
+    return {background:c.backgroundColor,gradient:c.backgroundImage,border:c.borderTopColor,width:parseFloat(c.borderTopWidth),radius:parseFloat(c.borderTopLeftRadius)};
    })
   };
  });
- ck('Events capability cards use the approved navy palette and white borders '+tag,
-   palette.section==='rgb(13, 47, 73)'&&palette.cards.length===4&&palette.cards.every(card=>card.background==='rgb(21, 59, 84)'&&card.border==='rgb(255, 255, 255)'&&Math.abs(card.width-0.75)<0.02),palette);
+ ck('Events capability cards match homepage case-study gradient and subtle borders '+tag,
+   palette.section==='rgb(13, 47, 73)'&&palette.cards.length===4
+   &&palette.cards.every(card=>card.background==='rgb(17, 47, 69)'
+     &&card.gradient.includes('linear-gradient(160deg')
+     &&card.gradient.includes('rgba(21, 59, 84, 0.95)')
+     &&card.gradient.includes('rgba(9, 38, 57, 0.98)')
+     &&card.border.startsWith('rgba(255, 255, 255, ')
+     &&Math.abs(card.width-0.75)<0.02&&card.radius===12),palette);
 }
 
 const expectedGrid=slug==='events-experiences'&&width>=1180?4:width>640?2:1;
