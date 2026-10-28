@@ -32,6 +32,8 @@ jobs:
         run: npm run lint:source
       - name: Page SEO content validation
         run: npm run check:seo
+      - name: Scalable case-study portfolio regression
+        run: node qa/portfolio-growth.cjs
       - name: Static Next.js build
         run: npm run build
       - name: Browser acceptance checks (homepage, cases, services and Studio)
