@@ -61,7 +61,12 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
   if(s===hero)markup+=section(s,'service-hero service-hero--'+kind,heroBody);
   else if(s.id==='service-story')markup+=renderStory(s);
   else if(s.id==='service-work'||s.type==='work')markup+=renderWork(s);
-  else if(s.id==='section-2')markup+=section(s,'service-intro service-gutter','<div class="service-editorial-row"><div>'+heading(s)+'</div><div>'+paras(s.body)+'</div></div>');
+  else if(s.id==='section-2'){
+   const formats=kind==='events'&&s.items.length
+    ?'<ul class="service-event-types" aria-label="Event formats">'+s.items.map(item=>'<li>'+text(item.title)+'</li>').join('')+'</ul>'
+    :'';
+   markup+=section(s,'service-intro service-gutter','<div class="service-editorial-row"><div>'+heading(s)+'</div><div>'+paras(s.body)+'</div></div>'+formats);
+  }
   else if(s.id==='section-3')markup+=renderGroups(s);
   else if(s.id==='section-4')markup+=section(s,'service-feature service-gutter','<div class="service-editorial-row"><div>'+heading(s)+'</div><div>'+paras(s.body)+'</div></div>');
   else if(s.id==='section-5')markup+=renderProcess(s);
