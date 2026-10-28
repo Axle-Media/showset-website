@@ -130,7 +130,35 @@ if(slug==='creative-design'){
     await p.locator('.service-creative-artboard-image img').evaluateAll(es=>es.every(el=>getComputedStyle(el).filter==='none')));
  }
 if(slug==='digital-marketing'){await progress(p,.5);await p.getByRole('button',{name:'Content',exact:true}).click();ck('Digital channel choice responds',await p.getByRole('button',{name:'Content',exact:true}).getAttribute('aria-pressed')==='true');await p.getByRole('button',{name:'Website',exact:true}).focus();await p.keyboard.press('Space');ck('Digital choice is keyboard accessible',await p.getByRole('button',{name:'Website',exact:true}).getAttribute('aria-pressed')==='true')}
-if(slug==='content-production'){await progress(p,0);const a=await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform);await progress(p,.5);const z=await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform);ck('Production photographic sequence advances',pinned&&a!==z);await progress(p,0);ck('Production sequence reverses',await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform)===a)}}
+if(slug==='content-production'){
+ const layout=await p.locator('[data-production-composition]').evaluate(el=>({
+  frames:el.querySelectorAll('[data-production-frame]').length,
+  stages:el.querySelectorAll('[data-production-step]').length,
+  descriptions:[...el.querySelectorAll('.service-production-step p')].map(p=>p.getBoundingClientRect().height),
+  height:el.getBoundingClientRect().height
+ }));
+ ck('Production uses compact editorial timeline, not pinned full-screen scenes '+tag,
+  !pinned&&layout.frames===3&&layout.stages===3
+  &&layout.descriptions.every(h=>h>0)&&layout.height<950,layout);
+ for(const i of[2,1,0]){
+  await p.locator('[data-production-step-trigger]').nth(i).click();
+  const selected=await p.locator('[data-production-composition]').evaluate(el=>({
+   frames:[...el.querySelectorAll('[data-production-frame]')].map(f=>f.dataset.productionActive),
+   pressed:[...el.querySelectorAll('[data-production-step-trigger]')].map(b=>b.getAttribute('aria-pressed')),
+   visibleText:[...el.querySelectorAll('.service-production-step p')].every(p=>p.getBoundingClientRect().height>0)
+  }));
+  ck('Production selection changes the photograph while keeping copy visible '+tag+' '+i,
+   selected.frames.length===3&&selected.frames.every((v,j)=>v===String(i===j))
+   &&selected.pressed.every((v,j)=>v===String(i===j))&&selected.visibleText,selected);
+ }
+ await p.locator('[data-production-step-trigger]').nth(0).focus();await p.keyboard.press('ArrowDown');
+ ck('Production timeline supports keyboard navigation '+tag,
+  await p.locator('[data-production-step-trigger]').nth(1).evaluate(el=>el===document.activeElement&&el.getAttribute('aria-pressed')==='true'));
+ await p.locator('[data-production-step-trigger]').nth(2).hover();
+ await p.waitForTimeout(140);
+ ck('Production hover previews the matching frame '+tag,
+  await p.locator('[data-production-frame="2"]').getAttribute('data-production-active')==='true');
+}}
 for(const selector of['.service-intro','.service-groups','.service-process','.service-expertise','.service-work','.service-close']){if(!await p.locator(selector).count())continue;await p.locator(selector).scrollIntoViewIfNeeded();await p.waitForTimeout(100);if(width===1440||width===390)await p.screenshot({path:path.join(out,tag+'-'+selector.slice(1)+'.png')})}
 ck('Expertise has no search, accordion, or unnecessary controls '+tag,await p.locator('.service-expertise input,.service-expertise button,.service-expertise details,.service-expertise summary,.service-expertise [data-service-search]').count()===0);
 const capabilityLayout=await p.locator('.service-expertise-grid').evaluate(grid=>{
@@ -171,7 +199,7 @@ const expectedGroupTitles={
  'events-experiences':['Concept & Design','Planning & People','Space & Production','The Experience'],
  'creative-design':['Brand & Identity','Graphic & Creative','Print & Packaging','Spaces & Experiences'],
  'digital-marketing':['Websites & Technology','Marketing & Content'],
- 'content-production':['Film & Content','Technical Production']
+ 'content-production':['Concept & Pre-Production','Film & Photography','Motion & Post-Production','Live & Technical Production']
 };
 ck('Cards have plain names, with only the brand full stop '+tag,
  capabilityLayout.groupTitlesSimple&&JSON.stringify(capabilityLayout.titles)===JSON.stringify(expectedGroupTitles[slug])&&capabilityLayout.periods,capabilityLayout.titles);
@@ -182,7 +210,7 @@ ck('All capability names remain visible without paragraphs '+tag,
 ck('All stable item IDs are retained exactly once '+tag,
  JSON.stringify([...capabilityLayout.ids].sort())===JSON.stringify(caps.items.map(x=>x.id).sort()),capabilityLayout.ids);
 ck('Service names use compact 15px list typography '+tag,capabilityLayout.fontSizes.every(x=>x==='15px'),capabilityLayout.fontSizes);
-if(['events-experiences','creative-design'].includes(slug)){
+if(['events-experiences','creative-design','content-production'].includes(slug)){
  const palette=await p.locator('.service-expertise').evaluate(section=>{
   const style=getComputedStyle(section);
   return {
@@ -193,7 +221,7 @@ if(['events-experiences','creative-design'].includes(slug)){
    })
   };
  });
- ck('Events and Creative capability cards match approved navy gradient and subtle borders '+tag,
+ ck('Approved Events, Creative and Production cards use the same subtle navy gradient '+tag,
    palette.section==='rgb(13, 47, 73)'&&palette.cards.length===4
    &&palette.cards.every(card=>card.background==='rgb(17, 47, 69)'
      &&card.gradient.includes('linear-gradient(160deg')
@@ -203,12 +231,36 @@ if(['events-experiences','creative-design'].includes(slug)){
      &&card.width>0&&card.width<=1&&card.radius===12),palette);
 }
 
-const expectedGrid=['events-experiences','creative-design'].includes(slug)&&width>=1180?4:width>640?2:1;
-const expectedInner=slug==='content-production'?1:null;
+const expectedGrid=['events-experiences','creative-design','content-production'].includes(slug)&&width>=1180?4:width>640?2:1;
+const expectedInner=null;
 ck('Compact responsive groups fit with no overlap '+tag,
  capabilityLayout.withinViewport&&capabilityLayout.groupsDontOverlap&&capabilityLayout.columns===expectedGrid&&(expectedInner===null||capabilityLayout.innerColumns===expectedInner),
  {expectedGrid,expectedInner,layout:capabilityLayout});
-ck('Contact and connected links valid '+tag,await p.locator('.service-close .solid-link').getAttribute('href')==='/contact/'&&await p.locator('.service-connected a').count()===(['events-experiences','creative-design'].includes(slug)?0:3)&&await p.locator('.service-work,.service-work-card').count()===0);
+if(slug==='content-production'){
+ const live=seed[slug].sections.find(s=>s.id==='section-6').items.find(s=>s.title==='Live Streaming');
+ ck('Live Streaming remains an independently editable capability with detailed scope '+tag,
+   !!live&&live.id==='production-live-streaming-20261028'
+   &&/multi-camera|camera feeds/i.test(live.description)
+   &&/switching/i.test(live.description)&&/audio/i.test(live.description)
+   &&/remote participation/i.test(live.description)&&/recording/i.test(live.description)
+   &&await p.locator('[data-capability-id="production-live-streaming-20261028"]').count()===1,
+   live?.description);
+ const ending=await p.locator('.service-close--editorial').evaluate(el=>{
+  const body=el.querySelector('.service-close-description').getBoundingClientRect(),
+    button=el.querySelector('.end-link').getBoundingClientRect();
+  return {photo:el.querySelectorAll('img,.service-close-art').length,
+   heading:el.querySelector('h2').textContent,
+   copy:el.querySelector('.service-close-description').textContent,
+   button:el.querySelector('.end-link').textContent,
+   aligned:Math.abs(body.left-button.left)<2,
+   period:getComputedStyle(el.querySelector('.service-period')).color};
+ });
+ ck('Production closing CTA stays compact and aligned with body copy '+tag,
+  ending.photo===0&&ending.aligned&&ending.heading.includes('next frame say?')
+  &&ending.copy.includes('a live stream')&&ending.button.includes("Let's get producing")
+  &&ending.period==='rgb(250, 249, 253)',ending);
+}
+ck('Contact and connected links valid '+tag,await p.locator('.service-close .solid-link').getAttribute('href')==='/contact/'&&await p.locator('.service-connected a').count()===(['events-experiences','creative-design','content-production'].includes(slug)?0:3)&&await p.locator('.service-work,.service-work-card').count()===0);
 ck('No horizontal overflow / broken loaded images '+tag,await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1&&[...document.querySelectorAll('.service-experience img')].every(e=>!e.getBoundingClientRect().width||!e.complete||e.naturalWidth>0)));
 const overlap=await p.locator('.service-hero').evaluate(e=>{const head=e.querySelector('h1'),h=head.getBoundingClientRect(),p=e.querySelector('.service-hero-copy').getBoundingClientRect(),walker=document.createTreeWalker(head,NodeFilter.SHOW_TEXT),rects=[];let node;while(node=walker.nextNode()){if(!node.textContent.trim())continue;const r=document.createRange();r.selectNodeContents(node);rects.push(...r.getClientRects())}return{headingBottom:h.bottom,copyTop:p.top,headingWidth:Math.max(...rects.map(r=>r.right))-Math.min(...rects.map(r=>r.left)),client:head.clientWidth,inkInside:rects.every(r=>r.left>=h.left-1&&r.right<=h.right+1),maskScrollWidth:head.scrollWidth}});ck('Opening has no text overlap or clipping '+tag,overlap.headingBottom<=overlap.copyTop+1&&overlap.headingWidth<=overlap.client+1&&overlap.inkInside,overlap);await c.close();}
 // Progressive enhancement, reduced motion and deliberately long edited copy.
