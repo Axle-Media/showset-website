@@ -1634,33 +1634,19 @@
   border-left-color:var(--teal);
 }
 .service-digital-network-lines .service-digital-signal{
-  fill:none;
-  stroke:rgba(18,186,175,.95);
-  stroke-width:2.7px;
+  fill:var(--teal);
+  stroke:rgba(8,39,56,.95);
+  stroke-width:1.5px;
   vector-effect:non-scaling-stroke;
-  stroke-linecap:round;
-  stroke-dasharray:.045 .955;
-  stroke-dashoffset:1;
   opacity:0;
   pointer-events:none;
+  filter:drop-shadow(0 0 4px rgba(18,186,175,.8));
 }
 .service-digital-connected[data-digital-engaged=true][data-digital-focus="0"] [data-digital-signal="0"],
 .service-digital-connected[data-digital-engaged=true][data-digital-focus="1"] [data-digital-signal="1"],
 .service-digital-connected[data-digital-engaged=true][data-digital-focus="2"] [data-digital-signal="2"],
 .service-digital-connected[data-digital-engaged=true][data-digital-focus="3"] [data-digital-signal="3"]{
   opacity:1;
-}
-@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
- .service-digital-connected[data-digital-engaged=true][data-digital-focus="0"] [data-digital-signal="0"],
- .service-digital-connected[data-digital-engaged=true][data-digital-focus="1"] [data-digital-signal="1"],
- .service-digital-connected[data-digital-engaged=true][data-digital-focus="2"] [data-digital-signal="2"],
- .service-digital-connected[data-digital-engaged=true][data-digital-focus="3"] [data-digital-signal="3"]{
-   animation:showsetDigitalSignal 3s linear infinite;
- }
-}
-@keyframes showsetDigitalSignal{
- from{stroke-dashoffset:1}
- to{stroke-dashoffset:0}
 }
 @media(max-width:950px){
  .service-story--digital .service-digital-connected{grid-template-columns:minmax(0,1fr);gap:25px}
