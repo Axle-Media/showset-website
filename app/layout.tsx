@@ -14,6 +14,7 @@ import "./agency-pages.css";
 import "./studio-scroll-story.css";
 import "./closing-cta.css";
 import "./work-gallery.css";
+import "./contact-compact.css";
 export const metadata: Metadata = {
   title: "SHOWSET | Events & Creative Agency",
   description:
