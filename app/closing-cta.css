@@ -37,7 +37,11 @@
   content:"";
   display:block;
   position:absolute;
-  inset:0;
+  inset:0 0 auto;
+  /* Use the Studio reference canvas height, not each page's prose height.
+     This keeps the SVG at the same actual Y coordinate even when the
+     service description contains more lines than Studio's. */
+  height:clamp(420px,37vw,565px);
   z-index:0;
   pointer-events:none;
   background-image:url('/media/studio-cta-pattern.svg');
