@@ -62,10 +62,33 @@ if(slug==='events-experiences'&&width===1440){
    &&after.notes.length===3&&after.notes.every(v=>v==='1'),after);
 }
 const states=[];for(const f of[.1,.5,.9,.5,.1]){const pinned=await p.locator('[data-service-story-track]').getAttribute('data-service-pinned')==='true';await p.locator('[data-service-story-track]').evaluate((e,f)=>scrollTo({top:scrollY+e.getBoundingClientRect().top+Math.max(0,e.offsetHeight-innerHeight)*f,behavior:'instant'}),f);await p.waitForTimeout(1050);states.push(await p.locator('.service-story-stage').evaluate(e=>({p:e.style.getPropertyValue('--service-progress'),proof:e.style.getPropertyValue('--proof-progress'),channel:e.style.getPropertyValue('--channel-progress'),film:e.style.getPropertyValue('--service-frame-progress'),rail:e.querySelector('.service-scenes')?.style.transform,active:[...e.querySelectorAll('[data-service-scene]')].map(s=>s.getAttribute('aria-hidden')),pinned:e.parentElement.dataset.servicePinned})));if(states.length<=3)await p.screenshot({path:path.join(out,tag+'-story-'+f+'.png')});if(pinned&&slug==='events-experiences')ck('Active photographic story heading is readable '+tag+' '+f,await p.locator('[data-service-scene][aria-hidden=false] .wipe-line>span').evaluate(e=>/^inset\(0px(?: 0px){0,3}\)$/.test(getComputedStyle(e).clipPath)))}
-if(width>800&&!['events-experiences','creative-design'].includes(slug)){ck('Signature changes during actual forward scroll '+tag,JSON.stringify(states[0])!==JSON.stringify(states[2]),states);ck('Signature returns to its prior reverse state '+tag,JSON.stringify(states[0])===JSON.stringify(states.at(-1)),states)}
-if(slug==='digital-marketing'){const choice=p.getByRole('button',{name:'Content',exact:true});if(width<=390)await choice.tap();else await choice.click();const a=await p.locator('.service-channel-lines').evaluate(e=>getComputedStyle(e).strokeDashoffset);await p.waitForTimeout(600);const z=await p.locator('.service-channel-lines').evaluate(e=>getComputedStyle(e).strokeDashoffset);ck('Channel selection links path and active response '+tag,await choice.getAttribute('aria-pressed')==='true'&&(width<=800||a!==z),{a,z});await p.getByRole('button',{name:'Website',exact:true}).focus();await p.keyboard.press('Space');ck('Channel keyboard selection '+tag,await p.getByRole('button',{name:'Website',exact:true}).getAttribute('aria-pressed')==='true')}
+if(width>800&&!['events-experiences','creative-design','digital-marketing'].includes(slug)){ck('Signature changes during actual forward scroll '+tag,JSON.stringify(states[0])!==JSON.stringify(states[2]),states);ck('Signature returns to its prior reverse state '+tag,JSON.stringify(states[0])===JSON.stringify(states.at(-1)),states)}
+if(slug==='digital-marketing'){
+ const network=await p.locator('.service-digital-connected').evaluate(el=>({
+  status:el.closest('[data-service-experience]').dataset.serviceDigitalIntro,
+  pinned:el.closest('[data-service-story-track]').dataset.servicePinned,
+  nodes:el.querySelectorAll('.service-digital-network-node').length,
+  descriptions:[...el.querySelectorAll('.service-digital-editorial-item p')].every(p=>getComputedStyle(p).opacity==='1')
+ }));
+ ck('Digital connected network never pins or hides its editorial copy '+tag,
+  network.status==='done'&&network.pinned==='false'&&network.nodes===4&&network.descriptions,network);
+ const target=p.locator('[data-digital-focus-button="2"]');
+ if(width<=390)await target.tap();else await target.click();
+ const selection=await p.locator('[data-digital-connected]').evaluate(el=>({
+  active:el.dataset.digitalFocus,
+  labels:[...el.querySelectorAll('[data-digital-focus-button]')].map(b=>b.getAttribute('aria-pressed')),
+  stories:[...el.querySelectorAll('[data-digital-story] p')].map(p=>p.getBoundingClientRect().height>0)
+ }));
+ ck('Selecting Social highlights matching network connection and keeps all text visible '+tag,
+   selection.active==='2'&&selection.labels.join(',')==='false,false,true,false'
+   &&selection.stories.every(Boolean),selection);
+ await p.locator('[data-digital-focus-button="0"]').focus();
+ await p.keyboard.press('ArrowRight');
+ ck('Digital connections support arrow-key focus '+tag,
+   await p.locator('[data-digital-focus-button="1"]').evaluate(el=>el===document.activeElement&&el.getAttribute('aria-pressed')==='true'));
+}
 if(await p.locator('.service-process').count()){await scroll(p,'.service-process',600);const a=await p.locator('.service-process li').first().evaluate(e=>e.style.getPropertyValue('--process-unit'));await scroll(p,'.service-process',90);await p.waitForTimeout(1200);const z=await p.locator('.service-process li').first().evaluate(e=>e.style.getPropertyValue('--process-unit'));ck('Process assembly follows reading progress '+tag,a!==z||Number(z)===1,{a,z});await p.screenshot({path:path.join(out,tag+'-process.png')});}
-else ck('No duplicated Events or Creative process '+tag,['events-experiences','creative-design'].includes(slug));
+else ck('No duplicated Events, Creative or Digital process '+tag,['events-experiences','creative-design','digital-marketing'].includes(slug));
 if(slug==='events-experiences'&&width===1440){
  const start=await p.locator('.service-experience').evaluate(root=>({
   state:root.dataset.serviceCardIntro,
@@ -91,7 +114,7 @@ if(slug==='events-experiences'&&width===1440){
 }
 if(width<=390){ck('Mobile cards are readable without tapping a control '+tag,await p.locator('.service-capability-name').first().evaluate(el=>getComputedStyle(el).visibility==='visible'&&el.getBoundingClientRect().height>10)&&await p.locator('.service-expertise button,.service-expertise summary').count()===0&&await p.locator('.service-capability-group').first().evaluate(el=>{const width=parseFloat(getComputedStyle(el).borderTopWidth);return width>0&&width<=1}))}await p.screenshot({path:path.join(out,tag+'-expertise.png')});
 ck('No redundant related-work section '+tag,await p.locator('.service-work,.service-work-card').count()===0);
-if(['events-experiences','creative-design'].includes(slug)){
+if(['events-experiences','creative-design','digital-marketing'].includes(slug)){
  const close=await p.locator('.service-close--editorial').evaluate(el=>({
    height:el.getBoundingClientRect().height,
    viewport:innerHeight,
@@ -107,11 +130,16 @@ if(['events-experiences','creative-design'].includes(slug)){
 }else await sampleHeading(p,'.service-close h2',true);
 await p.screenshot({path:path.join(out,tag+'-closing.png')});
 ck('Wrapped type and punctuation fit each line '+tag,await p.locator('[data-service-reveal] .wipe-line').evaluateAll(es=>es.every(e=>{const span=e.firstElementChild,r=document.createRange();r.selectNodeContents(span);const ink=r.getBoundingClientRect(),box=span.getBoundingClientRect();return ink.left>=box.left-1&&ink.right<=box.right+1&&ink.top>=box.top-1&&ink.bottom<=box.bottom+1})));ck('No document overflow '+tag,await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
-if(width>800&&!['events-experiences','creative-design'].includes(slug)){await p.locator('[data-service-story-track]').evaluate(e=>scrollTo({top:scrollY+e.getBoundingClientRect().bottom-innerHeight+120,behavior:'instant'}));await p.waitForTimeout(120);ck('Pinned story releases cleanly '+tag,await p.locator('.service-story-stage').evaluate(e=>e.dataset.servicePhase==='leaving'&&e.getBoundingClientRect().top< -100));}
+if(width>800&&!['events-experiences','creative-design','digital-marketing'].includes(slug)){await p.locator('[data-service-story-track]').evaluate(e=>scrollTo({top:scrollY+e.getBoundingClientRect().bottom-innerHeight+120,behavior:'instant'}));await p.waitForTimeout(120);ck('Pinned story releases cleanly '+tag,await p.locator('.service-story-stage').evaluate(e=>e.dataset.servicePhase==='leaving'&&e.getBoundingClientRect().top< -100));}
 if(width===1440&&slug==='events-experiences')ck('Events no longer has pinned photo headlines '+tag,await p.locator('.service-event-triptych-note .wipe-line').count()===0);
 const vid=video?p.video():null;await c.close();if(vid)await vid.saveAs(path.join(out,'videos',slug+'.webm'));
 }
 for(const options of[{reducedMotion:'reduce'},{javaScriptEnabled:false}])for(const slug of slugs){const c=await b.newContext({viewport:{width:1440,height:900},...options}),p=await c.newPage();await p.goto(base+'/'+slug+'/');if(options.javaScriptEnabled!==false)await p.waitForSelector('[data-service-ready=true]');ck('All heading glyphs readable without motion '+slug+' '+JSON.stringify(options),await p.locator('[data-service-reveal] .wipe-line>span').evaluateAll(es=>es.every(e=>getComputedStyle(e).clipPath==='none'&&getComputedStyle(e).opacity==='1')));
+if(slug==='digital-marketing')ck('Digital network paths and descriptions stay visible with reduced motion '+JSON.stringify(options),
+ await p.locator('.service-digital-connected').evaluate(el=>
+  el.querySelectorAll('.service-digital-network-lines path').length===4
+  &&[...el.querySelectorAll('.service-digital-network-lines path')].every(path=>Math.abs(parseFloat(getComputedStyle(path).strokeDashoffset))<.001)
+  &&[...el.querySelectorAll('.service-digital-editorial-item p')].every(p=>getComputedStyle(p).opacity==='1')));
 if(slug==='creative-design')ck('Creative artwork and descriptions remain visible without motion '+JSON.stringify(options),
  await p.locator('.service-creative-artboard').evaluateAll(es=>es.length===3&&es.every(el=>getComputedStyle(el.querySelector('.service-creative-artboard-image')).opacity==='1'
  &&getComputedStyle(el.querySelector('p')).opacity==='1')));

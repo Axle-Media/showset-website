@@ -63,13 +63,28 @@ const definitions:Record<ServiceKind,GroupDefinition[]>={
   ]}
  ],
  digital:[
-  {title:'Websites & Technology',ids:[
+  {title:'Websites & Digital Experiences',ids:[
    'websites---digital-experienc-0',
-   'software--technology---solut-3'
+   'digital-web-development-20261028',
+   'digital-ux-ui-20261028',
+   'digital-landing-pages-20261028'
   ]},
-  {title:'Marketing & Content',ids:[
+  {title:'Marketing & Campaigns',ids:[
    'digital-marketing---advertis-1',
+   'digital-marketing-strategy-20261028',
+   'digital-campaign-production-20261028',
+   'digital-performance-20261028'
+  ]},
+  {title:'Social & Content',ids:[
    'social-media---content-manag-2',
+   'digital-social-planning-20261028',
+   'digital-social-content-20261028',
+   'digital-social-community-20261028'
+  ]},
+  {title:'Technology & Partnerships',ids:[
+   'software--technology---solut-3',
+   'digital-automation-20261028',
+   'digital-integrations-20261028',
    'ongoing-creative---marketing-4'
   ]}
  ],

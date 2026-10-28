@@ -51,13 +51,13 @@ const isStill=x=>!x.missing&&x.opacity==='1'&&x.transform==='none'&&x.clip==='no
     if(['events-experiences','creative-design','digital-marketing','content-production'].includes(slug)){
      const editorial=await sample(page,scope+' [data-service-reveal="editorial"]');
      ck('Service editorial headlines never mask '+path+' '+width,editorial.length>0&&editorial.every(isStill),editorial);
-     if(['events-experiences','creative-design'].includes(slug)){
+     if(['events-experiences','creative-design','digital-marketing'].includes(slug)){
        const closing=await page.locator(scope+' .service-close--editorial h2').evaluate(el=>({
          first:getComputedStyle(el.querySelector('.plain-line:first-child')).color,
          second:getComputedStyle(el.querySelector('.plain-line:last-child')).color,
          period:getComputedStyle(el.querySelector('.service-period')).color
        }));
-       ck('Events and Creative editorial CTAs have no photographic swipe and use the two-tone headline '+path+' '+width,
+       ck('Editorial service CTAs have no photographic swipe and use the two-tone headline '+path+' '+width,
          await page.locator(scope+' .service-close--editorial .service-close-art').count()===0
          &&closing.second==='rgb(18, 186, 175)'&&closing.period==='rgb(250, 249, 253)',closing);
      }else{
