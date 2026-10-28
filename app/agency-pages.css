@@ -20,6 +20,8 @@
 
 /* A featured story followed by an open-ended editorial index.
  * Never privilege the last item or assume only three case studies exist. */
+.editorial-page.work-rebuilt .work-intro-title>.accent-text{color:#12BAAF}
+.editorial-page.work-rebuilt .work-intro-title .service-period{color:#FAF9FD!important}
 .editorial-page.work-rebuilt .work-page-intro{padding-block:clamp(72px,8vw,124px) clamp(40px,5vw,78px)}
 .editorial-page.work-rebuilt .work-page-gallery{padding-block:0 clamp(80px,10vw,140px)}
 .editorial-page.work-rebuilt .work-index-header{display:flex;justify-content:space-between;align-items:baseline;gap:30px;max-width:1500px;margin:0 auto clamp(30px,4vw,58px);border-bottom:1px solid rgba(250,249,253,.24);padding:0 0 16px}
