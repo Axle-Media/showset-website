@@ -458,3 +458,168 @@
     transition:none!important;
   }
 }
+
+/* Events editorial triptych: a compact, natural-scrolling alternative to
+   three consecutive full-screen photographic scenes. */
+.service-story--events{
+  background:linear-gradient(135deg,#071e30,#0d2f49);
+}
+.service-story--events > .service-section-head.service-gutter{
+  padding-top:clamp(68px,6vw,96px);
+  padding-bottom:clamp(32px,3.2vw,48px);
+}
+.service-story--events .service-event-triptych-wrap{
+  padding:0 var(--gutter) clamp(78px,7vw,112px);
+}
+.service-story--events .service-event-triptych{
+  display:grid;
+  grid-template-columns:minmax(0,1.03fr) minmax(0,1fr);
+  align-items:stretch;
+  gap:clamp(36px,5.4vw,90px);
+  overflow:visible;
+}
+.service-story--events .service-event-triptych-visuals{
+  display:grid;
+  grid-template-columns:1fr 1.14fr 1fr;
+  gap:clamp(5px,.7vw,10px);
+  min-height:clamp(430px,38vw,555px);
+  overflow:hidden;
+}
+.service-story--events .service-event-triptych-image{
+  height:100%;
+  min-height:0;
+  position:relative;
+  isolation:isolate;
+}
+.service-story--events .service-event-triptych-image img{
+  height:100%;
+  width:100%;
+  object-fit:cover;
+}
+.service-story--events .service-event-triptych-image:nth-child(1) img{object-position:47% 50%}
+.service-story--events .service-event-triptych-image:nth-child(2) img{object-position:50% 50%}
+.service-story--events .service-event-triptych-image:nth-child(3) img{object-position:57% 50%}
+.service-story--events .service-event-triptych-notes{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:clamp(20px,2.2vw,35px);
+  padding:2px 0 2px 12px;
+}
+.service-story--events .service-event-triptych-notes:before,
+.service-story--events .service-event-triptych-notes:after{
+  content:'';
+  position:absolute;
+  left:0;
+  top:8px;
+  bottom:8px;
+  width:1px;
+  background:rgba(18,186,175,.28);
+  pointer-events:none;
+}
+.service-story--events .service-event-triptych-notes:after{
+  background:#12BAAF;
+  transform-origin:top;
+}
+.service-story--events .service-event-triptych-note.service-scene-copy{
+  position:relative;
+  padding:0 0 0 clamp(17px,2vw,30px);
+  min-width:0;
+}
+.service-story--events .service-event-triptych-note:before{
+  content:'';
+  position:absolute;
+  left:-16px;
+  top:9px;
+  width:7px;
+  height:7px;
+  border:1px solid #12BAAF;
+  border-radius:50%;
+  background:#0D2F49;
+}
+.service-story--events .service-event-triptych-note .service-category{
+  display:block;
+  margin:0 0 10px;
+}
+.service-story--events .service-event-triptych-note h3{
+  margin-bottom:12px;
+}
+.service-story--events .service-event-triptych-note p{
+  max-width:53ch;
+  margin-bottom:0;
+}
+/* Only motion-enabled visitors receive the once-per-entry stagger.
+   Default markup stays readable without JS and inside Studio. */
+.service-experience--events[data-service-motion=on] .service-event-triptych-image{
+  transition:clip-path 780ms cubic-bezier(.22,.66,.21,1),
+             opacity 680ms ease,
+             transform 780ms cubic-bezier(.22,.66,.21,1);
+  transition-delay:calc(var(--triptych-index)*110ms);
+}
+.service-experience--events[data-service-motion=on] .service-event-triptych-note{
+  transition:opacity 660ms ease,transform 660ms cubic-bezier(.22,.66,.21,1);
+  transition-delay:calc(150ms + var(--triptych-index)*150ms);
+}
+.service-experience--events[data-service-motion=on] .service-event-triptych-notes:after{
+  transition:transform 900ms cubic-bezier(.22,.66,.21,1) 180ms;
+}
+.service-experience--events[data-service-motion=on][data-service-triptych-intro=pending] .service-event-triptych-image{
+  clip-path:inset(0 0 100% 0);
+  opacity:0;
+  transform:translate3d(0,20px,0);
+}
+.service-experience--events[data-service-motion=on][data-service-triptych-intro=pending] .service-event-triptych-note{
+  opacity:0;
+  transform:translate3d(0,22px,0);
+}
+.service-experience--events[data-service-motion=on][data-service-triptych-intro=pending] .service-event-triptych-notes:after{transform:scaleY(0)}
+.service-experience--events[data-service-motion=on][data-service-triptych-intro=done] .service-event-triptych-image{
+  clip-path:inset(0);
+  opacity:1;
+  transform:none;
+}
+.service-experience--events[data-service-motion=on][data-service-triptych-intro=done] .service-event-triptych-note{
+  opacity:1;
+  transform:none;
+}
+.service-experience--events[data-service-motion=on][data-service-triptych-intro=done] .service-event-triptych-notes:after{transform:scaleY(1)}
+.service-experience--events [data-scene=still] .service-event-triptych :is(.service-event-triptych-image,.service-event-triptych-note),
+.service-experience--events .c12-reveal-off .service-event-triptych :is(.service-event-triptych-image,.service-event-triptych-note),
+[data-static-motion] .service-experience--events .service-event-triptych :is(.service-event-triptych-image,.service-event-triptych-note){
+  clip-path:none!important;
+  opacity:1!important;
+  transform:none!important;
+  transition:none!important;
+}
+.service-experience--events [data-scene=still] .service-event-triptych-notes:after,
+[data-static-motion] .service-experience--events .service-event-triptych-notes:after{
+  transform:scaleY(1)!important;
+  transition:none!important;
+}
+@media(max-width:1000px){
+  .service-story--events .service-event-triptych{gap:30px}
+  .service-story--events .service-event-triptych-note h3{margin-bottom:8px}
+}
+@media(max-width:800px){
+  .service-story--events > .service-section-head.service-gutter{padding-top:72px;padding-bottom:30px}
+  .service-story--events .service-event-triptych-wrap{padding-bottom:72px}
+  .service-story--events .service-event-triptych{grid-template-columns:minmax(0,1fr);gap:35px}
+  .service-story--events .service-event-triptych-visuals{min-height:0;height:clamp(260px,46vw,390px)}
+  .service-story--events .service-event-triptych-notes{gap:32px;padding-left:12px}
+  .service-story--events .service-event-triptych-note p{max-width:70ch}
+}
+@media(max-width:480px){
+  .service-story--events .service-event-triptych{gap:28px}
+  .service-story--events .service-event-triptych-visuals{height:245px}
+  .service-story--events .service-event-triptych-notes{gap:28px}
+}
+@media(prefers-reduced-motion:reduce){
+  .service-experience--events .service-event-triptych :is(.service-event-triptych-image,.service-event-triptych-note){
+    clip-path:none!important;
+    opacity:1!important;
+    transform:none!important;
+    transition:none!important;
+  }
+  .service-experience--events .service-event-triptych-notes:after{transform:scaleY(1)!important;transition:none!important}
+}
