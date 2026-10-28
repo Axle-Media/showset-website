@@ -64,17 +64,39 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
   if(kind==='digital'){
    // A compact connected-system composition, not another pinned stage.
    // Every description is visible; selecting a channel only shifts emphasis.
-   const links='<svg class="service-digital-network-lines" viewBox="0 0 500 440" preserveAspectRatio="xMidYMid meet" aria-hidden="true">'+
-    ['M250 220 Q250 145 250 70','M250 220 Q340 220 435 220','M250 220 Q250 290 250 370','M250 220 Q160 220 65 220']
-      .map((d,i)=>'<path data-digital-network-path="'+i+'" d="'+d+'" pathLength="1"/>').join('')+
-     '<circle class="service-digital-hub-ring" cx="250" cy="220" r="48"/>'+
-     '<circle class="service-digital-hub-core" cx="250" cy="220" r="10"/></svg>';
-   const nodes='<div class="service-digital-network-nodes">'+s.items.map((item,i)=>
+   // A living signal constellation, not four dashboard buttons in a box.
+   // Routes remain exactly four accessible, selectable disciplines.
+   const routes=[
+    {d:'M360 280 C315 224 276 150 185 110',x:185,y:110},
+    {d:'M360 280 C410 216 466 166 548 142',x:548,y:142},
+    {d:'M360 280 C445 307 506 368 540 428',x:540,y:428},
+    {d:'M360 280 C302 346 247 418 185 438',x:185,y:438}
+   ];
+   const icons=[
+    '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M9 22h6M12 19v3"/>',
+    '<path d="M4 12a8 8 0 0 1 8-8M20 12a8 8 0 0 1-8 8"/><path d="M8 12h8M12 8v8"/>',
+    '<path d="M5 5h14v11H9l-4 4V5Z"/><path d="M8 9h8M8 12h5"/>',
+    '<circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7 7.5 11 16M17 7.5 13 16M7 6h10"/>'
+   ];
+   const links='<svg class="service-digital-network-lines" viewBox="0 0 720 560" preserveAspectRatio="none" aria-hidden="true">'+
+     '<defs><radialGradient id="showset-digital-core-glow"><stop offset="0%" stop-color="#12BAAF" stop-opacity=".2"/><stop offset="100%" stop-color="#12BAAF" stop-opacity="0"/></radialGradient></defs>'+
+     '<ellipse class="service-digital-orbit service-digital-orbit--outer" cx="360" cy="280" rx="242" ry="217"/>'+
+     '<ellipse class="service-digital-orbit service-digital-orbit--inner" cx="360" cy="280" rx="157" ry="142"/>'+
+     '<circle class="service-digital-core-ambient" cx="360" cy="280" r="157"/>'+
+     routes.map((route,i)=>'<path id="showset-digital-route-'+i+'" data-digital-network-path="'+i+'" d="'+route.d+'" pathLength="1"/>').join('')+
+     routes.map((route,i)=>'<use href="#showset-digital-route-'+i+'" class="service-digital-signal" data-digital-signal="'+i+'" pathLength="1"/>').join('')+
+     routes.map(route=>'<circle class="service-digital-route-endpoint" cx="'+route.x+'" cy="'+route.y+'" r="3.5"/>').join('')+
+     '<circle class="service-digital-hub-ring" cx="360" cy="280" r="101"/>'+
+     '<circle class="service-digital-hub-inner" cx="360" cy="280" r="89"/>'+
+     '<circle class="service-digital-hub-core" cx="360" cy="280" r="3.5"/></svg>';
+   const nodes='<div class="service-digital-network-nodes" role="group" aria-label="Explore connected digital channels">'+s.items.map((item,i)=>
     '<button type="button" class="service-digital-network-node" data-digital-focus-button="'+i+'" aria-pressed="'+(i===0?'true':'false')+'" style="--digital-index:'+i+'" aria-label="Explore '+esc(sceneLabel(item,i))+'">'+
-     '<span class="service-digital-network-node-mark" aria-hidden="true"></span><span>'+text(sceneLabel(item,i))+'</span></button>'
+     '<span class="service-digital-network-node-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">'+(icons[i]||icons[0])+'</svg></span>'+
+     '<span class="service-digital-network-node-name">'+text(sceneLabel(item,i))+'</span></button>'
    ).join('')+'</div>';
-   const network='<div class="service-digital-network" aria-label="One connected idea across four digital disciplines">'+
-     links+'<div class="service-digital-hub-label" aria-hidden="true"><span>ONE</span><span>IDEA</span></div>'+nodes+'</div>';
+   const network='<div class="service-digital-network" aria-label="A single creative idea connects websites, campaigns, social content and technology">'+
+     '<span class="service-digital-canvas-signature" aria-hidden="true">CONNECTED BY DESIGN</span>'+
+     links+'<div class="service-digital-hub-label" aria-hidden="true"><span>ONE</span><span>IDEA<span class="service-digital-hub-period">.</span></span></div>'+nodes+'</div>';
    const rows='<div class="service-digital-editorial">'+s.items.map((item,i)=>
     '<article class="service-digital-editorial-item" data-digital-story="'+i+'" data-digital-active="'+(i===0?'true':'false')+'">'+
      category(sceneLabel(item,i))+'<h3>'+text(item.title)+'</h3>'+paras(item.description)+'</article>'
