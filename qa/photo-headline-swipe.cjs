@@ -16,7 +16,7 @@ const targets = [
   ['/events-experiences/', '.service-hero [data-service-reveal="photo"]'],
   ['/content-production/', '.service-hero [data-service-reveal="photo"]'],
   
-  ['/our-studio/', '.simple-hero .block-heading'],
+  ['/our-studio/', '.studio-hero-scene-first .block-heading'],
   ['/our-work/', '.simple-hero .block-heading'],
 ];
 async function styles(page, selector) {

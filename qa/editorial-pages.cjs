@@ -16,15 +16,46 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
   await page.waitForSelector('[data-concept-ready="true"]');
   ck('Studio five purposeful sections '+width,await page.locator('.view.is-current[data-view="studio"]>section').count()===5);
   ck('Studio has live discipline links '+width,await page.locator('.view.is-current .studio-capability-links a').count()===4);
-  ck('Studio copy remains readable '+width,await page.locator('.view.is-current .studio-story-entry p').evaluateAll(nodes=>nodes.length===3&&nodes.every(n=>getComputedStyle(n).visibility==='visible'&&getComputedStyle(n).opacity==='1')));
-  for(const n of [2,1,0]){
-   await page.locator('[data-studio-choice="'+n+'"]').click();
-   const state=await page.locator('.view.is-current .studio-exploration').evaluate(el=>({
-    frames:[...el.querySelectorAll('[data-studio-frame].is-active')].map(x=>x.dataset.studioFrame),
-    pressed:[...el.querySelectorAll('[data-studio-choice][aria-pressed="true"]')].map(x=>x.dataset.studioChoice)
-   }));
-   ck('Studio photo choice '+width+' '+n,state.frames.join(',')===String(n)&&state.pressed.join(',')===String(n),state);
+  const chapters=await page.locator('.view.is-current .studio-storyboard-chapter').evaluateAll(nodes=>nodes.map(chapter=>({
+    title:chapter.querySelector('h3')?.textContent,
+    copy:chapter.querySelector('p')?.textContent,
+    image:chapter.querySelector('img')?.getAttribute('src'),
+    headingVisible:getComputedStyle(chapter.querySelector('h3')).opacity==='1',
+    copyVisible:getComputedStyle(chapter.querySelector('p')).opacity==='1'
+  })));
+  ck('Studio photographic chapters with immediately readable copy '+width,
+    chapters.length===3&&chapters.every(x=>x.title&&x.copy&&x.image&&x.headingVisible&&x.copyVisible),
+    chapters);
+  ck('Studio no old photo-selector accordion '+width,
+    await page.locator('.view.is-current [data-studio-choice]').count()===0);
+  for(const n of [0,1,2]){
+    const photo=page.locator('.view.is-current .studio-storyboard-shot').nth(n);
+    // Simulate normal user scrolling to the visible chapter wrapper, not
+    // Playwright's scroll-into-view logic on a fully masked photograph.
+    await page.locator('.view.is-current .studio-storyboard-chapter').nth(n).evaluate(el=>
+      window.scrollTo({top:window.scrollY+el.getBoundingClientRect().top-window.innerHeight*.25,behavior:'instant'})
+    );
+    await page.waitForTimeout(width===320?150:1100);
+    const state=await photo.evaluate(el=>({
+      loaded:el.querySelector('img')?.complete&&el.querySelector('img')?.naturalWidth>0,
+      motion:el.closest('[data-studio-storyboard]')?.dataset.studioStoryboardMotion,
+      revealed:el.classList.contains('is-visible'),
+      clip:getComputedStyle(el).clipPath
+    }));
+    ck('Studio photo storyboard reveal '+width+' '+n,state.loaded&&
+      (width===320?(state.motion!=='on'):state.revealed&&(!state.clip||state.clip.includes('0px')||state.clip==='inset(0px)')),
+      state);
   }
+  const ending=await page.locator('.view.is-current .studio-final').evaluate(el=>({
+    heading:el.querySelector('h2')?.textContent,
+    background:getComputedStyle(el,'::before').backgroundImage,
+    repeat:getComputedStyle(el,'::before').backgroundRepeat,
+    size:getComputedStyle(el,'::before').backgroundSize,
+    layer:getComputedStyle(el,'::before').zIndex
+  }));
+  ck('Studio approved oversized nonrepeating graphic behind closing CTA '+width,
+    ending.heading?.includes('complicated idea')&&ending.background.includes('studio-cta-pattern.svg')&&ending.repeat==='no-repeat'&&ending.layer==='0',
+    ending);
   ck('Studio CTA links to Contact '+width,await page.locator('.view.is-current .studio-final .editorial-action').getAttribute('href')==='/contact/');
   ck('Studio no horizontal overflow '+width,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
   if([1440,390].includes(width))await page.screenshot({path:'qa-results/editorial/studio-'+width+'.png',fullPage:true});

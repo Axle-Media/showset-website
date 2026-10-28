@@ -1362,7 +1362,16 @@
         "buttonHref": "",
         "secondaryLabel": "",
         "secondaryHref": "",
-        "items": [],
+        "items": [
+          {
+            "id": "studio-follow-up",
+            "title": "We think it through.",
+            "accent": "We make it happen.",
+            "description": "From the first conversation to the last detail, we connect the creative and practical work that brings an idea to life.",
+            "image": "",
+            "href": ""
+          }
+        ],
         "speed": 6,
         "formTitle": "",
         "helperText": ""
@@ -1390,7 +1399,7 @@
         "type": "items",
         "headline": "From the first sketch",
         "accent": "to the final cue.",
-        "body": "There's more than one way into a brief. Explore the different parts of what we do.",
+        "body": "Great work doesn't happen in separate departments. We keep the thinking, making and doing connected from the first conversation to the final detail.",
         "image": "",
         "pattern": false,
         "reveal": true,
@@ -1449,13 +1458,13 @@
       {
         "id": "section-7",
         "type": "cta",
-        "headline": "Got a good",
-        "accent": "feeling about this?",
-        "body": "Start with the brief, the question or the completely unfinished idea. We can take it from there.",
+        "headline": "Got a beautifully",
+        "accent": "complicated idea?",
+        "body": "The brief can be polished, half-written or still living entirely in your head. Tell us what you are trying to make happen. We know where to start.",
         "image": "",
         "pattern": true,
         "reveal": true,
-        "buttonLabel": "Let's talk",
+        "buttonLabel": "Let's make a plan",
         "buttonHref": "/contact/",
         "secondaryLabel": "",
         "secondaryHref": "",

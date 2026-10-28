@@ -103,6 +103,17 @@ export function bindConcept(
     if (!changed(s, "headline") && !changed(s, "accent")) return;
     const e = host.querySelector(selector);
     if (!e) return;
+    if (e.classList.contains("studio-scroll-heading")) {
+      // On photography, preserve the approved two-tone rectangular wipe.
+      // The final punctuation is always ivory rather than turquoise.
+      const period = s.accent.trimEnd().match(/[.!?]$/)?.[0] || "";
+      const accent = period ? s.accent.trimEnd().slice(0, -1) : s.accent;
+      e.innerHTML = '<span class="wipe-line"><span>' + rich(s.headline) + '</span></span>' +
+        (s.accent ? '<span class="wipe-line accent-line"><span>' + rich(accent) +
+        (period ? '<span class="hero-period">' + period + '</span>' : '') +
+        '</span></span>' : '');
+      return;
+    }
     if (e.classList.contains("studio-editorial-heading") || e.classList.contains("work-intro-title") || e.classList.contains("contact-editorial-heading")) {
       // Keep Studio edits in the same two-line typography as the published page.
       // Editorial punctuation stays ivory; only the wording is turquoise.
@@ -352,14 +363,30 @@ export function bindConcept(
         heading("#" + id, s);
       }
       if (s.type === "pagehero" && changed(s, "image"))
-        image(".studio-hero .simple-bg img", s.image);
+        image(".studio-hero .studio-hero-photo img", s.image);
+      if (s.type === "pagehero" && changed(s, "items") && s.items[0]) {
+        const second = scope.querySelector<HTMLElement>("[data-studio-hero-follow]");
+        const follow = s.items[0];
+        if (second) {
+          const subtitle = second.querySelector("h2");
+          const copy = second.querySelector("p");
+          if (subtitle) {
+            const period = (follow.accent || "").trimEnd().match(/[.!?]$/)?.[0] || "";
+            const accent = period ? (follow.accent || "").trimEnd().slice(0, -1) : (follow.accent || "");
+            subtitle.innerHTML = '<span class="wipe-line"><span>' + rich(follow.title) + '</span></span>' +
+              (follow.accent ? '<span class="wipe-line accent-line"><span>' + rich(accent) +
+              (period ? '<span class="hero-period">' + period + '</span>' : '') + '</span></span>' : '');
+          }
+          if (copy) copy.textContent = plain(follow.description);
+        }
+      }
       if (changed(s, "body")) {
         const content = scope.querySelector<HTMLElement>(
           scope.matches(".studio-manifesto") ? ".studio-manifesto-body" :
           scope.matches(".studio-outlook") ? ".studio-partnership-body" :
           scope.matches(".studio-final") ? ".studio-final-copy" :
           scope.matches(".studio-exploration") ? ".studio-exploration-intro>p" :
-          ".simple-hero-content>p"
+          ".studio-hero-scene-first>p"
         );
         if (content) {
           content.innerHTML = scope.matches(".studio-manifesto,.studio-outlook,.studio-final")
@@ -367,16 +394,10 @@ export function bindConcept(
         }
       }
       if (scope.matches(".studio-exploration") && changed(s, "items")) {
-        const visual = scope.querySelector<HTMLElement>(".studio-story-visual");
-        const entries = scope.querySelector<HTMLElement>(".studio-story-choices");
-        if (visual) {
-          visual.innerHTML = s.items.map((x, j) =>
-            `<figure class="studio-story-frame${j === 0 ? " is-active" : ""}" data-studio-frame="${j}" data-active="${j === 0}"><img src="${escape(safeHref(x.image || "/media/planning.webp"))}" alt="" loading="lazy"></figure>`
-          ).join("") + '<div class="studio-story-visual-mark" aria-hidden="true"><span></span></div>';
-        }
-        if (entries) {
-          entries.innerHTML = s.items.map((x, j) =>
-            `<div class="studio-story-entry${j === 0 ? " is-active" : ""}" data-studio-entry="${j}"><button type="button" class="studio-story-choice" data-studio-choice="${j}" aria-pressed="${j === 0}"><span>${rich(x.title)}</span><span class="studio-story-choice-indicator" aria-hidden="true">↗</span></button><p>${rich(x.description)}</p></div>`
+        const journey = scope.querySelector<HTMLElement>("[data-studio-storyboard]");
+        if (journey) {
+          journey.innerHTML = s.items.map((item, index) =>
+            `<article class="studio-storyboard-chapter"><figure class="studio-storyboard-shot" data-studio-shot="${index}"><img src="${escape(safeHref(item.image || "/media/planning.webp"))}" alt="${escape(item.title)} at SHOWSET" loading="lazy" decoding="async"></figure><div class="studio-storyboard-copy"><h3>${rich(item.title)}</h3><p>${rich(item.description)}</p></div></article>`
           ).join("");
         }
       }
