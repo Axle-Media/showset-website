@@ -43,8 +43,25 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
     '<div class="service-story-stage service-event-triptych">'+images+notes+'</div></div>';
    return section(s,'service-story service-story--events',intro+layout);
   }
+  if(kind==='creative'){
+   // A compact creative canvas, not a pinned three-screen presentation.
+   // Each artwork and complete description stays visible, with a selectable
+   // focus state for mouse, touch and keyboard users.
+   const artboards='<div class="service-creative-artboards" role="group" aria-label="Explore thinking, identity and application">'+s.items.map((item,i)=>
+    '<article class="service-creative-artboard" data-creative-artboard="'+i+'" data-selected="'+(i===1?'true':'false')+'" style="--creative-index:'+i+'">'+
+     '<button class="service-creative-select" type="button" data-creative-select="'+i+'" aria-pressed="'+(i===1?'true':'false')+'" aria-label="Explore '+esc(sceneLabel(item,i))+': '+esc(item.title)+'">'+
+      '<figure class="service-creative-artboard-image">'+photo(item.image||'',item.title)+
+       '<span class="service-creative-corner service-creative-corner--top" aria-hidden="true"></span>'+
+       '<span class="service-creative-corner service-creative-corner--bottom" aria-hidden="true"></span></figure>'+
+     '</button>'+
+     '<div class="service-creative-artboard-copy">'+category(sceneLabel(item,i))+'<h3>'+text(item.title)+'</h3>'+paras(item.description)+'</div>'+
+    '</article>'
+   ).join('')+'</div>';
+   const layout='<div class="service-story-track service-creative-canvas-wrap" data-service-story-track>'+
+    '<div class="service-story-stage service-creative-canvas" data-service-creative-canvas>'+artboards+'</div></div>';
+   return section(s,'service-story service-story--creative',intro+layout);
+  }
   let body='';
-  if(kind==='creative')body='<div class="service-proof-grid">'+s.items.map((item,i)=>'<article class="service-proof" style="--proof-index:'+i+'"><figure class="service-proof-image">'+photo(item.image||'',item.title)+'</figure>'+category(sceneLabel(item,i))+'<h3>'+text(item.title)+'</h3>'+paras(item.description)+'</article>').join('')+'</div>';
   else if(kind==='digital')body='<div class="service-channel-board"><svg class="service-channel-lines" viewBox="0 0 1000 660" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M100 100H650V330H350V560H900"/></svg>'+s.items.map((item,i)=>'<article class="service-channel" data-service-channel="'+i+'"><span class="service-channel-number" aria-hidden="true">0'+(i+1)+'</span><button type="button" class="service-channel-trigger" data-service-channel-trigger="'+i+'" aria-pressed="'+(i===0)+'">'+text(sceneLabel(item,i))+'<span aria-hidden="true">↗</span></button><h3>'+text(item.title)+'</h3>'+paras(item.description)+'</article>').join('')+'</div>';
   else body='<div class="service-scenes">'+s.items.map((item,i)=>'<article class="service-scene" data-service-scene="'+i+'"><figure>'+photo(item.image||'',item.title)+'</figure><div class="service-scene-copy">'+category(sceneLabel(item,i))+heading({headline:item.title,accent:''},'h3','','editorial')+paras(item.description)+'</div></article>').join('')+'</div>'+'<div class="service-film-progress" aria-hidden="true"><i></i></div>';
   return section(s,'service-story service-story--'+kind,intro+'<div class="service-story-track" data-service-story-track><div class="service-story-stage">'+body+'</div></div>');
@@ -87,9 +104,9 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
   else if(s.type==='accordion')markup+=renderExpertise(s);
   else if(s.id==='section-8')markup+=section(s,'service-connected service-gutter',heading(s)+'<nav aria-label="Connected capabilities">'+(Object.keys(serviceRoutes) as ServiceKind[]).filter(k=>k!==kind).map(k=>'<a href="'+serviceRoutes[k]+'">'+serviceNames[k]+' <span aria-hidden="true">↗</span></a>').join('')+'</nav>');
   else if(s.type==='visual'){
-   if(kind==='events'){
-    // Reuse the homepage editorial CTA composition without another full-screen
-    // photograph. Keep authored Events copy, button and the white terminal period.
+   if(kind==='events'||kind==='creative'){
+    // Use the compact homepage editorial CTA for Events and Creative;
+    // preserve authored copy, brand pattern and ivory terminal period.
     const first='<span class="plain-line">'+text(s.headline)+'</span>';
     const accent=s.accent||'';
     const terminal=accent.match(/([.!?])$/);
