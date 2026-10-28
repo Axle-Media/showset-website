@@ -5,6 +5,7 @@ const base=process.env.SHOWSET_BASE_URL||'http://127.0.0.1:3001';
 const checks=[],errors=[];
 const ck=(name,pass,detail)=>{checks.push({name,pass:!!pass,detail});console.log(pass?'PASS':'FAIL',name,detail??'')};
 (async()=>{
+ fs.mkdirSync('qa-results/editorial',{recursive:true});
  const browser=await chromium.launch({channel:process.env.SHOWSET_PLAYWRIGHT_CHANNEL||'chromium',headless:true});
  try{
   for(const width of [1440,800,390,320]){
@@ -28,6 +29,7 @@ const ck=(name,pass,detail)=>{checks.push({name,pass:!!pass,detail});console.log
    ck('Studio keyboard focus selects photo '+width,await page.locator('[data-studio-choice="1"]').getAttribute('aria-pressed')==='true');
    ck('Studio CTA links to contact '+width,await page.locator('.view.is-current .studio-final .editorial-action').getAttribute('href')==='/contact/');
    ck('Studio viewport fits '+width,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+   if([1440,390].includes(width)) await page.screenshot({path:'qa-results/editorial/studio-'+width+'.png',fullPage:true});
    await page.goto(base+'/our-work/');
    await page.waitForSelector('[data-concept-ready="true"]');
    ck('Work curated journey '+width,await page.locator('.view.is-current[data-view="work"]>section').count()===4);
@@ -42,6 +44,7 @@ const ck=(name,pass,detail)=>{checks.push({name,pass:!!pass,detail});console.log
    ck('Work CTA links to contact '+width,await page.locator('.view.is-current .work-final .editorial-action').getAttribute('href')==='/contact/');
    ck('Work viewport fits '+width,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
    ck('All Work information visible without hover '+width,await page.locator('.view.is-current .work-feature p').evaluateAll(nodes=>nodes.length===3&&nodes.every(n=>getComputedStyle(n).opacity==='1'&&getComputedStyle(n).visibility==='visible')));
+   if([1440,390].includes(width)) await page.screenshot({path:'qa-results/editorial/work-'+width+'.png',fullPage:true});
    await context.close();
   }
   ck('No page errors',errors.length===0,errors);
