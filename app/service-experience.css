@@ -41,10 +41,30 @@
 .service-art-arrow{position:absolute;left:20%;top:5%;color:var(--teal);font:500 clamp(220px,33vw,520px)/1 var(--display);transform:rotate(-8deg)}
 .service-art-label{position:absolute;right:10%;font-family:var(--display);font-size:clamp(19px,2.4vw,38px);font-weight:600;border-bottom:1px solid var(--service-line);padding:12px 0;min-width:55%}
 .service-art-label-0{top:45%;right:0}.service-art-label-1{top:62%;right:12%}.service-art-label-2{top:79%;right:24%}
-/* Production uses a deliberate widescreen crop within the full-screen opening. */
-.service-hero--production{align-items:flex-end;padding-top:calc(var(--header-height) + 90px);padding-bottom:100px}
-.service-hero--production .service-hero-art{inset:calc(var(--header-height) + 40px) var(--gutter) 80px 28%;z-index:-1}
-.service-hero--production .service-hero-art:after{background:linear-gradient(90deg,rgba(3,17,31,.8),rgba(3,17,31,.1)),linear-gradient(0deg,rgba(3,17,31,.65),transparent 70%)}
+/* Content & Production opens as a full-bleed cinematic photograph. Unlike
+   Creative's art-directed floating crop, the image fills the entire viewport. */
+.service-hero--production{
+  min-height:100svh;
+  align-items:flex-end;
+  padding-top:calc(var(--header-height) + 88px);
+  padding-bottom:clamp(72px,9vh,120px);
+  background:#071e30;
+}
+.service-hero--production .service-hero-art{
+  inset:0;
+  z-index:-2;
+  transform:none;
+}
+.service-hero--production .service-hero-art img{
+  object-fit:cover;
+  object-position:center 45%;
+}
+.service-hero--production .service-hero-art:after{
+  background:
+    linear-gradient(90deg,rgba(3,17,31,.86) 0%,rgba(3,17,31,.56) 43%,rgba(3,17,31,.15) 100%),
+    linear-gradient(0deg,rgba(3,17,31,.78) 0%,transparent 66%,rgba(3,17,31,.22) 100%);
+}
+.service-hero--production .service-hero-content{position:relative;z-index:1}
 .service-hero--production .service-heading{max-width:11em}
 .service-editorial-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,3.6vw,68px);align-items:start}
 .service-editorial-row>*{min-width:0}
@@ -270,7 +290,10 @@
  .service-hero{min-height:100svh;padding:calc(var(--header-height) + 70px) var(--gutter) 105px}.service-hero .service-heading{font-size:clamp(40px,8.6vw,65px);max-width:13em}.service-hero-copy{max-width:650px}.service-hero-actions{gap:22px;margin-top:28px}
  .service-hero--creative{min-height:0;display:block;padding-bottom:70px}.service-hero--creative .service-hero-content{width:100%;position:relative}.service-hero--creative .service-hero-art{position:relative;inset:auto;width:86%;height:clamp(260px,50vw,430px);margin:0 0 50px auto;transform:none;z-index:0}
  .service-hero--digital{display:block;min-height:100svh}.service-hero--digital .service-hero-content{width:100%}.service-digital-art{position:relative;inset:auto;height:250px;width:100%;margin-bottom:45px}.service-art-arrow{font-size:300px;left:4%;top:-65px}.service-art-label{font-size:23px;min-width:40%;padding:5px 0}.service-art-label-0{top:20%;right:0}.service-art-label-1{top:46%;right:10%}.service-art-label-2{top:72%;right:20%}.service-art-orbit{width:75%;top:-35%;left:25%}
- .service-hero--production .service-hero-art{inset:calc(var(--header-height) + 30px) 0 0 14%}.service-hero--production .service-hero-art:after{background:linear-gradient(90deg,rgba(3,17,31,.85),rgba(3,17,31,.15)),linear-gradient(0deg,rgba(3,17,31,.8),transparent)}
+ .service-hero--production{min-height:100svh;padding-top:calc(var(--header-height) + 78px);padding-bottom:clamp(64px,10vh,100px)}
+  .service-hero--production .service-hero-art{inset:0}
+  .service-hero--production .service-hero-art img{object-position:57% center}
+  .service-hero--production .service-hero-art:after{background:linear-gradient(90deg,rgba(3,17,31,.83) 0%,rgba(3,17,31,.40) 100%),linear-gradient(0deg,rgba(3,17,31,.86) 0%,rgba(3,17,31,.18) 66%,rgba(3,17,31,.27) 100%)}
  .service-editorial-row{grid-template-columns:1fr;gap:25px}.service-intro .service-heading{max-width:18em}.service-section-head{padding-bottom:40px}.service-story-stage{overflow:visible}
  .service-scene{display:flex;flex-direction:column;min-height:0;margin-bottom:35px}.service-scene figure{width:100%;height:65vw;min-height:0}.service-scene-copy{width:100%;padding:35px var(--gutter) 45px}.service-scene-copy h3{font-size:34px}
  .service-proof-grid{grid-template-columns:1fr;gap:55px;padding:0 var(--gutter) 65px}.service-proof-image,.service-proof:nth-child(2) .service-proof-image{height:65vw;max-height:520px}
@@ -281,7 +304,7 @@
  
  .service-work-card{grid-template-columns:1fr;gap:30px}.service-work-card figure{aspect-ratio:1.2}.service-work-card h3{font-size:34px}.service-connected nav{display:block}.service-connected a{justify-content:space-between;padding:17px 0}.service-close{min-height:85svh;padding:90px var(--gutter)}.service-close .service-heading{font-size:clamp(36px,7vw,58px)}
 }
-@media(max-width:480px){.service-hero .service-heading{font-size:clamp(35px,9.4vw,46px)}.service-hero-actions{align-items:flex-start;flex-direction:column;gap:18px}.service-hero--events{min-height:900px;min-height:max(100svh,780px)}.service-hero--production{min-height:max(100svh,800px)}.service-group-list,.service-experience--creative .service-group-list{grid-template-columns:1fr}.service-process--creative li{grid-template-columns:70px 1fr;gap:20px}.service-process--creative .service-process-number{font-size:65px}.service-scene-copy h3{font-size:30px}.service-work-caption{font-size:12px;left:18px;right:18px}.service-close .service-heading{font-size:36px}}
+@media(max-width:480px){.service-hero .service-heading{font-size:clamp(35px,9.4vw,46px)}.service-hero-actions{align-items:flex-start;flex-direction:column;gap:18px}.service-hero--events{min-height:900px;min-height:max(100svh,780px)}.service-hero--production{min-height:100svh}.service-group-list,.service-experience--creative .service-group-list{grid-template-columns:1fr}.service-process--creative li{grid-template-columns:70px 1fr;gap:20px}.service-process--creative .service-process-number{font-size:65px}.service-scene-copy h3{font-size:30px}.service-work-caption{font-size:12px;left:18px;right:18px}.service-close .service-heading{font-size:36px}}
 @media(prefers-reduced-motion:reduce){.service-experience *{animation:none!important;transition:none!important}.service-experience .service-hero-content{translate:none!important;opacity:1!important}}
 [data-static-motion] .service-experience *{animation:none!important;transition:none!important}
 
