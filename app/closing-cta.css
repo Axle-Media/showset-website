@@ -11,6 +11,7 @@
   .editorial-page.studio-rebuilt .studio-final.studio-final-pattern
 ){
   --showset-close-font:clamp(37px,4.15vw,68px);
+  --showset-close-inline:max(var(--gutter),calc((100vw - 1500px)/2));
   --showset-close-top:clamp(78px,7vw,113px);
   --showset-close-bottom:clamp(75px,7vw,115px);
   --showset-close-content-width:850px;
@@ -26,7 +27,7 @@
   align-items:initial;
   box-sizing:border-box;
   min-height:clamp(420px,37vw,565px);
-  padding:var(--showset-close-top) var(--gutter) var(--showset-close-bottom);
+  padding:var(--showset-close-top) var(--showset-close-inline) var(--showset-close-bottom);
   background:linear-gradient(116deg,#0c2b42 0%,#0b293f 64%,#09253b 100%);
   color:#FAF9FD;
 }
