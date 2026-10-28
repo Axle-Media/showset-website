@@ -1523,9 +1523,9 @@
       {
         "id": "section-3",
         "type": "work",
-        "headline": "Selected",
-        "accent": "stories.",
-        "body": "Explore the work and the thinking behind it. New stories will appear here as they're published.",
+        "headline": "",
+        "accent": "",
+        "body": "",
         "image": "",
         "pattern": false,
         "reveal": true,
@@ -1706,7 +1706,9 @@
     ],
     "caseExperience": {
       "demo": true,
-      "tags": ["Events"],
+      "tags": [
+        "Events"
+      ],
       "openingTitle": "A night made for the spotlight.",
       "openingBody": "A cinematic concept study inspired by the world of the Academy Awards. The art of arrival, the electricity of anticipation and a room designed for unforgettable moments.",
       "openingImage": "/media/evening.webp",
@@ -1910,7 +1912,9 @@
     ],
     "caseExperience": {
       "demo": true,
-      "tags": ["Creative"],
+      "tags": [
+        "Creative"
+      ],
       "openingTitle": "Made to be remembered.",
       "openingBody": "A visual study of how identity becomes something people recognise without having to think twice. This fictional identity study explores a visual system in print, packaging and space.",
       "openingImage": "/media/cases/identity-hero.webp",
@@ -2083,7 +2087,9 @@
     ],
     "caseExperience": {
       "demo": true,
-      "tags": ["Content"],
+      "tags": [
+        "Content"
+      ],
       "openingTitle": "Behind every moment.",
       "openingBody": "A creative study celebrating the work that makes a live experience run like it was meant to. This fictional production study explores the preparation behind a live stage experience.",
       "openingImage": "/media/cases/production-hero.webp",
