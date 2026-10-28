@@ -45,7 +45,7 @@ const capabilityLayout=await p.locator('.service-expertise-grid').evaluate(grid=
   periods:groups.every(g=>g.querySelector('h3 .service-capability-period')?.textContent==='.'),
   tealPeriods:groups.every(g=>getComputedStyle(g.querySelector('.service-capability-period')).color==='rgb(18, 186, 175)'),
   rules:groups.every(g=>{const rule=getComputedStyle(g.querySelector('h3'),'::after');return rule.content!=='none'&&rule.width==='52px'&&rule.height==='2px'&&rule.backgroundColor==='rgb(18, 186, 175)'}),
-  cards:groups.every(g=>{const style=getComputedStyle(g);return style.borderTopWidth==='1px'&&parseFloat(style.borderRadius)>=8&&style.backgroundColor!=='rgba(0, 0, 0, 0)'}),
+  cards:groups.every(g=>{const style=getComputedStyle(g);return parseFloat(style.borderTopWidth)>0&&parseFloat(style.borderTopWidth)<=1&&parseFloat(style.borderRadius)>=8&&style.backgroundColor!=='rgba(0, 0, 0, 0)'}),
   headings:groups.flatMap(g=>[...g.querySelectorAll(':scope > h3')].map(h=>({fontSize:getComputedStyle(h).fontSize,letterSpacing:getComputedStyle(h).letterSpacing}))),
   fontSizes:names.map(el=>getComputedStyle(el).fontSize),
   allVisible:names.every(el=>el.getBoundingClientRect().height>8&&getComputedStyle(el).visibility==='visible'),
@@ -77,12 +77,12 @@ if(slug==='events-experiences'){
    section:style.backgroundColor,
    cards:[...section.querySelectorAll('.service-capability-group')].map(card=>{
     const c=getComputedStyle(card);
-    return {background:c.backgroundColor,border:c.borderTopColor};
+    return {background:c.backgroundColor,border:c.borderTopColor,width:parseFloat(c.borderTopWidth)};
    })
   };
  });
  ck('Events capability cards use the approved navy palette and white borders '+tag,
-   palette.section==='rgb(13, 47, 73)'&&palette.cards.length===4&&palette.cards.every(card=>card.background==='rgb(21, 59, 84)'&&card.border==='rgb(255, 255, 255)'),palette);
+   palette.section==='rgb(13, 47, 73)'&&palette.cards.length===4&&palette.cards.every(card=>card.background==='rgb(21, 59, 84)'&&card.border==='rgb(255, 255, 255)'&&Math.abs(card.width-0.75)<0.02),palette);
 }
 
 const expectedGrid=slug==='events-experiences'&&width>=1180?4:width>640?2:1;
