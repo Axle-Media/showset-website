@@ -49,5 +49,6 @@ check 400 "Reject malformed JSON" -X POST -H "Origin: $origin" -H "Content-Type:
 check 422 "Reject invalid email" -X POST -H "Origin: $origin" -H "Content-Type: application/json" --data '{"name":"Visitor","email":"not-email","message":"hello","website":""}'
 check 422 "Reject honeypot" -X POST -H "Origin: $origin" -H "Content-Type: application/json" --data '{"name":"Visitor","email":"visitor@example.com","message":"hello","website":"spam"}'
 check 422 "Reject missing required message" -X POST -H "Origin: $origin" -H "Content-Type: application/json" --data '{"name":"Visitor","email":"visitor@example.com","message":"","website":""}'
+check 422 "Reject blank name" -X POST -H "Origin: $origin" -H "Content-Type: application/json" --data '{"name":"","email":"visitor@example.com","message":"hello","website":""}'
 check 429 "Rate limit repeated requests" -X POST -H "Origin: $origin" -H "Content-Type: application/json" --data '{"name":"Visitor","email":"visitor@example.com","message":"hello","website":""}'
 echo "PASS PHP handler security smoke tests (no mail sent)"
