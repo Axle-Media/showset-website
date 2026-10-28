@@ -89,12 +89,31 @@ const definitions:Record<ServiceKind,GroupDefinition[]>={
   ]}
  ],
  production:[
-  {title:'Film & Content',ids:[
-   'motion-graphics--video---mul-0',
-   'photography---videography-1'
+  {title:'Concept & Pre-Production',ids:[
+   'production-concepts-20261028',
+   'production-scripting-20261028',
+   'production-planning-20261028',
+   'production-shoot-design-20261028'
   ]},
-  {title:'Technical Production',ids:[
-   'lighting--sound---audiovisua-2'
+  {title:'Film & Photography',ids:[
+   'photography---videography-1',
+   'production-branded-film-20261028',
+   'production-event-coverage-20261028',
+   'production-content-shoot-20261028'
+  ]},
+  {title:'Motion & Post-Production',ids:[
+   'motion-graphics--video---mul-0',
+   'production-animation-20261028',
+   'production-editing-20261028',
+   'production-cutdowns-20261028'
+  ]},
+  {title:'Live & Technical Production',ids:[
+   'lighting--sound---audiovisua-2',
+   'production-live-streaming-20261028',
+   'production-multicamera-20261028',
+   'production-hybrid-20261028',
+   'production-live-visuals-20261028',
+   'production-stream-recording-20261028'
   ]}
  ]
 };
