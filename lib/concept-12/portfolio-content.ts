@@ -17,7 +17,7 @@ export function portfolioEntries(section: Block, catalog: Record<string, PageDat
   const caseByRoute = new Map(cases.map(page => [page.route, page]));
   const curated = section.items
     .filter(item => item.href && caseByRoute.has(item.href))
-    .map(item => ({ page: caseByRoute.get(item.href)!, item }));
+    .map(item => ({ page: caseByRoute.get(item.href || "")!, item }));
   const seen = new Set(curated.map(entry => entry.page.route));
   const rest = cases.filter(page => !seen.has(page.route))
     .map(page => ({ page, item: undefined }));
