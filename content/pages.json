@@ -2139,11 +2139,11 @@
         "type": "contact",
         "headline": "Something",
         "accent": "brewing?",
-        "body": "A fully formed brief is welcome. So is a wildly ambitious idea, a rough sketch or a sentence that starts with “This might sound crazy...” We are listening.",
-        "image": "",
-        "pattern": true,
+        "body": "Big idea, rough sketch or something you haven't quite figured out? We're listening.",
+        "image": "/media/planning.webp",
+        "pattern": false,
         "reveal": true,
-        "buttonLabel": "Send the idea",
+        "buttonLabel": "Prepare the email",
         "buttonHref": "",
         "secondaryLabel": "",
         "secondaryHref": "",
@@ -2207,12 +2207,12 @@
         ],
         "speed": 6,
         "formTitle": "Tell us the interesting bit.",
-        "helperText": "You do not need to have all the answers. That is what the conversation is for. This preview form does not send messages."
+        "helperText": "You don't need all the answers. This opens your email app, where you can review and send your message."
       }
     ],
     "seo": {
       "title": "Contact",
-      "description": "Tell us about your next event, brand, website, campaign or production idea. Start a conversation with SHOWSET."
+      "description": "Start a conversation with SHOWSET about your next event, brand, digital project or production. Big ideas and rough sketches welcome."
     }
   },
   "services": {
