@@ -331,15 +331,17 @@ export function bindConcept(
   } else if (["events", "creative", "digital", "production"].includes(key)) {
     renderServiceExperience(host,page,key as ServiceKind,catalog,mark);
   } else if (key === "studio") {
-    const scopes = [
-      ".studio-hero",
-      ".studio-manifesto",
-      ".studio-exploration",
-      ".studio-outlook",
-      ".studio-final",
-    ];
+    // Stable IDs keep older published Studio records from shifting the page
+    // composition if they still contain archived FAQ/process sections.
+    const scopes: Record<string, string> = {
+      "section-1": ".studio-hero",
+      "section-2": ".studio-manifesto",
+      "section-3": ".studio-exploration",
+      "section-5": ".studio-outlook",
+      "section-7": ".studio-final",
+    };
     page.sections.forEach((s, i) => {
-      const scope = host.querySelector<HTMLElement>(scopes[i] || "__none__");
+      const scope = host.querySelector<HTMLElement>(scopes[s.id] || "__none__");
       mark(scope, s);
       if (!scope) return;
       const h = scope.querySelector("h1,h2");
