@@ -37,14 +37,29 @@ const definitions:Record<ServiceKind,GroupDefinition[]>={
   ]}
  ],
  creative:[
-  {title:'Strategy & Identity',ids:[
+  {title:'Brand & Identity',ids:[
    'brand-strategy---identity-0',
-   'marketing-strategy---creativ-4'
+   'marketing-strategy---creativ-4',
+   'creative-naming-20261028',
+   'creative-brand-guidelines-20261028'
   ]},
-  {title:'Design & Production',ids:[
+  {title:'Graphic & Creative',ids:[
    'graphic-design---creative-pr-1',
+   'creative-campaign-art-direction-20261028',
+   'creative-presentations-20261028',
+   'creative-illustration-20261028'
+  ]},
+  {title:'Print & Packaging',ids:[
    'packaging--print---retail-de-2',
-   'experiential---environmental-3'
+   'creative-print-collateral-20261028',
+   'creative-retail-pos-20261028',
+   'creative-production-artwork-20261028'
+  ]},
+  {title:'Spaces & Experiences',ids:[
+   'experiential---environmental-3',
+   'creative-event-branding-20261028',
+   'creative-spatial-visuals-20261028',
+   'creative-branded-installations-20261028'
   ]}
  ],
  digital:[
