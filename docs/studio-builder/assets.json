@@ -1,0 +1,146 @@
+[
+  {
+    "path": "public/favicon.ico",
+    "bytes": 8656
+  },
+  {
+    "path": "public/local-studio-backup.html",
+    "bytes": 4395
+  },
+  {
+    "path": "public/brand/approved-icon.png",
+    "bytes": 2078
+  },
+  {
+    "path": "public/brand/approved-wordmark.png",
+    "bytes": 6169
+  },
+  {
+    "path": "public/brand/closing-pattern.svg",
+    "bytes": 13579
+  },
+  {
+    "path": "public/brand/pattern.svg",
+    "bytes": 13583
+  },
+  {
+    "path": "public/brand/showset-approved.svg",
+    "bytes": 15216
+  },
+  {
+    "path": "public/concept-12/1b616f1453439459e46f.svg",
+    "bytes": 13534
+  },
+  {
+    "path": "public/concept-12/7f12ec7b20911ecee355.webp",
+    "bytes": 158338
+  },
+  {
+    "path": "public/concept-12/857bfe33201dcedbc6c9.webp",
+    "bytes": 153342
+  },
+  {
+    "path": "public/concept-12/900abdb6d28df2c511ea.webp",
+    "bytes": 144934
+  },
+  {
+    "path": "public/concept-12/aa01c56d7f9e7726002f.webp",
+    "bytes": 161150
+  },
+  {
+    "path": "public/concept-12/bb1b857a951a4915479a.svg",
+    "bytes": 13583
+  },
+  {
+    "path": "public/concept-12/cacc0a760b075d1ccf18.webp",
+    "bytes": 147466
+  },
+  {
+    "path": "public/concept-12/f778ffc756368369e22f.webp",
+    "bytes": 163572
+  },
+  {
+    "path": "public/fonts/Manrope-OFL.txt",
+    "bytes": 4480
+  },
+  {
+    "path": "public/fonts/Poppins-OFL.txt",
+    "bytes": 4478
+  },
+  {
+    "path": "public/fonts/showset-0.woff2",
+    "bytes": 24836
+  },
+  {
+    "path": "public/fonts/showset-1.woff2",
+    "bytes": 7884
+  },
+  {
+    "path": "public/fonts/showset-2.woff2",
+    "bytes": 7748
+  },
+  {
+    "path": "public/fonts/showset-3.woff2",
+    "bytes": 8000
+  },
+  {
+    "path": "public/fonts/showset-4.woff2",
+    "bytes": 7816
+  },
+  {
+    "path": "public/fonts/showset-5.woff2",
+    "bytes": 7824
+  },
+  {
+    "path": "public/media/brand.webp",
+    "bytes": 158338
+  },
+  {
+    "path": "public/media/details.webp",
+    "bytes": 163572
+  },
+  {
+    "path": "public/media/evening.webp",
+    "bytes": 144934
+  },
+  {
+    "path": "public/media/planning.webp",
+    "bytes": 153342
+  },
+  {
+    "path": "public/media/rigging.webp",
+    "bytes": 147466
+  },
+  {
+    "path": "public/media/sound.webp",
+    "bytes": 161150
+  },
+  {
+    "path": "public/media/studio-cta-pattern.svg",
+    "bytes": 13582
+  },
+  {
+    "path": "public/media/cases/identity-detail.webp",
+    "bytes": 159926
+  },
+  {
+    "path": "public/media/cases/identity-hero.webp",
+    "bytes": 272060
+  },
+  {
+    "path": "public/media/cases/identity-process.webp",
+    "bytes": 303940
+  },
+  {
+    "path": "public/media/cases/production-detail.webp",
+    "bytes": 150836
+  },
+  {
+    "path": "public/media/cases/production-hero.webp",
+    "bytes": 212204
+  },
+  {
+    "path": "public/media/cases/production-process.webp",
+    "bytes": 186592
+  }
+]
