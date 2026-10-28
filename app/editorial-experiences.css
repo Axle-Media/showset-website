@@ -7,7 +7,7 @@
 .editorial-page .editorial-hero .simple-bg img{width:100%;height:100%;object-fit:cover;object-position:var(--c12-crop,center);animation:none;transform:scale(1.015)}
 .editorial-page .editorial-hero .simple-shade{z-index:-1;background:linear-gradient(90deg,rgba(3,17,31,.88) 0%,rgba(3,17,31,.46) 62%,rgba(3,17,31,.14)),linear-gradient(0deg,rgba(3,17,31,.68),transparent 70%)}
 .editorial-page .editorial-hero .simple-hero-content{max-width:1180px;padding:calc(var(--header-height) + 100px) var(--gutter) clamp(75px,11vh,140px)}
-.editorial-page .editorial-hero h1{font-size:var(--homepage-hero-size,clamp(42px,5vw,72px));line-height:var(--refine-heading-leading,1.06)!important;max-width:1080px;margin:0 0 28px;font-weight:var(--refine-heading-weight,650)}
+.editorial-page .editorial-hero h1{font-size:var(--homepage-hero-size,clamp(40px,4.8vw,67px));line-height:var(--refine-heading-leading,1.06)!important;max-width:1080px;margin:0 0 28px;font-weight:var(--refine-heading-weight,650)}
 .editorial-page .editorial-hero .accent-line{color:#12BAAF}
 .editorial-page .hero-period{color:#FAF9FD}
 .editorial-page .editorial-hero .simple-hero-content>p{max-width:610px;margin:0;color:rgba(250,249,253,.88);font-size:clamp(15px,1.2vw,18px);line-height:1.65}
@@ -71,7 +71,8 @@
 .editorial-page .work-page-gallery .case-index-item:nth-child(2) .case-index-image{height:clamp(320px,43vw,590px)}
 .editorial-page .work-page-gallery .case-index-item:nth-child(3) .case-index-image{height:clamp(320px,42vw,560px)}
 .editorial-page .work-page-gallery .case-index-image:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,15,27,.24));pointer-events:none}
-.editorial-page .work-page-gallery .case-index-image img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.012);transition:transform .9s cubic-bezier(.2,.75,.2,1),filter .75s}
+.editorial-page .work-page-gallery .case-index-image img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.045);transition:transform .9s cubic-bezier(.2,.75,.2,1),filter .75s}
+.editorial-page .work-page-gallery .work-feature.is-exposed .case-index-image img{transform:scale(1.012)}
 .editorial-page .work-page-gallery .case-index-item:is(:hover,:focus-visible) .case-index-image img{transform:scale(1.055);filter:saturate(1.07)}
 .editorial-page .work-page-gallery .case-index-info{display:block;border:0;margin:0;padding:0;min-width:0}
 .editorial-page .work-feature-top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(250,249,253,.25);padding:0 0 15px;margin-bottom:clamp(24px,4vw,50px)}
