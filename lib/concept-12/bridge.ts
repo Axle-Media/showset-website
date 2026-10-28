@@ -102,6 +102,16 @@ export function bindConcept(
     if (!changed(s, "headline") && !changed(s, "accent")) return;
     const e = host.querySelector(selector);
     if (!e) return;
+    if (e.classList.contains("studio-editorial-heading") || e.classList.contains("work-intro-title")) {
+      // Keep Studio edits in the same two-line typography as the published page.
+      // Editorial punctuation stays ivory; only the wording is turquoise.
+      const punctuation = s.accent.match(/[.!?]$/)?.[0] || "";
+      const accent = punctuation ? s.accent.slice(0, -1) : s.accent;
+      e.innerHTML = '<span class="plain-line">' + rich(s.headline) + '</span>' +
+        (s.accent ? '<span class="plain-line accent-text">' + rich(accent) +
+          (punctuation ? '<span class="service-period">' + punctuation + '</span>' : '') + '</span>' : '');
+      return;
+    }
     if (e.classList.contains("services-panel-heading")) {
       const head = rich(s.headline).replace(/\.$/, "");
       const period = s.headline.endsWith(".") ? '<span class="service-heading-period">.</span>' : "";
