@@ -103,6 +103,17 @@ export function bindConcept(
     if (!changed(s, "headline") && !changed(s, "accent")) return;
     const e = host.querySelector(selector);
     if (!e) return;
+    if (e.classList.contains("studio-scroll-heading")) {
+      // On photography, preserve the approved two-tone rectangular wipe.
+      // The final punctuation is always ivory rather than turquoise.
+      const period = s.accent.trimEnd().match(/[.!?]$/)?.[0] || "";
+      const accent = period ? s.accent.trimEnd().slice(0, -1) : s.accent;
+      e.innerHTML = '<span class="wipe-line"><span>' + rich(s.headline) + '</span></span>' +
+        (s.accent ? '<span class="wipe-line accent-line"><span>' + rich(accent) +
+        (period ? '<span class="hero-period">' + period + '</span>' : '') +
+        '</span></span>' : '');
+      return;
+    }
     if (e.classList.contains("studio-editorial-heading") || e.classList.contains("work-intro-title") || e.classList.contains("contact-editorial-heading")) {
       // Keep Studio edits in the same two-line typography as the published page.
       // Editorial punctuation stays ivory; only the wording is turquoise.
@@ -352,14 +363,30 @@ export function bindConcept(
         heading("#" + id, s);
       }
       if (s.type === "pagehero" && changed(s, "image"))
-        image(".studio-hero .simple-bg img", s.image);
+        image(".studio-hero .studio-hero-photo img", s.image);
+      if (s.type === "pagehero" && changed(s, "items") && s.items[0]) {
+        const second = scope.querySelector<HTMLElement>("[data-studio-hero-follow]");
+        const follow = s.items[0];
+        if (second) {
+          const subtitle = second.querySelector("h2");
+          const copy = second.querySelector("p");
+          if (subtitle) {
+            const period = (follow.accent || "").trimEnd().match(/[.!?]$/)?.[0] || "";
+            const accent = period ? (follow.accent || "").trimEnd().slice(0, -1) : (follow.accent || "");
+            subtitle.innerHTML = '<span class="wipe-line"><span>' + rich(follow.title) + '</span></span>' +
+              (follow.accent ? '<span class="wipe-line accent-line"><span>' + rich(accent) +
+              (period ? '<span class="hero-period">' + period + '</span>' : '') + '</span></span>' : '');
+          }
+          if (copy) copy.textContent = plain(follow.description);
+        }
+      }
       if (changed(s, "body")) {
         const content = scope.querySelector<HTMLElement>(
           scope.matches(".studio-manifesto") ? ".studio-manifesto-body" :
           scope.matches(".studio-outlook") ? ".studio-partnership-body" :
           scope.matches(".studio-final") ? ".studio-final-copy" :
           scope.matches(".studio-exploration") ? ".studio-exploration-intro>p" :
-          ".simple-hero-content>p"
+          ".studio-hero-scene-first>p"
         );
         if (content) {
           content.innerHTML = scope.matches(".studio-manifesto,.studio-outlook,.studio-final")
