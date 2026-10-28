@@ -51,7 +51,7 @@ const isStill=x=>!x.missing&&x.opacity==='1'&&x.transform==='none'&&x.clip==='no
     if(['events-experiences','creative-design','digital-marketing','content-production'].includes(slug)){
      const editorial=await sample(page,scope+' [data-service-reveal="editorial"]');
      ck('Service editorial headlines never mask '+path+' '+width,editorial.length>0&&editorial.every(isStill),editorial);
-     if(['events-experiences','creative-design','digital-marketing'].includes(slug)){
+     if(['events-experiences','creative-design','digital-marketing','content-production'].includes(slug)){
        const closing=await page.locator(scope+' .service-close--editorial h2').evaluate(el=>({
          first:getComputedStyle(el.querySelector('.plain-line:first-child')).color,
          second:getComputedStyle(el.querySelector('.plain-line:last-child')).color,
