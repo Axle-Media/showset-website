@@ -1,4 +1,4 @@
-// Canonical visual parity contract for all four services and Our Studio.
+// Canonical visual parity contract for all four services, Our Studio and Our Work.
 // Browser-computed values must match the Studio reference at each viewport.
 const { chromium }=require(process.env.SHOWSET_PLAYWRIGHT_MODULE||'playwright');
 const fs=require('node:fs');
@@ -8,7 +8,8 @@ const routes=[
   ['/creative-design/','.service-close--editorial','.service-heading','.service-close-description p','.end-link.solid-link'],
   ['/digital-marketing/','.service-close--editorial','.service-heading','.service-close-description p','.end-link.solid-link'],
   ['/content-production/','.service-close--editorial','.service-heading','.service-close-description p','.end-link.solid-link'],
-  ['/our-studio/','.studio-final-pattern','.studio-editorial-heading','.studio-final-copy p','.editorial-action.solid-link']
+  ['/our-studio/','.studio-final-pattern','.studio-editorial-heading','.studio-final-copy p','.editorial-action.solid-link'],
+  ['/our-work/','.work-final.studio-final-pattern','.studio-editorial-heading','.studio-final-copy p','.editorial-action.solid-link']
 ];
 const checks=[];
 const pass=(name,ok,data)=>{checks.push({name,pass:!!ok,data});console.log(ok?'PASS':'FAIL',name,ok?'':JSON.stringify(data));};
@@ -61,14 +62,15 @@ function near(a,b,eps=1.5){return Number.isFinite(a)&&Number.isFinite(b)&&Math.a
      pass('Closing CTA no horizontal overflow '+path+' @'+width,result.documentOverflow<=1,result.documentOverflow);
    }
    if([390,1440,1895].includes(width)&&!result.missing){
-    await page.locator(section).scrollIntoViewIfNeeded();
-    await page.locator(section).screenshot({path:'qa-results/closing-cta/'+path.replaceAll('/','').replaceAll('-','_')+'-'+width+'.png'});
+    await page.locator('.view.is-current').locator(section).scrollIntoViewIfNeeded();
+    await page.locator('.view.is-current').locator(section).screenshot({path:'qa-results/closing-cta/'+path.replaceAll('/','').replaceAll('-','_')+'-'+width+'.png'});
    }
    screenshots.push(result);
    await context.close();
   }
   const studio=screenshots[4];
-  for(const entry of screenshots.slice(0,4)){
+  for(const [i,entry] of screenshots.entries()){
+   if(i===4)continue; // Studio is the approved reference for every other page.
    if(entry.missing||studio.missing)continue;
    const metrics=['headingFont','headingWeight','headingLineHeight','headingTracking','headingTextAlign',
       'bodyFont','bodyLineHeight','buttonFont','buttonRadius','buttonColor','buttonTextColor','buttonTracking','buttonLineHeight','buttonBorder',

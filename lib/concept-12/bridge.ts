@@ -424,9 +424,7 @@ export function bindConcept(
         }
       } else if (s.type === "work") {
         mark(host.querySelector(".work-page-gallery"), s);
-        if (changed(s, "headline") || changed(s, "accent"))
-          text(".work-index-eyebrow", (s.headline + " " + s.accent).trim().replace(/[.!?]$/, ""));
-        if (changed(s, "body")) text(".work-index-header>p", s.body);
+        // Our Work starts at the filters; the obsolete editorial header was removed.
         renderPortfolioIndex(host, s, catalog);
       } else if (s.type === "cta") {
         mark(host.querySelector(".work-final"), s);
