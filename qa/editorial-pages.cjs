@@ -54,7 +54,7 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
     layer:getComputedStyle(el,'::before').zIndex
   }));
   ck('Studio approved oversized nonrepeating graphic behind closing CTA '+width,
-    ending.heading?.includes('complicated idea')&&ending.background.includes('bb1b857a951a4915479a.svg')&&ending.repeat==='no-repeat'&&ending.layer==='0',
+    ending.heading?.includes('complicated idea')&&ending.background.includes('studio-cta-pattern.svg')&&ending.repeat==='no-repeat'&&ending.layer==='0',
     ending);
   ck('Studio CTA links to Contact '+width,await page.locator('.view.is-current .studio-final .editorial-action').getAttribute('href')==='/contact/');
   ck('Studio no horizontal overflow '+width,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
