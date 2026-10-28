@@ -60,6 +60,7 @@ jobs:
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/photo-headline-swipe.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/non-photo-headlines.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/heading-accent-lines.cjs
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/editorial-pages.cjs
       - name: Archive browser QA results
         if: always()
         uses: actions/upload-artifact@v4
@@ -70,6 +71,7 @@ jobs:
             qa-results/photo-headline-swipe.json
             qa-results/non-photo-headlines.json
             qa-results/heading-accent-lines.json
+            qa-results/editorial-pages.json
             qa-results/services/
             qa-results/service-studio.json
             qa-results/service-lifecycle.json
