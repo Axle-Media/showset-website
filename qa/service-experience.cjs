@@ -255,7 +255,7 @@ const capabilityLayout=await p.locator('.service-expertise-grid').evaluate(grid=
 const expectedGroupTitles={
  'events-experiences':['Concept & Design','Planning & People','Space & Production','The Experience'],
  'creative-design':['Brand & Identity','Graphic & Creative','Print & Packaging','Spaces & Experiences'],
- 'digital-marketing':['Websites & Digital Experiences','Marketing & Campaigns','Social & Content','Technology & Partnerships'],
+ 'digital-marketing':['Website Development','Marketing & Campaigns','Social & Content','Technology & Partnerships'],
  'content-production':['Concept & Pre-Production','Film & Photography','Motion & Post-Production','Live & Technical Production']
 };
 ck('Cards have plain names, with only the brand full stop '+tag,
