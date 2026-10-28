@@ -35,7 +35,7 @@ if(slug==='events-experiences'){
    &&closing.copy.includes("Got an idea worth getting excited about?")
    &&closing.copy.includes("Bring us the possibilities.")
    &&closing.button.includes("Bring us your brief")
-   &&closing.pattern.includes('closing-pattern.svg'),closing);
+   &&closing.pattern.includes('studio-cta-pattern.svg')&&closing.patternRight==='0px',closing);
 }
 
 if(slug==='digital-marketing'){
