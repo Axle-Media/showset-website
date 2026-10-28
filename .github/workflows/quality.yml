@@ -47,6 +47,8 @@ jobs:
             if curl --fail --silent http://127.0.0.1:3001/ >/dev/null; then break; fi
             sleep 1
           done
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/editorial-pages.cjs
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/heading-accent-lines.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/home-work-carousel.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/carousel-playback.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/header-navigation-alignment.cjs
@@ -61,8 +63,6 @@ jobs:
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/service-motion-design.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/photo-headline-swipe.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/non-photo-headlines.cjs
-          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/heading-accent-lines.cjs
-          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/editorial-pages.cjs
       - name: Archive browser QA results
         if: always()
         uses: actions/upload-artifact@v4
