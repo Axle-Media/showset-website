@@ -15,7 +15,7 @@ const targets = [
   ['/work/made-to-be-remembered/', '.case-opening-first .block-heading'],
   ['/events-experiences/', '.service-hero [data-service-reveal="photo"]'],
   ['/content-production/', '.service-hero [data-service-reveal="photo"]'],
-  ['/content-production/', '.service-close [data-service-reveal="photo"]'],
+  
   ['/our-studio/', '.simple-hero .block-heading'],
   ['/our-work/', '.simple-hero .block-heading'],
 ];
@@ -66,6 +66,11 @@ async function styles(page, selector) {
     await page.goto(base + '/digital-marketing/');
     await page.waitForSelector('[data-concept-ready="true"]');
     ck('Digital closing is a static editorial section rather than a photo hero',
+      await page.locator('.service-close--editorial').count()===1
+      &&await page.locator('.service-close [data-service-reveal="photo"]').count()===0);
+    await page.goto(base + '/content-production/');
+    await page.waitForSelector('[data-concept-ready="true"]');
+    ck('Production CTA is editorial, not a second photographic hero',
       await page.locator('.service-close--editorial').count()===1
       &&await page.locator('.service-close [data-service-reveal="photo"]').count()===0);
     await page.goto(base + '/creative-design/');
