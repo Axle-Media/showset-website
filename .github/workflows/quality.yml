@@ -64,6 +64,16 @@ jobs:
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/heading-accent-lines.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/editorial-pages.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/contact-experience.cjs
+      - name: Package xneelo Contact API
+        run: |
+          cd deploy/xneelo-contact
+          zip -qr "$GITHUB_WORKSPACE/SHOWSET-xneelo-contact-api.zip" public_html showset-private README.md
+      - name: Upload xneelo Contact API package
+        uses: actions/upload-artifact@v4
+        with:
+          name: SHOWSET-xneelo-contact-api
+          path: SHOWSET-xneelo-contact-api.zip
+          if-no-files-found: error
       - name: Archive browser QA results
         if: always()
         uses: actions/upload-artifact@v4
