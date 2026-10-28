@@ -45,7 +45,7 @@ function near(a,b,eps=1.5){return Number.isFinite(a)&&Number.isFinite(b)&&Math.a
       sectionBackground:S.backgroundImage,
       pattern:BG.backgroundImage,patternSize:BG.backgroundSize,
       patternPosition:BG.backgroundPosition,patternOpacity:BG.opacity,
-      patternRepeat:BG.backgroundRepeat,patternLayer:BG.zIndex,
+      patternRepeat:BG.backgroundRepeat,patternLayer:BG.zIndex,patternCanvasHeight:BG.height,
       firstColor:getComputedStyle(h.querySelector('.plain-line')).color,
       secondColor:getComputedStyle(h.querySelector('.accent-text')).color,
       punctuation:getComputedStyle(h.querySelector('.service-period')).color,
@@ -72,7 +72,7 @@ function near(a,b,eps=1.5){return Number.isFinite(a)&&Number.isFinite(b)&&Math.a
    const metrics=['headingFont','headingWeight','headingLineHeight','headingTracking','headingTextAlign',
       'bodyFont','bodyLineHeight','buttonFont','buttonRadius','buttonColor','buttonTextColor',
       'sectionPaddingTop','sectionPaddingBottom','sectionBackground',
-      'pattern','patternSize','patternPosition','patternOpacity','patternRepeat','patternLayer'];
+      'pattern','patternSize','patternPosition','patternOpacity','patternRepeat','patternLayer','patternCanvasHeight'];
    const different=metrics.filter(key=>entry[key]!==studio[key]).map(key=>({key,actual:entry[key],reference:studio[key]}));
    pass('Service matches Studio typography, pattern, CTA styling '+entry.route+' @'+width,
       different.length===0,different);
