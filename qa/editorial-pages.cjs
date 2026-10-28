@@ -30,7 +30,11 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
     await page.locator('.view.is-current [data-studio-choice]').count()===0);
   for(const n of [0,1,2]){
     const photo=page.locator('.view.is-current .studio-storyboard-shot').nth(n);
-    await photo.scrollIntoViewIfNeeded();
+    // Simulate normal user scrolling to the visible chapter wrapper, not
+    // Playwright's scroll-into-view logic on a fully masked photograph.
+    await page.locator('.view.is-current .studio-storyboard-chapter').nth(n).evaluate(el=>
+      window.scrollTo({top:window.scrollY+el.getBoundingClientRect().top-window.innerHeight*.25,behavior:'instant'})
+    );
     await page.waitForTimeout(width===320?150:1100);
     const state=await photo.evaluate(el=>({
       loaded:el.querySelector('img')?.complete&&el.querySelector('img')?.naturalWidth>0,
@@ -46,10 +50,11 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
     heading:el.querySelector('h2')?.textContent,
     background:getComputedStyle(el,'::before').backgroundImage,
     repeat:getComputedStyle(el,'::before').backgroundRepeat,
-    size:getComputedStyle(el,'::before').backgroundSize
+    size:getComputedStyle(el,'::before').backgroundSize,
+    layer:getComputedStyle(el,'::before').zIndex
   }));
   ck('Studio approved oversized nonrepeating graphic behind closing CTA '+width,
-    ending.heading?.includes('complicated idea')&&ending.background.includes('bb1b857a951a4915479a.svg')&&ending.repeat==='no-repeat',
+    ending.heading?.includes('complicated idea')&&ending.background.includes('bb1b857a951a4915479a.svg')&&ending.repeat==='no-repeat'&&ending.layer==='0',
     ending);
   ck('Studio CTA links to Contact '+width,await page.locator('.view.is-current .studio-final .editorial-action').getAttribute('href')==='/contact/');
   ck('Studio no horizontal overflow '+width,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
