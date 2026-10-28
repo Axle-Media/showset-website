@@ -62,8 +62,8 @@ function near(a,b,eps=1.5){return Number.isFinite(a)&&Number.isFinite(b)&&Math.a
      pass('Closing CTA no horizontal overflow '+path+' @'+width,result.documentOverflow<=1,result.documentOverflow);
    }
    if([390,1440,1895].includes(width)&&!result.missing){
-    await page.locator(section).scrollIntoViewIfNeeded();
-    await page.locator(section).screenshot({path:'qa-results/closing-cta/'+path.replaceAll('/','').replaceAll('-','_')+'-'+width+'.png'});
+    await page.locator('.view.is-current').locator(section).scrollIntoViewIfNeeded();
+    await page.locator('.view.is-current').locator(section).screenshot({path:'qa-results/closing-cta/'+path.replaceAll('/','').replaceAll('-','_')+'-'+width+'.png'});
    }
    screenshots.push(result);
    await context.close();
