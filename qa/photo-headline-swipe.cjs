@@ -15,7 +15,7 @@ const targets = [
   ['/work/made-to-be-remembered/', '.case-opening-first .block-heading'],
   ['/events-experiences/', '.service-hero [data-service-reveal="photo"]'],
   ['/content-production/', '.service-hero [data-service-reveal="photo"]'],
-  ...['digital-marketing','content-production'].map(slug=>['/'+slug+'/', '.service-close [data-service-reveal="photo"]']),
+  ['/content-production/', '.service-close [data-service-reveal="photo"]'],
   ['/our-studio/', '.simple-hero .block-heading'],
   ['/our-work/', '.simple-hero .block-heading'],
 ];
@@ -63,6 +63,11 @@ async function styles(page, selector) {
         && active.textTransform === 'none'
         && parseFloat(active.textTransition) === 0, active);
     }
+    await page.goto(base + '/digital-marketing/');
+    await page.waitForSelector('[data-concept-ready="true"]');
+    ck('Digital closing is a static editorial section rather than a photo hero',
+      await page.locator('.service-close--editorial').count()===1
+      &&await page.locator('.service-close [data-service-reveal="photo"]').count()===0);
     await page.goto(base + '/creative-design/');
     await page.waitForSelector('[data-concept-ready="true"]');
     ck('Creative closing CTA uses static editorial design without a second photo',
