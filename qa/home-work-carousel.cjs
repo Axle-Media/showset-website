@@ -105,6 +105,7 @@ const width=1440;
   next.slug='future-creative-exploration';
   next.route='/work/future-creative-exploration/';
   next.title='Future creative exploration';
+  next.publishedAt='2026-10-28T16:00:00Z';
   next.caseExperience.openingImage='/media/cases/identity-hero.webp';
   published[next.slug]=next;
   for(const index of [published.home,published['our-work']]){
