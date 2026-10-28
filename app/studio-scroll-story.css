@@ -327,3 +327,46 @@
     clip-path:none!important;transform:none!important;animation:none!important;transition:none!important;
   }
 }
+
+
+/* Studio heading alignment contract
+   All full-width editorial headlines share one left edge. At wide viewports
+   that edge follows the centred 1500px content grid; otherwise it is the
+   approved site gutter. Preserve font sizes, line heights and the photo wipe. */
+.editorial-page.studio-rebuilt{
+  --studio-heading-left:max(var(--gutter),calc((100vw - 1500px)/2));
+}
+.editorial-page.studio-rebuilt :is(
+  .studio-scroll-heading,
+  .studio-editorial-heading,
+  .studio-storyboard-copy h3
+){
+  text-align:left;
+}
+.editorial-page.studio-rebuilt .studio-hero-scene{
+  left:var(--studio-heading-left);
+  right:var(--studio-heading-left);
+  width:min(850px,calc(100% - 2 * var(--studio-heading-left)));
+}
+.editorial-page.studio-rebuilt .studio-hero-stage::after{
+  left:var(--studio-heading-left);
+  right:var(--studio-heading-left);
+}
+.editorial-page.studio-rebuilt .studio-outlook{
+  padding-left:var(--studio-heading-left);
+  padding-right:var(--studio-heading-left);
+}
+.editorial-page.studio-rebuilt .studio-hero-track:not([data-studio-motion="on"]) .studio-hero-stage{
+  padding-left:var(--studio-heading-left);
+  padding-right:var(--studio-heading-left);
+}
+/* Each chapter caption begins at the left of its corresponding image.
+   The photography can retain its editorial offset without shifting headings. */
+.concept-12-root .studio-rebuilt .studio-storyboard-chapter:not(:first-child) .studio-storyboard-copy{
+  padding-left:0;
+}
+@media(max-width:800px){
+  .concept-12-root .studio-rebuilt .studio-storyboard-chapter:nth-child(2) .studio-storyboard-copy{
+    margin-left:0;
+  }
+}
