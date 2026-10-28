@@ -413,7 +413,7 @@
 }
 .service-experience--events .service-capability-group{
   /* Match the homepage's case-story colour treatment, not its interactive behaviour. */
-  background:linear-gradient(160deg,rgba(21,59,84,.95),rgba(9,38,57,.98));
+  background:#112f45 linear-gradient(160deg,rgba(21,59,84,.95),rgba(9,38,57,.98));
   border:0.75px solid rgba(255,255,255,.105);
   border-radius:12px;
   padding:clamp(21px,2vw,30px);
