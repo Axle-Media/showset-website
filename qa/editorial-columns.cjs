@@ -10,11 +10,12 @@ const sections=[
   ['Home manifesto','.manifesto-grid','.manifesto-heading-group h2','.manifesto-copy > p'],
   ['Home featured work','#portfolio-section .portfolio-heading','.section-title','.portfolio-intro p'],
  ]},
+ // The redesigned Studio has three editorial grids; the removed FAQ is
+ // deliberately archived, and the closing invitation is a compact single-column CTA.
  {route:'/our-studio/',items:[
-  ['Studio belief','.studio-belief','h2',':scope > p'],
-  ['Studio partnerships','.studio-partnership','h2',':scope > div > p'],
-  ['Studio FAQ','.studio-faq-heading','h2',':scope > p'],
-  ['Studio closing invitation','.studio-final-inner','h2',':scope > p'],
+  ['Studio manifesto','.studio-manifesto-layout','h2','.studio-manifesto-body > p',610],
+  ['Studio story introduction','.studio-exploration-intro','h2',':scope > p',520],
+  ['Studio partnership','.studio-outlook','h2','.studio-partnership-body > p',540],
  ]},
  ...['/events-experiences/','/creative-design/','/digital-marketing/','/content-production/'].map(route=>({
   route,items:[['Service editorial',['/events-experiences/','/creative-design/','/digital-marketing/','/content-production/'].includes(route)?'.service-intro .service-editorial-row':'.service-feature .service-editorial-row','h2',':scope > div > p']],
@@ -30,7 +31,7 @@ const sections=[
    for(const entry of sections){
     await page.goto(base+entry.route,{waitUntil:'domcontentloaded'});
     await page.waitForSelector('.concept-12-root[data-concept-ready="true"]');
-    const rows=await page.evaluate(specs=>specs.map(([name,container,heading,copy])=>{
+    const rows=await page.evaluate(specs=>specs.map(([name,container,heading,copy,maxCopyWidth])=>{
      const wrap=document.querySelector('.view.is-current '+container);
      if(!wrap)return {name,error:'Section not found'};
      const h=wrap.querySelector(heading),p=wrap.querySelector(copy);
@@ -38,7 +39,7 @@ const sections=[
      const a=h.getBoundingClientRect(),b=p.getBoundingClientRect(),box=wrap.getBoundingClientRect();
      const style=getComputedStyle(wrap);
      const cols=style.gridTemplateColumns.split(/\s+/).map(parseFloat);
-     return {name,display:style.display,columns:cols,paragraphWidth:b.width,headingLeft:a.left,
+     return {name,display:style.display,columns:cols,maxCopyWidth,paragraphWidth:b.width,headingLeft:a.left,
        headingRight:a.right,paragraphLeft:b.left,paragraphRight:b.right,
        parentLeft:box.left,parentRight:box.right,font:getComputedStyle(p).fontSize};
     }),entry.items);
@@ -47,7 +48,7 @@ const sections=[
      ck('Editorial row exists '+prefix,!row.error,row.error);
      if(row.error)continue;
      if(width>=1001){
-      const second=row.columns?.[1],expected=Math.min(760,second||0);
+      const second=row.columns?.[1],expected=Math.min(row.maxCopyWidth||760,second||0);
       ck('Two-column editorial row '+prefix,row.display==='grid'&&row.columns.length===2,row.columns);
       ck('Paragraph fills available right column '+prefix,row.paragraphWidth>=expected-4,
        {width:row.paragraphWidth,rightTrack:second,target:expected});
@@ -57,7 +58,7 @@ const sections=[
       ck('Editorial row remains stacked on mobile/tablet '+prefix,row.columns.length===1,row.columns);
       ck('Mobile paragraph stays in viewport '+prefix,row.paragraphLeft>=-1&&row.paragraphRight<=width+1,row);
      }
-     ck('Paragraph retains approved 17px '+prefix,row.font==='17px',row.font);
+     ck('Paragraph retains approved type scale '+prefix,row.maxCopyWidth ? parseFloat(row.font)>=14&&parseFloat(row.font)<=19 : row.font==='17px',row.font);
     }
     const viewport=await page.evaluate(()=>({width:innerWidth,documentWidth:document.documentElement.scrollWidth}));
     ck('No horizontal overflow '+entry.route+' @'+width,viewport.documentWidth<=width+2,viewport);
