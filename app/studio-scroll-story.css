@@ -139,35 +139,10 @@
   .editorial-page.studio-rebuilt .studio-hero-scene{transition:none!important}
 }
 
-/* Photograph-only heading treatment uses the SAME approved 750ms block swipe
-   as the homepage and service photo scenes. Explicitly opt this Studio
-   photographic scene out of the global non-photo heading reset. */
-.concept-12-root .editorial-page.studio-rebuilt .studio-hero-track[data-studio-motion="on"] .studio-scroll-heading .wipe-line>span{
-  opacity:1!important;transform:none!important;transition:none!important;
-  clip-path:inset(0 100% 0 0)!important;animation:none!important;
-}
-.concept-12-root .editorial-page.studio-rebuilt .studio-hero-track[data-studio-motion="on"] .studio-scroll-heading.is-revealed .wipe-line>span{
-  animation:showsetPhotoTextUnmask .75s linear both!important;
-}
-.concept-12-root .editorial-page.studio-rebuilt .studio-hero-track[data-studio-motion="on"] .studio-scroll-heading.is-revealed .wipe-line:nth-child(2)>span{
-  animation-delay:.12s!important;
-}
-.concept-12-root .editorial-page.studio-rebuilt .studio-hero-track[data-studio-motion="on"] .studio-scroll-heading .wipe-line::after{
-  content:""!important;display:block!important;position:absolute;
-  background:#12BAAF!important;inset:6% 0 5%;
-  clip-path:inset(0 100% 0 0);animation:none!important;
-}
-.concept-12-root .editorial-page.studio-rebuilt .studio-hero-track[data-studio-motion="on"] .studio-scroll-heading .accent-line::after{
-  background:#e5d8c3!important;
-}
-.concept-12-root .editorial-page.studio-rebuilt .studio-hero-track[data-studio-motion="on"] .studio-scroll-heading.is-revealed .wipe-line::after{
-  animation:showsetPhotoBlockSwipe .75s cubic-bezier(.75,.06,.23,.95) both!important;
-}
-.concept-12-root .editorial-page.studio-rebuilt .studio-hero-track[data-studio-motion="on"] .studio-scroll-heading.is-revealed .wipe-line:nth-child(2)::after{
-  animation-delay:.12s!important;
-}
+
+/* In non-JS and motion-off reading modes, never leave text behind a photo wipe. */
 .concept-12-root .editorial-page.studio-rebuilt .studio-hero-track:not([data-studio-motion="on"]) .studio-scroll-heading .wipe-line>span{
-  clip-path:none!important;animation:none!important;
+  opacity:1!important;transform:none!important;clip-path:none!important;animation:none!important;transition:none!important;
 }
 .concept-12-root .editorial-page.studio-rebuilt .studio-hero-track:not([data-studio-motion="on"]) .studio-scroll-heading .wipe-line::after{
   content:none!important;display:none!important;animation:none!important;
