@@ -1064,7 +1064,7 @@
   background:rgba(9,38,57,.97);
   color:var(--ice);
   transform:translate(-50%,-50%);
-  font:650 13px/1.25 var(--body-font);
+  font:650 14px/1.25 var(--body-font);
   letter-spacing:.01em;
   cursor:pointer;
   transition:border-color 300ms ease,background 300ms ease,opacity 300ms ease,box-shadow 300ms ease;
@@ -1177,14 +1177,14 @@
  .service-story--digital > .service-section-head.service-gutter{padding-top:72px;padding-bottom:26px}
  .service-story--digital .service-digital-connected-wrap{padding-bottom:78px}
  .service-digital-network{height:290px}
- .service-digital-network-node{min-width:94px;min-height:61px;font-size:12px;padding:9px}
+ .service-digital-network-node{min-width:94px;min-height:61px;padding:9px}
  .service-digital-editorial{grid-template-columns:minmax(0,1fr);gap:29px}
  .service-digital-editorial-item{padding-left:19px}
  .service-digital-editorial-item h3{font-size:23px}
 }
 @media(max-width:360px){
  .service-digital-network{height:270px}
- .service-digital-network-node{min-width:86px;min-height:56px;font-size:11px;padding:8px}
+ .service-digital-network-node{min-width:86px;min-height:56px;padding:8px}
 }
 @media(prefers-reduced-motion:reduce){
  .service-experience--digital .service-digital-network-lines path{
