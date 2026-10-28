@@ -29,6 +29,20 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
  const heroBody=heroArt+'<div class="service-hero-content">'+label(serviceNames[kind])+heading(hero,'h1','category-title',kind==='events'||kind==='production'?'photo':'editorial')+'<div class="service-hero-copy">'+paras(hero.body)+'</div><div class="service-hero-actions">'+action(hero.buttonLabel||'Let’s talk',hero.buttonHref||'/contact/')+action('Explore our expertise','#service-expertise',false)+'</div></div><div class="service-hero-foot" aria-hidden="true"><span>SHOWSET / '+String(Object.keys(serviceRoutes).indexOf(kind)+1).padStart(2,'0')+'</span><span>Big ideas. Every detail.</span><span>↓</span></div>';
  const renderStory=(s:Block)=>{
   const intro='<header class="service-section-head service-gutter">'+(kind==='production'?label('The sequence'):'')+heading(s)+paras(s.body)+'</header>';
+  // Events uses a compact editorial triptych rather than another pinned
+  // full-viewport scene sequence. All imagery and text remain Studio-editable.
+  if(kind==='events'){
+   const images='<div class="service-event-triptych-visuals" aria-hidden="true">'+s.items.map((item,i)=>
+    '<figure class="service-event-triptych-image" style="--triptych-index:'+i+'">'+photo(item.image||'',item.title)+'</figure>'
+   ).join('')+'</div>';
+   const notes='<div class="service-event-triptych-notes">'+s.items.map((item,i)=>
+    '<article class="service-event-triptych-note service-scene-copy" data-service-scene="'+i+'" style="--triptych-index:'+i+'">'+
+     category(sceneLabel(item,i))+'<h3>'+text(item.title)+'</h3>'+paras(item.description)+'</article>'
+   ).join('')+'</div>';
+   const layout='<div class="service-story-track service-event-triptych-wrap" data-service-story-track>'+
+    '<div class="service-story-stage service-event-triptych">'+images+notes+'</div></div>';
+   return section(s,'service-story service-story--events',intro+layout);
+  }
   let body='';
   if(kind==='creative')body='<div class="service-proof-grid">'+s.items.map((item,i)=>'<article class="service-proof" style="--proof-index:'+i+'"><figure class="service-proof-image">'+photo(item.image||'',item.title)+'</figure>'+category(sceneLabel(item,i))+'<h3>'+text(item.title)+'</h3>'+paras(item.description)+'</article>').join('')+'</div>';
   else if(kind==='digital')body='<div class="service-channel-board"><svg class="service-channel-lines" viewBox="0 0 1000 660" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M100 100H650V330H350V560H900"/></svg>'+s.items.map((item,i)=>'<article class="service-channel" data-service-channel="'+i+'"><span class="service-channel-number" aria-hidden="true">0'+(i+1)+'</span><button type="button" class="service-channel-trigger" data-service-channel-trigger="'+i+'" aria-pressed="'+(i===0)+'">'+text(sceneLabel(item,i))+'<span aria-hidden="true">↗</span></button><h3>'+text(item.title)+'</h3>'+paras(item.description)+'</article>').join('')+'</div>';
