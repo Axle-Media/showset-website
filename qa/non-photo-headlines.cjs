@@ -13,7 +13,9 @@ const sample=async(page,selector)=>page.locator(selector).evaluateAll(elements=>
  const bar=el.querySelector('.wipe-line')?getComputedStyle(el.querySelector('.wipe-line'),'::after'):null;
  return {text:el.textContent.trim().slice(0,70),opacity:s.opacity,transform:s.transform,clip:s.clipPath,animation:s.animationName,transition:s.transitionDuration,bar:bar?.display??null,barAnimation:bar?.animationName??null};
 }));
-const isStill=x=>!x.missing&&x.opacity==='1'&&x.transform==='none'&&x.clip==='none'&&x.animation==='none'&&(!x.bar||x.bar==='none');
+// Browsers may serialize a zero-motion transform as an identity matrix instead of 'none'.
+const isIdentityTransform=value=>value==='none'||value==='matrix(1, 0, 0, 1, 0, 0)';
+const isStill=x=>!x.missing&&x.opacity==='1'&&isIdentityTransform(x.transform)&&x.clip==='none'&&x.animation==='none'&&(!x.bar||x.bar==='none');
 (async()=>{
  const browser=await chromium.launch({channel:process.env.SHOWSET_PLAYWRIGHT_CHANNEL||'chromium',headless:true});
  try{
