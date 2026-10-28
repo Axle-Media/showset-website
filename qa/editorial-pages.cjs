@@ -79,11 +79,12 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
   const layout=await page.locator('.view.is-current .case-index').evaluate(el=>({
     columns:getComputedStyle(el).gridTemplateColumns.split(' ').length,
     width:innerWidth,
+    viewportHeight:innerHeight,
     heroHeight:document.querySelector('.view.is-current .work-hero').getBoundingClientRect().height,
     filters:[...document.querySelectorAll('.view.is-current [data-work-filter]')].map(x=>x.textContent),
     visible:[...el.querySelectorAll('.work-portfolio-card')].filter(n=>!n.hidden).length
   }));
-  ck('Work hero is shorter than full screen '+width,layout.heroHeight<innerHeight*.8,layout);
+  ck('Work hero is shorter than full screen '+width,layout.heroHeight<layout.viewportHeight*.8,layout);
   ck('Grid has expected columns '+width,layout.columns===(width>1100?3:width>600?2:1),layout);
   ck('Tag filters follow requested taxonomy '+width,
     layout.filters.join('|')==='All|Events|Creative|Digital|Content',layout.filters);
