@@ -551,7 +551,7 @@
   max-width:53ch;
   margin-bottom:0;
 }
-/* Only motion-enabled visitors receive the once-per-entry stagger.
+/* Only media and descriptive copy reveal here. Editorial headings stay visible.
    Default markup stays readable without JS and inside Studio. */
 .service-experience--events[data-service-motion=on] .service-event-triptych-image{
   transition:clip-path 780ms cubic-bezier(.22,.66,.21,1),
@@ -559,7 +559,7 @@
              transform 780ms cubic-bezier(.22,.66,.21,1);
   transition-delay:calc(var(--triptych-index)*110ms);
 }
-.service-experience--events[data-service-motion=on] .service-event-triptych-note{
+.service-experience--events[data-service-motion=on] .service-event-triptych-note > :is(.service-category,p){
   transition:opacity 660ms ease,transform 660ms cubic-bezier(.22,.66,.21,1);
   transition-delay:calc(150ms + var(--triptych-index)*150ms);
 }
@@ -571,7 +571,7 @@
   opacity:0;
   transform:translate3d(0,20px,0);
 }
-.service-experience--events[data-service-motion=on][data-service-triptych-intro=pending] .service-event-triptych-note{
+.service-experience--events[data-service-motion=on][data-service-triptych-intro=pending] .service-event-triptych-note > :is(.service-category,p){
   opacity:0;
   transform:translate3d(0,22px,0);
 }
@@ -581,14 +581,14 @@
   opacity:1;
   transform:none;
 }
-.service-experience--events[data-service-motion=on][data-service-triptych-intro=done] .service-event-triptych-note{
+.service-experience--events[data-service-motion=on][data-service-triptych-intro=done] .service-event-triptych-note > :is(.service-category,p){
   opacity:1;
   transform:none;
 }
 .service-experience--events[data-service-motion=on][data-service-triptych-intro=done] .service-event-triptych-notes:after{transform:scaleY(1)}
-.service-experience--events [data-scene=still] .service-event-triptych :is(.service-event-triptych-image,.service-event-triptych-note),
-.service-experience--events .c12-reveal-off .service-event-triptych :is(.service-event-triptych-image,.service-event-triptych-note),
-[data-static-motion] .service-experience--events .service-event-triptych :is(.service-event-triptych-image,.service-event-triptych-note){
+.service-experience--events [data-scene=still] .service-event-triptych :is(.service-event-triptych-image,.service-category,p),
+.service-experience--events .c12-reveal-off .service-event-triptych :is(.service-event-triptych-image,.service-category,p),
+[data-static-motion] .service-experience--events .service-event-triptych :is(.service-event-triptych-image,.service-category,p){
   clip-path:none!important;
   opacity:1!important;
   transform:none!important;
@@ -617,7 +617,7 @@
   .service-story--events .service-event-triptych-notes{gap:28px}
 }
 @media(prefers-reduced-motion:reduce){
-  .service-experience--events .service-event-triptych :is(.service-event-triptych-image,.service-event-triptych-note){
+  .service-experience--events .service-event-triptych :is(.service-event-triptych-image,.service-category,p){
     clip-path:none!important;
     opacity:1!important;
     transform:none!important;
