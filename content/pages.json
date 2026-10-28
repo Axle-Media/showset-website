@@ -238,7 +238,7 @@
         "type": "pagehero",
         "headline": "From a spark",
         "accent": "to a room alive.",
-        "body": "The room. The crowd. The goosebumps. The perfectly timed reveal. We bring bold ideas and meticulous planning together to turn gatherings into experiences.",
+        "body": "The room. The crowd. The goosebumps. The perfectly timed reveal.\n\nWe dream up, design and deliver events that people remember. From corporate conferences and brand launches to festivals, activations and private celebrations, we bring the creative thinking, people and production together to make every moment count.",
         "image": "/media/cases/production-hero.webp",
         "pattern": false,
         "reveal": true,
@@ -256,7 +256,7 @@
         "type": "split",
         "headline": "The guest list is only the beginning.",
         "accent": "",
-        "body": "A great event is not just a date with good lighting. It is a story people step into. The way they arrive. The way the space makes them feel. The moment everything goes quiet, then comes alive. We think about all of it because no single detail creates the atmosphere. Every detail plays its part. From a new concept and creative direction to venue sourcing, staging, guest journeys, technical production and the final run of show, we bring the moving parts into one connected plan. We know when to make a statement and when to let the moment speak for itself.",
+        "body": "An event starts long before anyone walks through the door. It starts with a question. What do we want people to feel, experience and remember?\n\nThat's where we come in. We take an idea and build an entire experience around it. The concept, the space, the atmosphere, the people and the details that make something feel extraordinary.\n\nFrom finding the right venue and developing the creative direction to designing the environment, coordinating suppliers and managing production, we connect the moving parts so everything feels like one complete experience.\n\nWe don't believe in doing things just because they've always been done that way. We find the right way to make every event unmistakably its own.",
         "image": "",
         "pattern": true,
         "reveal": true,
@@ -264,7 +264,56 @@
         "buttonHref": "",
         "secondaryLabel": "",
         "secondaryHref": "",
-        "items": [],
+        "items": [
+          {
+            "id": "event-type-corporate-events",
+            "title": "Corporate events & conferences",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-type-brand-activations",
+            "title": "Brand activations",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-type-product-launches",
+            "title": "Product launches",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-type-festivals",
+            "title": "Festivals & public events",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-type-galas",
+            "title": "Gala dinners & celebrations",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-type-immersive",
+            "title": "Immersive brand experiences",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          }
+        ],
         "speed": 6,
         "formTitle": "",
         "helperText": ""
@@ -274,7 +323,7 @@
         "type": "story",
         "headline": "A thought. A world. A feeling.",
         "accent": "",
-        "body": "We start with an idea on a page. We shape the space around it. Then we make the whole room part of the story.",
+        "body": "Every unforgettable experience has a story behind it. Here's how we turn the thinking into something you can actually step into.",
         "image": "",
         "pattern": false,
         "reveal": true,
@@ -286,7 +335,7 @@
           {
             "id": "service-scene-1",
             "title": "First, the possibility.",
-            "description": "We ask what the gathering should mean, then turn the answer into a concept, a guest journey and a plan.",
+            "description": "Before the floor plans, the lighting rigs or the guest lists, there has to be an idea worth bringing to life. We explore the brief, challenge the obvious and find the creative direction that gives the entire experience its purpose and personality.",
             "image": "/media/planning.webp",
             "href": "",
             "category": "Concept"
@@ -294,7 +343,7 @@
           {
             "id": "service-scene-2",
             "title": "Then, the world.",
-            "description": "We bring staging, light, sound, styling and movement into the same conversation. The details begin to belong together.",
+            "description": "This is where ideas become spaces. We bring layouts, 3D renders, staging, sound, lighting, branding and environmental design together to create a world that looks, feels and functions as one.",
             "image": "/media/rigging.webp",
             "href": "",
             "category": "Environment"
@@ -302,7 +351,7 @@
           {
             "id": "service-scene-3",
             "title": "Finally, the feeling.",
-            "description": "We coordinate the live experience so people can be present for it. The plan does its work quietly. The room comes alive.",
+            "description": "The doors open. The lights change. The room comes alive. Behind the scenes, we coordinate the cues, teams and details that keep everything moving. Out front, people get to enjoy the experience without seeing the work that made it happen.",
             "image": "/media/evening.webp",
             "href": "",
             "category": "Experience"
@@ -313,123 +362,11 @@
         "helperText": ""
       },
       {
-        "id": "section-3",
-        "type": "items",
-        "headline": "How we bring it together.",
-        "accent": "",
-        "body": "Different parts. One connected idea.",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [
-          {
-            "id": "the-big-idea-0",
-            "title": "The big idea",
-            "accent": "",
-            "description": "Event concepts, creative direction, brand worlds and the visual language that ties it together.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "the-space-1",
-            "title": "The space",
-            "accent": "",
-            "description": "Layouts, 3D renders, scenic builds, décor, florals, furniture and environmental design.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "the-show-2",
-            "title": "The show",
-            "accent": "",
-            "description": "Stage, sound, lighting, AV, entertainment, filming, photography and carefully timed moments.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "the-invisible-work-3",
-            "title": "The invisible work",
-            "accent": "",
-            "description": "Planning, suppliers, guest lists, hospitality, transport, logistics and all the things that should feel easy.",
-            "image": "",
-            "href": ""
-          }
-        ],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-4",
-        "type": "split",
-        "headline": "What we make possible",
-        "accent": "",
-        "body": "Conferences with character. Brand activations people actually want to engage with. Festivals that have a world of their own. Launches that get people talking. Celebrations with heart, polish and just enough mischief. Whatever the format, we start with the reason everyone is there and build outward.",
-        "image": "",
-        "pattern": true,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-5",
-        "type": "items",
-        "headline": "From the first thought to the final detail.",
-        "accent": "",
-        "body": "",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [
-          {
-            "id": "imagine-it--0",
-            "title": "Imagine it.",
-            "accent": "",
-            "description": "We find the point of the experience, then the creative idea that gives it a personality.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "build-it--1",
-            "title": "Build it.",
-            "accent": "",
-            "description": "We plan the guest journey, design the environment and coordinate the production that makes it possible.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "run-it--2",
-            "title": "Run it.",
-            "accent": "",
-            "description": "We keep the right eyes on the right details, so the audience gets the experience, not the logistics.",
-            "image": "",
-            "href": ""
-          }
-        ],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
         "id": "section-6",
         "type": "accordion",
-        "headline": "Explore the possibilities.",
+        "headline": "Everything we bring to the table.",
         "accent": "",
-        "body": "More ways we can help, depending on your brief.",
+        "body": "Big ideas are only the beginning. We bring the creative, practical and technical capabilities together to take an event from its first concept to its final moment.",
         "image": "",
         "pattern": false,
         "reveal": true,
@@ -438,14 +375,6 @@
         "secondaryLabel": "",
         "secondaryHref": "",
         "items": [
-          {
-            "id": "event-branding--layout---3d--0",
-            "title": "Event branding, layout & 3D renders",
-            "accent": "",
-            "description": "We design the event as a world, not a collection of separate signs. From branded environments and floor plans to visual renders, we help people see the experience before it exists.",
-            "image": "",
-            "href": ""
-          },
           {
             "id": "event-concepts---creative-di-1",
             "title": "Event concepts & creative direction",
@@ -456,7 +385,7 @@
           },
           {
             "id": "graphic-design---event-brand-2",
-            "title": "Graphic design & event branding",
+            "title": "Event branding & graphic design",
             "accent": "",
             "description": "Invitations, stage visuals, signage, credentials and everything in between. We make the whole event look and feel as though it belongs together.",
             "image": "",
@@ -464,7 +393,7 @@
           },
           {
             "id": "event-layout---3d-renders-3",
-            "title": "Event layout & 3D renders",
+            "title": "Event layouts, floor plans & 3D renders",
             "accent": "",
             "description": "We help translate ambitious ideas into practical spaces, layouts and visual previews, so decisions can be made before the build begins.",
             "image": "",
@@ -480,7 +409,7 @@
           },
           {
             "id": "venue-sourcing-5",
-            "title": "Venue sourcing",
+            "title": "Venue sourcing & coordination",
             "accent": "",
             "description": "We help find the setting that suits the brief, the audience and the practical realities. The right room changes what is possible.",
             "image": "",
@@ -488,17 +417,9 @@
           },
           {
             "id": "d-cor---styling-6",
-            "title": "Décor & styling",
+            "title": "Décor, styling & floral design",
             "accent": "",
             "description": "We set the tone with material, colour, furniture, detail and atmosphere, creating a space that looks considered from every angle.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "floral-design-7",
-            "title": "Floral design",
-            "accent": "",
-            "description": "Flowers and botanical elements can change the entire mood of a room. We shape a floral direction that works with the broader creative concept.",
             "image": "",
             "href": ""
           },
@@ -520,7 +441,7 @@
           },
           {
             "id": "branding--signage---printing-10",
-            "title": "Branding, signage & printing",
+            "title": "Signage, printing & branded environments",
             "accent": "",
             "description": "From wayfinding and entry moments to step-and-repeat walls and printed details, we make sure the brand is present in the right ways.",
             "image": "",
@@ -528,7 +449,7 @@
           },
           {
             "id": "catering---bar-services-11",
-            "title": "Catering & bar services",
+            "title": "Catering & bar service coordination",
             "accent": "",
             "description": "Food and drinks are part of the guest experience. We coordinate options that fit the format, the atmosphere and the practical brief.",
             "image": "",
@@ -568,7 +489,7 @@
           },
           {
             "id": "transport---logistics-16",
-            "title": "Transport & logistics",
+            "title": "Transport, logistics & supplier management",
             "accent": "",
             "description": "We think through who and what needs to be where, when and how. Timing, access, movement and deliveries matter as much as the main event.",
             "image": "",
@@ -581,52 +502,24 @@
             "description": "We design reasons for people to participate, not just observe. A strong activation makes the brand part of a real interaction.",
             "image": "",
             "href": ""
-          }
-        ],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "service-work",
-        "type": "work",
-        "headline": "The thinking, made visible.",
-        "accent": "",
-        "body": "Explore a creative concept study.",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [
+          },
           {
-            "id": "service-related-study",
-            "title": "Atmosphere is everything",
-            "description": "",
-            "image": "/media/details.webp",
-            "href": "/work/atmosphere-is-everything/"
+            "id": "lighting-sound-av-production-20261028",
+            "title": "Lighting, sound & audiovisual production",
+            "accent": "",
+            "description": "From technical planning to stage lighting, sound and audiovisual delivery, we coordinate the production systems behind the experience.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "photography-videography-20261028",
+            "title": "Photography & videography",
+            "accent": "",
+            "description": "We plan and coordinate event coverage that captures the atmosphere, the people and the moments worth sharing.",
+            "image": "",
+            "href": ""
           }
         ],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-8",
-        "type": "cta",
-        "headline": "Keep exploring",
-        "accent": "",
-        "body": "",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
         "speed": 6,
         "formTitle": "",
         "helperText": ""
@@ -634,9 +527,9 @@
       {
         "id": "section-7",
         "type": "visual",
-        "headline": "Let’s make a room",
+        "headline": "Let's make a room",
         "accent": "worth remembering.",
-        "body": "",
+        "body": "Got an idea worth getting excited about?\n\nWhether you've got a fully developed brief or just the beginning of something brilliant, we'd love to hear it. Bring us the possibilities. We'll help work out the details.",
         "image": "/media/rigging.webp",
         "pattern": false,
         "reveal": true,
@@ -904,32 +797,6 @@
             "description": "We challenge the brief, find the sharpest opportunity and put a direction behind the work. Good creative decisions are easier when the thinking is clear.",
             "image": "",
             "href": ""
-          }
-        ],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "service-work",
-        "type": "work",
-        "headline": "The thinking, made visible.",
-        "accent": "",
-        "body": "Explore a creative concept study.",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [
-          {
-            "id": "service-related-study",
-            "title": "Made to be remembered",
-            "description": "",
-            "image": "/media/cases/identity-hero.webp",
-            "href": "/work/made-to-be-remembered/"
           }
         ],
         "speed": 6,
@@ -1234,32 +1101,6 @@
         "helperText": ""
       },
       {
-        "id": "service-work",
-        "type": "work",
-        "headline": "The thinking, made visible.",
-        "accent": "",
-        "body": "Explore a creative concept study.",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [
-          {
-            "id": "service-related-study",
-            "title": "Made to be remembered",
-            "description": "",
-            "image": "/media/cases/identity-detail.webp",
-            "href": "/work/made-to-be-remembered/"
-          }
-        ],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
         "id": "section-8",
         "type": "cta",
         "headline": "Keep exploring",
@@ -1534,32 +1375,6 @@
             "description": "We bring technical requirements into the creative plan, coordinating sound, light, screens and AV so the experience feels as good as it looks.",
             "image": "",
             "href": ""
-          }
-        ],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "service-work",
-        "type": "work",
-        "headline": "The thinking, made visible.",
-        "accent": "",
-        "body": "Explore a creative concept study.",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [
-          {
-            "id": "service-related-study",
-            "title": "Behind every moment",
-            "description": "",
-            "image": "/media/cases/production-hero.webp",
-            "href": "/work/behind-every-moment/"
           }
         ],
         "speed": 6,
