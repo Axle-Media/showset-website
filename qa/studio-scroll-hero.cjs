@@ -32,21 +32,24 @@ const assert=(name,pass,info)=>{checks.push({name,pass:!!pass,info});console.log
     color:getComputedStyle(follow.querySelector('.accent-line>span')).color,
     punctuation:getComputedStyle(follow.querySelector('.hero-period')).color,
     image:photo.querySelector('img')?.getAttribute('src'),
-    imgLoaded:photo.querySelector('img')?.complete&&photo.querySelector('img')?.naturalWidth>0
+    imgLoaded:photo.querySelector('img')?.complete&&photo.querySelector('img')?.naturalWidth>0,
+    firstClip:getComputedStyle(first.querySelector('.accent-line>span')).clipPath,
+    secondClip:getComputedStyle(follow.querySelector('.accent-line>span')).clipPath
    };
   });
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(1200);
   const a=await snapshot();
   assert('Studio inset opening photo '+width,a.photoWidth<width*.94&&a.photoWidth>width*.7&&a.position==='sticky',a);
   assert('Studio first scene visible '+width,a.firstOpacity>=.99&&a.secondOpacity<=.01&&a.firstHidden==='false'&&a.secondHidden==='true',a);
   assert('Studio original first heading '+width,a.firstHeadline?.replace(/\s+/g,' ').includes('Curious minds.')&&a.firstHeadline.includes('Capable hands.'),a.firstHeadline);
+  assert('Studio headline text is unmasked, not merely in the DOM '+width,!a.firstClip.includes('100%'),a.firstClip);
   assert('Studio photo is ready '+width,a.imgLoaded&&a.image==='/media/planning.webp',a.image);
   const at=async fraction=>{
    await page.locator('.studio-hero-track').evaluate((track,fraction)=>{
     window.scrollTo({top:window.scrollY+track.getBoundingClientRect().top+
      Math.max(1,track.offsetHeight-window.innerHeight)*fraction,behavior:'instant'});
    },fraction);
-   await page.waitForTimeout(800);
+   await page.waitForTimeout(1100);
    return snapshot();
   };
   const mid=await at(.47);
@@ -55,6 +58,7 @@ const assert=(name,pass,info)=>{checks.push({name,pass:!!pass,info});console.log
   assert('Studio second line follows first upwards '+width,b.secondOpacity>.98&&b.firstOpacity<.05&&b.firstHidden==='true'&&b.secondHidden==='false',b);
   assert('Follow-up heading has correct brand colours '+width,b.color==='rgb(18, 186, 175)'&&b.punctuation==='rgb(250, 249, 253)',b);
   assert('Follow-up text is not a duplicate '+width,b.secondHeadline?.includes('We make it happen.'),b.secondHeadline);
+  assert('Second headline is fully revealed after the wipe '+width,!b.secondClip.includes('100%'),b.secondClip);
   const back=await at(.02);
   assert('Hero reverses when scrolling back '+width,back.firstOpacity>.95&&back.secondOpacity<.05&&back.photoWidth<b.photoWidth,back);
   assert('Studio no horizontal overflow '+width,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
