@@ -413,7 +413,7 @@
 }
 .service-experience--events .service-capability-group{
   background:#153B54;
-  border:1px solid #fff;
+  border:0.75px solid #fff;
   padding:clamp(21px,2vw,30px);
 }
 @media(max-width:1179px){
