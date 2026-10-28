@@ -432,8 +432,11 @@
 /* Events capability-card stagger: restrained upward fade, once on scroll entry.
    The cards are fully readable without JS, in still mode or with reduced motion. */
 .service-experience--events[data-service-motion=on] .service-expertise-grid > .service-capability-group{
-  transition:opacity 620ms cubic-bezier(.22,.66,.21,1),transform 620ms cubic-bezier(.22,.66,.21,1);
-  transition-delay:var(--event-card-delay,0ms);
+  transition:opacity 620ms cubic-bezier(.22,.66,.21,1),
+             transform 620ms cubic-bezier(.22,.66,.21,1),
+             scale 280ms cubic-bezier(.22,.66,.21,1),
+             box-shadow 280ms ease;
+  transition-delay:var(--event-card-delay,0ms),var(--event-card-delay,0ms),0ms,0ms;
 }
 .service-experience--events .service-expertise-grid > .service-capability-group:nth-child(2){--event-card-delay:120ms}
 .service-experience--events .service-expertise-grid > .service-capability-group:nth-child(3){--event-card-delay:240ms}
@@ -694,4 +697,66 @@
   font-weight:var(--refine-heading-weight);
   line-height:var(--refine-heading-leading)!important;
   letter-spacing:var(--v12-head-tracking)!important;
+}
+
+/* Capability card hover: subtle elevation across all four disciplines.
+   The independent CSS scale property preserves the Events rise/fade transform. */
+.service-experience .service-expertise-grid > .service-capability-group{
+  scale:1;
+  transition:scale 280ms cubic-bezier(.22,.66,.21,1),box-shadow 280ms ease;
+  transform-origin:center;
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .service-experience .service-expertise-grid > .service-capability-group:hover{
+    scale:1.025;
+    box-shadow:0 16px 32px rgba(0,0,0,.16);
+    z-index:1;
+  }
+  .service-experience--events[data-service-card-intro=pending] .service-expertise-grid > .service-capability-group:hover{
+    scale:1;
+    box-shadow:none;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .service-experience .service-expertise-grid > .service-capability-group{
+    scale:1!important;
+    transition:none!important;
+  }
+}
+
+/* Events triptych: hovering a photo quietly spotlights its matching story.
+   No layout movement, scrolling lock or JS; the remaining photographs and
+   text regain full emphasis as soon as the pointer leaves the image. */
+.service-story--events .service-event-triptych-image img{
+  transition:filter 340ms cubic-bezier(.22,.66,.21,1);
+}
+.service-story--events .service-event-triptych-note{
+  opacity:1;
+  transition:opacity 340ms cubic-bezier(.22,.66,.21,1);
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .service-experience--events[data-service-triptych-intro=done]
+  .service-event-triptych:has(.service-event-triptych-image:hover)
+  .service-event-triptych-image:not(:hover) img{
+    filter:grayscale(.45) brightness(.73);
+  }
+  .service-experience--events[data-service-triptych-intro=done]
+  .service-event-triptych:has(.service-event-triptych-image:nth-child(1):hover)
+  .service-event-triptych-note:not(:nth-child(1)),
+  .service-experience--events[data-service-triptych-intro=done]
+  .service-event-triptych:has(.service-event-triptych-image:nth-child(2):hover)
+  .service-event-triptych-note:not(:nth-child(2)),
+  .service-experience--events[data-service-triptych-intro=done]
+  .service-event-triptych:has(.service-event-triptych-image:nth-child(3):hover)
+  .service-event-triptych-note:not(:nth-child(3)){
+    opacity:.56;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .service-story--events .service-event-triptych-image img,
+  .service-story--events .service-event-triptych-note{
+    filter:none!important;
+    opacity:1!important;
+    transition:none!important;
+  }
 }

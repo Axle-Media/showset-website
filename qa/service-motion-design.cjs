@@ -10,7 +10,7 @@ async function sampleHeading(p,selector,photo,actions){
  if(actions)await actions.enter();else await scroll(p,selector,150);await p.waitForTimeout(1200);const samples=await p.evaluate(()=>window.__serviceSamples);const first=samples[0],last=samples.at(-1);
  ck('Photo heading starts masked; editorial heading is immediately readable '+selector,photo?/100%/.test(first.clip):first.clip==='none'&&first.animation==='none'&&first.opacity==='1',first);
  ck('Photo heading reveals; editorial heading stays static '+selector,photo?/^inset\(0px(?: 0px){0,3}\)$/.test(last.clip):samples.every(x=>x.clip==='none'&&x.animation==='none'&&x.opacity==='1'),last);
- ck('Heading glyphs never rise, fade or translate '+selector,samples.every(s=>s.transform==='none'&&s.translate==='none'&&s.opacity==='1'));
+ ck('Heading glyphs never rise, fade or translate '+selector,samples.every(s=>(s.transform==='none'||s.transform==='matrix(1, 0, 0, 1, 0, 0)')&&s.translate==='none'&&s.opacity==='1'));
  if(photo){ck('Approved rectangular bar traverses the type '+selector,samples.some(s=>s.barAnimation==='showsetPhotoBlockSwipe'&&s.marker!==first.marker&&s.marker!=='inset(0px 0px 0px 100%)'),samples.filter((_,i)=>i%15===0));ck('Photo text uses discrete approved unmask '+selector,samples.some(s=>s.animation==='showsetPhotoTextUnmask')&&!samples.some(s=>s.animation.includes('Radial')))}else ck('Editorial heading has no introductory animation '+selector,samples.every(x=>x.animation==='none'&&x.clip==='none'&&x.barAnimation==='none'));
  return samples;
 }
