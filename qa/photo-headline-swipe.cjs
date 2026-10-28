@@ -15,7 +15,7 @@ const targets = [
   ['/work/made-to-be-remembered/', '.case-opening-first .block-heading'],
   ['/events-experiences/', '.service-hero [data-service-reveal="photo"]'],
   ['/content-production/', '.service-hero [data-service-reveal="photo"]'],
-  ['/digital-marketing/', '.service-close [data-service-reveal="photo"]'],
+  
   ['/our-studio/', '.simple-hero .block-heading'],
   ['/our-work/', '.simple-hero .block-heading'],
 ];
@@ -63,6 +63,11 @@ async function styles(page, selector) {
         && active.textTransform === 'none'
         && parseFloat(active.textTransition) === 0, active);
     }
+    await page.goto(base + '/digital-marketing/');
+    await page.waitForSelector('[data-concept-ready="true"]');
+    ck('Digital closing is a static editorial section rather than a photo hero',
+      await page.locator('.service-close--editorial').count()===1
+      &&await page.locator('.service-close [data-service-reveal="photo"]').count()===0);
     await page.goto(base + '/content-production/');
     await page.waitForSelector('[data-concept-ready="true"]');
     ck('Production CTA is editorial, not a second photographic hero',
@@ -161,7 +166,7 @@ async function styles(page, selector) {
       const text = getComputedStyle(el.querySelector('span'));
       return { display: marker.display, content: marker.content, clip: text.clipPath, animation: text.animationName, opacity: text.opacity, transform: text.transform };
     });
-    ck('Non-photo Work-section heading has no entrance animation', other.display === 'none' && other.clip === 'none' && other.animation === 'none' && other.opacity === '1' && other.transform === 'none', other);
+    ck('Non-photo Work-section heading has no entrance animation', other.display === 'none' && other.clip === 'none' && other.animation === 'none' && other.opacity === '1' && (other.transform === 'none' || other.transform === 'matrix(1, 0, 0, 1, 0, 0)'), other);
     ck('Service photo description remains a paragraph, never a swipe heading',
       await page.locator('.service-image-information>p').count() === 1);
 

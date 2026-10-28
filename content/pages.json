@@ -813,11 +813,11 @@
         "type": "pagehero",
         "headline": "Creativity that",
         "accent": "travels further.",
-        "body": "We create websites, campaigns, platforms and content with a purpose beyond being online. Clearer experiences, smarter connections and useful reasons to come back.",
+        "body": "The right idea can go a long way.\n\nWe bring websites, marketing, content and technology together to make brands more useful, more memorable and easier to connect with. Less noise for the sake of it. More things that actually work.",
         "image": "/media/brand.webp",
         "pattern": false,
-        "reveal": true,
-        "buttonLabel": "Build what’s next",
+        "reveal": false,
+        "buttonLabel": "Build what's next",
         "buttonHref": "/contact/",
         "secondaryLabel": "",
         "secondaryHref": "",
@@ -829,12 +829,12 @@
       {
         "id": "section-2",
         "type": "split",
-        "headline": "Clicks are nice. Connection is better.",
-        "accent": "",
-        "body": "The internet has enough noise. We are more interested in the things people choose to pay attention to. The website that makes sense. The campaign that knows what it wants to say. The content that sounds like a human. The technology that solves the problem instead of adding another one. We combine marketing thinking, design and technical problem-solving so digital work works in the real world. That could be a new website, a more joined-up social presence, a focused paid campaign, a useful software solution or creative support that keeps a business moving.",
+        "headline": "Clicks are nice.",
+        "accent": "Connection is better.",
+        "body": "Everyone wants attention. We'd rather give people a reason to care.\n\nWe connect creative thinking, marketing strategy, digital design and technology to make brands work better in the real world. The website people actually enjoy using. The campaign with something worth saying. The content that sounds like a person. The smarter solution that makes everyone's day a little easier.\n\nA good digital experience doesn't end with a launch. We can stay involved with content, campaigns, ongoing improvements and the practical support that keeps everything moving. Because being online isn't the achievement. Making something happen is.",
         "image": "",
-        "pattern": true,
-        "reveal": true,
+        "pattern": false,
+        "reveal": false,
         "buttonLabel": "",
         "buttonHref": "",
         "secondaryLabel": "",
@@ -847,12 +847,12 @@
       {
         "id": "service-story",
         "type": "story",
-        "headline": "One idea. More ways to connect.",
-        "accent": "",
-        "body": "We connect the places people meet a brand. A useful website, a considered campaign and an ongoing conversation should feel like parts of the same idea.",
+        "headline": "The whole thing",
+        "accent": "should click.",
+        "body": "A website, an advert, a conversation and the systems behind them all work harder when they belong to one idea. Here's how we connect the moving parts without making the experience complicated.",
         "image": "",
         "pattern": false,
-        "reveal": true,
+        "reveal": false,
         "buttonLabel": "",
         "buttonHref": "",
         "secondaryLabel": "",
@@ -860,139 +860,39 @@
         "items": [
           {
             "id": "service-scene-1",
-            "title": "A place to land.",
-            "description": "We design clear websites and useful digital experiences. Structure, content and design work together to help people find their way.",
+            "title": "A place worth landing.",
+            "description": "Good digital experiences give people a clear way in and a reason to stay. We shape the structure, content and design so the next step always makes sense.",
             "image": "",
             "href": "",
-            "category": "Website"
+            "category": "Websites",
+            "accent": ""
           },
           {
             "id": "service-scene-2",
-            "title": "A reason to care.",
-            "description": "We shape campaigns around a real objective and an audience. The message belongs to the channel, without losing the idea.",
+            "title": "An idea worth noticing.",
+            "description": "We build marketing around a clear message and a real audience, then create work that belongs on each channel without losing its personality.",
             "image": "",
             "href": "",
-            "category": "Campaign"
+            "category": "Campaigns",
+            "accent": ""
           },
           {
             "id": "service-scene-3",
-            "title": "A conversation that continues.",
-            "description": "We plan content, social rhythms and ongoing creative support. Each encounter adds to a recognisable voice.",
+            "title": "A conversation worth continuing.",
+            "description": "From planning to production and publishing, we help brands show up consistently with content that sounds human and feels recognisable.",
             "image": "",
             "href": "",
-            "category": "Content"
-          }
-        ],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-3",
-        "type": "items",
-        "headline": "How we bring it together.",
-        "accent": "",
-        "body": "Different parts. One connected idea.",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [
-          {
-            "id": "the-foundation-0",
-            "title": "The foundation",
-            "accent": "",
-            "description": "Website planning, UX, design, builds and digital brand experiences.",
-            "image": "",
-            "href": ""
+            "category": "Social",
+            "accent": ""
           },
           {
-            "id": "the-conversation-1",
-            "title": "The conversation",
-            "accent": "",
-            "description": "Social media content, calendars, community-facing creative and everyday communication.",
+            "id": "service-scene-4",
+            "title": "The clever bits behind it.",
+            "description": "Tools, websites, workflows and custom solutions should remove friction, not create it. We connect the practical technology to the people using it.",
             "image": "",
-            "href": ""
-          },
-          {
-            "id": "the-growth-plan-2",
-            "title": "The growth plan",
-            "accent": "",
-            "description": "Marketing strategy, campaigns, digital advertising and thoughtful optimisation.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "the-smarter-way-3",
-            "title": "The smarter way",
-            "accent": "",
-            "description": "Software, automation, digital tools and custom solutions to practical business challenges.",
-            "image": "",
-            "href": ""
-          }
-        ],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-4",
-        "type": "split",
-        "headline": "A launch is a moment. Momentum is a habit.",
-        "accent": "",
-        "body": "We do not think a good marketing idea should disappear after launch day. We can stay involved with creative production, campaign planning, content management and ongoing marketing support, making the next move as considered as the first.",
-        "image": "",
-        "pattern": true,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-5",
-        "type": "items",
-        "headline": "From the first thought to the final detail.",
-        "accent": "",
-        "body": "",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [
-          {
-            "id": "find-the-job--0",
-            "title": "Find the job.",
-            "accent": "",
-            "description": "We define what people need to understand, do or experience.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "make-it-useful--1",
-            "title": "Make it useful.",
-            "accent": "",
-            "description": "We design the message and the system around real behaviour, not digital buzzwords.",
-            "image": "",
-            "href": ""
-          },
-          {
-            "id": "keep-learning--2",
-            "title": "Keep learning.",
-            "accent": "",
-            "description": "We review the response and use what we learn to guide what comes next.",
-            "image": "",
-            "href": ""
+            "href": "",
+            "category": "Technology",
+            "accent": ""
           }
         ],
         "speed": 6,
@@ -1002,12 +902,12 @@
       {
         "id": "section-6",
         "type": "accordion",
-        "headline": "Explore the possibilities.",
-        "accent": "",
-        "body": "More ways we can help, depending on your brief.",
+        "headline": "What we make",
+        "accent": "happen online.",
+        "body": "A little support or the whole digital picture. We bring creative, strategic and technical capabilities together, then make them work around what your business actually needs.",
         "image": "",
         "pattern": false,
-        "reveal": true,
+        "reveal": false,
         "buttonLabel": "",
         "buttonHref": "",
         "secondaryLabel": "",
@@ -1022,10 +922,58 @@
             "href": ""
           },
           {
+            "id": "digital-web-development-20261028",
+            "title": "Website design & development",
+            "accent": "",
+            "description": "From a clear architecture to a polished build, we create websites that work for real users.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-ux-ui-20261028",
+            "title": "UX, UI & digital journeys",
+            "accent": "",
+            "description": "We make digital journeys feel considered, understandable and easy to use.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-landing-pages-20261028",
+            "title": "Landing pages & online experiences",
+            "accent": "",
+            "description": "Focused web experiences designed around a useful outcome, not an endless scroll.",
+            "image": "",
+            "href": ""
+          },
+          {
             "id": "digital-marketing---advertis-1",
             "title": "Digital marketing & advertising",
             "accent": "",
             "description": "We build campaigns around an idea, an audience and a clear objective. From creative to channel planning, every message should have a reason to exist.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-marketing-strategy-20261028",
+            "title": "Marketing strategy & campaign planning",
+            "accent": "",
+            "description": "We work out who needs to hear what, where and why, before making the creative.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-campaign-production-20261028",
+            "title": "Creative campaigns & advertising assets",
+            "accent": "",
+            "description": "Connected creative that can travel across platforms without losing the idea.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-performance-20261028",
+            "title": "Reporting, insights & optimisation",
+            "accent": "",
+            "description": "We look at what happened, learn from it and make the next move sharper.",
             "image": "",
             "href": ""
           },
@@ -1038,10 +986,50 @@
             "href": ""
           },
           {
+            "id": "digital-social-planning-20261028",
+            "title": "Social strategy & content calendars",
+            "accent": "",
+            "description": "A clear rhythm for the right platforms, ideas, formats and moments.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-social-content-20261028",
+            "title": "Content creation & creative production",
+            "accent": "",
+            "description": "Distinctive content that feels like the brand behind it, not another template.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-social-community-20261028",
+            "title": "Social publishing & community support",
+            "accent": "",
+            "description": "Practical help keeping the conversation clear, consistent and human.",
+            "image": "",
+            "href": ""
+          },
+          {
             "id": "software--technology---solut-3",
             "title": "Software, technology & solutions",
             "accent": "",
             "description": "We look for the useful technical answer, whether that means a digital tool, tailored software, an integration or a smarter workflow. The best technology makes the hard part feel simple.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-automation-20261028",
+            "title": "Workflow automation & smarter processes",
+            "accent": "",
+            "description": "Less busywork, fewer disconnected steps and systems that earn their place.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-integrations-20261028",
+            "title": "Digital tools, platforms & integrations",
+            "accent": "",
+            "description": "We connect useful platforms and tools around the work people actually do.",
             "image": "",
             "href": ""
           },
@@ -1059,33 +1047,15 @@
         "helperText": ""
       },
       {
-        "id": "section-8",
-        "type": "cta",
-        "headline": "Keep exploring",
-        "accent": "",
-        "body": "",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
         "id": "section-7",
         "type": "visual",
-        "headline": "Let’s make something",
+        "headline": "Let's make something",
         "accent": "people connect with.",
-        "body": "",
-        "image": "/media/planning.webp",
+        "body": "Got an idea that needs to go further?\n\nWhether it's a website that needs a rethink, a campaign that needs direction or a smarter way of making everything work together, we'd love to hear what you're planning.",
+        "image": "",
         "pattern": false,
-        "reveal": true,
-        "buttonLabel": "Tell us what needs fixing",
+        "reveal": false,
+        "buttonLabel": "Tell us what you're building",
         "buttonHref": "/contact/",
         "secondaryLabel": "",
         "secondaryHref": "",
