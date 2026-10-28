@@ -166,7 +166,7 @@ async function styles(page, selector) {
       const text = getComputedStyle(el.querySelector('span'));
       return { display: marker.display, content: marker.content, clip: text.clipPath, animation: text.animationName, opacity: text.opacity, transform: text.transform };
     });
-    ck('Non-photo Work-section heading has no entrance animation', other.display === 'none' && other.clip === 'none' && other.animation === 'none' && other.opacity === '1' && other.transform === 'none', other);
+    ck('Non-photo Work-section heading has no entrance animation', other.display === 'none' && other.clip === 'none' && other.animation === 'none' && other.opacity === '1' && (other.transform === 'none' || other.transform === 'matrix(1, 0, 0, 1, 0, 0)'), other);
     ck('Service photo description remains a paragraph, never a swipe heading',
       await page.locator('.service-image-information>p').count() === 1);
 
