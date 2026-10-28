@@ -1427,3 +1427,264 @@
  }
  .service-experience--production .service-production-timeline:after{transform:scaleY(1)!important}
 }
+
+
+/* DIGITAL SIGNAL CONSTELLATION — the same connected story, expressed as a
+   light, asymmetrical creative system instead of a framed corporate flowchart.
+   All four pieces of explanatory copy remain visible alongside the artwork. */
+.service-story--digital .service-digital-connected{
+  grid-template-columns:minmax(0,1.07fr) minmax(0,1fr);
+  gap:clamp(32px,5.3vw,88px);
+}
+.service-story--digital .service-digital-network{
+  position:relative;
+  aspect-ratio:720 / 560;
+  width:100%;
+  height:auto;
+  min-height:0;
+  border:0;
+  border-radius:0;
+  background:radial-gradient(ellipse 52% 57% at 50% 50%,rgba(18,186,175,.045),transparent 85%);
+  overflow:visible;
+}
+.service-digital-network:before{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.43;
+  background-image:radial-gradient(circle,rgba(116,164,181,.3) .65px,transparent 1px);
+  background-size:23px 23px;
+  -webkit-mask-image:radial-gradient(ellipse 66% 68% at 50% 50%,#000 0,transparent 96%);
+  mask-image:radial-gradient(ellipse 66% 68% at 50% 50%,#000 0,transparent 96%);
+}
+.service-digital-canvas-signature{
+  position:absolute;
+  left:3.5%;
+  top:4%;
+  color:rgba(250,249,253,.43);
+  font-family:var(--body-font);
+  font-weight:600;
+  font-size:10px;
+  letter-spacing:.17em;
+  z-index:2;
+  pointer-events:none;
+}
+.service-digital-network-lines{
+  width:100%;
+  height:100%;
+  overflow:visible;
+  z-index:1;
+}
+.service-digital-orbit{
+  fill:none;
+  stroke:rgba(149,188,197,.18);
+  stroke-width:1;
+  vector-effect:non-scaling-stroke;
+}
+.service-digital-orbit--outer{
+  stroke-dasharray:2 11;
+}
+.service-digital-orbit--inner{
+  stroke:rgba(18,186,175,.09);
+  stroke-dasharray:12 16;
+}
+.service-digital-core-ambient{
+  fill:url(#showset-digital-core-glow);
+}
+.service-digital-route-endpoint{
+  fill:#12BAAF;
+  stroke:#0D2F49;
+  stroke-width:2.4;
+  vector-effect:non-scaling-stroke;
+}
+.service-digital-network-lines path{
+  fill:none;
+  stroke:rgba(123,181,190,.5);
+  stroke-width:1.35px;
+  vector-effect:non-scaling-stroke;
+}
+.service-digital-hub-ring{
+  fill:rgba(7,32,49,.95);
+  stroke:rgba(18,186,175,.85);
+  stroke-width:1.4px;
+  vector-effect:non-scaling-stroke;
+}
+.service-digital-hub-inner{
+  fill:none;
+  stroke:rgba(250,249,253,.12);
+  stroke-width:1px;
+  vector-effect:non-scaling-stroke;
+  stroke-dasharray:2 9;
+}
+.service-digital-hub-core{
+  fill:#12BAAF;
+  opacity:.65;
+}
+.service-digital-hub-label{
+  gap:1px;
+  font-size:clamp(17px,2.3vw,28px);
+  line-height:1.14;
+  letter-spacing:-.045em;
+  font-weight:700;
+  text-transform:none;
+  z-index:2;
+}
+.service-digital-hub-label > span:last-child{
+  color:var(--ice);
+}
+.service-digital-hub-period{
+  color:var(--teal);
+}
+.service-digital-network-node{
+  min-width:104px;
+  min-height:84px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  border:0;
+  border-radius:0;
+  padding:4px 6px;
+  background:transparent;
+  box-shadow:none;
+  line-height:1.2;
+  color:var(--ice);
+  text-shadow:0 2px 15px rgba(3,19,30,.8);
+  transform:translate(-50%,-50%);
+  z-index:3;
+}
+.service-digital-network-node[data-digital-focus-button="0"]{left:25.7%;top:19.7%}
+.service-digital-network-node[data-digital-focus-button="1"]{left:76.1%;top:25.4%}
+.service-digital-network-node[data-digital-focus-button="2"]{left:75%;top:76.4%}
+.service-digital-network-node[data-digital-focus-button="3"]{left:25.7%;top:78.2%}
+.service-digital-network-node-mark{
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:rgba(6,27,43,.87);
+  border:1px solid rgba(18,186,175,.48);
+  box-shadow:0 0 0 7px rgba(18,186,175,.035);
+  color:#12BAAF;
+  flex-shrink:0;
+  transition:background 280ms ease,border-color 280ms ease,box-shadow 280ms ease,transform 300ms ease;
+}
+.service-digital-network-node-mark svg{
+  width:22px;
+  height:22px;
+  display:block;
+}
+.service-digital-network-node-name{
+  font-size:14px;
+  font-weight:650;
+  letter-spacing:.005em;
+  white-space:nowrap;
+  border-bottom:1px solid transparent;
+  padding-bottom:3px;
+  transition:border-color 280ms ease;
+}
+.service-digital-network-node:hover .service-digital-network-node-mark,
+.service-digital-network-node:focus-visible .service-digital-network-node-mark,
+.service-digital-connected[data-digital-engaged=true] .service-digital-network-node[aria-pressed=true] .service-digital-network-node-mark{
+  transform:scale(1.07);
+  border-color:var(--teal);
+  background:#154157;
+  box-shadow:0 0 0 7px rgba(18,186,175,.085);
+}
+.service-digital-network-node:hover .service-digital-network-node-name,
+.service-digital-network-node:focus-visible .service-digital-network-node-name,
+.service-digital-connected[data-digital-engaged=true] .service-digital-network-node[aria-pressed=true] .service-digital-network-node-name{
+  border-bottom-color:var(--teal);
+}
+.service-digital-network-node:focus-visible{
+  outline:2px solid var(--teal);
+  outline-offset:6px;
+  border-radius:5px;
+}
+.service-digital-connected[data-digital-engaged=true] .service-digital-network-node[aria-pressed=true]{
+  background:transparent;
+  border:0;
+  box-shadow:none;
+}
+.service-digital-editorial-item{
+  border-left-color:rgba(18,186,175,.24);
+  padding-left:clamp(19px,1.7vw,25px);
+}
+.service-digital-editorial-item:before{
+  content:'';
+  position:absolute;
+  top:4px;
+  left:-3px;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:rgba(18,186,175,.55);
+  transition:background 280ms ease,box-shadow 280ms ease;
+}
+.service-digital-editorial-item[data-digital-active=true]:before{
+  background:var(--teal);
+  box-shadow:0 0 0 4px rgba(18,186,175,.11);
+}
+.service-digital-connected[data-digital-engaged=true] .service-digital-editorial-item[data-digital-active=true]{
+  border-left-color:var(--teal);
+}
+.service-digital-network-lines .service-digital-signal{
+  fill:none;
+  stroke:rgba(18,186,175,.95);
+  stroke-width:2.7px;
+  vector-effect:non-scaling-stroke;
+  stroke-linecap:round;
+  stroke-dasharray:.045 .955;
+  stroke-dashoffset:1;
+  opacity:0;
+  pointer-events:none;
+}
+.service-digital-connected[data-digital-engaged=true][data-digital-focus="0"] [data-digital-signal="0"],
+.service-digital-connected[data-digital-engaged=true][data-digital-focus="1"] [data-digital-signal="1"],
+.service-digital-connected[data-digital-engaged=true][data-digital-focus="2"] [data-digital-signal="2"],
+.service-digital-connected[data-digital-engaged=true][data-digital-focus="3"] [data-digital-signal="3"]{
+  opacity:1;
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .service-digital-connected[data-digital-engaged=true][data-digital-focus="0"] [data-digital-signal="0"],
+ .service-digital-connected[data-digital-engaged=true][data-digital-focus="1"] [data-digital-signal="1"],
+ .service-digital-connected[data-digital-engaged=true][data-digital-focus="2"] [data-digital-signal="2"],
+ .service-digital-connected[data-digital-engaged=true][data-digital-focus="3"] [data-digital-signal="3"]{
+   animation:showsetDigitalSignal 3s linear infinite;
+ }
+}
+@keyframes showsetDigitalSignal{
+ from{stroke-dashoffset:1}
+ to{stroke-dashoffset:0}
+}
+@media(max-width:950px){
+ .service-story--digital .service-digital-connected{grid-template-columns:minmax(0,1fr);gap:25px}
+ .service-story--digital .service-digital-network{width:min(100%,660px);height:auto;aspect-ratio:720 / 560}
+}
+@media(max-width:600px){
+ .service-story--digital .service-digital-network{width:100%;height:auto;aspect-ratio:720 / 560}
+ .service-digital-network-node{min-width:90px;min-height:62px;gap:5px;padding:2px}
+ .service-digital-network-node-mark{width:30px;height:30px;box-shadow:0 0 0 4px rgba(18,186,175,.035)}
+ .service-digital-network-node-mark svg{width:17px;height:17px}
+ .service-digital-network-node-name{font-size:12px}
+ .service-digital-hub-label{font-size:clamp(15px,5vw,21px)}
+ .service-digital-canvas-signature{font-size:8px;letter-spacing:.12em}
+ .service-digital-editorial-item{padding-left:19px}
+}
+@media(prefers-reduced-motion:reduce){
+ .service-digital-network-lines .service-digital-signal{
+  opacity:0!important;
+  animation:none!important;
+  transition:none!important;
+ }
+ .service-digital-network-node-mark,
+ .service-digital-network-node-name{
+  transition:none!important;
+  transform:none!important;
+ }
+}
