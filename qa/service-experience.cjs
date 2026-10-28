@@ -77,7 +77,24 @@ if(width===1440){if(slug==='events-experiences'){
    !pinned&&triptych.display==='grid'&&triptych.columns===2
    &&triptych.images===3&&triptych.notes===3&&triptych.height<900,triptych);
  }
-if(slug==='creative-design'){await progress(p,0);const start=await p.locator('.service-proof-image').first().evaluate(e=>getComputedStyle(e).transform);await progress(p,1);ck('Creative proof unfolds with scroll',await p.locator('.service-proof-image').first().evaluate(e=>getComputedStyle(e).transform)!==start)}
+if(slug==='creative-design'){
+  const design=await p.locator('.service-creative-canvas').evaluate(el=>({
+   boards:el.querySelectorAll('.service-creative-artboard').length,
+   buttons:el.querySelectorAll('.service-creative-select').length,
+   descriptions:el.querySelectorAll('.service-creative-artboard-copy p').length,
+   height:el.getBoundingClientRect().height
+  }));
+  ck('Creative canvas keeps three complete stories in a natural compact layout '+tag,
+    !pinned&&design.boards===3&&design.buttons===3&&design.descriptions===3&&design.height<900,design);
+  for(const i of [0,2,1]){
+   await p.locator('.service-creative-select').nth(i).click();
+   ck('Creative artboard selection is accessible and keeps all descriptions visible '+i,
+     await p.locator('.service-creative-artboard').evaluateAll((els,i)=>els.length===3&&els.every((el,j)=>
+      (el.dataset.selected==='true')===(i===j)
+      &&el.querySelector('button').getAttribute('aria-pressed')===String(i===j)
+      &&el.querySelector('p').getBoundingClientRect().height>0),i));
+  }
+ }
 if(slug==='digital-marketing'){await progress(p,.5);await p.getByRole('button',{name:'Content',exact:true}).click();ck('Digital channel choice responds',await p.getByRole('button',{name:'Content',exact:true}).getAttribute('aria-pressed')==='true');await p.getByRole('button',{name:'Website',exact:true}).focus();await p.keyboard.press('Space');ck('Digital choice is keyboard accessible',await p.getByRole('button',{name:'Website',exact:true}).getAttribute('aria-pressed')==='true')}
 if(slug==='content-production'){await progress(p,0);const a=await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform);await progress(p,.5);const z=await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform);ck('Production photographic sequence advances',pinned&&a!==z);await progress(p,0);ck('Production sequence reverses',await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform)===a)}}
 for(const selector of['.service-intro','.service-groups','.service-process','.service-expertise','.service-work','.service-close']){if(!await p.locator(selector).count())continue;await p.locator(selector).scrollIntoViewIfNeeded();await p.waitForTimeout(100);if(width===1440||width===390)await p.screenshot({path:path.join(out,tag+'-'+selector.slice(1)+'.png')})}
@@ -118,7 +135,7 @@ const capabilityLayout=await p.locator('.service-expertise-grid').evaluate(grid=
 });
 const expectedGroupTitles={
  'events-experiences':['Concept & Design','Planning & People','Space & Production','The Experience'],
- 'creative-design':['Strategy & Identity','Design & Production'],
+ 'creative-design':['Brand & Identity','Graphic & Creative','Print & Packaging','Spaces & Experiences'],
  'digital-marketing':['Websites & Technology','Marketing & Content'],
  'content-production':['Film & Content','Technical Production']
 };
@@ -131,7 +148,7 @@ ck('All capability names remain visible without paragraphs '+tag,
 ck('All stable item IDs are retained exactly once '+tag,
  JSON.stringify([...capabilityLayout.ids].sort())===JSON.stringify(caps.items.map(x=>x.id).sort()),capabilityLayout.ids);
 ck('Service names use compact 15px list typography '+tag,capabilityLayout.fontSizes.every(x=>x==='15px'),capabilityLayout.fontSizes);
-if(slug==='events-experiences'){
+if(['events-experiences','creative-design'].includes(slug)){
  const palette=await p.locator('.service-expertise').evaluate(section=>{
   const style=getComputedStyle(section);
   return {
@@ -142,7 +159,7 @@ if(slug==='events-experiences'){
    })
   };
  });
- ck('Events capability cards match homepage case-study gradient and subtle borders '+tag,
+ ck('Events and Creative capability cards match approved navy gradient and subtle borders '+tag,
    palette.section==='rgb(13, 47, 73)'&&palette.cards.length===4
    &&palette.cards.every(card=>card.background==='rgb(17, 47, 69)'
      &&card.gradient.includes('linear-gradient(160deg')
@@ -152,12 +169,12 @@ if(slug==='events-experiences'){
      &&card.width>0&&card.width<=1&&card.radius===12),palette);
 }
 
-const expectedGrid=slug==='events-experiences'&&width>=1180?4:width>640?2:1;
+const expectedGrid=['events-experiences','creative-design'].includes(slug)&&width>=1180?4:width>640?2:1;
 const expectedInner=slug==='content-production'?1:null;
 ck('Compact responsive groups fit with no overlap '+tag,
  capabilityLayout.withinViewport&&capabilityLayout.groupsDontOverlap&&capabilityLayout.columns===expectedGrid&&(expectedInner===null||capabilityLayout.innerColumns===expectedInner),
  {expectedGrid,expectedInner,layout:capabilityLayout});
-ck('Contact and connected links valid '+tag,await p.locator('.service-close .solid-link').getAttribute('href')==='/contact/'&&await p.locator('.service-connected a').count()===(slug==='events-experiences'?0:3)&&await p.locator('.service-work,.service-work-card').count()===0);
+ck('Contact and connected links valid '+tag,await p.locator('.service-close .solid-link').getAttribute('href')==='/contact/'&&await p.locator('.service-connected a').count()===(['events-experiences','creative-design'].includes(slug)?0:3)&&await p.locator('.service-work,.service-work-card').count()===0);
 ck('No horizontal overflow / broken loaded images '+tag,await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1&&[...document.querySelectorAll('.service-experience img')].every(e=>!e.getBoundingClientRect().width||!e.complete||e.naturalWidth>0)));
 const overlap=await p.locator('.service-hero').evaluate(e=>{const head=e.querySelector('h1'),h=head.getBoundingClientRect(),p=e.querySelector('.service-hero-copy').getBoundingClientRect(),walker=document.createTreeWalker(head,NodeFilter.SHOW_TEXT),rects=[];let node;while(node=walker.nextNode()){if(!node.textContent.trim())continue;const r=document.createRange();r.selectNodeContents(node);rects.push(...r.getClientRects())}return{headingBottom:h.bottom,copyTop:p.top,headingWidth:Math.max(...rects.map(r=>r.right))-Math.min(...rects.map(r=>r.left)),client:head.clientWidth,inkInside:rects.every(r=>r.left>=h.left-1&&r.right<=h.right+1),maskScrollWidth:head.scrollWidth}});ck('Opening has no text overlap or clipping '+tag,overlap.headingBottom<=overlap.copyTop+1&&overlap.headingWidth<=overlap.client+1&&overlap.inkInside,overlap);await c.close();}
 // Progressive enhancement, reduced motion and deliberately long edited copy.
