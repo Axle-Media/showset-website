@@ -1197,3 +1197,15 @@
   transition:none!important;
  }
 }
+
+/* Keep all four digital touchpoints in the existing cinematic orbit artwork. */
+.service-hero--digital .service-art-label-0{top:31%;right:0}
+.service-hero--digital .service-art-label-1{top:46%;right:10%}
+.service-hero--digital .service-art-label-2{top:61%;right:20%}
+.service-hero--digital .service-art-label-3{top:76%;right:29%}
+@media(max-width:800px){
+ .service-hero--digital .service-art-label-0{top:15%;right:0}
+ .service-hero--digital .service-art-label-1{top:35%;right:9%}
+ .service-hero--digital .service-art-label-2{top:55%;right:17%}
+ .service-hero--digital .service-art-label-3{top:75%;right:23%}
+}
