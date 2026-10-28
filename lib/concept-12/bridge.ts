@@ -394,16 +394,18 @@ export function bindConcept(
         }
       }
       if (scope.matches(".studio-exploration") && changed(s, "items")) {
-        const visual = scope.querySelector<HTMLElement>(".studio-story-visual");
-        const entries = scope.querySelector<HTMLElement>(".studio-story-choices");
+        // Photos and captions stay in one continuous visual journey.
+        // All descriptions remain visible, including without pointer interaction.
+        const visual = scope.querySelector<HTMLElement>(".studio-storyboard-images");
+        const narrative = scope.querySelector<HTMLElement>(".studio-storyboard-narrative");
         if (visual) {
-          visual.innerHTML = s.items.map((x, j) =>
-            `<figure class="studio-story-frame${j === 0 ? " is-active" : ""}" data-studio-frame="${j}" data-active="${j === 0}"><img src="${escape(safeHref(x.image || "/media/planning.webp"))}" alt="" loading="lazy"></figure>`
-          ).join("") + '<div class="studio-story-visual-mark" aria-hidden="true"><span></span></div>';
+          visual.innerHTML = s.items.map((item, index) =>
+            `<figure class="studio-storyboard-shot" data-studio-shot="${index}"><img src="${escape(safeHref(item.image || "/media/planning.webp"))}" alt="" loading="lazy" decoding="async"></figure>`
+          ).join("");
         }
-        if (entries) {
-          entries.innerHTML = s.items.map((x, j) =>
-            `<div class="studio-story-entry${j === 0 ? " is-active" : ""}" data-studio-entry="${j}"><button type="button" class="studio-story-choice" data-studio-choice="${j}" aria-pressed="${j === 0}"><span>${rich(x.title)}</span><span class="studio-story-choice-indicator" aria-hidden="true">↗</span></button><p>${rich(x.description)}</p></div>`
+        if (narrative) {
+          narrative.innerHTML = s.items.map((item) =>
+            `<article class="studio-storyboard-chapter"><h3>${rich(item.title)}</h3><p>${rich(item.description)}</p></article>`
           ).join("");
         }
       }
