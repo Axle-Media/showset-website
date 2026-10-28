@@ -1,6 +1,14 @@
 const{chromium}=require(process.env.SHOWSET_PLAYWRIGHT_MODULE||'playwright'),fs=require('fs'),path=require('path');
 const base=process.env.SHOWSET_BASE_URL||'http://127.0.0.1:3003',out=process.env.SHOWSET_SERVICE_EVIDENCE_DIR||'qa-results/services';fs.mkdirSync(out,{recursive:true});const seed=JSON.parse(fs.readFileSync(path.join(__dirname,'../content/pages.json'))),slugs=['events-experiences','creative-design','digital-marketing','content-production'],checks=[],errors=[];
 const ck=(name,pass,detail)=>{checks.push({name,pass:!!pass,detail});console.log(pass?'PASS':'FAIL',name,detail??'')};
+const homeHeroByWidth=new Map();
+const getHeadingMetrics=el=>{const style=getComputedStyle(el);return {
+  fontSize:style.fontSize,
+  lineHeight:style.lineHeight,
+  letterSpacing:style.letterSpacing,
+  fontWeight:style.fontWeight,
+  fontFamily:style.fontFamily
+}};
 async function ready(p,slug){await p.goto(base+'/'+slug+'/');await p.waitForSelector('[data-service-ready=true]');await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(750)}
 async function progress(p,f){await p.locator('[data-service-story-track]').evaluate((e,f)=>scrollTo(0,scrollY+e.getBoundingClientRect().top+Math.max(0,e.offsetHeight-innerHeight)*f),f);await p.waitForTimeout(250)}
 (async()=>{const b=await chromium.launch({channel:process.env.SHOWSET_PLAYWRIGHT_CHANNEL||'chrome',headless:true});try{
@@ -35,6 +43,20 @@ page.sections.map(s=>s.id).join(',')==='section-1,section-2,service-story,sectio
 &&await p.locator('.service-event-types li').count()===6
 &&await p.locator('.service-process,.service-groups,.service-connected').count()===0);
 ck('Authored hero '+tag,(await p.locator('.service-hero h1').innerText()).replace(/\s+/g,'').trim()===(hero.headline+hero.accent).replace(/\s+/g,''));
+ck('Service hero has no decorative footer labels '+tag,
+ await p.locator('.service-hero-foot').count()===0
+ &&await p.locator('.service-hero').evaluate(el=>!el.textContent.includes('SHOWSET / ')&&!el.textContent.includes('Big ideas. Every detail.')));
+if(!homeHeroByWidth.has(width)){
+ const hp=await c.newPage();await hp.goto(base+'/');await hp.waitForSelector('[data-concept-ready=true]');
+ await hp.evaluate(()=>document.fonts.ready);
+ homeHeroByWidth.set(width,await hp.locator('.hero-title').evaluate(getHeadingMetrics));
+ await hp.close();
+}
+const serviceHeading=await p.locator('.service-hero h1').evaluate(getHeadingMetrics);
+const homepageHeading=homeHeroByWidth.get(width);
+ck('Service hero headline matches homepage font size, line spacing and tracking '+tag,
+ Object.keys(homepageHeading).every(key=>serviceHeading[key]===homepageHeading[key]),
+ {serviceHeading,homepageHeading});
 ck('Shared design typography '+tag,await p.locator('.service-hero-copy p').first().evaluate(e=>getComputedStyle(e).fontSize==='17px')&&await p.locator('.service-hero .solid-link').evaluate(e=>getComputedStyle(e).fontSize==='14px'));
 ck('All editable sections rendered '+tag,await p.locator('[data-service-section]').count()===page.sections.length);
 ck('Full expertise inventory '+tag,await p.locator('[data-service-capability]').evaluateAll((els,items)=>els.length===items.length&&els.every(el=>items.some(item=>item.id===el.dataset.capabilityId&&item.title===el.textContent.trim())),caps.items));
