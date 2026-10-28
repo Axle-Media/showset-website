@@ -30,6 +30,8 @@ jobs:
         run: npm run check
       - name: Content and asset validation
         run: npm run lint:source
+      - name: PHP contact handler security checks
+        run: bash qa/contact-php-smoke.sh
       - name: Page SEO content validation
         run: npm run check:seo
       - name: Static Next.js build
