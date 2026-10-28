@@ -793,6 +793,7 @@
 .service-creative-select{
   display:block;
   position:relative;
+  font-size:14px;
   width:100%;
   padding:0;
   margin:0;
@@ -868,8 +869,9 @@
 .service-creative-artboard-copy p{
   max-width:46ch;
   margin:0;
-  font-size:15px;
-  line-height:1.65;
+  font-size:var(--v12-body,17px);
+  line-height:var(--v12-body-leading);
+  letter-spacing:var(--v12-body-tracking);
   color:rgba(250,249,253,.82);
 }
 /* Animate art only, never a heading against the non-photographic canvas. */
@@ -923,7 +925,7 @@
  .service-creative-artboards{gap:18px}
  .service-creative-artboard:nth-child(1){margin-top:30px}
  .service-creative-artboard:nth-child(3){margin-top:52px}
- .service-creative-artboard-copy p{font-size:14px}
+ 
 }
 @media(max-width:800px){
  .service-story--creative > .service-section-head.service-gutter{padding-top:74px;padding-bottom:28px}
