@@ -153,6 +153,24 @@ if(slug==='digital-marketing'){
   textVisible:[...el.querySelectorAll('[data-digital-story] p')].every(p=>p.getBoundingClientRect().height>0),
   height:el.getBoundingClientRect().height
  }));
+ const visual=await p.locator('.service-digital-network').evaluate(el=>({
+  border:getComputedStyle(el).borderTopWidth,
+  routes:el.querySelectorAll('[data-digital-network-path]').length,
+  curvedRoutes:[...el.querySelectorAll('[data-digital-network-path]')].every(p=>p.getAttribute('d').includes('C')),
+  signalPaths:el.querySelectorAll('[data-digital-signal]').length,
+  symbols:el.querySelectorAll('.service-digital-network-node-mark svg').length,
+  orbitalTracks:el.querySelectorAll('.service-digital-orbit').length,
+  overlapping:[...el.querySelectorAll('[data-digital-focus-button]')].some((x,i,all)=>
+    all.some((y,j)=>j>i && !(
+     x.getBoundingClientRect().right < y.getBoundingClientRect().left ||
+     x.getBoundingClientRect().left > y.getBoundingClientRect().right ||
+     x.getBoundingClientRect().bottom < y.getBoundingClientRect().top ||
+     x.getBoundingClientRect().top > y.getBoundingClientRect().bottom
+    )))
+ }));
+ ck('Digital constellation replaces boxed flowchart with curved routes and distinct glyphs '+tag,
+  visual.border==='0px'&&visual.routes===4&&visual.curvedRoutes&&visual.signalPaths===4
+  &&visual.symbols===4&&visual.orbitalTracks===2&&!visual.overlapping,visual);
  ck('Digital has four readable connected disciplines without a pinned scroll '+tag,
   !pinned&&system.nodes===4&&system.rows===4&&system.textVisible&&system.height<950,system);
  for(const i of [3,1,2,0]){
