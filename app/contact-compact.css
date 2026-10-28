@@ -171,7 +171,7 @@
   width:100%;min-height:50px;margin:0!important;padding:12px 22px;
   border:1px solid #12BAAF;border-radius:99px!important;
   background:#12BAAF;color:#062739;
-  font:700 15px/1.35 var(--body-font)!important;
+  font:700 14px/1.35 var(--body-font)!important;
   letter-spacing:0;cursor:pointer;
   transition:background .25s,border-color .25s;
 }
