@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+use PHPMailer\PHPMailer\PHPMailer;
+
 /**
  * SHOWSET website enquiry endpoint for PHP-capable xneelo hosting.
  *
@@ -156,7 +158,6 @@ foreach (['Exception', 'PHPMailer', 'SMTP'] as $class) {
     require_once $library . $class . '.php';
 }
 
-use PHPMailer\PHPMailer\PHPMailer;
 
 $details = [
     'Name' => $name,
