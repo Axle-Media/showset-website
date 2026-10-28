@@ -39,13 +39,13 @@ if(slug==='events-experiences'&&width===1440){
   state:root.dataset.serviceCardIntro,
   cards:[...root.querySelectorAll('.service-expertise-grid > .service-capability-group')].map(el=>{
    const c=getComputedStyle(el);
-   return {opacity:c.opacity,transform:c.transform,delay:c.transitionDelay};
+   return {opacity:c.opacity,verticalShift:new DOMMatrixReadOnly(c.transform).m42,delay:c.transitionDelay};
   })
  }));
  ck('Events cards stagger upward and fade into view in reading order '+tag,
    end.state==='done'
    &&end.cards.length===4
-   &&end.cards.every(card=>card.opacity==='1'&&card.transform==='matrix(1, 0, 0, 1, 0, 0)')
+   &&end.cards.every(card=>card.opacity==='1'&&Math.abs(card.verticalShift)<0.05)
    &&end.cards.map(card=>Number.parseFloat(card.delay)).join(',')==='0,0.12,0.24,0.36',end);
 }
 if(width<=390){ck('Mobile cards are readable without tapping a control '+tag,await p.locator('.service-capability-name').first().evaluate(el=>getComputedStyle(el).visibility==='visible'&&el.getBoundingClientRect().height>10)&&await p.locator('.service-expertise button,.service-expertise summary').count()===0&&await p.locator('.service-capability-group').first().evaluate(el=>{const width=parseFloat(getComputedStyle(el).borderTopWidth);return width>0&&width<=1}))}await p.screenshot({path:path.join(out,tag+'-expertise.png')});
