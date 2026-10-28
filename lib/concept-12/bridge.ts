@@ -604,7 +604,7 @@ export function bindConcept(
       if (label) label.textContent = footer.email;
     }
     if (directPhone) {
-      directPhone.href = "tel:" + footer.phone.replace(/[^+\\d]/g, "");
+      directPhone.href = "tel:" + footer.phone.replace(/[^+\d]/g, "");
       const label = directPhone.querySelector(".contact-direct-value");
       if (label) label.textContent = footer.phone;
     }
