@@ -745,3 +745,13 @@
 #portfolio-section .case-rail .case-slide{flex-shrink:0;user-select:none}
 #portfolio-section .case-rail .case-slide img{pointer-events:none;user-select:none;-webkit-user-drag:none}
 #portfolio-section .case-rail .case-slide:not(.is-active) .case-photo img{transform:scale(1.02)}
+
+/* Footer statement: keep the authored break as exactly two lines on every page.
+   Smaller body type prevents an unintended third line in the identity column. */
+.concept-12-root .footer-identity > p{
+  font-size:clamp(10px,.85vw,11px);
+  line-height:1.55;
+  letter-spacing:0;
+  max-width:none;
+  white-space:nowrap;
+}
