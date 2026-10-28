@@ -1,14 +1,14 @@
 /* SHOWSET's single closing-CTA design source of truth.
  *
  * The user's approved Studio image is the visual reference for all four
- * service endings and Our Studio. Scope is intentionally limited to these
- * five closing sections; no home, work or service-body styles are altered.
+ * service endings, Our Studio and Our Work. The six sections share the
+ * approved pattern, geometry and typography; no service-body styles change.
  *
  * Use exactly one artwork, opacity, inset, heading scale, copy width and
  * button treatment so future page changes cannot silently diverge. */
 :is(
   .service-experience .service-close.service-close--editorial,
-  .editorial-page.studio-rebuilt .studio-final.studio-final-pattern
+  .editorial-page .studio-final.studio-final-pattern
 ){
   --showset-close-font:clamp(37px,4.15vw,68px);
   --showset-close-inline:max(var(--gutter),calc((100vw - 1500px)/2));
@@ -30,7 +30,7 @@
   padding:var(--showset-close-top) var(--showset-close-inline) var(--showset-close-bottom);
   background:linear-gradient(116deg,#0c2b42 0%,#0b293f 64%,#09253b 100%);
   /* The legacy .end-section sets a repeated SVG + gradient with !important.
-     Explicitly replace that background ONLY on the five shared CTAs. */
+     Explicitly replace that background ONLY on the six shared CTAs. */
   background-image:linear-gradient(116deg,#0c2b42 0%,#0b293f 64%,#09253b 100%)!important;
   background-repeat:no-repeat!important;
   background-position:center!important;
@@ -39,7 +39,7 @@
 }
 :is(
   .service-experience .service-close.service-close--editorial,
-  .editorial-page.studio-rebuilt .studio-final.studio-final-pattern
+  .editorial-page .studio-final.studio-final-pattern
 )::before{
   content:"";
   display:block;
@@ -63,22 +63,22 @@
   display:none;
 }
 .service-experience .service-close--editorial> :is(h2,.end-bottom),
-.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-final-inner{
+.editorial-page .studio-final.studio-final-pattern .studio-final-inner{
   position:relative;
   z-index:1;
 }
-.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-final-inner{
+.editorial-page .studio-final.studio-final-pattern .studio-final-inner{
   max-width:none;
   width:100%;
   margin:0;
 }
-.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-final-inner>div{
+.editorial-page .studio-final.studio-final-pattern .studio-final-inner>div{
   max-width:none;
   width:100%;
 }
 :is(
   .service-experience .service-close.service-close--editorial .service-heading,
-  .editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-editorial-heading
+  .editorial-page .studio-final.studio-final-pattern .studio-editorial-heading
 ){
   display:block;
   width:min(100%,var(--showset-close-content-width));
@@ -96,27 +96,27 @@
 }
 :is(
   .service-experience .service-close.service-close--editorial .service-heading,
-  .editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-editorial-heading
+  .editorial-page .studio-final.studio-final-pattern .studio-editorial-heading
 )> .plain-line{
   display:block;
   color:#FAF9FD;
 }
 :is(
   .service-experience .service-close.service-close--editorial .service-heading,
-  .editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-editorial-heading
+  .editorial-page .studio-final.studio-final-pattern .studio-editorial-heading
 )> .accent-text{
   color:#12BAAF;
 }
 :is(
   .service-experience .service-close.service-close--editorial .service-heading,
-  .editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-editorial-heading
+  .editorial-page .studio-final.studio-final-pattern .studio-editorial-heading
 ) .service-period{
   color:#FAF9FD!important;
 }
 /* Service pages retain their own prose, but every closing page uses the same
    body scale, available width and distance from its title. */
 .service-experience .service-close--editorial .end-bottom,
-.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-final-copy{
+.editorial-page .studio-final.studio-final-pattern .studio-final-copy{
   margin:clamp(24px,2.8vw,40px) 0 0;
   padding:0;
   border:0;
@@ -129,12 +129,12 @@
   gap:0;
 }
 .service-experience .service-close--editorial .service-close-description,
-.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-final-copy{
+.editorial-page .studio-final.studio-final-pattern .studio-final-copy{
   width:100%;
   max-width:645px;
 }
 .service-experience .service-close--editorial .service-close-description p,
-.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-final-copy p{
+.editorial-page .studio-final.studio-final-pattern .studio-final-copy p{
   color:rgba(250,249,253,.78);
   font-family:var(--body-font);
   font-weight:500;
@@ -145,11 +145,11 @@
   margin:0 0 var(--v12-para-gap,18px);
 }
 .service-experience .service-close--editorial .service-close-description p:last-child,
-.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .studio-final-copy p:last-child{
+.editorial-page .studio-final.studio-final-pattern .studio-final-copy p:last-child{
   margin-bottom:0;
 }
 .service-experience .service-close--editorial .end-link.solid-link,
-.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .editorial-action.solid-link{
+.editorial-page .studio-final.studio-final-pattern .editorial-action.solid-link{
   position:relative;
   align-self:flex-start;
   display:inline-flex;
@@ -175,13 +175,13 @@
   text-align:left;
 }
 .service-experience .service-close--editorial .end-link.solid-link:is(:hover,:focus-visible),
-.editorial-page.studio-rebuilt .studio-final.studio-final-pattern .editorial-action.solid-link:is(:hover,:focus-visible){
+.editorial-page .studio-final.studio-final-pattern .editorial-action.solid-link:is(:hover,:focus-visible){
   background:#39d4c8;
 }
 @media(max-width:600px){
   :is(
     .service-experience .service-close.service-close--editorial,
-    .editorial-page.studio-rebuilt .studio-final.studio-final-pattern
+    .editorial-page .studio-final.studio-final-pattern
   ){
     padding-block:75px 86px;
     min-height:0;
@@ -194,7 +194,7 @@
 @media(min-width:601px) and (max-width:800px){
   :is(
     .service-experience .service-close.service-close--editorial,
-    .editorial-page.studio-rebuilt .studio-final.studio-final-pattern
+    .editorial-page .studio-final.studio-final-pattern
   ){
     --showset-close-pattern-size:750px;
     --showset-close-pattern-position:calc(100% + 230px) center;
