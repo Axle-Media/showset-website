@@ -41,6 +41,7 @@ function near(a,b,eps=1.5){return Number.isFinite(a)&&Number.isFinite(b)&&Math.a
       bodyFont:P.fontSize,bodyLineHeight:P.lineHeight,
       buttonFont:A.fontSize,buttonRadius:A.borderRadius,
       buttonColor:A.backgroundColor,buttonTextColor:A.color,
+      buttonTracking:A.letterSpacing,buttonLineHeight:A.lineHeight,buttonBorder:A.border,
       sectionPaddingTop:S.paddingTop,sectionPaddingBottom:S.paddingBottom,
       sectionBackground:S.backgroundImage,
       pattern:BG.backgroundImage,patternSize:BG.backgroundSize,
@@ -70,7 +71,7 @@ function near(a,b,eps=1.5){return Number.isFinite(a)&&Number.isFinite(b)&&Math.a
   for(const entry of screenshots.slice(0,4)){
    if(entry.missing||studio.missing)continue;
    const metrics=['headingFont','headingWeight','headingLineHeight','headingTracking','headingTextAlign',
-      'bodyFont','bodyLineHeight','buttonFont','buttonRadius','buttonColor','buttonTextColor',
+      'bodyFont','bodyLineHeight','buttonFont','buttonRadius','buttonColor','buttonTextColor','buttonTracking','buttonLineHeight','buttonBorder',
       'sectionPaddingTop','sectionPaddingBottom','sectionBackground',
       'pattern','patternSize','patternPosition','patternOpacity','patternRepeat','patternLayer','patternCanvasHeight'];
    const different=metrics.filter(key=>entry[key]!==studio[key]).map(key=>({key,actual:entry[key],reference:studio[key]}));
