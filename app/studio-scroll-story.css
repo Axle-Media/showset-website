@@ -239,7 +239,7 @@
   background:linear-gradient(116deg,#0c2b42 0%,#0b293f 64%,#09253b 100%);
 }
 .concept-12-root .studio-rebuilt .studio-final.studio-final-pattern::before{
-  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
   background-image:url('/concept-12/bb1b857a951a4915479a.svg');
   background-repeat:no-repeat;
   background-size:clamp(660px,66vw,1100px) auto;
