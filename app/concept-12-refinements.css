@@ -749,7 +749,7 @@
 /* Footer statement: keep the authored break as exactly two lines on every page.
    Smaller body type prevents an unintended third line in the identity column. */
 .concept-12-root .footer-identity > p{
-  font-size:clamp(10px,.85vw,11px);
+  font-size:clamp(10px,.85vw,11px)!important;
   line-height:1.55;
   letter-spacing:0;
   max-width:none;
