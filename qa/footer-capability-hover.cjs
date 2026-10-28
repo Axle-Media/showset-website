@@ -25,7 +25,7 @@ const ck=(name,pass,detail)=>{checks.push({name,pass:!!pass,detail});console.log
     ck('Footer statement stays exactly two lines on '+route+' at '+width,
       footer.hardBreaks===1&&footer.first.length===1&&footer.second.length===1
       &&footer.first[0].top<footer.second[0].top
-      &&footer.size<=11&&footer.whiteSpace==='nowrap',footer);
+      &&footer.size>=12&&footer.size<=14&&footer.whiteSpace==='nowrap',footer);
     ck('Footer fits viewport on '+route+' at '+width,
       await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
     if(width===1440&&slug==='events-experiences'){
