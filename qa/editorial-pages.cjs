@@ -93,7 +93,7 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
   ck('Unpopulated category has clear empty-state '+width,
     await page.locator('[data-work-empty]').isVisible()&&
     await page.locator('.view.is-current .work-portfolio-card:visible').count()===0);
-  await page.locator('.view.is-current [data-work-filter="All"]').click();
+  await page.locator('.view.is-current [data-work-filter="all"]').click();
   ck('All filter restores original cards '+width,
     await page.locator('.view.is-current .work-portfolio-card:visible').count()===Math.min(6,portfolio.length));
   ck('Work remains readable without hover '+width,await page.locator('.view.is-current .case-index-info p').evaluateAll(nodes=>nodes.every(n=>getComputedStyle(n).visibility==='visible'&&getComputedStyle(n).opacity==='1')));
