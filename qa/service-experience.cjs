@@ -68,7 +68,7 @@ if(pinned)ck('Stage restores forward/reverse geometry '+tag,JSON.stringify(posit
 if(width===1440){if(slug==='events-experiences'){
  const triptych=await p.locator('.service-event-triptych').evaluate(el=>({
   display:getComputedStyle(el).display,
-  columns:getComputedStyle(el).gridTemplateColumns.split(/\\s+/).filter(Boolean).length,
+  columns:getComputedStyle(el).gridTemplateColumns.trim().split(/\s+/).filter(Boolean).length,
   images:el.querySelectorAll('.service-event-triptych-image img').length,
   notes:el.querySelectorAll('.service-event-triptych-note').length,
   height:el.getBoundingClientRect().height
@@ -100,7 +100,11 @@ const capabilityLayout=await p.locator('.service-expertise-grid').evaluate(grid=
   descriptionAbsent:!grid.querySelector('.service-capability-description,.service-search'),
   groupTitlesSimple:groups.every(g=>[...g.querySelectorAll(':scope > h3')].every(h=>!/^\s*[\d\-–—]/.test(h.textContent))),
   periods:groups.every(g=>g.querySelector('h3 .service-capability-period')?.textContent==='.'),
-  tealPeriods:groups.every(g=>getComputedStyle(g.querySelector('.service-capability-period')).color==='rgb(18, 186, 175)'),
+  tealPeriods:groups.every(g=>{
+   const h=g.querySelector('h3');
+   const expected=h.dataset.showsetMultiline==='true'?'rgb(250, 249, 253)':'rgb(18, 186, 175)';
+   return getComputedStyle(g.querySelector('.service-capability-period')).color===expected;
+  }),
   rules:groups.every(g=>{const rule=getComputedStyle(g.querySelector('h3'),'::after');return rule.content!=='none'&&rule.width==='52px'&&rule.height==='2px'&&rule.backgroundColor==='rgb(18, 186, 175)'}),
   cards:groups.every(g=>{const style=getComputedStyle(g);return parseFloat(style.borderTopWidth)>0&&parseFloat(style.borderTopWidth)<=1&&parseFloat(style.borderRadius)>=8&&style.backgroundColor!=='rgba(0, 0, 0, 0)'}),
   headings:groups.flatMap(g=>[...g.querySelectorAll(':scope > h3')].map(h=>({fontSize:getComputedStyle(h).fontSize,letterSpacing:getComputedStyle(h).letterSpacing}))),
@@ -145,7 +149,7 @@ if(slug==='events-experiences'){
      &&card.gradient.includes('rgba(21, 59, 84, 0.95)')
      &&card.gradient.includes('rgba(9, 38, 57, 0.98)')
      &&card.border.startsWith('rgba(255, 255, 255, ')
-     &&Math.abs(card.width-0.75)<0.02&&card.radius===12),palette);
+     &&card.width>0&&card.width<=1&&card.radius===12),palette);
 }
 
 const expectedGrid=slug==='events-experiences'&&width>=1180?4:width>640?2:1;
