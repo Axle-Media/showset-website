@@ -94,6 +94,21 @@ if(slug==='creative-design'){
       &&el.querySelector('button').getAttribute('aria-pressed')===String(i===j)
       &&el.querySelector('p').getBoundingClientRect().height>0),i));
   }
+  await p.locator('.service-creative-select').nth(1).focus();
+  await p.keyboard.press('ArrowRight');
+  ck('Creative keyboard arrow navigation selects the next artwork '+tag,
+    await p.locator('.service-creative-select').nth(2).getAttribute('aria-pressed')==='true'
+    &&await p.locator('.service-creative-select').nth(2).evaluate(e=>e===document.activeElement));
+  await p.locator('.service-creative-select').nth(1).click();
+  await p.locator('.service-creative-select').nth(0).hover();
+  await p.waitForTimeout(400);
+  const hover=await p.locator('.service-creative-artboards').evaluate(board=>[...board.querySelectorAll('.service-creative-artboard-image img')].map(el=>getComputedStyle(el).filter));
+  ck('Creative artwork hover softly mutes the other boards without hiding content '+tag,
+    hover[0]==='none'&&hover.slice(1).every(f=>f.includes('grayscale(0.34)')&&f.includes('brightness(0.78)')),hover);
+  await p.mouse.move(0,0);
+  await p.waitForTimeout(400);
+  ck('Creative images restore full colour when pointer leaves '+tag,
+    await p.locator('.service-creative-artboard-image img').evaluateAll(es=>es.every(el=>getComputedStyle(el).filter==='none')));
  }
 if(slug==='digital-marketing'){await progress(p,.5);await p.getByRole('button',{name:'Content',exact:true}).click();ck('Digital channel choice responds',await p.getByRole('button',{name:'Content',exact:true}).getAttribute('aria-pressed')==='true');await p.getByRole('button',{name:'Website',exact:true}).focus();await p.keyboard.press('Space');ck('Digital choice is keyboard accessible',await p.getByRole('button',{name:'Website',exact:true}).getAttribute('aria-pressed')==='true')}
 if(slug==='content-production'){await progress(p,0);const a=await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform);await progress(p,.5);const z=await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform);ck('Production photographic sequence advances',pinned&&a!==z);await progress(p,0);ck('Production sequence reverses',await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform)===a)}}
