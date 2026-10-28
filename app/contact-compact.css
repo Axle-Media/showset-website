@@ -1,0 +1,222 @@
+/* Contact: compact, photographic-free two-column composition.
+   Keeps SHOWSET's navy/teal palette and existing honest email-draft workflow.
+   Scoped to Contact; no global form or page styles changed. */
+.concept-12-root .contact-rebuilt{
+  background:#0a2d44;color:#FAF9FD;overflow:clip;
+}
+.concept-12-root .contact-rebuilt .contact-view{
+  box-sizing:border-box;min-height:0!important;
+  padding:calc(var(--header-height) + clamp(42px,5vw,72px)) var(--gutter) clamp(80px,9vw,140px);
+  background:linear-gradient(125deg,#0c304a 0%,#0a293f 60%,#08263b 100%);
+}
+.concept-12-root .contact-rebuilt .contact-shell{
+  display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  align-items:start;gap:clamp(36px,5.2vw,92px);max-width:1450px;margin:0 auto;
+}
+.concept-12-root .contact-rebuilt .contact-left{
+  position:relative;isolation:isolate;min-width:0;min-height:0!important;
+  padding:0;
+}
+.concept-12-root .contact-rebuilt .contact-intro{position:relative;z-index:1}
+.concept-12-root .contact-rebuilt .contact-editorial-heading{
+  width:100%;max-width:650px;
+  margin:0 0 clamp(21px,2.6vw,33px);
+  font-family:var(--display);font-size:clamp(42px,4.1vw,64px)!important;
+  font-weight:var(--refine-heading-weight,650);
+  letter-spacing:var(--v12-head-tracking,.018em)!important;
+  line-height:1.08!important;text-align:left;
+}
+.concept-12-root .contact-rebuilt .contact-editorial-heading>.plain-line{display:block;color:#FAF9FD}
+.concept-12-root .contact-rebuilt .contact-editorial-heading>.accent-text{color:#12BAAF}
+.concept-12-root .contact-rebuilt .contact-editorial-heading .service-period{color:#FAF9FD!important}
+.concept-12-root .contact-rebuilt .contact-intro>p{
+  width:100%;max-width:490px;margin:0;
+  color:rgba(250,249,253,.81);
+  font:500 clamp(16px,1.15vw,18px)/1.68 var(--body-font);
+  letter-spacing:var(--v12-body-tracking,.012em);
+}
+.concept-12-root .contact-rebuilt .contact-direct{
+  display:flex;flex-direction:column;align-items:flex-start;
+  gap:clamp(16px,1.9vw,25px);margin:clamp(30px,4vw,53px) 0 0;
+}
+.concept-12-root .contact-rebuilt .contact-direct a{
+  padding:0;border:0;color:#FAF9FD;
+  font:650 clamp(16px,1.1vw,18px)/1.38 var(--body-font);
+  text-decoration:none;overflow-wrap:anywhere;
+  transition:color .22s;
+}
+.concept-12-root .contact-rebuilt .contact-direct a:is(:hover,:focus-visible){color:#12BAAF}
+.concept-12-root .contact-rebuilt :is(.contact-direct a,.contact-whatsapp):focus-visible{
+  outline:2px solid #12BAAF;outline-offset:5px;
+}
+.concept-12-root .contact-rebuilt .contact-whatsapp{
+  display:inline-flex;align-items:center;justify-content:center;gap:11px;
+  max-width:100%;min-height:46px;margin:clamp(26px,3vw,40px) 0 0;
+  padding:12px 19px;border:1px solid rgba(250,249,253,.43);
+  border-radius:99px;color:#FAF9FD;background:transparent;
+  font:650 14px/1.4 var(--body-font);text-decoration:none;
+  transition:border-color .24s,background .24s;
+}
+.concept-12-root .contact-rebuilt .contact-whatsapp svg{
+  width:19px;height:19px;flex:none;stroke:#12BAAF;
+}
+.concept-12-root .contact-rebuilt .contact-whatsapp-arrow{
+  margin-left:6px;color:#12BAAF;transition:transform .24s;
+}
+.concept-12-root .contact-rebuilt .contact-whatsapp:is(:hover,:focus-visible){
+  background:rgba(18,186,175,.12);border-color:#12BAAF;
+}
+.concept-12-root .contact-rebuilt .contact-whatsapp:is(:hover,:focus-visible) .contact-whatsapp-arrow{
+  transform:translate(3px,-3px);
+}
+.concept-12-root .contact-rebuilt .contact-photo{display:none!important}
+.concept-12-root .contact-rebuilt .contact-form{
+  position:relative;min-width:0;
+  margin:0;padding:clamp(26px,3.25vw,48px);
+  border:1px solid rgba(250,249,253,.26);
+  border-radius:clamp(17px,1.9vw,26px);
+  background:#FAF9FD;color:#08263b;
+  box-shadow:0 24px 65px rgba(0,8,18,.13);
+}
+.concept-12-root .contact-rebuilt .contact-form h2.sr-only{
+  position:absolute!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;
+  overflow:hidden!important;width:1px!important;height:1px!important;
+  margin:-1px!important;padding:0!important;border:0!important;white-space:nowrap!important;
+}
+.concept-12-root .contact-rebuilt .contact-name-email,
+.concept-12-root .contact-rebuilt .contact-timing-budget{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(13px,1.6vw,25px);
+}
+.concept-12-root .contact-rebuilt .contact-field{min-width:0;margin:0 0 clamp(20px,2vw,29px)}
+.concept-12-root .contact-rebuilt .contact-form label{
+  display:block;margin:0 0 9px;color:#08263b;
+  font:650 13px/1.4 var(--body-font);letter-spacing:0;
+}
+.concept-12-root .contact-rebuilt .contact-form label span{
+  color:#647d91;font-weight:500;
+}
+.concept-12-root .contact-rebuilt .contact-form :is(input,textarea,select),
+.concept-12-root .contact-rebuilt .contact-form .select-trigger{
+  display:block;box-sizing:border-box;width:100%;min-width:0;
+  padding:13px 14px!important;min-height:50px;
+  border:1.5px solid #a0b5c5;border-radius:10px;
+  background:#FFFFFF;box-shadow:none;
+  color:#08263b!important;
+  font:500 15px/1.45 var(--body-font)!important;
+  letter-spacing:0;outline:none;
+  transition:border-color .2s,box-shadow .2s;
+}
+.concept-12-root .contact-rebuilt .contact-form input::placeholder,
+.concept-12-root .contact-rebuilt .contact-form textarea::placeholder{
+  color:#78909e;opacity:1;
+}
+.concept-12-root .contact-rebuilt .contact-form textarea{
+  display:block;min-height:125px;max-height:450px;resize:vertical;
+}
+.concept-12-root .contact-rebuilt .contact-form :is(input,textarea,select):is(:focus,:focus-visible),
+.concept-12-root .contact-rebuilt .contact-form .select-trigger:is(:focus-visible,[aria-expanded="true"]){
+  border-color:#088d88;
+  box-shadow:0 0 0 3px rgba(18,186,175,.14);
+  outline:none;
+}
+.concept-12-root .contact-rebuilt .contact-form :is(input,textarea,select):user-invalid{
+  border-color:#a94040;
+}
+.concept-12-root .contact-rebuilt .contact-form select{
+  cursor:pointer;color:#08263b!important;appearance:auto;
+}
+.concept-12-root .contact-rebuilt .contact-form select option{
+  color:#08263b;background:#FFFFFF;
+}
+.concept-12-root .contact-rebuilt .contact-extra{
+  margin:0 0 clamp(20px,2vw,26px);padding:0;
+  border:0;border-top:1px solid #cbd7df;border-bottom:1px solid #cbd7df;
+}
+.concept-12-root .contact-rebuilt .contact-extra>summary{
+  display:flex;align-items:center;justify-content:space-between;gap:15px;
+  min-height:44px;padding:10px 0;cursor:pointer;
+  color:#26485d;font:650 13px/1.4 var(--body-font);
+}
+.concept-12-root .contact-rebuilt .contact-extra>summary:focus-visible{outline:2px solid #088d88;outline-offset:3px}
+.concept-12-root .contact-rebuilt .contact-extra>summary span{font-size:20px;color:#088d88}
+.concept-12-root .contact-rebuilt .contact-extra-fields{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(13px,1.6vw,25px);padding:17px 0 0;
+}
+.concept-12-root .contact-rebuilt .contact-extra-fields>.contact-field:first-child{grid-column:auto}
+.concept-12-root .contact-rebuilt .contact-form button.select-trigger{
+  display:flex;align-items:center;justify-content:space-between;
+  text-align:left;cursor:pointer;
+}
+.concept-12-root .contact-rebuilt .contact-form .select-trigger>span{
+  font:500 14px/1.4 var(--body-font);color:#315168;
+}
+.concept-12-root .contact-rebuilt .contact-form .select-panel{
+  border:1px solid #b2c6d0;background:#FAF9FD;box-shadow:0 15px 35px rgba(5,28,44,.16);
+  border-radius:9px;z-index:20;
+}
+.concept-12-root .contact-rebuilt .contact-form .select-option{color:#08263b}
+.concept-12-root .contact-rebuilt .contact-form .select-option:is(:focus-visible,:hover){background:#d8f2ee;color:#08263b}
+.concept-12-root .contact-rebuilt .contact-submit-row{
+  display:flex;flex-direction:column;gap:10px;align-items:stretch;
+}
+.concept-12-root .contact-rebuilt .contact-submit-row .contact-submit{
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  width:100%;min-height:50px;margin:0!important;padding:12px 22px;
+  border:1px solid #12BAAF;border-radius:99px!important;
+  background:#12BAAF;color:#062739;
+  font:700 14px/1.35 var(--body-font)!important;
+  letter-spacing:0;cursor:pointer;
+  transition:background .25s,border-color .25s;
+}
+.concept-12-root .contact-rebuilt .contact-submit-row .contact-submit:is(:hover,:focus-visible){
+  background:#39d4c8;border-color:#39d4c8;outline-offset:4px;
+}
+.concept-12-root .contact-rebuilt .contact-submit-row .contact-submit:disabled{opacity:.55;cursor:wait}
+.concept-12-root .contact-rebuilt .contact-submit-row .contact-submit>span{
+  color:#062739;font-size:17px;
+}
+.concept-12-root .contact-rebuilt .form-note{
+  max-width:none;margin:1px 0 0;text-align:center;
+  color:#476176;font:500 12px/1.6 var(--body-font);
+}
+.concept-12-root .contact-rebuilt .form-result{
+  margin:16px 0 0;color:#08263b;font:500 14px/1.5 var(--body-font);
+}
+.concept-12-root .contact-rebuilt .form-result:empty{display:none}
+.concept-12-root .contact-rebuilt .form-result a{color:#087e79;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:900px){
+  .concept-12-root .contact-rebuilt .contact-shell{
+    grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(24px,3.5vw,44px);
+  }
+  .concept-12-root .contact-rebuilt .contact-editorial-heading{font-size:clamp(38px,5vw,51px)!important}
+  .concept-12-root .contact-rebuilt .contact-form{padding:clamp(22px,3vw,32px)}
+}
+@media(max-width:740px){
+  .concept-12-root .contact-rebuilt .contact-view{
+    padding-top:calc(var(--header-height) + 43px);
+    padding-bottom:75px;min-height:0!important;
+  }
+  .concept-12-root .contact-rebuilt .contact-shell{grid-template-columns:1fr;gap:34px}
+  .concept-12-root .contact-rebuilt .contact-left{padding:0;min-height:0!important}
+  .concept-12-root .contact-rebuilt .contact-editorial-heading{font-size:clamp(37px,7vw,49px)!important;margin-bottom:19px}
+  .concept-12-root .contact-rebuilt .contact-direct{margin-top:26px;gap:13px}
+  .concept-12-root .contact-rebuilt .contact-whatsapp{margin-top:24px}
+  .concept-12-root .contact-rebuilt .contact-name-email,
+  .concept-12-root .contact-rebuilt .contact-timing-budget{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:520px){
+  .concept-12-root .contact-rebuilt .contact-view{padding-top:calc(var(--header-height) + 35px)}
+  .concept-12-root .contact-rebuilt .contact-form{padding:21px;border-radius:18px}
+  .concept-12-root .contact-rebuilt .contact-name-email,
+  .concept-12-root .contact-rebuilt .contact-timing-budget,
+  .concept-12-root .contact-rebuilt .contact-extra-fields{grid-template-columns:1fr;gap:0}
+  .concept-12-root .contact-rebuilt .contact-field{margin-bottom:18px}
+  .concept-12-root .contact-rebuilt .contact-whatsapp{width:max-content}
+}
+@media(prefers-reduced-motion:reduce){
+  .concept-12-root .contact-rebuilt :is(.contact-direct a,.contact-whatsapp,.contact-whatsapp-arrow,.contact-submit,.contact-submit>span){
+    transition:none!important;animation:none!important;transform:none!important;
+  }
+}

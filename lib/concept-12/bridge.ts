@@ -631,6 +631,19 @@ export function bindConcept(
       const arrow = directPhone.querySelector("span")?.outerHTML || "";
       directPhone.innerHTML = escape(footer.phone) + " " + arrow;
     }
+    const whatsapp = host.querySelector<HTMLAnchorElement>("[data-contact-whatsapp]");
+    if (whatsapp) {
+      // One phone source of truth for the contact links and WhatsApp shortcut.
+      const digits = footer.phone.replace(/[^\d]/g, "");
+      const international = digits.startsWith("0") ? "27" + digits.slice(1) : digits;
+      if (/^\d{9,15}$/.test(international)) {
+        whatsapp.href = "https://wa.me/" + international;
+        whatsapp.removeAttribute("aria-disabled");
+      } else {
+        whatsapp.removeAttribute("href");
+        whatsapp.setAttribute("aria-disabled", "true");
+      }
+    }
   }
   // Social destinations are optional and stay disabled until the owner enters
   // confirmed official profile URLs in Studio. Never generate generic links.
