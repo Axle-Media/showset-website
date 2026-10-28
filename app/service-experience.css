@@ -625,3 +625,63 @@
   }
   .service-experience--events .service-event-triptych-notes:after{transform:scaleY(1)!important;transition:none!important}
 }
+
+/* Events closing CTA: reuse the homepage's compact editorial composition.
+   Only Events changes; other disciplines retain their photographic endings. */
+.service-experience--events .service-close--editorial{
+  display:block;
+  min-height:0;
+  text-align:left;
+  padding:clamp(100px,12vw,170px) var(--gutter) clamp(85px,8vw,125px);
+  overflow:hidden;
+}
+.service-experience--events .service-close--editorial .service-heading{
+  font-size:clamp(37px,4.4vw,62px);
+  font-weight:var(--refine-heading-weight);
+  line-height:var(--refine-heading-leading)!important;
+  max-width:1040px;
+  margin:0;
+}
+.service-experience--events .service-close--editorial .service-heading .plain-line{
+  display:block;
+}
+.service-experience--events .service-close--editorial .service-heading .accent-text{
+  color:var(--teal);
+}
+.service-experience--events .service-close--editorial .service-heading .service-period{
+  color:var(--ice)!important;
+}
+.service-experience--events .service-close--editorial .end-bottom{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:clamp(18px,2.5vw,28px);
+  margin-top:clamp(25px,3.5vw,42px);
+  padding-top:0;
+  border-top:0;
+}
+.service-experience--events .service-close--editorial .service-close-description{
+  max-width:min(660px,100%);
+}
+.service-experience--events .service-close--editorial .service-close-description p{
+  max-width:100%;
+  line-height:1.6;
+  margin:0 0 var(--v12-para-gap,18px);
+}
+.service-experience--events .service-close--editorial .service-close-description p:last-child{
+  margin-bottom:0;
+}
+.service-experience--events .service-close--editorial .end-link.solid-link{
+  margin-top:0;
+  width:max-content;
+  max-width:100%;
+}
+@media(max-width:600px){
+  .service-experience--events .service-close--editorial{
+    padding-top:105px;
+    padding-bottom:100px;
+  }
+  .service-experience--events .service-close--editorial .service-heading{
+    font-size:clamp(34px,9vw,52px);
+  }
+}
