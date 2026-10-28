@@ -62,6 +62,12 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
   await page.goto(base+'/our-work/');
   await page.waitForSelector('[data-concept-ready="true"]');
   ck('Portfolio four-section journey '+width,await page.locator('.view.is-current[data-view="work"]>section').count()===4);
+  ck('Our Work drops obsolete Selected stories heading and explanatory paragraph '+width,
+    await page.locator('.view.is-current .work-index-header').count()===0 &&
+    !(await page.locator('.view.is-current[data-view="work"]').innerText()).includes("Explore the work and the thinking behind it. New stories will appear here as they're published."));
+  ck('Our Work filter controls begin the gallery directly '+width,
+    await page.locator('.view.is-current .work-page-gallery > [data-work-filters]').count()===1 &&
+    await page.locator('.view.is-current [data-work-filter="all"]').isVisible());
   const portfolio=await page.locator('.view.is-current .work-portfolio-card').evaluateAll(nodes=>nodes.map(n=>({
    href:n.getAttribute('href'),title:n.querySelector('h2')?.textContent,
    label:n.querySelector('.work-feature-type')?.textContent,
