@@ -20,8 +20,30 @@ if(photo)await sampleHeading(p,'.service-hero h1',true);else{await sampleHeading
 const type=await p.locator('.service-experience').evaluate(root=>{const near=(a,b)=>Math.abs(a-b)<.001;return{headings:[...root.querySelectorAll('h1,h2,h3')].every(e=>{const s=getComputedStyle(e),size=parseFloat(s.fontSize);return s.fontWeight===s.getPropertyValue('--refine-heading-weight').trim()&&near(parseFloat(s.lineHeight)/size,parseFloat(s.getPropertyValue('--refine-heading-leading')))&&near(parseFloat(s.letterSpacing)/size,parseFloat(s.getPropertyValue('--v12-head-tracking')))}),body:[...root.querySelectorAll('p')].every(e=>{const s=getComputedStyle(e);return s.fontSize==='17px'&&near(parseFloat(s.lineHeight)/17,parseFloat(s.getPropertyValue('--v12-body-leading')))&&near(parseFloat(s.letterSpacing)/17,parseFloat(s.getPropertyValue('--v12-body-tracking')))}),buttons:[...root.querySelectorAll('.solid-link,.understated-link,button')].every(e=>getComputedStyle(e).fontSize==='14px'),eyebrows:root.querySelectorAll('.service-eyebrow').length}});
 ck('Global heading/body/action tokens '+tag,type.headings&&type.body&&type.buttons,type);ck('Only selected contextual eyebrows '+tag,type.eyebrows<=3,type);
 await scroll(p,'.service-intro');await p.waitForTimeout(1200);await p.screenshot({path:path.join(out,tag+'-editorial.png')});
+if(slug==='events-experiences'&&width===1440){
+ const before=await p.locator('.service-experience').evaluate(root=>({
+  state:root.dataset.serviceTriptychIntro,
+  images:[...root.querySelectorAll('.service-event-triptych-image')].map(el=>getComputedStyle(el).opacity)
+ }));
+ ck('Events triptych awaits scroll entry '+tag,
+   before.state==='pending'&&before.images.length===3&&before.images.every(v=>v==='0'),before);
+ await scroll(p,'.service-event-triptych',140);
+ await p.waitForTimeout(1600);
+ const after=await p.locator('.service-experience').evaluate(root=>({
+  state:root.dataset.serviceTriptychIntro,
+  pinned:root.querySelector('[data-service-story-track]')?.dataset.servicePinned,
+  images:[...root.querySelectorAll('.service-event-triptych-image')].map(el=>{
+   const c=getComputedStyle(el);return {opacity:c.opacity,clip:c.clipPath}
+  }),
+  notes:[...root.querySelectorAll('.service-event-triptych-note')].map(el=>getComputedStyle(el).opacity)
+ }));
+ ck('Events triptych reveals three photo strips and notes without pinning '+tag,
+   after.state==='done'&&after.pinned==='false'
+   &&after.images.length===3&&after.images.every(el=>el.opacity==='1'&&(el.clip==='inset(0px)'||el.clip==='inset(0px 0px 0px 0px)'))
+   &&after.notes.length===3&&after.notes.every(v=>v==='1'),after);
+}
 const states=[];for(const f of[.1,.5,.9,.5,.1]){const pinned=await p.locator('[data-service-story-track]').getAttribute('data-service-pinned')==='true';await p.locator('[data-service-story-track]').evaluate((e,f)=>scrollTo({top:scrollY+e.getBoundingClientRect().top+Math.max(0,e.offsetHeight-innerHeight)*f,behavior:'instant'}),f);await p.waitForTimeout(1050);states.push(await p.locator('.service-story-stage').evaluate(e=>({p:e.style.getPropertyValue('--service-progress'),proof:e.style.getPropertyValue('--proof-progress'),channel:e.style.getPropertyValue('--channel-progress'),film:e.style.getPropertyValue('--service-frame-progress'),rail:e.querySelector('.service-scenes')?.style.transform,active:[...e.querySelectorAll('[data-service-scene]')].map(s=>s.getAttribute('aria-hidden')),pinned:e.parentElement.dataset.servicePinned})));if(states.length<=3)await p.screenshot({path:path.join(out,tag+'-story-'+f+'.png')});if(pinned&&slug==='events-experiences')ck('Active photographic story heading is readable '+tag+' '+f,await p.locator('[data-service-scene][aria-hidden=false] .wipe-line>span').evaluate(e=>/^inset\(0px(?: 0px){0,3}\)$/.test(getComputedStyle(e).clipPath)))}
-if(width>800){ck('Signature changes during actual forward scroll '+tag,JSON.stringify(states[0])!==JSON.stringify(states[2]),states);ck('Signature returns to its prior reverse state '+tag,JSON.stringify(states[0])===JSON.stringify(states.at(-1)),states)}
+if(width>800&&slug!=='events-experiences'){ck('Signature changes during actual forward scroll '+tag,JSON.stringify(states[0])!==JSON.stringify(states[2]),states);ck('Signature returns to its prior reverse state '+tag,JSON.stringify(states[0])===JSON.stringify(states.at(-1)),states)}
 if(slug==='digital-marketing'){const choice=p.getByRole('button',{name:'Content',exact:true});if(width<=390)await choice.tap();else await choice.click();const a=await p.locator('.service-channel-lines').evaluate(e=>getComputedStyle(e).strokeDashoffset);await p.waitForTimeout(600);const z=await p.locator('.service-channel-lines').evaluate(e=>getComputedStyle(e).strokeDashoffset);ck('Channel selection links path and active response '+tag,await choice.getAttribute('aria-pressed')==='true'&&(width<=800||a!==z),{a,z});await p.getByRole('button',{name:'Website',exact:true}).focus();await p.keyboard.press('Space');ck('Channel keyboard selection '+tag,await p.getByRole('button',{name:'Website',exact:true}).getAttribute('aria-pressed')==='true')}
 if(await p.locator('.service-process').count()){await scroll(p,'.service-process',600);const a=await p.locator('.service-process li').first().evaluate(e=>e.style.getPropertyValue('--process-unit'));await scroll(p,'.service-process',90);await p.waitForTimeout(1200);const z=await p.locator('.service-process li').first().evaluate(e=>e.style.getPropertyValue('--process-unit'));ck('Process assembly follows reading progress '+tag,a!==z||Number(z)===1,{a,z});await p.screenshot({path:path.join(out,tag+'-process.png')});}
 else ck('No duplicated Events process '+tag,slug==='events-experiences');
@@ -52,11 +74,13 @@ if(width<=390){ck('Mobile cards are readable without tapping a control '+tag,awa
 ck('No redundant related-work section '+tag,await p.locator('.service-work,.service-work-card').count()===0);
 await sampleHeading(p,'.service-close h2',true);await p.screenshot({path:path.join(out,tag+'-closing.png')});
 ck('Wrapped type and punctuation fit each line '+tag,await p.locator('[data-service-reveal] .wipe-line').evaluateAll(es=>es.every(e=>{const span=e.firstElementChild,r=document.createRange();r.selectNodeContents(span);const ink=r.getBoundingClientRect(),box=span.getBoundingClientRect();return ink.left>=box.left-1&&ink.right<=box.right+1&&ink.top>=box.top-1&&ink.bottom<=box.bottom+1})));ck('No document overflow '+tag,await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
-if(width>800){await p.locator('[data-service-story-track]').evaluate(e=>scrollTo({top:scrollY+e.getBoundingClientRect().bottom-innerHeight+120,behavior:'instant'}));await p.waitForTimeout(120);ck('Pinned story releases cleanly '+tag,await p.locator('.service-story-stage').evaluate(e=>e.dataset.servicePhase==='leaving'&&e.getBoundingClientRect().top< -100));}
-if(width===1440&&slug==='events-experiences'){const act=async f=>{await p.locator('[data-service-story-track]').evaluate((e,f)=>scrollTo({top:scrollY+e.getBoundingClientRect().top+(e.offsetHeight-innerHeight)*f,behavior:'instant'}),f);await p.waitForTimeout(100)};await sampleHeading(p,'[data-service-scene="1"] h3',true,{reset:()=>act(.1),enter:()=>act(.5)});await sampleHeading(p,'[data-service-scene="0"] h3',true,{reset:()=>act(.5),enter:()=>act(.1)});}
+if(width>800&&slug!=='events-experiences'){await p.locator('[data-service-story-track]').evaluate(e=>scrollTo({top:scrollY+e.getBoundingClientRect().bottom-innerHeight+120,behavior:'instant'}));await p.waitForTimeout(120);ck('Pinned story releases cleanly '+tag,await p.locator('.service-story-stage').evaluate(e=>e.dataset.servicePhase==='leaving'&&e.getBoundingClientRect().top< -100));}
+if(width===1440&&slug==='events-experiences')ck('Events no longer has pinned photo headlines '+tag,await p.locator('.service-event-triptych-note .wipe-line').count()===0);
 const vid=video?p.video():null;await c.close();if(vid)await vid.saveAs(path.join(out,'videos',slug+'.webm'));
 }
 for(const options of[{reducedMotion:'reduce'},{javaScriptEnabled:false}])for(const slug of slugs){const c=await b.newContext({viewport:{width:1440,height:900},...options}),p=await c.newPage();await p.goto(base+'/'+slug+'/');if(options.javaScriptEnabled!==false)await p.waitForSelector('[data-service-ready=true]');ck('All heading glyphs readable without motion '+slug+' '+JSON.stringify(options),await p.locator('[data-service-reveal] .wipe-line>span').evaluateAll(es=>es.every(e=>getComputedStyle(e).clipPath==='none'&&getComputedStyle(e).opacity==='1')));
+if(slug==='events-experiences')ck('Events triptych remains readable without motion '+JSON.stringify(options),
+ await p.locator('.service-event-triptych-note').evaluateAll(es=>es.length===3&&es.every(el=>getComputedStyle(el).opacity==='1')));
 if(slug==='events-experiences')ck('Events capability cards remain visible without motion '+JSON.stringify(options),
  await p.locator('.service-expertise-grid > .service-capability-group').evaluateAll(es=>es.length===4&&es.every(el=>getComputedStyle(el).opacity==='1')));
 await c.close()}
