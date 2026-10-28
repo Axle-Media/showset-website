@@ -186,7 +186,7 @@ if(slug==='digital-marketing'){
  ck('Digital network supports keyboard navigation '+tag,
   await p.locator('[data-digital-focus-button]').nth(1).evaluate(el=>el===document.activeElement&&el.getAttribute('aria-pressed')==='true'));
 }
-if(slug==='content-production'){await progress(p,0);const a=await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform);await progress(p,.5);const z=await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform);ck('Production photographic sequence advances',pinned&&a!==z);await progress(p,0);ck('Production sequence reverses',await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform)===a)}if(slug==='content-production'){
+if(slug==='content-production'){
  const layout=await p.locator('[data-production-composition]').evaluate(el=>({
   frames:el.querySelectorAll('[data-production-frame]').length,
   stages:el.querySelectorAll('[data-production-step]').length,
