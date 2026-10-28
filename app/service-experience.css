@@ -426,3 +426,35 @@
     grid-template-columns:minmax(0,1fr);
   }
 }
+
+/* Events capability-card stagger: restrained upward fade, once on scroll entry.
+   The cards are fully readable without JS, in still mode or with reduced motion. */
+.service-experience--events[data-service-motion=on] .service-expertise-grid > .service-capability-group{
+  transition:opacity 620ms cubic-bezier(.22,.66,.21,1),transform 620ms cubic-bezier(.22,.66,.21,1);
+  transition-delay:var(--event-card-delay,0ms);
+}
+.service-experience--events .service-expertise-grid > .service-capability-group:nth-child(2){--event-card-delay:120ms}
+.service-experience--events .service-expertise-grid > .service-capability-group:nth-child(3){--event-card-delay:240ms}
+.service-experience--events .service-expertise-grid > .service-capability-group:nth-child(4){--event-card-delay:360ms}
+.service-experience--events[data-service-motion=on][data-service-card-intro=pending] .service-expertise-grid > .service-capability-group{
+  opacity:0;
+  transform:translate3d(0,24px,0);
+}
+.service-experience--events[data-service-motion=on][data-service-card-intro=done] .service-expertise-grid > .service-capability-group{
+  opacity:1;
+  transform:translate3d(0,0,0);
+}
+.service-experience--events [data-scene=still] .service-expertise-grid > .service-capability-group,
+.service-experience--events .c12-reveal-off .service-expertise-grid > .service-capability-group,
+[data-static-motion] .service-experience--events .service-expertise-grid > .service-capability-group{
+  opacity:1!important;
+  transform:none!important;
+  transition:none!important;
+}
+@media(prefers-reduced-motion:reduce){
+  .service-experience--events .service-expertise-grid > .service-capability-group{
+    opacity:1!important;
+    transform:none!important;
+    transition:none!important;
+  }
+}
