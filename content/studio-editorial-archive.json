@@ -1,0 +1,174 @@
+{
+  "purpose": "Legacy SHOWSET Studio editorial content retained for future knowledge-base or FAQ placement. Not part of the current live Our Studio page.",
+  "archivedFrom": "main at 5addbe81a323795e12665dc1a99a9c8855db53b1",
+  "sections": [
+    {
+      "id": "concept12-studio-belief",
+      "type": "split",
+      "headline": "Heads in the clouds.",
+      "accent": "Feet on the floor plan.",
+      "body": "We love the wild first thought. We also love the spreadsheet that makes it happen. A strong concept needs both imagination and organisation, and we are quite happy moving between the two. It is how we can be adventurous without being careless.",
+      "image": "",
+      "pattern": true,
+      "reveal": true,
+      "buttonLabel": "",
+      "buttonHref": "",
+      "secondaryLabel": "",
+      "secondaryHref": "",
+      "items": [],
+      "speed": 6,
+      "formTitle": "",
+      "helperText": ""
+    },
+    {
+      "id": "section-4",
+      "type": "items",
+      "headline": "How we work.",
+      "accent": "",
+      "body": "",
+      "image": "",
+      "pattern": false,
+      "reveal": true,
+      "buttonLabel": "",
+      "buttonHref": "",
+      "secondaryLabel": "",
+      "secondaryHref": "",
+      "items": [
+        {
+          "id": "listen-properly-0",
+          "title": "Listen properly",
+          "accent": "",
+          "description": "We want to know what matters, what is possible and what would make this worth doing.",
+          "image": "",
+          "href": ""
+        },
+        {
+          "id": "think-freely-1",
+          "title": "Think freely",
+          "accent": "",
+          "description": "We explore routes worth taking and bring the strongest idea into focus.",
+          "image": "",
+          "href": ""
+        },
+        {
+          "id": "make-deliberately-2",
+          "title": "Make deliberately",
+          "accent": "",
+          "description": "We design, plan, produce and keep an eye on the details as the idea takes shape.",
+          "image": "",
+          "href": ""
+        },
+        {
+          "id": "finish-with-pride-3",
+          "title": "Finish with pride",
+          "accent": "",
+          "description": "We test, refine, deliver and make sure the last detail gets the same attention as the first.",
+          "image": "",
+          "href": ""
+        }
+      ],
+      "speed": 6,
+      "formTitle": "",
+      "helperText": ""
+    },
+    {
+      "id": "section-6",
+      "type": "accordion",
+      "headline": "Good questions. Better conversations.",
+      "accent": "",
+      "body": "Here are a few useful things to know before we start.",
+      "image": "",
+      "pattern": true,
+      "reveal": false,
+      "buttonLabel": "",
+      "buttonHref": "",
+      "secondaryLabel": "",
+      "secondaryHref": "",
+      "items": [
+        {
+          "id": "what-kind-of-projects-do-we--0",
+          "title": "What kind of projects do we take on?",
+          "accent": "",
+          "description": "We work across events, brand and graphic design, digital experiences, marketing, content and production. Some briefs need one discipline. Others need several. We choose the shape of the work around the goal, not the other way around.",
+          "image": "",
+          "href": ""
+        },
+        {
+          "id": "can-we-handle-a-project-from-1",
+          "title": "Can we handle a project from idea to execution?",
+          "accent": "",
+          "description": "Yes, that is one of the strengths of bringing creative thinking and event production into the same conversation. We can help shape the concept, design the assets and coordinate the work needed to bring it to life, with the right specialists where needed.",
+          "image": "",
+          "href": ""
+        },
+        {
+          "id": "do-we-work-on-individual-ser-2",
+          "title": "Do we work on individual services too?",
+          "accent": "",
+          "description": "Absolutely. You might need an identity, event layout, website, campaign, motion graphic or a helping hand with creative production. We do not need to turn every brief into a giant project.",
+          "image": "",
+          "href": ""
+        },
+        {
+          "id": "can-we-join-an-existing-mark-3",
+          "title": "Can we join an existing marketing or event team?",
+          "accent": "",
+          "description": "Yes. We can work alongside internal teams, agencies and event stakeholders, taking responsibility for a clearly defined part of the work or supporting across several disciplines.",
+          "image": "",
+          "href": ""
+        },
+        {
+          "id": "what-if-the-idea-is-not-full-4",
+          "title": "What if the idea is not fully formed yet?",
+          "accent": "",
+          "description": "That is a perfectly good place to start. We can help turn the rough thought into a useful brief, clarify what matters and work out what it would take to deliver.",
+          "image": "",
+          "href": ""
+        },
+        {
+          "id": "do-we-only-create-events-for-5",
+          "title": "Do we only create events for businesses?",
+          "accent": "",
+          "description": "No. We work with both corporate and private experiences. What matters to us is making the occasion feel considered, appropriate and genuinely personal to the people there.",
+          "image": "",
+          "href": ""
+        },
+        {
+          "id": "can-we-support-a-brand-after-6",
+          "title": "Can we support a brand after launch?",
+          "accent": "",
+          "description": "Yes. We offer ongoing creative and marketing partnerships for businesses that need a steady stream of content, design, marketing thinking or digital support.",
+          "image": "",
+          "href": ""
+        },
+        {
+          "id": "can-we-help-with-event-suppl-7",
+          "title": "Can we help with event suppliers and production partners?",
+          "accent": "",
+          "description": "We can build supplier and production requirements into an event plan and help source or coordinate the relevant services. The scope, responsibilities and final supplier arrangements are agreed for each brief.",
+          "image": "",
+          "href": ""
+        },
+        {
+          "id": "do-we-work-on-projects-outsi-8",
+          "title": "Do we work on projects outside our immediate area?",
+          "accent": "",
+          "description": "Project location, travel and on-site support depend on the brief. Tell us where you need us and we can discuss the practical approach.",
+          "image": "",
+          "href": ""
+        },
+        {
+          "id": "how-do-we-get-started--9",
+          "title": "How do we get started?",
+          "accent": "",
+          "description": "Tell us what you have in mind, what you hope it will achieve and any timing or budget parameters you know. We can take the conversation from there.",
+          "image": "",
+          "href": ""
+        }
+      ],
+      "speed": 6,
+      "formTitle": "",
+      "helperText": ""
+    }
+  ]
+}
