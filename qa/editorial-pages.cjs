@@ -103,6 +103,16 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
   await page.goto(base+'/contact/');
   await page.waitForSelector('[data-concept-ready="true"]');
   ck('Compact Contact single composition '+width,await page.locator('.view.is-current[data-view="contact"]>section').count()===1);
+  ck('Contact opens directly into the left copy and right form, without an additional hero '+width,
+    await page.locator('.view.is-current[data-view="contact"] > .contact-view > .contact-shell > .contact-left h1').count()===1 &&
+    await page.locator('.view.is-current[data-view="contact"] > .contact-view > .contact-shell > #contact-form').count()===1 &&
+    await page.locator('.view.is-current[data-view="contact"] .contact-eyebrow').count()===0 &&
+    await page.locator('.view.is-current[data-view="contact"] :is(.contact-hero,.simple-hero,.page-hero)').count()===0);
+  ck('Contact copy and all direct channels sit together left of the form '+width,
+    await page.locator('.view.is-current .contact-left').evaluate(el=>
+      !!el.querySelector('.contact-intro > h1')&&!!el.querySelector('.contact-intro > p')&&
+      !!el.querySelector('[data-contact-email]')&&!!el.querySelector('[data-contact-phone]')&&
+      !!el.querySelector('[data-contact-whatsapp]')));
   const contactGeometry=await page.locator('.view.is-current .contact-view').evaluate(el=>{
     const shell=el.querySelector('.contact-shell'),card=el.querySelector('.contact-form');
     return {
