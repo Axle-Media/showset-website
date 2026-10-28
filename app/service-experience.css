@@ -723,3 +723,40 @@
     transition:none!important;
   }
 }
+
+/* Events triptych: hovering a photo quietly spotlights its matching story.
+   No layout movement, scrolling lock or JS; the remaining photographs and
+   text regain full emphasis as soon as the pointer leaves the image. */
+.service-story--events .service-event-triptych-image img{
+  transition:filter 340ms cubic-bezier(.22,.66,.21,1);
+}
+.service-story--events .service-event-triptych-note{
+  opacity:1;
+  transition:opacity 340ms cubic-bezier(.22,.66,.21,1);
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .service-experience--events[data-service-triptych-intro=done]
+  .service-event-triptych:has(.service-event-triptych-image:hover)
+  .service-event-triptych-image:not(:hover) img{
+    filter:grayscale(.45) brightness(.73);
+  }
+  .service-experience--events[data-service-triptych-intro=done]
+  .service-event-triptych:has(.service-event-triptych-image:nth-child(1):hover)
+  .service-event-triptych-note:not(:nth-child(1)),
+  .service-experience--events[data-service-triptych-intro=done]
+  .service-event-triptych:has(.service-event-triptych-image:nth-child(2):hover)
+  .service-event-triptych-note:not(:nth-child(2)),
+  .service-experience--events[data-service-triptych-intro=done]
+  .service-event-triptych:has(.service-event-triptych-image:nth-child(3):hover)
+  .service-event-triptych-note:not(:nth-child(3)){
+    opacity:.56;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .service-story--events .service-event-triptych-image img,
+  .service-story--events .service-event-triptych-note{
+    filter:none!important;
+    opacity:1!important;
+    transition:none!important;
+  }
+}
