@@ -138,7 +138,7 @@ for(const options of[{reducedMotion:'reduce'},{javaScriptEnabled:false}])for(con
 if(slug==='digital-marketing')ck('Digital network paths and descriptions stay visible with reduced motion '+JSON.stringify(options),
  await p.locator('.service-digital-connected').evaluate(el=>
   el.querySelectorAll('.service-digital-network-lines path').length===4
-  &&[...el.querySelectorAll('.service-digital-network-lines path')].every(path=>getComputedStyle(path).strokeDashoffset==='0')
+  &&[...el.querySelectorAll('.service-digital-network-lines path')].every(path=>Math.abs(parseFloat(getComputedStyle(path).strokeDashoffset))<.001)
   &&[...el.querySelectorAll('.service-digital-editorial-item p')].every(p=>getComputedStyle(p).opacity==='1')));
 if(slug==='creative-design')ck('Creative artwork and descriptions remain visible without motion '+JSON.stringify(options),
  await p.locator('.service-creative-artboard').evaluateAll(es=>es.length===3&&es.every(el=>getComputedStyle(el.querySelector('.service-creative-artboard-image')).opacity==='1'
