@@ -155,13 +155,16 @@
   max-width:100%;
   margin:clamp(21px,2.5vw,31px) 0 0;
   padding:11px 15px 11px 17px;
+  border:1px solid #12BAAF;
   border-radius:100px!important;
   background:#12BAAF;
   color:#062739;
   font-family:var(--body-font);
   font-size:14px!important;
   font-weight:650;
-  line-height:1.3;
+  letter-spacing:normal;
+  line-height:1.3!important;
+  white-space:normal;
   text-decoration:none;
   text-align:left;
 }
