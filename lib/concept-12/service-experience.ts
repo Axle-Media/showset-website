@@ -86,7 +86,25 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
   else if(s.id==='section-5')markup+=renderProcess(s);
   else if(s.type==='accordion')markup+=renderExpertise(s);
   else if(s.id==='section-8')markup+=section(s,'service-connected service-gutter',heading(s)+'<nav aria-label="Connected capabilities">'+(Object.keys(serviceRoutes) as ServiceKind[]).filter(k=>k!==kind).map(k=>'<a href="'+serviceRoutes[k]+'">'+serviceNames[k]+' <span aria-hidden="true">↗</span></a>').join('')+'</nav>');
-  else if(s.type==='visual')markup+=section(s,'service-close','<div class="service-close-art">'+photo(s.image,serviceNames[kind]+' visual concept')+'</div><div class="service-close-copy">'+heading(s,'h2','','photo')+paras(s.body)+action(s.buttonLabel||hero.buttonLabel||'Let’s talk',s.buttonHref||'/contact/')+'</div>');
+  else if(s.type==='visual'){
+   if(kind==='events'){
+    // Reuse the homepage editorial CTA composition without another full-screen
+    // photograph. Keep authored Events copy, button and the white terminal period.
+    const first='<span class="plain-line">'+text(s.headline)+'</span>';
+    const accent=s.accent||'';
+    const terminal=accent.match(/([.!?])$/);
+    const second=accent
+     ?'<span class="plain-line accent-text">'+text(terminal?accent.slice(0,-1):accent)
+       +(terminal?'<span class="service-period">'+text(terminal[1])+'</span>':'')+'</span>'
+     :'';
+    const closeHeading='<h2 class="section-title plain-heading service-heading">'+first+second+'</h2>';
+    const cta=action(s.buttonLabel||hero.buttonLabel||'Let’s talk',s.buttonHref||'/contact/').replace('class="solid-link"','class="solid-link end-link"');
+    markup+=section(s,'service-close service-close--editorial end-section section-gutter',
+     closeHeading+'<div class="end-bottom"><div class="service-close-description">'+paras(s.body)+'</div>'+cta+'</div>');
+   }else{
+    markup+=section(s,'service-close','<div class="service-close-art">'+photo(s.image,serviceNames[kind]+' visual concept')+'</div><div class="service-close-copy">'+heading(s,'h2','','photo')+paras(s.body)+action(s.buttonLabel||hero.buttonLabel||'Let’s talk',s.buttonHref||'/contact/')+'</div>');
+   }
+  }
   else markup+=section(s,'service-extra service-gutter',heading(s)+paras(s.body));
  }
  view.innerHTML='<div class="service-experience service-experience--'+kind+'" data-service-experience="'+kind+'">'+markup+'</div>';
