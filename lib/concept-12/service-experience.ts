@@ -61,6 +61,28 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
     '<div class="service-story-stage service-creative-canvas" data-service-creative-canvas>'+artboards+'</div></div>';
    return section(s,'service-story service-story--creative',intro+layout);
   }
+  if(kind==='digital'){
+   // A compact connected-system composition, not another pinned stage.
+   // Every description is visible; selecting a channel only shifts emphasis.
+   const links='<svg class="service-digital-network-lines" viewBox="0 0 500 440" preserveAspectRatio="xMidYMid meet" aria-hidden="true">'+
+    ['M250 220 Q250 145 250 70','M250 220 Q340 220 435 220','M250 220 Q250 290 250 370','M250 220 Q160 220 65 220']
+      .map((d,i)=>'<path data-digital-network-path="'+i+'" d="'+d+'" pathLength="1"/>').join('')+
+     '<circle class="service-digital-hub-ring" cx="250" cy="220" r="48"/>'+
+     '<circle class="service-digital-hub-core" cx="250" cy="220" r="10"/></svg>';
+   const nodes='<div class="service-digital-network-nodes">'+s.items.map((item,i)=>
+    '<button type="button" class="service-digital-network-node" data-digital-focus-button="'+i+'" aria-pressed="'+(i===0?'true':'false')+'" style="--digital-index:'+i+'" aria-label="Explore '+esc(sceneLabel(item,i))+'">'+
+     '<span class="service-digital-network-node-mark" aria-hidden="true"></span><span>'+text(sceneLabel(item,i))+'</span></button>'
+   ).join('')+'</div>';
+   const network='<div class="service-digital-network" aria-label="One connected idea across four digital disciplines">'+
+     links+'<div class="service-digital-hub-label" aria-hidden="true"><span>ONE</span><span>IDEA</span></div>'+nodes+'</div>';
+   const rows='<div class="service-digital-editorial">'+s.items.map((item,i)=>
+    '<article class="service-digital-editorial-item" data-digital-story="'+i+'" data-digital-active="'+(i===0?'true':'false')+'">'+
+     category(sceneLabel(item,i))+'<h3>'+text(item.title)+'</h3>'+paras(item.description)+'</article>'
+   ).join('')+'</div>';
+   const layout='<div class="service-story-track service-digital-connected-wrap" data-service-story-track>'+
+    '<div class="service-story-stage service-digital-connected" data-digital-connected>'+network+rows+'</div></div>';
+   return section(s,'service-story service-story--digital',intro+layout);
+  }
   let body='';
   if(kind==='digital')body='<div class="service-channel-board"><svg class="service-channel-lines" viewBox="0 0 1000 660" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M100 100H650V330H350V560H900"/></svg>'+s.items.map((item,i)=>'<article class="service-channel" data-service-channel="'+i+'"><span class="service-channel-number" aria-hidden="true">0'+(i+1)+'</span><button type="button" class="service-channel-trigger" data-service-channel-trigger="'+i+'" aria-pressed="'+(i===0)+'">'+text(sceneLabel(item,i))+'<span aria-hidden="true">↗</span></button><h3>'+text(item.title)+'</h3>'+paras(item.description)+'</article>').join('')+'</div>';
   else body='<div class="service-scenes">'+s.items.map((item,i)=>'<article class="service-scene" data-service-scene="'+i+'"><figure>'+photo(item.image||'',item.title)+'</figure><div class="service-scene-copy">'+category(sceneLabel(item,i))+heading({headline:item.title,accent:''},'h3','','editorial')+paras(item.description)+'</div></article>').join('')+'</div>'+'<div class="service-film-progress" aria-hidden="true"><i></i></div>';
@@ -104,8 +126,8 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
   else if(s.type==='accordion')markup+=renderExpertise(s);
   else if(s.id==='section-8')markup+=section(s,'service-connected service-gutter',heading(s)+'<nav aria-label="Connected capabilities">'+(Object.keys(serviceRoutes) as ServiceKind[]).filter(k=>k!==kind).map(k=>'<a href="'+serviceRoutes[k]+'">'+serviceNames[k]+' <span aria-hidden="true">↗</span></a>').join('')+'</nav>');
   else if(s.type==='visual'){
-   if(kind==='events'||kind==='creative'){
-    // Use the compact homepage editorial CTA for Events and Creative;
+   if(kind==='events'||kind==='creative'||kind==='digital'){
+    // Reuse the compact patterned editorial CTA for Events, Creative and Digital;
     // preserve authored copy, brand pattern and ivory terminal period.
     const first='<span class="plain-line">'+text(s.headline)+'</span>';
     const accent=s.accent||'';
