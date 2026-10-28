@@ -400,3 +400,29 @@
   .service-capability-group{padding:21px}
   .service-expertise .service-capability-group h3{font-size:20px}
 }
+
+/* Events & Experiences: four across on wide screens, using approved
+   primary and secondary brand navy with a clean white outline. */
+.service-experience--events .service-expertise{
+  background:#0D2F49;
+}
+.service-experience--events .service-expertise-grid{
+  width:100%;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(14px,1.5vw,24px);
+}
+.service-experience--events .service-capability-group{
+  background:#153B54;
+  border:1px solid #fff;
+  padding:clamp(21px,2vw,30px);
+}
+@media(max-width:1179px){
+  .service-experience--events .service-expertise-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+@media(max-width:640px){
+  .service-experience--events .service-expertise-grid{
+    grid-template-columns:minmax(0,1fr);
+  }
+}
