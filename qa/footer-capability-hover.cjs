@@ -28,6 +28,29 @@ const ck=(name,pass,detail)=>{checks.push({name,pass:!!pass,detail});console.log
       &&footer.size<=11&&footer.whiteSpace==='nowrap',footer);
     ck('Footer fits viewport on '+route+' at '+width,
       await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+    if(width===1440&&slug==='events-experiences'){
+      const triptych=page.locator('.service-event-triptych');
+      await triptych.scrollIntoViewIfNeeded();await page.waitForTimeout(1450);
+      for(const active of[0,1,2]){
+        await triptych.locator('.service-event-triptych-image').nth(active).hover();
+        await page.waitForTimeout(440);
+        const status=await triptych.evaluate(root=>({
+          images:[...root.querySelectorAll('.service-event-triptych-image img')].map(el=>getComputedStyle(el).filter),
+          notes:[...root.querySelectorAll('.service-event-triptych-note')].map(el=>Number(getComputedStyle(el).opacity))
+        }));
+        ck('Photo hover highlights matching Events story '+active,
+          status.images.length===3&&status.notes.length===3
+          &&status.images.every((filter,i)=>i===active?filter==='none':filter.includes('grayscale(0.45)')&&filter.includes('brightness(0.73)'))
+          &&status.notes.every((opacity,i)=>Math.abs(opacity-(i===active?1:.56))<.025),status);
+      }
+      await page.mouse.move(0,0);await page.waitForTimeout(440);
+      const restored=await triptych.evaluate(root=>({
+        images:[...root.querySelectorAll('.service-event-triptych-image img')].map(el=>getComputedStyle(el).filter),
+        notes:[...root.querySelectorAll('.service-event-triptych-note')].map(el=>Number(getComputedStyle(el).opacity))
+      }));
+      ck('Events imagery and editorial copy return to normal on mouse leave',
+        restored.images.every(v=>v==='none')&&restored.notes.every(v=>v===1),restored);
+    }
     if(width===1440&&slug){
       const card=page.locator('.service-expertise-grid > .service-capability-group').first();
       await card.scrollIntoViewIfNeeded();await page.waitForTimeout(1250);
@@ -48,6 +71,14 @@ const ck=(name,pass,detail)=>{checks.push({name,pass:!!pass,detail});console.log
   await page.goto(base+'/events-experiences/');await page.waitForSelector('[data-service-ready=true]');
   const card=page.locator('.service-expertise-grid > .service-capability-group').first();
   await card.scrollIntoViewIfNeeded();await card.hover();await page.waitForTimeout(100);
+  const image=page.locator('.service-event-triptych-image').first();
+  await image.scrollIntoViewIfNeeded();await image.hover();await page.waitForTimeout(100);
+  const still=await page.locator('.service-event-triptych').evaluate(root=>({
+    images:[...root.querySelectorAll('.service-event-triptych-image img')].map(el=>getComputedStyle(el).filter),
+    notes:[...root.querySelectorAll('.service-event-triptych-note')].map(el=>getComputedStyle(el).opacity)
+  }));
+  ck('Reduced motion keeps all Events triptych content equally visible',
+    still.images.every(v=>v==='none')&&still.notes.every(v=>v==='1'),still);
   ck('Reduced motion disables capability card hover scaling',
     await card.evaluate(el=>getComputedStyle(el).scale==='1'));
   await ctx.close();
