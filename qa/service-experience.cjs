@@ -38,6 +38,25 @@ if(slug==='events-experiences'){
    &&closing.pattern.includes('closing-pattern.svg'),closing);
 }
 
+if(slug==='creative-design'){
+ const heroAngle=await p.locator('.service-hero--creative .service-hero-art').evaluate(el=>({
+   transform:getComputedStyle(el).transform,
+   imgTransform:getComputedStyle(el.querySelector('img')).transform
+ }));
+ ck('Creative hero photograph is straight, with no tilted frame '+tag,
+   heroAngle.transform==='none',heroAngle);
+ const ctaAlignment=await p.locator('.service-close--editorial').evaluate(el=>{
+   const copy=el.querySelector('.service-close-description'),button=el.querySelector('.end-link.solid-link');
+   const body=copy.getBoundingClientRect(),last=copy.lastElementChild.getBoundingClientRect(),cta=button.getBoundingClientRect();
+   return {copyLeft:body.left,buttonLeft:cta.left,bodyBottom:last.bottom,buttonTop:cta.top,
+     marginLeft:getComputedStyle(button).marginLeft,alignSelf:getComputedStyle(button).alignSelf};
+ });
+ ck('Creative closing CTA button aligns beneath body copy '+tag,
+    Math.abs(ctaAlignment.copyLeft-ctaAlignment.buttonLeft)<2
+    &&ctaAlignment.buttonTop>=ctaAlignment.bodyBottom-2
+    &&ctaAlignment.marginLeft==='0px',ctaAlignment);
+}
+
 if(slug==='events-experiences')ck('Approved five-section Events journey '+tag,
 page.sections.map(s=>s.id).join(',')==='section-1,section-2,service-story,section-6,section-7'
 &&await p.locator('.service-event-types li').count()===6
