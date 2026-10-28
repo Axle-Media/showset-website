@@ -25,7 +25,30 @@ if(width>800){ck('Signature changes during actual forward scroll '+tag,JSON.stri
 if(slug==='digital-marketing'){const choice=p.getByRole('button',{name:'Content',exact:true});if(width<=390)await choice.tap();else await choice.click();const a=await p.locator('.service-channel-lines').evaluate(e=>getComputedStyle(e).strokeDashoffset);await p.waitForTimeout(600);const z=await p.locator('.service-channel-lines').evaluate(e=>getComputedStyle(e).strokeDashoffset);ck('Channel selection links path and active response '+tag,await choice.getAttribute('aria-pressed')==='true'&&(width<=800||a!==z),{a,z});await p.getByRole('button',{name:'Website',exact:true}).focus();await p.keyboard.press('Space');ck('Channel keyboard selection '+tag,await p.getByRole('button',{name:'Website',exact:true}).getAttribute('aria-pressed')==='true')}
 if(await p.locator('.service-process').count()){await scroll(p,'.service-process',600);const a=await p.locator('.service-process li').first().evaluate(e=>e.style.getPropertyValue('--process-unit'));await scroll(p,'.service-process',90);await p.waitForTimeout(1200);const z=await p.locator('.service-process li').first().evaluate(e=>e.style.getPropertyValue('--process-unit'));ck('Process assembly follows reading progress '+tag,a!==z||Number(z)===1,{a,z});await p.screenshot({path:path.join(out,tag+'-process.png')});}
 else ck('No duplicated Events process '+tag,slug==='events-experiences');
-await scroll(p,'.service-expertise');await p.waitForTimeout(1200);if(width<=390){ck('Mobile cards are readable without tapping a control '+tag,await p.locator('.service-capability-name').first().evaluate(el=>getComputedStyle(el).visibility==='visible'&&el.getBoundingClientRect().height>10)&&await p.locator('.service-expertise button,.service-expertise summary').count()===0&&await p.locator('.service-capability-group').first().evaluate(el=>getComputedStyle(el).borderTopWidth==='1px'))}await p.screenshot({path:path.join(out,tag+'-expertise.png')});
+if(slug==='events-experiences'&&width===1440){
+ const start=await p.locator('.service-experience').evaluate(root=>({
+  state:root.dataset.serviceCardIntro,
+  cards:[...root.querySelectorAll('.service-expertise-grid > .service-capability-group')].map(el=>getComputedStyle(el).opacity)
+ }));
+ ck('Events cards begin hidden until their section enters the viewport '+tag,
+   start.state==='pending'&&start.cards.length===4&&start.cards.every(opacity=>opacity==='0'),start);
+}
+await scroll(p,'.service-expertise');await p.waitForTimeout(1200);
+if(slug==='events-experiences'&&width===1440){
+ const end=await p.locator('.service-experience').evaluate(root=>({
+  state:root.dataset.serviceCardIntro,
+  cards:[...root.querySelectorAll('.service-expertise-grid > .service-capability-group')].map(el=>{
+   const c=getComputedStyle(el);
+   return {opacity:c.opacity,transform:c.transform,delay:c.transitionDelay};
+  })
+ }));
+ ck('Events cards stagger upward and fade into view in reading order '+tag,
+   end.state==='done'
+   &&end.cards.length===4
+   &&end.cards.every(card=>card.opacity==='1'&&card.transform==='matrix(1, 0, 0, 1, 0, 0)')
+   &&end.cards.map(card=>Number.parseFloat(card.delay)).join(',')==='0,0.12,0.24,0.36',end);
+}
+if(width<=390){ck('Mobile cards are readable without tapping a control '+tag,await p.locator('.service-capability-name').first().evaluate(el=>getComputedStyle(el).visibility==='visible'&&el.getBoundingClientRect().height>10)&&await p.locator('.service-expertise button,.service-expertise summary').count()===0&&await p.locator('.service-capability-group').first().evaluate(el=>{const width=parseFloat(getComputedStyle(el).borderTopWidth);return width>0&&width<=1}))}await p.screenshot({path:path.join(out,tag+'-expertise.png')});
 ck('No redundant related-work section '+tag,await p.locator('.service-work,.service-work-card').count()===0);
 await sampleHeading(p,'.service-close h2',true);await p.screenshot({path:path.join(out,tag+'-closing.png')});
 ck('Wrapped type and punctuation fit each line '+tag,await p.locator('[data-service-reveal] .wipe-line').evaluateAll(es=>es.every(e=>{const span=e.firstElementChild,r=document.createRange();r.selectNodeContents(span);const ink=r.getBoundingClientRect(),box=span.getBoundingClientRect();return ink.left>=box.left-1&&ink.right<=box.right+1&&ink.top>=box.top-1&&ink.bottom<=box.bottom+1})));ck('No document overflow '+tag,await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
@@ -33,6 +56,9 @@ if(width>800){await p.locator('[data-service-story-track]').evaluate(e=>scrollTo
 if(width===1440&&slug==='events-experiences'){const act=async f=>{await p.locator('[data-service-story-track]').evaluate((e,f)=>scrollTo({top:scrollY+e.getBoundingClientRect().top+(e.offsetHeight-innerHeight)*f,behavior:'instant'}),f);await p.waitForTimeout(100)};await sampleHeading(p,'[data-service-scene="1"] h3',true,{reset:()=>act(.1),enter:()=>act(.5)});await sampleHeading(p,'[data-service-scene="0"] h3',true,{reset:()=>act(.5),enter:()=>act(.1)});}
 const vid=video?p.video():null;await c.close();if(vid)await vid.saveAs(path.join(out,'videos',slug+'.webm'));
 }
-for(const options of[{reducedMotion:'reduce'},{javaScriptEnabled:false}])for(const slug of slugs){const c=await b.newContext({viewport:{width:1440,height:900},...options}),p=await c.newPage();await p.goto(base+'/'+slug+'/');if(options.javaScriptEnabled!==false)await p.waitForSelector('[data-service-ready=true]');ck('All heading glyphs readable without motion '+slug+' '+JSON.stringify(options),await p.locator('[data-service-reveal] .wipe-line>span').evaluateAll(es=>es.every(e=>getComputedStyle(e).clipPath==='none'&&getComputedStyle(e).opacity==='1')));await c.close()}
+for(const options of[{reducedMotion:'reduce'},{javaScriptEnabled:false}])for(const slug of slugs){const c=await b.newContext({viewport:{width:1440,height:900},...options}),p=await c.newPage();await p.goto(base+'/'+slug+'/');if(options.javaScriptEnabled!==false)await p.waitForSelector('[data-service-ready=true]');ck('All heading glyphs readable without motion '+slug+' '+JSON.stringify(options),await p.locator('[data-service-reveal] .wipe-line>span').evaluateAll(es=>es.every(e=>getComputedStyle(e).clipPath==='none'&&getComputedStyle(e).opacity==='1')));
+if(slug==='events-experiences')ck('Events capability cards remain visible without motion '+JSON.stringify(options),
+ await p.locator('.service-expertise-grid > .service-capability-group').evaluateAll(es=>es.length===4&&es.every(el=>getComputedStyle(el).opacity==='1')));
+await c.close()}
 ck('No console, hydration or runtime errors',!errors.length,errors);
 }finally{await b.close();fs.writeFileSync(path.join(out,'checks.json'),JSON.stringify({checks,errors},null,2));if(checks.some(x=>!x.pass)||errors.length)process.exitCode=1}})().catch(e=>{console.error(e);process.exitCode=1});
