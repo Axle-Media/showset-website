@@ -3,6 +3,7 @@ import type {ServiceKind} from "./service-content";
 import { refineHeadingPeriods } from "./typography";
 import { renderImmersiveCase } from "./immersive-case";
 import { caseExperienceFor } from "./case-content";
+import { renderPortfolioIndex } from "./portfolio-content";
 import type { Block, Globals, PageData } from "@/lib/types";
 import { defaultPages, defaultGlobals } from "@/lib/data";
 import { safeHref } from "@/lib/safe";
@@ -102,7 +103,7 @@ export function bindConcept(
     if (!changed(s, "headline") && !changed(s, "accent")) return;
     const e = host.querySelector(selector);
     if (!e) return;
-    if (e.classList.contains("studio-editorial-heading") || e.classList.contains("work-intro-title")) {
+    if (e.classList.contains("studio-editorial-heading") || e.classList.contains("work-intro-title") || e.classList.contains("contact-editorial-heading")) {
       // Keep Studio edits in the same two-line typography as the published page.
       // Editorial punctuation stays ivory; only the wording is turquoise.
       const punctuation = s.accent.match(/[.!?]$/)?.[0] || "";
@@ -402,7 +403,8 @@ export function bindConcept(
         }
       } else if (s.type === "work") {
         mark(host.querySelector(".work-page-gallery"), s);
-        bindWork(s, ".work-page-gallery .case-index-item");
+        if (changed(s, "body")) text(".work-index-header>p", s.body);
+        renderPortfolioIndex(host, s, catalog);
       } else if (s.type === "cta") {
         mark(host.querySelector(".work-final"), s);
         heading(".work-final h2", s);
@@ -417,10 +419,14 @@ export function bindConcept(
     if (s) {
       mark(host.querySelector(".contact-view"), s);
       heading(".contact-left h1", s);
-      body(".contact-left>p", s);
+      body(".contact-intro>p", s);
+      if (changed(s, "image")) image(".contact-photo img", s.image);
       if (changed(s, "formTitle")) text(".contact-form h2", s.formTitle);
       if (changed(s, "helperText")) text(".form-note", s.helperText);
-      action(".contact-form>button", s);
+      if (changed(s, "buttonLabel")) {
+        const button = host.querySelector<HTMLButtonElement>(".contact-submit");
+        if (button) button.innerHTML = rich(s.buttonLabel) + ' <span aria-hidden="true">↗</span>';
+      }
       if (changed(s, "items")) {
         const select = host.querySelector<HTMLSelectElement>("#project-type"),
           panel = host.querySelector("#project-options");
@@ -592,6 +598,18 @@ export function bindConcept(
       phone.href = "tel:" + footer.phone.replace(/[^+\d]/g, "");
     }
     if (location) location.textContent = footer.location;
+    const directEmail = host.querySelector<HTMLAnchorElement>("[data-contact-email]");
+    const directPhone = host.querySelector<HTMLAnchorElement>("[data-contact-phone]");
+    if (directEmail) {
+      directEmail.href = safeHref("mailto:" + footer.email);
+      const arrow = directEmail.querySelector("span")?.outerHTML || "";
+      directEmail.innerHTML = escape(footer.email) + " " + arrow;
+    }
+    if (directPhone) {
+      directPhone.href = "tel:" + footer.phone.replace(/[^+\d]/g, "");
+      const arrow = directPhone.querySelector("span")?.outerHTML || "";
+      directPhone.innerHTML = escape(footer.phone) + " " + arrow;
+    }
   }
   // Social destinations are optional and stay disabled until the owner enters
   // confirmed official profile URLs in Studio. Never generate generic links.
