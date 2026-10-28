@@ -61,6 +61,24 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
     '<div class="service-story-stage service-creative-canvas" data-service-creative-canvas>'+artboards+'</div></div>';
    return section(s,'service-story service-story--creative',intro+layout);
   }
+  if(kind==='production'){
+   // A compact cinematic production frame: a real photographic change for each
+   // step, with all three descriptions always visible and Studio-editable.
+   const frames='<div class="service-production-frames">'+s.items.map((item,i)=>
+    '<figure class="service-production-frame" data-production-frame="'+i+'" data-production-active="'+(i===0?'true':'false')+'" aria-hidden="'+(i===0?'false':'true')+'" style="--production-index:'+i+'">'+
+     photo(item.image||'',item.title)+'</figure>'
+   ).join('')+'</div>';
+   const image='<div class="service-production-visual" aria-label="Photography from the production journey">'+frames+
+    '<div class="service-production-frame-rule" aria-hidden="true"></div></div>';
+   const notes='<div class="service-production-timeline" role="group" aria-label="Production stages">'+s.items.map((item,i)=>
+    '<article class="service-production-step" data-production-step="'+i+'" data-production-active="'+(i===0?'true':'false')+'">'+
+     '<button type="button" class="service-production-step-trigger" data-production-step-trigger="'+i+'" aria-pressed="'+(i===0?'true':'false')+'">'+
+      category(sceneLabel(item,i))+'<h3>'+text(item.title)+'</h3></button>'+paras(item.description)+'</article>'
+   ).join('')+'</div>';
+   const layout='<div class="service-story-track service-production-timeline-wrap" data-service-story-track>'+
+    '<div class="service-story-stage service-production-composition" data-production-composition>'+image+notes+'</div></div>';
+   return section(s,'service-story service-story--production',intro+layout);
+  }
   let body='';
   if(kind==='digital')body='<div class="service-channel-board"><svg class="service-channel-lines" viewBox="0 0 1000 660" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M100 100H650V330H350V560H900"/></svg>'+s.items.map((item,i)=>'<article class="service-channel" data-service-channel="'+i+'"><span class="service-channel-number" aria-hidden="true">0'+(i+1)+'</span><button type="button" class="service-channel-trigger" data-service-channel-trigger="'+i+'" aria-pressed="'+(i===0)+'">'+text(sceneLabel(item,i))+'<span aria-hidden="true">↗</span></button><h3>'+text(item.title)+'</h3>'+paras(item.description)+'</article>').join('')+'</div>';
   else body='<div class="service-scenes">'+s.items.map((item,i)=>'<article class="service-scene" data-service-scene="'+i+'"><figure>'+photo(item.image||'',item.title)+'</figure><div class="service-scene-copy">'+category(sceneLabel(item,i))+heading({headline:item.title,accent:''},'h3','','editorial')+paras(item.description)+'</div></article>').join('')+'</div>'+'<div class="service-film-progress" aria-hidden="true"><i></i></div>';
@@ -104,8 +122,8 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
   else if(s.type==='accordion')markup+=renderExpertise(s);
   else if(s.id==='section-8')markup+=section(s,'service-connected service-gutter',heading(s)+'<nav aria-label="Connected capabilities">'+(Object.keys(serviceRoutes) as ServiceKind[]).filter(k=>k!==kind).map(k=>'<a href="'+serviceRoutes[k]+'">'+serviceNames[k]+' <span aria-hidden="true">↗</span></a>').join('')+'</nav>');
   else if(s.type==='visual'){
-   if(kind==='events'||kind==='creative'){
-    // Use the compact homepage editorial CTA for Events and Creative;
+   if(kind==='events'||kind==='creative'||kind==='production'){
+    // Reuse the approved compact patterned editorial CTA for Events, Creative and Production;
     // preserve authored copy, brand pattern and ivory terminal period.
     const first='<span class="plain-line">'+text(s.headline)+'</span>';
     const accent=s.accent||'';
