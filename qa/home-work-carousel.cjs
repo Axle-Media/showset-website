@@ -158,7 +158,7 @@ const width=1440;
   ck('Digital tag filter shows only matching studies',await expandedPage.locator('.work-portfolio-card:visible').count()===4 &&
    await expandedPage.locator('.work-portfolio-card:visible').evaluateAll(nodes=>nodes.every(n=>n.dataset.workTags?.split('|').includes('Digital'))));
   ck('Filter change resets pagination and hides Load more',await expandedPage.locator('[data-work-more]').isHidden());
-  await expandedPage.locator('[data-work-filter="All"]').click();
+  await expandedPage.locator('[data-work-filter="all"]').click();
   ck('All category resets to newest six',await expandedPage.locator('.work-portfolio-card:visible').count()===6);
   await expandedContext.close();
   ck('No browser errors',!errors.length,errors);
