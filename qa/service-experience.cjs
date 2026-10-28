@@ -19,7 +19,18 @@ await p.screenshot({path:path.join(out,tag+'-hero.png')});
 const pinned=await p.locator('[data-service-story-track]').getAttribute('data-service-pinned')==='true';ck('Dedicated mobile reading adaptation '+tag,width>800||!pinned);
 const positions=[];for(const f of[0,.5,.98,.5,0]){if(pinned)await progress(p,f);else await p.locator('.service-story-stage').scrollIntoViewIfNeeded();const m=await p.locator('.service-story-stage').evaluate(e=>({y:e.getBoundingClientRect().top,h:e.getBoundingClientRect().height,progress:Number(e.style.getPropertyValue('--service-progress'))}));positions.push(m);if(pinned)ck('Pinned reversible stage '+tag+' '+f,Math.abs(m.y)<1&&m.h===900,m);if(width===1440||width===390)await p.screenshot({path:path.join(out,tag+'-story-'+f+'.png')})}
 if(pinned)ck('Stage restores forward/reverse geometry '+tag,JSON.stringify(positions[0])===JSON.stringify(positions.at(-1)));
-if(width===1440){if(slug==='events-experiences'){for(const[i,f]of[[0,.1],[1,.5],[2,.9],[1,.5],[0,.1]]){await progress(p,f);ck('Events scene synchronizes '+i,await p.locator('[data-service-scene="'+i+'"]').getAttribute('aria-hidden')==='false'&&await p.locator('[data-service-scene="'+i+'"] .service-scene-copy').evaluate(e=>Number(e.style.opacity)>.99))}}
+if(width===1440){if(slug==='events-experiences'){
+ const triptych=await p.locator('.service-event-triptych').evaluate(el=>({
+  display:getComputedStyle(el).display,
+  columns:getComputedStyle(el).gridTemplateColumns.split(/\\s+/).filter(Boolean).length,
+  images:el.querySelectorAll('.service-event-triptych-image img').length,
+  notes:el.querySelectorAll('.service-event-triptych-note').length,
+  height:el.getBoundingClientRect().height
+ }));
+ ck('Events triptych is a compact natural-scrolling editorial layout '+tag,
+   !pinned&&triptych.display==='grid'&&triptych.columns===2
+   &&triptych.images===3&&triptych.notes===3&&triptych.height<900,triptych);
+ }
 if(slug==='creative-design'){await progress(p,0);const start=await p.locator('.service-proof-image').first().evaluate(e=>getComputedStyle(e).transform);await progress(p,1);ck('Creative proof unfolds with scroll',await p.locator('.service-proof-image').first().evaluate(e=>getComputedStyle(e).transform)!==start)}
 if(slug==='digital-marketing'){await progress(p,.5);await p.getByRole('button',{name:'Content',exact:true}).click();ck('Digital channel choice responds',await p.getByRole('button',{name:'Content',exact:true}).getAttribute('aria-pressed')==='true');await p.getByRole('button',{name:'Website',exact:true}).focus();await p.keyboard.press('Space');ck('Digital choice is keyboard accessible',await p.getByRole('button',{name:'Website',exact:true}).getAttribute('aria-pressed')==='true')}
 if(slug==='content-production'){await progress(p,0);const a=await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform);await progress(p,.5);const z=await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform);ck('Production photographic sequence advances',pinned&&a!==z);await progress(p,0);ck('Production sequence reverses',await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform)===a)}}
