@@ -29,9 +29,12 @@ const ck=(name,pass,details)=>{checks.push({name,pass:!!pass,details});console.l
      const plain=!lines.length;
      const isCase=h.hasAttribute('data-case-heading');
      const accentLine=lines.length>1?lines.at(-1):null;
+     // Editorial CTAs put text directly in .plain-line and only their punctuation in a child span.
+     // Reading firstElementChild in those cases samples the ivory period, not the teal wording.
+     const accentTarget=accentLine?.matches('.plain-line')?accentLine:(accentLine?.firstElementChild||accentLine);
      const naturalTarget=lines.length===1?lines[0].firstElementChild:h;
      const colour=x=>x?getComputedStyle(x).color:null;
-     return {text:text.slice(0,85),two,plain,isCase,expectedPeriod,terminal:terminal?.textContent||'',terminalColour:colour(terminal),baseColour:colour(naturalTarget),firstLineColour:getComputedStyle(naturalTarget,'::first-line').color,accentColour:colour(accentLine?.firstElementChild||accentLine),explicit:lines.length>=2};
+     return {text:text.slice(0,85),two,plain,isCase,expectedPeriod,terminal:terminal?.textContent||'',terminalColour:colour(terminal),baseColour:colour(naturalTarget),firstLineColour:getComputedStyle(naturalTarget,'::first-line').color,accentColour:colour(accentTarget),explicit:lines.length>=2};
     }));
     const two=result.filter(x=>x.two);
     ck('Headings with intentional second lines have teal text '+route+' '+width,
