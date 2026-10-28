@@ -1362,7 +1362,16 @@
         "buttonHref": "",
         "secondaryLabel": "",
         "secondaryHref": "",
-        "items": [],
+        "items": [
+          {
+            "id": "studio-follow-up",
+            "title": "We think it through.",
+            "accent": "We make it happen.",
+            "description": "From the first conversation to the last detail, we connect the creative and practical work that brings an idea to life.",
+            "image": "",
+            "href": ""
+          }
+        ],
         "speed": 6,
         "formTitle": "",
         "helperText": ""
