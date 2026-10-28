@@ -39,6 +39,8 @@
   display:block;
   position:absolute;
   inset:0 0 auto;
+  width:auto;
+  /* Reset the older .end-section pseudo-element's 48% width. */
   /* Use the Studio reference canvas height, not each page's prose height.
      This keeps the SVG at the same actual Y coordinate even when the
      service description contains more lines than Studio's. */
