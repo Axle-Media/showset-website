@@ -131,6 +131,50 @@
 .service-process--production li{flex:1;padding-top:30px;border-top:2px solid var(--teal)}
 .service-process--production li:nth-child(2){margin-top:75px}.service-process--production li:nth-child(3){margin-top:150px}
 .service-process--production .service-process-number{font-size:18px;margin-bottom:45px}
+/* Events retains its cinematic identity while removing duplicated sections.
+   These adjustments are intentionally scoped to the approved reference page. */
+.service-experience--events .service-intro.service-gutter{
+ padding-top:clamp(66px,6.5vw,108px);
+ padding-bottom:clamp(70px,7vw,114px);
+}
+.service-event-types{
+ list-style:none;
+ display:flex;
+ flex-wrap:wrap;
+ column-gap:0;
+ row-gap:16px;
+ margin:clamp(36px,4.4vw,64px) 0 0;
+ padding:clamp(24px,2.7vw,36px) 0 0;
+ border-top:1px solid var(--service-line);
+}
+.service-event-types li{
+ font-family:var(--body-font);
+ font-size:14px;
+ font-weight:600;
+ line-height:1.5;
+ color:var(--ice);
+ padding:0 clamp(14px,2vw,28px);
+ border-right:1px solid rgba(250,249,253,.24);
+}
+.service-event-types li:first-child{padding-left:0}
+.service-event-types li:last-child{border-right:0}
+.service-experience--events .service-story>.service-section-head.service-gutter{
+ padding-top:clamp(66px,6vw,102px);
+ padding-bottom:clamp(28px,3vw,48px);
+}
+.service-story--events .service-story-track[data-service-pinned=true]{
+ height:calc(var(--service-count,3)*70svh + 40svh);
+}
+@media(max-width:800px){
+ .service-experience--events .service-intro.service-gutter{padding-top:68px;padding-bottom:72px}
+ .service-event-types{row-gap:14px;margin-top:32px;padding-top:24px}
+ .service-event-types li{padding:0 14px}
+ .service-event-types li:first-child{padding-left:0}
+ .service-experience--events .service-story>.service-section-head.service-gutter{padding-top:72px;padding-bottom:32px}
+}
+@media(max-width:390px){
+ .service-event-types li{font-size:13px;padding:0 10px}
+}
 /* Capability cards follow the provided visual reference: understated outline,
    clear heading, small teal period and short rule, concise visible service names.
    These are editorial cards, not clickable controls. */
