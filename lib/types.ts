@@ -65,6 +65,8 @@ export interface ProjectModule {
 export interface CaseStoryChapter { heading: string; body: string; image?: string; imageAlt?: string; /** Retained legacy media; first valid photo maps to image when unset. */ images?: string[]; }
 export interface CaseExperience {
   demo?: boolean;
+  /** Public filter tags for the Our Work gallery. */
+  tags?: string[];
   openingTitle: string;
   openingBody: string;
   openingImage: string;
@@ -81,6 +83,8 @@ export interface CaseExperience {
   partners?: { name: string; role?: string; logo?: string; href?: string }[];
 }
 export interface PageData {
+  /** ISO 8601 date for newest-first portfolio ordering. */
+  publishedAt?: string;
   caseExperience?: CaseExperience;
   projectModules?: ProjectModule[];
   slug: string;

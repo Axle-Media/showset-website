@@ -73,7 +73,29 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
   ck('Initial demonstration cases are clearly labelled '+width,portfolio.slice(0,3).every(x=>x.label==='Concept study'),portfolio.slice(0,3).map(x=>x.label));
   const intro=await page.locator('.work-intro-copy').innerText();
   ck('Work intro does not hardcode case-study count '+width,!/three creative studies|only three|not completed client projects/i.test(intro),intro);
-  ck('Featured portfolio story leads the gallery '+width,await page.locator('.view.is-current .case-index-item').first().getAttribute('class').then(x=>x.includes('work-portfolio-featured')));
+  ck('All Work cards reuse the homepage card shell '+width,
+    await page.locator('.view.is-current .case-index-item').evaluateAll(nodes=>
+      nodes.every(n=>n.classList.contains('case-slide')&&n.querySelector('.case-photo')&&n.querySelector('.case-story'))));
+  const layout=await page.locator('.view.is-current .case-index').evaluate(el=>({
+    columns:getComputedStyle(el).gridTemplateColumns.split(' ').length,
+    width:innerWidth,
+    viewportHeight:innerHeight,
+    heroHeight:document.querySelector('.view.is-current .work-hero').getBoundingClientRect().height,
+    filters:[...document.querySelectorAll('.view.is-current [data-work-filter]')].map(x=>x.textContent),
+    visible:[...el.querySelectorAll('.work-portfolio-card')].filter(n=>!n.hidden).length
+  }));
+  ck('Work hero is shorter than full screen '+width,layout.heroHeight<layout.viewportHeight*.8,layout);
+  ck('Grid has expected columns '+width,layout.columns===(width>1100?3:width>600?2:1),layout);
+  ck('Tag filters follow requested taxonomy '+width,
+    layout.filters.join('|')==='All|Events|Creative|Digital|Content',layout.filters);
+  ck('Initial gallery shows up to six cases '+width,layout.visible===Math.min(6,portfolio.length),layout.visible);
+  await page.locator('.view.is-current [data-work-filter="Digital"]').click();
+  ck('Unpopulated category has clear empty-state '+width,
+    await page.locator('[data-work-empty]').isVisible()&&
+    await page.locator('.view.is-current .work-portfolio-card:visible').count()===0);
+  await page.locator('.view.is-current [data-work-filter="all"]').click();
+  ck('All filter restores original cards '+width,
+    await page.locator('.view.is-current .work-portfolio-card:visible').count()===Math.min(6,portfolio.length));
   ck('Work remains readable without hover '+width,await page.locator('.view.is-current .case-index-info p').evaluateAll(nodes=>nodes.every(n=>getComputedStyle(n).visibility==='visible'&&getComputedStyle(n).opacity==='1')));
   ck('Work CTA links to Contact '+width,await page.locator('.view.is-current .work-final .editorial-action').getAttribute('href')==='/contact/');
   ck('Work no horizontal overflow '+width,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));

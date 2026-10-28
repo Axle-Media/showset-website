@@ -218,6 +218,11 @@ export default function Studio() {
     setSelected(copy.id);
   };
   async function command(action: "save" | "publish") {
+    // Sort by the first successful publication, not draft creation time.
+    const publishedPage = action === "publish" &&
+      page.route.startsWith("/work/") && !page.publishedAt
+        ? { ...page, publishedAt: new Date().toISOString() } : page;
+    const publishedPages = publishedPage === page ? pages : { ...pages, [slug]: publishedPage };
     setBusy(true);
     setNotice("");
     try {
@@ -234,17 +239,18 @@ export default function Studio() {
           ),
         };
         localStorage.setItem("showset-studio-recovery", JSON.stringify(backup));
-        localStorage.setItem("showset-demo-pages", JSON.stringify(pages));
+        localStorage.setItem("showset-demo-pages", JSON.stringify(publishedPages));
         localStorage.setItem("showset-demo-globals", JSON.stringify(globals));
         if (action === "publish") {
           localStorage.setItem(
             "showset-preview-published-pages",
-            JSON.stringify(pages),
+            JSON.stringify(publishedPages),
           );
           localStorage.setItem(
             "showset-preview-published-globals",
             JSON.stringify(globals),
           );
+          if (publishedPage !== page) setPages(publishedPages);
           setNotice(
             "Published to LOCAL BROWSER PREVIEW only. Open View site in this browser and refresh. This does NOT publish to showset.co.za.",
           );
@@ -262,10 +268,11 @@ export default function Studio() {
           "X-CSRF-Token": csrfToken,
         },
         credentials: "same-origin",
-        body: JSON.stringify({ slug, page, globals }),
+        body: JSON.stringify({ slug, page: publishedPage, globals }),
       });
       const j = await r.json();
       if (!r.ok || !j.ok) throw Error(j.error || "Unable to save");
+      if (publishedPage !== page) setPages(publishedPages);
       setNotice(
         action === "save"
           ? "Draft saved."
@@ -996,6 +1003,27 @@ export default function Studio() {
               <>
                 {page.route.startsWith("/work/") && (
                   <>
+                    <div className="studio-pane-title">Portfolio settings</div>
+                    <p className="studio-hint">These tags control the Our Work filters. Use Events, Creative, Digital or Content; multiple tags are allowed.</p>
+                    <TextField
+                      label="Case study tags (comma-separated)"
+                      value={(page.caseExperience?.tags || []).join(", ")}
+                      onChange={(value) => updatePage((p) => ({
+                        ...p,
+                        caseExperience: {
+                          ...caseExperienceFor(p),
+                          tags: [...new Set(value.split(",").map(x => x.trim()).filter(Boolean))],
+                        },
+                      }))}
+                    />
+                    <TextField
+                      label="Published date (ISO 8601, newest first)"
+                      value={page.publishedAt || ""}
+                      onChange={(value) => updatePage((p) => ({
+                        ...p,
+                        publishedAt: value.trim() || undefined,
+                      }))}
+                    />
                     <CaseExperienceFields page={page} updatePage={updatePage} />
                     <div className="studio-pane-title">
                       Legacy modules (not used by cinematic template)

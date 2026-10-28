@@ -105,6 +105,7 @@ const width=1440;
   next.slug='future-creative-exploration';
   next.route='/work/future-creative-exploration/';
   next.title='Future creative exploration';
+  next.publishedAt='2026-10-28T16:00:00Z';
   next.caseExperience.openingImage='/media/cases/identity-hero.webp';
   published[next.slug]=next;
   for(const index of [published.home,published['our-work']]){
@@ -126,9 +127,40 @@ const width=1440;
   await previewPage.waitForSelector('[data-concept-ready="true"]');
   await previewPage.waitForFunction(()=>document.querySelectorAll('.case-index-item').length===4);
   const workPreview=previewPage.locator('.case-index-item');
-  ck('Studio preview picks up modified opening image on Our Work',await workPreview.nth(1).locator('img').getAttribute('src')==='/media/cases/production-hero.webp');
-  ck('Future case uses its own opening image on Our Work',await workPreview.nth(3).locator('img').getAttribute('src')==='/media/cases/identity-hero.webp');
+  ck('Newly added case leads Our Work',await workPreview.nth(0).getAttribute('href')==='/work/future-creative-exploration/');
+  ck('Studio preview picks up modified opening image on Our Work',await workPreview.nth(2).locator('img').getAttribute('src')==='/media/cases/production-hero.webp');
+  ck('Future case uses its own opening image on Our Work',await workPreview.nth(0).locator('img').getAttribute('src')==='/media/cases/identity-hero.webp');
   await preview.close();
+  // Grow the published preview without inventing public projects. Confirm
+  // the interactive six-at-a-time contract, newest-first dates and filtering.
+  const expanded=structuredClone(published);
+  for(let i=0;i<9;i++){
+   const clone=structuredClone(published['made-to-be-remembered']);
+   clone.slug='qa-new-story-'+i;
+   clone.route='/work/'+clone.slug+'/';
+   clone.title='QA new story '+i;
+   clone.publishedAt=new Date(Date.UTC(2026,9,28,18,0,i)).toISOString();
+   clone.caseExperience={...clone.caseExperience,demo:false,tags:[i%2?'Digital':'Events']};
+   expanded[clone.slug]=clone;
+  }
+  const expandedContext=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce'});
+  await expandedContext.addInitScript(data=>localStorage.setItem('showset-preview-published-pages',JSON.stringify(data)),expanded);
+  const expandedPage=await expandedContext.newPage();
+  await expandedPage.goto(base+'/our-work/');
+  await expandedPage.waitForSelector('[data-concept-ready="true"]');
+  await expandedPage.waitForFunction(()=>document.querySelectorAll('.work-portfolio-card').length===13);
+  ck('Newest dated case is first in gallery',await expandedPage.locator('.work-portfolio-card').first().getAttribute('href')==='/work/qa-new-story-8/');
+  ck('Only six visible before Load more',await expandedPage.locator('.work-portfolio-card:visible').count()===6);
+  ck('Load more is offered when more than six match',await expandedPage.locator('[data-work-more]').isVisible());
+  await expandedPage.locator('[data-work-more-button]').click();
+  ck('Load more reveals six additional stories',await expandedPage.locator('.work-portfolio-card:visible').count()===12);
+  await expandedPage.locator('[data-work-filter="Digital"]').click();
+  ck('Digital tag filter shows only matching studies',await expandedPage.locator('.work-portfolio-card:visible').count()===4 &&
+   await expandedPage.locator('.work-portfolio-card:visible').evaluateAll(nodes=>nodes.every(n=>n.dataset.workTags?.split('|').includes('Digital'))));
+  ck('Filter change resets pagination and hides Load more',await expandedPage.locator('[data-work-more]').isHidden());
+  await expandedPage.locator('[data-work-filter="all"]').click();
+  ck('All category resets to newest six',await expandedPage.locator('.work-portfolio-card:visible').count()===6);
+  await expandedContext.close();
   ck('No browser errors',!errors.length,errors);
   await context.close();
  }finally {
