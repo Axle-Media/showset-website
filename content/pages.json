@@ -862,7 +862,7 @@
             "id": "service-scene-1",
             "title": "A place worth landing.",
             "description": "Good digital experiences give people a clear way in and a reason to stay. We shape the structure, content and design so the next step always makes sense.",
-            "image": "",
+            "image": "/media/cases/identity-hero.webp",
             "href": "",
             "category": "Websites",
             "accent": ""
@@ -871,7 +871,7 @@
             "id": "service-scene-2",
             "title": "An idea worth noticing.",
             "description": "We build marketing around a clear message and a real audience, then create work that belongs on each channel without losing its personality.",
-            "image": "",
+            "image": "/media/cases/identity-detail.webp",
             "href": "",
             "category": "Campaigns",
             "accent": ""
@@ -880,7 +880,7 @@
             "id": "service-scene-3",
             "title": "A conversation worth continuing.",
             "description": "From planning to production and publishing, we help brands show up consistently with content that sounds human and feels recognisable.",
-            "image": "",
+            "image": "/media/cases/production-detail.webp",
             "href": "",
             "category": "Social",
             "accent": ""
@@ -889,7 +889,7 @@
             "id": "service-scene-4",
             "title": "The clever bits behind it.",
             "description": "Tools, websites, workflows and custom solutions should remove friction, not create it. We connect the practical technology to the people using it.",
-            "image": "",
+            "image": "/media/cases/identity-process.webp",
             "href": "",
             "category": "Technology",
             "accent": ""
@@ -1160,8 +1160,8 @@
       {
         "id": "section-6",
         "type": "accordion",
-        "headline": "Everything behind",
-        "accent": "the final frame.",
+        "headline": "The craft behind",
+        "accent": "every frame.",
         "body": "From one creative asset to a complete production, we connect the thinking, technical preparation and finishing work. Tell us the outcome you're aiming for and we'll bring the right disciplines together.",
         "image": "",
         "pattern": false,

@@ -61,37 +61,14 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
     '<div class="service-story-stage service-creative-canvas" data-service-creative-canvas>'+artboards+'</div></div>';
    return section(s,'service-story service-story--creative',intro+layout);
   }
-  if(kind==='digital'){
-   // A compact connected-system composition, not another pinned stage.
-   // Every description is visible; selecting a channel only shifts emphasis.
-   const links='<svg class="service-digital-network-lines" viewBox="0 0 500 440" preserveAspectRatio="xMidYMid meet" aria-hidden="true">'+
-    ['M250 220 Q250 145 250 70','M250 220 Q340 220 435 220','M250 220 Q250 290 250 370','M250 220 Q160 220 65 220']
-      .map((d,i)=>'<path data-digital-network-path="'+i+'" d="'+d+'" pathLength="1"/>').join('')+
-     '<circle class="service-digital-hub-ring" cx="250" cy="220" r="48"/>'+
-     '<circle class="service-digital-hub-core" cx="250" cy="220" r="10"/></svg>';
-   const nodes='<div class="service-digital-network-nodes">'+s.items.map((item,i)=>
-    '<button type="button" class="service-digital-network-node" data-digital-focus-button="'+i+'" aria-pressed="'+(i===0?'true':'false')+'" style="--digital-index:'+i+'" aria-label="Explore '+esc(sceneLabel(item,i))+'">'+
-     '<span class="service-digital-network-node-mark" aria-hidden="true"></span><span>'+text(sceneLabel(item,i))+'</span></button>'
-   ).join('')+'</div>';
-   const network='<div class="service-digital-network" aria-label="One connected idea across four digital disciplines">'+
-     links+'<div class="service-digital-hub-label" aria-hidden="true"><span>ONE</span><span>IDEA</span></div>'+nodes+'</div>';
-   const rows='<div class="service-digital-editorial">'+s.items.map((item,i)=>
-    '<article class="service-digital-editorial-item" data-digital-story="'+i+'" data-digital-active="'+(i===0?'true':'false')+'">'+
-     category(sceneLabel(item,i))+'<h3>'+text(item.title)+'</h3>'+paras(item.description)+'</article>'
-   ).join('')+'</div>';
-   const layout='<div class="service-story-track service-digital-connected-wrap" data-service-story-track>'+
-    '<div class="service-story-stage service-digital-connected" data-digital-connected>'+network+rows+'</div></div>';
-   return section(s,'service-story service-story--digital',intro+layout);
-  }
-  if(kind==='production'){
+  if(kind==='digital'||kind==='production'){
    // A compact cinematic production frame: a real photographic change for each
    // step, with all three descriptions always visible and Studio-editable.
    const frames='<div class="service-production-frames">'+s.items.map((item,i)=>
     '<figure class="service-production-frame" data-production-frame="'+i+'" data-production-active="'+(i===0?'true':'false')+'" aria-hidden="'+(i===0?'false':'true')+'" style="--production-index:'+i+'">'+
      photo(item.image||'',item.title)+'</figure>'
    ).join('')+'</div>';
-   const image='<div class="service-production-visual" aria-label="Photography from the production journey">'+frames+
-    '<div class="service-production-frame-rule" aria-hidden="true"></div></div>';
+   const image='<div class="service-production-visual" aria-label="Photography from the creative journey">'+frames+'</div>';
    const notes='<div class="service-production-timeline" role="group" aria-label="Production stages">'+s.items.map((item,i)=>
     '<article class="service-production-step" data-production-step="'+i+'" data-production-active="'+(i===0?'true':'false')+'">'+
      '<button type="button" class="service-production-step-trigger" data-production-step-trigger="'+i+'" aria-pressed="'+(i===0?'true':'false')+'">'+
@@ -99,7 +76,7 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
    ).join('')+'</div>';
    const layout='<div class="service-story-track service-production-timeline-wrap" data-service-story-track>'+
     '<div class="service-story-stage service-production-composition" data-production-composition>'+image+notes+'</div></div>';
-   return section(s,'service-story service-story--production',intro+layout);
+   return section(s,'service-story service-story--'+kind,intro+layout);
   }
   const body='<div class="service-scenes">'+s.items.map((item,i)=>'<article class="service-scene" data-service-scene="'+i+'"><figure>'+photo(item.image||'',item.title)+'</figure><div class="service-scene-copy">'+category(sceneLabel(item,i))+heading({headline:item.title,accent:''},'h3','','editorial')+paras(item.description)+'</div></article>').join('')+'</div>'+'<div class="service-film-progress" aria-hidden="true"><i></i></div>';
   return section(s,'service-story service-story--'+kind,intro+'<div class="service-story-track" data-service-story-track><div class="service-story-stage">'+body+'</div></div>');

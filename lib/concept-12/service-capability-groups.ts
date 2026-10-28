@@ -63,7 +63,7 @@ const definitions:Record<ServiceKind,GroupDefinition[]>={
   ]}
  ],
  digital:[
-  {title:'Websites & Digital Experiences',ids:[
+  {title:'Website Development',ids:[
    'websites---digital-experienc-0',
    'digital-web-development-20261028',
    'digital-ux-ui-20261028',
@@ -107,7 +107,7 @@ const definitions:Record<ServiceKind,GroupDefinition[]>={
    'production-editing-20261028',
    'production-cutdowns-20261028'
   ]},
-  {title:'Live & Technical Production',ids:[
+  {title:'Live Production',ids:[
    'lighting--sound---audiovisua-2',
    'production-live-streaming-20261028',
    'production-multicamera-20261028',

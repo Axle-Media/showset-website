@@ -77,6 +77,30 @@ if(slug==='events-experiences')ck('Approved five-section Events journey '+tag,
 page.sections.map(s=>s.id).join(',')==='section-1,section-2,service-story,section-6,section-7'
 &&await p.locator('.service-event-types li').count()===6
 &&await p.locator('.service-process,.service-groups,.service-connected').count()===0);
+if(slug==='content-production'){
+ const fullBleed=await p.locator('.service-hero--production').evaluate(hero=>{
+  const area=hero.getBoundingClientRect(),image=hero.querySelector('.service-hero-art'),art=image.getBoundingClientRect(),
+   photo=image.querySelector('img').getBoundingClientRect(),
+   title=hero.querySelector('h1').getBoundingClientRect(),
+   actions=hero.querySelector('.service-hero-actions').getBoundingClientRect();
+  const style=getComputedStyle(image);
+  return {
+   heroHeight:area.height,viewportHeight:window.innerHeight,
+   left:art.left-area.left,top:art.top-area.top,right:area.right-art.right,bottom:area.bottom-art.bottom,
+   imageWidth:photo.width,imageHeight:photo.height,
+   objectFit:getComputedStyle(image.querySelector('img')).objectFit,
+   transform:style.transform,
+   titleVisible:title.height>0&&title.top>=area.top,
+   controlsVisible:actions.height>0&&actions.bottom<=area.bottom+2
+  };
+ });
+ ck('Production full-screen opening has edge-to-edge photography and readable content '+tag,
+  fullBleed.heroHeight>=fullBleed.viewportHeight-2
+  &&[fullBleed.left,fullBleed.top,fullBleed.right,fullBleed.bottom].every(x=>Math.abs(x)<2)
+  &&fullBleed.imageWidth>0&&fullBleed.imageHeight>0
+  &&fullBleed.objectFit==='cover'&&fullBleed.transform==='none'
+  &&fullBleed.titleVisible&&fullBleed.controlsVisible,fullBleed);
+}
 ck('Authored hero '+tag,(await p.locator('.service-hero h1').innerText()).replace(/\s+/g,'').trim()===(hero.headline+hero.accent).replace(/\s+/g,''));
 ck('Service hero has no decorative footer labels '+tag,
  await p.locator('.service-hero-foot').count()===0
@@ -146,36 +170,52 @@ if(slug==='creative-design'){
     await p.locator('.service-creative-artboard-image img').evaluateAll(es=>es.every(el=>getComputedStyle(el).filter==='none')));
  }
 if(slug==='digital-marketing'){
- const system=await p.locator('[data-digital-connected]').evaluate(el=>({
-  columns:getComputedStyle(el).gridTemplateColumns.trim().split(/\\s+/).length,
-  nodes:el.querySelectorAll('[data-digital-focus-button]').length,
-  rows:el.querySelectorAll('[data-digital-story]').length,
-  textVisible:[...el.querySelectorAll('[data-digital-story] p')].every(p=>p.getBoundingClientRect().height>0),
-  height:el.getBoundingClientRect().height
- }));
- ck('Digital has four readable connected disciplines without a pinned scroll '+tag,
-  !pinned&&system.nodes===4&&system.rows===4&&system.textVisible&&system.height<950,system);
- for(const i of [3,1,2,0]){
-  await p.locator('[data-digital-focus-button]').nth(i).click();
-  ck('Digital interactive focus selects matching node and story '+i+' '+tag,
-   await p.locator('[data-digital-connected]').evaluate((el,i)=>
-    el.dataset.digitalFocus===String(i)&&el.dataset.digitalEngaged==='true'
-    &&el.querySelectorAll('[data-digital-story] p').length===4
-    &&[...el.querySelectorAll('[data-digital-focus-button]')].every((btn,n)=>btn.getAttribute('aria-pressed')===String(n===i)),i));
+ const design=await p.locator('[data-production-composition]').evaluate(el=>{
+  const head=el.closest('.service-story').querySelector('.service-section-head h2').getBoundingClientRect();
+  const image=el.querySelector('.service-production-visual').getBoundingClientRect();
+  return {
+   frames:el.querySelectorAll('[data-production-frame]').length,
+   stages:el.querySelectorAll('[data-production-step]').length,
+   visibleDescriptions:[...el.querySelectorAll('.service-production-step p')].every(p=>p.getBoundingClientRect().height>0),
+   aligned:Math.abs(head.left-image.left)<3,
+   photoWidth:image.width,
+   stroke:el.querySelectorAll('.service-production-frame-rule').length
+  };
+ });
+ ck('Digital mirrors the large aligned photographic production timeline '+tag,
+  !pinned&&design.frames===4&&design.stages===4&&design.visibleDescriptions
+  &&design.aligned&&design.stroke===0,design);
+ for(const i of[3,1,2,0]){
+  await p.locator('[data-production-step-trigger]').nth(i).click();
+  const selection=await p.locator('[data-production-composition]').evaluate(el=>({
+   frames:[...el.querySelectorAll('[data-production-frame]')].map(f=>f.dataset.productionActive),
+   pressed:[...el.querySelectorAll('[data-production-step-trigger]')].map(b=>b.getAttribute('aria-pressed')),
+   descriptions:[...el.querySelectorAll('.service-production-step p')].every(p=>p.getBoundingClientRect().height>0)
+  }));
+  ck('Digital photography responds to selection while all descriptions stay available '+tag+' '+i,
+   selection.frames.every((v,j)=>v===String(i===j))
+   &&selection.pressed.every((v,j)=>v===String(i===j))&&selection.descriptions,selection);
  }
- await p.locator('[data-digital-focus-button]').nth(0).focus();
- await p.keyboard.press('ArrowRight');
- ck('Digital network supports keyboard navigation '+tag,
-  await p.locator('[data-digital-focus-button]').nth(1).evaluate(el=>el===document.activeElement&&el.getAttribute('aria-pressed')==='true'));
+ await p.locator('[data-production-step-trigger]').nth(0).focus();
+ await p.keyboard.press('ArrowDown');
+ ck('Digital photo timeline supports keyboard navigation '+tag,
+  await p.locator('[data-production-step-trigger]').nth(1).evaluate(el=>el===document.activeElement&&el.getAttribute('aria-pressed')==='true'));
 }
-if(slug==='content-production'){await progress(p,0);const a=await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform);await progress(p,.5);const z=await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform);ck('Production photographic sequence advances',pinned&&a!==z);await progress(p,0);ck('Production sequence reverses',await p.locator('.service-scenes').evaluate(e=>getComputedStyle(e).transform)===a)}if(slug==='content-production'){
+if(slug==='content-production'){
  const layout=await p.locator('[data-production-composition]').evaluate(el=>({
   frames:el.querySelectorAll('[data-production-frame]').length,
   stages:el.querySelectorAll('[data-production-step]').length,
   descriptions:[...el.querySelectorAll('.service-production-step p')].map(p=>p.getBoundingClientRect().height),
   height:el.getBoundingClientRect().height
  }));
- ck('Production uses compact editorial timeline, not pinned full-screen scenes '+tag,
+  const alignment=await p.locator('[data-production-composition]').evaluate(el=>{
+  const headline=el.closest('.service-story').querySelector('.service-section-head h2').getBoundingClientRect();
+  const img=el.querySelector('.service-production-visual').getBoundingClientRect();
+  return {left:headline.left,imageLeft:img.left,imageWidth:img.width,stroke:el.querySelectorAll('.service-production-frame-rule').length};
+ });
+ ck('Production photograph is enlarged, aligned with heading and has no teal bottom stroke '+tag,
+  Math.abs(alignment.left-alignment.imageLeft)<3&&alignment.stroke===0,alignment);
+ck('Production uses compact editorial timeline, not pinned full-screen scenes '+tag,
   !pinned&&layout.frames===3&&layout.stages===3
   &&layout.descriptions.every(h=>h>0)&&layout.height<950,layout);
  for(const i of[2,1,0]){
@@ -237,8 +277,8 @@ const capabilityLayout=await p.locator('.service-expertise-grid').evaluate(grid=
 const expectedGroupTitles={
  'events-experiences':['Concept & Design','Planning & People','Space & Production','The Experience'],
  'creative-design':['Brand & Identity','Graphic & Creative','Print & Packaging','Spaces & Experiences'],
- 'digital-marketing':['Websites & Digital Experiences','Marketing & Campaigns','Social & Content','Technology & Partnerships'],
- 'content-production':['Concept & Pre-Production','Film & Photography','Motion & Post-Production','Live & Technical Production']
+ 'digital-marketing':['Website Development','Marketing & Campaigns','Social & Content','Technology & Partnerships'],
+ 'content-production':['Concept & Pre-Production','Film & Photography','Motion & Post-Production','Live Production']
 };
 ck('Cards have plain names, with only the brand full stop '+tag,
  capabilityLayout.groupTitlesSimple&&JSON.stringify(capabilityLayout.titles)===JSON.stringify(expectedGroupTitles[slug])&&capabilityLayout.periods,capabilityLayout.titles);
