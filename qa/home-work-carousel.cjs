@@ -139,7 +139,7 @@ const width=1440;
    clone.slug='qa-new-story-'+i;
    clone.route='/work/'+clone.slug+'/';
    clone.title='QA new story '+i;
-   clone.publishedAt=new Date(Date.UTC(2026,9,1+i)).toISOString();
+   clone.publishedAt=new Date(Date.UTC(2026,9,28,18,0,i)).toISOString();
    clone.caseExperience={...clone.caseExperience,demo:false,tags:[i%2?'Digital':'Events']};
    expanded[clone.slug]=clone;
   }
