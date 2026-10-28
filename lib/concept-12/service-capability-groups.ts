@@ -10,7 +10,6 @@ export type CapabilityGroup={title:string;items:BlockItem[]};
 const definitions:Record<ServiceKind,GroupDefinition[]>={
  events:[
   {title:'Concept & Design',ids:[
-   'event-branding--layout---3d--0',
    'event-concepts---creative-di-1',
    'graphic-design---event-brand-2',
    'event-layout---3d-renders-3',
@@ -25,9 +24,10 @@ const definitions:Record<ServiceKind,GroupDefinition[]>={
   ]},
   {title:'Space & Production',ids:[
    'd-cor---styling-6',
-   'floral-design-7',
    'furniture---equipment-hire-8',
-   'stage-builds---custom-instal-9'
+   'stage-builds---custom-instal-9',
+   'lighting-sound-av-production-20261028',
+   'photography-videography-20261028'
   ]},
   {title:'The Experience',ids:[
    'catering---bar-services-11',
