@@ -77,6 +77,30 @@ if(slug==='events-experiences')ck('Approved five-section Events journey '+tag,
 page.sections.map(s=>s.id).join(',')==='section-1,section-2,service-story,section-6,section-7'
 &&await p.locator('.service-event-types li').count()===6
 &&await p.locator('.service-process,.service-groups,.service-connected').count()===0);
+if(slug==='content-production'){
+ const fullBleed=await p.locator('.service-hero--production').evaluate(hero=>{
+  const area=hero.getBoundingClientRect(),image=hero.querySelector('.service-hero-art'),art=image.getBoundingClientRect(),
+   photo=image.querySelector('img').getBoundingClientRect(),
+   title=hero.querySelector('h1').getBoundingClientRect(),
+   actions=hero.querySelector('.service-hero-actions').getBoundingClientRect();
+  const style=getComputedStyle(image);
+  return {
+   heroHeight:area.height,viewportHeight:window.innerHeight,
+   left:art.left-area.left,top:art.top-area.top,right:area.right-art.right,bottom:area.bottom-art.bottom,
+   imageWidth:photo.width,imageHeight:photo.height,
+   objectFit:getComputedStyle(image.querySelector('img')).objectFit,
+   transform:style.transform,
+   titleVisible:title.height>0&&title.top>=area.top,
+   controlsVisible:actions.height>0&&actions.bottom<=area.bottom+2
+  };
+ });
+ ck('Production full-screen opening has edge-to-edge photography and readable content '+tag,
+  fullBleed.heroHeight>=fullBleed.viewportHeight-2
+  &&[fullBleed.left,fullBleed.top,fullBleed.right,fullBleed.bottom].every(x=>Math.abs(x)<2)
+  &&fullBleed.imageWidth>0&&fullBleed.imageHeight>0
+  &&fullBleed.objectFit==='cover'&&fullBleed.transform==='none'
+  &&fullBleed.titleVisible&&fullBleed.controlsVisible,fullBleed);
+}
 ck('Authored hero '+tag,(await p.locator('.service-hero h1').innerText()).replace(/\s+/g,'').trim()===(hero.headline+hero.accent).replace(/\s+/g,''));
 ck('Service hero has no decorative footer labels '+tag,
  await p.locator('.service-hero-foot').count()===0
@@ -254,7 +278,7 @@ const expectedGroupTitles={
  'events-experiences':['Concept & Design','Planning & People','Space & Production','The Experience'],
  'creative-design':['Brand & Identity','Graphic & Creative','Print & Packaging','Spaces & Experiences'],
  'digital-marketing':['Website Development','Marketing & Campaigns','Social & Content','Technology & Partnerships'],
- 'content-production':['Concept & Pre-Production','Film & Photography','Motion & Post-Production','Live & Technical Production']
+ 'content-production':['Concept & Pre-Production','Film & Photography','Motion & Post-Production','Live Production']
 };
 ck('Cards have plain names, with only the brand full stop '+tag,
  capabilityLayout.groupTitlesSimple&&JSON.stringify(capabilityLayout.titles)===JSON.stringify(expectedGroupTitles[slug])&&capabilityLayout.periods,capabilityLayout.titles);
