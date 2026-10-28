@@ -17,7 +17,7 @@ const sections=[
   ['Studio closing invitation','.studio-final-inner','h2',':scope > p'],
  ]},
  ...['/events-experiences/','/creative-design/','/digital-marketing/','/content-production/'].map(route=>({
-  route,items:[['Service feature','.service-feature .service-editorial-row','h2',':scope > div > p']],
+  route,items:[['Service editorial',route==='/events-experiences/'?'.service-intro .service-editorial-row':'.service-feature .service-editorial-row','h2',':scope > div > p']],
  }))
 ];
 (async()=>{

@@ -9,6 +9,6 @@ export function servicePage(page:PageData):PageData{
  const kind=serviceKind(page);if(!kind)return page;
  const sections=[...page.sections],process=sections.find(s=>s.id==='section-5')||sections.find(s=>s.type==='items');
  if(!sections.some(s=>s.id==='service-story')&&process){const story:Block={...process,id:'service-story',type:'story',items:process.items.map((item,i)=>({...item,image:item.image||images[kind][i%3]}))};sections.splice(Math.max(1,sections.findIndex(s=>s.id==='section-2')+1),0,story)}
- if(!sections.some(s=>s.id==='service-work')){const base=sections.find(s=>s.type==='cta');if(base)sections.splice(Math.max(1,sections.findIndex(s=>s.id==='section-8')),0,{...base,id:'service-work',type:'work',headline:'The thinking, made visible.',body:'Explore a creative concept study.',items:[{id:'service-related-study',title:'Explore the story',description:'',image:'',href:kind==='events'?'/work/atmosphere-is-everything/':kind==='production'?'/work/behind-every-moment/':'/work/made-to-be-remembered/'}]})}
+
  return sections.length===page.sections.length?page:{...page,sections};
 }

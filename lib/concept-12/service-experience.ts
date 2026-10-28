@@ -26,13 +26,27 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
  const hero=byId('section-1')||page.sections[0],story=byId('service-story');
  const digitalArt='<div class="service-digital-art" aria-hidden="true"><div class="service-art-orbit"></div><span class="service-art-arrow">↗</span>'+ (story?.items||[]).map((item,i)=>'<span class="service-art-label service-art-label-'+i+'">'+text(sceneLabel(item,i))+'</span>').join('')+'</div>';
  const heroArt=kind==='digital'?digitalArt:'<div class="service-hero-art">'+photo(hero.image,serviceNames[kind]+' creative direction',true)+'</div>';
- const heroBody=heroArt+'<div class="service-hero-content">'+label(serviceNames[kind])+heading(hero,'h1','category-title',kind==='events'||kind==='production'?'photo':'editorial')+'<div class="service-hero-copy">'+paras(hero.body)+'</div><div class="service-hero-actions">'+action(hero.buttonLabel||'Let’s talk',hero.buttonHref||'/contact/')+action('Explore our expertise','#service-expertise',false)+'</div></div><div class="service-hero-foot" aria-hidden="true"><span>SHOWSET / '+String(Object.keys(serviceRoutes).indexOf(kind)+1).padStart(2,'0')+'</span><span>Big ideas. Every detail.</span><span>↓</span></div>';
+ const heroBody=heroArt+'<div class="service-hero-content">'+label(serviceNames[kind])+heading(hero,'h1','category-title',kind==='events'||kind==='production'?'photo':'editorial')+'<div class="service-hero-copy">'+paras(hero.body)+'</div><div class="service-hero-actions">'+action(hero.buttonLabel||'Let’s talk',hero.buttonHref||'/contact/')+action('Explore our expertise','#service-expertise',false)+'</div></div>';
  const renderStory=(s:Block)=>{
   const intro='<header class="service-section-head service-gutter">'+(kind==='production'?label('The sequence'):'')+heading(s)+paras(s.body)+'</header>';
+  // Events uses a compact editorial triptych rather than another pinned
+  // full-viewport scene sequence. All imagery and text remain Studio-editable.
+  if(kind==='events'){
+   const images='<div class="service-event-triptych-visuals" aria-hidden="true">'+s.items.map((item,i)=>
+    '<figure class="service-event-triptych-image" style="--triptych-index:'+i+'">'+photo(item.image||'',item.title)+'</figure>'
+   ).join('')+'</div>';
+   const notes='<div class="service-event-triptych-notes">'+s.items.map((item,i)=>
+    '<article class="service-event-triptych-note service-scene-copy" data-service-scene="'+i+'" style="--triptych-index:'+i+'">'+
+     category(sceneLabel(item,i))+'<h3>'+text(item.title)+'</h3>'+paras(item.description)+'</article>'
+   ).join('')+'</div>';
+   const layout='<div class="service-story-track service-event-triptych-wrap" data-service-story-track>'+
+    '<div class="service-story-stage service-event-triptych">'+images+notes+'</div></div>';
+   return section(s,'service-story service-story--events',intro+layout);
+  }
   let body='';
   if(kind==='creative')body='<div class="service-proof-grid">'+s.items.map((item,i)=>'<article class="service-proof" style="--proof-index:'+i+'"><figure class="service-proof-image">'+photo(item.image||'',item.title)+'</figure>'+category(sceneLabel(item,i))+'<h3>'+text(item.title)+'</h3>'+paras(item.description)+'</article>').join('')+'</div>';
   else if(kind==='digital')body='<div class="service-channel-board"><svg class="service-channel-lines" viewBox="0 0 1000 660" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M100 100H650V330H350V560H900"/></svg>'+s.items.map((item,i)=>'<article class="service-channel" data-service-channel="'+i+'"><span class="service-channel-number" aria-hidden="true">0'+(i+1)+'</span><button type="button" class="service-channel-trigger" data-service-channel-trigger="'+i+'" aria-pressed="'+(i===0)+'">'+text(sceneLabel(item,i))+'<span aria-hidden="true">↗</span></button><h3>'+text(item.title)+'</h3>'+paras(item.description)+'</article>').join('')+'</div>';
-  else body='<div class="service-scenes">'+s.items.map((item,i)=>'<article class="service-scene" data-service-scene="'+i+'"><figure>'+photo(item.image||'',item.title)+'</figure><div class="service-scene-copy">'+category(sceneLabel(item,i))+heading({headline:item.title,accent:''},'h3','',kind==='events'?'scene':'editorial')+paras(item.description)+'</div></article>').join('')+'</div>'+(kind==='events'?'<svg class="service-plan" viewBox="0 0 600 480" aria-hidden="true"><path pathLength="1" d="M70 60H530V420H70ZM90 360H510M120 80V320H240V140H420V320H480M300 330V400M260 365H340"/><circle pathLength="1" cx="300" cy="230" r="56"/><circle pathLength="1" cx="150" cy="365" r="18"/><circle pathLength="1" cx="450" cy="365" r="18"/></svg>':'<div class="service-film-progress" aria-hidden="true"><i></i></div>');
+  else body='<div class="service-scenes">'+s.items.map((item,i)=>'<article class="service-scene" data-service-scene="'+i+'"><figure>'+photo(item.image||'',item.title)+'</figure><div class="service-scene-copy">'+category(sceneLabel(item,i))+heading({headline:item.title,accent:''},'h3','','editorial')+paras(item.description)+'</div></article>').join('')+'</div>'+'<div class="service-film-progress" aria-hidden="true"><i></i></div>';
   return section(s,'service-story service-story--'+kind,intro+'<div class="service-story-track" data-service-story-track><div class="service-story-stage">'+body+'</div></div>');
  };
  const renderGroups=(s:Block)=>section(s,'service-groups service-gutter','<header>'+heading(s)+paras(s.body)+'</header><div class="service-group-list">'+s.items.map((item,i)=>'<article><span class="service-index" aria-hidden="true">0'+(i+1)+'</span><h3>'+text(item.title)+'</h3>'+paras(item.description)+'</article>').join('')+'</div>');
@@ -61,13 +75,36 @@ export function renderServiceExperience(host:HTMLElement,rawPage:PageData,kind:S
   if(s===hero)markup+=section(s,'service-hero service-hero--'+kind,heroBody);
   else if(s.id==='service-story')markup+=renderStory(s);
   else if(s.id==='service-work'||s.type==='work')markup+=renderWork(s);
-  else if(s.id==='section-2')markup+=section(s,'service-intro service-gutter','<div class="service-editorial-row"><div>'+heading(s)+'</div><div>'+paras(s.body)+'</div></div>');
+  else if(s.id==='section-2'){
+   const formats=kind==='events'&&s.items.length
+    ?'<ul class="service-event-types" aria-label="Event formats">'+s.items.map(item=>'<li>'+text(item.title)+'</li>').join('')+'</ul>'
+    :'';
+   markup+=section(s,'service-intro service-gutter','<div class="service-editorial-row"><div>'+heading(s)+'</div><div>'+paras(s.body)+'</div></div>'+formats);
+  }
   else if(s.id==='section-3')markup+=renderGroups(s);
   else if(s.id==='section-4')markup+=section(s,'service-feature service-gutter','<div class="service-editorial-row"><div>'+heading(s)+'</div><div>'+paras(s.body)+'</div></div>');
   else if(s.id==='section-5')markup+=renderProcess(s);
   else if(s.type==='accordion')markup+=renderExpertise(s);
   else if(s.id==='section-8')markup+=section(s,'service-connected service-gutter',heading(s)+'<nav aria-label="Connected capabilities">'+(Object.keys(serviceRoutes) as ServiceKind[]).filter(k=>k!==kind).map(k=>'<a href="'+serviceRoutes[k]+'">'+serviceNames[k]+' <span aria-hidden="true">↗</span></a>').join('')+'</nav>');
-  else if(s.type==='visual')markup+=section(s,'service-close','<div class="service-close-art">'+photo(s.image,serviceNames[kind]+' visual concept')+'</div><div class="service-close-copy">'+heading(s,'h2','','photo')+paras(s.body)+action(s.buttonLabel||hero.buttonLabel||'Let’s talk',s.buttonHref||'/contact/')+'</div>');
+  else if(s.type==='visual'){
+   if(kind==='events'){
+    // Reuse the homepage editorial CTA composition without another full-screen
+    // photograph. Keep authored Events copy, button and the white terminal period.
+    const first='<span class="plain-line">'+text(s.headline)+'</span>';
+    const accent=s.accent||'';
+    const terminal=accent.match(/([.!?])$/);
+    const second=accent
+     ?'<span class="plain-line accent-text">'+text(terminal?accent.slice(0,-1):accent)
+       +(terminal?'<span class="service-period">'+text(terminal[1])+'</span>':'')+'</span>'
+     :'';
+    const closeHeading='<h2 class="section-title plain-heading service-heading">'+first+second+'</h2>';
+    const cta=action(s.buttonLabel||hero.buttonLabel||'Let’s talk',s.buttonHref||'/contact/').replace('class="solid-link"','class="solid-link end-link"');
+    markup+=section(s,'service-close service-close--editorial end-section section-gutter',
+     closeHeading+'<div class="end-bottom"><div class="service-close-description">'+paras(s.body)+'</div>'+cta+'</div>');
+   }else{
+    markup+=section(s,'service-close','<div class="service-close-art">'+photo(s.image,serviceNames[kind]+' visual concept')+'</div><div class="service-close-copy">'+heading(s,'h2','','photo')+paras(s.body)+action(s.buttonLabel||hero.buttonLabel||'Let’s talk',s.buttonHref||'/contact/')+'</div>');
+   }
+  }
   else markup+=section(s,'service-extra service-gutter',heading(s)+paras(s.body));
  }
  view.innerHTML='<div class="service-experience service-experience--'+kind+'" data-service-experience="'+kind+'">'+markup+'</div>';
