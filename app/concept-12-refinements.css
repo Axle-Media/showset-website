@@ -39,7 +39,7 @@
 .headline-period[data-period-tone=teal]{color:var(--teal)!important}
 .headline-period[data-period-tone=light]{color:#faf9fd!important}
 /* Approved S and dot artwork, quietly cropped behind the existing closing layout. */
-.end-section::before{content:''!important;display:block!important;position:absolute;inset:auto -5% -32% auto;width:48%;height:145%;background:url('/brand/closing-pattern.svg') right center/contain no-repeat;opacity:var(--refine-pattern-opacity,.06);pointer-events:none;z-index:-1}
+.end-section::before{content:''!important;display:block!important;position:absolute;inset:auto 6% -32% auto;width:48%;height:145%;background:url('/brand/closing-pattern.svg') right center/contain no-repeat;opacity:var(--refine-pattern-opacity,.06);pointer-events:none;z-index:-1}
 .end-section .section-title{max-width:1040px}
 .end-bottom{margin-top:clamp(36px,5vw,72px);align-items:center}
 @media(min-width:801px){.footer-head{display:grid;grid-template-columns:minmax(220px,1fr) minmax(360px,1fr) minmax(0,.35fr);gap:clamp(32px,5vw,80px)}.footer-links{justify-content:center;gap:clamp(35px,5vw,80px)}}
@@ -51,7 +51,7 @@
  .film-step h2{font-size:clamp(36px,7vw,52px)}
  .film-steps{min-height:340px}
  .footer-head{gap:42px}.footer-links{justify-content:flex-start;gap:clamp(35px,9vw,90px)}
- .end-section::before{width:80%;right:-32%;bottom:-30%;opacity:var(--refine-pattern-opacity,.06)}
+ .end-section::before{width:80%;right:-18%;bottom:-30%;opacity:var(--refine-pattern-opacity,.06)}
 }
 @media(max-width:600px){
  .film-step h2{font-size:clamp(34px,9.1vw,48px)}
