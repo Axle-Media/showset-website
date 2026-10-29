@@ -5,18 +5,15 @@ import { conceptDocument } from "@/lib/concept-12/document";
 import { defaultGlobals, defaultPages } from "@/lib/data";
 import LegalMobileMenu from "./LegalMobileMenu";
 
-export type LegalSectionLink = { id: string; title: string };
-
 type Props = {
   firstLine: string;
   accentLine: string;
   summary: string;
-  sections: LegalSectionLink[];
   children: ReactNode;
 };
 
 /** Reuse the approved, bound SHOWSET header/footer without mounting scroll-driven page views. */
-export default function LegalPageShell({ firstLine, accentLine, summary, sections, children }: Props) {
+export default function LegalPageShell({ firstLine, accentLine, summary, children }: Props) {
   const { document } = parseHTML("<!doctype html><html><body><div id='legal-source'></div></body></html>");
   const source = document.getElementById("legal-source")!;
   source.innerHTML = conceptDocument(defaultPages.home, defaultGlobals);
@@ -32,7 +29,6 @@ export default function LegalPageShell({ firstLine, accentLine, summary, section
       <main id="main" className="legal-main">
         <header className="legal-hero">
           <div className="legal-hero-inner">
-            <p className="legal-kicker">THE IMPORTANT DETAILS</p>
             <h1 className="legal-title">
               <span>{firstLine}<span className="legal-teal-dot">.</span></span>
               <span className="legal-title-accent">{accentLine}<span className="legal-white-dot">.</span></span>
@@ -42,16 +38,9 @@ export default function LegalPageShell({ firstLine, accentLine, summary, section
           </div>
         </header>
         <div id="legal-content" className="legal-content">
-          <aside className="legal-aside" aria-label="On this page">
-            <p>ON THIS PAGE</p>
-            <nav aria-label="Policy sections">
-              {sections.map(({ id, title }) => <a key={id} href={`#${id}`}>{title}</a>)}
-            </nav>
-          </aside>
           <div className="legal-body">
             {children}
             <div className="legal-switch">
-              <p>OTHER INFORMATION</p>
               <a href="/privacy-policy/">Privacy &amp; Policy <span aria-hidden="true">↗</span></a>
               <a href="/terms-and-conditions/">Terms &amp; Conditions <span aria-hidden="true">↗</span></a>
             </div>
