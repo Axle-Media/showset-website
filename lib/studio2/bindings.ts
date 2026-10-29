@@ -52,6 +52,9 @@ export function templateBindings(page: PageData): Binding[] {
     if (!target) return;
     content(prefix + "-heading", "Section heading", "heading", selector,
       target.id, "headline");
+    if (target.accent)
+      content(prefix + "-accent", "Section accent phrase", "heading",
+        selector + " .accent-line", target.id, "accent");
     if (bodySelector && target.body)
       content(prefix + "-body", "Section paragraph", "text", bodySelector,
         target.id, "body");
