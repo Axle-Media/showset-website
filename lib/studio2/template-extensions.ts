@@ -86,7 +86,7 @@ export function applyTemplateExtensions(
   }
   // Native visibility is scoped to active, non-hidden replacement roots.
   // An invalid/missing replacement is never allowed to leave an empty page.
-  syncNativeReplacementVisibility(host,page);
+  syncNativeReplacementVisibility(view,page);
 
   if(!appended.some(root=>!root.hidden)){
     existing?.remove();
