@@ -33,6 +33,16 @@
   }
 }
 
+@media (min-width:901px) and (max-width:1100px) {
+  /* The Events editorial triptych's notes can be taller than the viewport.
+     Do not stretch its image group to the full notes column height. */
+  .service-story--events .service-event-triptych-visuals{
+    height:clamp(430px,50vw,550px);
+    min-height:0!important;max-height:550px;
+    align-self:start;
+  }
+}
+
 @media (min-width:601px) and (max-width:900px) {
   /* Prevent tablet photography from becoming taller than its supporting copy. */
   .service-experience .service-scene figure,
@@ -396,6 +406,9 @@
 
   /* Case study imagery on phone: keep visuals meaningful rather than tall
      blank areas; smaller-screen chapter titles remain fully readable. */
+  .concept-12-root .case-experience .case-scene-copy,
+  .concept-12-root .case-experience .case-scene-copy > p,
+  .concept-12-root .case-experience .case-primary-heading,
   .concept-12-root .case-experience .case-chapter-copy,
   .concept-12-root .case-experience .case-related,
   .concept-12-root .case-experience .case-scene-copy,
@@ -410,6 +423,8 @@
   .concept-12-root .case-experience .case-primary-heading .wipe-line{
     margin-inline:auto;
   }
+  .concept-12-root .case-experience .case-scene-copy > p{margin-inline:auto}
+
   .concept-12-root .case-experience .case-primary-heading .wipe-line > span{
     white-space:normal;
   }
