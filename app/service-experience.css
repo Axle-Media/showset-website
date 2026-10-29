@@ -1225,3 +1225,30 @@
 }
 
 
+
+/* Events formats: one line on desktop, horizontally scrollable on smaller
+   screens instead of wrapping the sixth item onto an orphaned second row.
+   This index alone overrides the site-wide 17px body type rule. */
+.concept-12-root .service-experience--events .service-event-types{
+  flex-wrap:nowrap;
+  overflow-x:auto;
+  overflow-y:hidden;
+  max-width:100%;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(250,249,253,.28) transparent;
+  overscroll-behavior-inline:contain;
+  -webkit-overflow-scrolling:touch;
+}
+.concept-12-root .service-experience--events .service-event-types li{
+  flex:0 0 auto;
+  white-space:nowrap;
+  font-size:clamp(12px,.9vw,14px)!important;
+  padding-inline:clamp(8px,.9vw,15px);
+}
+.concept-12-root .service-experience--events .service-event-types li:first-child{
+  padding-left:0;
+}
+.concept-12-root .service-experience--events .service-event-types li:last-child{
+  padding-right:0;
+  border-right:0;
+}

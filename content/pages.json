@@ -67,7 +67,7 @@
             "id": "item-0",
             "title": "First, we",
             "accent": "imagine it.",
-            "description": "We get curious. Ask the awkwardly good questions. Pull things apart. Put unexpected things together. And find the idea worth chasing.",
+            "description": "We start by getting curious. About the people in the room, the story worth telling and the thing this idea really needs to do. We ask awkwardly good questions, challenge the obvious and connect unlikely dots until we find a direction everyone can believe in.",
             "image": "/media/planning.webp",
             "href": ""
           },
@@ -75,7 +75,7 @@
             "id": "item-1",
             "title": "Then, we",
             "accent": "make it happen.",
-            "description": "We design it, plan it, prototype it, build it and work through the bits nobody sees. This is where imagination meets the production schedule.",
+            "description": "Then we get our hands into it. The sketches become identities, layouts, websites, run sheets and real-world production plans. Creative thinking meets the people who build things, and we sweat the tiny details so the big picture feels effortless.",
             "image": "/media/rigging.webp",
             "href": ""
           },
@@ -83,7 +83,7 @@
             "id": "item-2",
             "title": "Finally, we",
             "accent": "move people.",
-            "description": "The doors open. The launch goes live. The audience leans in. Everything clicks into place and the idea stops being an idea.",
+            "description": "Then comes the part you can feel. The doors open, the site goes live, the lights come up and people step into the idea. All the planning disappears into the experience, leaving the atmosphere, the connection and the moments people talk about afterwards.",
             "image": "/media/evening.webp",
             "href": ""
           }
@@ -1354,7 +1354,7 @@
         "type": "pagehero",
         "headline": "Curious minds.",
         "accent": "Capable hands.",
-        "body": "We're creative thinkers, practical makers and the people who care how it all comes together.",
+        "body": "We're curious thinkers, practical makers and people who care about every part of the experience. Behind the creative work are the plans, partners, pixels and production details that make it possible. We bring those worlds together, because the best ideas deserve more than a beautiful presentation.",
         "image": "/media/planning.webp",
         "pattern": false,
         "reveal": true,
@@ -1367,7 +1367,7 @@
             "id": "studio-follow-up",
             "title": "We think it through.",
             "accent": "We make it happen.",
-            "description": "From the first conversation to the last detail, we connect the creative and practical work that brings an idea to life.",
+            "description": "We don't believe the big idea should get lost between teams. We shape the concept, design the details and stay close to the making, from the first sketch and the website to the final on-site cue. One connected team means fewer handovers, clearer thinking and work that feels like it belongs together.",
             "image": "",
             "href": ""
           }
@@ -2158,9 +2158,9 @@
       {
         "id": "section-1",
         "type": "contact",
-        "headline": "Something",
-        "accent": "brewing?",
-        "body": "Big idea, rough sketch or a brief that isn't quite there yet? We're listening.",
+        "headline": "Big ideas start",
+        "accent": "with a conversation.",
+        "body": "Planning an event that needs to feel different? Building a brand, launching a website or working on an idea that doesn't fit neatly into a box? Tell us what you're imagining, even if it's still taking shape. We bring together the creative thinking, practical people and attention to detail to turn big ideas into things people can see, feel and remember.",
         "image": "/media/planning.webp",
         "pattern": true,
         "reveal": true,

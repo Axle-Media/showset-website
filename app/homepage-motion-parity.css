@@ -1,0 +1,150 @@
+/* SHOWSET homepage animation/colour corrections, 29 October 2026.
+   This file loads last so the canonical service/body typography rules stay intact. */
+
+/* The two opening bars stop at the final glyph, not the hero column edge.
+   Keep the established colours, delays, mask animation and mobile wrapping. */
+#main .hero-title > .line{
+  display:block;
+  width:fit-content;
+  max-width:100%;
+}
+#main .hero-title > .line::after{
+  right:0;
+}
+
+/* First service statement: ivory text with a teal full stop;
+   second: teal text with an ivory full stop. */
+#main .services-panel-heading > span:first-child{
+  color:var(--ice)!important;
+}
+#main .services-panel-heading > span:first-child .service-heading-period{
+  color:var(--teal)!important;
+}
+#main .services-panel-heading > span:nth-child(2){
+  color:var(--teal)!important;
+}
+#main .services-panel-heading .service-heading-accent-period{
+  color:var(--ice)!important;
+}
+
+/* Return the dot story to its big, centred two-line composition.
+   Both text layers occupy the same viewport-sized alignment context. */
+#main .dot-stage{
+  --dot-text-shift:0px;
+}
+#main .dot-stage > .dot-words,
+#main .dot-colour-reveal > .dot-words{
+  box-sizing:border-box;
+  flex:none;
+  width:calc(100% - 2 * var(--gutter))!important;
+  max-width:1480px!important;
+  padding:0!important;
+  margin:0 auto;
+  text-align:center!important;
+  transform:translate3d(0,var(--dot-text-shift),0)!important;
+  opacity:1!important;
+  pointer-events:none;
+}
+#main .dot-words h2{
+  max-width:none;
+  margin:0 auto;
+  font-size:clamp(48px,4.9vw,88px)!important;
+  line-height:1.13!important;
+  font-weight:700!important;
+  letter-spacing:var(--v12-head-tracking,.018em)!important;
+  text-align:center!important;
+  color:var(--teal)!important;
+}
+#main .dot-words h2 .dot-line-primary{color:var(--ice)!important}
+#main .dot-words h2 .dot-line-accent{color:var(--teal)!important}
+#main .dot-words h2 em{font-style:normal;color:var(--sand)!important}
+#main .dot-words h2 em span{color:var(--ice)!important}
+#main .dot-words > p{
+  max-width:870px;
+  margin:clamp(22px,3vw,38px) auto 0!important;
+  text-align:center!important;
+  color:var(--ice)!important;
+}
+
+/* A second, accessibility-hidden copy is revealed only inside the expanding
+   teal circle. The shared --dot-radius drives both masks, ensuring the words
+   change colour at the circle edge without vanishing halfway through. */
+#main .dot-colour-reveal{
+  position:absolute;
+  inset:0;
+  z-index:4;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  pointer-events:none;
+  clip-path:circle(var(--dot-radius,0px) at 50% 50%);
+  will-change:clip-path;
+}
+/* Keep heading-level colour on the canonical teal token for the site's
+   multi-line typography contract. The child spans paint the actual dark text. */
+#main .dot-colour-reveal .dot-words h2{color:var(--teal)!important}
+#main .dot-colour-reveal .dot-words h2 .dot-line-primary,
+#main .dot-colour-reveal .dot-words h2 .dot-line-accent{
+  color:#06263a!important;
+}
+#main .dot-colour-reveal .dot-words h2 em,
+#main .dot-colour-reveal .dot-words h2 em span{
+  color:var(--ice)!important;
+}
+#main .dot-colour-reveal .dot-words > p{
+  color:#06263a!important;
+}
+
+/* A slightly wider, more substantial reading measure for the three
+   photographic homepage chapters and both photographic Studio hero scenes.
+   This preserves the headline swipe and the surrounding full-bleed images. */
+#main .film-steps{
+  width:100%;
+  max-width:930px;
+  min-height:365px;
+}
+#main .film-step > p{
+  width:100%;
+  max-width:660px;
+  margin-top:0;
+}
+#main .editorial-page.studio-rebuilt .studio-hero-scene > p{
+  width:100%;
+  max-width:660px;
+}
+@media(max-width:800px){
+  #main .film-steps{max-width:100%;min-height:380px}
+  #main .film-step > p,
+  #main .editorial-page.studio-rebuilt .studio-hero-scene > p{
+    max-width:min(660px,100%);
+  }
+}
+@media(max-width:540px){
+  #main .film-steps{min-height:390px}
+}
+@media(max-height:650px) and (min-width:801px){
+  #main .film-steps{min-height:310px}
+}
+
+/* The approved wordmark gains prominence without resizing the header logo
+   or changing the footer's two-line sign-off. */
+.concept-12-root .footer .brand .approved-wordmark{
+  width:270px;
+  height:auto;
+  max-width:100%;
+}
+@media(max-width:800px){
+  #main .dot-words h2{font-size:clamp(38px,6.6vw,62px)!important}
+  .concept-12-root .footer .brand .approved-wordmark{width:230px}
+}
+@media(max-width:600px){
+  #main .dot-words h2{font-size:clamp(30px,7.8vw,44px)!important}
+  #main .dot-words > p{max-width:420px}
+  .concept-12-root .footer .brand .approved-wordmark{width:215px}
+}
+@media(prefers-reduced-motion:reduce){
+  #main .dot-colour-reveal{clip-path:circle(150vmax at 50% 50%)!important;will-change:auto}
+  #main .dot-stage > .dot-words,
+  #main .dot-colour-reveal > .dot-words{transform:none!important}
+}
