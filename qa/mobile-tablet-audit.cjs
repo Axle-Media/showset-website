@@ -112,6 +112,27 @@ function ck(label,pass,detail){
             contactAccent:contactAccentMetrics
           };
           const contactShell=root.querySelector('.contact-shell');
+          const timeline=root.querySelector('.service-event-triptych-notes,.service-production-timeline');
+          const timelineAlignment=timeline?(()=>{
+            const parent=timeline.getBoundingClientRect();
+            const centre=parent.left+parent.width/2;
+            return {
+              before:getComputedStyle(timeline,'::before').display,
+              after:getComputedStyle(timeline,'::after').display,
+              paddingLeft:getComputedStyle(timeline).paddingLeft,
+              stages:[...timeline.querySelectorAll('.service-event-triptych-note,.service-production-step')].map(stage=>{
+                const eyebrow=stage.querySelector('.service-category');
+                const heading=stage.querySelector('h3');
+                const copy=stage.querySelector('p');
+                const field=e=>e?{
+                  align:getComputedStyle(e).textAlign,
+                  offset:Math.round((e.getBoundingClientRect().left+e.getBoundingClientRect().width/2-centre)*10)/10
+                }:null;
+                return {marker:getComputedStyle(stage,'::before').display,
+                  eyebrow:field(eyebrow),heading:field(heading),copy:field(copy)};
+              })
+            };
+          })():null;
           const workCard=root.querySelector('.work-page-gallery .case-index-info');
           const workMeta=root.querySelector('.work-page-gallery .work-card-meta');
           const workAction=root.querySelector('.work-page-gallery .work-feature-discover');
@@ -121,6 +142,7 @@ function ck(label,pass,detail){
             text,images,capabilityRules,viewport,body,windowWidth:innerWidth,rootWidth:root.getBoundingClientRect().width,
             footerWrap:footer?getComputedStyle(footer).whiteSpace:'',
             footerColumns,
+            timelineAlignment,
             contactIntroAlign:contactIntro?getComputedStyle(contactIntro).textAlign:null,
             contactLabelAlign:contactLabel?getComputedStyle(contactLabel).textAlign:null,
             contactColumns:contactShell?getComputedStyle(contactShell).gridTemplateColumns:null,
@@ -162,6 +184,16 @@ function ck(label,pass,detail){
                 Number.isFinite(rule.left)&&Number.isFinite(rule.right)
                 &&Math.abs(rule.left-rule.right)<=2
                 &&Math.abs(rule.originX-rule.width/2)<=1),result.capabilityRules);
+          }
+          if(['events','digital','production'].includes(name)){
+            const t=result.timelineAlignment;
+            ck('Mobile service stories hide vertical rail and milestone circles: '+tag,
+              !!t&&t.before==='none'&&t.after==='none'
+              &&t.stages.length===3&&t.stages.every(s=>s.marker==='none'),t);
+            ck('Mobile service stage eyebrows, headings and body stay centred: '+tag,
+              !!t&&t.paddingLeft==='0px'&&t.stages.length===3
+              &&t.stages.every(s=>[s.eyebrow,s.heading,s.copy].every(
+                e=>e&&e.align==='center'&&Math.abs(e.offset)<=3)),t);
           }
           if(name==='contact'){
             ck('Contact details centred; form labels still left-aligned: '+tag,
