@@ -39,6 +39,7 @@ import { useWorkspace } from "./useWorkspace";
 import Canvas from "./Canvas";
 import Navigator from "./Navigator";
 import Inspector from "./Inspector";
+import MediaManager from "./MediaManager";
 import ContextInspector from "./ContextInspector";
 import type { CanvasInspection } from "@/lib/studio2/selection";
 import { bindingContent } from "@/lib/studio2/bindings";
@@ -204,6 +205,23 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
       },
       "Edit " + (binding?.name || node?.name || "content"),
     );
+  };
+  const patchGalleryPosition=(index:number,position:string)=>{
+    if(!selected || node?.kind!=="gallery" || node.locked ||
+      !validStyle("objectPosition",position))return;
+    updatePage(p=>({...p,builder:{
+      ...builderFor(p),
+      roots:changeNode(builderFor(p).roots,selected,n=>({
+        ...n,props:{...n.props,items:(n.props.items||[]).map((item,i)=>
+          i===index ? {...item,focal:{...item.focal,[breakpoint]:position}} : item
+        )},
+      })),
+    }}),"Set gallery focus for "+breakpoint);
+  };
+  const updateMediaMetadata=(id:string,change:{name?:string;alt?:string;tags?:string[]})=>{
+    editor.edit(w=>({...w,media:w.media.map(item=>item.id===id
+      ? {...item,...change}:item
+    )}),"Organise media");
   };
   const patchStyle = (
     key: keyof StyleValues,
@@ -883,49 +901,28 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
             </div>
           )}
           {tab === "Media" && (
-            <div className="s2-aux">
-              <label className="s2-upload">
-                Add images
-                <input
-                  type="file"
-                  accept="image/png,image/jpeg,image/webp"
-                  onChange={(e) => {
-                    const file = e.target.files?.[0];
-                    e.target.value = "";
-                    if (file) void upload(file);
-                  }}
-                />
-              </label>
-              {workspace.media
-                .filter((a) =>
-                  a.name.toLowerCase().includes(query.toLowerCase()),
-                )
-                .map((asset) => (
-                  <button
-                    key={asset.id}
-                    onClick={() => {
-                      if(node?.kind==="gallery" && galleryTargetIndex!==null){
-                        patchProps("items",(node.props.items||[]).map((item,i)=>
-                          i===galleryTargetIndex?{...item,src:"asset:"+asset.id,
-                            alt:item.alt||asset.name.replace(/\.[^.]+$/,"")}:item));
-                        setGalleryTargetIndex(null);
-                        setTab("Layers");
-                        if(innerWidth<=800)setPanel("Inspector");
-                      }else if (binding?.kind === "image" || node?.kind === "image")
-                        patchProps("src", "asset:" + asset.id);
-                    }}
-                  >
-                    <img
-                      src={urls[asset.id] || ""}
-                      alt={asset.alt || asset.name}
-                    />
-                    <strong>{asset.name}</strong>
-                    <small>
-                      {asset.width} × {asset.height} · original retained
-                    </small>
-                  </button>
-                ))}
-            </div>
+            <MediaManager
+              media={workspace.media}
+              workspace={workspace}
+              urls={urls}
+              query={query}
+              onUpload={file=>void upload(file)}
+              onUpdate={updateMediaMetadata}
+              onUse={asset=>{
+                if(node?.kind==="gallery" && galleryTargetIndex!==null){
+                  patchProps("items",(node.props.items||[]).map((item,i)=>
+                    i===galleryTargetIndex?{...item,src:"asset:"+asset.id,
+                      alt:item.alt||asset.alt||asset.name.replace(/\\.[^.]+$/,"")}:item));
+                  setGalleryTargetIndex(null);
+                  setTab("Layers");
+                  if(innerWidth<=800)setPanel("Inspector");
+                }else if(binding?.kind==="image" || node?.kind==="image"){
+                  patchProps("src","asset:"+asset.id);
+                }
+              }}
+              canUse={node?.kind==="image" || binding?.kind==="image" ||
+                (node?.kind==="gallery" && galleryTargetIndex!==null)}
+            />
           )}
           {tab === "Site" && (
             <div className="s2-aux">
@@ -1112,6 +1109,8 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
             }
             onUpload={(file) => void upload(file)}
             onGalleryUpload={(index,file)=>void upload(file,index)}
+            onGalleryPosition={patchGalleryPosition}
+            galleryUrls={urls}
             onGalleryLibrary={(index)=>{
               setGalleryTargetIndex(index);
               setTab("Media");
