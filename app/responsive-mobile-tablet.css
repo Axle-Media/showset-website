@@ -1,0 +1,475 @@
+/* SHOWSET responsive composition, October 2026.
+   Site-wide changes are limited to tablet and phone viewports. The approved
+   desktop grid, hero motion, brand colours and heading punctuation stay intact.
+   Interactive menus, form controls and navigational rows remain legible. */
+
+@media (min-width:601px) and (max-width:950px) {
+  /* Side-by-side contact fields and the large Digital graphic become cramped
+     before the older 800px breakpoint. Use a comfortable stacked composition. */
+  .concept-12-root .contact-rebuilt .contact-shell{
+    grid-template-columns:minmax(0,1fr);gap:clamp(30px,5vw,52px);
+    max-width:720px;
+  }
+  .concept-12-root .contact-rebuilt .contact-left{
+    min-height:0!important;
+  }
+  .service-experience--digital .service-hero--digital{
+    display:flex;flex-direction:column;
+    min-height:0;padding-bottom:clamp(65px,8vw,90px);
+  }
+  .service-experience--digital .service-hero--digital .service-digital-art{
+    position:relative;inset:auto;right:auto;bottom:auto;
+    width:100%;height:clamp(255px,38vw,350px);
+    margin:0 auto clamp(24px,4vw,38px);
+  }
+  .service-experience--digital .service-hero--digital .service-hero-content{
+    position:relative;width:100%;max-width:740px;
+  }
+  .service-experience--digital .service-hero--digital .service-art-arrow{
+    font-size:clamp(260px,32vw,370px);
+  }
+  .service-experience--digital .service-hero--digital .service-art-label{
+    font-size:clamp(18px,2.4vw,24px);
+  }
+}
+
+@media (min-width:601px) and (max-width:900px) {
+  /* Prevent tablet photography from becoming taller than its supporting copy. */
+  .service-experience .service-scene figure,
+  .service-experience .service-proof-image,
+  .service-experience .service-creative-artboard-image,
+  .editorial-page.studio-rebuilt .studio-storyboard-shot{
+    max-height:420px;
+  }
+  .service-experience .service-production-visual,
+  .service-story--events .service-event-triptych-visuals{
+    max-height:420px;
+  }
+  .concept-12-root .case-detail-visual,
+  .concept-12-root .case-story-image .case-story-figure > img,
+  .concept-12-root .case-story-video .case-story-figure > video{
+    max-height:500px;min-height:0;
+  }
+  .concept-12-root .services-right{height:clamp(350px,55vw,470px)}
+}
+
+/* Mobile is a centred editorial experience. Non-editorial data entry and
+   navigation lists keep their natural text alignment for usability. */
+@media (max-width:600px) {
+  :root{--gutter:clamp(20px,5.7vw,26px)}
+  .concept-12-root .view.is-current{
+    overflow-wrap:break-word;
+  }
+  .concept-12-root .view.is-current :is(
+    .manifesto .section-title,.manifesto-copy > p,
+    .portfolio-heading > .section-title,.portfolio-intro p,
+    .services-panel-heading,.services-stage-intro > p,
+    .service-image-information > p,
+    .film-step h2,.film-step > p,
+    .studio-editorial-heading,.studio-scroll-heading,
+    .studio-manifesto h2,.studio-manifesto p,
+    .studio-exploration-intro h2,.studio-exploration-intro p,
+    .studio-outlook h2,.studio-outlook p,
+    .studio-storyboard-copy h3,.studio-storyboard-copy p,
+    .work-page-intro h2,.work-page-intro p,
+    .work-index-header h2,.work-index-header p,
+    .case-index-info h2,.case-index-info p,
+    .service-section-head h2,.service-section-head > p,
+    .service-hero h1,.service-hero-copy p,
+    .service-scene-copy h3,.service-scene-copy p,
+    .service-creative-artboard-copy h3,.service-creative-artboard-copy p,
+    .service-connected h2,.service-connected p,
+    .service-close .service-heading,.service-close p,
+    .contact-editorial-heading,.contact-intro > p
+  ){text-align:center!important}
+
+  /* Hero cards must be centred as complete groups, not just heading glyphs. */
+  .concept-12-root .hero-foreground,
+  .concept-12-root .hero-second{
+    left:var(--gutter);right:var(--gutter);
+    width:auto;max-width:none;
+    text-align:center;
+  }
+  .concept-12-root .hero-foreground{top:clamp(145px,25svh,205px)}
+  .concept-12-root .hero-second{top:clamp(155px,27svh,220px);bottom:auto}
+  .concept-12-root .hero-title .line{
+    display:block;width:fit-content;max-width:100%;margin-inline:auto;
+  }
+  .concept-12-root .hero-foreground > p,
+  .concept-12-root .hero-second-copy{
+    width:100%;max-width:480px;
+    margin-inline:auto;text-align:center;
+    font-size:clamp(14px,3.6vw,16px)!important;
+    line-height:1.55!important;
+  }
+  .concept-12-root .hero-links,
+  .concept-12-root .hero-second-links{
+    justify-content:center;align-items:center;gap:12px 18px;
+  }
+  .concept-12-root .hero-scroll-note{justify-content:center}
+
+  .concept-12-root .manifesto-heading-group{
+    align-items:center!important;text-align:center!important;
+    gap:clamp(22px,5vw,32px);
+  }
+  .concept-12-root .manifesto-copy,
+  .concept-12-root .manifesto-copy > p,
+  .concept-12-root .portfolio-intro,
+  .concept-12-root .portfolio-intro p{
+    margin-inline:auto;text-align:center!important;
+  }
+  .concept-12-root .manifesto-copy>p,
+  .concept-12-root .portfolio-intro p{
+    max-width:600px;font-size:clamp(15px,3.7vw,17px)!important;
+    line-height:1.7!important;
+  }
+  .concept-12-root .manifesto-heading-group .understated-link{margin-inline:auto}
+  .concept-12-root .portfolio-heading{justify-items:center;text-align:center}
+
+  /* The film is still a scroll story, but its copy is centred over the image.
+     Keep sufficient room for the longer approved paragraphs at short heights. */
+  .concept-12-root .film-story-inner{
+    inset:0 var(--gutter);
+    justify-content:center;text-align:center;
+  }
+  .concept-12-root .film-steps{
+    width:100%;max-width:100%;
+    min-height:min(390px,calc(100svh - 140px));
+  }
+  .concept-12-root .film-step .wipe-line{margin-inline:auto}
+  .concept-12-root .film-step > p{
+    width:100%;max-width:min(540px,100%);
+    margin-inline:auto;
+    font-size:clamp(14px,3.5vw,16px)!important;
+    line-height:1.64!important;
+  }
+  .concept-12-root .film-counter{left:0;right:0;text-align:center}
+  .concept-12-root .film-index{gap:10px}
+
+  /* Homepage services keep accessible clickable rows; its introduction and
+     photo caption become centred, without moving the arrow affordances. */
+  .concept-12-root .services-panel-heading{
+    align-items:center!important;text-align:center!important;
+    max-width:none;
+  }
+  .concept-12-root .services-stage-intro > p{
+    max-width:600px;margin-inline:auto;
+    font-size:clamp(15px,3.65vw,17px)!important;
+    line-height:1.64!important;
+  }
+  .concept-12-root .services-right{
+    height:clamp(285px,75vw,420px)!important;
+  }
+  .concept-12-root .service-image-information{
+    left:var(--gutter);right:var(--gutter);
+    bottom:clamp(22px,5vw,38px);
+    text-align:center;
+  }
+  .concept-12-root .service-image-information > p{
+    max-width:560px;margin-inline:auto;
+    font-size:clamp(15px,3.6vw,18px)!important;
+    line-height:1.45!important;
+  }
+  .concept-12-root .service-image-information > a{
+    justify-content:center;
+  }
+
+  /* Featured cases: do not enforce a 550px card on short mobile screens. */
+  .concept-12-root #portfolio-section .case-viewport{
+    height:clamp(440px,126vw,535px)!important;
+    min-height:0!important;
+  }
+  .concept-12-root #portfolio-section .case-photo{
+    height:47%;flex-basis:47%;
+  }
+  .concept-12-root #portfolio-section .case-story{
+    height:53%;flex:1 1 auto;
+    min-height:0;
+    text-align:center;padding:clamp(19px,5vw,27px);
+  }
+  .concept-12-root #portfolio-section .case-story h3,
+  .concept-12-root #portfolio-section .case-story p{
+    text-align:center!important;
+  }
+  .concept-12-root #portfolio-section .case-slide-link{
+    display:inline-flex;justify-content:center;
+  }
+  .concept-12-root .end-section .section-title,
+  .concept-12-root .end-section .end-bottom p{text-align:center!important}
+  .concept-12-root .end-section .end-bottom{
+    align-items:center!important;
+    text-align:center!important;
+  }
+  .concept-12-root .end-section .end-link.solid-link{
+    margin-inline:auto;
+  }
+
+  /* Service pages: centre the hero, editorial explanations, selectable art,
+     capabilities and final CTA, not the functional row controls. */
+  .concept-12-root .service-experience .service-gutter{
+    padding-top:clamp(58px,12vw,78px);
+    padding-bottom:clamp(58px,12vw,78px);
+  }
+  .concept-12-root .service-experience .service-hero{
+    min-height:clamp(590px,100svh,780px);
+    padding:calc(var(--header-height) + 52px) var(--gutter) 72px;
+  }
+  .concept-12-root .service-experience .service-hero--creative,
+  .concept-12-root .service-experience .service-hero--digital{
+    min-height:0;
+  }
+  .concept-12-root .service-experience .service-hero-content{
+    width:100%;max-width:none;text-align:center;
+  }
+  .concept-12-root .service-experience .service-heading{
+    text-align:center!important;
+    margin-inline:auto;
+    max-width:min(100%,650px);
+  }
+  .concept-12-root .service-experience .service-heading .wipe-line,
+  .concept-12-root .service-experience .service-hero .wipe-line,
+  .concept-12-root .service-experience .service-close .wipe-line{
+    margin-inline:auto!important;
+  }
+  .concept-12-root .service-experience :is(
+    .service-hero-copy p,.service-section-head > p,
+    .service-scene-copy > p,.service-creative-artboard-copy > p,
+    .service-work-card p,.service-connected > p,
+    .service-close p
+  ){
+    max-width:min(580px,100%);margin-inline:auto;text-align:center!important;
+  }
+  .concept-12-root .service-experience .service-hero-actions{
+    flex-direction:column;align-items:center!important;justify-content:center;
+    gap:12px;margin-inline:auto;
+  }
+  .concept-12-root .service-experience .service-hero-actions a{
+    justify-content:center;max-width:100%;
+  }
+  .concept-12-root .service-experience .service-hero--creative .service-hero-art{
+    width:100%;height:clamp(230px,65vw,315px);
+    margin:0 auto 26px;
+  }
+  .concept-12-root .service-experience .service-digital-art{
+    height:clamp(230px,60vw,275px);
+    max-height:275px;margin:0 auto 27px;
+  }
+  .concept-12-root .service-experience .service-art-label{
+    font-size:clamp(16px,4.8vw,21px);
+  }
+  .concept-12-root .service-experience .service-scene figure{
+    height:clamp(220px,65vw,340px);min-height:0;
+  }
+  .concept-12-root .service-experience .service-proof-image,
+  .concept-12-root .service-experience .service-creative-artboard-image,
+  .concept-12-root .service-experience .service-production-visual{
+    height:clamp(215px,65vw,345px)!important;
+    max-height:345px;min-height:0;
+  }
+  .concept-12-root .service-story--events .service-event-triptych-visuals{
+    height:clamp(220px,62vw,315px);
+  }
+  .concept-12-root .service-experience .service-creative-artboard-copy,
+  .concept-12-root .service-experience .service-capability-group{
+    text-align:center;
+  }
+  .concept-12-root .service-experience .service-capability-group h3,
+  .concept-12-root .service-experience .service-capability-list,
+  .concept-12-root .service-experience .service-capability-name{
+    text-align:center!important;
+  }
+  .concept-12-root .service-experience .service-event-triptych-notes{
+    padding-left:0;
+  }
+  .concept-12-root .service-experience .service-close,
+  .concept-12-root .service-experience .service-close--editorial{
+    min-height:0!important;
+    text-align:center!important;
+    justify-content:center!important;
+    align-items:center!important;
+  }
+  .concept-12-root .service-experience .service-close .solid-link,
+  .concept-12-root .service-experience .service-close--editorial .end-link.solid-link{
+    margin-inline:auto!important;align-self:center!important;
+  }
+  .concept-12-root .service-experience .service-work-card{
+    text-align:center;
+  }
+
+  /* Our Studio: make image widths and captions consistent; previously the
+     second photograph was 87% wide and offset to the right on mobile. */
+  .concept-12-root .studio-rebuilt .studio-hero-scene{
+    left:var(--gutter);right:var(--gutter);
+    width:calc(100% - 2 * var(--gutter));
+    max-width:none;
+    text-align:center;
+  }
+  .concept-12-root .studio-rebuilt .studio-hero-scene-first{
+    top:clamp(150px,28svh,200px);
+  }
+  .concept-12-root .studio-rebuilt .studio-hero-scene-follow{
+    bottom:clamp(80px,16svh,140px);
+  }
+  .concept-12-root .studio-rebuilt .studio-scroll-heading,
+  .concept-12-root .studio-rebuilt .studio-editorial-heading,
+  .concept-12-root .studio-rebuilt .studio-storyboard-copy h3{
+    text-align:center!important;
+  }
+  .concept-12-root .studio-rebuilt .studio-scroll-heading .wipe-line{
+    margin-inline:auto;
+  }
+  .concept-12-root .studio-rebuilt .studio-hero-scene > p{
+    max-width:min(560px,100%);margin-inline:auto;
+    text-align:center!important;
+    font-size:clamp(14px,3.75vw,17px)!important;
+    line-height:1.6!important;
+  }
+  .concept-12-root .studio-rebuilt :is(
+    .studio-manifesto-layout,.studio-exploration-intro,
+    .studio-outlook,.studio-final-inner
+  ){justify-items:center;text-align:center}
+  .concept-12-root .studio-rebuilt .studio-storyboard-chapter:nth-child(n) .studio-storyboard-shot{
+    width:100%;max-height:350px;
+    aspect-ratio:1.35;margin-inline:auto;
+  }
+  .concept-12-root .studio-rebuilt .studio-storyboard-chapter:nth-child(n) .studio-storyboard-copy{
+    padding-inline:0;margin-inline:auto;
+    max-width:570px;text-align:center;
+  }
+  .concept-12-root .studio-rebuilt .studio-storyboard-copy p{
+    text-align:center!important;
+  }
+  .concept-12-root .studio-rebuilt .studio-final .editorial-action{
+    justify-self:center;align-self:center;margin-inline:auto;
+  }
+
+  /* Our Work: centre filters and card titles. Remove the fixed 215px empty
+     information area and cap gallery photographs without cropping tall. */
+  .concept-12-root .work-rebuilt .work-hero .simple-hero-content{
+    display:flex;flex-direction:column;justify-content:center;
+    align-items:center;text-align:center;
+  }
+  .concept-12-root .work-rebuilt .work-hero h1 .wipe-line{margin-inline:auto}
+  .concept-12-root .work-rebuilt .work-hero .simple-hero-content > p{
+    text-align:center;max-width:540px;margin-inline:auto;
+  }
+  .concept-12-root .work-rebuilt :is(
+    .work-page-intro,.work-editorial-note,.work-intro-copy,
+    .case-index-info,.work-final-inner,.work-index-more
+  ){text-align:center}
+  .concept-12-root .work-rebuilt .work-index-tools{
+    justify-content:center;
+  }
+  .concept-12-root .work-rebuilt .work-page-gallery .case-index-item:nth-child(n) .case-index-info{
+    min-height:0!important;padding:20px 0 24px;
+  }
+  .concept-12-root .work-rebuilt .work-page-gallery .case-index-image{
+    height:auto;max-height:340px;aspect-ratio:1.2;
+  }
+  .concept-12-root .work-rebuilt .work-feature-top,
+  .concept-12-root .work-rebuilt .work-feature-discover{
+    justify-content:center;
+  }
+  .concept-12-root .work-rebuilt .studio-final .editorial-action{
+    margin-inline:auto;justify-self:center;
+  }
+
+  /* Contact: centre the brand introduction and contact methods; keep labels,
+     user-entered text and dropdown options left-aligned for scanning. */
+  .concept-12-root .contact-rebuilt .contact-shell{
+    justify-items:stretch;text-align:center;
+  }
+  .concept-12-root .contact-rebuilt .contact-intro > p{
+    max-width:610px;margin-inline:auto;
+  }
+  .concept-12-root .contact-rebuilt .contact-direct{
+    align-items:center;
+  }
+  .concept-12-root .contact-rebuilt .contact-whatsapp{
+    margin-inline:auto;justify-content:center;
+  }
+  .concept-12-root .contact-rebuilt .contact-form,
+  .concept-12-root .contact-rebuilt .contact-form :is(label,input,textarea,select,.select-trigger,.select-option){
+    text-align:left;
+  }
+  .concept-12-root .contact-rebuilt .contact-submit-row{text-align:center}
+
+  /* Case study imagery on phone: keep visuals meaningful rather than tall
+     blank areas; smaller-screen chapter titles remain fully readable. */
+  .concept-12-root .case-experience .case-chapter-copy,
+  .concept-12-root .case-experience .case-related,
+  .concept-12-root .case-experience .case-scene-copy,
+  .concept-12-root .case-experience .case-related-heading{
+    text-align:center;
+  }
+  .concept-12-root .case-experience .case-chapter-photo,
+  .concept-12-root .case-experience .case-related-photo,
+  .concept-12-root .case-experience .case-gallery-item{
+    max-height:350px;
+  }
+  .concept-12-root .case-experience .case-primary-heading .wipe-line{
+    margin-inline:auto;
+  }
+  .concept-12-root .case-experience .case-primary-heading .wipe-line > span{
+    white-space:normal;
+  }
+  .concept-12-root .case-detail-hero{
+    min-height:clamp(420px,75svh,610px);
+  }
+  .concept-12-root :is(
+    .case-detail-header,.case-detail-introduction,.case-quote,
+    .case-detail-next
+  ){text-align:center}
+  .concept-12-root :is(
+    .case-detail-visual,.case-story-image .case-story-figure > img,
+    .case-story-video .case-story-figure > video
+  ){max-height:440px;min-height:0}
+
+  /* Shared footer: no forced nowrap on small screens, so its full sign-off
+     fits naturally. Keep two navigation groups side by side when possible. */
+  .concept-12-root .footer-head{
+    align-items:center;text-align:center;
+  }
+  .concept-12-root .footer-identity{
+    display:flex;flex-direction:column;align-items:center;
+  }
+  .concept-12-root .footer-identity .brand{
+    align-items:center;margin-inline:auto;
+  }
+  .concept-12-root .footer-identity > p{
+    max-width:340px;white-space:normal!important;
+    margin-inline:auto;text-align:center;
+  }
+  .concept-12-root .footer-links{
+    width:100%;justify-content:space-evenly;
+    align-items:flex-start;flex-wrap:wrap;gap:30px 18px;
+    text-align:center;
+  }
+  .concept-12-root .footer-links > div{
+    min-width:min(120px,45%);align-items:center;text-align:center;
+  }
+  .concept-12-root .footer-contact{
+    align-items:center;text-align:center;
+  }
+  .concept-12-root .footer-socials{justify-content:center}
+  .concept-12-root .footer-bottom{
+    align-items:center;text-align:center;
+  }
+}
+
+@media (max-width:370px) {
+  /* Very narrow phones need less letter size and hero padding, not clipped
+     headings or a forced desktop card height. */
+  .concept-12-root .hero-title{
+    font-size:clamp(34px,9.8vw,38px)!important;
+  }
+  .concept-12-root .service-experience .service-heading{
+    font-size:clamp(30px,9vw,38px)!important;
+  }
+  .concept-12-root .studio-rebuilt .studio-scroll-heading{
+    font-size:clamp(32px,9vw,39px)!important;
+  }
+  .concept-12-root .contact-rebuilt .contact-editorial-heading{
+    font-size:clamp(30px,8.7vw,37px)!important;
+  }
+}
