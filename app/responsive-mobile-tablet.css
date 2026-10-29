@@ -697,7 +697,9 @@
 
 @media (max-width:370px) {
   /* Keep the approved two-line headline even on 320px phones. */
-  .concept-12-root .contact-rebuilt .contact-editorial-heading{
+  /* #main's global heading token has ID specificity. An explicitly
+     narrow phone heading must override it to retain two visual lines. */
+  #main .contact-rebuilt .contact-editorial-heading{
     font-size:clamp(25.5px,8vw,28px)!important;
   }
   /* Preserve the approved contact font size: reduce icon spacing and side
