@@ -40,6 +40,7 @@ jobs:
         run: |
           npm install --no-save --no-package-lock playwright
           npx playwright install --with-deps chromium
+          node qa/live-visual-capture.cjs || echo 'Live site capture unavailable; continue local QA.'
           python3 -m http.server 3001 --directory out >/tmp/showset-qa-server.log 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid" || true' EXIT
