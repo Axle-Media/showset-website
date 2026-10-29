@@ -125,6 +125,12 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
       minHeight:getComputedStyle(el).minHeight,
       columns:getComputedStyle(shell).gridTemplateColumns.split(' ').length,
       panel:getComputedStyle(card).backgroundColor,
+      panelBorder:getComputedStyle(card).borderTopColor,
+      inputBg:getComputedStyle(el.querySelector('#full-name')).backgroundColor,
+      inputColour:getComputedStyle(el.querySelector('#full-name')).color,
+      labelColour:getComputedStyle(el.querySelector('label[for="full-name"]')).color,
+      heading:el.querySelector('h1')?.textContent?.replace(/\\s+/g,' ').trim(),
+      bodyLength:el.querySelector('.contact-intro > p')?.textContent?.trim().length,
       panelRadius:parseFloat(getComputedStyle(card).borderTopLeftRadius),
       hasPhoto:!!el.querySelector('.contact-photo'),
       visibleDate:el.querySelector('#project-date')?.getClientRects().length>0,
@@ -136,9 +142,16 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
     contactGeometry.minHeight==='0px'&&!contactGeometry.hasPhoto,contactGeometry);
   ck('Contact uses responsive two-column composition '+width,
     contactGeometry.columns===(width>740?2:1),contactGeometry);
-  ck('Contact uses ivory rounded panel and visible optional date and budget '+width,
-    contactGeometry.panel==='rgb(250, 249, 253)'&&contactGeometry.panelRadius>=17&&
-    contactGeometry.visibleDate&&contactGeometry.visibleBudget,contactGeometry);
+  ck('Contact uses a branded navy panel with outlined light-on-dark fields '+width,
+    contactGeometry.panel==='rgb(13, 47, 73)'&&
+    contactGeometry.panelBorder==='rgba(18, 186, 175, 0.38)'&&
+    contactGeometry.inputBg==='rgb(8, 38, 59)'&&
+    contactGeometry.inputColour==='rgb(250, 249, 253)'&&
+    contactGeometry.labelColour==='rgb(250, 249, 253)'&&
+    contactGeometry.panelRadius>=17&&contactGeometry.visibleDate&&contactGeometry.visibleBudget,contactGeometry);
+  ck('Contact expands the left headline and introduction '+width,
+    contactGeometry.heading==='Big ideas startwith a conversation.' &&
+    contactGeometry.bodyLength>=300,contactGeometry);
   ck('WhatsApp shortcut uses published business phone '+width,
     await page.locator('.view.is-current [data-contact-whatsapp]').getAttribute('href')==='https://wa.me/27682805777');
 
