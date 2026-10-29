@@ -60,6 +60,14 @@ export default function Studio2() {
     [inspection, setInspection] = useState<CanvasInspection | null>(null);
   const importInput = useRef<HTMLInputElement>(null),
     dialogRef = useRef<HTMLDialogElement>(null);
+  // Start on the visitor's actual editing breakpoint. Previously a phone
+  // opened a 1440px desktop canvas shrunk to an unreadable 25% preview.
+  // Only choose the initial mode: later user-selected widths are respected.
+  useEffect(() => {
+    const viewport = window.innerWidth;
+    if (viewport <= 600) setWidth(Math.min(430, Math.max(320, viewport)));
+    else if (viewport <= 1024) setWidth(768);
+  }, []);
   const workspace = editor.workspace,
     page = workspace?.pages[slug],
     node =
