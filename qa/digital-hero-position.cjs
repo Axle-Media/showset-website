@@ -38,7 +38,7 @@ function check(name,pass,detail){results.push({name,pass:!!pass,detail});console
    });
    check('Four digital touchpoints retained '+width,
      JSON.stringify(metrics.labels)===JSON.stringify(['Websites','Campaigns','Social','Technology']),metrics.labels);
-   if(width>800){
+   if(width>950){
      check('Enlarged Digital illustration reaches section right and bottom edges '+width,
        metrics.position==='absolute' && Math.abs(metrics.artRight)<2 &&
        Math.abs(metrics.artBottom)<2 &&
@@ -49,7 +49,7 @@ function check(name,pass,detail){results.push({name,pass:!!pass,detail});console
        metrics.arrowSize>=Math.min(610,Math.max(250,width*.38))-2,metrics);
      check('Labels remain inside their artwork frame '+width,metrics.labelsWithinArt,metrics);
    }else{
-     check('Mobile Digital illustration stays in stacked layout '+width,
+     check('Mobile/tablet Digital illustration stays in stacked layout '+width,
        metrics.position==='relative'&&Math.abs(metrics.artRight-metrics.copyLeft)<2,metrics);
    }
    check('No document-wide horizontal overflow '+width,
