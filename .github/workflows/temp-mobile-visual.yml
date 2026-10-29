@@ -1,0 +1,28 @@
+name: Temporary SHOWSET mobile visual evidence
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm install --no-save --no-package-lock playwright
+      - run: npx playwright install --with-deps chromium
+      - name: Capture rendered 320/390/768 screenshots
+        run: |
+          python3 -m http.server 3001 --directory out >/tmp/showset-qa-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:3001/ >/dev/null; then break; fi
+            sleep 1
+          done
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 node qa/temp-mobile-page-visual.cjs
