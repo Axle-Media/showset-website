@@ -130,6 +130,8 @@ jobs:
         run: |
           node qa/studio2-model.cjs
           node qa/studio2-cloud-contract.cjs
+          node qa/studio2-cloud-originals.cjs
+          node qa/studio2-public-template-parity.cjs
           node qa/studio2-cloud-schema.cjs
           node qa/studio2-release.cjs
       - name: Install isolated browser tooling
