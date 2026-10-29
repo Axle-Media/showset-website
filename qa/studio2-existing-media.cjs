@@ -71,7 +71,27 @@ const fixture = require("node:path").resolve("public/brand/approved-wordmark.png
     );
     await choosePage("/work/made-to-be-remembered/");
     await page.getByRole("button", { name: "Save draft", exact: true }).click();
-    await page.getByText("Saved locally", { exact: true }).first().waitFor();
+    // Verify committed canonical data, not a transient status label.
+    await page.waitForFunction(async () => {
+      const db = await new Promise((resolve, reject) => {
+        const r = indexedDB.open("showset-studio2", 1);
+        r.onsuccess = () => resolve(r.result);
+        r.onerror = () => reject(r.error);
+      });
+      try {
+        return await new Promise((resolve) => {
+          const r = db.transaction("documents").objectStore("documents").get("draft");
+          r.onsuccess = () => {
+            const story = r.result?.pages?.["made-to-be-remembered"]?.caseExperience;
+            resolve(story?.openingImage?.startsWith("asset:") &&
+              story?.brief?.image?.startsWith("asset:") &&
+              story?.gallery?.[1]?.src?.startsWith("asset:"));
+          };
+        });
+      } finally {
+        db.close();
+      }
+    });
     await page.reload();
     await choosePage("/work/made-to-be-remembered/");
     assert.equal(await page.getByRole("button", {name: /^Edit image:/}).count(), 8);
