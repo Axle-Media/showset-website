@@ -71,6 +71,15 @@ fs.mkdirSync(out, { recursive: true });
   await p.getByRole("button", { name: "Mobile", exact: true }).click();
   await p.getByLabel("Font size", { exact: true }).fill("40px");
   await p.getByLabel("Font size", { exact: true }).blur();
+  await p.waitForFunction(() => {
+    const f = document.querySelector("iframe"),
+      e = f?.contentDocument?.querySelector(".hero-title");
+    return (
+      f?.contentWindow.innerWidth === 390 &&
+      e &&
+      f.contentWindow.getComputedStyle(e).fontSize === "40px"
+    );
+  });
   assert.equal(
     await frame()
       .locator(".hero-title")
@@ -79,6 +88,15 @@ fs.mkdirSync(out, { recursive: true });
   );
   await p.screenshot({ path: path.join(out, "hero-mobile-override.png") });
   await p.getByRole("button", { name: "Desktop", exact: true }).click();
+  await p.waitForFunction(() => {
+    const f = document.querySelector("iframe"),
+      e = f?.contentDocument?.querySelector(".hero-title");
+    return (
+      f?.contentWindow.innerWidth === 1440 &&
+      e &&
+      f.contentWindow.getComputedStyle(e).fontSize === "72px"
+    );
+  });
   assert.equal(
     await frame()
       .locator(".hero-title")
@@ -135,6 +153,13 @@ fs.mkdirSync(out, { recursive: true });
       exact: true,
     })
     .click();
+  await p.waitForFunction(() => {
+    const f = document.querySelector("iframe"),
+      e = f?.contentDocument?.querySelector(".s2-node-section");
+    return (
+      e && f.contentWindow.getComputedStyle(e, "::before").opacity === "0.42"
+    );
+  });
   assert.equal(
     await frame()
       .locator(".s2-node-section")
@@ -153,6 +178,15 @@ fs.mkdirSync(out, { recursive: true });
   await p.getByRole("button", { name: "Mobile", exact: true }).click();
   await p.getByLabel("Focal position", { exact: true }).fill("70% 40%");
   await p.getByLabel("Focal position", { exact: true }).blur();
+  await p.waitForFunction(() => {
+    const f = document.querySelector("iframe"),
+      e = f?.contentDocument?.querySelector(".s2-node-section");
+    return (
+      f?.contentWindow.innerWidth === 390 &&
+      e &&
+      f.contentWindow.getComputedStyle(e, "::before").opacity === "0.24"
+    );
+  });
   assert.equal(
     await frame()
       .locator(".s2-node-section")

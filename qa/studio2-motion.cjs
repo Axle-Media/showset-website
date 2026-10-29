@@ -147,6 +147,9 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001",
     assert.equal(await f.locator("[data-inline-editing]").count(), 0);
     await p.getByRole("button", { name: "Unlock", exact: true }).click();
     await p.getByRole("button", { name: "Duplicate", exact: true }).click();
+    await f.waitForFunction(
+      () => document.querySelectorAll(".s2-node-heading").length === 2,
+    );
     assert.equal(await f.locator(".s2-node-heading").count(), 2);
     await p
       .getByRole("button", { name: "Select Heading copy", exact: true })
@@ -157,6 +160,9 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001",
     );
 
     await p.getByRole("button", { name: "Delete", exact: true }).click();
+    await f.waitForFunction(
+      () => document.querySelectorAll(".s2-node-heading").length === 1,
+    );
     assert.equal(await f.locator(".s2-node-heading").count(), 1);
     await p.setViewportSize({ width: 390, height: 844 });
     await p.getByRole("button", { name: "Inspector", exact: true }).click();
