@@ -20,6 +20,14 @@ const check=(name,ok,detail)=>{checks.push({name,pass:!!ok,detail});console.log(
     const hero=document.querySelector('.hero-foreground').getBoundingClientRect();
     const service=document.querySelector('.services-panel-heading');
     const first=service.children[0],second=service.children[1];
+    const period=second.querySelector('.service-heading-accent-period');
+    const lastWord=second.firstChild;
+    const wordRange=document.createRange();
+    const wordStart=lastWord.textContent.lastIndexOf('team');
+    wordRange.setStart(lastWord,wordStart);
+    wordRange.setEnd(lastWord,wordStart+4);
+    const wordRect=wordRange.getBoundingClientRect();
+    const periodRect=period.getBoundingClientRect();
     const dot=document.querySelector('.dot-stage > .dot-words');
     const overlay=document.querySelector('.dot-colour-reveal .dot-words');
     const wordmark=document.querySelector('.footer .brand .approved-wordmark');
@@ -38,7 +46,12 @@ const check=(name,ok,detail)=>{checks.push({name,pass:!!ok,detail});console.log(
         first:getComputedStyle(first).color,
         period:getComputedStyle(first.querySelector('.service-heading-period')).color,
         second:getComputedStyle(second).color,
-        last:getComputedStyle(second.querySelector('.service-heading-accent-period')).color,
+        last:getComputedStyle(period).color,
+        lastDisplay:getComputedStyle(period).display,
+        lastWordTop:wordRect.top,
+        lastWordRight:wordRect.right,
+        periodTop:periodRect.top,
+        periodLeft:periodRect.left,
       },
       dotText:dot.querySelector('h2').textContent,
       overlayText:overlay.querySelector('h2').textContent,
@@ -48,8 +61,14 @@ const check=(name,ok,detail)=>{checks.push({name,pass:!!ok,detail});console.log(
       dotRect:rect(dot),overlayRect:rect(overlay),
       dotBaseColour:getComputedStyle(dot.querySelector('.dot-line-primary')).color,
       dotAccentColour:getComputedStyle(dot.querySelector('.dot-line-accent')).color,
+      dotEmphasisColour:getComputedStyle(dot.querySelector('em')).color,
+      dotPeriods:[...dot.querySelectorAll('h2 em span')].map(n=>getComputedStyle(n).color),
+      dotParagraphSize:parseFloat(getComputedStyle(dot.querySelector('p')).fontSize),
+      dotParagraphLineHeight:parseFloat(getComputedStyle(dot.querySelector('p')).lineHeight),
       dotRevealedColour:getComputedStyle(overlay.querySelector('.dot-line-primary')).color,
       dotRevealedAccent:getComputedStyle(overlay.querySelector('.dot-line-accent')).color,
+      dotRevealedPeriods:[...overlay.querySelectorAll('h2 em span')].map(n=>getComputedStyle(n).color),
+      dotOverlayParagraphSize:parseFloat(getComputedStyle(overlay.querySelector('p')).fontSize),
       overlayA11yHidden:overlay.closest('[aria-hidden]')?.getAttribute('aria-hidden'),
       footerWidth:wordmark.getBoundingClientRect().width,
       documentWidth:document.documentElement.scrollWidth
@@ -60,8 +79,13 @@ const check=(name,ok,detail)=>{checks.push({name,pass:!!ok,detail});console.log(
    if(width>=768)check('Hero bars are shorter than the full heading column '+width,
       geometry.swipes.every(({row})=>row<geometry.heroWidth*.9),geometry.swipes);
    check('First service line ivory with teal period, second teal with ivory period '+width,
-      JSON.stringify(Object.values(geometry.headingService))===
-      JSON.stringify(['rgb(250, 249, 253)','rgb(18, 186, 175)','rgb(18, 186, 175)','rgb(250, 249, 253)']),geometry.headingService);
+      ['first','period','second','last'].map(k=>geometry.headingService[k]).join('|')===
+      ['rgb(250, 249, 253)','rgb(18, 186, 175)','rgb(18, 186, 175)','rgb(250, 249, 253)'].join('|'),geometry.headingService);
+   check('Final ivory period stays directly after team rather than on its own line '+width,
+      geometry.headingService.lastDisplay==='inline' &&
+      Math.abs(geometry.headingService.lastWordTop-geometry.headingService.periodTop)<3 &&
+      Math.abs(geometry.headingService.lastWordRight-geometry.headingService.periodLeft)<4,
+      geometry.headingService);
    check('Dot copy and its clipped twin have identical content and positions '+width,
       geometry.dotText===geometry.overlayText && geometry.dotLines===1 &&
       Math.abs(geometry.dotRect.x-geometry.overlayRect.x)<2 &&
@@ -72,11 +96,22 @@ const check=(name,ok,detail)=>{checks.push({name,pass:!!ok,detail});console.log(
       geometry.dotCentre==='center' && geometry.dotSize>=(width>1200?65:width>600?38:29),{
         fontSize:geometry.dotSize,alignment:geometry.dotCentre
       });
-   check('Dot text has contrasting colours in both states '+width,
-      geometry.dotBaseColour==='rgb(250, 249, 253)' &&
+   check('Dot typography retains turquoise lead-in, sand emphasis and turquoise periods '+width,
+      geometry.dotBaseColour==='rgb(18, 186, 175)' &&
       geometry.dotAccentColour==='rgb(18, 186, 175)' &&
+      geometry.dotEmphasisColour==='rgb(229, 216, 195)' &&
+      geometry.dotPeriods.length===2 &&
+      geometry.dotPeriods.every(color=>color==='rgb(18, 186, 175)'),geometry);
+   check('Dot supporting text is prominent, including inside colour reveal '+width,
+      geometry.dotParagraphSize>=18 &&
+      geometry.dotParagraphSize<=23.5 &&
+      geometry.dotParagraphLineHeight>=geometry.dotParagraphSize*1.45 &&
+      Math.abs(geometry.dotParagraphSize-geometry.dotOverlayParagraphSize)<1,geometry);
+   check('Revealed dot text and punctuation remain readable on teal '+width,
       geometry.dotRevealedColour==='rgb(6, 38, 58)' &&
-      geometry.dotRevealedAccent==='rgb(6, 38, 58)',geometry);
+      geometry.dotRevealedAccent==='rgb(6, 38, 58)' &&
+      geometry.dotRevealedPeriods.length===2 &&
+      geometry.dotRevealedPeriods.every(color=>color==='rgb(250, 249, 253)'),geometry);
    check('Footer approved wordmark enlarged without horizontal overflow '+width,
       geometry.footerWidth>=(width>800?250:width>600?225:205) &&
       geometry.documentWidth<=width+2,{

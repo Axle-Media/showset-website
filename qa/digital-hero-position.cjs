@@ -18,12 +18,18 @@ function check(name,pass,detail){results.push({name,pass:!!pass,detail});console
    const metrics=await page.locator('.service-hero--digital').evaluate(hero=>{
     const art=hero.querySelector('.service-digital-art');
     const a=art.getBoundingClientRect();
+    const orbit=art.querySelector('.service-art-orbit').getBoundingClientRect();
+    const arrow=art.querySelector('.service-art-arrow');
     const h=hero.getBoundingClientRect();
     const style=getComputedStyle(art);
     const labels=[...art.querySelectorAll('.service-art-label')];
     const content=hero.querySelector('.service-hero-content').getBoundingClientRect();
     return {position:style.position,right:style.right,artRight:h.right-a.right,
-      artWidth:a.width,heroWidth:h.width,labels:labels.map(x=>x.textContent.trim()),
+      artBottom:h.bottom-a.bottom,artWidth:a.width,heroWidth:h.width,
+      orbitExtendsToBottom:orbit.bottom>=a.bottom-2,
+      orbitExtendsToRight:orbit.right>=a.right-2,
+      arrowSize:parseFloat(getComputedStyle(arrow).fontSize),
+      labels:labels.map(x=>x.textContent.trim()),
       labelsWithinArt:labels.every(x=>{
         const r=x.getBoundingClientRect();
         return r.left>=a.left-2&&r.right<=a.right+2;
@@ -33,10 +39,14 @@ function check(name,pass,detail){results.push({name,pass:!!pass,detail});console
    check('Four digital touchpoints retained '+width,
      JSON.stringify(metrics.labels)===JSON.stringify(['Websites','Campaigns','Social','Technology']),metrics.labels);
    if(width>800){
-     const expected=Math.min(72,Math.max(20,width*.04));
-     check('Digital illustration shifted left by a restrained offset '+width,
-       metrics.position==='absolute'&&Math.abs(metrics.artRight-expected)<2,
-       {actual:metrics.artRight,expected});
+     check('Enlarged Digital illustration reaches section right and bottom edges '+width,
+       metrics.position==='absolute' && Math.abs(metrics.artRight)<2 &&
+       Math.abs(metrics.artBottom)<2 &&
+       Math.abs(metrics.artWidth/metrics.heroWidth-.52)<.012,
+       {right:metrics.artRight,bottom:metrics.artBottom,ratio:metrics.artWidth/metrics.heroWidth});
+     check('Larger orbit visually crosses section right and bottom '+width,
+       metrics.orbitExtendsToBottom && metrics.orbitExtendsToRight &&
+       metrics.arrowSize>=Math.min(610,Math.max(250,width*.38))-2,metrics);
      check('Labels remain inside their artwork frame '+width,metrics.labelsWithinArt,metrics);
    }else{
      check('Mobile Digital illustration stays in stacked layout '+width,
