@@ -16,8 +16,10 @@ export interface Binding {
   secondary?: boolean;
   content: boolean;
   /** Real owner of an existing case-story image, not a disconnected override. */
-  caseField?: "openingImage" | "secondImage";
+  caseField?: "openingImage" | "secondImage" | "openingTitle" | "openingBody" | "secondTitle" | "secondBody";
   chapter?: "brief" | "intention" | "approach";
+  chapterTextField?: "heading" | "body";
+  itemField?: "title" | "description";
   galleryIndex?: number;
 }
 /** Bind to real approved template content, without changing its composition.
@@ -36,6 +38,34 @@ export function templateBindings(page: PageData): Binding[] {
   ) => bindings.push({
     id, name, selector, sectionId, itemIndex, field: "image",
     kind: "image", content: true,
+  });
+  const content = (
+    id: string, name: string, kind: "heading" | "text" | "button",
+    selector: string, sectionId: string, field: string,
+    itemIndex?: number, itemField?: "title" | "description",
+  ) => bindings.push({id,name,kind,selector,sectionId,field,itemIndex,
+    itemField,content:true});
+  const sectionContent = (
+    prefix: string, target: import("../types").Block | undefined,
+    selector: string, bodySelector?: string,
+  ) => {
+    if (!target) return;
+    content(prefix + "-heading", "Section heading", "heading", selector,
+      target.id, "headline");
+    if (bodySelector && target.body)
+      content(prefix + "-body", "Section paragraph", "text", bodySelector,
+        target.id, "body");
+  };
+  const stageCopy = (
+    prefix: string, target: import("../types").Block | undefined,
+    titleSelector: (i:number)=>string,
+    bodySelector: (i:number)=>string,
+  ) => target?.items.forEach((item,i)=>{
+    content(prefix + "-title-" + i, "Stage " + (i+1) + ": heading",
+      "heading",titleSelector(i),target.id,"items",i,"title");
+    if (item.description)
+      content(prefix + "-copy-" + i, "Stage " + (i+1) + ": paragraph",
+        "text",bodySelector(i),target.id,"items",i,"description");
   });
   if (page.slug === "home") {
     const hero = section("hero");
@@ -80,6 +110,37 @@ export function templateBindings(page: PageData): Binding[] {
       image("service-story-photo-" + i, "Stage " + (i + 1) + ": " + item.title,
         selector, story.id, i);
     });
+    sectionContent("service-opening", hero,
+      ".service-hero #category-title", ".service-hero-copy p");
+    const intro = page.sections.find((s)=>s.id==="section-2");
+    sectionContent("service-intro",intro,
+      ".service-intro .service-heading",
+      ".service-intro .service-editorial-row > div:last-child p");
+    sectionContent("service-story",story,
+      ".service-story > header .service-heading",
+      ".service-story > header > p");
+    stageCopy("service-stage",story,
+      (i)=>service==="events"
+        ? '[data-service-scene="' + i + '"] h3'
+        : service==="creative"
+          ? '[data-creative-artboard="' + i + '"] .service-creative-artboard-copy h3'
+          : '[data-production-step="' + i + '"] h3',
+      (i)=>service==="events"
+        ? '[data-service-scene="' + i + '"] p'
+        : service==="creative"
+          ? '[data-creative-artboard="' + i + '"] .service-creative-artboard-copy p'
+          : '[data-production-step="' + i + '"] p',
+    );
+    const expertise = section("accordion");
+    sectionContent("service-expertise", expertise,
+      ".service-expertise .service-editorial-row .service-heading",
+      ".service-expertise .service-editorial-row > div:last-child p");
+    expertise?.items.forEach((item,i)=>{
+      // A displayed capability retains its original item ID through grouping.
+      content("service-capability-" + i,"Capability: " + item.title,
+        "text",'[data-capability-id="' + item.id + '"] .service-capability-name',
+        expertise.id,"items",i,"title");
+    });
     return bindings;
   }
 
@@ -93,18 +154,43 @@ export function templateBindings(page: PageData): Binding[] {
         "Studio chapter " + (i + 1) + " photograph",
         '[data-studio-shot="' + i + '"] img', journey.id, i);
     });
+    sectionContent("studio-hero",hero,
+      ".studio-hero-scene-first h1", ".studio-hero-scene-first > p");
+    sectionContent("studio-manifesto",page.sections.find(s=>s.id==="section-2"),
+      ".studio-manifesto h2", ".studio-manifesto-body p");
+    sectionContent("studio-exploration",journey,
+      ".studio-exploration .studio-exploration-intro h2",
+      ".studio-exploration .studio-exploration-intro p");
+    stageCopy("studio-stage",journey,
+      (i)=>'.studio-storyboard-chapter:nth-child(' + (i+1) + ') h3',
+      (i)=>'.studio-storyboard-chapter:nth-child(' + (i+1) + ') p');
+    sectionContent("studio-outlook",page.sections.find(s=>s.id==="section-5"),
+      ".studio-outlook h2", ".studio-partnership-body p");
+    sectionContent("studio-final",page.sections.find(s=>s.id==="section-7"),
+      ".studio-final h2", ".studio-final-copy p");
     return bindings;
   }
   if (page.route === "/our-work/") {
     const hero = section("pagehero");
     if (hero?.image) image("work-hero-photo", "Our Work hero photograph",
       ".work-hero .simple-bg img", hero.id);
+    sectionContent("work-hero",hero, ".work-hero h1",
+      ".work-hero .simple-hero-content > p");
+    sectionContent("work-intro",page.sections.find(s=>s.id==="section-2"),
+      ".work-intro-title", ".work-intro-copy p");
+    sectionContent("work-final",section("cta"),".work-final h2",
+      ".work-final-copy p");
     // Portfolio thumbnails belong to their linked case-study records.
     return bindings;
   }
   if (page.route === "/contact/") {
     // The approved Contact composition currently has no photograph.
     // Do not create a dead replacement control for its unused seed field.
+    const contact = section("contact");
+    sectionContent("contact-opening",contact,
+      ".contact-left h1", ".contact-intro > p");
+    if(contact) content("contact-submit","Form submit label","button",
+      ".contact-submit",contact.id,"buttonLabel");
     return bindings;
   }
   if (page.route.startsWith("/work/")) {
@@ -140,6 +226,31 @@ export function templateBindings(page: PageData): Binding[] {
         '[data-case-image="' + displayed + '"] img', {galleryIndex:i});
       displayed++;
     });
+    // Narrative copy lives in CaseExperience and must not be overwritten by
+    // obsolete Block section fields when editing the immersive template.
+    const caseText = (id:string,name:string,kind:"heading"|"text",
+      selector:string,caseField:NonNullable<Binding["caseField"]>) =>
+      bindings.push({id,name,kind,selector,sectionId,caseField,content:true});
+    caseText("case-opening-heading","Opening headline","heading",
+      ".case-opening-first .case-scene-copy h1","openingTitle");
+    caseText("case-opening-copy","Opening paragraph","text",
+      ".case-opening-first .case-scene-copy p","openingBody");
+    caseText("case-second-heading","Second scene headline","heading",
+      ".case-opening-second .case-scene-copy h2","secondTitle");
+    caseText("case-second-copy","Second scene paragraph","text",
+      ".case-opening-second .case-scene-copy p","secondBody");
+    (["brief","intention","approach"] as const).forEach((key,i)=>{
+      for(const [field,kind,selector] of [
+        ["heading","heading",'[data-case-chapter="' + i + '"] .case-chapter-copy h2'],
+        ["body","text",'[data-case-chapter="' + i + '"] .case-body-copy p']
+      ] as const)
+        bindings.push({
+          id:"case-"+key+"-"+field,
+          name:key[0].toUpperCase()+key.slice(1)+" "+field,
+          kind,selector,sectionId,chapter:key,chapterTextField:field,
+          content:true,
+        });
+    });
     return bindings;
   }
   return bindings;
@@ -148,13 +259,15 @@ export function bindingContent(page: PageData, binding: Binding): string {
   if (binding.caseField || binding.chapter || binding.galleryIndex !== undefined) {
     const story = caseExperienceFor(page);
     if (binding.caseField) return story[binding.caseField] || "";
-    if (binding.chapter) return primaryChapterImage(story[binding.chapter]);
+    if (binding.chapter) return binding.chapterTextField
+      ? story[binding.chapter]?.[binding.chapterTextField] || ""
+      : primaryChapterImage(story[binding.chapter]);
     if (binding.galleryIndex !== undefined)
       return story.gallery[binding.galleryIndex]?.src || "";
   }
   const section = page.sections.find((s) => s.id === binding.sectionId);
   if (binding.itemIndex !== undefined)
-    return String(section?.items[binding.itemIndex]?.image || "");
+    return String(section?.items[binding.itemIndex]?.[binding.itemField || "image"] || "");
   return binding.field
     ? String((section as unknown as Record<string, unknown>)?.[binding.field] ?? "")
     : "";
@@ -171,7 +284,8 @@ export function updateBinding(
     }
     if (binding.chapter) {
       return {...page, caseExperience:{...story,
-        [binding.chapter]:{...story[binding.chapter], image:value}}};
+        [binding.chapter]:{...story[binding.chapter],
+          [binding.chapterTextField || "image"]:value}}};
     }
     if (binding.galleryIndex !== undefined) {
       return {...page, caseExperience:{...story,
@@ -189,7 +303,7 @@ export function updateBinding(
           : {
               ...s,
               items: s.items.map((item, index) =>
-                index === binding.itemIndex ? { ...item, image: value } : item,
+                index === binding.itemIndex ? { ...item, [binding.itemField || "image"]: value } : item,
               ),
             }
         : s,
