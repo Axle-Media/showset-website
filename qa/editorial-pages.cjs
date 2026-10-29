@@ -156,16 +156,51 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
     await page.locator('.view.is-current [data-contact-whatsapp]').getAttribute('href')==='https://wa.me/27682805777');
 
   ck('Direct email and phone are visible '+width,await page.locator('.view.is-current [data-contact-email]').getAttribute('href')==='mailto:hello@showset.co.za'&&await page.locator('.view.is-current [data-contact-phone]').getAttribute('href')?.then(x=>x.startsWith('tel:+27')));
-  const fields=await page.locator('#contact-form').evaluate(form=>({required:[...form.querySelectorAll('[required]')].map(x=>x.name),optionalCollapsed:!form.querySelector('.contact-extra').open}));
-  ck('Only name, email and message required '+width,JSON.stringify(fields.required)===JSON.stringify(['name','email','message'])&&fields.optionalCollapsed,fields);
+  const fields=await page.locator('#contact-form').evaluate(form=>{
+    const left=document.querySelector('.contact-left').getBoundingClientRect();
+    const card=form.getBoundingClientRect();
+    const btn=document.querySelector('.contact-whatsapp');
+    const link=document.querySelector('[data-contact-email]');
+    const whatsappSize=parseFloat(getComputedStyle(btn).fontSize);
+    const emailSize=parseFloat(getComputedStyle(link).fontSize);
+    return {
+      required:[...form.querySelectorAll('[required]')].map(x=>x.name),
+      companyVisible:form.querySelector('#company').getClientRects().length>0,
+      typeVisible:form.querySelector('#project-trigger').getClientRects().length>0,
+      budgetVisible:form.querySelector('#budget-trigger').getClientRects().length>0,
+      disclosure:!!form.querySelector('.contact-extra'),
+      note:!!form.querySelector('.form-note'),
+      centreDifference:Math.abs((left.top+left.bottom)/2-(card.top+card.bottom)/2),
+      whatsappSize,emailSize
+    };
+  });
+  ck('Required Contact fields remain correct, extra fields always visible '+width,
+    JSON.stringify(fields.required)===JSON.stringify(['name','email','message']) &&
+    fields.companyVisible&&fields.typeVisible&&fields.budgetVisible&&!fields.disclosure&&!fields.note,fields);
+  ck('Contact WhatsApp matches contact-detail type size '+width,
+    Math.abs(fields.whatsappSize-fields.emailSize)<1,fields);
+  if(width>740)ck('Contact copy vertically centred beside the form '+width,
+    fields.centreDifference<3,fields.centreDifference);
+  ck('Both dropdowns use branded panels without visible scrollbars '+width,
+    await page.locator('#contact-form').evaluate(form=>
+      ['#project-combobox','#budget-combobox'].every(selector=>{
+        const root=form.querySelector(selector),panel=root.querySelector('.select-panel');
+        return root.classList.contains('js-select-ready') &&
+          getComputedStyle(panel).scrollbarWidth==='none' &&
+          getComputedStyle(panel).backgroundColor==='rgb(13, 47, 73)' &&
+          getComputedStyle(root.querySelector('.select-trigger')).backgroundColor==='rgb(8, 38, 59)';
+      })));
   await page.locator('#contact-form button[type="submit"]').click();
   ck('Invalid Contact blocked '+width,!(await page.locator('#form-result').innerText()));
   await page.locator('#full-name').fill('SHOWSET Test');
   await page.locator('#email').fill('visitor@example.com');
   await page.locator('#message').fill('Testing a new creative project.');
   await page.locator('#project-date').fill('March 2027');
-  await page.locator('#project-budget').selectOption({label:'R50 000 – R150 000'});
-  await page.locator('.view.is-current .contact-extra summary').click();
+  await page.locator('#company').fill('SHOWSET Test Organisation');
+  await page.locator('#budget-trigger').click();
+  await page.locator('#budget-options .select-option[data-value="R50 000 – R150 000"]').click();
+  ck('Budget custom dropdown syncs native form field '+width,
+    await page.locator('#project-budget').inputValue()==='R50 000 – R150 000');
   await page.locator('#project-trigger').click();
   await page.locator('.select-option[data-value="An event or experience"]').click();
   await page.evaluate(()=>document.addEventListener('click',event=>{
@@ -177,8 +212,10 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
   }));
   ck('Contact does not falsely claim a message was delivered '+width,draft.text.includes('Nothing has been submitted')&&draft.href?.startsWith('mailto:hello@showset.co.za?'),draft);
   ck('Prepared email includes visitor details '+width,draft.href?.includes('SHOWSET%20Test')&&draft.href?.includes('visitor%40example.com'));
-  ck('Email draft includes the visible timing and budget inputs '+width,
-    draft.href?.includes('March%202027')&&draft.href?.includes('R50%20000')&&draft.href?.includes('An%20event%20or%20experience'));
+  ck('Email draft includes permanent company, type, timing and budget inputs '+width,
+    draft.href?.includes('SHOWSET%20Test%20Organisation') &&
+    draft.href?.includes('March%202027')&&draft.href?.includes('R50%20000')&&
+    draft.href?.includes('An%20event%20or%20experience'));
   ck('Contact no horizontal overflow '+width,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
   if([1440,390].includes(width))await page.screenshot({path:'qa-results/editorial/contact-'+width+'.png',fullPage:true});
   await context.close();
