@@ -511,6 +511,24 @@ export function assertWorkspace(value: unknown): asserts value is Workspace {
       mediaRef(section.image);
       for (const item of section.items || []) mediaRef(item.image);
     }
+    // Existing case studies own their own media separately from Block sections.
+    // Validate imported and restored references before a draft can be saved.
+    if (p.caseExperience) {
+      const story = p.caseExperience;
+      mediaRef(story.openingImage);
+      mediaRef(story.secondImage);
+      mediaRef(story.bannerImage);
+      for (const key of ["brief", "intention", "approach"] as const) {
+        mediaRef(story[key]?.image);
+        for (const image of story[key]?.images || []) mediaRef(image);
+      }
+      for (const photo of story.gallery || []) mediaRef(photo.src);
+      for (const partner of story.partners || []) mediaRef(partner.logo);
+    }
+    for (const module of p.projectModules || []) {
+      mediaRef(module.src);
+      mediaRef(module.after);
+    }
     if (p.builder) {
       if (p.builder.schemaVersion !== 2)
         throw Error("Unsupported page version.");
