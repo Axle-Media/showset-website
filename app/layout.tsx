@@ -18,6 +18,7 @@ import "./contact-compact.css";
 import "./site-consistency.css";
 import "./homepage-motion-parity.css";
 import "./responsive-mobile-tablet.css";
+import "./legal-pages.css";
 export const metadata: Metadata = {
   title: "SHOWSET | Events & Creative Agency",
   description:
