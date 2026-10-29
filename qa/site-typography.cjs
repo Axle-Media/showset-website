@@ -22,7 +22,13 @@ const routes=['/','/events-experiences/','/creative-design/','/digital-marketing
       const style=el=>getComputedStyle(el);
       const paragraphs=[...root.querySelectorAll('p,li,blockquote')].filter(el=>!el.closest('.c12-custom-body,.case-related-card-caption')&&!el.matches('.footer-identity > p'));
       const phone=innerWidth<=600;
-      const copy=paragraphs.map(el=>({tag:el.localName,className:el.className,px:style(el).fontSize})).filter(el=>{
+      const copy=paragraphs.map(el=>({
+        tag:el.localName,className:el.className,px:style(el).fontSize,
+        text:el.textContent.trim().slice(0,70),
+        parent:el.parentElement?.className||el.parentElement?.localName,
+        ancestor:el.parentElement?.parentElement?.className||el.parentElement?.parentElement?.localName,
+        visible:!!el.getClientRects().length,
+      })).filter(el=>{
         const size=parseFloat(el.px);
         return phone?!(size>=14&&size<=19):el.px!=='17px';
       });
