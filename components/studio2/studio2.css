@@ -955,3 +955,26 @@
 .s2-image-browser .s2-hint[role="status"] {
   margin-block: 12px;
 }
+
+.s2-template-builder {
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid var(--s2-line);
+  border-radius: 8px;
+  background: #102f46;
+}
+.s2-template-builder > h3 {
+  font-size: 14px;
+  margin: 0 0 8px;
+  font-weight: 650;
+}
+.s2-template-builder > .s2-secondary {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  border-color: var(--s2-teal);
+}
+.s2-template-builder > .s2-tree-list {
+  max-height: 320px;
+  overflow-y: auto;
+}
