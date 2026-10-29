@@ -35,7 +35,8 @@
 .service-hero--digital{align-items:center;background:linear-gradient(138deg,#143952,#0b293e 80%)}
 .service-hero--digital .service-hero-content{width:64%;z-index:1}
 .service-hero--digital .service-heading{max-width:11em}
-.service-digital-art{position:absolute;right:0;top:calc(var(--header-height) + 40px);width:43%;bottom:65px;overflow:hidden;isolation:isolate}
+/* Bring the Digital touchpoint artwork towards its heading and body copy. */
+.service-digital-art{position:absolute;right:clamp(20px,4vw,72px);top:calc(var(--header-height) + 40px);width:43%;bottom:65px;overflow:hidden;isolation:isolate}
 .service-art-orbit{position:absolute;width:120%;aspect-ratio:1;border:1px solid rgba(18,186,175,.38);border-radius:50%;top:10%;left:17%}
 .service-art-orbit:after{content:'';position:absolute;inset:18%;border:1px solid rgba(18,186,175,.22);border-radius:50%}
 .service-art-arrow{position:absolute;left:20%;top:5%;color:var(--teal);font:500 clamp(220px,33vw,520px)/1 var(--display);transform:rotate(-8deg)}
