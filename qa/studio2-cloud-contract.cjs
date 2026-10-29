@@ -52,24 +52,24 @@ async function fakeFetch(url,init){
     return response({Key:"site/test"},201);
   return response({message:"Unknown route"},404);
 }
-const module={exports:{}};
+const sandboxModule={exports:{}};
 const load=vm.runInNewContext(
   "(function(exports,require,module,process,fetch,URL,Blob,Date){"+
     transpiled+"\n})",
   {Response,Uint8Array},
 );
-load(module.exports,(name)=>{
+load(sandboxModule.exports,(name)=>{
   if(name==="./model")return {assertWorkspace:(workspace)=>{
     assert.equal(workspace.schemaVersion,2);
   }};
   throw Error("Unexpected module "+name);
-},module,{
+},sandboxModule,{
   env:{
     NEXT_PUBLIC_SHOWSET_SUPABASE_URL:"https://showset-test.supabase.co",
     NEXT_PUBLIC_SHOWSET_SUPABASE_PUBLISHABLE_KEY:"sb_publishable_test",
   },
 },fakeFetch,URL,Blob,Date);
-const {CloudStore,CloudConflictError,cloudConfig}=module.exports;
+const {CloudStore,CloudConflictError,cloudConfig}=sandboxModule.exports;
 (async()=>{
   const config=cloudConfig();
   assert.ok(config);
