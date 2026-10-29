@@ -18,6 +18,7 @@ import {
   type StyleValues,
   type Pattern,
   type Motion,
+  defaultMotion,
 } from "@/lib/studio2/model";
 import {
   templateBindings,
@@ -253,29 +254,54 @@ export default function Studio2() {
   };
   const add = (kind: NodeKind) => {
     if (!page) return;
-    if (page.builder?.mode !== "custom") {
-      editor.setError(
-        "Create a builder page to add nested elements in this first slice. Existing template content remains protected.",
-      );
-      setDialog(true);
-      return;
-    }
-    const next = makeNode(kind);
+    const template = page.builder?.mode !== "custom";
     const parent = node && isContainer(node.kind) ? node.id : null;
+    let next = makeNode(kind);
+    // A template extension is always a complete editable chapter. Individual
+    // controls are nested into a chapter, never left loose in the native DOM.
+    if (template && !parent) {
+      if (kind !== "section") {
+        const child = next;
+        next = makeNode("section");
+        next.name = "New " + kind + " section";
+        next.children = [child];
+      } else {
+        next.name = "New editorial section";
+        next.children = [makeNode("heading"), makeNode("text")];
+      }
+      next.motion = { ...defaultMotion, preset:"fade", trigger:"viewport" };
+    }
+    const topLevel = !parent && next.kind === "section";
+    const index = template && topLevel && node?.kind === "section"
+      ? builderFor(page).roots.findIndex((item)=>item.id===node.id)+1
+      : Infinity;
     updatePage(
       (p) => ({
         ...p,
         builder: {
           ...builderFor(p),
-          roots: insertNode(builderFor(p).roots, next, parent),
+          roots: insertNode(builderFor(p).roots, next, parent,
+            index < 1 ? Infinity : index),
         },
       }),
-      "Add " + kind,
+      "Add " + kind + (template ? " to approved page" : ""),
     );
     setSelected(next.id);
     setTab("Layers");
   };
-  const move = (id: string, parent: string | null, index: number) =>
+  const move = (id: string, parent: string | null, index: number) => {
+    if (page?.builder?.mode !== "custom") {
+      const moved = findNode(page?.builder?.roots || [],id);
+      const destination = parent
+        ? findNode(page?.builder?.roots || [],parent) : undefined;
+      if (!moved ||
+        (!parent && moved.kind !== "section") ||
+        (parent && (!destination || destination.kind === "section" &&
+          destination.id !== id && false))) {
+        editor.setError("Whole sections stay at page level; move individual elements inside an editable section.");
+        return;
+      }
+    }
     updatePage(
       (p) => ({
         ...p,
@@ -286,6 +312,7 @@ export default function Studio2() {
       }),
       "Move element",
     );
+  };
   const action = (name: string) => {
     if (!page) return;
     if (name === "duplicate-page") {
@@ -324,6 +351,11 @@ export default function Studio2() {
       return;
     }
     if (name === "paste" && clipboard) {
+      if (page.builder?.mode !== "custom" && node.kind !== "section" &&
+          clipboard.kind === "section") {
+        editor.setError("Paste whole sections at page level or select the section itself.");
+        return;
+      }
       const copy = cloneNode(clipboard);
       updatePage(
         (p) => ({
@@ -344,12 +376,24 @@ export default function Studio2() {
     }
     if (name === "duplicate") {
       const copy = cloneNode(node);
+      // Preserve the original parent; cloning a text/image child to root
+      // would violate the template's safe full-section composition.
+      const location = (nodes:CanvasNode[], parent:string|null=null):
+        {parent:string|null,index:number}|undefined => {
+        for(let i=0;i<nodes.length;i++){
+          if(nodes[i].id===node.id)return {parent,index:i};
+          const found=location(nodes[i].children,nodes[i].id);
+          if(found)return found;
+        }
+      };
+      const at=location(builderFor(page).roots);
       updatePage(
         (p) => ({
           ...p,
           builder: {
             ...builderFor(p),
-            roots: insertNode(builderFor(p).roots, copy, null),
+            roots: insertNode(builderFor(p).roots, copy,
+              at?.parent || null, (at?.index ?? -1)+1),
           },
         }),
         "Duplicate element",
