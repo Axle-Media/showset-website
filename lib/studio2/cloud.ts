@@ -149,6 +149,17 @@ export class CloudStore {
       throw error;
     }
   }
+  async latestApprovedRelease():Promise<{id:number;workspace:Workspace}|null>{
+    const records=await this.request<{id:number;source_revision:number;
+      snapshot:Workspace}[]>(
+      "/rest/v1/showset_studio_releases?select=id,source_revision,snapshot&order=id.desc&limit=1"
+    );
+    if(!records.length)return null;
+    const result=records[0],workspace={...result.snapshot,
+      revision:result.source_revision};
+    assertWorkspace(workspace);
+    return {id:result.id,workspace};
+  }
   async approve(expectedRevision:number):Promise<number>{
     if(!this.role||!["owner","publisher"].includes(this.role))
       throw Error("Publisher role required.");
