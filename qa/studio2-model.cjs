@@ -71,6 +71,15 @@ button.props.href = "javascript:alert(1)";
 const html = render.renderNodes([h, button]);
 assert.ok(!html.includes("<script>"));
 assert.ok(!html.includes("javascript:"));
+const branded=makeNode("heading");
+branded.props.text="A considered first line.";
+branded.props.accent="A teal second line.";
+const brandedHtml=render.renderNodes([branded]);
+assert.ok(brandedHtml.includes('class="s2-first-period">.</span>'));
+assert.ok(brandedHtml.includes('class="s2-accent-period">.</span>'));
+assert.ok(brandedHtml.includes('class="s2-accent"'));
+assert.match(fs.readFileSync("app/builder-components.css","utf8"),
+  /\.s2-node-heading \.s2-accent-period/);
 const safe = structuredClone(require("../content/pages.json")),
   g = structuredClone(require("../content/globals.json"));
 const w = {
