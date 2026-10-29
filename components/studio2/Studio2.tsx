@@ -827,10 +827,10 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
               <button onClick={() => void editor.backup()}>
                 Download verified backup
               </button>
-              <button onClick={() => importInput.current?.click()}>
+              {!cloud && <button onClick={() => importInput.current?.click()}>
                 Import workspace backup
-              </button>
-              <input
+              </button>}
+              {!cloud && <input
                 ref={importInput}
                 type="file"
                 accept="application/json"
@@ -859,7 +859,7 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
                   }
                   e.target.value = "";
                 }}
-              />
+              />}
               <p className="s2-hint">
                 Local saves and previews stay on this browser origin. Shared
                 roles and authenticated release are later phases. No production
