@@ -31,7 +31,7 @@ try{
   console.log('HERO_BEGIN:'+key+':'+encoded.length);
   for(let n=0;n<encoded.length;n+=10000)console.log('HERO_CHUNK:'+key+':'+encoded.slice(n,n+10000));
   console.log('HERO_END:'+key);
-  if(width===390&&height===844){
+  if((width===390&&height===844)||(width===320&&height===568)){
    for(const point of [.6,.75,.88]){
     await page.evaluate(point=>{
      const e=document.querySelector('#hero-track');
@@ -41,7 +41,15 @@ try{
     const opacity=await page.locator('#hero-second').evaluate(el=>parseFloat(getComputedStyle(el).opacity));
     if(point===.6&&opacity>.01)failed=true;
     if(point===.88&&opacity<.99)failed=true;
-    console.log('HERO_SCROLL_STATE:'+point+':'+opacity);
+    console.log('HERO_SCROLL_STATE:'+width+'-'+height+':'+point+':'+opacity);
+    if(point===.88){
+      const columns=await page.locator('#hero-second h2 .wipe-line').evaluateAll(nodes=>nodes.map(el=>{
+        const r=el.getBoundingClientRect(),parent=el.closest('h2').getBoundingClientRect();
+        return {left:r.left,right:r.right,centre:(r.left+r.right)/2,parentCentre:(parent.left+parent.right)/2};
+      }));
+      console.log('HERO_SECOND_HEADING_LINES:'+width+'-'+height+':'+JSON.stringify(columns));
+      if(columns.some(col=>Math.abs(col.centre-col.parentCentre)>3))failed=true;
+    }
     const second=await page.screenshot({type:'jpeg',quality:72,animations:'disabled'});
     const encoded2=second.toString('base64'),key2=key+'-scroll-'+point;
     console.log('HERO_BEGIN:'+key2+':'+encoded2.length);
