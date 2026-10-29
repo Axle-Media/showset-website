@@ -31,17 +31,23 @@ try{
   console.log('HERO_BEGIN:'+key+':'+encoded.length);
   for(let n=0;n<encoded.length;n+=10000)console.log('HERO_CHUNK:'+key+':'+encoded.slice(n,n+10000));
   console.log('HERO_END:'+key);
-  await page.evaluate(()=>{
-    const e=document.querySelector('#hero-track');
-    scrollTo({top:e.getBoundingClientRect().top+scrollY+Math.max(0,e.offsetHeight-innerHeight)*.6,behavior:'instant'});
-  });
-  await page.waitForTimeout(550);
-  if(width===390){
-   const second=await page.screenshot({type:'jpeg',quality:72,animations:'disabled'});
-   const encoded2=second.toString('base64'),key2=key+'-scroll';
-   console.log('HERO_BEGIN:'+key2+':'+encoded2.length);
-   for(let n=0;n<encoded2.length;n+=10000)console.log('HERO_CHUNK:'+key2+':'+encoded2.slice(n,n+10000));
-   console.log('HERO_END:'+key2);
+  if(width===390&&height===844){
+   for(const point of [.6,.75,.88]){
+    await page.evaluate(point=>{
+     const e=document.querySelector('#hero-track');
+     scrollTo({top:e.getBoundingClientRect().top+scrollY+Math.max(0,e.offsetHeight-innerHeight)*point,behavior:'instant'});
+    },point);
+    await page.waitForTimeout(670);
+    const opacity=await page.locator('#hero-second').evaluate(el=>parseFloat(getComputedStyle(el).opacity));
+    if(point===.6&&opacity>.01)failed=true;
+    if(point===.88&&opacity<.99)failed=true;
+    console.log('HERO_SCROLL_STATE:'+point+':'+opacity);
+    const second=await page.screenshot({type:'jpeg',quality:72,animations:'disabled'});
+    const encoded2=second.toString('base64'),key2=key+'-scroll-'+point;
+    console.log('HERO_BEGIN:'+key2+':'+encoded2.length);
+    for(let n=0;n<encoded2.length;n+=10000)console.log('HERO_CHUNK:'+key2+':'+encoded2.slice(n,n+10000));
+    console.log('HERO_END:'+key2);
+   }
   }
   await context.close();
  }
