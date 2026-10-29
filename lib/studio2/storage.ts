@@ -319,13 +319,24 @@ export async function storeMedia(file: File): Promise<MediaAsset> {
 export async function mediaUrls(
   media: MediaAsset[],
 ): Promise<Record<string, string>> {
-  const pairs = await Promise.all(
+  // Complete IndexedDB reads before creating any browser object URLs.
+  // A failed media read must not abandon URLs created by sibling reads.
+  const originals = await Promise.all(
     media.map(async (asset) => {
-      const row = await readStore<{
-        blob: Blob;
-      }>("media", asset.id);
-      return [asset.id, row ? URL.createObjectURL(row.blob) : ""];
+      const row = await readStore<{ blob: Blob }>("media", asset.id);
+      return { id: asset.id, blob: row?.blob };
     }),
   );
-  return Object.fromEntries(pairs);
+  const urls: Record<string, string> = {};
+  try {
+    for (const { id, blob } of originals) {
+      urls[id] = blob ? URL.createObjectURL(blob) : "";
+    }
+    return urls;
+  } catch (error) {
+    Object.values(urls).forEach((url) => {
+      if (url) URL.revokeObjectURL(url);
+    });
+    throw error;
+  }
 }
