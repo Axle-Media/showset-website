@@ -47,12 +47,14 @@ jobs:
             if curl --fail --silent http://127.0.0.1:3001/ >/dev/null; then break; fi
             sleep 1
           done
-          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/digital-hero-position.cjs
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/event-format-row.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/studio-scroll-hero.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/studio-heading-alignment.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/closing-cta-parity.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/editorial-pages.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/heading-accent-lines.cjs
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/homepage-motion-parity.cjs
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/story-copy-balance.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/home-work-carousel.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/carousel-playback.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/header-navigation-alignment.cjs
@@ -73,10 +75,14 @@ jobs:
         with:
           name: showset-home-work-browser-qa
           path: |
-            qa-results/digital-hero-position.json
-            qa-results/digital-hero-position/
+            qa-results/event-format-row.json
+            qa-results/event-formats/
             qa-results/service-motion/
             qa-results/photo-headline-swipe.json
+            qa-results/homepage-motion-parity.json
+            qa-results/story-copy-balance.json
+            qa-results/story-copy/
+            qa-results/homepage-parity/
             qa-results/non-photo-headlines.json
             qa-results/heading-accent-lines.json
             qa-results/studio-scroll-hero.json
