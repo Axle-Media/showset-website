@@ -22,9 +22,9 @@ const centered={
  digital:['.service-hero h1','.service-section-head h2','.service-close .service-heading'],
  production:['.service-hero h1','.service-section-head h2','.service-close .service-heading'],
  contact:['.contact-editorial-heading','.contact-intro > p'],
- 'case-atmosphere':['.case-detail-header h1'],
- 'case-identity':['.case-detail-header h1'],
- 'case-production':['.case-detail-header h1']
+ 'case-atmosphere':['.case-opening-scene .case-primary-heading'],
+ 'case-identity':['.case-opening-scene .case-primary-heading'],
+ 'case-production':['.case-opening-scene .case-primary-heading']
 };
 const imageSelectors=[
   '.services-right','#portfolio-section .case-viewport',
@@ -88,7 +88,8 @@ function ck(label,pass,detail){
             contactLabelAlign:contactLabel?getComputedStyle(contactLabel).textAlign:null,
             contactColumns:contactShell?getComputedStyle(contactShell).gridTemplateColumns:null,
             digitalArtPosition:digitalArt?getComputedStyle(digitalArt).position:null,
-            workCardHeight:workCard?workCard.getBoundingClientRect().height:null
+            workCardHeight:workCard?workCard.getBoundingClientRect().height:null,
+            workCardMinHeight:workCard?getComputedStyle(workCard).minHeight:null
           };
         },{selectors:centered[name]||[],imageSelectors,width});
         const tag=name+' @'+width;
@@ -115,12 +116,17 @@ function ck(label,pass,detail){
             result.digitalArtPosition==='relative',result.digitalArtPosition);
         }
         const maxImageHeight=width<=600?540:width<=900?610:760;
-        const excessive=result.images.filter(im=>im.height>maxImageHeight);
+        // The homepage desktop/tablet service image is intentionally a
+        // viewport-height, sticky half-panel. Exclude that cinematic frame.
+        const excessive=result.images.filter(im=>
+          !(width>900&&im.selector==='.services-right')&&im.height>maxImageHeight);
         ck('No overly tall portfolio or service image frames: '+tag,
           excessive.length===0,excessive);
         if(name==='work'&&width<=600){
-          ck('Work card copy does not reserve empty 215px slots: '+tag,
-            result.workCardHeight===null||result.workCardHeight<215,result.workCardHeight);
+          ck('Work card has no fixed minimum empty padding: '+tag,
+            result.workCardMinHeight===null||
+            (parseFloat(result.workCardMinHeight)===0&&result.workCardHeight>65),
+            {height:result.workCardHeight,minHeight:result.workCardMinHeight});
         }
         if(width===390||width===768){
           // Viewport screenshot per route plus a content section on the key pages.
