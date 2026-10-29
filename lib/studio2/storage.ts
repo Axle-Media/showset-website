@@ -136,12 +136,12 @@ async function checksum(value: unknown) {
 export async function createBackup(
   workspace: Workspace | null,
   persist = true,
+  cloudOriginal?: (asset:MediaAsset)=>Promise<Blob>,
 ): Promise<Backup> {
   const assets = await Promise.all(
     (workspace?.media || []).map(async (asset) => {
-      const row = await readStore<{
-        blob: Blob;
-      }>("media", asset.id);
+      const row = cloudOriginal ? {blob:await cloudOriginal(asset)}
+        : await readStore<{blob:Blob}>("media", asset.id);
       if (!row)
         throw Error(
           "Missing original image: " +
@@ -160,7 +160,9 @@ export async function createBackup(
     version: 2 as const,
     at: new Date().toISOString(),
     origin: location.origin,
-    records: rawRecords(),
+    // Cloud backups contain their own original media and workspace. Do not
+    // accidentally include unrelated local Studio records or credentials.
+    records: cloudOriginal ? {} : rawRecords(),
     assets,
     workspace: workspace ? structuredClone(workspace) : null,
   };
