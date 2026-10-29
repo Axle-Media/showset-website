@@ -36,13 +36,15 @@ export default function MediaManager({
     </label>
     <div className="s2-media-filters">
       <label className="s2-field">Tag
-        <select value={tag} onChange={e=>setTag(e.target.value)}>
+        <select aria-label="Filter by tag" value={tag}
+          onChange={e=>setTag(e.target.value)}>
           <option value="">All tags</option>
           {tags.map(item=><option key={item} value={item}>{item}</option>)}
         </select>
       </label>
       <label className="s2-field">Sort
-        <select value={order} onChange={e=>setOrder(e.target.value)}>
+        <select aria-label="Sort media" value={order}
+          onChange={e=>setOrder(e.target.value)}>
           <option value="recent">Newest first</option>
           <option value="name">Name A–Z</option>
         </select>
