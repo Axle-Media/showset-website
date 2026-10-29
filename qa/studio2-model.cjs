@@ -215,9 +215,9 @@ cropGallery.props.items=[{id:"item-focal-1",title:"Photograph",body:"",
 const cropHtml=render.renderNodes([cropGallery]);
 assert.match(cropHtml,/data-gallery-item="item-focal-1"/);
 assert.match(cropHtml,/object-position:25% 65%!important/);
-assert.match(cropHtml,/@media\\(max-width:1024px\\)/);
+assert.match(cropHtml,/@media\(max-width:1024px\)/);
 assert.match(cropHtml,/object-position:55% 40%!important/);
-assert.match(cropHtml,/@media\\(max-width:600px\\)/);
+assert.match(cropHtml,/@media\(max-width:600px\)/);
 assert.match(cropHtml,/object-position:90% 20%!important/);
 assert.deepEqual(focal.parseFocal("25% 65%"),{x:25,y:65});
 assert.equal(focal.focalValue(-3,102),"0% 100%");
