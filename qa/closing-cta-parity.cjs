@@ -1,5 +1,6 @@
 // Canonical visual parity contract for all four services, Our Studio and Our Work.
 // Browser-computed values must match the Studio reference at each viewport.
+// On mobile, the new approved CTAs share a central axis; desktop retains left alignment.
 const { chromium }=require(process.env.SHOWSET_PLAYWRIGHT_MODULE||'playwright');
 const fs=require('node:fs');
 const base=process.env.SHOWSET_BASE_URL||'http://127.0.0.1:3001';
@@ -81,7 +82,10 @@ function near(a,b,eps=1.5){return Number.isFinite(a)&&Number.isFinite(b)&&Math.a
       different.length===0,different);
    const position={
     title:near(entry.heading.x,studio.heading.x),body:near(entry.paragraph.x,studio.paragraph.x),
-    button:near(entry.button.x,studio.button.x),
+    button:width<=600
+      ? near(entry.button.x+entry.button.w/2,studio.button.x+studio.button.w/2,2.5) &&
+        near(entry.button.x+entry.button.w/2,entry.section.x+entry.section.w/2,3)
+      : near(entry.button.x,studio.button.x),
     headingY:near(entry.heading.y-entry.section.y,studio.heading.y-studio.section.y),
     sectionHeight:near(entry.section.h,studio.section.h,300) // longer authored service copy is allowed
    };

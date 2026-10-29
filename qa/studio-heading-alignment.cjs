@@ -1,5 +1,5 @@
-// Scoped regression: editorial Studio headings share the same left content edge.
-// Three storyboard chapter headings remain left-aligned within their columns.
+// Scoped regression: Studio headings retain their approved desktop left edge,
+// while mobile uses the new centred editorial composition.
 const { chromium } = require(process.env.SHOWSET_PLAYWRIGHT_MODULE || 'playwright');
 const fs = require('node:fs');
 const base = process.env.SHOWSET_BASE_URL || 'http://127.0.0.1:3001';
@@ -38,11 +38,15 @@ const check = (name, pass, data) => { checks.push({name,pass:!!pass,data});conso
         return {lefts,chapters,expected:parseFloat(rootStyle.getPropertyValue('--studio-heading-left')),overflow:document.documentElement.scrollWidth-innerWidth};
       });
       const lefts = result.lefts;
-      check('Full-width Studio headings share left edge @'+width,
-        lefts.length===6 && lefts.every(v=>!v.error && v.textAlign==='left' && Math.abs(v.left-lefts[0].left)<=2.1),
+      const mobile=width<=600;
+      check(mobile?'Studio editorial headings centred @'+width:'Studio editorial headings share left edge @'+width,
+        lefts.length===6 && lefts.every(v=>!v.error &&
+          (mobile?v.textAlign==='center':
+            v.textAlign==='left' && Math.abs(v.left-lefts[0].left)<=2.1)),
         {expected:result.expected,lefts});
-      check('All Studio triptych chapter headings are left-aligned @'+width,
-        result.chapters.length===3 && result.chapters.every(h=>h.textAlign==='left' && h.content),
+      check(mobile?'Mobile Studio chapter headings are centred @'+width:'Desktop/tablet chapters remain left-aligned @'+width,
+        result.chapters.length===3 && result.chapters.every(h=>
+          h.textAlign===(mobile?'center':'left') && h.content),
         result.chapters);
       check('Studio avoids horizontal overflow @'+width,result.overflow<=1,result.overflow);
       await page.close();
