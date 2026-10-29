@@ -9,11 +9,13 @@ type Props = {
   firstLine: string;
   accentLine: string;
   summary: string;
+  compactTitle?: boolean;
+  currentPage: "privacy" | "terms";
   children: ReactNode;
 };
 
 /** Reuse the approved, bound SHOWSET header/footer without mounting scroll-driven page views. */
-export default function LegalPageShell({ firstLine, accentLine, summary, children }: Props) {
+export default function LegalPageShell({ firstLine, accentLine, summary, compactTitle = false, currentPage, children }: Props) {
   const { document } = parseHTML("<!doctype html><html><body><div id='legal-source'></div></body></html>");
   const source = document.getElementById("legal-source")!;
   source.innerHTML = conceptDocument(defaultPages.home, defaultGlobals);
@@ -29,9 +31,15 @@ export default function LegalPageShell({ firstLine, accentLine, summary, childre
       <main id="main" className="legal-main">
         <header className="legal-hero">
           <div className="legal-hero-inner">
-            <h1 className="legal-title">
-              <span>{firstLine}<span className="legal-teal-dot">.</span></span>
-              <span className="legal-title-accent">{accentLine}<span className="legal-white-dot">.</span></span>
+            <h1 className={compactTitle ? "legal-title legal-title--one-line" : "legal-title"}>
+              {compactTitle ? (
+                <span>{firstLine}{" "}<span className="legal-title-accent">{accentLine}<span className="legal-white-dot">.</span></span></span>
+              ) : (
+                <>
+                  <span>{firstLine}<span className="legal-teal-dot">.</span></span>
+                  <span className="legal-title-accent">{accentLine}<span className="legal-white-dot">.</span></span>
+                </>
+              )}
             </h1>
             <p className="legal-summary">{summary}</p>
             <p className="legal-updated">Last updated: 29 October 2026</p>
@@ -41,8 +49,11 @@ export default function LegalPageShell({ firstLine, accentLine, summary, childre
           <div className="legal-body">
             {children}
             <div className="legal-switch">
-              <a href="/privacy-policy/">Privacy &amp; Policy <span aria-hidden="true">↗</span></a>
-              <a href="/terms-and-conditions/">Terms &amp; Conditions <span aria-hidden="true">↗</span></a>
+              {currentPage === "privacy" ? (
+                <a href="/terms-and-conditions/">Terms &amp; Conditions <span aria-hidden="true">↗</span></a>
+              ) : (
+                <a href="/privacy-policy/">Privacy &amp; Policy <span aria-hidden="true">↗</span></a>
+              )}
             </div>
           </div>
         </div>
