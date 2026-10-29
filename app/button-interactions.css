@@ -1,0 +1,178 @@
+/* SHOWSET public button interactions.
+   Keep existing layouts and bespoke controls; unify each button family's
+   hover/focus contract across Home, Services, Studio, Work, Contact and cases.
+   Photo cards, navigation, filters, menus and lightboxes retain their own UX. */
+
+.concept-12-root {
+  --showset-button-accent: #12baaf;
+  --showset-button-hover: #39d4c8;
+  --showset-button-ink: #062739;
+  --showset-button-motion: cubic-bezier(.2,.7,.25,1);
+}
+
+/* Filled primary CTA: consistent colour and a restrained ProVault-style
+   single orbit of border light on hover/focus. Never lift the button.
+   Preserve authored widths and Contact's full-width submit control. */
+@property --showset-button-orbit {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.concept-12-root :is(.solid-link,.header-cta),
+.concept-12-root :is(#ending,#case-ending) .end-link {
+  border-color: var(--showset-button-accent);
+  color: var(--showset-button-ink);
+  font-size: 14px!important;
+  font-weight: 650;
+  position: relative;
+  isolation: isolate;
+  transition:
+    background-color .25s var(--showset-button-motion),
+    border-color .25s var(--showset-button-motion),
+    color .25s var(--showset-button-motion);
+}
+.concept-12-root .contact-rebuilt .contact-submit-row .contact-submit {
+  font-weight: 650!important;
+  transition:
+    background-color .25s var(--showset-button-motion),
+    border-color .25s var(--showset-button-motion),
+    color .25s var(--showset-button-motion);
+}
+.concept-12-root :is(.solid-link,.header-cta):not(:disabled):hover,
+.concept-12-root :is(#ending,#case-ending) .end-link:hover {
+  background-color: var(--showset-button-hover);
+  border-color: var(--showset-button-hover);
+  color: var(--showset-button-ink);
+  transform: none;
+}
+.concept-12-root :is(.solid-link,.header-cta):focus-visible,
+.concept-12-root :is(#ending,#case-ending) .end-link:focus-visible {
+  background-color: var(--showset-button-hover);
+  border-color: var(--showset-button-hover);
+  color: var(--showset-button-ink);
+  outline: 2px solid var(--ice,#faf9fd);
+  outline-offset: 4px;
+  transform: none;
+}
+
+/* The glow is an inset 1.5px stroke, not a filled overlay.
+   It traces one circuit only on hover/focus; idle buttons stay quiet. */
+.concept-12-root :is(.solid-link,.header-cta)::before,
+.concept-12-root :is(#ending,#case-ending) .end-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  pointer-events: none;
+  background: conic-gradient(
+    from var(--showset-button-orbit),
+    transparent 0deg 291deg,
+    rgba(225,255,252,.08) 308deg,
+    rgba(244,255,254,.45) 321deg,
+    rgba(255,255,255,.92) 333deg,
+    rgba(235,255,253,.26) 347deg,
+    transparent 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  filter: drop-shadow(0 0 4px rgba(236,255,253,.2));
+  opacity: 0;
+}
+.concept-12-root :is(.solid-link,.header-cta):not(:disabled):is(:hover,:focus-visible)::before,
+.concept-12-root :is(#ending,#case-ending) .end-link:is(:hover,:focus-visible)::before {
+  animation: showset-button-border-orbit 1.8s linear 1;
+}
+@keyframes showset-button-border-orbit {
+  0% { --showset-button-orbit: 0deg; opacity: 0; }
+  10% { opacity: .74; }
+  78% { opacity: .78; }
+  100% { --showset-button-orbit: 360deg; opacity: 0; }
+}
+/* The arrow on a filled CTA is static. Older header-only rotation
+   caused a different, abrupt arrow interaction. */
+.concept-12-root .header-cta:is(:hover,:focus-visible) .round-icon {
+  transform: none;
+}
+
+/* Outlined action buttons: WhatsApp and Work's "See more stories".
+   Both fill turquoise and switch to dark text, but do not lift.
+   Work filter pills are state selectors, not outlined action CTAs. */
+.concept-12-root .contact-rebuilt .contact-whatsapp,
+.concept-12-root .work-rebuilt .work-index-more button {
+  transition:
+    background-color .25s var(--showset-button-motion),
+    border-color .25s var(--showset-button-motion),
+    color .25s var(--showset-button-motion);
+}
+.concept-12-root .contact-rebuilt .contact-whatsapp:is(:hover,:focus-visible),
+.concept-12-root .work-rebuilt .work-index-more button:is(:hover,:focus-visible) {
+  background-color: var(--showset-button-accent);
+  border-color: var(--showset-button-accent);
+  color: var(--showset-button-ink);
+}
+.concept-12-root .contact-rebuilt .contact-whatsapp:is(:hover,:focus-visible) svg {
+  stroke: var(--showset-button-ink);
+}
+.concept-12-root .contact-rebuilt .contact-whatsapp:is(:hover,:focus-visible) .contact-whatsapp-arrow {
+  color: var(--showset-button-ink);
+  transform: none;
+}
+.concept-12-root .work-rebuilt .work-index-more button:is(:hover,:focus-visible) span {
+  color: var(--showset-button-ink);
+}
+.concept-12-root .work-rebuilt .work-index-more button:focus-visible {
+  outline: 2px solid var(--ice,#faf9fd);
+  outline-offset: 4px;
+}
+
+/* Underlined text-arrow actions: accent text and rule; move the arrow,
+   not the entire label or the gap (which shifted adjacent content). */
+.concept-12-root :is(.text-arrow-link,.understated-link,.service-image-information > a) {
+  --showset-text-button-gap: 22px;
+  gap: var(--showset-text-button-gap);
+  transition:
+    color .25s var(--showset-button-motion),
+    border-color .25s var(--showset-button-motion);
+}
+.concept-12-root .service-experience .understated-link {
+  --showset-text-button-gap: 28px;
+}
+.concept-12-root .service-image-information > a {
+  --showset-text-button-gap: 30px;
+}
+.concept-12-root :is(.text-arrow-link,.understated-link,.service-image-information > a):is(:hover,:focus-visible) {
+  color: var(--showset-button-accent);
+  border-color: var(--showset-button-accent);
+  gap: var(--showset-text-button-gap);
+}
+.concept-12-root :is(.text-arrow-link,.understated-link,.service-image-information > a) > span:last-child {
+  display: inline-block;
+  transition: transform .25s var(--showset-button-motion);
+}
+.concept-12-root :is(.text-arrow-link,.understated-link,.service-image-information > a):is(:hover,:focus-visible) > span:last-child {
+  transform: translate(3px,-3px);
+}
+@media (max-width: 600px) {
+  .concept-12-root .text-arrow-link {
+    --showset-text-button-gap: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .concept-12-root :is(.solid-link,.header-cta,.end-link,.contact-whatsapp,.text-arrow-link,.understated-link,.service-image-information > a),
+  .concept-12-root .work-rebuilt .work-index-more button,
+  .concept-12-root :is(.text-arrow-link,.understated-link,.service-image-information > a) > span:last-child {
+    transition: none!important;
+  }
+  .concept-12-root :is(.solid-link,.header-cta,.end-link):is(:hover,:focus-visible),
+  .concept-12-root :is(.text-arrow-link,.understated-link,.service-image-information > a):is(:hover,:focus-visible) > span:last-child {
+    transform: none!important;
+  }
+  .concept-12-root :is(.solid-link,.header-cta)::before,
+  .concept-12-root :is(#ending,#case-ending) .end-link::before {
+    animation: none!important;
+    opacity: 0!important;
+  }
+}
