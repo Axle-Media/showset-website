@@ -119,12 +119,20 @@ export interface MediaAsset {
   createdAt: string;
   tags: string[];
 }
+export interface ReusableSection {
+  id: string;
+  name: string;
+  section: CanvasNode;
+  createdAt: string;
+}
 export interface Workspace {
   schemaVersion: 2;
   revision: number;
   pages: Record<string, PageData>;
   globals: Globals;
   media: MediaAsset[];
+  /** Saved reusable section templates; insertion creates independent copies. */
+  sectionLibrary?: ReusableSection[];
   updatedAt: string;
 }
 export interface Revision {
@@ -373,6 +381,12 @@ export function cloneNode(node: CanvasNode): CanvasNode {
     ...structuredClone(node),
     id: uid(),
     name: node.name + " copy",
+    props:{
+      ...structuredClone(node.props),
+      ...(node.props.items ? {items:node.props.items.map(item=>({
+        ...item,id:uid("item"),
+      }))} : {}),
+    },
     children: node.children.map(cloneNode),
   };
 }
@@ -587,6 +601,21 @@ export function assertWorkspace(value: unknown): asserts value is Workspace {
             throw Error("Invalid native section replacement mapping.");
         }
       }
+    }
+  }
+  if(w.sectionLibrary!==undefined){
+    if(!Array.isArray(w.sectionLibrary)||w.sectionLibrary.length>30)
+      throw Error("Invalid reusable section library.");
+    const libraryIds=new Set<string>();
+    for(const item of w.sectionLibrary){
+      if(!item || !/^[\w-]{1,100}$/.test(item.id) ||
+          libraryIds.has(item.id) || typeof item.name!=="string" ||
+          !item.name.trim() || item.name.length>100 ||
+          typeof item.createdAt!=="string" ||
+          !item.section || item.section.kind!=="section")
+        throw Error("Invalid reusable section.");
+      libraryIds.add(item.id);
+      scan([item.section],0);
     }
   }
   if (ids.size > 2500 || Object.keys(w.pages).length > 200)

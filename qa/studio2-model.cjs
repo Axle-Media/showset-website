@@ -139,6 +139,62 @@ console.log(
   "PASS model CRUD, nesting/cycle/lock/route guards, CSS allowlist and escaped rendering.",
 );
 
+// The four branded layouts are normal builder sections with explicit mobile
+// overrides, preserving the existing cinematic native renderer.
+const {createSectionPreset,SECTION_PRESETS}=load("lib/studio2/section-presets.ts");
+assert.equal(SECTION_PRESETS.length,4);
+for(const preset of SECTION_PRESETS){
+  const section=createSectionPreset(preset.id);
+  assert.equal(section.kind,"section");
+  assert.ok(section.children.length>0);
+  assert.ok(section.styles.mobile);
+  const example=structuredClone(require("../content/pages.json"));
+  example.home.builder={schemaVersion:2,mode:"template",overrides:{},roots:[section]};
+  const presetWorkspace={schemaVersion:2,revision:0,pages:example,globals:g,
+    media:[],updatedAt:""};
+  assertWorkspace(presetWorkspace);
+  const rendered=render.renderNodes([section]);
+  assert.ok(rendered.includes('data-builder-node="'+section.id+'"'));
+  assert.ok(!rendered.includes("undefined"));
+  if(preset.id==="photo-gallery"){
+    assert.equal(section.children.find(n=>n.kind==="gallery").props.items.length,3);
+    assert.ok(rendered.includes("Gallery photograph A"));
+  }
+}
+const galleryRoot=createSectionPreset("photo-gallery");
+const galleryCopy=cloneNode(galleryRoot);
+const originalGallery=galleryRoot.children.find(n=>n.kind==="gallery");
+const duplicatedGallery=galleryCopy.children.find(n=>n.kind==="gallery");
+assert.notEqual(originalGallery.id,duplicatedGallery.id);
+assert.deepEqual(originalGallery.props.items.map(item=>item.alt),
+  duplicatedGallery.props.items.map(item=>item.alt));
+assert.ok(originalGallery.props.items.every((item,i)=>
+  item.id!==duplicatedGallery.props.items[i].id),
+  "Copied galleries must not retain repeater item identities");
+const reusableSection=createSectionPreset("editorial-split");
+const reusableStored=cloneNode(reusableSection);
+reusableStored.name="Saved editorial section";
+const reusePages=structuredClone(require("../content/pages.json"));
+reusePages.home.builder={schemaVersion:2,mode:"template",overrides:{},
+  roots:[reusableSection,cloneNode(reusableStored)]};
+const reuseWorkspace={schemaVersion:2,revision:0,pages:reusePages,
+  globals:g,media:[],updatedAt:"",sectionLibrary:[{
+    id:"reusable-1",name:"Saved editorial section",
+    section:reusableStored,createdAt:"2026-10-29T00:00:00Z",
+  }]};
+assertWorkspace(reuseWorkspace);
+const duplicateLibrary=structuredClone(reuseWorkspace);
+duplicateLibrary.sectionLibrary.push(structuredClone(duplicateLibrary.sectionLibrary[0]));
+assert.throws(()=>assertWorkspace(duplicateLibrary),/Invalid reusable section/);
+const orphanLibrary=structuredClone(reuseWorkspace);
+orphanLibrary.sectionLibrary[0].section.children[0].children[1].props.src=
+  "asset:asset-"+"d".repeat(64);
+assert.throws(()=>assertWorkspace(orphanLibrary),/missing from the media library/);
+const invalidLibrary=structuredClone(reuseWorkspace);
+invalidLibrary.sectionLibrary[0].section.kind="text";
+assert.throws(()=>assertWorkspace(invalidLibrary),/Invalid reusable section/);
+console.log("PASS four responsive branded section presets and safe independent reusable library.");
+ 
 const legacyHome = {
   ...safe.home,
   title: "Owner custom title",

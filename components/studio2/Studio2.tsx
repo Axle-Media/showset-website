@@ -4,6 +4,7 @@ import type { PageData } from "@/lib/types";
 import {
   builderFor,
   findNode,
+  uid,
   makeNode,
   insertNode,
   changeNode,
@@ -45,6 +46,7 @@ import { mediaSource } from "@/lib/studio2/render";
 import "./studio2.css";
 import type {CloudStore} from "@/lib/studio2/cloud";
 import {replaceNativeBlock,restoreNativeBlock} from "@/lib/studio2/native-rebuild";
+import {createSectionPreset,type SectionPresetId} from "@/lib/studio2/section-presets";
 export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
   const editor = useWorkspace(cloud),
     [slug, setSlug] = useState("home"),
@@ -62,6 +64,7 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
     [clipboard, setClipboard] = useState<CanvasNode | null>(null),
     [panel, setPanel] = useState("Canvas"),
     [selectionSerial, setSelectionSerial] = useState(0),
+    [galleryTargetIndex,setGalleryTargetIndex] = useState<number|null>(null),
     [inspection, setInspection] = useState<CanvasInspection | null>(null);
   const importInput = useRef<HTMLInputElement>(null),
     dialogRef = useRef<HTMLDialogElement>(null);
@@ -141,6 +144,7 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
     setInspection(null);
     setSlug(value);
     setSelected(null);
+    setGalleryTargetIndex(null);
     setMetrics({});
     setTab("Layers");
   };
@@ -153,6 +157,7 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
     setInspection(null);
     setSelectionSerial((n) => n + 1);
     setSelected(id);
+    setGalleryTargetIndex(null);
     // Keep the photo browser available while replacing several images in a
     // row. Canvas and layer selection still switch back to the Layers view.
     if (!fromImageBrowser) setTab("Layers");
@@ -267,7 +272,34 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
       };
     }, "Edit motion");
   };
-  const add = (kind: NodeKind) => {
+  const insertSection=(section:CanvasNode,description:string)=>{
+    if(!page)return;
+    updatePage(p=>({...p,builder:{
+      ...builderFor(p),roots:[...builderFor(p).roots,section],
+    }}),description);
+    setInspection(null);
+    setSelected(section.id);
+    setGalleryTargetIndex(null);
+    setTab("Layers");
+  };
+  const addPreset=(id:SectionPresetId)=>{
+    insertSection(createSectionPreset(id),"Add "+id+" section layout");
+  };
+  const reuseSection=(id:string)=>{
+    const item=workspace?.sectionLibrary?.find(section=>section.id===id);
+    if(!item)return;
+    const copy=cloneNode(item.section);
+    copy.name=item.name;
+    copy.hidden=false;
+    copy.locked=false;
+    insertSection(copy,"Insert reusable section "+item.name);
+  };
+  const removeReusable=(id:string)=>{
+    editor.edit(w=>({...w,
+      sectionLibrary:(w.sectionLibrary||[]).filter(item=>item.id!==id),
+    }),"Remove reusable section template");
+  };
+    const add = (kind: NodeKind) => {
     if (!page) return;
     const template = page.builder?.mode !== "custom";
     const parent = node && isContainer(node.kind) ? node.id : null;
@@ -378,6 +410,27 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
       return;
     }
     if (!node) return;
+    if(name==="save-section"){
+      if(node.kind!=="section"||node.locked||
+        Object.values(page.builder?.nativeReplacementNodes||{}).includes(node.id)){
+        editor.setError("Save an unlocked owner-created section, not a protected native replacement.");
+        return;
+      }
+      const name=window.prompt("Name your reusable section",node.name)?.trim();
+      if(!name)return;
+      if(name.length>100){
+        editor.setError("Reusable section names must be 100 characters or fewer.");
+        return;
+      }
+      const template=cloneNode(node);
+      template.name=name;template.hidden=false;template.locked=false;
+      const result=editor.edit(w=>({...w,sectionLibrary:[
+        ...(w.sectionLibrary||[]),
+        {id:uid("reusable"),name,section:template,createdAt:new Date().toISOString()},
+      ]}),"Save reusable section");
+      if(result){setTab("Sections");setQuery("");}
+      return;
+    }
     if (name === "copy") {
       setClipboard(structuredClone(node));
       return;
@@ -476,7 +529,9 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
       name === "lock" ? "Change lock" : "Change visibility",
     );
   };
-  const upload = async (file: File) => {
+  const upload = async (file: File,galleryIndex?:number) => {
+    const targetSlug=slug,targetSelected=selected;
+    const targetBinding=binding;
     try {
       const asset = await storeMedia(file);
       // Never update a shared draft until its original exists in private
@@ -486,16 +541,26 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
         const media = w.media.some((a) => a.id === asset.id)
           ? w.media
           : [...w.media, asset];
-        const p = w.pages[slug];
+        const p = w.pages[targetSlug];
         let next = p;
-        if (selected && (binding?.kind === "image" || node?.kind === "image")) {
-          if (binding) next = updateBinding(p, binding, "asset:" + asset.id);
+        if(galleryIndex!==undefined && targetSelected){
+          next={...p,builder:{
+            ...builderFor(p),
+            roots:changeNode(builderFor(p).roots,targetSelected,n=>({
+              ...n,props:{...n.props,items:(n.props.items||[]).map((item,i)=>
+                i===galleryIndex ? {...item,src:"asset:"+asset.id,
+                  alt:item.alt||asset.name.replace(/\.[^.]+$/,"")} : item),
+              },
+            })),
+          }};
+        }else if (targetSelected && (targetBinding?.kind === "image" || node?.kind === "image")) {
+          if (targetBinding) next = updateBinding(p, targetBinding, "asset:" + asset.id);
           else
             next = {
               ...p,
               builder: {
                 ...builderFor(p),
-                roots: changeNode(builderFor(p).roots, selected, (n) => ({
+                roots: changeNode(builderFor(p).roots, targetSelected, (n) => ({
                   ...n,
                   props: {
                     ...n.props,
@@ -506,7 +571,7 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
               },
             };
         }
-        return { ...w, media, pages: { ...w.pages, [slug]: next } };
+        return { ...w, media, pages: { ...w.pages, [targetSlug]: next } };
       }, "Upload original image");
     } catch (e) {
       editor.setError((e as Error).message);
@@ -791,6 +856,9 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
             onAdd={add}
             onMove={move}
             onNew={() => setDialog(true)}
+            onPreset={addPreset}
+            onReuse={reuseSection}
+            onRemoveReusable={removeReusable}
             bindings={bindings}
             urls={urls}
           />
@@ -836,7 +904,14 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
                   <button
                     key={asset.id}
                     onClick={() => {
-                      if (binding?.kind === "image" || node?.kind === "image")
+                      if(node?.kind==="gallery" && galleryTargetIndex!==null){
+                        patchProps("items",(node.props.items||[]).map((item,i)=>
+                          i===galleryTargetIndex?{...item,src:"asset:"+asset.id,
+                            alt:item.alt||asset.name.replace(/\.[^.]+$/,"")}:item));
+                        setGalleryTargetIndex(null);
+                        setTab("Layers");
+                        if(innerWidth<=800)setPanel("Inspector");
+                      }else if (binding?.kind === "image" || node?.kind === "image")
                         patchProps("src", "asset:" + asset.id);
                     }}
                   >
@@ -1036,6 +1111,13 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
               )
             }
             onUpload={(file) => void upload(file)}
+            onGalleryUpload={(index,file)=>void upload(file,index)}
+            onGalleryLibrary={(index)=>{
+              setGalleryTargetIndex(index);
+              setTab("Media");
+              setQuery("");
+              if(innerWidth<=800)setPanel("Layers");
+            }}
             onAction={action}
             onReset={reset}
             imageName={

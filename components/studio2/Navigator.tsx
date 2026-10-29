@@ -3,6 +3,7 @@ import type { CanvasNode, NodeKind } from "@/lib/studio2/model";
 import { findNode, isContainer } from "@/lib/studio2/model";
 import { mediaSource } from "@/lib/studio2/render";
 import { registry } from "@/lib/studio2/registry";
+import { SECTION_PRESETS,type SectionPresetId } from "@/lib/studio2/section-presets";
 import { bindingContent, type Binding } from "@/lib/studio2/bindings";
 import type { Workspace } from "@/lib/studio2/model";
 export default function Navigator({
@@ -18,6 +19,9 @@ export default function Navigator({
   onAdd,
   onMove,
   onNew,
+  onPreset,
+  onReuse,
+  onRemoveReusable,
   bindings,
   urls,
 }: {
@@ -33,6 +37,9 @@ export default function Navigator({
   onAdd: (kind: NodeKind) => void;
   onMove: (id: string, parent: string | null, index: number) => void;
   onNew: () => void;
+  onPreset: (id:SectionPresetId) => void;
+  onReuse: (id:string) => void;
+  onRemoveReusable: (id:string) => void;
   bindings: Binding[];
   urls: Record<string, string>;
 }) {
@@ -111,7 +118,7 @@ export default function Navigator({
   return (
     <aside className="s2-navigator" aria-label="Workspace navigator">
       <nav className="s2-nav-tabs">
-        {["Pages", "Layers", "Images", "Add", "Media", "History", "Site"].map(
+        {["Pages", "Layers", "Sections", "Images", "Add", "Media", "History", "Site"].map(
           (name) => (
             <button
               key={name}
@@ -267,6 +274,46 @@ export default function Navigator({
             )}
           </>
         ))}
+      {tab === "Sections" && (
+        <div className="s2-library">
+          <h3>Ready-made layouts</h3>
+          <p className="s2-hint">
+            Add a responsive, editable chapter. Existing cinematic scenes
+            and their approved order stay unchanged.
+          </p>
+          {SECTION_PRESETS.filter(item=>
+            (item.name+" "+item.description).toLowerCase().includes(query.toLowerCase())
+          ).map(item=>(
+            <button key={item.id} onClick={()=>onPreset(item.id)}>
+              <strong>{item.name}</strong>
+              <span>{item.description}</span>
+            </button>
+          ))}
+          <h3>Saved sections</h3>
+          <p className="s2-hint">
+            Saved sections are reusable templates. Inserting one makes an
+            independent copy, so other pages do not change automatically.
+          </p>
+          {(workspace.sectionLibrary||[]).filter(item=>
+            item.name.toLowerCase().includes(query.toLowerCase())
+          ).map(item=>(
+            <div className="s2-saved-section" key={item.id}>
+              <strong>{item.name}</strong>
+              <button onClick={()=>onReuse(item.id)}>Insert copy</button>
+              <button className="s2-secondary" onClick={()=>{
+                if(window.confirm("Delete this saved section template? Existing page sections stay unchanged."))
+                  onRemoveReusable(item.id);
+              }}>Remove template</button>
+            </div>
+          ))}
+          {!(workspace.sectionLibrary||[]).length && (
+            <p className="s2-hint">
+              Select an editable section and choose Save to section library
+              in the inspector.
+            </p>
+          )}
+        </div>
+      )}
       {tab === "Add" && (
         <div className="s2-library">
           {page.builder?.mode !== "custom" &&
