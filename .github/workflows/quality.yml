@@ -2,9 +2,9 @@ name: SHOWSET quality gate
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, "integration/studio2-*"]
   push:
-    branches: [main]
+    branches: [main, "fix/studio2-*"]
 
 permissions:
   contents: read
