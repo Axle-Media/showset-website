@@ -941,3 +941,17 @@
   white-space: normal;
   line-height: 1.6;
 }
+
+/* Keep the image browser below the navigator heading and search input.
+   Image cards must never share the flex row reserved for the panel title. */
+.s2-image-browser {
+  min-width: 0;
+  padding-bottom: 20px;
+}
+.s2-image-browser .s2-page-images button[aria-pressed="true"] {
+  border-color: var(--s2-teal);
+  background: #153b54;
+}
+.s2-image-browser .s2-hint[role="status"] {
+  margin-block: 12px;
+}
