@@ -126,7 +126,7 @@ grant execute on function public.showset_studio_publish(bigint) to authenticated
 -- allow anonymous access to draft, membership or release records.
 revoke all on public.showset_studio_members,
   public.showset_studio_workspaces,
-  public.showset_studio_releases from anon;
+  public.showset_studio_releases from anon,authenticated;
 grant select on public.showset_studio_members to authenticated;
 grant select,insert,update on public.showset_studio_workspaces to authenticated;
 grant select,insert on public.showset_studio_releases to authenticated;
@@ -149,5 +149,5 @@ create policy "SHOWSET editors upload new originals" on storage.objects
       where m.user_id=(select auth.uid()) and m.active
         and m.role in ('owner','editor','publisher')));
 -- Originals are immutable. No UPDATE/DELETE or upsert policy.
--- Provision private bucket mime limits (image/jpeg/png/webp/avif), <=15 MB.
+-- Provision private bucket MIME limits (image/jpeg,png,webp), <=8 MB.
 -- Only owner-managed users may be added to showset_studio_members.
