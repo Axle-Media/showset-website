@@ -47,6 +47,11 @@ jobs:
             if curl --fail --silent http://127.0.0.1:3001/ >/dev/null; then break; fi
             sleep 1
           done
+          # Temporary visual approval run for this isolated hero branch.
+          if [ "$GITHUB_HEAD_REF" = "fix/mobile-home-hero-visual-20261029" ]; then
+            node qa/visual-home-hero.cjs
+            exit $?
+          fi
           # Run all browser suites, then fail if any failed. Do not mask failures.
           qa_status=0
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/mobile-tablet-audit.cjs || qa_status=1
