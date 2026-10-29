@@ -131,7 +131,7 @@ export function bindConcept(
       const accentCopy = accentPunctuation ? s.accent.trimEnd().slice(0, -1) : s.accent;
       e.innerHTML = '<span>' + head + period + '</span>' +
         (s.accent ? '<span class="accent-text">' + rich(accentCopy) +
-          (accentPunctuation ? '<span class="service-heading-accent-period">' + accentPunctuation + '</span>' : '') +
+          (accentPunctuation ? '<span class="service-heading-accent-period showset-ending-punctuation">' + accentPunctuation + '</span>' : '') +
           '</span>' : "");
       return;
     }
