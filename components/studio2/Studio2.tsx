@@ -35,6 +35,10 @@ import { useWorkspace } from "./useWorkspace";
 import Canvas from "./Canvas";
 import Navigator from "./Navigator";
 import Inspector from "./Inspector";
+import ContextInspector from "./ContextInspector";
+import type { CanvasInspection } from "@/lib/studio2/selection";
+import { bindingContent } from "@/lib/studio2/bindings";
+import { mediaSource } from "@/lib/studio2/render";
 import "./studio2.css";
 export default function Studio2() {
   const editor = useWorkspace(),
@@ -51,7 +55,9 @@ export default function Studio2() {
     [title, setTitle] = useState(""),
     [route, setRoute] = useState(""),
     [clipboard, setClipboard] = useState<CanvasNode | null>(null),
-    [panel, setPanel] = useState("Canvas");
+    [panel, setPanel] = useState("Canvas"),
+    [selectionSerial, setSelectionSerial] = useState(0),
+    [inspection, setInspection] = useState<CanvasInspection | null>(null);
   const importInput = useRef<HTMLInputElement>(null),
     dialogRef = useRef<HTMLDialogElement>(null);
   const workspace = editor.workspace,
@@ -94,6 +100,7 @@ export default function Studio2() {
     } else dialogRef.current?.close();
   }, [dialog]);
   const choosePage = (value: string) => {
+    setInspection(null);
     setSlug(value);
     setSelected(null);
     setMetrics({});
@@ -105,6 +112,8 @@ export default function Studio2() {
       label,
     );
   const choose = (id: string) => {
+    setInspection(null);
+    setSelectionSerial((n) => n + 1);
     setSelected(id);
     setTab("Layers");
     setMetrics({});
@@ -586,6 +595,9 @@ export default function Studio2() {
           </button>
         </div>
         <div className="s2-save-state" role="status">
+          <span>
+            {interactive ? "Preview · links active" : "Editing · clicks select"}
+          </span>
           {editor.status}
           <a
             href={"/studio/next/preview/?page=" + encodeURIComponent(slug)}
@@ -648,6 +660,7 @@ export default function Studio2() {
             onMove={move}
             onNew={() => setDialog(true)}
             bindings={bindings}
+            urls={urls}
           />
           {tab === "History" && (
             <div className="s2-aux">
@@ -755,6 +768,16 @@ export default function Studio2() {
         </div>
         <section className="s2-centre" aria-label="Website editing canvas">
           <div className="s2-breadcrumb">
+            <button
+              className="s2-image-shortcut"
+              onClick={() => {
+                setTab("Images");
+                setQuery("");
+                if (innerWidth <= 800) setPanel("Layers");
+              }}
+            >
+              Images · change a photograph
+            </button>
             <button onClick={() => setSelected(null)}>{page.title}</button>
             {selected && (
               <>
@@ -769,6 +792,12 @@ export default function Studio2() {
             height={width <= 600 ? 844 : 900}
             zoom={zoom}
             onSelect={choose}
+            onInspect={(value) => {
+              setInspection(value);
+              setSelected(null);
+              setMetrics({});
+              if (innerWidth <= 800) setPanel("Inspector");
+            }}
             onMetrics={setMetrics}
             onInline={(id, text, cancel) => {
               if (cancel) return;
@@ -803,32 +832,97 @@ export default function Studio2() {
             }}
           />
         </section>
-        <Inspector
-          page={page}
-          node={node}
-          binding={binding}
-          override={override}
-          breakpoint={breakpoint}
-          metrics={metrics}
-          onProps={patchProps}
-          onStyle={patchStyle}
-          onPattern={patchPattern}
-          onMotion={patchMotion}
-          onPage={(key, value) =>
-            updatePage(
-              (p) =>
-                key === "seoTitle"
-                  ? { ...p, seo: { ...p.seo, title: value } }
-                  : key === "seoDescription"
-                    ? { ...p, seo: { ...p.seo, description: value } }
-                    : { ...p, [key]: value },
-              "Edit page settings",
-            )
-          }
-          onUpload={(file) => void upload(file)}
-          onAction={action}
-          onReset={reset}
-        />
+        {inspection ? (
+          <ContextInspector
+            selection={inspection}
+            page={page}
+            globals={workspace.globals}
+            urls={urls}
+            onSelectImage={choose}
+            onGlobals={(fn) =>
+              editor.edit(
+                (w) => ({ ...w, globals: fn(w.globals) }),
+                "Edit shared " + inspection.area,
+              )
+            }
+            onSection={(fn) =>
+              updatePage(
+                (p) => ({
+                  ...p,
+                  sections: p.sections.map((s) =>
+                    s.id === inspection.sectionId ? fn(s) : s,
+                  ),
+                }),
+                "Edit section content",
+              )
+            }
+            onUpload={async (file) => {
+              try {
+                const asset = await storeMedia(file);
+                editor.edit(
+                  (w) => ({
+                    ...w,
+                    media: w.media.some((a) => a.id === asset.id)
+                      ? w.media
+                      : [...w.media, asset],
+                    globals: {
+                      ...w.globals,
+                      brand: { ...w.globals.brand, logo: "asset:" + asset.id },
+                    },
+                  }),
+                  "Replace shared logo",
+                );
+              } catch (e) {
+                editor.setError((e as Error).message);
+              }
+            }}
+          />
+        ) : (
+          <Inspector
+            key={String(selected) + selectionSerial}
+            page={page}
+            node={node}
+            binding={binding}
+            override={override}
+            breakpoint={breakpoint}
+            metrics={metrics}
+            onProps={patchProps}
+            onStyle={patchStyle}
+            onPattern={patchPattern}
+            onMotion={patchMotion}
+            onPage={(key, value) =>
+              updatePage(
+                (p) =>
+                  key === "seoTitle"
+                    ? { ...p, seo: { ...p.seo, title: value } }
+                    : key === "seoDescription"
+                      ? { ...p, seo: { ...p.seo, description: value } }
+                      : { ...p, [key]: value },
+                "Edit page settings",
+              )
+            }
+            onUpload={(file) => void upload(file)}
+            onAction={action}
+            onReset={reset}
+            imageName={
+              workspace.media.find(
+                (a) =>
+                  "asset:" + a.id ===
+                  (node?.props.src ||
+                    (binding ? bindingContent(page, binding) : "")),
+              )?.name
+            }
+            imagePreview={mediaSource(
+              node?.props.src || (binding ? bindingContent(page, binding) : ""),
+              urls,
+            )}
+            onLibrary={() => {
+              setTab("Media");
+              setQuery("");
+              if (innerWidth <= 800) setPanel("Layers");
+            }}
+          />
+        )}
       </div>
       <dialog
         ref={dialogRef}

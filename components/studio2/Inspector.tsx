@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-function DraftField({
+export function DraftField({
   value,
   onCommit,
   multi = false,
@@ -93,6 +93,9 @@ export default function Inspector({
   onUpload,
   onAction,
   onReset,
+  imagePreview,
+  imageName,
+  onLibrary,
 }: {
   page: PageData;
   node?: CanvasNode;
@@ -108,6 +111,9 @@ export default function Inspector({
   onUpload: (file: File) => void;
   onAction: (action: string) => void;
   onReset: () => void;
+  imagePreview?: string;
+  imageName?: string;
+  onLibrary?: () => void;
 }) {
   const [tab, setTab] = useState("Content");
   useEffect(() => setTab("Content"), [node?.id, binding?.id]);
@@ -312,6 +318,23 @@ export default function Inspector({
               )}
             {kind === "image" && (
               <>
+                {imagePreview && (
+                  <img
+                    className="s2-inspector-image"
+                    src={imagePreview}
+                    alt="Selected photograph preview"
+                  />
+                )}
+                <h3>Change this image</h3>
+                <p className="s2-hint">
+                  Upload a replacement below, or choose an existing image from
+                  your media library.
+                </p>
+                {onLibrary && (
+                  <button className="s2-secondary" onClick={onLibrary}>
+                    Choose from media library
+                  </button>
+                )}
                 <label className="s2-upload">
                   Replace image
                   <input
@@ -322,13 +345,26 @@ export default function Inspector({
                     }}
                   />
                 </label>
-                {field(
-                  "Image address (optional)",
-                  node?.props.src ||
-                    (binding ? bindingContent(page, binding) : ""),
-                  (v) => onProps("src", v),
-                  "/media/planning.webp",
+                {imageName && (
+                  <p className="s2-hint">
+                    Current file: <strong>{imageName}</strong>
+                  </p>
                 )}
+                <details>
+                  <summary>Use an image URL instead</summary>
+                  {field(
+                    "Image address (optional)",
+                    (
+                      node?.props.src ||
+                      (binding ? bindingContent(page, binding) : "")
+                    ).startsWith("asset:")
+                      ? ""
+                      : node?.props.src ||
+                          (binding ? bindingContent(page, binding) : ""),
+                    (v) => onProps("src", v),
+                    "https://… or /media/…",
+                  )}
+                </details>
                 {node &&
                   field("Caption", node.props.caption || "", (v) =>
                     onProps("caption", v),
@@ -480,6 +516,23 @@ export default function Inspector({
             {style("Border colour", "borderColor", "#12BAAF")}
             {kind === "image" && (
               <>
+                {imagePreview && (
+                  <img
+                    className="s2-inspector-image"
+                    src={imagePreview}
+                    alt="Selected photograph preview"
+                  />
+                )}
+                <h3>Change this image</h3>
+                <p className="s2-hint">
+                  Upload a replacement below, or choose an existing image from
+                  your media library.
+                </p>
+                {onLibrary && (
+                  <button className="s2-secondary" onClick={onLibrary}>
+                    Choose from media library
+                  </button>
+                )}
                 {select(
                   "Image fit",
                   styles.objectFit || metrics.objectFit || "cover",

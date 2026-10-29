@@ -507,7 +507,10 @@ export function assertWorkspace(value: unknown): asserts value is Workspace {
     routes.add(p.route);
     if (!Array.isArray(p.sections) || typeof p.title !== "string")
       throw Error("Invalid page.");
-    for (const section of p.sections) mediaRef(section.image);
+    for (const section of p.sections) {
+      mediaRef(section.image);
+      for (const item of section.items || []) mediaRef(item.image);
+    }
     if (p.builder) {
       if (p.builder.schemaVersion !== 2)
         throw Error("Unsupported page version.");

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import type { CanvasInspection } from "@/lib/studio2/selection";
 import type { CanvasState } from "./Preview";
 export default function Canvas({
   state,
@@ -10,6 +11,7 @@ export default function Canvas({
   onInline,
   onNavigate,
   onMetrics,
+  onInspect,
 }: {
   state: CanvasState;
   width: number;
@@ -19,13 +21,20 @@ export default function Canvas({
   onInline: (id: string, text: string, cancel: boolean) => void;
   onNavigate: (route: string) => void;
   onMetrics: (value: Record<string, string>) => void;
+  onInspect: (selection: CanvasInspection) => void;
 }) {
   const frame = useRef<HTMLIFrameElement>(null),
     host = useRef<HTMLDivElement>(null),
     latest = useRef(state),
-    callbacks = useRef({ onSelect, onInline, onNavigate, onMetrics });
+    callbacks = useRef({
+      onSelect,
+      onInline,
+      onNavigate,
+      onMetrics,
+      onInspect,
+    });
   latest.current = state;
-  callbacks.current = { onSelect, onInline, onNavigate, onMetrics };
+  callbacks.current = { onSelect, onInline, onNavigate, onMetrics, onInspect };
   const [fit, setFit] = useState(0.5);
   const send = () =>
     frame.current?.contentWindow?.postMessage(
@@ -54,6 +63,12 @@ export default function Canvas({
         callbacks.current.onInline(d.id, d.text.slice(0, 20000), !!d.cancel);
       if (d?.type === "showset-studio2-navigate" && typeof d.route === "string")
         callbacks.current.onNavigate(d.route);
+      if (
+        d?.type === "showset-studio2-inspect" &&
+        d.selection &&
+        ["header", "footer", "section", "other"].includes(d.selection.area)
+      )
+        callbacks.current.onInspect(d.selection);
       if (d?.type === "showset-studio2-metrics")
         callbacks.current.onMetrics(d.value);
     };
@@ -94,7 +109,7 @@ export default function Canvas({
         {width} × {height} · {Math.round(scale * 100)}% ·{" "}
         {state.interactive
           ? "Interactive preview"
-          : "Double-click text to edit"}
+          : "Editing mode · click to select, double-click text to edit. Links and buttons are inactive."}
       </div>
     </div>
   );

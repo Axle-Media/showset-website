@@ -146,6 +146,7 @@ jobs:
             sleep 1
           done
           node qa/studio2-builder.cjs
+          node qa/studio2-selection.cjs
           node qa/studio2-recovery.cjs
           node qa/studio2-motion.cjs
           node qa/studio2-touch.cjs

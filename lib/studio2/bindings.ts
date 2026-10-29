@@ -8,6 +8,7 @@ export interface Binding {
   selector: string;
   sectionId: string;
   field?: string;
+  itemIndex?: number;
   secondary?: boolean;
   content: boolean;
 }
@@ -15,7 +16,7 @@ export function templateBindings(page: PageData): Binding[] {
   if (page.slug !== "home") return [];
   const hero = page.sections.find((s) => s.type === "hero");
   if (!hero) return [];
-  return [
+  const bindings: Binding[] = [
     {
       id: "home-hero",
       name: "Opening scene",
@@ -80,9 +81,34 @@ export function templateBindings(page: PageData): Binding[] {
       content: true,
     },
   ];
+  for (const section of page.sections) {
+    if (!["story", "services"].includes(section.type)) continue;
+    section.items.forEach((item, index) => {
+      if (!item.image) return;
+      bindings.push({
+        id: "home-" + section.type + "-image-" + index,
+        name:
+          (section.type === "story"
+            ? "Story scene " + (index + 1)
+            : item.title || "Service " + (index + 1)) + " photograph",
+        kind: "image",
+        selector:
+          section.type === "story"
+            ? '[data-film-image="' + index + '"] img'
+            : '[data-service-visual="' + index + '"] img',
+        sectionId: section.id,
+        field: "image",
+        itemIndex: index,
+        content: true,
+      });
+    });
+  }
+  return bindings;
 }
 export function bindingContent(page: PageData, binding: Binding): string {
   const section = page.sections.find((s) => s.id === binding.sectionId);
+  if (binding.itemIndex !== undefined)
+    return String(section?.items[binding.itemIndex]?.image || "");
   return binding.field
     ? String(
         (section as unknown as Record<string, unknown>)?.[binding.field] ?? "",
@@ -97,7 +123,16 @@ export function updateBinding(
   return {
     ...page,
     sections: page.sections.map((s) =>
-      s.id === binding.sectionId ? { ...s, [binding.field!]: text } : s,
+      s.id === binding.sectionId
+        ? binding.itemIndex === undefined
+          ? { ...s, [binding.field!]: text }
+          : {
+              ...s,
+              items: s.items.map((item, index) =>
+                index === binding.itemIndex ? { ...item, image: text } : item,
+              ),
+            }
+        : s,
     ),
   };
 }
