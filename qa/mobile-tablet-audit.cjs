@@ -189,9 +189,9 @@ function ck(label,pass,detail){
             const t=result.timelineAlignment;
             ck('Mobile service stories hide vertical rail and milestone circles: '+tag,
               !!t&&t.before==='none'&&t.after==='none'
-              &&t.stages.length===3&&t.stages.every(s=>s.marker==='none'),t);
+              &&t.stages.length===(name==='digital'?4:3)&&t.stages.every(s=>s.marker==='none'),t);
             ck('Mobile service stage eyebrows, headings and body stay centred: '+tag,
-              !!t&&t.paddingLeft==='0px'&&t.stages.length===3
+              !!t&&t.paddingLeft==='0px'&&t.stages.length===(name==='digital'?4:3)
               &&t.stages.every(s=>[s.eyebrow,s.heading,s.copy].every(
                 e=>e&&e.align==='center'&&Math.abs(e.offset)<=3)),t);
           }
