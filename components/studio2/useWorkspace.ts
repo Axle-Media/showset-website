@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { defaultPages, defaultGlobals } from "@/lib/data";
 import type { Workspace, Revision } from "@/lib/studio2/model";
 import {CloudConflictError, type CloudStore} from "@/lib/studio2/cloud";
+import {SaveCoordinator} from "@/lib/studio2/save-coordinator";
 import { assertWorkspace, isLoopback, adoptLegacy } from "@/lib/studio2/model";
 import {
   readStore,
@@ -26,7 +27,7 @@ export function useWorkspace(cloud:CloudStore|null=null) {
     [sequence, setSequence] = useState(0);
   const expected = useRef(0),
     savedSequence = useRef(0),
-    saving = useRef(false),
+    saveCoordinator = useRef(new SaveCoordinator()),
     current = useRef(workspace),
     seq = useRef(sequence),
     label = useRef("Edit");
@@ -83,48 +84,47 @@ export function useWorkspace(cloud:CloudStore|null=null) {
       .catch((e) => setError("Your saved data was not changed. " + e.message));
   }, [cloud]);
   const save = useCallback(async () => {
-    const value = current.current;
-    if (!value || !ready || saving.current || conflict) return false;
-    const start = seq.current;
-    saving.current = true;
-    setStatus("Saving locally…");
-    setError("");
-    try {
-      const saved = cloud
-        ? await cloud.save(value,expected.current)
-        : await saveWorkspace(value, expected.current, label.current);
-      expected.current = saved.revision;
-      savedSequence.current = start;
-      current.current = {
-        ...current.current!,
-        revision: saved.revision,
-        updatedAt: saved.updatedAt,
-      };
-      setWorkspace(current.current);
-      setStatus(start === seq.current
-        ? (cloud ? "Saved to private cloud" : "Saved locally")
-        : "Unsaved changes");
-      if(!cloud){
-        setHistory(await revisions());
-        const channel = new BroadcastChannel("showset-studio2-updates");
-        channel.postMessage({ revision: saved.revision });
-        channel.close();
+    if (!current.current || !ready || conflict) return false;
+    return saveCoordinator.current.flush(async () => {
+      const value = current.current!;
+      const start = seq.current;
+      setStatus(cloud ? "Saving to private cloud…" : "Saving locally…");
+      setError("");
+      try {
+        const saved = cloud
+          ? await cloud.save(value,expected.current)
+          : await saveWorkspace(value, expected.current, label.current);
+        expected.current = saved.revision;
+        savedSequence.current = start;
+        current.current = {
+          ...current.current!,
+          revision: saved.revision,
+          updatedAt: saved.updatedAt,
+        };
+        setWorkspace(current.current);
+        setStatus(start === seq.current
+          ? (cloud ? "Saved to private cloud" : "Saved locally")
+          : "Unsaved changes");
+        if(!cloud){
+          setHistory(await revisions());
+          const channel = new BroadcastChannel("showset-studio2-updates");
+          channel.postMessage({ revision: saved.revision });
+          channel.close();
+        }
+        return true;
+      } catch (e) {
+        if (e instanceof ConflictError || e instanceof CloudConflictError) {
+          setConflict(e.remote);
+          // Remote deletion is not a recoverable draft; retain the local copy.
+          if (!e.remote) setError("Shared draft was removed; export your work.");
+          setStatus("Conflict: newer draft in another tab");
+        } else {
+          setError((e as Error).message);
+          setStatus("Save failed: changes remain in this tab");
+        }
+        return false;
       }
-      return true;
-    } catch (e) {
-      if (e instanceof ConflictError || e instanceof CloudConflictError) {
-        setConflict(e.remote);
-        // Remote deletion is not a recoverable draft; retain the local copy.
-        if (!e.remote) setError("Shared draft was removed; export your work.");
-        setStatus("Conflict: newer draft in another tab");
-      } else {
-        setError((e as Error).message);
-        setStatus("Save failed: changes remain in this tab");
-      }
-      return false;
-    } finally {
-      saving.current = false;
-    }
+    }, () => seq.current !== savedSequence.current);
   }, [ready, conflict, cloud]);
   useEffect(() => {
     if (!ready || !workspace || sequence === savedSequence.current || conflict)
