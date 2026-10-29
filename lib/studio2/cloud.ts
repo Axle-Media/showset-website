@@ -93,13 +93,18 @@ export class CloudStore {
     }
   }
   async signOut(){
-    try {
-      if(this.session)
-        await this.request<void>("/auth/v1/logout",{method:"POST"});
-    } catch {
-      // Local credentials are still cleared if the session was revoked.
-    } finally {
-      this.session=null;this.role=null;this.expiresAt=0;
+    // Invalidate the editor immediately, before awaiting the network. No
+    // pending request can reuse the in-memory credentials after logout.
+    const token=this.session?.access_token;
+    this.session=null;this.role=null;this.expiresAt=0;
+    if(!token)return;
+    try{
+      await fetch(this.config.url+"/auth/v1/logout",{
+        method:"POST",cache:"no-store",
+        headers:{apikey:this.config.key,Authorization:"Bearer "+token},
+      });
+    }catch{
+      // Clearing the in-memory session remains mandatory even if offline.
     }
   }
   private writable(){
