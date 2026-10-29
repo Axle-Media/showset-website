@@ -117,7 +117,7 @@
   #main .film-steps{max-width:100%;min-height:380px}
   #main .film-step > p,
   #main .editorial-page.studio-rebuilt .studio-hero-scene > p{
-    max-width:100%;
+    max-width:min(660px,100%);
   }
 }
 @media(max-width:540px){
