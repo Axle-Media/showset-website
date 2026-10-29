@@ -693,10 +693,22 @@
     gap:clamp(12px,3vw,16px);
     margin-top:clamp(23px,6vw,29px);
   }
-  /* Studio: favour the writing and human work in the photo, rather than an
-     unnecessarily long empty image tail below the first story paragraph.
-     Do not change scroll timing, photo expansion or the second scene. */
-  .concept-12-root .studio-rebuilt .studio-hero-photo{
-    bottom:22%;
+}
+
+@media (max-width:370px) {
+  /* Keep the approved two-line headline even on 320px phones. */
+  .concept-12-root .contact-rebuilt .contact-editorial-heading{
+    font-size:clamp(25.5px,8vw,28px)!important;
+  }
+  /* Preserve the approved contact font size: reduce icon spacing and side
+     padding rather than breaking the WhatsApp label into two lines. */
+  .concept-12-root .contact-rebuilt .contact-whatsapp{
+    width:100%;
+    padding-inline:11px;
+    gap:6px;
+    white-space:nowrap;
+  }
+  .concept-12-root .contact-rebuilt .contact-whatsapp-arrow{
+    margin-left:0;
   }
 }
