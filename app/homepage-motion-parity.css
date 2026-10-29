@@ -48,7 +48,7 @@
 #main .dot-words h2{
   max-width:none;
   margin:0 auto;
-  font-size:clamp(48px,5.2vw,90px)!important;
+  font-size:clamp(48px,4.9vw,88px)!important;
   line-height:1.13!important;
   font-weight:700!important;
   letter-spacing:var(--v12-head-tracking,.018em)!important;
