@@ -25,8 +25,8 @@ Each control updates an existing `PageData` or `CaseExperience` field, with resp
 - Never replace the approved service, studio or case-study renderers with generic builder markup.
 - Never mutate seed images, media bytes or source copy as part of editing UI.
 - No DB migration, reset or replacement of existing browser-owned draft/revision/backups.
-- Existing service process stage count is preserved. Whole-section addition, deletion and arbitrary rearrangement **are not yet supported** for these tightly authored templates. Only custom builder pages currently offer unconstrained section composition.
-- Section bindings expose styling controls but do **not** promise arbitrary layout rearrangement or new section templates.
+- Existing service process stage count is preserved. New owner-created sections can be added, duplicated, reordered, hidden and deleted in the safe pre-CTA extension area. Eligible standard-flow editorial sections can be rebuilt at their exact native position with an archived reversible original. Arbitrary movement/deletion of approved cinematic sections is still prohibited.
+- Section bindings expose styling controls and only supported editorial sections offer native rebuilding. Pinned scroll choreography and template scene ordering remain owned by the approved renderer, not a generic drag-to-reorder control.
 - Case-study photographs in Our Work are read-only linked references. Edit the owning case study to change them.
 
 ## Safety gaps blocking online availability
@@ -36,10 +36,12 @@ Each control updates an existing `PageData` or `CaseExperience` field, with resp
 - Approval, preview, publication and rollback.
 - Static export reconciler for `asset:` IDs before release.
 - Audit/migration of all older classic-Studio-only fields.
-- General-purpose template section registry and safe layout composition, rather than changing section order in page data without ensuring the renderer reflects it.
+- Further native template coverage and safe layout composition, beyond reversible standard-flow replacement. Original animated or pinned sections are still protected.
 
 ## Verification
 
 `qa/studio2-existing-media.cjs` tests service, Studio, Work, case hero/gallery and linked-card image editing with reload; `qa/studio2-existing-text.cjs` tests stage descriptions, grouped capability names, Studio and case headings and paragraphs with persisted canonical storage. `qa/studio2-model.cjs` rejects references to originals absent from imported workspaces. These are run under the Studio 2.0 GitHub Actions job. General public-site visual QA remains a separate, historically failing baseline suite on `main`.
 
-Do not merge PR #83 until its Studio-specific checks are green. No deploy or public editor exposure is authorised by this development work.
+Native position acceptance: a rebuilt service introduction must appear immediately before its still-preserved original DOM anchor, not at the closing CTA; restoring it removes only the replacement wrapper, keeps owner edits archived, and puts the original section back. The build-time static renderer, hydrated public renderer and editor preview use the same compositor. Tests: `qa/studio2-native-rebuild.cjs` and `qa/studio2-public-template-parity.cjs`.
+
+Do not merge the Studio integration PR #81 into public main until its staging/security and website acceptance gates are met. No deployment or public editor exposure is authorised by this development work.
