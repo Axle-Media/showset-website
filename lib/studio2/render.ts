@@ -1,6 +1,7 @@
 import type { CanvasNode } from "./model";
 import type { Globals, PageData } from "../types";
 import { responsiveCss } from "./registry";
+import {galleryFocalCss} from "./image-focal";
 import { safeHref } from "../safe";
 export const escapeHtml = (value: unknown) =>
   String(value ?? "").replace(
@@ -134,7 +135,8 @@ export function renderNodes(
           .join("") +
         "</div>"
       );
-    if (node.kind === "gallery")
+    if (node.kind === "gallery") {
+      css+=galleryFocalCss(node.id,p.items||[]);
       return (
         "<div" +
         attrs +
@@ -142,7 +144,7 @@ export function renderNodes(
         (p.items || [])
           .map(
             (item) =>
-              "<figure>" +
+              '<figure data-gallery-item="' + escapeHtml(item.id) + '">' +
               image(item.src, item.alt) +
               (item.body
                 ? "<figcaption>" + escapeHtml(item.body) + "</figcaption>"
@@ -152,6 +154,7 @@ export function renderNodes(
           .join("") +
         "</div>"
       );
+    }
     if (node.kind === "video") {
       const src = mediaSource(p.src, urls);
       return src
