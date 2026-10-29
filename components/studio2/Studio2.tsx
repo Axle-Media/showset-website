@@ -713,7 +713,9 @@ export default function Studio2() {
                   type="file"
                   accept="image/png,image/jpeg,image/webp"
                   onChange={(e) => {
-                    if (e.target.files?.[0]) void upload(e.target.files[0]);
+                    const file = e.target.files?.[0];
+                    e.target.value = "";
+                    if (file) void upload(file);
                   }}
                 />
               </label>
