@@ -23,11 +23,13 @@
   font-family:var(--body-font)!important;
   font-size:17px!important;
   font-weight:500;
-  line-height:1.65!important;
+  line-height:var(--v12-body-leading)!important;
   letter-spacing:var(--v12-body-tracking)!important;
 }
-/* Description copy follows the same reading size, including related cards. */
-.concept-12-root .case-related-card-caption p {font-size:17px!important;}
+/* The two descriptions below “More stories worth exploring” are intentionally
+   14px, as specified by the existing case-study QA. Keep this exception
+   after the generic 17px body contract, so the final cascade cannot erase it. */
+.concept-12-root .case-related-card-caption p {font-size:14px!important;}
 .concept-12-root :is(.section-gutter,.service-gutter,.footer,.contact-view) {
   padding-inline:var(--gutter);
 }

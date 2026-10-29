@@ -2,6 +2,7 @@ const{chromium}=require(process.env.SHOWSET_PLAYWRIGHT_MODULE||'playwright'),fs=
 const base=process.env.SHOWSET_BASE_URL||'http://127.0.0.1:3003',out=process.env.SHOWSET_SERVICE_EVIDENCE_DIR||'qa-results/services';fs.mkdirSync(out,{recursive:true});const seed=JSON.parse(fs.readFileSync(path.join(__dirname,'../content/pages.json'))),slugs=['events-experiences','creative-design','digital-marketing','content-production'],checks=[],errors=[];
 const ck=(name,pass,detail)=>{checks.push({name,pass:!!pass,detail});console.log(pass?'PASS':'FAIL',name,detail??'')};
 const homeHeroByWidth=new Map();
+const homeEditorialByWidth=new Map();
 const getHeadingMetrics=el=>{const style=getComputedStyle(el);return {
   fontSize:style.fontSize,
   lineHeight:style.lineHeight,
@@ -113,13 +114,20 @@ if(!homeHeroByWidth.has(width)){
  const hp=await c.newPage();await hp.goto(base+'/');await hp.waitForSelector('[data-concept-ready=true]');
  await hp.evaluate(()=>document.fonts.ready);
  homeHeroByWidth.set(width,await hp.locator('.hero-title').evaluate(getHeadingMetrics));
+ homeEditorialByWidth.set(width,await hp.locator('.manifesto-heading-group h2').evaluate(getHeadingMetrics));
  await hp.close();
 }
 const serviceHeading=await p.locator('.service-hero h1').evaluate(getHeadingMetrics);
-const homepageHeading=homeHeroByWidth.get(width);
-ck('Service hero headline matches homepage font size, line spacing and tracking '+tag,
- Object.keys(homepageHeading).every(key=>serviceHeading[key]===homepageHeading[key]),
- {serviceHeading,homepageHeading});
+// Photographic hero headlines share the Home photo token. Creative and
+// Digital have approved illustrated/graphic openings, so they share the
+// editorial heading token instead of incorrectly being forced to photo size.
+const photographic=slug==='events-experiences'||slug==='content-production';
+const referenceHeading=photographic
+ ? homeHeroByWidth.get(width) : homeEditorialByWidth.get(width);
+ck('Service hero headline matches '+(photographic?'photo':'editorial')+
+   ' heading typography '+tag,
+ Object.keys(referenceHeading).every(key=>serviceHeading[key]===referenceHeading[key]),
+ {serviceHeading,referenceHeading});
 ck('Shared design typography '+tag,await p.locator('.service-hero-copy p').first().evaluate(e=>getComputedStyle(e).fontSize==='17px')&&await p.locator('.service-hero .solid-link').evaluate(e=>getComputedStyle(e).fontSize==='14px'));
 ck('All editable sections rendered '+tag,await p.locator('[data-service-section]').count()===page.sections.length);
 ck('Full expertise inventory '+tag,await p.locator('[data-service-capability]').evaluateAll((els,items)=>els.length===items.length&&els.every(el=>items.some(item=>item.id===el.dataset.capabilityId&&item.title===el.textContent.trim())),caps.items));
