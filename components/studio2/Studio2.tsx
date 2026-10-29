@@ -296,8 +296,7 @@ export default function Studio2() {
         ? findNode(page?.builder?.roots || [],parent) : undefined;
       if (!moved ||
         (!parent && moved.kind !== "section") ||
-        (parent && (!destination || destination.kind === "section" &&
-          destination.id !== id && false))) {
+        (parent && (!destination || moved.kind === "section"))) {
         editor.setError("Whole sections stay at page level; move individual elements inside an editable section.");
         return;
       }
@@ -351,22 +350,22 @@ export default function Studio2() {
       return;
     }
     if (name === "paste" && clipboard) {
-      if (page.builder?.mode !== "custom" && node.kind !== "section" &&
-          clipboard.kind === "section") {
-        editor.setError("Paste whole sections at page level or select the section itself.");
+      const copy = cloneNode(clipboard);
+      const template = page.builder?.mode !== "custom";
+      // A copied chapter is always inserted at page level. Other elements
+      // can be pasted only into an editable section or its containers.
+      const parent = template && copy.kind === "section" ? null :
+        isContainer(node.kind) ? node.id : null;
+      if (template && !parent && copy.kind !== "section") {
+        editor.setError("Select an editable section before pasting a nested element.");
         return;
       }
-      const copy = cloneNode(clipboard);
       updatePage(
         (p) => ({
           ...p,
           builder: {
             ...builderFor(p),
-            roots: insertNode(
-              builderFor(p).roots,
-              copy,
-              isContainer(node.kind) ? node.id : null,
-            ),
+            roots: insertNode(builderFor(p).roots,copy,parent),
           },
         }),
         "Paste element",
