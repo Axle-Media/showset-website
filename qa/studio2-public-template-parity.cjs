@@ -95,5 +95,5 @@ const staticSource=fs.readFileSync("lib/concept-12/document.ts","utf8");
 const clientSource=fs.readFileSync("components/ConceptSite.tsx","utf8");
 assert.match(staticSource,/applyTemplateExtensions\(host as unknown as HTMLElement,page\)/);
 assert.match(clientSource,/applyTemplateExtensions\(host,page\)/);
-assert.match(clientSource,/mountNodeMotion\(extension/);
+assert.match(clientSource,/mountNodeMotion\(host/);
 console.log("PASS approved editor chapters and reversible sections render in static and hydrated routes, without remounting unchanged sections.");
