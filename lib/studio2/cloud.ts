@@ -178,14 +178,27 @@ export class CloudStore {
     if(file.size>15*1024*1024||
       !["image/jpeg","image/png","image/webp","image/avif"].includes(file.type))
       throw Error("Only JPEG, PNG, WebP or AVIF images up to 15 MB may be uploaded.");
-    await this.request(
-      "/storage/v1/object/showset-studio-media/site/"+encodeURIComponent(id),{
-        method:"POST",headers:{"Content-Type":file.type,"x-upsert":"false"},
-        body:file,
-      },
-    );
+    try{
+      await this.request(
+        "/storage/v1/object/showset-studio-media/site/"+encodeURIComponent(id),{
+          method:"POST",headers:{"Content-Type":file.type,"x-upsert":"false"},
+          body:file,
+        },
+      );
+    }catch(error){
+      // Content-addressed originals are immutable, so the same photograph
+      // may already have been uploaded by another authorised owner.
+      if(!/already exists|duplicate/i.test((error as Error).message))
+        throw error;
+      const existing=await this.getOriginal({id});
+      const digest=[...new Uint8Array(await crypto.subtle.digest(
+        "SHA-256",await existing.arrayBuffer()))]
+        .map(byte=>byte.toString(16).padStart(2,"0")).join("");
+      if(id!=="asset-"+digest)
+        throw Error("Remote original has a different checksum.");
+    }
   }
-  async getOriginal(asset:MediaAsset):Promise<Blob>{
+  async getOriginal(asset:Pick<MediaAsset,"id">):Promise<Blob>{
     if(!/^asset-[a-f0-9]{64}$/.test(asset.id))
       throw Error("Invalid media ID in shared workspace.");
     return this.request<Blob>(
