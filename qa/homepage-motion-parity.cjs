@@ -48,8 +48,14 @@ const check=(name,ok,detail)=>{checks.push({name,pass:!!ok,detail});console.log(
       dotRect:rect(dot),overlayRect:rect(overlay),
       dotBaseColour:getComputedStyle(dot.querySelector('.dot-line-primary')).color,
       dotAccentColour:getComputedStyle(dot.querySelector('.dot-line-accent')).color,
+      dotEmphasisColour:getComputedStyle(dot.querySelector('em')).color,
+      dotPeriods:[...dot.querySelectorAll('h2 em span')].map(n=>getComputedStyle(n).color),
+      dotParagraphSize:parseFloat(getComputedStyle(dot.querySelector('p')).fontSize),
+      dotParagraphLineHeight:parseFloat(getComputedStyle(dot.querySelector('p')).lineHeight),
       dotRevealedColour:getComputedStyle(overlay.querySelector('.dot-line-primary')).color,
       dotRevealedAccent:getComputedStyle(overlay.querySelector('.dot-line-accent')).color,
+      dotRevealedPeriods:[...overlay.querySelectorAll('h2 em span')].map(n=>getComputedStyle(n).color),
+      dotOverlayParagraphSize:parseFloat(getComputedStyle(overlay.querySelector('p')).fontSize),
       overlayA11yHidden:overlay.closest('[aria-hidden]')?.getAttribute('aria-hidden'),
       footerWidth:wordmark.getBoundingClientRect().width,
       documentWidth:document.documentElement.scrollWidth
@@ -72,11 +78,22 @@ const check=(name,ok,detail)=>{checks.push({name,pass:!!ok,detail});console.log(
       geometry.dotCentre==='center' && geometry.dotSize>=(width>1200?65:width>600?38:29),{
         fontSize:geometry.dotSize,alignment:geometry.dotCentre
       });
-   check('Dot text has contrasting colours in both states '+width,
-      geometry.dotBaseColour==='rgb(250, 249, 253)' &&
+   check('Dot typography retains turquoise lead-in, sand emphasis and turquoise periods '+width,
+      geometry.dotBaseColour==='rgb(18, 186, 175)' &&
       geometry.dotAccentColour==='rgb(18, 186, 175)' &&
+      geometry.dotEmphasisColour==='rgb(231, 214, 185)' &&
+      geometry.dotPeriods.length===2 &&
+      geometry.dotPeriods.every(color=>color==='rgb(18, 186, 175)'),geometry);
+   check('Dot supporting text is prominent, including inside colour reveal '+width,
+      geometry.dotParagraphSize>=18 &&
+      geometry.dotParagraphSize<=23.5 &&
+      geometry.dotParagraphLineHeight>=geometry.dotParagraphSize*1.45 &&
+      Math.abs(geometry.dotParagraphSize-geometry.dotOverlayParagraphSize)<1,geometry);
+   check('Revealed dot text and punctuation remain readable on teal '+width,
       geometry.dotRevealedColour==='rgb(6, 38, 58)' &&
-      geometry.dotRevealedAccent==='rgb(6, 38, 58)',geometry);
+      geometry.dotRevealedAccent==='rgb(6, 38, 58)' &&
+      geometry.dotRevealedPeriods.length===2 &&
+      geometry.dotRevealedPeriods.every(color=>color==='rgb(250, 249, 253)'),geometry);
    check('Footer approved wordmark enlarged without horizontal overflow '+width,
       geometry.footerWidth>=(width>800?250:width>600?225:205) &&
       geometry.documentWidth<=width+2,{
