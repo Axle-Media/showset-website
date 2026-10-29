@@ -74,6 +74,18 @@ function ck(label,pass,detail){
               return {selector,height:r.height,width:r.width};
             }));
           const footer=document.querySelector('.footer-identity > p');
+          const footerIdentity=document.querySelector('.footer-identity');
+          const footerDiscover=document.querySelector('.footer-links > div:first-child');
+          const footerWhat=document.querySelector('.footer-links > div:nth-child(2)');
+          const footerContact=document.querySelector('.footer-contact');
+          const rect=e=>{const r=e?.getBoundingClientRect();return r?
+            {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height}:null};
+          const footerColumns={
+            discoverVisible:footerDiscover?visible(footerDiscover):null,
+            whatVisible:footerWhat?visible(footerWhat):null,
+            contactVisible:footerContact?visible(footerContact):null,
+            identity:rect(footerIdentity),what:rect(footerWhat),contact:rect(footerContact)
+          };
           const contactIntro=root.querySelector('.contact-intro');
           const contactLabel=root.querySelector('.contact-form label');
           const viewport=document.documentElement.scrollWidth;
@@ -84,6 +96,7 @@ function ck(label,pass,detail){
           return {
             text,images,viewport,body,windowWidth:innerWidth,rootWidth:root.getBoundingClientRect().width,
             footerWrap:footer?getComputedStyle(footer).whiteSpace:'',
+            footerColumns,
             contactIntroAlign:contactIntro?getComputedStyle(contactIntro).textAlign:null,
             contactLabelAlign:contactLabel?getComputedStyle(contactLabel).textAlign:null,
             contactColumns:contactShell?getComputedStyle(contactShell).gridTemplateColumns:null,
@@ -102,10 +115,22 @@ function ck(label,pass,detail){
             found.length>0&&found.every(n=>n.align==='center'),found.filter(n=>n.align!=='center'));
           ck('Footer sign-off wraps safely: '+tag,result.footerWrap==='normal',
             result.footerWrap);
+          const foot=result.footerColumns;
+          ck('Mobile Discover hidden, service and Contact columns share row: '+tag,
+            foot.discoverVisible===false&&foot.whatVisible&&foot.contactVisible
+            &&foot.what&&foot.contact&&foot.identity
+            &&Math.abs(foot.what.top-foot.contact.top)<=3
+            &&foot.what.right<=foot.contact.left+2
+            &&foot.identity.bottom<=foot.what.top,
+            foot);
           if(name==='contact'){
             ck('Contact details centred; form labels still left-aligned: '+tag,
               result.contactIntroAlign==='center'&&result.contactLabelAlign==='left',result);
           }
+        }
+        if(width>=768){
+          ck('Tablet and desktop footer Discover remains visible: '+tag,
+            result.footerColumns.discoverVisible===true,result.footerColumns);
         }
         if(width>=768&&width<=900&&name==='contact'){
           ck('Contact stacks rather than squeezing tablet form: '+tag,
@@ -132,6 +157,10 @@ function ck(label,pass,detail){
           // Viewport screenshot per route plus a content section on the key pages.
           await page.screenshot({path:'qa-results/mobile-tablet/'+name+'-'+width+'.png',
             animations:'disabled'});
+          if(name==='home'){
+            await page.locator('.footer-head').screenshot({
+              path:'qa-results/mobile-tablet/footer-'+width+'.png',animations:'disabled'});
+          }
           const selector={
             home:'#portfolio-section',studio:'.studio-exploration-storyboard',
             work:'.work-page-gallery',events:'.service-story--events',
