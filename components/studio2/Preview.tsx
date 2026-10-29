@@ -10,6 +10,7 @@ import {
   bindingContent,
 } from "@/lib/studio2/bindings";
 import { readStore, mediaUrls } from "@/lib/studio2/storage";
+import { caseExperienceFor } from "@/lib/concept-12/case-content";
 export interface CanvasState {
   workspace: Workspace;
   slug: string;
@@ -102,6 +103,20 @@ export default function Preview() {
       const page = state.workspace.pages[state.slug];
       if (page.builder?.mode !== "custom")
         applyTemplateOverrides(root, page, true, state.urls);
+      // The case study owns its opening photograph everywhere it appears.
+      // Reflect unpublished local originals in linked Home, Our Work and
+      // related-story cards instead of creating a second editable copy.
+      for (const link of root.querySelectorAll<HTMLAnchorElement>('a[href^="/work/"]')) {
+        const project = Object.values(state.workspace.pages).find(
+          (entry) => entry.route === link.getAttribute("href"),
+        );
+        if (!project) continue;
+        const source = caseExperienceFor(project).openingImage;
+        if (!source.startsWith("asset:")) continue;
+        const url = state.urls[source.slice(6)];
+        const image = link.querySelector<HTMLImageElement>("img");
+        if (url && image && image.getAttribute("src") !== url) image.src = url;
+      }
       root
         .querySelectorAll("[data-studio2-image-handle]")
         .forEach((element) => element.remove());

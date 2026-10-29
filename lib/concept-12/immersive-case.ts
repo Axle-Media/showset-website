@@ -28,7 +28,7 @@ function storyVisual(chapters:CaseStoryChapter[]) {
 
 export function renderImmersiveCase(host:HTMLElement,page:PageData,catalog:Record<string,PageData>) {
  const view=host.querySelector<HTMLElement>('.view[data-view="case-study"]');if(!view)return;
- const s=caseExperienceFor(page),gallery=s.gallery.filter(p=>safeHref(p.src)!=="#").map(photo=>({
+ const s=caseExperienceFor(page),gallery=s.gallery.filter(p=>p.src.startsWith("asset:")||safeHref(p.src)!=="#").map(photo=>({
   // Old local drafts predate per-image credits. Retain the matching seed credit
   // without replacing custom copy, order, media or explicitly edited credit data.
   ...defaultPages[page.slug]?.caseExperience?.gallery.find(seed=>seed.src===photo.src),

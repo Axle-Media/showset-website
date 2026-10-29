@@ -90,6 +90,32 @@ assert.throws(() => assertWorkspace(w), /Duplicate/);
 w.pages.qa.builder.roots = [];
 w.pages.qa.route = "/";
 assert.throws(() => assertWorkspace(w), /unique/);
+// Case studies and legacy project modules must never refer to missing originals.
+const missingCase = {
+  ...w,
+  pages: structuredClone(safe),
+};
+missingCase.pages["made-to-be-remembered"].caseExperience.gallery[0].src =
+  "asset:asset-" + "a".repeat(64);
+assert.throws(() => assertWorkspace(missingCase), /missing from the media library/);
+const missingChapter = {
+  ...w,
+  pages: structuredClone(safe),
+};
+missingChapter.pages["made-to-be-remembered"].caseExperience.brief.image =
+  "asset:asset-" + "b".repeat(64);
+assert.throws(() => assertWorkspace(missingChapter), /missing from the media library/);
+const missingModule = {
+  ...w,
+  pages: structuredClone(safe),
+};
+missingModule.pages["made-to-be-remembered"].projectModules = [{
+  id: "test", kind: "image", title: "Missing original",
+  src: "asset:asset-" + "c".repeat(64),
+}];
+assert.throws(() => assertWorkspace(missingModule), /missing from the media library/);
+console.log("PASS protected case/gallery and project media references reject missing originals.");
+
 console.log(
   "PASS model CRUD, nesting/cycle/lock/route guards, CSS allowlist and escaped rendering.",
 );
