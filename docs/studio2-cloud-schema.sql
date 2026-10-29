@@ -97,6 +97,16 @@ $$;
 revoke all on function public.showset_studio_publish(bigint) from public,anon;
 grant execute on function public.showset_studio_publish(bigint) to authenticated;
 
+-- Explicit Data API grants: SQL grants and RLS are independent. Never
+-- allow anonymous access to draft, membership or release records.
+revoke all on public.showset_studio_members,
+  public.showset_studio_workspaces,
+  public.showset_studio_releases from anon;
+grant select on public.showset_studio_members to authenticated;
+grant select,insert,update on public.showset_studio_workspaces to authenticated;
+grant select,insert on public.showset_studio_releases to authenticated;
+grant usage,select on sequence public.showset_studio_releases_id_seq to authenticated;
+
 -- A private Storage bucket named showset-studio-media must be created
 -- using Supabase Storage API/Dashboard, not by editing storage metadata.
 -- Membership is checked against owner-controlled rows (NOT user_metadata).
