@@ -103,9 +103,8 @@ export function templateBindings(page: PageData): Binding[] {
     return bindings;
   }
   if (page.route === "/contact/") {
-    const contact = section("contact");
-    if (contact?.image) image("contact-photo", "Contact photograph",
-      ".contact-photo img", contact.id);
+    // The approved Contact composition currently has no photograph.
+    // Do not create a dead replacement control for its unused seed field.
     return bindings;
   }
   if (page.route.startsWith("/work/")) {
