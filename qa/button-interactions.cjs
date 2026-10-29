@@ -36,7 +36,9 @@ function state(el) {
   const s = getComputedStyle(el);
   return {
     background: s.backgroundColor, color: s.color, border: s.borderTopColor,
-    fontSize: s.fontSize, fontWeight: s.fontWeight, transform: s.transform
+    fontSize: s.fontSize, fontWeight: s.fontWeight, transform: s.transform,
+    borderGlow: getComputedStyle(el, '::before').animationName,
+    borderGlowOpacity: getComputedStyle(el, '::before').opacity
   };
 }
 (async () => {
@@ -80,7 +82,12 @@ function state(el) {
         const expectation = expected[type];
         check(type + ' hover matches contract ' + route,
           Object.entries(expectation).every(([key,value]) => computed[key] === value) &&
-          (type !== 'primary' || computed.fontSize === '14px'),
+          (type !== 'primary' || (
+            computed.fontSize === '14px' &&
+            computed.transform === 'none' &&
+            computed.borderGlow === 'showset-button-border-orbit' &&
+            Number(computed.borderGlowOpacity) > 0
+          )),
           { computed, expectation });
         coverage[type]++;
         await page.mouse.move(0, 0);
@@ -108,7 +115,9 @@ function state(el) {
     if (motionCTA) {
       await motionCTA.hover();
       const style = await motionCTA.evaluate(state);
-      check('Primary CTA does not lift in reduced-motion mode', style.transform === 'none', style);
+      check('Reduced motion: primary CTA is stationary and its border light is disabled',
+        style.transform === 'none' && style.borderGlow === 'none' &&
+        Number(style.borderGlowOpacity) === 0, style);
     }
     await motionPage.close();
     check('No browser exceptions', errors.length === 0, errors);
