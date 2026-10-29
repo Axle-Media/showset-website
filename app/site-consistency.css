@@ -105,3 +105,15 @@
 @media (min-width:1321px) and (max-width:1600px) {
  .concept-12-root .header-cta {gap:12px;}
 }
+
+
+/* Studio-specific overrides must win over the global editorial heading scale.
+   These rules activate ONLY when the editor sets a custom size on a section. */
+.concept-12-root #main .c12-custom-heading :is(h1,h2){
+  font-size:var(--c12-heading)!important;
+}
+@media(max-width:800px){
+  .concept-12-root #main .c12-mobile-heading :is(h1,h2){
+    font-size:var(--c12-mobile-heading)!important;
+  }
+}
