@@ -227,14 +227,15 @@ alteredCrop.props.items[0].focal.desktop="100% 12%;color:red";
 assert.ok(!render.renderNodes([alteredCrop]).includes("color:red"),
   "Unvalidated focal settings may not enter CSS");
 const mediaPages=structuredClone(require("../content/pages.json"));
+const cropSection=makeNode("section");cropSection.children=[cropGallery];
 mediaPages.home.builder={schemaVersion:2,mode:"template",overrides:{},
-  roots:[cropGallery]};
+  roots:[cropSection]};
 const mediaWorkspace={schemaVersion:2,revision:0,pages:mediaPages,globals:g,
   media:[],updatedAt:""};
 assertWorkspace(mediaWorkspace);
-mediaPages.home.builder.roots[0].props.items[0].focal.mobile="105% 0%";
+cropGallery.props.items[0].focal.mobile="105% 0%";
 assert.throws(()=>assertWorkspace(mediaWorkspace),/Invalid repeated content/);
-mediaPages.home.builder.roots[0].props.items[0].focal.mobile="95% 0%";
+cropGallery.props.items[0].focal.mobile="95% 0%";
 assertWorkspace(mediaWorkspace);
 const replacement=cloneNode(cropGallery);
 assert.notEqual(replacement.props.items[0].id,cropGallery.props.items[0].id);
