@@ -62,6 +62,31 @@ create policy "Publishers record immutable releases" on public.showset_studio_re
         and m.role in ('owner','publisher')));
 -- No UPDATE or DELETE policy on releases. Rollback creates a new release.
 
+-- Server-side verification applies even if an authorised publisher uses
+-- the REST insert endpoint directly rather than our approval UI.
+create or replace function public.showset_studio_verify_release()
+returns trigger language plpgsql security invoker
+set search_path = public, pg_temp as $
+declare
+  stored_revision bigint;
+  stored_document jsonb;
+begin
+  select revision,document into stored_revision,stored_document
+    from public.showset_studio_workspaces where id='site' for share;
+  if not found or new.source_revision <> stored_revision or
+      new.snapshot is distinct from stored_document then
+    raise exception 'Release must match the current saved shared draft'
+      using errcode = '40001';
+  end if;
+  return new;
+end;
+$;
+revoke all on function public.showset_studio_verify_release() from public,anon;
+drop trigger if exists showset_studio_release_source on public.showset_studio_releases;
+create trigger showset_studio_release_source
+  before insert on public.showset_studio_releases
+  for each row execute function public.showset_studio_verify_release();
+
 -- Atomic approval checkpoint. Records the saved server-side document,
 -- never an arbitrary client-provided snapshot. Immutable releases are
 -- source artifacts; they do not automatically redeploy a static public site.
