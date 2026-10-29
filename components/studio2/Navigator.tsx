@@ -242,17 +242,34 @@ export default function Navigator({
                   </li>
                 ))}
             </ul>
-            {!bindings.length && (
+            <div className="s2-template-builder">
+              <h3>Added sections</h3>
               <p className="s2-hint">
-                This template’s element controls are scheduled for the next
-                coverage phase. <a href="/studio/">Open classic Studio</a> to
-                edit its existing fields.
+                Your new chapters sit before the native closing section.
+                Drag or use Move up/down to reorder your added chapters.
+                Original cinematic sections stay protected.
               </p>
-            )}
+              {tree(page.builder?.roots || [])}
+              {!(page.builder?.roots || []).length && (
+                <div className="s2-empty">
+                  <p>Build a new chapter without changing the approved page.</p>
+                  <button onClick={() => onAdd("section")}>
+                    + Add editorial section
+                  </button>
+                </div>
+              )}
+            </div>
           </>
         ))}
       {tab === "Add" && (
         <div className="s2-library">
+          {page.builder?.mode !== "custom" && (
+            <p className="s2-hint">
+              Add a full section, or select an added section to place
+              headings, photographs, text and interactive elements inside it.
+              Existing SHOWSET scenes will not be overwritten.
+            </p>
+          )}
           {Object.entries(registry)
             .filter(([, v]) =>
               (v.label + " " + v.description)
