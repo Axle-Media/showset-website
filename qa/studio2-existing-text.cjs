@@ -30,7 +30,12 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001";
         .filter({hasText:name}).first().click();
     };
     const edit = async (label, value) => {
-      const field = page.getByLabel(label,{exact:true}).first();
+      // Template narrative text is a multiline textarea. Query its semantic
+      // inspector panel instead of depending on exact label normalisation.
+      await page.getByRole("button",{name:"Content",exact:true}).click();
+      const field = label==="Text"
+        ? page.locator('.s2-inspector .s2-field textarea').first()
+        : page.getByLabel(label,{exact:true}).first();
       await field.fill(value);
       await field.blur();
     };
