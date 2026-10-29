@@ -119,6 +119,8 @@ export default function Inspector({
 }) {
   const [tab, setTab] = useState("Content");
   useEffect(() => setTab("Content"), [node?.id, binding?.id]);
+  const anchoredOriginal = !!node && page.builder?.mode==="template" &&
+    Object.values(page.builder.nativeReplacementNodes||{}).includes(node.id);
   const styles = (node || override)?.styles?.[breakpoint] || {},
     pattern =
       (node || override)?.patterns?.[breakpoint] ||
@@ -942,8 +944,13 @@ export default function Inspector({
       )}
       {node && (
         <div className="s2-element-actions">
-          <button onClick={() => onAction("up")}>Move up</button>
-          <button onClick={() => onAction("down")}>Move down</button>
+          {anchoredOriginal ? <p className="s2-hint">
+            This rebuilt section stays at the original page position.
+            Its inner elements can still be reordered.
+          </p> : <>
+            <button onClick={() => onAction("up")}>Move up</button>
+            <button onClick={() => onAction("down")}>Move down</button>
+          </>}
           <button onClick={() => onAction("duplicate")}>Duplicate</button>
           <button onClick={() => onAction("copy")}>Copy</button>
           <button onClick={() => onAction("paste")}>Paste</button>

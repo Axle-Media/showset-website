@@ -25,6 +25,19 @@ const base=process.env.SHOWSET_BASE_URL||"http://localhost:3001";
     const rebuilt=frame.locator(".s2-template-extensions > section");
     await rebuilt.waitFor();
     assert.equal(await rebuilt.count(),1);
+    await p.getByText("This rebuilt section stays at the original page position.",
+      {exact:false}).waitFor();
+    assert.equal(await p.locator(".s2-element-actions button").filter(
+      {hasText:"Move up"}).count(),0,
+      "Anchored section must not offer a visually ineffective move operation");
+    const replacement=frame.locator('[data-studio2-native-extension="section-2"]');
+    assert.equal(await replacement.evaluate(el=>{
+      const next=el.nextElementSibling;
+      return next?.dataset.serviceSection==="section-2"||
+        next?.dataset.section==="section-2";
+    }),true,"Rebuilt intro must render directly before its own native anchor");
+    assert.equal(await frame.locator('[data-studio2-template-extensions="true"]').count(),0,
+      "A native replacement must not be appended to the closing CTA");
     assert.equal(await frame.locator(".service-intro").evaluate(el=>
       el.style.getPropertyValue("display")),"none");
     assert.equal(await frame.locator(".service-event-triptych-image").count(),3);
@@ -59,6 +72,8 @@ const base=process.env.SHOWSET_BASE_URL||"http://localhost:3001";
     });
     assert.equal(await frame.locator(".s2-template-extensions > section").count(),0,
       "Restore original must hide the replacement chapter, not display both");
+    assert.equal(await replacement.count(),0,
+      "Restore must remove the native slot wrapper as well");
     // Undo/Redo are reversible and preserve original content.
     await p.getByRole("button",{name:"Undo",exact:true}).click();
     await p.waitForFunction(()=>{
@@ -77,10 +92,15 @@ const base=process.env.SHOWSET_BASE_URL||"http://localhost:3001";
     await rebuilt.waitFor();
     assert.equal(await rebuilt.count(),1,
       "Rebuilding must recover the archived chapter without duplicates");
+    assert.equal(await replacement.evaluate(el=>{
+      const next=el.nextElementSibling;
+      return next?.dataset.serviceSection==="section-2"||
+        next?.dataset.section==="section-2";
+    }),true,"Rebuilt section must return to exactly the same page position");
     assert.equal(await frame.locator(".service-intro").evaluate(el=>
       el.style.getPropertyValue("display")),"none");
     assert.deepEqual(errors,[]);
     await context.close();
-    console.log("PASS reversible native editorial rebuilding, restore, undo/redo and persisted source data.");
+    console.log("PASS in-place native editorial rebuilding, restore, undo/redo, stable placement and persisted source data.");
   }finally{await browser.close();}
 })().catch(error=>{console.error(error);process.exit(1);});

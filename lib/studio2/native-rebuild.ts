@@ -113,15 +113,31 @@ export function restoreNativeBlock(page:PageData,id:string):PageData{
       : builder.nativeReplacementNodes,
   }};
 }
+/**
+ * Resolve only verified, active native replacements. Stored replacement roots
+ * are immutable anchors: an archived replacement is retained but never shown.
+ * Legacy local drafts without an ID map are resolved by their original name.
+ */
+export function activeNativeReplacements(page:PageData):
+  {sourceId:string;node:CanvasNode}[]{
+  const builder=builderFor(page);
+  return (builder.replacedNative||[]).flatMap(sourceId=>{
+    const block=page.sections.find(section=>section.id===sourceId);
+    if(!block||!canReplaceNative(page,block))return [];
+    const id=builder.nativeReplacementNodes?.[sourceId];
+    const node=builder.roots.find(root=>root.id===id)||
+      (!id ? builder.roots.find(root=>root.name===
+        "Rebuilt: "+(block.headline||block.type)) : undefined);
+    if(!node||node.kind!=="section"||node.hidden)return [];
+    return [{sourceId,node}];
+  });
+}
+
 /** The native node stays in the DOM: no animated scene is destroyed. */
 export function syncNativeReplacementVisibility(
   host:HTMLElement,page:PageData,
 ):void{
-  const builder=builderFor(page);
-  const hidden=new Set((builder.replacedNative||[]).filter(id=>{
-    const block=page.sections.find(s=>s.id===id);
-    return !!block&&canReplaceNative(page,block);
-  }));
+  const hidden=new Set(activeNativeReplacements(page).map(item=>item.sourceId));
   const selector="[data-section],[data-service-section]";
   host.querySelectorAll<HTMLElement>(selector).forEach(el=>{
     const id=el.dataset.section||el.dataset.serviceSection;

@@ -305,6 +305,10 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
   const move = (id: string, parent: string | null, index: number) => {
     if (!page) return;
     if (page.builder?.mode !== "custom") {
+      if(Object.values(page.builder?.nativeReplacementNodes||{}).includes(id)){
+        editor.setError("Rebuilt sections stay in the original page position. Reorder their inner elements or restore the original.");
+        return;
+      }
       const roots = builderFor(page).roots;
       const moved = findNode(roots,id);
       const destination = parent ? findNode(roots,parent) : null;
@@ -432,6 +436,11 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
       return;
     }
     if (name === "up" || name === "down") {
+      if(page.builder?.mode!=="custom" &&
+          Object.values(page.builder?.nativeReplacementNodes||{}).includes(node.id)){
+        editor.setError("Rebuilt sections remain anchored to their original position. Reorder their inner elements instead.");
+        return;
+      }
       const scan = (nodes: CanvasNode[]): CanvasNode[] => {
         const index = nodes.findIndex((n) => n.id === node.id);
         if (index >= 0) {

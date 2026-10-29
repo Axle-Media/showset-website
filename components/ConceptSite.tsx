@@ -158,7 +158,7 @@ function TemplateSiteLayout({
       if (!editor && page.builder?.mode === "template") {
         const extension = applyTemplateExtensions(host,page);
         authoredMotion.current?.();
-        authoredMotion.current = extension ? mountNodeMotion(extension,
+        authoredMotion.current = extension ? mountNodeMotion(host,
           nodeMotions(page),g.motion.enabled&&!reduced) : null;
       }
     } catch (error) {
@@ -211,7 +211,7 @@ function TemplateSiteLayout({
     authoredMotion.current=null;
     if (!editor && page.builder?.mode === "template") {
       const extension=applyTemplateExtensions(host,page);
-      authoredMotion.current=extension ? mountNodeMotion(extension,
+      authoredMotion.current=extension ? mountNodeMotion(host,
         nodeMotions(page),g.motion.enabled&&!reduced) : null;
     }
     rendered.current=context;

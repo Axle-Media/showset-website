@@ -33,6 +33,12 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001";
   assert.equal(await frame.locator(".s2-template-extensions").evaluate(
     e=>e.nextElementSibling?.classList.contains("service-close")),true);
   await p.getByRole("button",{name:"Select Heading",exact:true}).first().click();
+  // The template inspector re-syncs on selection. It must not remove the
+  // separate stylesheet generated for owner-authored builder content.
+  await p.waitForTimeout(200);
+  assert.equal(await frame.locator(
+    ".s2-template-extensions style[data-studio2-builder-style]").count(),1,
+    "Selecting an element must not strip authored CSS");
   assert.equal(await frame.locator(".s2-template-extensions > section.s2-node-section")
     .evaluate(node=>node===window.__showsetOriginalSection),true,
     "selection must preserve existing section DOM");

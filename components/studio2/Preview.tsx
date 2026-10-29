@@ -126,7 +126,7 @@ export default function Preview() {
         const extension = applyTemplateExtensions(root, page, state.urls);
         if (extension)
           disposeTemplateMotion = mountNodeMotion(
-            extension,
+            root,
             nodeMotions(page),
             state.interactive && state.workspace.globals.motion.enabled,
           );
