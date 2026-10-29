@@ -40,7 +40,7 @@ function check(name,pass,detail){results.push({name,pass:!!pass,detail});console
      check('Labels remain inside their artwork frame '+width,metrics.labelsWithinArt,metrics);
    }else{
      check('Mobile Digital illustration stays in stacked layout '+width,
-       metrics.position==='relative'&&metrics.right==='auto',metrics);
+       metrics.position==='relative'&&Math.abs(metrics.artRight-metrics.copyLeft)<2,metrics);
    }
    check('No document-wide horizontal overflow '+width,
      metrics.documentWidth<=width+2,metrics.documentWidth);
