@@ -342,7 +342,9 @@ export default function Inspector({
                     type="file"
                     accept="image/png,image/jpeg,image/webp"
                     onChange={(e) => {
-                      if (e.target.files?.[0]) onUpload(e.target.files[0]);
+                      const file = e.target.files?.[0];
+                      e.target.value = "";
+                      if (file) onUpload(file);
                     }}
                   />
                 </label>
