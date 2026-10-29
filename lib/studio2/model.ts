@@ -608,7 +608,7 @@ export function assertWorkspace(value: unknown): asserts value is Workspace {
       throw Error("Invalid reusable section library.");
     const libraryIds=new Set<string>();
     for(const item of w.sectionLibrary){
-      if(!item || !/^[\\w-]{1,100}$/.test(item.id) ||
+      if(!item || !/^[\w-]{1,100}$/.test(item.id) ||
           libraryIds.has(item.id) || typeof item.name!=="string" ||
           !item.name.trim() || item.name.length>100 ||
           typeof item.createdAt!=="string" ||
