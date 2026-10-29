@@ -47,6 +47,7 @@ jobs:
             if curl --fail --silent http://127.0.0.1:3001/ >/dev/null; then break; fi
             sleep 1
           done
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/digital-hero-position.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/studio-scroll-hero.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/studio-heading-alignment.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/closing-cta-parity.cjs
@@ -72,6 +73,8 @@ jobs:
         with:
           name: showset-home-work-browser-qa
           path: |
+            qa-results/digital-hero-position.json
+            qa-results/digital-hero-position/
             qa-results/service-motion/
             qa-results/photo-headline-swipe.json
             qa-results/non-photo-headlines.json
