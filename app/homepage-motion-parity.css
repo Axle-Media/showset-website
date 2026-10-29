@@ -55,15 +55,22 @@
   text-align:center!important;
   color:var(--teal)!important;
 }
-#main .dot-words h2 .dot-line-primary{color:var(--ice)!important}
+/* Before the dot expands: turquoise lead-in and punctuation;
+   warm sand emphasises the two key words. The overlay below keeps its
+   separate high-contrast colours once the teal circle passes the text. */
+#main .dot-words h2 .dot-line-primary{color:var(--teal)!important}
 #main .dot-words h2 .dot-line-accent{color:var(--teal)!important}
 #main .dot-words h2 em{font-style:normal;color:var(--sand)!important}
-#main .dot-words h2 em span{color:var(--ice)!important}
+#main .dot-words h2 em span{color:var(--teal)!important}
 #main .dot-words > p{
   max-width:870px;
   margin:clamp(22px,3vw,38px) auto 0!important;
   text-align:center!important;
   color:var(--ice)!important;
+  font-size:clamp(18px,1.55vw,23px)!important;
+  line-height:1.55!important;
+  font-weight:600!important;
+  letter-spacing:0!important;
 }
 
 /* A second, accessibility-hidden copy is revealed only inside the expanding
