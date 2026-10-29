@@ -22,10 +22,15 @@ const ck=(name,pass,detail)=>{checks.push({name,pass:!!pass,detail});console.log
       return {text:p.textContent,hardBreaks:p.querySelectorAll('br').length,first:a,second:b,
        size:parseFloat(css.fontSize),whiteSpace:css.whiteSpace,container:p.parentElement.getBoundingClientRect().width};
     });
-    ck('Footer statement stays exactly two lines on '+route+' at '+width,
-      footer.hardBreaks===1&&footer.first.length===1&&footer.second.length===1
-      &&footer.first[0].top<footer.second[0].top
-      &&footer.size>=12&&footer.size<=14&&footer.whiteSpace==='nowrap',footer);
+    // Desktop/tablet retain the approved deliberate two-line sign-off.
+    // On narrow phones, allow natural wrapping to avoid clipping or page overflow.
+    const responsiveFooter=width<=600;
+    ck('Footer statement remains readable and wraps safely on '+route+' at '+width,
+      footer.hardBreaks===1&&footer.first.length>0&&footer.second.length>0
+      &&footer.first.at(-1).top<footer.second[0].top
+      &&footer.size>=12&&footer.size<=14
+      &&(responsiveFooter?footer.whiteSpace==='normal':
+          footer.whiteSpace==='nowrap'&&footer.first.length===1&&footer.second.length===1),footer);
     ck('Footer fits viewport on '+route+' at '+width,
       await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
     if(width===1440&&slug==='events-experiences'){
