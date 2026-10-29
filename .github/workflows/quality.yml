@@ -130,6 +130,7 @@ jobs:
         run: |
           node qa/studio2-model.cjs
           node qa/studio2-cloud-contract.cjs
+          node qa/studio2-release.cjs
       - name: Install isolated browser tooling
         run: |
           npm install --no-save --no-package-lock playwright
