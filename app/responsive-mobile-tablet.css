@@ -720,3 +720,63 @@
     margin-left:0;
   }
 }
+
+
+/* Mobile service-story sequences: the desktop timeline rail and milestone dots
+   become visual clutter once the scenes stack. Keep every stage, label, heading
+   and paragraph, but place the complete sequence on a centred reading axis. */
+@media (max-width:600px) {
+  .concept-12-root .service-story--events .service-event-triptych-notes,
+  .concept-12-root :is(.service-story--production,.service-story--digital) .service-production-timeline{
+    width:100%;
+    min-width:0;
+    padding:0;
+    margin-inline:auto;
+    align-items:center;
+    text-align:center;
+  }
+
+  /* Remove both the background rail and animated highlight rail. */
+  .concept-12-root .service-story--events .service-event-triptych-notes::before,
+  .concept-12-root .service-story--events .service-event-triptych-notes::after,
+  .concept-12-root :is(.service-story--production,.service-story--digital) .service-production-timeline::before,
+  .concept-12-root :is(.service-story--production,.service-story--digital) .service-production-timeline::after,
+  .concept-12-root .service-story--events .service-event-triptych-note::before,
+  .concept-12-root :is(.service-story--production,.service-story--digital) .service-production-step::before{
+    content:none!important;
+    display:none!important;
+  }
+
+  .concept-12-root .service-story--events .service-event-triptych-note.service-scene-copy,
+  .concept-12-root :is(.service-story--production,.service-story--digital) .service-production-step{
+    width:100%;
+    min-width:0;
+    padding:0;
+    margin-inline:auto;
+    text-align:center;
+  }
+  .concept-12-root :is(.service-story--production,.service-story--digital) .service-production-step-trigger{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+    min-width:0;
+    padding:0;
+    text-align:center;
+  }
+
+  .concept-12-root .service-story--events .service-event-triptych-note :is(.service-category,h3,p),
+  .concept-12-root :is(.service-story--production,.service-story--digital) .service-production-step :is(.service-category,h3,p){
+    text-align:center!important;
+    max-width:100%;
+  }
+  .concept-12-root .service-story--events .service-event-triptych-note :is(.service-category,h3,p),
+  .concept-12-root :is(.service-story--production,.service-story--digital) .service-production-step :is(.service-category,h3,p){
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .concept-12-root .service-story--events .service-event-triptych-note p,
+  .concept-12-root :is(.service-story--production,.service-story--digital) .service-production-step p{
+    max-width:min(55ch,100%);
+  }
+}
