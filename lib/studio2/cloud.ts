@@ -88,11 +88,20 @@ export class CloudStore {
       this.role=member.role;
       return {id:response.user.id,email:response.user.email||email,role:member.role};
     }catch(error){
-      this.signOut();
+      await this.signOut();
       throw error;
     }
   }
-  signOut(){this.session=null;this.role=null;this.expiresAt=0;}
+  async signOut(){
+    try {
+      if(this.session)
+        await this.request<void>("/auth/v1/logout",{method:"POST"});
+    } catch {
+      // Local credentials are still cleared if the session was revoked.
+    } finally {
+      this.session=null;this.role=null;this.expiresAt=0;
+    }
+  }
   private writable(){
     if(!this.role||!["owner","editor","publisher"].includes(this.role))
       throw Error("SHOWSET editor permissions required.");
