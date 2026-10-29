@@ -127,8 +127,12 @@ export function bindConcept(
     if (e.classList.contains("services-panel-heading")) {
       const head = rich(s.headline).replace(/\.$/, "");
       const period = s.headline.endsWith(".") ? '<span class="service-heading-period">.</span>' : "";
+      const accentPunctuation = s.accent.trimEnd().match(/[.!?]$/)?.[0] || "";
+      const accentCopy = accentPunctuation ? s.accent.trimEnd().slice(0, -1) : s.accent;
       e.innerHTML = '<span>' + head + period + '</span>' +
-        (s.accent ? '<span class="accent-text">' + rich(s.accent) + '</span>' : "");
+        (s.accent ? '<span class="accent-text">' + rich(accentCopy) +
+          (accentPunctuation ? '<span class="service-heading-accent-period">' + accentPunctuation + '</span>' : '') +
+          '</span>' : "");
       return;
     }
     if (e.classList.contains("hero-title")) {
@@ -318,8 +322,13 @@ export function bindConcept(
         body(".portfolio-intro>p", s);
         bindWork(s, "#case-rail > [data-case-slide]");
       } else if (s.type === "dot") {
-        if (changed(s, "headline")) html(".dot-words h2", s.headline);
-        body(".dot-words>p", s);
+        if (changed(s, "headline")) {
+          // The clipped inverted copy must match the visible source when Studio edits it.
+          html(".dot-stage > .dot-words h2", s.headline);
+          html(".dot-colour-reveal .dot-words h2", s.headline);
+        }
+        body(".dot-stage > .dot-words>p", s);
+        body(".dot-colour-reveal .dot-words>p", s);
       } else if (s.type === "cta") {
         heading("#ending h2", s);
         body(".end-bottom>p", s);
