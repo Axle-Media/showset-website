@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { defaultPages, defaultGlobals } from "@/lib/data";
 import type { Workspace, Revision } from "@/lib/studio2/model";
+import {CloudConflictError, type CloudStore} from "@/lib/studio2/cloud";
 import { assertWorkspace, isLoopback, adoptLegacy } from "@/lib/studio2/model";
 import {
   readStore,
@@ -12,7 +13,7 @@ import {
   savePreview,
   ConflictError,
 } from "@/lib/studio2/storage";
-export function useWorkspace() {
+export function useWorkspace(cloud:CloudStore|null=null) {
   const [workspace, setWorkspace] = useState<Workspace | null>(null),
     [ready, setReady] = useState(false),
     [local, setLocal] = useState<boolean | null>(null),
@@ -32,6 +33,24 @@ export function useWorkspace() {
   current.current = workspace;
   seq.current = sequence;
   useEffect(() => {
+    if(cloud){
+      setLocal(true);
+      cloud.read().then((saved)=>{
+        if(saved){
+          expected.current=saved.revision;
+          setWorkspace(saved);
+          setReady(true);
+          setStatus("Shared draft loaded");
+        } else {
+          const seeded=adoptLegacy(defaultPages,defaultGlobals,null,null);
+          expected.current=0;
+          setWorkspace(seeded);
+          setReady(true);
+          setStatus("New private cloud workspace");
+        }
+      }).catch(e=>setError("Private draft unavailable: "+(e as Error).message));
+      return;
+    }
     if (!isLoopback(location.hostname)) {
       setLocal(false);
       return;
@@ -62,7 +81,7 @@ export function useWorkspace() {
         setStatus("Backup required before editing");
       })
       .catch((e) => setError("Your saved data was not changed. " + e.message));
-  }, []);
+  }, [cloud]);
   const save = useCallback(async () => {
     const value = current.current;
     if (!value || !ready || saving.current || conflict) return false;
@@ -71,7 +90,9 @@ export function useWorkspace() {
     setStatus("Saving locally…");
     setError("");
     try {
-      const saved = await saveWorkspace(value, expected.current, label.current);
+      const saved = cloud
+        ? await cloud.save(value,expected.current)
+        : await saveWorkspace(value, expected.current, label.current);
       expected.current = saved.revision;
       savedSequence.current = start;
       current.current = {
@@ -80,15 +101,21 @@ export function useWorkspace() {
         updatedAt: saved.updatedAt,
       };
       setWorkspace(current.current);
-      setStatus(start === seq.current ? "Saved locally" : "Unsaved changes");
-      setHistory(await revisions());
-      const channel = new BroadcastChannel("showset-studio2-updates");
-      channel.postMessage({ revision: saved.revision });
-      channel.close();
+      setStatus(start === seq.current
+        ? (cloud ? "Saved to private cloud" : "Saved locally")
+        : "Unsaved changes");
+      if(!cloud){
+        setHistory(await revisions());
+        const channel = new BroadcastChannel("showset-studio2-updates");
+        channel.postMessage({ revision: saved.revision });
+        channel.close();
+      }
       return true;
     } catch (e) {
-      if (e instanceof ConflictError) {
+      if (e instanceof ConflictError || e instanceof CloudConflictError) {
         setConflict(e.remote);
+        // Remote deletion is not a recoverable draft; retain the local copy.
+        if (!e.remote) setError("Shared draft was removed; export your work.");
         setStatus("Conflict: newer draft in another tab");
       } else {
         setError((e as Error).message);
@@ -98,7 +125,7 @@ export function useWorkspace() {
     } finally {
       saving.current = false;
     }
-  }, [ready, conflict]);
+  }, [ready, conflict, cloud]);
   useEffect(() => {
     if (!ready || !workspace || sequence === savedSequence.current || conflict)
       return;
@@ -108,7 +135,7 @@ export function useWorkspace() {
     return () => clearTimeout(timeout);
   }, [workspace, sequence, ready, save, conflict]);
   useEffect(() => {
-    if (!ready) return;
+    if (!ready || cloud) return;
     const channel = new BroadcastChannel("showset-studio2-updates");
     channel.onmessage = (event) => {
       if (event.data?.revision > expected.current)
@@ -117,7 +144,7 @@ export function useWorkspace() {
         );
     };
     return () => channel.close();
-  }, [ready]);
+  }, [ready,cloud]);
   useEffect(() => {
     const leave = (event: BeforeUnloadEvent) => {
       if (seq.current !== savedSequence.current) {
@@ -151,6 +178,11 @@ export function useWorkspace() {
   };
   const start = async () => {
     if (!workspace) return;
+    if(cloud){
+      setReady(true);
+      setStatus("Private cloud ready");
+      return;
+    }
     try {
       const backup = await createBackup(workspace);
       downloadJson(backup, "SHOWSET-Studio-before-v2-" + Date.now() + ".json");
@@ -172,10 +204,11 @@ export function useWorkspace() {
     if (!current.current) return false;
     try {
       downloadJson(
-        await createBackup(current.current),
+        await createBackup(current.current,!cloud,
+          cloud ? (asset)=>cloud.getOriginal(asset) : undefined),
         "SHOWSET-Studio2-" + Date.now() + ".json",
       );
-      setStatus("Backup checksum verified and downloaded");
+      setStatus("Complete backup, including original images, downloaded");
       return true;
     } catch (e) {
       setError((e as Error).message);
@@ -186,11 +219,24 @@ export function useWorkspace() {
     if (!workspace || conflict) return;
     try {
       if (!(await save())) return;
+      if(cloud){
+        setStatus("Shared draft saved. No public release or deployment.");
+        return;
+      }
       await savePreview(current.current!);
       setStatus("Local preview saved. No deployment has occurred.");
     } catch (e) {
       setError((e as Error).message);
     }
+  };
+  const approve = async () => {
+    if(!cloud)return;
+    if (!(await save())) return;
+    try{
+      const release=await cloud.approve(expected.current);
+      setStatus("Approved immutable release #"+release+
+        ". Public site NOT deployed.");
+    }catch(e){setError("Approval rejected: "+(e as Error).message);}
   };
   const step = (direction: "undo" | "redo") => {
     if (!workspace || conflict) return;
@@ -231,7 +277,8 @@ export function useWorkspace() {
   const backupRaw = async () => {
     try {
       downloadJson(
-        await createBackup(null, false),
+        await createBackup(cloud ? current.current : null, false,
+          cloud ? (asset)=>cloud.getOriginal(asset) : undefined),
         "SHOWSET-original-recovery-" + Date.now() + ".json",
       );
     } catch (e) {
@@ -255,6 +302,7 @@ export function useWorkspace() {
     save,
     backup,
     preview,
+    approve,
     step,
     restore,
     loadConflict,
