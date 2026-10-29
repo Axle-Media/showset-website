@@ -1,26 +1,10 @@
 import type { Metadata } from "next";
-import LegalPageShell, { type LegalSectionLink } from "@/components/LegalPageShell";
+import LegalPageShell from "@/components/LegalPageShell";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | SHOWSET",
   description: "How SHOWSET collects, uses, protects and manages personal information, including your rights under South Africa's POPIA.",
 };
-
-const sections: LegalSectionLink[] = [
-  { id: "who-we-are", title: "Who we are" },
-  { id: "information-we-collect", title: "Information we collect" },
-  { id: "how-we-collect-it", title: "How we collect it" },
-  { id: "how-we-use-it", title: "How we use it" },
-  { id: "sharing", title: "Sharing information" },
-  { id: "cookies", title: "Cookies and analytics" },
-  { id: "retention", title: "How long we keep it" },
-  { id: "security", title: "Keeping information secure" },
-  { id: "rights", title: "Your privacy rights" },
-  { id: "international", title: "International transfers" },
-  { id: "children", title: "Children's privacy" },
-  { id: "changes", title: "Policy updates" },
-  { id: "contact", title: "Contact and complaints" },
-];
 
 export default function PrivacyPolicyPage() {
   return (
@@ -28,7 +12,6 @@ export default function PrivacyPolicyPage() {
       firstLine="Privacy"
       accentLine="Policy"
       summary="Your information matters. This policy explains what we collect, why we use it and how you can exercise your rights."
-      sections={sections}
     >
       <section className="legal-section" id="who-we-are">
         <h2>Who we are</h2>
