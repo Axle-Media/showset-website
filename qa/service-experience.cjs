@@ -42,15 +42,17 @@ if(slug==='digital-marketing'){
  const cta=await p.locator('.service-close--editorial').evaluate(el=>{
   const body=el.querySelector('.service-close-description').getBoundingClientRect();
   const button=el.querySelector('.end-link').getBoundingClientRect();
+  const section=el.getBoundingClientRect();
   return {image:el.querySelectorAll('img,.service-close-art').length,
     copy:el.querySelector('.service-close-description').textContent,
     button:el.querySelector('.end-link').textContent,
     leftAligned:Math.abs(body.left-button.left)<2,
+    centerAligned:Math.abs((button.left+button.right)/2-(section.left+section.right)/2)<3,
     accent:getComputedStyle(el.querySelector('.accent-text')).color,
     period:getComputedStyle(el.querySelector('.service-period')).color};
  });
  ck('Digital closes with compact editorial CTA and its own wording '+tag,
-  cta.image===0&&cta.leftAligned&&cta.copy.includes("Got an idea that needs to go further?")
+  cta.image===0&&(width<=600?cta.centerAligned:cta.leftAligned)&&cta.copy.includes("Got an idea that needs to go further?")
   &&cta.button.includes("Tell us what you're building")
   &&cta.accent==='rgb(18, 186, 175)'&&cta.period==='rgb(250, 249, 253)',cta);
 }
@@ -64,13 +66,15 @@ if(slug==='creative-design'){
  const ctaAlignment=await p.locator('.service-close--editorial').evaluate(el=>{
    const copy=el.querySelector('.service-close-description'),button=el.querySelector('.end-link.solid-link');
    const body=copy.getBoundingClientRect(),last=copy.lastElementChild.getBoundingClientRect(),cta=button.getBoundingClientRect();
+   const section=el.getBoundingClientRect();
    return {copyLeft:body.left,buttonLeft:cta.left,bodyBottom:last.bottom,buttonTop:cta.top,
+     centerAligned:Math.abs((cta.left+cta.right)/2-(section.left+section.right)/2)<3,
      marginLeft:getComputedStyle(button).marginLeft,alignSelf:getComputedStyle(button).alignSelf};
  });
  ck('Creative closing CTA button aligns beneath body copy '+tag,
-    Math.abs(ctaAlignment.copyLeft-ctaAlignment.buttonLeft)<2
-    &&ctaAlignment.buttonTop>=ctaAlignment.bodyBottom-2
-    &&ctaAlignment.marginLeft==='0px',ctaAlignment);
+    (width<=600?ctaAlignment.centerAligned:
+      Math.abs(ctaAlignment.copyLeft-ctaAlignment.buttonLeft)<2 && ctaAlignment.marginLeft==='0px')
+    &&ctaAlignment.buttonTop>=ctaAlignment.bodyBottom-2,ctaAlignment);
 }
 
 if(slug==='events-experiences')ck('Approved five-section Events journey '+tag,
@@ -327,15 +331,17 @@ if(slug==='content-production'){
  const ending=await p.locator('.service-close--editorial').evaluate(el=>{
   const body=el.querySelector('.service-close-description').getBoundingClientRect(),
     button=el.querySelector('.end-link').getBoundingClientRect();
+  const section=el.getBoundingClientRect();
   return {photo:el.querySelectorAll('img,.service-close-art').length,
    heading:el.querySelector('h2').textContent,
    copy:el.querySelector('.service-close-description').textContent,
    button:el.querySelector('.end-link').textContent,
    aligned:Math.abs(body.left-button.left)<2,
+   centerAligned:Math.abs((button.left+button.right)/2-(section.left+section.right)/2)<3,
    period:getComputedStyle(el.querySelector('.service-period')).color};
  });
  ck('Production closing CTA stays compact and aligned with body copy '+tag,
-  ending.photo===0&&ending.aligned&&ending.heading.includes('next frame say?')
+  ending.photo===0&&(width<=600?ending.centerAligned:ending.aligned)&&ending.heading.includes('next frame say?')
   &&ending.copy.includes('a live stream')&&ending.button.includes("Let's get producing")
   &&ending.period==='rgb(250, 249, 253)',ending);
 }
