@@ -24,7 +24,9 @@
   color:var(--teal)!important;
 }
 #main .services-panel-heading .service-heading-accent-period{
+  display:inline!important; /* A global heading span rule otherwise puts the full stop on its own row. */
   color:var(--ice)!important;
+  white-space:nowrap;
 }
 
 /* Return the dot story to its big, centred two-line composition.
