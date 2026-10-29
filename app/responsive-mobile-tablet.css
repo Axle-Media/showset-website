@@ -134,7 +134,10 @@
     line-height:1.7!important;
   }
   .concept-12-root .manifesto-heading-group .understated-link{margin-inline:auto}
-  .concept-12-root .portfolio-heading{justify-items:center;text-align:center}
+  .concept-12-root #portfolio-section .portfolio-heading{justify-items:center!important;text-align:center}
+  .concept-12-root #portfolio-section .portfolio-heading > .section-title{
+    justify-self:center!important;margin-inline:auto!important;text-align:center!important;
+  }
 
   /* The film is still a scroll story, but its copy is centred over the image.
      Keep sufficient room for the longer approved paragraphs at short heights. */
