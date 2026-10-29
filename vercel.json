@@ -4,7 +4,8 @@
     "deploymentEnabled": {
       "feat/studio-2-*": false,
       "integration/studio2-*": false,
-      "fix/studio2-*": false
+      "fix/studio2-*": false,
+      "feat/studio2-*": false
     }
   }
 }
