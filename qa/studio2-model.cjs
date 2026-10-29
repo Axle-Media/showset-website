@@ -161,6 +161,16 @@ for(const preset of SECTION_PRESETS){
     assert.ok(rendered.includes("Gallery photograph A"));
   }
 }
+const galleryRoot=createSectionPreset("photo-gallery");
+const galleryCopy=cloneNode(galleryRoot);
+const originalGallery=galleryRoot.children.find(n=>n.kind==="gallery");
+const duplicatedGallery=galleryCopy.children.find(n=>n.kind==="gallery");
+assert.notEqual(originalGallery.id,duplicatedGallery.id);
+assert.deepEqual(originalGallery.props.items.map(item=>item.alt),
+  duplicatedGallery.props.items.map(item=>item.alt));
+assert.ok(originalGallery.props.items.every((item,i)=>
+  item.id!==duplicatedGallery.props.items[i].id),
+  "Copied galleries must not retain repeater item identities");
 const reusableSection=createSectionPreset("editorial-split");
 const reusableStored=cloneNode(reusableSection);
 reusableStored.name="Saved editorial section";
