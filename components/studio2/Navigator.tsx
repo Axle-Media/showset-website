@@ -34,7 +34,10 @@ export default function Navigator({
   bindings: Binding[];
 }) {
   const page = workspace.pages[slug];
-  const matches=(node:CanvasNode):boolean=>(node.name+' '+(node.props.text||'')).toLowerCase().includes(query.toLowerCase())||node.children.some(matches);
+  const matches = (node: CanvasNode): boolean =>
+    (node.name + " " + (node.props.text || ""))
+      .toLowerCase()
+      .includes(query.toLowerCase()) || node.children.some(matches);
   const tree = (
     nodes: CanvasNode[],
     depth = 0,
@@ -44,44 +47,47 @@ export default function Navigator({
       className="s2-tree-list"
       style={{ "--depth": depth } as React.CSSProperties}
     >
-      {nodes.map((node, index) => matches(node)?(
-        <li key={node.id}>
-          <div
-            className={
-              "s2-layer " + (selected === node.id ? "is-selected" : "")
-            }
-            onDragOver={(e) => e.preventDefault()}
-            onDrop={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              const id = e.dataTransfer.getData("application/x-showset-node");
-              if (id)
-                onMove(
-                  id,
-                  isContainer(node.kind) ? node.id : parent,
-                  isContainer(node.kind) ? node.children.length : index,
-                );
-            }}
-          >
-            <button
-              draggable={!node.locked}
-              onDragStart={(e) =>
-                e.dataTransfer.setData("application/x-showset-node", node.id)
+      {nodes.map((node, index) =>
+        matches(node) ? (
+          <li key={node.id}>
+            <div
+              className={
+                "s2-layer " + (selected === node.id ? "is-selected" : "")
               }
-              onClick={() => onSelect(node.id)}
-              aria-label={"Select " + node.name}
+              onDragOver={(e) => e.preventDefault()}
+              onDrop={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const id = e.dataTransfer.getData("application/x-showset-node");
+                if (id)
+                  onMove(
+                    id,
+                    isContainer(node.kind) ? node.id : parent,
+                    isContainer(node.kind) ? node.children.length : index,
+                  );
+              }}
             >
-              <span aria-hidden="true">
-                {isContainer(node.kind) ? "▱" : "◇"}
-              </span>
-              {node.name}
-              {node.hidden ? " · hidden" : ""}
-              {node.locked ? " · locked" : ""}
-            </button>
-          </div>
-          {node.children.length > 0 && tree(node.children, depth + 1, node.id)}
-        </li>
-      ):null)}
+              <button
+                draggable={!node.locked}
+                onDragStart={(e) =>
+                  e.dataTransfer.setData("application/x-showset-node", node.id)
+                }
+                onClick={() => onSelect(node.id)}
+                aria-label={"Select " + node.name}
+              >
+                <span aria-hidden="true">
+                  {isContainer(node.kind) ? "▱" : "◇"}
+                </span>
+                {node.name}
+                {node.hidden ? " · hidden" : ""}
+                {node.locked ? " · locked" : ""}
+              </button>
+            </div>
+            {node.children.length > 0 &&
+              tree(node.children, depth + 1, node.id)}
+          </li>
+        ) : null,
+      )}
     </ul>
   );
   return (
@@ -105,13 +111,15 @@ export default function Navigator({
           </button>
         )}
       </div>
-      <input
-        className="s2-search"
-        aria-label="Search navigator"
-        placeholder={"Find " + tab.toLowerCase() + "…"}
-        value={query}
-        onChange={(e) => onQuery(e.target.value)}
-      />
+      {tab !== "Site" && (
+        <input
+          className="s2-search"
+          aria-label="Search navigator"
+          placeholder={"Find " + tab.toLowerCase() + "…"}
+          value={query}
+          onChange={(e) => onQuery(e.target.value)}
+        />
+      )}
       {tab === "Pages" && (
         <ul className="s2-page-list">
           {Object.values(workspace.pages)

@@ -190,8 +190,8 @@ export function bindConcept(
       d = s.design || {};
     e.dataset.scene = d.motionPreset || "cinematic";
     e.classList.toggle("c12-reveal-off", changed(s, "reveal") && !s.reveal);
-    if (d.spaceTop != null) e.style.paddingTop = d.spaceTop + "px";
-    if (d.spaceBottom != null) e.style.paddingBottom = d.spaceBottom + "px";
+    if (d.spaceTop != null) e.style.setProperty("padding-top",d.spaceTop+"px","important");
+    if (d.spaceBottom != null) e.style.setProperty("padding-bottom",d.spaceBottom+"px","important");
     if (d.headingSize != null) {
       e.style.setProperty("--c12-heading", d.headingSize + "px");
       e.classList.add("c12-custom-heading");

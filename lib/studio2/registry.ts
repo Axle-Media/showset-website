@@ -72,7 +72,23 @@ export const registry = {
 } as const;
 const dimension =
   /^(?:0|auto|none|(?:-?\d*\.?\d+)(?:px|%|em|rem|vw|vh|svh|ch)|clamp\([\d.]+(?:px|rem|vw),\s*[\d.]+(?:px|rem|vw),\s*[\d.]+(?:px|rem|vw)\))$/;
-const color = /^(?:#[\da-f]{3,8}|transparent|rgba?\([\d.,%\s]+\))$/i;
+const hex = /^#(?:[\da-f]{3}|[\da-f]{4}|[\da-f]{6}|[\da-f]{8})$/i;
+function isColor(value: string): boolean {
+  if (value === "transparent" || hex.test(value)) return true;
+  const match = value.match(/^(rgb|rgba)\(([^()]*)\)$/i);
+  if (!match) return false;
+  const parts = match[2].split(",").map((x) => x.trim());
+  if (parts.length !== (match[1].toLowerCase() === "rgba" ? 4 : 3))
+    return false;
+  return parts.every(
+    (part, index) =>
+      /^(?:\d*\.)?\d+%?$/.test(part) &&
+      Number.parseFloat(part) >= 0 &&
+      Number.parseFloat(part) <=
+        (part.endsWith("%") ? 100 : index === 3 ? 1 : 255),
+  );
+}
+
 const fields: Record<keyof StyleValues, string> = {
   display: "display",
   direction: "flex-direction",
@@ -103,15 +119,27 @@ const fields: Record<keyof StyleValues, string> = {
   objectPosition: "object-position",
 };
 export function validStyle(key: keyof StyleValues, value: unknown): boolean {
+  if (!(key in fields)) return false;
   const s = String(value);
   if (s.length > 180 || /[;{}<>\\]/.test(s)) return false;
-  if (["color", "accentColor", "borderColor"].includes(key))
-    return color.test(s);
-  if (key === "background")
-    return (
-      color.test(s) ||
-      /^linear-gradient\(\d+deg,\s*#[\da-f]{3,8},\s*#[\da-f]{3,8}\)$/i.test(s)
+  if (["color", "accentColor", "borderColor"].includes(key)) return isColor(s);
+  if (key === "background") {
+    const gradient = s.match(
+      /^linear-gradient\((\d+(?:\.\d+)?)deg,\s*(#[\da-f]+),\s*(#[\da-f]+)\)$/i,
     );
+    return (
+      isColor(s) ||
+      (!!gradient &&
+        Number.isFinite(Number(gradient[1])) &&
+        hex.test(gradient[2]) &&
+        hex.test(gradient[3]))
+    );
+  }
+  if (
+    ["columns", "fontWeight", "lineHeight", "opacity"].includes(key) &&
+    typeof value !== "number"
+  )
+    return false;
   if (key === "columns")
     return (
       Number.isInteger(Number(value)) &&
@@ -160,7 +188,7 @@ export function styleText(styles: StyleValues = {}): string {
     .join(";");
 }
 export const targetSelector = (id: string) =>
-  '.concept-12-root [data-builder-node][data-builder-node="' +
+  '.concept-12-root #main [data-builder-node][data-builder-node="' +
   id.replace(/[^\w-]/g, "") +
   '"]';
 export function responsiveCss(
@@ -184,16 +212,22 @@ export function responsiveCss(
         selector +
         "{position:relative;isolation:isolate}" +
         selector +
-        '::before{content:""!important;position:absolute;inset:0;pointer-events:none;z-index:0;background-image:url("/media/studio-cta-pattern.svg")!important;background-size:clamp(660px,66vw,1100px) auto!important;background-position:right -85px center!important;background-repeat:no-repeat!important;opacity:.76!important;transform:none!important;mix-blend-mode:normal!important}' +
+        '::before{content:""!important;position:absolute;inset:0 0 auto;height:clamp(420px,37vw,565px);pointer-events:none;z-index:0;background-image:url("/media/studio-cta-pattern.svg")!important;background-size:clamp(660px,66vw,1100px) auto!important;background-position:right -210px center!important;background-repeat:no-repeat!important;opacity:' +
+        (pattern.enabled ? ".42" : "0") +
+        "!important;transform:none!important;mix-blend-mode:normal!important}" +
         selector +
         ">*{z-index:1}" +
         (breakpoint === "desktop" ? "" : "}");
       css +=
         "@media(max-width:800px) and (min-width:601px){" +
         selector +
-        "::before{background-size:750px auto!important;background-position:calc(100% + 230px) center!important;opacity:.58!important}}@media(max-width:600px){" +
+        "::before{background-size:750px auto!important;background-position:calc(100% + 285px) center!important;opacity:" +
+        (pattern.enabled ? ".32" : "0") +
+        "!important}}@media(max-width:600px){" +
         selector +
-        "::before{background-size:590px auto!important;background-position:calc(100% + 225px) center!important;opacity:.44!important}}";
+        "::before{background-size:590px auto!important;background-position:calc(100% + 280px) center!important;opacity:" +
+        (pattern.enabled ? ".24" : "0") +
+        "!important}}";
     } else if (pattern) {
       const p = {
         ...pattern,

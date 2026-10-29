@@ -1,6 +1,6 @@
 # ADR: Studio 2.0, shared rendering and controlled releases
 
-Status: implementation decision for review with Phase 1; no hosting/deployment authorisation. Baseline `6ebdf13`.
+Status: implementation decision for review with Phase 1; no hosting/deployment authorisation. Baseline `3ea5f7d`; initial audit checkpoint `6ebdf13`.
 
 ## Decisions
 
@@ -8,7 +8,7 @@ Status: implementation decision for review with Phase 1; no hosting/deployment a
 2. Keep legacy PageData/Globals as canonical content. Add optional `builder` metadata containing schema version, custom roots or explicit bound-target overrides. Default records emit no override CSS/DOM. Existing page IDs, sections, case metadata and arbitrary legacy extensions survive round trips.
 3. Provide an opt-in `/studio/next/` workspace and same-renderer iframe/preview. Keep `/studio/` intact as a rollback path. The new workspace is loopback-only until real server authentication is configured. Static remote output displays an unavailable state; browser-only role flags never grant server permission.
 4. Use native IndexedDB transactions for local working drafts, immutable revisions, media blobs and verified raw backups. Compare expected revision atomically; stale tabs get a conflict instead of overwriting another tab. BroadcastChannel is an update notification, not a lock/security boundary. This is explicitly local durability, not multi-owner shared storage.
-5. Capture exact raw `showset-*` strings and verify SHA-256 before any conversion. Export a downloadable backup and retain an immutable local copy; no legacy key is overwritten by Studio 2.0. Import validates size/schema/URLs/units and is transactional. Old editor and backup files provide rollback. Actual owner data is converted only after this workflow succeeds in that owner's browser.
+5. Capture exact raw `showset-*` strings and verify SHA-256 before any conversion. Export a downloadable backup and retain an immutable local copy; no legacy key is overwritten by Studio 2.0. Import validates size/schema/units, image headers and hashes before an additive media transaction and a new draft revision. It never replaces legacy storage keys. Old editor and backup files provide rollback. Actual owner data is converted only after this workflow succeeds in that owner's browser.
 6. Use one shared component renderer for blank/custom pages in Studio and rendered preview, and the real SiteLayout for approved templates. Target styles are serialised from an allowlist, with desktop/tablet/mobile inheritance and explicit reset. No arbitrary CSS/JS/HTML execution. Supported inline text marks become structured safe content, not executable markup.
 7. Reuse existing motion owners for cinematic templates. Generic nodes use a single scoped, disposable motion utility with reversible scroll progress and reduced-motion fallback. No second animation library or idle frame loop. Uploaded media is decoded and validated; executable SVG/HTML is rejected. Original immutable bytes and metadata remain recoverable.
 
@@ -20,7 +20,7 @@ PageData.builder? { schemaVersion, mode: template | custom, roots: CanvasNode[],
 CanvasNode { id, kind, name, props, styles: { desktop, tablet, mobile }, pattern?, motion?, children, hidden?, locked? }
 TemplateBinding { key, selector, property/path mappings, allowed controls, semantic role }
 Revision { id, parentRevision, timestamp, label, workspace }
-RawBackup { format, version, origin, timestamp, records: Record<key, rawString|null>, sha256 }
+RawBackup { format, version, origin, timestamp, records: Record<key, rawString|null>, workspace, assets: immutable original bytes, checksum }
 ```
 
 Stable IDs drive selection, reorder, copy/duplicate, undo and media references. Pure commands validate cycles, child compatibility, depth/size bounds and route uniqueness. Content fields and global/synced instances have distinct scopes. The registry owns controls and supported values; inspectors are not a growing set of one-off Studio.tsx fields.
@@ -42,3 +42,13 @@ Rollback is additive: switch to classic Studio, retain original keys, restore a 
 ## Tradeoffs and gates
 
 Opt-in review allows a complete vertical slice without exposing unfinished controls or destabilising the approved site. Phase 1 does not claim 100% template coverage or live release. Advanced timeline editing, all globals/forms and authenticated multi-owner release follow in tractable PRs. Review the actual workspace, data model and working renderer first; report the exact remaining coverage and make no false publish or security claims.
+
+## Phase 1 implementation boundaries
+
+Only development builds render the new editor; production exports emit an unavailable screen and noindex metadata, even on localhost. This is fail-closed feature availability, not an authentication implementation. The existing classic Studio is unchanged by that new gate. No new server write endpoint exists in Phase 1.
+
+Workspace snapshots export exact legacy records, the current v2 workspace and original image bytes. The full IndexedDB revision log is retained locally but is not included in the portable snapshot. A failed checksum, unsupported schema, missing media or failed/quota transaction does not report a successful save. Imports add content-addressed media only after all bytes validate; a subsequent failed draft save may leave an unreferenced immutable media row, not an overwritten document.
+
+To honour the no-deployment instruction while opening PRs, `vercel.json` disables Git deployments only for `feat/studio-2-*`; unspecified branches keep their existing behaviour. This uses the documented [branch deployment rule](https://vercel.com/docs/project-configuration/git-configuration). No hosting dashboard, production branch, credentials or DNS are changed.
+
+Template motion remains owned by the approved runtime. The new `suppressSubmissions` option only prevents real form transport from a Studio preview; it does not turn off motion. Generic scroll effects have one coalesced frame callback, untransformed geometry, disposable listeners and live reduced-motion handling. Contextual controls omit duration for scroll scrubbing and omit parameters a preset does not consume.

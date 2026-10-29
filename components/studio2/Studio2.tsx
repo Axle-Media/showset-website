@@ -65,7 +65,12 @@ export default function Studio2() {
     breakpoint: Breakpoint =
       width <= 600 ? "mobile" : width <= 1024 ? "tablet" : "desktop",
     override = selected ? page?.builder?.overrides[selected] : undefined;
-  useEffect(()=>{if(workspace&&!workspace.pages[slug]){setSlug(workspace.pages.home?'home':Object.keys(workspace.pages)[0]);setSelected(null)}},[workspace?.pages,slug]);
+  useEffect(() => {
+    if (workspace && !workspace.pages[slug]) {
+      setSlug(workspace.pages.home ? "home" : Object.keys(workspace.pages)[0]);
+      setSelected(null);
+    }
+  }, [workspace?.pages, slug]);
   const frameState = useMemo(
     () => (workspace ? { workspace, slug, selected, interactive, urls } : null),
     [workspace, slug, selected, interactive, urls],
@@ -153,7 +158,9 @@ export default function Studio2() {
     if (!selected || node?.locked) return;
     if (value !== undefined && !validStyle(key, value)) {
       editor.setError(
-        "Use a valid value with units, such as 24px, 50%, 1.5rem or .01em.",
+        ["color", "accentColor", "borderColor", "background"].includes(key)
+          ? "Use a valid hex colour, RGB/RGBA, or a two-colour linear-gradient."
+          : "Use a valid value with units, such as 24px, 50%, 1.5rem or .01em.",
       );
       return;
     }
@@ -249,6 +256,7 @@ export default function Studio2() {
   const action = (name: string) => {
     if (!page) return;
     if (name === "duplicate-page") {
+      if (page.builder?.mode !== "custom") return;
       const copy = structuredClone(page),
         base = page.slug + "-copy";
       let key = base;
@@ -491,7 +499,12 @@ export default function Studio2() {
         ) : (
           <p>Loading local data…</p>
         )}
-        {editor.error&&<button onClick={()=>void editor.backupRaw()}>Export original recovery records</button>}<a href="/studio/">Return to classic Studio</a>
+        {editor.error && (
+          <button onClick={() => void editor.backupRaw()}>
+            Export original recovery records
+          </button>
+        )}
+        <a href="/studio/">Return to classic Studio</a>
       </main>
     );
   if (!page || !frameState) return null;

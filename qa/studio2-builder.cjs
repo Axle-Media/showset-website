@@ -8,7 +8,10 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001",
   out = process.env.SHOWSET_QA_OUTPUT || "qa-artifacts/studio2";
 fs.mkdirSync(out, { recursive: true });
 (async () => {
-  const b = await chromium.launch({ channel: "chrome", headless: true }),
+  const b = await chromium.launch({
+      channel: process.env.SHOWSET_PLAYWRIGHT_CHANNEL || "chrome",
+      headless: true,
+    }),
     c = await b.newContext({
       viewport: { width: 1440, height: 1000 },
       acceptDownloads: true,
@@ -82,10 +85,19 @@ fs.mkdirSync(out, { recursive: true });
       .evaluate((e) => getComputedStyle(e).fontSize),
     "72px",
   );
-  await p.getByRole('button',{name:'Hero accent heading',exact:true}).click();
-  await p.getByRole('button',{name:'Typography',exact:true}).click();
-  await p.getByLabel('Accent colour',{exact:true}).fill('#E5D8C3');await p.getByLabel('Accent colour',{exact:true}).blur();
-  await p.waitForFunction(()=>{const f=document.querySelector('iframe');const e=f?.contentDocument?.querySelector('.hero-accent-phrase>span');return e&&f.contentWindow.getComputedStyle(e).color==='rgb(229, 216, 195)'});
+  await p
+    .getByRole("button", { name: "Hero accent heading", exact: true })
+    .click();
+  await p.getByRole("button", { name: "Typography", exact: true }).click();
+  await p.getByLabel("Accent colour", { exact: true }).fill("#E5D8C3");
+  await p.getByLabel("Accent colour", { exact: true }).blur();
+  await p.waitForFunction(() => {
+    const f = document.querySelector("iframe");
+    const e = f?.contentDocument?.querySelector(".hero-accent-phrase>span");
+    return (
+      e && f.contentWindow.getComputedStyle(e).color === "rgb(229, 216, 195)"
+    );
+  });
   await p.getByRole("button", { name: "Pages", exact: true }).first().click();
   await p.getByRole("button", { name: "+ New", exact: true }).click();
   await p.getByLabel("Page name", { exact: true }).last().fill("Builder QA");
@@ -127,13 +139,13 @@ fs.mkdirSync(out, { recursive: true });
     await frame()
       .locator(".s2-node-section")
       .evaluate((e) => getComputedStyle(e, "::before").opacity),
-    "0.76",
+    "0.42",
   );
   await p.getByRole("button", { name: "Add", exact: true }).first().click();
   await p.getByRole("button", { name: /^Image A photograph/ }).click();
   await p
     .getByLabel("Replace image", { exact: false })
-    .setInputFiles("public/brand/approved-wordmark.png");
+    .setInputFiles("public/media/planning.webp");
   await frame().locator(".s2-node-image img").waitFor();
   await p.getByRole("button", { name: "Layout", exact: true }).click();
   await p.getByLabel("Focal position", { exact: true }).fill("20% 40%");
@@ -141,6 +153,12 @@ fs.mkdirSync(out, { recursive: true });
   await p.getByRole("button", { name: "Mobile", exact: true }).click();
   await p.getByLabel("Focal position", { exact: true }).fill("70% 40%");
   await p.getByLabel("Focal position", { exact: true }).blur();
+  assert.equal(
+    await frame()
+      .locator(".s2-node-section")
+      .evaluate((e) => getComputedStyle(e, "::before").opacity),
+    "0.24",
+  );
   await p.getByRole("button", { name: "Save draft", exact: true }).click();
   await p.waitForTimeout(1000);
   await p.reload();

@@ -1,6 +1,6 @@
 {
-  "baseline": "6ebdf13",
-  "capturedAt": "2026-10-29T10:44:38.972Z",
+  "baseline": "3ea5f7d",
+  "capturedAt": "2026-10-29T10:58:53.903Z",
   "scope": "Rendered semantic/media/interactive/scene targets including inactive story content; source section and CSS/pattern inventory are in coverage.json and the audit document. Not a claim of 100% editable coverage.",
   "routes": [
     {
@@ -203,7 +203,7 @@
         {
           "selector": "#film-steps>article:nth-of-type(1)>p:nth-of-type(1)",
           "tag": "p",
-          "text": "We get curious. Ask the awkwardly good questions. Pull things apart. Put unexpected things together. And find the idea worth chasing.",
+          "text": "We start by getting curious. About the people in the room, the story worth telling and the thing this idea really needs to do. We ask awkwardly good questions, challenge the obvious and connect unlikely dots until we find a direction everyone can believe in.",
           "section": "section-3",
           "hiddenByScene": false,
           "motionAttributes": {},
@@ -231,7 +231,7 @@
         {
           "selector": "#film-steps>article:nth-of-type(2)>p:nth-of-type(1)",
           "tag": "p",
-          "text": "We design it, plan it, prototype it, build it and work through the bits nobody sees. This is where imagination meets the production schedule.",
+          "text": "Then we get our hands into it. The sketches become identities, layouts, websites, run sheets and real-world production plans. Creative thinking meets the people who build things, and we sweat the tiny details so the big picture feels effortless.",
           "section": "section-3",
           "hiddenByScene": false,
           "motionAttributes": {},
@@ -259,7 +259,7 @@
         {
           "selector": "#film-steps>article:nth-of-type(3)>p:nth-of-type(1)",
           "tag": "p",
-          "text": "The doors open. The launch goes live. The audience leans in. Everything clicks into place and the idea stops being an idea.",
+          "text": "Then comes the part you can feel. The doors open, the site goes live, the lights come up and people step into the idea. All the planning disappears into the experience, leaving the atmosphere, the connection and the moments people talk about afterwards.",
           "section": "section-3",
           "hiddenByScene": false,
           "motionAttributes": {},
@@ -809,6 +809,24 @@
           "text": "The small stuff is never small when you are making something big.",
           "section": "section-6",
           "hiddenByScene": false,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#dot-track>div:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h2:nth-of-type(1)",
+          "tag": "h2",
+          "text": "Serious about the details.Wild about the possibilities.",
+          "section": "section-6",
+          "hiddenByScene": true,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#dot-track>div:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>p:nth-of-type(1)",
+          "tag": "p",
+          "text": "The small stuff is never small when you are making something big.",
+          "section": "section-6",
+          "hiddenByScene": true,
           "motionAttributes": {},
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
@@ -2773,7 +2791,7 @@
         {
           "selector": "#main>div:nth-of-type(3)>section:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>p:nth-of-type(1)",
           "tag": "p",
-          "text": "We're creative thinkers, practical makers and the people who care how it all comes together.",
+          "text": "We're curious thinkers, practical makers and people who care about every part of the experience. Behind the creative work are the plans, partners, pixels and production details that make it possible. We bring those worlds together, because the best ideas deserve more than a beautiful presentation.",
           "section": "section-1",
           "hiddenByScene": false,
           "motionAttributes": {},
@@ -2791,7 +2809,7 @@
         {
           "selector": "#main>div:nth-of-type(3)>section:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(3)>p:nth-of-type(1)",
           "tag": "p",
-          "text": "From the first conversation to the last detail, we connect the creative and practical work that brings an idea to life.",
+          "text": "We don't believe the big idea should get lost between teams. We shape the concept, design the details and stay close to the making, from the first sketch and the website to the final on-site cue. One connected team means fewer handovers, clearer thinking and work that feels like it belongs together.",
           "section": "section-1",
           "hiddenByScene": true,
           "motionAttributes": {},
@@ -3135,16 +3153,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(1)>p:nth-of-type(1)",
-          "tag": "p",
-          "text": "Explore the work and the thinking behind it. New stories will appear here as they're published.",
-          "section": "section-3",
-          "hiddenByScene": false,
-          "motionAttributes": {},
-          "studio2Binding": "Not yet exposed in Studio 2.0"
-        },
-        {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>button:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(1)>button:nth-of-type(1)",
           "tag": "button",
           "text": "All",
           "section": "section-3",
@@ -3153,7 +3162,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>button:nth-of-type(2)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(1)>button:nth-of-type(2)",
           "tag": "button",
           "text": "Events",
           "section": "section-3",
@@ -3162,7 +3171,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>button:nth-of-type(3)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(1)>button:nth-of-type(3)",
           "tag": "button",
           "text": "Creative",
           "section": "section-3",
@@ -3171,7 +3180,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>button:nth-of-type(4)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(1)>button:nth-of-type(4)",
           "tag": "button",
           "text": "Digital",
           "section": "section-3",
@@ -3180,7 +3189,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>button:nth-of-type(5)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(1)>button:nth-of-type(5)",
           "tag": "button",
           "text": "Content",
           "section": "section-3",
@@ -3189,7 +3198,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(3)>a:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>a:nth-of-type(1)",
           "tag": "a",
           "text": "Concept studyEvents Atmosphere is everything. A room is never just a room. The arrival, the lighting, the sound and the unexpected little detail all have something to say.Explore the study ↗",
           "href": "/work/atmosphere-is-everything/",
@@ -3199,7 +3208,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(3)>a:nth-of-type(1)>div:nth-of-type(1)>img:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>a:nth-of-type(1)>div:nth-of-type(1)>img:nth-of-type(1)",
           "tag": "img",
           "src": "/media/evening.webp",
           "alt": "Atmosphere is everything portfolio visual",
@@ -3209,7 +3218,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(3)>a:nth-of-type(1)>div:nth-of-type(2)>h2:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>a:nth-of-type(1)>div:nth-of-type(2)>h2:nth-of-type(1)",
           "tag": "h2",
           "text": "Atmosphere is everything.",
           "section": "section-3",
@@ -3218,7 +3227,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(3)>a:nth-of-type(1)>div:nth-of-type(2)>p:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>a:nth-of-type(1)>div:nth-of-type(2)>p:nth-of-type(1)",
           "tag": "p",
           "text": "A room is never just a room. The arrival, the lighting, the sound and the unexpected little detail all have something to say.",
           "section": "section-3",
@@ -3227,7 +3236,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(3)>a:nth-of-type(2)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>a:nth-of-type(2)",
           "tag": "a",
           "text": "Concept studyCreative Made to be remembered. A brand gets built every time someone meets it. One voice, many touchpoints, a thousand tiny clues.Explore the study ↗",
           "href": "/work/made-to-be-remembered/",
@@ -3237,7 +3246,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(3)>a:nth-of-type(2)>div:nth-of-type(1)>img:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>a:nth-of-type(2)>div:nth-of-type(1)>img:nth-of-type(1)",
           "tag": "img",
           "src": "/media/cases/identity-hero.webp",
           "alt": "Made to be remembered portfolio visual",
@@ -3247,7 +3256,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(3)>a:nth-of-type(2)>div:nth-of-type(2)>h2:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>a:nth-of-type(2)>div:nth-of-type(2)>h2:nth-of-type(1)",
           "tag": "h2",
           "text": "Made to be remembered.",
           "section": "section-3",
@@ -3256,7 +3265,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(3)>a:nth-of-type(2)>div:nth-of-type(2)>p:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>a:nth-of-type(2)>div:nth-of-type(2)>p:nth-of-type(1)",
           "tag": "p",
           "text": "A brand gets built every time someone meets it. One voice, many touchpoints, a thousand tiny clues.",
           "section": "section-3",
@@ -3265,7 +3274,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(3)>a:nth-of-type(3)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>a:nth-of-type(3)",
           "tag": "a",
           "text": "Concept studyContent Behind every moment. The best production looks effortless because so much of the effort happened before the doors opened.Explore the study ↗",
           "href": "/work/behind-every-moment/",
@@ -3275,7 +3284,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(3)>a:nth-of-type(3)>div:nth-of-type(1)>img:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>a:nth-of-type(3)>div:nth-of-type(1)>img:nth-of-type(1)",
           "tag": "img",
           "src": "/media/cases/production-hero.webp",
           "alt": "Behind every moment portfolio visual",
@@ -3285,7 +3294,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(3)>a:nth-of-type(3)>div:nth-of-type(2)>h2:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>a:nth-of-type(3)>div:nth-of-type(2)>h2:nth-of-type(1)",
           "tag": "h2",
           "text": "Behind every moment.",
           "section": "section-3",
@@ -3294,7 +3303,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(3)>a:nth-of-type(3)>div:nth-of-type(2)>p:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>a:nth-of-type(3)>div:nth-of-type(2)>p:nth-of-type(1)",
           "tag": "p",
           "text": "The best production looks effortless because so much of the effort happened before the doors opened.",
           "section": "section-3",
@@ -3303,7 +3312,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(3)>p:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(2)>p:nth-of-type(1)",
           "tag": "p",
           "text": "Nothing in this category yet. Explore another side of our work.",
           "section": "section-3",
@@ -3312,7 +3321,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(4)>button:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(3)>div:nth-of-type(3)>button:nth-of-type(1)",
           "tag": "button",
           "text": "See more stories ↗",
           "section": "section-3",
@@ -3331,7 +3340,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(4)>div:nth-of-type(1)>h2:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(4)>div:nth-of-type(1)>div:nth-of-type(1)>h2:nth-of-type(1)",
           "tag": "h2",
           "text": "Got somethingworth making?",
           "section": "work-closing",
@@ -3340,7 +3349,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(4)>div:nth-of-type(1)>p:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(4)>div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>p:nth-of-type(1)",
           "tag": "p",
           "text": "The next story could start with a conversation. Bring us the idea, the challenge or the wonderfully ambitious brief.",
           "section": "work-closing",
@@ -3349,7 +3358,7 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(4)>div:nth-of-type(1)>a:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(4)>section:nth-of-type(4)>div:nth-of-type(1)>div:nth-of-type(1)>a:nth-of-type(1)",
           "tag": "a",
           "text": "Start a conversation ↗",
           "href": "/contact/",
@@ -5126,7 +5135,7 @@
         {
           "selector": "#main>div:nth-of-type(6)>section:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>h1:nth-of-type(1)",
           "tag": "h1",
-          "text": "Somethingbrewing?",
+          "text": "Big ideas startwith a conversation.",
           "section": "section-1",
           "hiddenByScene": false,
           "motionAttributes": {},
@@ -5135,16 +5144,16 @@
         {
           "selector": "#main>div:nth-of-type(6)>section:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>p:nth-of-type(1)",
           "tag": "p",
-          "text": "Big idea, rough sketch or a brief that isn't quite there yet? We're listening.",
+          "text": "Planning an event that needs to feel different? Building a brand, launching a website or working on an idea that doesn't fit neatly into a box? Tell us what you're imagining, even if it's still taking shape. We bring together the creative thinking, practical people and attention to detail to turn big ideas into things people can see, feel and remember.",
           "section": "section-1",
           "hiddenByScene": false,
           "motionAttributes": {},
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(6)>section:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>a:nth-of-type(1)",
+          "selector": "#main>div:nth-of-type(6)>section:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>a:nth-of-type(1)",
           "tag": "a",
-          "text": "hello@showset.co.za ↗",
+          "text": "hello@showset.co.za",
           "href": "mailto:hello@showset.co.za",
           "section": "section-1",
           "hiddenByScene": false,
@@ -5152,9 +5161,9 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(6)>section:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>a:nth-of-type(2)",
+          "selector": "#main>div:nth-of-type(6)>section:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>a:nth-of-type(2)",
           "tag": "a",
-          "text": "+27 68 280 5777 ↗",
+          "text": "+27 68 280 5777",
           "href": "tel:+27682805777",
           "section": "section-1",
           "hiddenByScene": false,
@@ -5162,10 +5171,18 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#main>div:nth-of-type(6)>section:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(2)>img:nth-of-type(1)",
-          "tag": "img",
-          "src": "/media/planning.webp",
-          "alt": "",
+          "selector": "#main>div:nth-of-type(6)>section:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>a:nth-of-type(1)",
+          "tag": "a",
+          "text": "Message us on WhatsApp↗",
+          "href": "https://wa.me/27682805777",
+          "section": "section-1",
+          "hiddenByScene": false,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#main>div:nth-of-type(6)>section:nth-of-type(1)>div:nth-of-type(1)>div:nth-of-type(1)>a:nth-of-type(1)>svg:nth-of-type(1)",
+          "tag": "svg",
           "section": "section-1",
           "hiddenByScene": true,
           "motionAttributes": {},
@@ -5190,6 +5207,118 @@
         },
         {
           "selector": "#email",
+          "tag": "input",
+          "section": "section-1",
+          "hiddenByScene": false,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#message",
+          "tag": "textarea",
+          "section": "section-1",
+          "hiddenByScene": false,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#project-date",
+          "tag": "input",
+          "section": "section-1",
+          "hiddenByScene": false,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#project-budget",
+          "tag": "select",
+          "section": "section-1",
+          "hiddenByScene": true,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#budget-trigger",
+          "tag": "button",
+          "text": "Not sure yet",
+          "section": "section-1",
+          "hiddenByScene": false,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#budget-trigger>svg:nth-of-type(1)",
+          "tag": "svg",
+          "section": "section-1",
+          "hiddenByScene": true,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#budget-options>button:nth-of-type(1)",
+          "tag": "button",
+          "text": "Not sure yet",
+          "section": "section-1",
+          "hiddenByScene": false,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#budget-options>button:nth-of-type(2)",
+          "tag": "button",
+          "text": "Still working it out",
+          "section": "section-1",
+          "hiddenByScene": false,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#budget-options>button:nth-of-type(3)",
+          "tag": "button",
+          "text": "Under R50 000",
+          "section": "section-1",
+          "hiddenByScene": false,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#budget-options>button:nth-of-type(4)",
+          "tag": "button",
+          "text": "R50 000 – R150 000",
+          "section": "section-1",
+          "hiddenByScene": false,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#budget-options>button:nth-of-type(5)",
+          "tag": "button",
+          "text": "R150 000 – R500 000",
+          "section": "section-1",
+          "hiddenByScene": false,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#budget-options>button:nth-of-type(6)",
+          "tag": "button",
+          "text": "R500 000+",
+          "section": "section-1",
+          "hiddenByScene": false,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#budget-options>button:nth-of-type(7)",
+          "tag": "button",
+          "text": "Prefer to discuss",
+          "section": "section-1",
+          "hiddenByScene": false,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#company",
           "tag": "input",
           "section": "section-1",
           "hiddenByScene": false,
@@ -5285,46 +5414,6 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#message",
-          "tag": "textarea",
-          "section": "section-1",
-          "hiddenByScene": false,
-          "motionAttributes": {},
-          "studio2Binding": "Not yet exposed in Studio 2.0"
-        },
-        {
-          "selector": "#contact-form>details:nth-of-type(1)",
-          "tag": "details",
-          "section": "section-1",
-          "hiddenByScene": false,
-          "motionAttributes": {},
-          "studio2Binding": "Not yet exposed in Studio 2.0"
-        },
-        {
-          "selector": "#company",
-          "tag": "input",
-          "section": "section-1",
-          "hiddenByScene": false,
-          "motionAttributes": {},
-          "studio2Binding": "Not yet exposed in Studio 2.0"
-        },
-        {
-          "selector": "#project-date",
-          "tag": "input",
-          "section": "section-1",
-          "hiddenByScene": false,
-          "motionAttributes": {},
-          "studio2Binding": "Not yet exposed in Studio 2.0"
-        },
-        {
-          "selector": "#project-budget",
-          "tag": "input",
-          "section": "section-1",
-          "hiddenByScene": false,
-          "motionAttributes": {},
-          "studio2Binding": "Not yet exposed in Studio 2.0"
-        },
-        {
           "selector": "#contact-website",
           "tag": "input",
           "section": "section-1",
@@ -5333,18 +5422,9 @@
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
-          "selector": "#contact-form>div:nth-of-type(5)>button:nth-of-type(1)",
+          "selector": "#contact-form>div:nth-of-type(6)>button:nth-of-type(1)",
           "tag": "button",
           "text": "Prepare the email ↗",
-          "section": "section-1",
-          "hiddenByScene": false,
-          "motionAttributes": {},
-          "studio2Binding": "Not yet exposed in Studio 2.0"
-        },
-        {
-          "selector": "#contact-form>div:nth-of-type(5)>p:nth-of-type(1)",
-          "tag": "p",
-          "text": "Your message hasn't been sent. This opens a prepared email for you to review and send.",
           "section": "section-1",
           "hiddenByScene": false,
           "motionAttributes": {},
@@ -5373,7 +5453,7 @@
           "motionAttributes": {
             "data-scene": "cinematic"
           },
-          "studio2Binding": "Phase 1 registered target"
+          "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
           "selector": "#hero-photo>img:nth-of-type(1)",
@@ -5383,7 +5463,7 @@
           "section": "section-1",
           "hiddenByScene": true,
           "motionAttributes": {},
-          "studio2Binding": "Phase 1 registered target"
+          "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
           "selector": "#hero-foreground>h1:nth-of-type(1)",
@@ -5392,7 +5472,7 @@
           "section": "section-1",
           "hiddenByScene": false,
           "motionAttributes": {},
-          "studio2Binding": "Phase 1 registered target"
+          "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
           "selector": "#hero-foreground>p:nth-of-type(1)",
@@ -5401,7 +5481,7 @@
           "section": "section-1",
           "hiddenByScene": false,
           "motionAttributes": {},
-          "studio2Binding": "Phase 1 registered target"
+          "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
           "selector": "#hero-foreground>div:nth-of-type(1)>a:nth-of-type(1)",
@@ -5411,7 +5491,7 @@
           "section": "section-1",
           "hiddenByScene": false,
           "motionAttributes": {},
-          "studio2Binding": "Phase 1 registered target"
+          "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
           "selector": "#hero-foreground>div:nth-of-type(1)>a:nth-of-type(2)",
@@ -5421,7 +5501,7 @@
           "section": "section-1",
           "hiddenByScene": false,
           "motionAttributes": {},
-          "studio2Binding": "Phase 1 registered target"
+          "studio2Binding": "Not yet exposed in Studio 2.0"
         },
         {
           "selector": "#hero-second>h2:nth-of-type(1)",
@@ -5561,7 +5641,7 @@
         {
           "selector": "#film-steps>article:nth-of-type(1)>p:nth-of-type(1)",
           "tag": "p",
-          "text": "We get curious. Ask the awkwardly good questions. Pull things apart. Put unexpected things together. And find the idea worth chasing.",
+          "text": "We start by getting curious. About the people in the room, the story worth telling and the thing this idea really needs to do. We ask awkwardly good questions, challenge the obvious and connect unlikely dots until we find a direction everyone can believe in.",
           "section": "section-3",
           "hiddenByScene": false,
           "motionAttributes": {},
@@ -5589,7 +5669,7 @@
         {
           "selector": "#film-steps>article:nth-of-type(2)>p:nth-of-type(1)",
           "tag": "p",
-          "text": "We design it, plan it, prototype it, build it and work through the bits nobody sees. This is where imagination meets the production schedule.",
+          "text": "Then we get our hands into it. The sketches become identities, layouts, websites, run sheets and real-world production plans. Creative thinking meets the people who build things, and we sweat the tiny details so the big picture feels effortless.",
           "section": "section-3",
           "hiddenByScene": false,
           "motionAttributes": {},
@@ -5617,7 +5697,7 @@
         {
           "selector": "#film-steps>article:nth-of-type(3)>p:nth-of-type(1)",
           "tag": "p",
-          "text": "The doors open. The launch goes live. The audience leans in. Everything clicks into place and the idea stops being an idea.",
+          "text": "Then comes the part you can feel. The doors open, the site goes live, the lights come up and people step into the idea. All the planning disappears into the experience, leaving the atmosphere, the connection and the moments people talk about afterwards.",
           "section": "section-3",
           "hiddenByScene": false,
           "motionAttributes": {},
@@ -6167,6 +6247,24 @@
           "text": "The small stuff is never small when you are making something big.",
           "section": "section-6",
           "hiddenByScene": false,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#dot-track>div:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h2:nth-of-type(1)",
+          "tag": "h2",
+          "text": "Serious about the details.Wild about the possibilities.",
+          "section": "section-6",
+          "hiddenByScene": true,
+          "motionAttributes": {},
+          "studio2Binding": "Not yet exposed in Studio 2.0"
+        },
+        {
+          "selector": "#dot-track>div:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>p:nth-of-type(1)",
+          "tag": "p",
+          "text": "The small stuff is never small when you are making something big.",
+          "section": "section-6",
+          "hiddenByScene": true,
           "motionAttributes": {},
           "studio2Binding": "Not yet exposed in Studio 2.0"
         },

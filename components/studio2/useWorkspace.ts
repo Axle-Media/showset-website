@@ -52,7 +52,12 @@ export function useWorkspace() {
           rawGlobals = localStorage.getItem("showset-demo-globals"),
           pages = rawPages ? JSON.parse(rawPages) : null,
           globals = rawGlobals ? JSON.parse(rawGlobals) : null;
-        const initial=adoptLegacy(defaultPages,defaultGlobals,pages,globals);
+        const initial = adoptLegacy(
+          defaultPages,
+          defaultGlobals,
+          pages,
+          globals,
+        );
         setWorkspace(initial);
         setStatus("Backup required before editing");
       })
@@ -69,6 +74,12 @@ export function useWorkspace() {
       const saved = await saveWorkspace(value, expected.current, label.current);
       expected.current = saved.revision;
       savedSequence.current = start;
+      current.current = {
+        ...current.current!,
+        revision: saved.revision,
+        updatedAt: saved.updatedAt,
+      };
+      setWorkspace(current.current);
       setStatus(start === seq.current ? "Saved locally" : "Unsaved changes");
       setHistory(await revisions());
       const channel = new BroadcastChannel("showset-studio2-updates");
@@ -217,7 +228,16 @@ export function useWorkspace() {
     savedSequence.current = seq.current;
     setStatus("Latest draft loaded; your previous changes were backed up");
   };
-  const backupRaw=async()=>{try{downloadJson(await createBackup(null,false),'SHOWSET-original-recovery-'+Date.now()+'.json')}catch(e){setError((e as Error).message)}};
+  const backupRaw = async () => {
+    try {
+      downloadJson(
+        await createBackup(null, false),
+        "SHOWSET-original-recovery-" + Date.now() + ".json",
+      );
+    } catch (e) {
+      setError((e as Error).message);
+    }
+  };
   return {
     backupRaw,
     workspace,

@@ -94,7 +94,115 @@ console.log(
   "PASS model CRUD, nesting/cycle/lock/route guards, CSS allowlist and escaped rendering.",
 );
 
-const legacyHome={...safe.home, title:'Owner custom title', privateExtension:{keep:'yes'}, sections:[]};
-const adopted=model.adoptLegacy(structuredClone(require('../content/pages.json')),g,{home:legacyHome},{theme:{navy:'#102030'},ownerExtension:'retained'});
-assert.equal(adopted.pages.home.title,'Owner custom title');assert.deepEqual(adopted.pages.home.sections,[]);assert.equal(adopted.pages.home.privateExtension.keep,'yes');assert.equal(adopted.globals.theme.navy,'#102030');assert.equal(adopted.globals.theme.teal,g.theme.teal);assert.equal(adopted.globals.ownerExtension,'retained');assert.throws(()=>model.adoptLegacy(structuredClone(require('../content/pages.json')),g,[],null),/valid record/);console.log('PASS additive legacy adoption retains empty arrays, authored values and unknown extension fields.');
+const legacyHome = {
+  ...safe.home,
+  title: "Owner custom title",
+  privateExtension: { keep: "yes" },
+  sections: [],
+};
+const adopted = model.adoptLegacy(
+  structuredClone(require("../content/pages.json")),
+  g,
+  { home: legacyHome },
+  { theme: { navy: "#102030" }, ownerExtension: "retained" },
+);
+assert.equal(adopted.pages.home.title, "Owner custom title");
+assert.deepEqual(adopted.pages.home.sections, []);
+assert.equal(adopted.pages.home.privateExtension.keep, "yes");
+assert.equal(adopted.globals.theme.navy, "#102030");
+assert.equal(adopted.globals.theme.teal, g.theme.teal);
+assert.equal(adopted.globals.ownerExtension, "retained");
+assert.throws(
+  () =>
+    model.adoptLegacy(
+      structuredClone(require("../content/pages.json")),
+      g,
+      [],
+      null,
+    ),
+  /valid record/,
+);
+console.log(
+  "PASS additive legacy adoption retains empty arrays, authored values and unknown extension fields.",
+);
 
+const { imageDimensions } = load("lib/studio2/image-validation.ts");
+for (const file of [
+  "public/brand/approved-wordmark.png",
+  "public/media/planning.webp",
+]) {
+  const bytes = fs.readFileSync(file),
+    size = imageDimensions(
+      new Uint8Array(bytes),
+      file.endsWith(".png") ? "image/png" : "image/webp",
+    );
+  assert.ok(size.width > 0 && size.height > 0);
+}
+const huge = Buffer.alloc(24);
+huge.write("IHDR", 12);
+huge.writeUInt32BE(9000, 16);
+huge.writeUInt32BE(9000, 20);
+assert.throws(
+  () => imageDimensions(new Uint8Array(huge), "image/png"),
+  /dimensions/,
+);
+assert.throws(
+  () => imageDimensions(new Uint8Array([1, 2, 3]), "image/jpeg"),
+  /dimensions/,
+);
+console.log(
+  "PASS image-header preflight rejects invalid/oversized allocations before decode.",
+);
+
+for (const color of [
+  "#12BAAF",
+  "#fff",
+  "#fffa",
+  "#12345678",
+  "rgb(12, 34, 56)",
+  "rgba(10,20,30,.5)",
+])
+  assert.equal(registry.validStyle("color", color), true, color);
+for (const color of [
+  "#12345",
+  "#1234567",
+  "rgb(999,0,0)",
+  "rgba(1,2,3,4)",
+  "rgba(,,,)",
+])
+  assert.equal(registry.validStyle("color", color), false, color);
+const invalid = structuredClone(require("../content/pages.json"));
+invalid.home.builder = {
+  schemaVersion: 2,
+  mode: "template",
+  roots: [],
+  overrides: {
+    hero: { styles: { desktop: { fontSize: "expression(alert(1))" } } },
+  },
+};
+assert.throws(
+  () =>
+    assertWorkspace({
+      schemaVersion: 2,
+      revision: 0,
+      pages: invalid,
+      globals: g,
+      media: [],
+      updatedAt: "",
+    }),
+  /style value/,
+);
+console.log(
+  "PASS strict colour, responsive-style and imported-control validation.",
+);
+
+const order = [makeNode("text"), makeNode("text"), makeNode("text")];
+assert.deepEqual(
+  moveNode(order, order[0].id, null, 2).map((n) => n.id),
+  [order[1].id, order[0].id, order[2].id],
+);
+assert.deepEqual(
+  moveNode(order, order[2].id, null, 0).map((n) => n.id),
+  [order[2].id, order[0].id, order[1].id],
+);
+console.log("PASS forward and reverse same-parent drag insertion indices.");

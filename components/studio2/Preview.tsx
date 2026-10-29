@@ -60,9 +60,32 @@ export default function Preview() {
         });
       });
     }
-    const back=()=>{const slug=new URLSearchParams(location.search).get('page')||'home';setState(value=>value?.workspace.pages[slug]?{...value,slug}:value)};addEventListener('popstate',back);return()=>{removeEventListener('message',receive);removeEventListener('popstate',back)};
+    const back = () => {
+      const slug = new URLSearchParams(location.search).get("page") || "home";
+      setState((value) =>
+        value?.workspace.pages[slug] ? { ...value, slug } : value,
+      );
+    };
+    addEventListener("popstate", back);
+    return () => {
+      removeEventListener("message", receive);
+      removeEventListener("popstate", back);
+    };
   }, []);
-  useEffect(()=>{if(!state)return;const page=state.workspace.pages[state.slug];document.title=page.seo.title||page.title;let meta=document.querySelector<HTMLMetaElement>('meta[name="description"]');if(!meta){meta=document.createElement('meta');meta.name='description';document.head.append(meta)}meta.content=page.seo.description||''},[state?.workspace.pages,state?.slug]);
+  useEffect(() => {
+    if (!state) return;
+    const page = state.workspace.pages[state.slug];
+    document.title = page.seo.title || page.title;
+    let meta = document.querySelector<HTMLMetaElement>(
+      'meta[name="description"]',
+    );
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.name = "description";
+      document.head.append(meta);
+    }
+    meta.content = page.seo.description || "";
+  }, [state?.workspace.pages, state?.slug]);
   useLayoutEffect(() => {
     const root = host.current;
     if (!root || !state) return;
@@ -98,6 +121,19 @@ export default function Preview() {
           content: binding
             ? bindingContent(page, binding)
             : node?.props.text || "",
+          display: computed.display,
+          direction: computed.flexDirection,
+          align: computed.alignItems,
+          justify: computed.justifyContent,
+          textAlign: computed.textAlign,
+          opacity: computed.opacity,
+          objectFit: computed.objectFit,
+          objectPosition: computed.objectPosition,
+          width: computed.width,
+          height: computed.height,
+          padding: computed.padding,
+          margin: computed.margin,
+          gap: computed.gap,
           fontSize: computed.fontSize,
           fontWeight: computed.fontWeight,
           fontFamily: computed.fontFamily.includes("Manrope")
@@ -141,7 +177,19 @@ export default function Preview() {
       const target = (event.target as Element).closest<HTMLElement>(
         "[data-builder-node]",
       );
-      if (!target) {const link=(event.target as Element).closest<HTMLAnchorElement>('a[href]');if(link){event.preventDefault();event.stopImmediatePropagation();const url=new URL(link.href,location.href);if(url.origin===location.origin&&!url.hash)send('showset-studio2-navigate',{route:url.pathname})}return;}
+      if (!target) {
+        const link = (event.target as Element).closest<HTMLAnchorElement>(
+          "a[href]",
+        );
+        if (link) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          const url = new URL(link.href, location.href);
+          if (url.origin === location.origin && !url.hash)
+            send("showset-studio2-navigate", { route: url.pathname });
+        }
+        return;
+      }
       event.preventDefault();
       event.stopImmediatePropagation();
       send("showset-studio2-select", { id: target.dataset.builderNode });
@@ -176,7 +224,7 @@ export default function Preview() {
       editing.textContent = binding
         ? bindingContent(page, binding)
         : node?.props.text || "";
-      editing.contentEditable = "true";
+      editing.contentEditable = "plaintext-only";
       editing.dataset.inlineEditing = id;
       editing.setAttribute("role", "textbox");
       editing.setAttribute("aria-label", "Inline text editor");
@@ -216,14 +264,42 @@ export default function Preview() {
       );
       if (!link) return;
       const url = new URL(link.href, location.href);
-      if(url.origin===location.origin&&!url.hash){const data=current.current,next=Object.values(data!.workspace.pages).find(p=>p.route===url.pathname);event.preventDefault();event.stopImmediatePropagation();if(parent!==window)send('showset-studio2-navigate',{route:url.pathname});else if(next){setState(previous=>previous?{...previous,slug:next.slug}:null);history.pushState({},'', '/studio/next/preview/?page='+encodeURIComponent(next.slug));scrollTo(0,0)}}
+      if (url.origin === location.origin && !url.hash) {
+        const data = current.current,
+          next = Object.values(data!.workspace.pages).find(
+            (p) => p.route === url.pathname,
+          );
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        if (parent !== window)
+          send("showset-studio2-navigate", { route: url.pathname });
+        else if (next) {
+          setState((previous) =>
+            previous ? { ...previous, slug: next.slug } : null,
+          );
+          history.pushState(
+            {},
+            "",
+            "/studio/next/preview/?page=" + encodeURIComponent(next.slug),
+          );
+          scrollTo(0, 0);
+        }
+      }
     };
+    const leave = (event: BeforeUnloadEvent) => {
+      if (editing) {
+        event.preventDefault();
+        event.returnValue = "";
+      }
+    };
+    window.addEventListener("beforeunload", leave);
     root.addEventListener("click", choose, true);
     root.addEventListener("dblclick", edit, true);
     root.addEventListener("focusout", blur, true);
     root.addEventListener("keydown", key, true);
     root.addEventListener("click", links, true);
     return () => {
+      window.removeEventListener("beforeunload", leave);
       root.removeEventListener("click", choose, true);
       root.removeEventListener("dblclick", edit, true);
       root.removeEventListener("focusout", blur, true);
@@ -267,7 +343,7 @@ export default function Preview() {
           editor={!state.interactive}
         />
       )}
-      <style>{`.s2-edit-canvas [data-builder-node]{cursor:pointer}.s2-edit-canvas [data-builder-node]:hover{outline:1px dashed #12BAAF;outline-offset:2px}.s2-edit-canvas .s2-selected{outline:2px solid #12BAAF!important;outline-offset:3px}.s2-edit-canvas [contenteditable=true]{outline:2px solid #FAF9FD!important;cursor:text!important;user-select:text;min-width:1ch}.s2-preview-notice{padding:15vh 8vw;color:#FAF9FD;background:#0D2F49;min-height:100vh}`}</style>
+      <style>{`.s2-edit-canvas [data-builder-node]{cursor:pointer}.s2-edit-canvas [data-builder-node]:hover{outline:1px dashed #12BAAF;outline-offset:2px}.s2-edit-canvas .s2-selected{outline:2px solid #12BAAF!important;outline-offset:3px}.s2-edit-canvas [data-inline-editing]{outline:2px solid #FAF9FD!important;cursor:text!important;user-select:text;min-width:1ch}.s2-preview-notice{padding:15vh 8vw;color:#FAF9FD;background:#0D2F49;min-height:100vh}`}</style>
     </div>
   );
 }

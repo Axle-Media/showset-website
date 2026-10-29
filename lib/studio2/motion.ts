@@ -11,6 +11,12 @@ export function mountNodeMotion(
   const nodes = [
     ...host.querySelectorAll<HTMLElement>("[data-builder-motion]"),
   ];
+  const baseOpacity = new Map<HTMLElement, number>();
+  for (const element of nodes) {
+    element.style.transition = "none";
+    element.style.removeProperty("opacity");
+    baseOpacity.set(element, Number(getComputedStyle(element).opacity));
+  }
   const documentTop = (element: HTMLElement) => {
     let top = 0,
       target: HTMLElement | null = element;
@@ -51,7 +57,12 @@ export function mountNodeMotion(
         m.trigger === "scroll"
           ? "none"
           : `opacity ${m.duration}ms ${m.ease} ${m.delay}ms,transform ${m.duration}ms ${m.ease} ${m.delay}ms,clip-path ${m.duration}ms ${m.ease} ${m.delay}ms`;
-      if (m.preset === "fade") el.style.opacity = String(progress);
+      if (m.preset === "fade")
+        el.style.setProperty(
+          "opacity",
+          String(progress * (baseOpacity.get(el) ?? 1)),
+          "important",
+        );
       if (m.preset === "slide")
         el.style.transform = `translateY(${(1 - progress) * m.distance}px)`;
       if (m.preset === "scale")
@@ -69,9 +80,11 @@ export function mountNodeMotion(
   if (enabled && !preference.matches)
     for (const el of nodes) {
       const m = motions[el.dataset.builderMotion || ""];
-      if (m?.trigger !== "load" || el.dataset.builderSeen === "true") continue;
+      if (!m || m.trigger === "scroll" || el.dataset.builderSeen === "true")
+        continue;
       el.style.transition = "none";
-      if (m.preset === "fade") el.style.opacity = "0";
+      if (m.preset === "fade")
+        el.style.setProperty("opacity", "0", "important");
       if (m.preset === "slide")
         el.style.transform = `translateY(${m.distance}px)`;
       if (m.preset === "scale") el.style.transform = "scale(.9)";

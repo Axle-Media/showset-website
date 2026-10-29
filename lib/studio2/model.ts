@@ -1,3 +1,4 @@
+import { validStyle } from "./registry";
 import type { Globals, PageData } from "../types";
 export const SCHEMA_VERSION = 2 as const;
 export type Breakpoint = "desktop" | "tablet" | "mobile";
@@ -321,7 +322,21 @@ export function moveNode(
   if (!node || node.locked) throw Error("This element is locked.");
   if (parent === id || (parent && findNode(node.children, parent)))
     throw Error("An element cannot contain itself.");
-  return insertNode(removeNode(nodes, id), node, parent, index);
+  const locate = (
+    list: CanvasNode[],
+    owner: string | null,
+  ): { parent: string | null; index: number } | undefined => {
+    const at = list.findIndex((n) => n.id === id);
+    if (at >= 0) return { parent: owner, index: at };
+    for (const candidate of list) {
+      const found = locate(candidate.children, candidate.id);
+      if (found) return found;
+    }
+  };
+  const previous = locate(nodes, null);
+  const adjusted =
+    previous?.parent === parent && previous.index < index ? index - 1 : index;
+  return insertNode(removeNode(nodes, id), node, parent, adjusted);
 }
 export function cloneNode(node: CanvasNode): CanvasNode {
   return {
@@ -345,6 +360,64 @@ export function assertWorkspace(value: unknown): asserts value is Workspace {
   const encoded = JSON.stringify(w);
   if (encoded.length > 24 * 1024 * 1024)
     throw Error("Workspace exceeds 24 MB.");
+  const record = (x: unknown): x is Record<string, unknown> =>
+    !!x && typeof x === "object" && !Array.isArray(x);
+  const checkTarget = (target: TargetOverride | CanvasNode) => {
+    if (!record(target.styles)) throw Error("Invalid responsive styles.");
+    for (const [point, styles] of Object.entries(target.styles)) {
+      if (!["desktop", "tablet", "mobile"].includes(point))
+        throw Error("Unsupported breakpoint.");
+      if (styles === undefined) continue;
+      if (!record(styles)) throw Error("Invalid style values.");
+      for (const [key, value] of Object.entries(styles)) {
+        if (value !== undefined && !validStyle(key as keyof StyleValues, value))
+          throw Error("Unsupported style value: " + key);
+      }
+    }
+    for (const [point, p] of Object.entries(target.patterns || {})) {
+      if (p === undefined) continue;
+      if (
+        !["desktop", "tablet", "mobile"].includes(point) ||
+        typeof p.enabled !== "boolean" ||
+        typeof p.repeat !== "boolean" ||
+        !["normal", "multiply", "screen"].includes(p.blend) ||
+        ![p.x, p.y, p.size, p.opacity, p.rotation].every(Number.isFinite) ||
+        p.x < -200 ||
+        p.x > 200 ||
+        p.y < -200 ||
+        p.y > 200 ||
+        p.size < 50 ||
+        p.size > 2400 ||
+        p.opacity < 0 ||
+        p.opacity > 1 ||
+        p.rotation < -180 ||
+        p.rotation > 180 ||
+        (p.preset !== undefined && !["custom", "closing"].includes(p.preset))
+      )
+        throw Error("Invalid pattern settings.");
+    }
+  };
+  const mediaIds = new Set<string>();
+  for (const asset of w.media) {
+    if (
+      !/^asset-[a-f0-9]{64}$/.test(asset.id) ||
+      mediaIds.has(asset.id) ||
+      !["image/png", "image/jpeg", "image/webp"].includes(asset.type) ||
+      ![asset.width, asset.height, asset.size].every(Number.isFinite) ||
+      asset.width < 1 ||
+      asset.height < 1 ||
+      asset.width > 8192 ||
+      asset.height > 8192 ||
+      asset.width * asset.height > 24000000 ||
+      asset.size > 8 * 1024 * 1024
+    )
+      throw Error("Invalid original image metadata.");
+    mediaIds.add(asset.id);
+  }
+  const mediaRef = (src: string | undefined) => {
+    if (src?.startsWith("asset:") && !mediaIds.has(src.slice(6)))
+      throw Error("An image reference is missing from the media library.");
+  };
   const ids = new Set<string>();
   const scan = (nodes: CanvasNode[], depth: number) => {
     if (depth > 12) throw Error("Maximum nesting depth is 12.");
@@ -396,6 +469,9 @@ export function assertWorkspace(value: unknown): asserts value is Workspace {
         } else if (value !== undefined && typeof value !== "string")
           throw Error("Invalid component content.");
       }
+      checkTarget(n);
+      mediaRef(n.props.src);
+      for (const item of n.props.items || []) mediaRef(item.src);
       if (n.motion) {
         const m = n.motion;
         if (
@@ -431,9 +507,20 @@ export function assertWorkspace(value: unknown): asserts value is Workspace {
     routes.add(p.route);
     if (!Array.isArray(p.sections) || typeof p.title !== "string")
       throw Error("Invalid page.");
+    for (const section of p.sections) mediaRef(section.image);
     if (p.builder) {
       if (p.builder.schemaVersion !== 2)
         throw Error("Unsupported page version.");
+      if (
+        !["custom", "template"].includes(p.builder.mode) ||
+        !record(p.builder.overrides)
+      )
+        throw Error("Invalid page builder mode.");
+      for (const [id, override] of Object.entries(p.builder.overrides)) {
+        if (!/^[\w-]{1,100}$/.test(id))
+          throw Error("Invalid binding identifier.");
+        checkTarget(override);
+      }
       scan(p.builder.roots, 0);
     }
   }
@@ -451,16 +538,37 @@ export function assertWorkspace(value: unknown): asserts value is Workspace {
 }
 
 /** Pure, additive adoption. Never reconciles authored values or writes legacy storage. */
-export function adoptLegacy(defaultPages:Record<string,PageData>, defaultGlobals:Globals, pages:unknown, globals:unknown):Workspace {
-  const record=(x:unknown):x is Record<string,unknown>=>!!x&&typeof x==='object'&&!Array.isArray(x);
-  if(pages!==null&&!record(pages)||globals!==null&&!record(globals))throw Error('Legacy data is not a valid record. Export the original records before repair.');
-  const fill=(base:unknown,saved:unknown):unknown=>{
-    if(saved===undefined)return structuredClone(base);
-    if(!record(base)||!record(saved))return structuredClone(saved);
-    const result:Record<string,unknown>={...saved};
-    for(const [key,value]of Object.entries(base))result[key]=fill(value,saved[key]);
+export function adoptLegacy(
+  defaultPages: Record<string, PageData>,
+  defaultGlobals: Globals,
+  pages: unknown,
+  globals: unknown,
+): Workspace {
+  const record = (x: unknown): x is Record<string, unknown> =>
+    !!x && typeof x === "object" && !Array.isArray(x);
+  if (
+    (pages !== null && !record(pages)) ||
+    (globals !== null && !record(globals))
+  )
+    throw Error(
+      "Legacy data is not a valid record. Export the original records before repair.",
+    );
+  const fill = (base: unknown, saved: unknown): unknown => {
+    if (saved === undefined) return structuredClone(base);
+    if (!record(base) || !record(saved)) return structuredClone(saved);
+    const result: Record<string, unknown> = { ...saved };
+    for (const [key, value] of Object.entries(base))
+      result[key] = fill(value, saved[key]);
     return result;
   };
-  const workspace:Workspace={schemaVersion:2,revision:0,pages:fill(defaultPages,pages||{})as Record<string,PageData>,globals:fill(defaultGlobals,globals||{})as Globals,media:[],updatedAt:new Date().toISOString()};
-  assertWorkspace(workspace);return workspace;
+  const workspace: Workspace = {
+    schemaVersion: 2,
+    revision: 0,
+    pages: fill(defaultPages, pages || {}) as Record<string, PageData>,
+    globals: fill(defaultGlobals, globals || {}) as Globals,
+    media: [],
+    updatedAt: new Date().toISOString(),
+  };
+  assertWorkspace(workspace);
+  return workspace;
 }

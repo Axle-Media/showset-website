@@ -1,24 +1,45 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 function DraftField({
   value,
   onCommit,
   multi = false,
   placeholder = "",
+  numeric,
 }: {
   value: string;
   onCommit: (v: string) => void;
   multi?: boolean;
   placeholder?: string;
+  numeric?: { min: number; max: number; step: number };
 }) {
   const [draft, setDraft] = useState(value);
+  const cancel = useRef(false);
   useEffect(() => setDraft(value), [value]);
+  useEffect(() => {
+    if (draft === value) return;
+    const leave = (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      event.returnValue = "";
+    };
+    window.addEventListener("beforeunload", leave);
+    return () => window.removeEventListener("beforeunload", leave);
+  }, [draft, value]);
   const props = {
     value: draft,
     placeholder,
     onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setDraft(e.target.value),
-    onBlur: () => {
+    onBlur: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      if (cancel.current) {
+        cancel.current = false;
+        return;
+      }
+      if (numeric && !(e.target as HTMLInputElement).checkValidity()) {
+        (e.target as HTMLInputElement).reportValidity();
+        setDraft(value);
+        return;
+      }
       if (draft !== value) onCommit(draft);
     },
     onKeyDown: (e: React.KeyboardEvent) => {
@@ -27,12 +48,24 @@ function DraftField({
         (e.target as HTMLInputElement).blur();
       }
       if (e.key === "Escape") {
+        cancel.current = true;
         setDraft(value);
         (e.target as HTMLInputElement).blur();
       }
     },
   };
-  return multi ? <textarea rows={4} {...props} /> : <input {...props} />;
+  return multi ? (
+    <textarea rows={4} {...props} />
+  ) : (
+    <input
+      type={numeric ? "number" : "text"}
+      required={!!numeric}
+      min={numeric?.min}
+      max={numeric?.max}
+      step={numeric?.step}
+      {...props}
+    />
+  );
 }
 import type {
   CanvasNode,
@@ -79,7 +112,14 @@ export default function Inspector({
   const [tab, setTab] = useState("Content");
   useEffect(() => setTab("Content"), [node?.id, binding?.id]);
   const styles = (node || override)?.styles?.[breakpoint] || {},
-    pattern = (node || override)?.patterns?.[breakpoint],
+    pattern =
+      (node || override)?.patterns?.[breakpoint] ||
+      (breakpoint === "mobile"
+        ? (node || override)?.patterns?.tablet
+        : undefined) ||
+      (breakpoint !== "desktop"
+        ? (node || override)?.patterns?.desktop
+        : undefined),
     kind = node?.kind || binding?.kind,
     motion = node?.motion || defaultMotion;
   const field = (
@@ -110,13 +150,11 @@ export default function Inspector({
   ) => (
     <label className="s2-field">
       {label}
-      <input
-        type="number"
-        min={min}
-        max={max}
-        step={step}
-        value={value}
-        onChange={(e) => onChange(Number(e.target.value))}
+      <DraftField
+        key={(node?.id || binding?.id || page.slug) + label + breakpoint}
+        value={String(value)}
+        onCommit={(v) => onChange(Number(v))}
+        numeric={{ min, max, step }}
       />
     </label>
   );
@@ -158,7 +196,14 @@ export default function Inspector({
           Select an element on the canvas, or manage this page here.
         </p>
         {field("Page name", page.title, (v) => onPage("title", v))}
-        {field("Address after release", page.route, (v) => onPage("route", v))}
+        {page.builder?.mode === "custom" ? (
+          field("Address after release", page.route, (v) => onPage("route", v))
+        ) : (
+          <p className="s2-hint">
+            Current address: {page.route}. Template route changes and redirects
+            are part of the site-coverage phase.
+          </p>
+        )}
         <p className="s2-hint">
           New addresses become public only through a configured release. Local
           preview has its own private address.
@@ -171,12 +216,14 @@ export default function Inspector({
           "",
           true,
         )}
-        <button
-          className="s2-secondary"
-          onClick={() => onAction("duplicate-page")}
-        >
-          Duplicate page
-        </button>
+        {page.builder?.mode === "custom" && (
+          <button
+            className="s2-secondary"
+            onClick={() => onAction("duplicate-page")}
+          >
+            Duplicate page
+          </button>
+        )}
         {page.builder?.mode === "custom" && (
           <button
             className="s2-secondary"
@@ -387,7 +434,7 @@ export default function Inspector({
           <>
             {select(
               "Layout",
-              styles.display || "block",
+              styles.display || metrics.display || "block",
               ["block", "flex", "grid"],
               (v) => onStyle("display", v),
             )}
@@ -395,19 +442,19 @@ export default function Inspector({
               <>
                 {select(
                   "Direction",
-                  styles.direction || "column",
+                  styles.direction || metrics.direction || "column",
                   ["row", "column"],
                   (v) => onStyle("direction", v),
                 )}
                 {select(
                   "Align items",
-                  styles.align || "start",
+                  styles.align || metrics.align || "start",
                   ["start", "center", "end", "stretch"],
                   (v) => onStyle("align", v),
                 )}
                 {select(
                   "Distribute",
-                  styles.justify || "start",
+                  styles.justify || metrics.justify || "start",
                   ["start", "center", "end", "space-between"],
                   (v) => onStyle("justify", v),
                 )}
@@ -435,7 +482,7 @@ export default function Inspector({
               <>
                 {select(
                   "Image fit",
-                  styles.objectFit || "cover",
+                  styles.objectFit || metrics.objectFit || "cover",
                   ["cover", "contain"],
                   (v) => onStyle("objectFit", v),
                 )}
@@ -476,7 +523,7 @@ export default function Inspector({
             {style("Accent colour", "accentColor", "#12BAAF")}
             {select(
               "Text alignment",
-              styles.textAlign || "left",
+              styles.textAlign || metrics.textAlign || "left",
               ["left", "center", "right"],
               (v) => onStyle("textAlign", v),
             )}
@@ -508,7 +555,7 @@ export default function Inspector({
             {style("Background colour or gradient", "background", "#0D2F49")}
             {numeric(
               "Element opacity",
-              Number(styles.opacity ?? 1),
+              Number(styles.opacity ?? metrics.opacity ?? 1),
               (v) => onStyle("opacity", v),
               0,
               1,
@@ -539,10 +586,20 @@ export default function Inspector({
                   Approved S + dot pattern
                 </label>
                 {pattern?.preset === "closing" ? (
-                  <p className="s2-hint">
-                    Exact approved closing geometry, with its 800px and 600px
-                    responsive treatments.
-                  </p>
+                  <>
+                    <button
+                      className="s2-secondary"
+                      onClick={() =>
+                        onPattern({ ...defaultPattern, preset: "custom" })
+                      }
+                    >
+                      Use custom pattern controls
+                    </button>
+                    <p className="s2-hint">
+                      Exact approved closing geometry, with its 800px and 600px
+                      responsive treatments.
+                    </p>
+                  </>
                 ) : (
                   pattern?.enabled && (
                     <>
@@ -640,69 +697,108 @@ export default function Inspector({
                 "Motion preset",
                 motion.preset,
                 ["none", "reveal", "fade", "slide", "scale", "parallax"],
-                (v) => onMotion({ ...motion, preset: v as Motion["preset"] }),
+                (v) =>
+                  onMotion({
+                    ...motion,
+                    preset: v as Motion["preset"],
+                    trigger: v === "parallax" ? "scroll" : motion.trigger,
+                  }),
               )}
-              {select(
-                "Trigger",
-                motion.trigger,
-                ["viewport", "scroll", "load"],
-                (v) => onMotion({ ...motion, trigger: v as Motion["trigger"] }),
+              {motion.preset !== "none" && (
+                <>
+                  {motion.preset === "parallax" ? (
+                    <p className="s2-hint">
+                      Parallax follows scroll in both directions.
+                    </p>
+                  ) : (
+                    select(
+                      "Trigger",
+                      motion.trigger,
+                      ["viewport", "scroll", "load"],
+                      (v) =>
+                        onMotion({
+                          ...motion,
+                          trigger: v as Motion["trigger"],
+                        }),
+                    )
+                  )}
+                  {motion.trigger !== "scroll" &&
+                    motion.preset !== "parallax" && (
+                      <>
+                        {numeric(
+                          "Duration (ms)",
+                          motion.duration,
+                          (v) => onMotion({ ...motion, duration: v }),
+                          0,
+                          5000,
+                          50,
+                        )}
+                        {numeric(
+                          "Delay (ms)",
+                          motion.delay,
+                          (v) => onMotion({ ...motion, delay: v }),
+                          0,
+                          3000,
+                          50,
+                        )}
+                        {select(
+                          "Easing",
+                          motion.ease,
+                          ["ease", "linear", "ease-in-out"],
+                          (v) =>
+                            onMotion({ ...motion, ease: v as Motion["ease"] }),
+                        )}
+                      </>
+                    )}
+                  {["slide", "parallax"].includes(motion.preset) &&
+                    numeric(
+                      "Distance (px)",
+                      motion.distance,
+                      (v) => onMotion({ ...motion, distance: v }),
+                      0,
+                      200,
+                    )}
+                  {motion.trigger !== "load" &&
+                    numeric(
+                      "Start progress",
+                      motion.start,
+                      (v) => onMotion({ ...motion, start: v }),
+                      0,
+                      0.9,
+                      0.05,
+                    )}
+                  {(motion.trigger === "scroll" ||
+                    motion.preset === "parallax") && (
+                    <>
+                      {numeric(
+                        "End progress",
+                        motion.end,
+                        (v) => onMotion({ ...motion, end: v }),
+                        0.1,
+                        1,
+                        0.05,
+                      )}
+                      <p className="s2-hint">
+                        Scroll controls the progress directly. Timing applies to
+                        load and viewport effects.
+                      </p>
+                    </>
+                  )}
+                  {motion.trigger !== "load" &&
+                    motion.preset !== "parallax" && (
+                      <label className="s2-checkbox">
+                        <input
+                          type="checkbox"
+                          checked={motion.replay}
+                          onChange={(e) =>
+                            onMotion({ ...motion, replay: e.target.checked })
+                          }
+                        />
+                        Replay on reverse entry
+                      </label>
+                    )}
+                </>
               )}
-              {numeric(
-                "Duration (ms)",
-                motion.duration,
-                (v) => onMotion({ ...motion, duration: v }),
-                0,
-                5000,
-                50,
-              )}
-              {numeric(
-                "Delay (ms)",
-                motion.delay,
-                (v) => onMotion({ ...motion, delay: v }),
-                0,
-                3000,
-                50,
-              )}
-              {numeric(
-                "Distance (px)",
-                motion.distance,
-                (v) => onMotion({ ...motion, distance: v }),
-                0,
-                200,
-              )}
-              {numeric(
-                "Start progress",
-                motion.start,
-                (v) => onMotion({ ...motion, start: v }),
-                0,
-                0.9,
-                0.05,
-              )}
-              {numeric(
-                "End progress",
-                motion.end,
-                (v) => onMotion({ ...motion, end: v }),
-                0.1,
-                1,
-                0.05,
-              )}
-              {select(
-                "Easing",
-                motion.ease,
-                ["ease", "linear", "ease-in-out"],
-                (v) => onMotion({ ...motion, ease: v as Motion["ease"] }),
-              )}
-              <label className="s2-checkbox">
-                <input
-                  type="checkbox"
-                  checked={motion.replay}
-                  onChange={(e) =>
-                    onMotion({ ...motion, replay: e.target.checked })
-                  }
-                />
-                Replay on reverse entry
-              </label>
               <p className="s2-hint">
                 Switch to Interactive preview to test motion. Reduced-motion
                 visitors always see readable content.
@@ -722,7 +818,8 @@ export default function Inspector({
               Desktop is the base. Tablet applies at 1024px and below; mobile
               applies at 600px and below. Empty fields inherit the base.
             </p>
-            {style("Responsive font size", "fontSize", "Inherited")}
+            {["heading", "text", "button"].includes(kind || "") &&
+              style("Responsive font size", "fontSize", "Inherited")}
             {style("Responsive width", "width", "Inherited")}
             {style("Responsive padding", "padding", "Inherited")}
             {kind === "image" &&

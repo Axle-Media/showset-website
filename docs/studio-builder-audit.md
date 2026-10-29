@@ -1,6 +1,6 @@
 # Studio builder audit: issue #57
 
-Baseline: `6ebdf13` (approved main, 28 October 2026). Feature branch: `feat/studio-2-foundation`.
+Baseline: `3ea5f7d` (approved main, 29 October 2026), refreshed after the initial `6ebdf13` audit. Feature branch: `feat/studio-2-foundation`.
 
 ## Scope and evidence
 
@@ -86,15 +86,15 @@ Each row includes all source items. Case-specific fields, globals, CSS assets an
 | Surface | Today / source | Desired control and method | Risk / acceptance |
 |---|---|---|---|
 | Wordmark, logo sizing/clear space | `Globals.brand`, `bridge.ts`, approved artwork; logo URL editable | Registered image/layout bindings, preserve original aspect/alt | Brand parity; no substitute logo |
-| Six desktop nav links and CTA | `Globals.header`, `bridge.ts`, fixed markup/CSS | Label, target, order, style; preserve six-centred default | Keyboard, direct route and top-before-curtain |
+| Six desktop nav links and CTA | `Globals.header`, `bridge.ts`, fixed markup/CSS | Label, target, order, style; preserve the current centred desktop default and approved mobile treatment | Keyboard, direct route and top-before-curtain |
 | Mobile menu, overlays, focus and Escape | Runtime + markup; content partially shared | Same navigation source; accessible overlay settings | Touch/keyboard/focus return; no scroll trap |
 | Footer description/contact/social/copyright/signoff | `Globals.footer` + bridge; sizing and grouping mostly CSS | Registered text/link/group bindings and reusable footer scope | All routes and actual external/contact URLs |
-| Shared five-page closing CTA | `closing-cta.css`, `studio-cta-pattern.svg`; hard-coded pattern placement | Exact approved reusable preset + optional per-breakpoint overrides | Byte-identical default output; five-page comparison |
+| Shared ten-page closing CTA | `closing-cta.css`, `studio-cta-pattern.svg`; hard-coded pattern placement | Exact approved reusable preset + optional per-breakpoint overrides | Byte-identical default output; ten-page comparison |
 | Home photographic hero/second scene | Block fields + hard-coded image plane/heading spans | Bound title, accent, copy, CTA, photograph; styles on the actual elements | Preserve masks, crop, expansion and reverse scroll |
 | Home three-act film, services, dot, gallery | Source/runtime/BlockItems | Registered scene targets and parameters; keep existing engines | Reverse/resize/reduced motion; bounded resources |
 | Service expertise groups/search | 68 items + `service-capability-groups.ts` | Actual entries, groups, disclosure and filter labels | Preserve every ID, useful keyboard/touch search |
 | Service signature graphics, SVG paths and photographs | `service-experience.ts`, `service-motion.js` | Expose meaningful scene/timing/media controls via typed targets | No replacement story engine, no generic layout reduction |
-| Our Studio hero/film/manifesto/outlook | `bridge.ts`, `editorial-motion.js`, `studio-scroll-story.css` | Existing content bindings plus true descendant design/motion | Current approved scroll choreography |
+| Our Studio hero/film/manifesto/outlook | `bridge.ts`, `editorial-motion.js`, `studio-scroll-story.css` | Existing content bindings plus true descendant design/motion | Current approved scroll choreography, including the 29 October responsive refinements |
 | Our Work tags/filter/cards/date/load-more | `portfolio-content.ts`, `Globals`/cases, `work-gallery.css` | Collection-driven editor, publish date/tags, first-six setting | Newest-first, lowercase All filter, six before load-more |
 | Case opening, second scene, Brief/Intention/Approach | `CaseExperience`, `case-content.ts`, `immersive-case.ts` | Existing content controls retained; element styles and responsive | All three cases and legacy/custom data |
 | Case galleries/credits/lightbox/related projects | `CaseExperience.gallery`, runtime | Media, ordering, licensing, relationships and interaction settings | Loops, clones, keyboard, lightbox and reverse scrolling |
@@ -141,7 +141,7 @@ Additional native-scroll equations and interactive owners are `runtime.js` (hero
 
 The four draft/preview localStorage records, both recovery records and all other `showset-*` historical keys are origin-specific. Git does not back them up. The Phase 1 read path must not call the side-effecting compatibility adapter before a verified raw backup exists. A new versioned store is separate; no automatic destructive migration is authorised. Old editor and keys stay available for rollback.
 
-Existing PHP has sessions, CSRF checks, prepared SQL, MIME validation and rate limits. It is not the current Vercel runtime. Host-only Origin comparison ignores scheme/port; single-role auth, lost-update prevention, release approval, media immutability and audit/restore need work. Credentials remain developer-managed. Phase 1 is loopback-only and makes no remote-auth or shared-storage claim.
+Existing PHP has sessions, CSRF checks, prepared SQL, MIME validation and rate limits. It is not the current Vercel runtime. Host-only Origin comparison ignores scheme/port; single-role auth, lost-update prevention, release approval, media immutability and audit/restore need work. Credentials remain developer-managed. Phase 1 is development-build and loopback-only and makes no remote-auth or shared-storage claim.
 
 ## Delivery phases and status
 
@@ -152,3 +152,11 @@ Existing PHP has sessions, CSRF checks, prepared SQL, MIME validation and rate l
 - Phase 4: complete acceptance matrix, security/accessibility/performance gates and operator runbook.
 
 The full issue is not complete at the end of the first vertical slice. Every exception and later-phase capability remains explicitly identified instead of presenting a non-functional placeholder as an implemented control.
+
+## Implemented Phase 1 and review boundary
+
+See the [working-slice report](studio-builder-phase1.md), [operator guide](studio-builder-operator.md) and [rendered surface inventory](studio-builder/rendered-surfaces.json). The reproducible browser inventory contains 693 route-surface instances; those are not 693 working controls. Seven existing homepage-opening targets have tested Studio 2.0 bindings. Eleven generic component kinds can be used on local builder pages. All other template/global/specialised surfaces remain explicitly uncovered here; classic editing remains available.
+
+The latest approved main changed the shared closing pattern to 0.42 / 0.32 / 0.24 at desktop / small tablet / mobile, with desktop artwork 125px farther right. The reusable pattern preset follows those current values. The newer mobile/tablet centring takes precedence over the original desktop alignment guidance. No unedited page content, palette, photograph or choreography is changed by this feature.
+
+The full production gate also exposed a real pre-existing defect: authored classic `headingSize` and `spaceTop` were losing to newer important default rules. `app/studio-authored-overrides.css` and explicit authored padding restore these controls; empty seed designs match no new rule. The service editing regression passes after this fix. Remaining baseline assertion discrepancies are recorded in the milestone report rather than changing approved designs to make old tests green.

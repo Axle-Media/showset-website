@@ -20,6 +20,7 @@ type LayoutProps = {
   editor?: boolean;
   onSelect?: (id: string) => void;
   selectedId?: string;
+  suppressSubmissions?: boolean;
 };
 /** Public site and Studio mount the same original Concept 12 DOM and runtime. */
 function TemplateSiteLayout({
@@ -30,13 +31,14 @@ function TemplateSiteLayout({
   editor,
   onSelect,
   selectedId,
+  suppressSubmissions=false,
 }: LayoutProps) {
   const pathname = usePathname();
   const root = useRef<HTMLDivElement>(null),
     select = useRef(onSelect),
     lastRoute = useRef(page.route);
   select.current = onSelect;
-  const latest = useRef({page,g,catalog,editor,reduced:false});
+  const latest = useRef({page,g,catalog,editor,suppressSubmissions,reduced:false});
   const engine = useRef<ReturnType<typeof mountConcept> | null>(null);
   const rendered = useRef<unknown>(null);
   const [reduced, setReduced] = useState(false);
@@ -47,7 +49,7 @@ function TemplateSiteLayout({
     q.addEventListener("change", sync);
     return () => q.removeEventListener("change", sync);
   }, []);
-  latest.current = {page,g,catalog,editor,reduced};
+  latest.current = {page,g,catalog,editor,suppressSubmissions,reduced};
   function optionsFor(context: typeof latest.current) {
     const {page,g,catalog,editor,reduced}=context;
     return {
@@ -60,6 +62,7 @@ function TemplateSiteLayout({
         return entry ? conceptMetadata(entry) : undefined;
       },
       editor: !!editor,
+      suppressSubmissions: context.suppressSubmissions,
       staticMotion: !g.motion.enabled || reduced || !!editor,
       heroScale: Math.max(1, Math.min(3, g.motion.heroScale)),
       storyParallax: Math.max(0, Math.min(3, g.motion.storyParallax)),
@@ -221,6 +224,7 @@ type Props = {
   editor?: boolean;
   onSelect?: (id: string) => void;
   selectedId?: string;
+  suppressSubmissions?: boolean;
 };
 export default function SiteShell({
   initialPage,

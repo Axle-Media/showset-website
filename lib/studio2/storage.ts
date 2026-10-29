@@ -1,3 +1,4 @@
+import { imageDimensions } from "./image-validation";
 import type { Workspace, Backup, Revision, MediaAsset } from "./model";
 import { assertWorkspace } from "./model";
 const DATABASE = "showset-studio2";
@@ -134,7 +135,7 @@ async function checksum(value: unknown) {
 }
 export async function createBackup(
   workspace: Workspace | null,
-  persist=true,
+  persist = true,
 ): Promise<Backup> {
   const assets = await Promise.all(
     (workspace?.media || []).map(async (asset) => {
@@ -165,9 +166,11 @@ export async function createBackup(
   };
   const backup = { ...body, checksum: await checksum(body) };
   await verifyBackup(backup);
-  if(persist){await put("backups", backup.checksum, backup);
-  await verifyBackup((await readStore<Backup>("backups", backup.checksum))!);
-  }return backup;
+  if (persist) {
+    await put("backups", backup.checksum, backup);
+    await verifyBackup((await readStore<Backup>("backups", backup.checksum))!);
+  }
+  return backup;
 }
 export async function verifyBackup(value: unknown): Promise<Backup> {
   if (!value || typeof value !== "object") throw Error("Invalid backup.");
@@ -285,13 +288,7 @@ async function decodeMedia(file: File): Promise<{
     throw Error(
       "Only genuine PNG, JPEG and WebP images are supported. SVG and executable uploads are not accepted.",
     );
-  if (png && bytes.length >= 24) {
-    const view = new DataView(bytes.buffer),
-      w = view.getUint32(16),
-      h = view.getUint32(20);
-    if (w * h > 24000000 || w > 8192 || h > 8192)
-      throw Error("Image dimensions exceed 24 megapixels or 8192 px.");
-  }
+  imageDimensions(bytes, type);
   const bitmap = await createImageBitmap(new Blob([bytes], { type }));
   const width = bitmap.width,
     height = bitmap.height;

@@ -42,12 +42,11 @@ const fs=require('fs');const checks=[],errors=[];const check=(name,pass,detail)=
  await f.waitForFunction(()=>document.querySelector('[data-concept-route=contact]'));
  await f.locator('#full-name').fill('Local lifecycle test');await f.locator('#email').fill('test@example.com');await f.locator('#message').fill('Local only');
  await f.locator('#project-trigger').press('ArrowDown');await f.waitForFunction(()=>document.activeElement.matches('.select-option'));await f.locator('#project-combobox').press('End');await f.waitForTimeout(40);await f.locator('#project-combobox').press('Enter');
- const chosen=await f.locator('.select-value').innerText();await f.locator('#contact-form button[type=submit]').click();const feedbackBefore=await f.locator('#form-result').innerText();await f.locator('#full-name').focus();
+ const chosen=await f.locator('#project-trigger .select-value').innerText();await f.locator('#contact-form button[type=submit]').click();const feedbackBefore=await f.locator('#form-result').innerText();await f.locator('#full-name').focus();
  await f.locator('#full-name').evaluate(e=>{window.__field=e;e.setSelectionRange(3,7)});
  for(let i=0;i<4;i++){await p.evaluate(i=>{const w=document.querySelector('iframe').contentWindow,d=structuredClone(w.__state);d.page.sections[0].headline='Contact editing '+i+'.';w.postMessage(d,location.origin)},i);await p.waitForTimeout(80)}
  check('Contact input node, focus and caret survive content updates',await f.locator('#full-name').evaluate(e=>e===window.__field&&e===document.activeElement&&e.selectionStart===3&&e.selectionEnd===7&&e.value==='Local lifecycle test'));
- check('Selected project label survives content updates',await f.locator('.select-value').innerText()===chosen&&chosen==='Not quite sure yet',{chosen,after:await f.locator('.select-value').innerText(),value:await f.locator('#project-type').inputValue()});
+ check('Selected project label survives content updates',await f.locator('#project-trigger .select-value').innerText()===chosen&&chosen==='Not quite sure yet',{chosen,after:await f.locator('#project-trigger .select-value').innerText(),value:await f.locator('#project-type').inputValue()});
  check('Preview form feedback survives content updates',!!feedbackBefore&&(await f.locator('#form-result').innerText())===feedbackBefore,{feedbackBefore,after:await f.locator('#form-result').innerText()});
  check('No runtime errors',!errors.length,errors);
  }finally{await browser.close();fs.mkdirSync('qa-results',{recursive:true});fs.writeFileSync('qa-results/lifecycle.json',JSON.stringify({checks,errors},null,2));if(checks.some(x=>!x.pass)||errors.length)process.exitCode=1;}})().catch(e=>{console.error(e);process.exitCode=1});
-

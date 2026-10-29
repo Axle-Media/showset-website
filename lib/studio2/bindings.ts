@@ -1,6 +1,6 @@
 import type { PageData } from "../types";
 import type { TargetOverride } from "./model";
-import { responsiveCss } from "./registry";
+import { responsiveCss, targetSelector } from "./registry";
 export interface Binding {
   id: string;
   name: string;
@@ -129,9 +129,7 @@ export function applyTemplateOverrides(
         for (const point of ["desktop", "tablet", "mobile"] as const) {
           if (override.styles[point]?.accentColor) {
             const selector =
-              '.concept-12-root [data-builder-node="' +
-              binding.id +
-              '"]{color:var(--s2-accent)!important}';
+              targetSelector(binding.id) + "{color:var(--s2-accent)!important}";
             css +=
               point === "desktop"
                 ? selector

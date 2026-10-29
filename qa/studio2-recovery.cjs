@@ -7,7 +7,10 @@ const fs = require("fs"),
 const out = process.env.SHOWSET_QA_OUTPUT || "qa-results/studio2",
   base = process.env.SHOWSET_BASE_URL || "http://localhost:3001";
 (async () => {
-  const b = await chromium.launch({ channel: "chrome", headless: true });
+  const b = await chromium.launch({
+    channel: process.env.SHOWSET_PLAYWRIGHT_CHANNEL || "chrome",
+    headless: true,
+  });
   try {
     const context = await b.newContext({
         viewport: { width: 1440, height: 1000 },
@@ -21,10 +24,11 @@ const out = process.env.SHOWSET_QA_OUTPUT || "qa-results/studio2",
     await p.getByRole("button", { name: "Back up and start editing" }).click();
     await d;
     await p.getByRole("button", { name: "Site", exact: true }).first().click();
+    d = p.waitForEvent("download");
     await p
       .locator('input[accept="application/json"]')
       .setInputFiles(path.join(out, "portable-backup.json"));
-    await p.waitForEvent("download");
+    await d;
     await p.getByRole("button", { name: "Pages", exact: true }).first().click();
     await p.getByRole("button", { name: /Builder QA.*builder-qa/ }).click();
     await p.frameLocator("iframe").locator(".s2-node-image img").waitFor();
@@ -41,9 +45,9 @@ const out = process.env.SHOWSET_QA_OUTPUT || "qa-results/studio2",
     const f = p.frames().find((f) => f.url().includes("/studio/next/preview/"));
     await f.locator(".s2-node-heading").dblclick();
     await f
-      .locator("[contenteditable=true]")
+      .locator("[data-inline-editing]")
       .fill("Inline editing survives reload");
-    await f.locator("[contenteditable=true]").press("Enter");
+    await f.locator("[data-inline-editing]").press("Enter");
     await p.waitForTimeout(900);
     await p.reload();
     await p.getByRole("button", { name: "Pages", exact: true }).first().click();
@@ -116,16 +120,29 @@ const out = process.env.SHOWSET_QA_OUTPUT || "qa-results/studio2",
       .getByRole("button", { name: "Site", exact: true })
       .first()
       .click();
-    await second
-      .locator('input[accept="application/json"]')
-      .setInputFiles({
-        name: "tampered.json",
-        mimeType: "application/json",
-        buffer: Buffer.from(JSON.stringify(corrupt)),
-      });
+    await second.locator('input[accept="application/json"]').setInputFiles({
+      name: "tampered.json",
+      mimeType: "application/json",
+      buffer: Buffer.from(JSON.stringify(corrupt)),
+    });
     await second
       .getByRole("alert")
       .filter({ hasText: "checksum does not match" })
+      .waitFor();
+    await second
+      .getByRole("button", { name: "Media", exact: true })
+      .first()
+      .click();
+    await second
+      .locator('input[accept="image/png,image/jpeg,image/webp"]')
+      .setInputFiles({
+        name: "fake.png",
+        mimeType: "image/png",
+        buffer: Buffer.from('<svg onload="alert(1)"></svg>'),
+      });
+    await second
+      .getByRole("alert")
+      .filter({ hasText: "Only genuine PNG" })
       .waitFor();
     assert.deepEqual(errors, []);
     await context.close();

@@ -36,10 +36,15 @@
   margin: 0 0 24px;
 }
 .s2-node-image {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   overflow: hidden;
 }
 .s2-node-image img {
+  min-height: 0;
+  flex: 1;
+  display: block;
   height: 100%;
   width: 100%;
   object-fit: inherit;

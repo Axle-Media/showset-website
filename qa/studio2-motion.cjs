@@ -7,7 +7,10 @@ const { chromium } = require(
 const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001",
   out = process.env.SHOWSET_QA_OUTPUT || "qa-results/studio2";
 (async () => {
-  const b = await chromium.launch({ channel: "chrome", headless: true });
+  const b = await chromium.launch({
+    channel: process.env.SHOWSET_PLAYWRIGHT_CHANNEL || "chrome",
+    headless: true,
+  });
   try {
     const c = await b.newContext({
         viewport: { width: 1440, height: 1000 },
@@ -55,26 +58,26 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001",
     );
     await p.getByLabel("Motion preset", { exact: true }).selectOption("reveal");
     await p.getByLabel("Trigger", { exact: true }).selectOption("scroll");
-    await p.getByLabel("Duration (ms)", { exact: true }).fill("750");
+
     await p
       .getByRole("button", { name: "Interactive preview", exact: true })
       .click();
     const f = p.frames().find((f) => f.url().includes("/studio/next/preview/"));
     const heading = f.locator(".s2-node-heading");
-    await f.evaluate(() => scrollTo(0, 0));
+    await f.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
     await p.waitForTimeout(150);
     const first = await heading.evaluate((e) => getComputedStyle(e).clipPath);
     assert.ok(first.includes("100%"), first);
     await heading.evaluate((e) => {
       let y = 0;
       for (let t = e; t; t = t.offsetParent) y += t.offsetTop;
-      scrollTo(0, y - 100);
+      scrollTo({ top: y - 100, behavior: "instant" });
     });
     await p.waitForTimeout(200);
     const forward = await heading.evaluate((e) => getComputedStyle(e).clipPath);
     assert.ok(!forward.includes("100%"), forward);
     await p.screenshot({ path: path.join(out, "motion-forward.png") });
-    await f.evaluate(() => scrollTo(0, 0));
+    await f.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
     await p.waitForTimeout(180);
     assert.equal(
       await heading.evaluate((e) => getComputedStyle(e).clipPath),
@@ -92,6 +95,33 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001",
       "1",
     );
     await p.emulateMedia({ reducedMotion: "no-preference" });
+    await p
+      .getByRole("button", { name: "Return to editing", exact: true })
+      .click();
+    await p.getByRole("button", { name: "Background", exact: true }).click();
+    await p.getByLabel("Element opacity", { exact: true }).fill(".6");
+    await p.getByLabel("Element opacity", { exact: true }).blur();
+    await p.getByRole("button", { name: "Motion", exact: true }).click();
+    await p.getByLabel("Motion preset", { exact: true }).selectOption("fade");
+    await p
+      .getByRole("button", { name: "Interactive preview", exact: true })
+      .click();
+    await f.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
+    await p.waitForTimeout(150);
+    assert.equal(
+      await heading.evaluate((e) => getComputedStyle(e).opacity),
+      "0",
+    );
+    await heading.evaluate((e) => {
+      let y = 0;
+      for (let t = e; t; t = t.offsetParent) y += t.offsetTop;
+      scrollTo({ top: y - 100, behavior: "instant" });
+    });
+    await p.waitForTimeout(180);
+    assert.equal(
+      await heading.evaluate((e) => getComputedStyle(e).opacity),
+      "0.6",
+    );
     await p
       .getByRole("button", { name: "Return to editing", exact: true })
       .click();
@@ -114,12 +144,17 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001",
       true,
     );
     await heading.dblclick();
-    assert.equal(await f.locator("[contenteditable=true]").count(), 0);
+    assert.equal(await f.locator("[data-inline-editing]").count(), 0);
     await p.getByRole("button", { name: "Unlock", exact: true }).click();
     await p.getByRole("button", { name: "Duplicate", exact: true }).click();
     assert.equal(await f.locator(".s2-node-heading").count(), 2);
-    await p.getByRole('button',{name:'Select Heading copy',exact:true}).dragTo(p.getByRole('button',{name:'Select Container',exact:true}));
-    assert.equal(await f.locator('.s2-node-container .s2-node-heading').count(),2);
+    await p
+      .getByRole("button", { name: "Select Heading copy", exact: true })
+      .dragTo(p.getByRole("button", { name: "Select Container", exact: true }));
+    assert.equal(
+      await f.locator(".s2-node-container .s2-node-heading").count(),
+      2,
+    );
 
     await p.getByRole("button", { name: "Delete", exact: true }).click();
     assert.equal(await f.locator(".s2-node-heading").count(), 1);
