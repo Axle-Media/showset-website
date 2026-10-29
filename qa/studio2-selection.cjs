@@ -40,9 +40,18 @@ fs.mkdirSync(out, { recursive: true });
       .getByRole("heading", { name: "Hero photograph", exact: true })
       .waitFor();
     await p.getByRole("button", { name: "Images", exact: true }).click();
+    // Image cards belong below the navigator title/search, not squeezed into
+    // the heading's horizontal flex row.
+    assert.equal(await p.locator(".s2-panel-title .s2-page-images").count(), 0);
+    const titleBox = await p.locator(".s2-navigator .s2-panel-title").boundingBox();
+    const imagesBox = await p.locator(".s2-navigator .s2-image-browser").boundingBox();
+    assert.ok(titleBox && imagesBox && imagesBox.y >= titleBox.y + titleBox.height - 2);
     assert.ok(
       (await p.getByRole("button", { name: /^Edit image:/ }).count()) >= 7,
     );
+    await p.getByLabel("Search navigator").fill("no-matching-studio-image");
+    await p.getByText("No images match your search.").waitFor();
+    await p.getByLabel("Search navigator").fill("");
     await p.screenshot({ path: path.join(out, "page-image-picker.png") });
     await p
       .getByRole("button", { name: "Edit image: Hero photograph", exact: true })
@@ -81,6 +90,25 @@ fs.mkdirSync(out, { recursive: true });
       .getByLabel("Link text", { exact: true })
       .first()
       .fill("Events editing test");
+    // Ctrl+S must commit the focused draft and persist it, not silently skip
+    // save because the keyboard event originated from an input.
+    await p.getByLabel("Link text", { exact: true }).first().press("Control+s");
+    await p.waitForFunction(async () => {
+      const db = await new Promise((resolve, reject) => {
+        const r = indexedDB.open("showset-studio2", 1);
+        r.onsuccess = () => resolve(r.result);
+        r.onerror = () => reject(r.error);
+      });
+      try {
+        return await new Promise((resolve) => {
+          const r = db.transaction("documents").objectStore("documents").get("draft");
+          r.onsuccess = () =>
+            resolve(r.result?.globals?.header?.services?.[0]?.label === "Events editing test");
+        });
+      } finally {
+        db.close();
+      }
+    });
     await p.getByLabel("Link text", { exact: true }).first().blur();
     await canvas
       .locator(".desktop-navigation a")
