@@ -149,6 +149,7 @@ jobs:
           node qa/studio2-selection.cjs
           node qa/studio2-existing-media.cjs
           node qa/studio2-existing-text.cjs
+          node qa/studio2-template-sections.cjs
           node qa/studio2-recovery.cjs
           node qa/studio2-motion.cjs
           node qa/studio2-touch.cjs

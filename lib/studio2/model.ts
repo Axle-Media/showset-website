@@ -338,6 +338,32 @@ export function moveNode(
     previous?.parent === parent && previous.index < index ? index - 1 : index;
   return insertNode(removeNode(nodes, id), node, parent, adjusted);
 }
+/** Clone a section or child immediately next to its original, including
+ * nested elements. The old "Duplicate" action appended all copies at root. */
+export function duplicateNode(
+  roots: CanvasNode[], id: string,
+): { roots: CanvasNode[]; selectedId: string } {
+  const locate = (
+    nodes: CanvasNode[],
+    parent: string | null = null,
+  ): { parent: string | null; index: number } | undefined => {
+    for (let i = 0; i < nodes.length; i++) {
+      if (nodes[i].id === id) return { parent, index: i };
+      const child = locate(nodes[i].children, nodes[i].id);
+      if (child) return child;
+    }
+  };
+  const found = findNode(roots, id);
+  if (!found || found.locked) throw Error("Choose an unlocked element.");
+  const position = locate(roots);
+  if (!position) throw Error("Element not found.");
+  const copy = cloneNode(found);
+  return {
+    roots: insertNode(roots, copy, position.parent, position.index + 1),
+    selectedId: copy.id,
+  };
+}
+
 export function cloneNode(node: CanvasNode): CanvasNode {
   return {
     ...structuredClone(node),

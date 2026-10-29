@@ -11,6 +11,9 @@ import {
 } from "@/lib/studio2/bindings";
 import { readStore, mediaUrls } from "@/lib/studio2/storage";
 import { caseExperienceFor } from "@/lib/concept-12/case-content";
+import { applyTemplateExtensions } from "@/lib/studio2/template-extensions";
+import { nodeMotions } from "@/lib/studio2/render";
+import { mountNodeMotion } from "@/lib/studio2/motion";
 export interface CanvasState {
   workspace: Workspace;
   slug: string;
@@ -91,6 +94,7 @@ export default function Preview() {
     const root = host.current;
     if (!root || !state) return;
     let frame = 0;
+    let disposeTemplateMotion: (() => void) | null = null;
     const observer = new MutationObserver(() => {
       if (!frame)
         frame = requestAnimationFrame(() => {
@@ -101,8 +105,20 @@ export default function Preview() {
     const sync = () => {
       observer.disconnect();
       const page = state.workspace.pages[state.slug];
-      if (page.builder?.mode !== "custom")
+      if (page.builder?.mode !== "custom") {
         applyTemplateOverrides(root, page, true, state.urls);
+        // Mount only owner-created sections after the approved native layout.
+        // Recreate on every canonical draft update, not in the public website.
+        disposeTemplateMotion?.();
+        disposeTemplateMotion = null;
+        const extension = applyTemplateExtensions(root, page, state.urls);
+        if (extension)
+          disposeTemplateMotion = mountNodeMotion(
+            extension,
+            nodeMotions(page),
+            state.interactive && state.workspace.globals.motion.enabled,
+          );
+      }
       // The case study owns its opening photograph everywhere it appears.
       // Reflect unpublished local originals in linked Home, Our Work and
       // related-story cards instead of creating a second editable copy.
@@ -242,6 +258,7 @@ export default function Preview() {
     return () => {
       observer.disconnect();
       cancelAnimationFrame(frame);
+      disposeTemplateMotion?.();
     };
   }, [state]);
   useEffect(() => {
