@@ -160,7 +160,7 @@ export function renderNodes(
     return "";
   };
   const html = nodes.map(render).join("");
-  return html + "<style data-studio2-style>" + css + "</style>";
+  return html + "<style data-studio2-builder-style>" + css + "</style>";
 }
 export function walkNodes(nodes: CanvasNode[], fn: (node: CanvasNode) => void) {
   nodes.forEach((node) => {
