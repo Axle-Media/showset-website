@@ -45,14 +45,13 @@ export class CloudStore {
   private async request<T>(
     path:string,options:RequestInit={},authenticated=true,
   ):Promise<T>{
-    const authorization=authenticated
-      ? await this.token():this.config.key;
+    const authorization=authenticated ? await this.token():null;
     const response=await fetch(this.config.url+path,{
       ...options,
       cache:"no-store",
       headers:{
         apikey:this.config.key,
-        Authorization:"Bearer "+authorization,
+        ...(authorization ? {Authorization:"Bearer "+authorization}:{}),
         ...options.headers,
       },
     });
