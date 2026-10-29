@@ -191,7 +191,7 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001";
   await p.getByLabel("Library name",{exact:true}).first().blur();
   await p.getByLabel("Tags (comma-separated)").first().fill("events, production");
   await p.getByLabel("Tags (comma-separated)").first().blur();
-  await p.getByLabel("Tag",{exact:true}).selectOption("events");
+  await p.getByLabel("Filter by tag",{exact:true}).selectOption("events");
   await p.getByText("Event planning original",{exact:true}).waitFor();
   assert.equal(await p.locator(".s2-media-card").count(),1,
     "Media tag filter only shows matched originals");
