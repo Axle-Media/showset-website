@@ -39,6 +39,10 @@ export function templateBindings(page: PageData): Binding[] {
     id, name, selector, sectionId, itemIndex, field: "image",
     kind: "image", content: true,
   });
+  const sectionStyle = (id: string, name: string, selector: string,
+    sectionId: string) => bindings.push({
+    id,name,selector,sectionId,kind:"section" as const,content:false,
+  });
   const content = (
     id: string, name: string, kind: "heading" | "text" | "button",
     selector: string, sectionId: string, field: string,
@@ -138,6 +142,13 @@ export function templateBindings(page: PageData): Binding[] {
     sectionContent("service-expertise", expertise,
       ".service-expertise .service-editorial-row .service-heading",
       ".service-expertise .service-editorial-row > div:last-child p");
+    for (const [name,target] of [
+      ["Opening",hero],["Introduction",intro],["Story",story],
+      ["Expertise",expertise],["Closing",page.sections.find(s=>s.type==="visual")],
+    ] as const) {
+      if(target) sectionStyle("service-section-"+target.id,
+        name+" section",'[data-service-section="'+target.id+'"]',target.id);
+    }
     expertise?.items.forEach((item,i)=>{
       // A displayed capability retains its original item ID through grouping.
       content("service-capability-" + i,"Capability: " + item.title,
@@ -157,6 +168,16 @@ export function templateBindings(page: PageData): Binding[] {
         "Studio chapter " + (i + 1) + " photograph",
         '[data-studio-shot="' + i + '"] img', journey.id, i);
     });
+    for (const [name,id,selector] of [
+      ["Opening","section-1",".studio-hero"],
+      ["Manifesto","section-2",".studio-manifesto"],
+      ["Process","section-3",".studio-exploration"],
+      ["Partnership","section-5",".studio-outlook"],
+      ["Closing","section-7",".studio-final"],
+    ] as const) {
+      if(page.sections.some(s=>s.id===id))
+        sectionStyle("studio-section-"+id,name+" section",selector,id);
+    }
     sectionContent("studio-hero",hero,
       ".studio-hero-scene-first h1", ".studio-hero-scene-first > p");
     sectionContent("studio-manifesto",page.sections.find(s=>s.id==="section-2"),
@@ -177,6 +198,15 @@ export function templateBindings(page: PageData): Binding[] {
     const hero = section("pagehero");
     if (hero?.image) image("work-hero-photo", "Our Work hero photograph",
       ".work-hero .simple-bg img", hero.id);
+    for(const [name,id,selector] of [
+      ["Opening","section-1",".work-hero"],
+      ["Introduction","section-2",".work-page-intro"],
+      ["Portfolio","section-3",".work-page-gallery"],
+      ["Closing","work-closing",".work-final"],
+    ] as const) {
+      if(page.sections.some(s=>s.id===id))
+        sectionStyle("work-section-"+id,name+" section",selector,id);
+    }
     sectionContent("work-hero",hero, ".work-hero h1",
       ".work-hero .simple-hero-content > p");
     sectionContent("work-intro",page.sections.find(s=>s.id==="section-2"),
@@ -190,6 +220,8 @@ export function templateBindings(page: PageData): Binding[] {
     // The approved Contact composition currently has no photograph.
     // Do not create a dead replacement control for its unused seed field.
     const contact = section("contact");
+    if(contact) sectionStyle("contact-section","Contact section",
+      ".contact-view",contact.id);
     sectionContent("contact-opening",contact,
       ".contact-left h1", ".contact-intro > p");
     if(contact) content("contact-submit","Form submit label","button",
@@ -229,6 +261,10 @@ export function templateBindings(page: PageData): Binding[] {
         '[data-case-image="' + displayed + '"] img', {galleryIndex:i});
       displayed++;
     });
+    sectionStyle("case-opening-section","Opening sequence",
+      ".case-scroll-opening",sectionId);
+    sectionStyle("case-narrative-section","Story sequence",
+      ".case-scroll-narrative",sectionId);
     // Narrative copy lives in CaseExperience and must not be overwritten by
     // obsolete Block section fields when editing the immersive template.
     const caseText = (id:string,name:string,kind:"heading"|"text",
