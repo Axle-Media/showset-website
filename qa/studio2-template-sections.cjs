@@ -48,10 +48,19 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001";
   assert.equal(new Set(await frame.locator(".s2-template-extensions > section").evaluateAll(
     nodes=>nodes.map(n=>n.dataset.builderNode))).size,2);
   await p.getByRole("button",{name:"Hide",exact:true}).click();
+  await p.waitForFunction(()=>
+    document.querySelector("iframe")?.contentDocument
+      ?.querySelectorAll(".s2-template-extensions > section").length===1);
   assert.equal(await frame.locator(".s2-template-extensions > section").count(),1);
   await p.getByRole("button",{name:"Show",exact:true}).click();
+  await p.waitForFunction(()=>
+    document.querySelector("iframe")?.contentDocument
+      ?.querySelectorAll(".s2-template-extensions > section").length===2);
   assert.equal(await frame.locator(".s2-template-extensions > section").count(),2);
   await p.getByRole("button",{name:"Delete",exact:true}).click();
+  await p.waitForFunction(()=>
+    document.querySelector("iframe")?.contentDocument
+      ?.querySelectorAll(".s2-template-extensions > section").length===1);
   assert.equal(await frame.locator(".s2-template-extensions > section").count(),1);
   await p.getByRole("button",{name:"Mobile",exact:true}).click();
   assert.equal(await frame.locator(".s2-template-extensions > section").evaluate(
