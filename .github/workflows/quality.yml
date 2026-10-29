@@ -65,6 +65,7 @@ jobs:
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/service-lifecycle.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/service-motion-design.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/photo-headline-swipe.cjs
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/homepage-motion-parity.cjs
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/non-photo-headlines.cjs
       - name: Archive browser QA results
         if: always()
@@ -74,6 +75,8 @@ jobs:
           path: |
             qa-results/service-motion/
             qa-results/photo-headline-swipe.json
+            qa-results/homepage-motion-parity.json
+            qa-results/homepage-parity/
             qa-results/non-photo-headlines.json
             qa-results/heading-accent-lines.json
             qa-results/studio-scroll-hero.json
