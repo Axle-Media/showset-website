@@ -535,6 +535,18 @@
     right:calc(var(--gutter) + 10px);
     translate:0 0;
   }
+  .concept-12-root .hero-second h2{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center!important;
+  }
+  .concept-12-root .hero-second h2 .wipe-line{
+    display:block;
+    width:fit-content;
+    max-width:100%;
+    margin-inline:auto;
+  }
   .concept-12-root .hero-foreground > p,
   .concept-12-root .hero-second-copy {
     max-width:320px;
