@@ -10,35 +10,40 @@
   --showset-button-motion: cubic-bezier(.2,.7,.25,1);
 }
 
-/* Filled primary CTA: same colour, weight and lift for header, hero,
-   editorial, service, closing and form submit. Preserve the authored widths
-   and the taller full-width Contact submit button. */
+/* Filled primary CTA: consistent colour and a restrained ProVault-style
+   single orbit of border light on hover/focus. Never lift the button.
+   Preserve authored widths and Contact's full-width submit control. */
+@property --showset-button-orbit {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
 .concept-12-root :is(.solid-link,.header-cta),
 .concept-12-root :is(#ending,#case-ending) .end-link {
   border-color: var(--showset-button-accent);
   color: var(--showset-button-ink);
   font-size: 14px!important;
   font-weight: 650;
+  position: relative;
+  isolation: isolate;
   transition:
     background-color .25s var(--showset-button-motion),
     border-color .25s var(--showset-button-motion),
-    color .25s var(--showset-button-motion),
-    transform .25s var(--showset-button-motion);
+    color .25s var(--showset-button-motion);
 }
 .concept-12-root .contact-rebuilt .contact-submit-row .contact-submit {
   font-weight: 650!important;
   transition:
     background-color .25s var(--showset-button-motion),
     border-color .25s var(--showset-button-motion),
-    color .25s var(--showset-button-motion),
-    transform .25s var(--showset-button-motion);
+    color .25s var(--showset-button-motion);
 }
 .concept-12-root :is(.solid-link,.header-cta):not(:disabled):hover,
 .concept-12-root :is(#ending,#case-ending) .end-link:hover {
   background-color: var(--showset-button-hover);
   border-color: var(--showset-button-hover);
   color: var(--showset-button-ink);
-  transform: translateY(-2px);
+  transform: none;
 }
 .concept-12-root :is(.solid-link,.header-cta):focus-visible,
 .concept-12-root :is(#ending,#case-ending) .end-link:focus-visible {
@@ -47,6 +52,44 @@
   color: var(--showset-button-ink);
   outline: 2px solid var(--ice,#faf9fd);
   outline-offset: 4px;
+  transform: none;
+}
+
+/* The glow is an inset 1.5px stroke, not a filled overlay.
+   It traces one circuit only on hover/focus; idle buttons stay quiet. */
+.concept-12-root :is(.solid-link,.header-cta)::before,
+.concept-12-root :is(#ending,#case-ending) .end-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  pointer-events: none;
+  background: conic-gradient(
+    from var(--showset-button-orbit),
+    transparent 0deg 291deg,
+    rgba(225,255,252,.08) 308deg,
+    rgba(244,255,254,.45) 321deg,
+    rgba(255,255,255,.92) 333deg,
+    rgba(235,255,253,.26) 347deg,
+    transparent 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  filter: drop-shadow(0 0 4px rgba(236,255,253,.2));
+  opacity: 0;
+}
+.concept-12-root :is(.solid-link,.header-cta):not(:disabled):is(:hover,:focus-visible)::before,
+.concept-12-root :is(#ending,#case-ending) .end-link:is(:hover,:focus-visible)::before {
+  animation: showset-button-border-orbit 1.8s linear 1;
+}
+@keyframes showset-button-border-orbit {
+  0% { --showset-button-orbit: 0deg; opacity: 0; }
+  10% { opacity: .74; }
+  78% { opacity: .78; }
+  100% { --showset-button-orbit: 360deg; opacity: 0; }
 }
 /* The arrow on a filled CTA is static. Older header-only rotation
    caused a different, abrupt arrow interaction. */
@@ -126,5 +169,10 @@
   .concept-12-root :is(.solid-link,.header-cta,.end-link):is(:hover,:focus-visible),
   .concept-12-root :is(.text-arrow-link,.understated-link,.service-image-information > a):is(:hover,:focus-visible) > span:last-child {
     transform: none!important;
+  }
+  .concept-12-root :is(.solid-link,.header-cta)::before,
+  .concept-12-root :is(#ending,#case-ending) .end-link::before {
+    animation: none!important;
+    opacity: 0!important;
   }
 }
