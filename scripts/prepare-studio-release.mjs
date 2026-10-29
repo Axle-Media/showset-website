@@ -43,6 +43,16 @@ for(const asset of backup.assets||[]){
   const bytes=Buffer.from(asset.base64,"base64");
   if(bytes.length>8*1024*1024||sha(bytes)!==asset.id.slice(6))
     throw Error("Original image hash or size mismatch for "+asset.id);
+  const valid={
+    "image/png":()=>bytes.length>=8&&bytes.subarray(0,8).equals(
+      Buffer.from([137,80,78,71,13,10,26,10])),
+    "image/jpeg":()=>bytes.length>3&&bytes[0]===255&&bytes[1]===216&&bytes[2]===255,
+    "image/webp":()=>bytes.length>12&&bytes.toString("ascii",0,4)==="RIFF"&&
+      bytes.toString("ascii",8,12)==="WEBP",
+    "image/avif":()=>bytes.length>12&&bytes.toString("ascii",4,8)==="ftyp"&&
+      ["avif","avis"].includes(bytes.toString("ascii",8,12)),
+  }[asset.type];
+  if(!valid())throw Error("Original does not match declared image type: "+asset.id);
   assets.set(asset.id,{
     bytes,relative:"/media/studio/"+asset.id+"."+mimeExtension[asset.type],
   });
@@ -84,18 +94,22 @@ if(!apply){
   console.log("No website source or public assets were modified.");
   process.exit(0);
 }
+// Preflight every destination before modifying ANY source file.
+for(const asset of assets.values()){
+  if(!paths.has(asset.relative))continue;
+  const location=path.join(root,"public",asset.relative.slice(1));
+  if(fs.existsSync(location)&&sha(fs.readFileSync(location))!==sha(asset.bytes))
+    throw Error("Existing media hash conflict: "+location);
+}
 for(const [key,value] of Object.entries({pages,globals})){
   fs.mkdirSync(path.dirname(output[key]),{recursive:true});
-  fs.writeFileSync(output[key],JSON.stringify(value,null,2)+"\n","utf8");
+  fs.writeFileSync(output[key],JSON.stringify(value,null,2)+"\\n","utf8");
 }
 for(const asset of assets.values()){
   if(!paths.has(asset.relative))continue;
   const location=path.join(root,"public",asset.relative.slice(1));
   fs.mkdirSync(path.dirname(location),{recursive:true});
-  if(fs.existsSync(location)){
-    if(sha(fs.readFileSync(location))!==sha(asset.bytes))
-      throw Error("Existing media hash conflict: "+location);
-  }else fs.writeFileSync(location,asset.bytes);
+  if(!fs.existsSync(location))fs.writeFileSync(location,asset.bytes);
 }
 console.log(JSON.stringify({mode:"prepared-source",pages:Object.keys(pages).length,
   originals:paths.size,target:root},null,2));
