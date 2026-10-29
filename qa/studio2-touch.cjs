@@ -23,6 +23,15 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001",
     const download = p.waitForEvent("download");
     await p.getByRole("button", { name: "Back up and start editing" }).tap();
     await download;
+    // A phone must default to its own editing breakpoint, not a scaled-down
+    // 1440px desktop canvas with tiny unreadable text.
+    await p.waitForFunction(() =>
+      document.querySelector('input[aria-label="Canvas viewport width"]')?.value === "390",
+    );
+    assert.equal(
+      await p.getByRole("button", { name: "Mobile", exact: true }).getAttribute("aria-pressed"),
+      "true",
+    );
     await p.getByRole("button", { name: "Layers", exact: true }).first().tap();
     await p
       .getByRole("button", { name: "Hero headline heading", exact: true })
