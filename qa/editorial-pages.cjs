@@ -129,7 +129,7 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
       inputBg:getComputedStyle(el.querySelector('#full-name')).backgroundColor,
       inputColour:getComputedStyle(el.querySelector('#full-name')).color,
       labelColour:getComputedStyle(el.querySelector('label[for="full-name"]')).color,
-      heading:el.querySelector('h1')?.textContent?.replace(/\s+/g,' ').trim(),
+      headingLines:[...el.querySelectorAll('h1 .plain-line')].map(node=>node.textContent.trim()),
       bodyLength:el.querySelector('.contact-intro > p')?.textContent?.trim().length,
       panelRadius:parseFloat(getComputedStyle(card).borderTopLeftRadius),
       hasPhoto:!!el.querySelector('.contact-photo'),
@@ -150,7 +150,7 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
     contactGeometry.labelColour==='rgb(250, 249, 253)'&&
     contactGeometry.panelRadius>=17&&contactGeometry.visibleDate&&contactGeometry.visibleBudget,contactGeometry);
   ck('Contact expands the left headline and introduction '+width,
-    contactGeometry.heading==='Big ideas startwith a conversation.' &&
+    JSON.stringify(contactGeometry.headingLines)===JSON.stringify(['Big ideas start','with a conversation.']) &&
     contactGeometry.bodyLength>=300,contactGeometry);
   ck('WhatsApp shortcut uses published business phone '+width,
     await page.locator('.view.is-current [data-contact-whatsapp]').getAttribute('href')==='https://wa.me/27682805777');
