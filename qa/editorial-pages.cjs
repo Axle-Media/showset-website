@@ -129,7 +129,7 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
       inputBg:getComputedStyle(el.querySelector('#full-name')).backgroundColor,
       inputColour:getComputedStyle(el.querySelector('#full-name')).color,
       labelColour:getComputedStyle(el.querySelector('label[for="full-name"]')).color,
-      heading:el.querySelector('h1')?.textContent?.replace(/\\s+/g,' ').trim(),
+      heading:el.querySelector('h1')?.textContent?.replace(/\s+/g,' ').trim(),
       bodyLength:el.querySelector('.contact-intro > p')?.textContent?.trim().length,
       panelRadius:parseFloat(getComputedStyle(card).borderTopLeftRadius),
       hasPhoto:!!el.querySelector('.contact-photo'),
