@@ -1,23 +1,24 @@
 /* SHOWSET's single closing-CTA design source of truth.
  *
  * The user's approved Studio image is the visual reference for all four
- * service endings, Our Studio and Our Work. The six sections share the
+ * service endings, Home, case studies, Our Studio and Our Work. These sections share the
  * approved pattern, geometry and typography; no service-body styles change.
  *
  * Use exactly one artwork, opacity, inset, heading scale, copy width and
  * button treatment so future page changes cannot silently diverge. */
 :is(
   .service-experience .service-close.service-close--editorial,
-  .editorial-page .studio-final.studio-final-pattern
+  .editorial-page .studio-final.studio-final-pattern,
+  #ending, #case-ending
 ){
-  --showset-close-font:clamp(37px,4.15vw,68px);
+  --showset-close-font:var(--showset-editorial-size);
   --showset-close-inline:max(var(--gutter),calc((100vw - 1500px)/2));
   --showset-close-top:clamp(78px,7vw,113px);
   --showset-close-bottom:clamp(75px,7vw,115px);
   --showset-close-content-width:850px;
   --showset-close-pattern-size:clamp(660px,66vw,1100px);
-  --showset-close-pattern-opacity:.76;
-  --showset-close-pattern-position:right -85px center;
+  --showset-close-pattern-opacity:.42;
+  --showset-close-pattern-position:right -210px center;
   position:relative;
   isolation:isolate;
   overflow:hidden;
@@ -30,7 +31,7 @@
   padding:var(--showset-close-top) var(--showset-close-inline) var(--showset-close-bottom);
   background:linear-gradient(116deg,#0c2b42 0%,#0b293f 64%,#09253b 100%);
   /* The legacy .end-section sets a repeated SVG + gradient with !important.
-     Explicitly replace that background ONLY on the six shared CTAs. */
+     Explicitly replace that background on all shared CTAs. */
   background-image:linear-gradient(116deg,#0c2b42 0%,#0b293f 64%,#09253b 100%)!important;
   background-repeat:no-repeat!important;
   background-position:center!important;
@@ -39,7 +40,8 @@
 }
 :is(
   .service-experience .service-close.service-close--editorial,
-  .editorial-page .studio-final.studio-final-pattern
+  .editorial-page .studio-final.studio-final-pattern,
+  #ending, #case-ending
 )::before{
   content:"";
   display:block;
@@ -181,23 +183,25 @@
 @media(max-width:600px){
   :is(
     .service-experience .service-close.service-close--editorial,
-    .editorial-page .studio-final.studio-final-pattern
+    .editorial-page .studio-final.studio-final-pattern,
+    #ending, #case-ending
   ){
     padding-block:75px 86px;
     min-height:0;
-    --showset-close-font:clamp(37px,9vw,48px);
+    --showset-close-font:var(--showset-editorial-size);
     --showset-close-pattern-size:590px;
-    --showset-close-pattern-position:calc(100% + 225px) center;
-    --showset-close-pattern-opacity:.44;
+    --showset-close-pattern-position:calc(100% + 280px) center;
+    --showset-close-pattern-opacity:.24;
   }
 }
 @media(min-width:601px) and (max-width:800px){
   :is(
     .service-experience .service-close.service-close--editorial,
-    .editorial-page .studio-final.studio-final-pattern
+    .editorial-page .studio-final.studio-final-pattern,
+    #ending, #case-ending
   ){
     --showset-close-pattern-size:750px;
-    --showset-close-pattern-position:calc(100% + 230px) center;
-    --showset-close-pattern-opacity:.58;
+    --showset-close-pattern-position:calc(100% + 285px) center;
+    --showset-close-pattern-opacity:.32;
   }
 }
