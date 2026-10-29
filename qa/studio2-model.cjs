@@ -174,7 +174,7 @@ assert.ok(originalGallery.props.items.every((item,i)=>
 const reusableSection=createSectionPreset("editorial-split");
 const reusableStored=cloneNode(reusableSection);
 reusableStored.name="Saved editorial section";
-const reusePages=structuredClone(safe);
+const reusePages=structuredClone(require("../content/pages.json"));
 reusePages.home.builder={schemaVersion:2,mode:"template",overrides:{},
   roots:[reusableSection,cloneNode(reusableStored)]};
 const reuseWorkspace={schemaVersion:2,revision:0,pages:reusePages,
