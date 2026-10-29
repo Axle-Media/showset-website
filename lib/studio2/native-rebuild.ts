@@ -72,17 +72,45 @@ export function replaceNativeBlock(page:PageData,id:string):
   const builder=builderFor(page);
   if(builder.replacedNative?.includes(id))
     throw Error("This native section already has an editable replacement.");
+  const trackedId=builder.nativeReplacementNodes?.[id];
+  const previous=builder.roots.find(root=>root.id===trackedId) ||
+    // Backward compatibility with early local drafts before stable mappings.
+    builder.roots.find(root=>root.name==="Rebuilt: "+(block.headline||block.type));
+  if(previous){
+    return {nodeId:previous.id,page:{...page,builder:{
+      ...builder,
+      roots:builder.roots.map(root=>root.id===previous.id
+        ? {...root,hidden:false} : root),
+      replacedNative:[...(builder.replacedNative||[]),id],
+      nativeReplacementNodes:{...builder.nativeReplacementNodes,[id]:previous.id},
+    }}};
+  }
   const node=fromBlock(block);
   return {nodeId:node.id,page:{...page,builder:{
     ...builder,
     roots:[...builder.roots,node],
     replacedNative:[...(builder.replacedNative||[]),id],
+    nativeReplacementNodes:{...builder.nativeReplacementNodes,[id]:node.id},
   }}};
 }
 export function restoreNativeBlock(page:PageData,id:string):PageData{
   const builder=builderFor(page);
+  const block=page.sections.find(section=>section.id===id);
+  const trackedId=builder.nativeReplacementNodes?.[id];
+  const replacement=builder.roots.find(root=>root.id===trackedId) ||
+    (block && builder.roots.find(root=>
+      root.name==="Rebuilt: "+(block.headline||block.type)));
+  if(builder.replacedNative?.includes(id) && !replacement)
+    throw Error("The replacement section could not be identified. Export a backup before restoring.");
+  // Restore the original without deleting the owner's authored edits.
+  // The archived chapter is hidden and can be reactivated on Rebuild.
   return {...page,builder:{...builder,
     replacedNative:(builder.replacedNative||[]).filter(x=>x!==id),
+    roots:replacement ? builder.roots.map(root=>
+      root.id===replacement.id ? {...root,hidden:true} : root) : builder.roots,
+    nativeReplacementNodes:replacement
+      ? {...builder.nativeReplacementNodes,[id]:replacement.id}
+      : builder.nativeReplacementNodes,
   }};
 }
 /** The native node stays in the DOM: no animated scene is destroyed. */
