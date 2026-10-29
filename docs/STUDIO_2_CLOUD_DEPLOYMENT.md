@@ -4,7 +4,7 @@ Status: **implementation review only**. This branch is not deployed, the databas
 
 ## Hosting architecture
 
-The website is currently a Next.js 16 static export. Vercel and the eventual xneelo deployment serve static HTML/CSS/JS, so they cannot safely save user uploads to their own filesystem or host the current PHP-only editor API in the Vercel build.
+The website is currently a Next.js 16 static export. The GitHub repository is currently public: never commit passwords, service-role keys, project secrets or owner backups. Vercel and the eventual xneelo deployment serve static HTML/CSS/JS, so they cannot safely save user uploads to their own filesystem or host the current PHP-only editor API in the Vercel build.
 
 Studio 2.0 now has a browser-to-Supabase transport, but it **must** point to a separate SHOWSET-owned Supabase project. Do not use the existing Mahzya or Axle One projects. The browser has only the URL, publishable key and scoped user JWT; it never receives a service-role or secret key. This is a portability boundary: xneelo can serve the same frontend while Supabase remains the private content/media backend.
 
@@ -36,7 +36,7 @@ Studio 2.0 now has a browser-to-Supabase transport, but it **must** point to a s
 - User's active role is read from owner-managed RLS-protected member rows.
 - Full canonical workspace JSON is loaded from one shared `site` draft record.
 - Saves use optimistic revision matching. A concurrent update produces a conflict instead of a silent overwrite. Underlying DB policies restrict authors.
-- Private JPEG/PNG/WebP/AVIF original images are uploaded before draft references are saved.
+- Private JPEG/PNG/WebP original images are uploaded before draft references are saved.
 - Owner/publisher **Approve release snapshot** calls a server-side, revision-checked database function. This creates an immutable record and **does not publish public pages**. Public release deployment needs a separate export/snapshot asset reconciler.
 - Local Studio continues as a separate fallback, with previous browser data untouched.
 
@@ -74,4 +74,4 @@ Approved builder sections and reversible native editorial replacements must be r
 
 ## Release acceptance
 
-Source code and tests must pass on draft PR #87. Public desktop and mobile visual checks need to be re-run after enabling the staging environment. Before first public publish, build a release manifest, reconcile media and HTML, test static generation, create rollback snapshots and get owner approval. Keep the public `main` release channel unchanged until then.
+Source code and tests must pass on Studio integration PR #81 and its reviewed fix branches. Public desktop and mobile visual checks need to be re-run after enabling the staging environment. Before first public publish, build a release manifest, reconcile media and HTML, test static generation, create rollback snapshots and get owner approval. Keep the public `main` release channel unchanged until then.

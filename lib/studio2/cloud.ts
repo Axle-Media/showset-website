@@ -1,5 +1,6 @@
 import type {MediaAsset,Workspace} from "./model";
 import {assertWorkspace} from "./model";
+import {detectedImageMime,imageDimensions} from "./image-validation";
 
 /**
  * Hosting-independent, browser-facing SHOWSET cloud transport. Supabase
@@ -178,10 +179,15 @@ export class CloudStore {
     if(file.size>8*1024*1024||
       !["image/jpeg","image/png","image/webp"].includes(file.type))
       throw Error("Only JPEG, PNG or WebP images up to 8 MB may be uploaded.");
-    // Media originals are addressed by SHA-256. Validate even when this
-    // method is called directly rather than through the image picker.
+    // MIME labels are user-controlled. Also validate the actual binary
+    // signature and dimensions when called outside the normal image picker.
+    const bytes=new Uint8Array(await file.arrayBuffer());
+    if(detectedImageMime(bytes)!==file.type)
+      throw Error("Original bytes do not match a supported image MIME type.");
+    imageDimensions(bytes,file.type);
+    // Media originals are immutable and addressed by their SHA-256 bytes.
     const digest=[...new Uint8Array(await crypto.subtle.digest(
-      "SHA-256",await file.arrayBuffer()))]
+      "SHA-256",bytes))]
       .map(byte=>byte.toString(16).padStart(2,"0")).join("");
     if(id!=="asset-"+digest)
       throw Error("Original image does not match its content-addressed ID.");
@@ -214,8 +220,13 @@ export class CloudStore {
     );
     if(original.size>8*1024*1024)
       throw Error("Private original exceeds the media size limit.");
+    const bytes=new Uint8Array(await original.arrayBuffer());
+    const detected=detectedImageMime(bytes);
+    if(!detected)
+      throw Error("Private original is not a supported image.");
+    imageDimensions(bytes,detected);
     const digest=[...new Uint8Array(await crypto.subtle.digest(
-      "SHA-256",await original.arrayBuffer()))]
+      "SHA-256",bytes))]
         .map(byte=>byte.toString(16).padStart(2,"0")).join("");
     if(asset.id!=="asset-"+digest)
       throw Error("Private original checksum does not match its media ID.");

@@ -1,3 +1,20 @@
+/**
+ * Detect the binary image format independently from the browser's File.type
+ * or a Storage response's Content-Type. Cloud uploads and downloads must not
+ * accept arbitrary bytes merely labelled image/png, image/jpeg or image/webp.
+ */
+export function detectedImageMime(bytes: Uint8Array): "image/png" | "image/jpeg" | "image/webp" | null {
+  if (bytes.length >= 24 &&
+      [137,80,78,71,13,10,26,10].every((value,index)=>bytes[index]===value) &&
+      String.fromCharCode(...bytes.slice(12,16))==="IHDR") return "image/png";
+  if (bytes.length >= 4 && bytes[0]===255 && bytes[1]===216 &&
+      bytes[2]===255) return "image/jpeg";
+  if (bytes.length >= 30 &&
+      String.fromCharCode(...bytes.slice(0,4))==="RIFF" &&
+      String.fromCharCode(...bytes.slice(8,12))==="WEBP") return "image/webp";
+  return null;
+}
+
 /** Read dimensions before allocating a decoded bitmap. No executable upload types. */
 export function imageDimensions(
   bytes: Uint8Array,
