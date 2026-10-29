@@ -10,6 +10,7 @@ import {
   removeNode,
   moveNode,
   cloneNode,
+  duplicateNode,
   newCustomPage,
   isContainer,
   type CanvasNode,
@@ -253,25 +254,36 @@ export default function Studio2() {
   };
   const add = (kind: NodeKind) => {
     if (!page) return;
-    if (page.builder?.mode !== "custom") {
+    const template = page.builder?.mode !== "custom";
+    const parent = node && isContainer(node.kind) ? node.id : null;
+    if (template && kind !== "section" && !parent) {
       editor.setError(
-        "Create a builder page to add nested elements in this first slice. Existing template content remains protected.",
+        "Add an editable section first, then select it before adding images, text or other elements.",
       );
-      setDialog(true);
+      setTab("Layers");
       return;
     }
     const next = makeNode(kind);
-    const parent = node && isContainer(node.kind) ? node.id : null;
+    // Approved templates are protected. All new owner sections are additive
+    // roots; custom content can be nested only inside those owner-created roots.
+    if (template && kind === "section") {
+      next.name = "Editable section";
+      next.children = [makeNode("heading"), makeNode("text")];
+    }
     updatePage(
       (p) => ({
         ...p,
         builder: {
           ...builderFor(p),
-          roots: insertNode(builderFor(p).roots, next, parent),
+          roots: insertNode(
+            builderFor(p).roots, next,
+            template && kind === "section" ? null : parent,
+          ),
         },
       }),
       "Add " + kind,
     );
+    setInspection(null);
     setSelected(next.id);
     setTab("Layers");
   };
@@ -343,18 +355,15 @@ export default function Studio2() {
       return;
     }
     if (name === "duplicate") {
-      const copy = cloneNode(node);
+      const result = duplicateNode(builderFor(page).roots, node.id);
       updatePage(
         (p) => ({
           ...p,
-          builder: {
-            ...builderFor(p),
-            roots: insertNode(builderFor(p).roots, copy, null),
-          },
+          builder: { ...builderFor(p), roots: result.roots },
         }),
         "Duplicate element",
       );
-      setSelected(copy.id);
+      setSelected(result.selectedId);
       return;
     }
     if (name === "delete") {
