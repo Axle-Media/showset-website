@@ -10,12 +10,11 @@ type Props = {
   accentLine: string;
   summary: string;
   compactTitle?: boolean;
-  currentPage: "privacy" | "terms";
   children: ReactNode;
 };
 
 /** Reuse the approved, bound SHOWSET header/footer without mounting scroll-driven page views. */
-export default function LegalPageShell({ firstLine, accentLine, summary, compactTitle = false, currentPage, children }: Props) {
+export default function LegalPageShell({ firstLine, accentLine, summary, compactTitle = false, children }: Props) {
   const { document } = parseHTML("<!doctype html><html><body><div id='legal-source'></div></body></html>");
   const source = document.getElementById("legal-source")!;
   source.innerHTML = conceptDocument(defaultPages.home, defaultGlobals);
@@ -48,13 +47,6 @@ export default function LegalPageShell({ firstLine, accentLine, summary, compact
         <div id="legal-content" className="legal-content">
           <div className="legal-body">
             {children}
-            <div className="legal-switch">
-              {currentPage === "privacy" ? (
-                <a href="/terms-and-conditions/">Terms &amp; Conditions <span aria-hidden="true">↗</span></a>
-              ) : (
-                <a href="/privacy-policy/">Privacy &amp; Policy <span aria-hidden="true">↗</span></a>
-              )}
-            </div>
           </div>
         </div>
       </main>
