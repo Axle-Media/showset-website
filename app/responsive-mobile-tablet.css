@@ -291,6 +291,12 @@
   .concept-12-root .service-experience .service-capability-name{
     text-align:center!important;
   }
+  /* Centre the turquoise heading rules themselves, not just the text.
+     Keep the desktop's left-anchored rule and scroll-progress animation. */
+  .concept-12-root .service-experience .service-expertise .service-capability-group h3::after{
+    margin-inline:auto;
+    transform-origin:center;
+  }
   .concept-12-root .service-experience .service-event-triptych-notes{
     padding-left:0;
   }

@@ -73,6 +73,12 @@ function ck(label,pass,detail){
               const r=el.getBoundingClientRect();
               return {selector,height:r.height,width:r.width};
             }));
+          const capabilityRules=[...root.querySelectorAll('.service-expertise .service-capability-group h3')].filter(visible).map(h=>{
+            const rule=getComputedStyle(h,'::after');
+            return {left:parseFloat(rule.marginLeft),right:parseFloat(rule.marginRight),
+              width:parseFloat(rule.width),originX:parseFloat(rule.transformOrigin),
+              content:rule.content};
+          });
           const footer=document.querySelector('.footer-identity > p');
           const footerIdentity=document.querySelector('.footer-identity');
           const footerDiscover=document.querySelector('.footer-links > div:first-child');
@@ -112,7 +118,7 @@ function ck(label,pass,detail){
           const galleryHeading=root.querySelector('.case-gallery-heading-row .case-editorial-heading');
           const studioShade=root.querySelector('.studio-hero-shade');
           return {
-            text,images,viewport,body,windowWidth:innerWidth,rootWidth:root.getBoundingClientRect().width,
+            text,images,capabilityRules,viewport,body,windowWidth:innerWidth,rootWidth:root.getBoundingClientRect().width,
             footerWrap:footer?getComputedStyle(footer).whiteSpace:'',
             footerColumns,
             contactIntroAlign:contactIntro?getComputedStyle(contactIntro).textAlign:null,
@@ -150,6 +156,13 @@ function ck(label,pass,detail){
             &&foot.what.right<=foot.contact.left+2
             &&foot.identity.bottom<=foot.what.top,
             foot);
+          if(['events','creative','digital','production'].includes(name)){
+            ck('Mobile service-card accent rules centred below headings: '+tag,
+              result.capabilityRules.length>0&&result.capabilityRules.every(rule=>
+                Number.isFinite(rule.left)&&Number.isFinite(rule.right)
+                &&Math.abs(rule.left-rule.right)<=2
+                &&Math.abs(rule.originX-rule.width/2)<=1),result.capabilityRules);
+          }
           if(name==='contact'){
             ck('Contact details centred; form labels still left-aligned: '+tag,
               result.contactIntroAlign==='center'&&result.contactLabelAlign==='left',result);
