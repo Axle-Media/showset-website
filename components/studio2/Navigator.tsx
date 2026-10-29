@@ -125,39 +125,6 @@ export default function Navigator({
       </nav>
       <div className="s2-panel-title">
         <h2>{tab}</h2>
-        {tab === "Images" && (
-          <>
-            <p className="s2-hint">
-              Choose a photograph to open its replacement, crop and alt-text
-              controls.
-            </p>
-            <div className="s2-page-images">
-              {pageImages
-                .filter((image) =>
-                  image.name.toLowerCase().includes(query.toLowerCase()),
-                )
-                .map((image) => (
-                  <button
-                    key={image.id}
-                    onClick={() => onSelect(image.id)}
-                    aria-label={"Edit image: " + image.name}
-                  >
-                    {mediaSource(image.src, urls) && (
-                      <img src={mediaSource(image.src, urls)} alt="" />
-                    )}
-                    <strong>{image.name}</strong>
-                    <span>Change image ↗</span>
-                  </button>
-                ))}
-            </div>
-            {!pageImages.length && (
-              <p className="s2-hint">
-                Click a photograph on the canvas to inspect its section, or use
-                classic Studio for remaining template images.
-              </p>
-            )}
-          </>
-        )}
         {tab === "Pages" && (
           <button onClick={onNew} className="s2-small-action">
             + New
@@ -172,6 +139,46 @@ export default function Navigator({
           value={query}
           onChange={(e) => onQuery(e.target.value)}
         />
+      )}
+      {tab === "Images" && (
+        <div className="s2-image-browser">
+          <p className="s2-hint">
+            Choose a photograph to open its replacement, crop and alt-text
+            controls.
+          </p>
+          <div className="s2-page-images">
+            {pageImages
+              .filter((image) =>
+                image.name.toLowerCase().includes(query.toLowerCase()),
+              )
+              .map((image) => (
+                <button
+                  key={image.id}
+                  onClick={() => onSelect(image.id)}
+                  aria-label={"Edit image: " + image.name}
+                  aria-pressed={selected === image.id}
+                >
+                  {mediaSource(image.src, urls) && (
+                    <img src={mediaSource(image.src, urls)} alt="" />
+                  )}
+                  <strong>{image.name}</strong>
+                  <span>Change image ↗</span>
+                </button>
+              ))}
+          </div>
+          {pageImages.length === 0 ? (
+            <p className="s2-hint">
+              Click a photograph on the canvas to inspect its section, or use
+              classic Studio for remaining template images.
+            </p>
+          ) : !pageImages.some((image) =>
+              image.name.toLowerCase().includes(query.toLowerCase())
+            ) ? (
+            <p className="s2-hint" role="status">
+              No images match your search.
+            </p>
+          ) : null}
+        </div>
       )}
       {tab === "Pages" && (
         <ul className="s2-page-list">

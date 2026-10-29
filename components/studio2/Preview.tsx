@@ -193,8 +193,8 @@ export default function Preview() {
             gap: computed.gap,
             fontSize: computed.fontSize,
             fontWeight: computed.fontWeight,
-            fontFamily: computed.fontFamily.includes("Manrope")
-              ? "Manrope"
+            fontFamily: computed.fontFamily.includes("Poppins")
+              ? "Poppins"
               : "Poppins",
             lineHeight: String(
               Math.round(
@@ -558,7 +558,7 @@ export default function Preview() {
           suppressSubmissions
         />
       )}
-      <style>{`.s2-edit-canvas [data-builder-node]{cursor:pointer}.s2-edit-canvas [data-builder-node]:hover{outline:1px dashed #12BAAF;outline-offset:2px}.s2-edit-canvas .s2-selected{outline:2px solid #12BAAF!important;outline-offset:3px}.s2-edit-canvas [data-inline-editing]{outline:2px solid #FAF9FD!important;cursor:text!important;user-select:text;min-width:1ch}.s2-edit-canvas .s2-image-handle{position:absolute;right:18px;top:18px;z-index:80;background:#12BAAF!important;color:#062739!important;font:700 14px/1.3 Manrope,sans-serif!important;padding:11px 16px!important;border:1px solid #FAF9FD!important;border-radius:6px!important;pointer-events:auto!important;cursor:pointer!important;box-shadow:0 3px 14px #0005}.s2-edit-canvas #hero-track>.s2-image-handle{top:calc(var(--header-height,78px) + 12px)}.s2-edit-canvas .s2-image-handle:focus-visible{outline:3px solid #FAF9FD;outline-offset:3px}.s2-preview-notice{padding:15vh 8vw;color:#FAF9FD;background:#0D2F49;min-height:100vh}`}</style>
+      <style>{`.s2-edit-canvas [data-builder-node]{cursor:pointer}.s2-edit-canvas [data-builder-node]:hover{outline:1px dashed #12BAAF;outline-offset:2px}.s2-edit-canvas .s2-selected{outline:2px solid #12BAAF!important;outline-offset:3px}.s2-edit-canvas [data-inline-editing]{outline:2px solid #FAF9FD!important;cursor:text!important;user-select:text;min-width:1ch}.s2-edit-canvas .s2-image-handle{position:absolute;right:18px;top:18px;z-index:80;background:#12BAAF!important;color:#062739!important;font:700 14px/1.3 Poppins,sans-serif!important;padding:11px 16px!important;border:1px solid #FAF9FD!important;border-radius:6px!important;pointer-events:auto!important;cursor:pointer!important;box-shadow:0 3px 14px #0005}.s2-edit-canvas #hero-track>.s2-image-handle{top:calc(var(--header-height,78px) + 12px)}.s2-edit-canvas .s2-image-handle:focus-visible{outline:3px solid #FAF9FD;outline-offset:3px}.s2-preview-notice{padding:15vh 8vw;color:#FAF9FD;background:#0D2F49;min-height:100vh}`}</style>
     </div>
   );
 }

@@ -3,7 +3,8 @@
   "git": {
     "deploymentEnabled": {
       "feat/studio-2-*": false,
-      "integration/studio2-*": false
+      "integration/studio2-*": false,
+      "fix/studio2-*": false
     }
   }
 }

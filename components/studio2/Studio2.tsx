@@ -60,6 +60,14 @@ export default function Studio2() {
     [inspection, setInspection] = useState<CanvasInspection | null>(null);
   const importInput = useRef<HTMLInputElement>(null),
     dialogRef = useRef<HTMLDialogElement>(null);
+  // Start on the visitor's actual editing breakpoint. Previously a phone
+  // opened a 1440px desktop canvas shrunk to an unreadable 25% preview.
+  // Only choose the initial mode: later user-selected widths are respected.
+  useEffect(() => {
+    const viewport = window.innerWidth;
+    if (viewport <= 600) setWidth(Math.min(430, Math.max(320, viewport)));
+    else if (viewport <= 1024) setWidth(768);
+  }, []);
   const workspace = editor.workspace,
     page = workspace?.pages[slug],
     node =
@@ -85,13 +93,27 @@ export default function Studio2() {
     if (!workspace) return;
     let disposed = false,
       current: Record<string, string> = {};
-    mediaUrls(workspace.media).then((value) => {
-      current = value;
-      if (!disposed) setUrls(value);
-    });
+    mediaUrls(workspace.media)
+      .then((value) => {
+        if (disposed) {
+          // The previous canvas can unmount before IndexedDB finishes loading.
+          // Revoke late-arriving object URLs instead of leaking each original.
+          Object.values(value).forEach((url) => {
+            if (url) URL.revokeObjectURL(url);
+          });
+          return;
+        }
+        current = value;
+        setUrls(value);
+      })
+      .catch((error) => {
+        if (!disposed) editor.setError("Unable to load media previews: " + (error as Error).message);
+      });
     return () => {
       disposed = true;
-      Object.values(current).forEach((url) => URL.revokeObjectURL(url));
+      Object.values(current).forEach((url) => {
+        if (url) URL.revokeObjectURL(url);
+      });
     };
   }, [workspace?.media.map((a) => a.id).join(",")]);
   useEffect(() => {
@@ -443,16 +465,25 @@ export default function Studio2() {
   };
   useEffect(() => {
     const key = (event: KeyboardEvent) => {
+      // Save is available even while someone is editing a text or URL field.
+      // Undo/Delete still defer to native input editing behaviour.
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "s") {
+        event.preventDefault();
+        // Commit the focused draft first, then save the updated workspace.
+        if ((event.target as HTMLElement).matches("input,textarea")) {
+          (event.target as HTMLElement).blur();
+          queueMicrotask(() => void editor.save());
+        } else {
+          void editor.save();
+        }
+        return;
+      }
       if (
         (event.target as HTMLElement).matches(
           "input,textarea,select,[contenteditable=true]",
         )
       )
         return;
-      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "s") {
-        event.preventDefault();
-        void editor.save();
-      }
       if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "z") {
         event.preventDefault();
         editor.step(event.shiftKey ? "redo" : "undo");
@@ -690,7 +721,9 @@ export default function Studio2() {
                   type="file"
                   accept="image/png,image/jpeg,image/webp"
                   onChange={(e) => {
-                    if (e.target.files?.[0]) void upload(e.target.files[0]);
+                    const file = e.target.files?.[0];
+                    e.target.value = "";
+                    if (file) void upload(file);
                   }}
                 />
               </label>

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 export function DraftField({
   value,
   onCommit,
@@ -15,7 +15,8 @@ export function DraftField({
 }) {
   const [draft, setDraft] = useState(value);
   const cancel = useRef(false);
-  useEffect(() => setDraft(value), [value]);
+  // Apply Undo, Redo and history restores before the inspector repaints.
+  useLayoutEffect(() => setDraft(value), [value]);
   useEffect(() => {
     if (draft === value) return;
     const leave = (event: BeforeUnloadEvent) => {
@@ -341,7 +342,9 @@ export default function Inspector({
                     type="file"
                     accept="image/png,image/jpeg,image/webp"
                     onChange={(e) => {
-                      if (e.target.files?.[0]) onUpload(e.target.files[0]);
+                      const file = e.target.files?.[0];
+                      e.target.value = "";
+                      if (file) onUpload(file);
                     }}
                   />
                 </label>

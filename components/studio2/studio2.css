@@ -9,7 +9,7 @@
   background: var(--s2-navy);
   color: var(--s2-white);
   font:
-    500 14px/1.5 Manrope,
+    500 14px/1.5 Poppins,
     Arial,
     sans-serif;
   isolation: isolate;
@@ -505,7 +505,7 @@
   background: #0d2f49;
   color: #faf9fd;
   padding: 32px;
-  font-family: Manrope, Arial, sans-serif;
+  font-family: Poppins, Arial, sans-serif;
 }
 .s2-dialog::backdrop {
   background: #061b2bdc;
@@ -522,7 +522,7 @@
   margin-top: 28px;
 }
 .s2-dialog button {
-  font: 650 14px Manrope;
+  font: 650 14px Poppins;
   padding: 12px 18px;
   border-radius: 6px;
   border: 1px solid #ffffff40;
@@ -940,4 +940,18 @@
 .s2-canvas-foot {
   white-space: normal;
   line-height: 1.6;
+}
+
+/* Keep the image browser below the navigator heading and search input.
+   Image cards must never share the flex row reserved for the panel title. */
+.s2-image-browser {
+  min-width: 0;
+  padding-bottom: 20px;
+}
+.s2-image-browser .s2-page-images button[aria-pressed="true"] {
+  border-color: var(--s2-teal);
+  background: #153b54;
+}
+.s2-image-browser .s2-hint[role="status"] {
+  margin-block: 12px;
 }
