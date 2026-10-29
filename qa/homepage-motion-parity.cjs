@@ -81,7 +81,7 @@ const check=(name,ok,detail)=>{checks.push({name,pass:!!ok,detail});console.log(
    check('Dot typography retains turquoise lead-in, sand emphasis and turquoise periods '+width,
       geometry.dotBaseColour==='rgb(18, 186, 175)' &&
       geometry.dotAccentColour==='rgb(18, 186, 175)' &&
-      geometry.dotEmphasisColour==='rgb(231, 214, 185)' &&
+      geometry.dotEmphasisColour==='rgb(229, 216, 195)' &&
       geometry.dotPeriods.length===2 &&
       geometry.dotPeriods.every(color=>color==='rgb(18, 186, 175)'),geometry);
    check('Dot supporting text is prominent, including inside colour reveal '+width,
