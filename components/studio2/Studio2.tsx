@@ -549,7 +549,7 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
             roots:changeNode(builderFor(p).roots,targetSelected,n=>({
               ...n,props:{...n.props,items:(n.props.items||[]).map((item,i)=>
                 i===galleryIndex ? {...item,src:"asset:"+asset.id,
-                  alt:item.alt||asset.name.replace(/\\.[^.]+$/,"")} : item),
+                  alt:item.alt||asset.name.replace(/\.[^.]+$/,"")} : item),
               },
             })),
           }};
@@ -907,7 +907,7 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
                       if(node?.kind==="gallery" && galleryTargetIndex!==null){
                         patchProps("items",(node.props.items||[]).map((item,i)=>
                           i===galleryTargetIndex?{...item,src:"asset:"+asset.id,
-                            alt:item.alt||asset.name.replace(/\\.[^.]+$/,"")}:item));
+                            alt:item.alt||asset.name.replace(/\.[^.]+$/,"")}:item));
                         setGalleryTargetIndex(null);
                         setTab("Layers");
                         if(innerWidth<=800)setPanel("Inspector");
