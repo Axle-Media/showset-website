@@ -1,0 +1,140 @@
+[
+  {
+    "file": "qa/event-format-row.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 6
+  },
+  {
+    "file": "qa/mobile-tablet-audit.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 24
+  },
+  {
+    "file": "qa/studio-heading-alignment.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 4
+  },
+  {
+    "file": "qa/studio-scroll-hero.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 28
+  },
+  {
+    "file": "qa/closing-cta-parity.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 16
+  },
+  {
+    "file": "qa/heading-accent-lines.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 4
+  },
+  {
+    "file": "qa/homepage-motion-parity.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 7
+  },
+  {
+    "file": "qa/editorial-pages.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 24
+  },
+  {
+    "file": "qa/story-copy-balance.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 5
+  },
+  {
+    "file": "qa/home-work-carousel.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 12
+  },
+  {
+    "file": "qa/header-navigation-alignment.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 6
+  },
+  {
+    "file": "qa/carousel-playback.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 27
+  },
+  {
+    "file": "qa/instant-route-top.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 13
+  },
+  {
+    "file": "qa/site-typography.cjs",
+    "code": 1,
+    "signal": null,
+    "seconds": 4
+  },
+  {
+    "file": "qa/editorial-columns.cjs",
+    "code": 1,
+    "signal": null,
+    "seconds": 5
+  },
+  {
+    "file": "qa/case-related-descriptions.cjs",
+    "code": 1,
+    "signal": null,
+    "seconds": 4
+  },
+  {
+    "file": "qa/footer-capability-hover.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 18
+  },
+  {
+    "file": "qa/service-studio.cjs",
+    "code": 1,
+    "signal": null,
+    "seconds": 9
+  },
+  {
+    "file": "qa/service-lifecycle.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 18
+  },
+  {
+    "file": "qa/service-experience.cjs",
+    "code": 1,
+    "signal": null,
+    "seconds": 67
+  },
+  {
+    "file": "qa/photo-headline-swipe.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 8
+  },
+  {
+    "file": "qa/non-photo-headlines.cjs",
+    "code": 0,
+    "signal": null,
+    "seconds": 6
+  },
+  {
+    "file": "qa/service-motion-design.cjs",
+    "code": 1,
+    "signal": null,
+    "seconds": 273
+  }
+]

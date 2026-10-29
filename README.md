@@ -54,3 +54,9 @@ Use feature branches and pull requests targeting `main`. Review changes before m
 Production deployment is authorised for the reviewed `main` branch at https://showset-website.vercel.app/. Vercel deploys after an approved PR merge. This does not authorise publishing to showset.co.za or changing xneelo/WordPress. Studio saves locally on localhost; the static Vercel deployment has no authenticated PHP publishing backend. The legacy `package:xneelo` command includes PHP backend files and editor routes; it is not the public-only staging package.
 
 New case studies use **+ New case study** in Studio and automatically receive the shared cinematic template. Static URLs and SEO require a content export and site rebuild; adding a project needs no custom component, route-map entry or motion code. See [case-study release audit](docs/case-study-production-audit.md) for the production candidate and verification. Environment files, private keys, local credentials, dependencies, build outputs, database dumps and temporary backups stay out of Git. Only placeholder configuration examples and the source database schema are intentionally tracked. Keep hosting and GitHub credentials in secure stores, never in source or chat.
+
+## Studio 2.0 local preview
+
+The opt-in visual builder is available at `/studio/next/` with `npm run dev -- -p 3001`. It requires a verified backup before adopting classic drafts into its separate store. Classic `/studio/` remains available. Production exports disable the new workspace; local preview does not publish the website.
+
+See the [Phase 1 report and browser evidence](docs/studio-builder-phase1.md), [operator guide](docs/studio-builder-operator.md), [coverage audit](docs/studio-builder-audit.md) and [architecture](docs/studio-builder-architecture.md). Issue #57 remains open for complete template/global coverage and authenticated shared release.

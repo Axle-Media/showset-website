@@ -1,0 +1,18 @@
+{
+  "builder": {
+    "pass": true,
+    "lastLine": "PASS Studio 2.0: backup preservation, hero responsive type, blank page nesting, pattern, upload/crop, save/reload/preview, portable backup, six widths; no page errors."
+  },
+  "recovery": {
+    "pass": true,
+    "lastLine": "PASS portable media import into fresh browser; real inline edit and reload; two-tab CAS conflict; backup-before-recovery; tampered backup rejected."
+  },
+  "motion": {
+    "pass": true,
+    "lastLine": "PASS reversible scroll motion, live OS reduced-motion fallback, undo/redo, lock/inline protection, duplicate/delete and mobile panel controls."
+  },
+  "touch": {
+    "pass": true,
+    "lastLine": "PASS actual touch-emulated Studio panels, headline editing, overflow and interactive mobile menu/Escape."
+  }
+}
