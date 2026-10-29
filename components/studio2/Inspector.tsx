@@ -79,6 +79,7 @@ import type {
 import { defaultPattern, defaultMotion } from "@/lib/studio2/model";
 import { bindingContent, type Binding } from "@/lib/studio2/bindings";
 import type { PageData } from "@/lib/types";
+import {canReplaceNative} from "@/lib/studio2/native-rebuild";
 export default function Inspector({
   page,
   node,
@@ -908,6 +909,34 @@ export default function Inspector({
           </>
         )}
       </fieldset>
+      {binding?.kind==="section" && (
+        <div className="s2-element-actions" aria-label="Original section rebuilding">
+          {(() => {
+            const block=page.sections.find(x=>x.id===binding.sectionId);
+            const supported=!!block&&canReplaceNative(page,block);
+            const replaced=!!page.builder?.replacedNative?.includes(binding.sectionId);
+            return supported ? <>
+              <p className="s2-hint">
+                Rebuild this standard-flow editorial section as fully editable
+                elements. The original is preserved and can be restored.
+                Cinematic scroll scenes remain protected.
+              </p>
+              {!replaced ? (
+                <button onClick={()=>onAction("rebuild-native")}>
+                  Rebuild as editable section
+                </button>
+              ):(
+                <button onClick={()=>onAction("restore-native")}>
+                  Restore original section
+                </button>
+              )}
+            </> : <p className="s2-hint">
+              The approved choreography of this section is protected.
+              Edit its text, images and styles without breaking its motion.
+            </p>;
+          })()}
+        </div>
+      )}
       {node?.locked && (
         <p className="s2-hint">Unlock this element to edit its properties.</p>
       )}
