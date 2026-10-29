@@ -6,13 +6,19 @@ import { renderNodes } from "./render";
  * Native cinematic scenes are not moved, cloned or removed by this renderer.
  * The same builder nodes work on custom pages and existing-page extensions.
  */
+// Reusing unmodified nodes preserves focus and image/video state during
+// inspector updates, and avoids spurious MutationObserver-driven rerenders.
+const lastMarkup = new WeakMap<HTMLElement,string>();
 export function applyTemplateExtensions(
   host: HTMLElement,
   page: PageData,
   urls: Record<string, string> = {},
 ): HTMLElement | null {
-  host.querySelectorAll("[data-studio2-template-extensions]").forEach((node) => node.remove());
-  if (page.builder?.mode !== "template" || !page.builder.roots.length) return null;
+  const existing = host.querySelector<HTMLElement>("[data-studio2-template-extensions]");
+  if (page.builder?.mode !== "template" || !page.builder.roots.length) {
+    existing?.remove();
+    return null;
+  }
 
   const view = page.route === "/"
     ? host.querySelector<HTMLElement>('.view[data-view="home"]')
@@ -40,14 +46,26 @@ export function applyTemplateExtensions(
       : view.querySelector<HTMLElement>(
         ".service-close, .studio-final, .work-final, .end-section",
       );
-  const container = host.ownerDocument.createElement("div");
+  const container = existing && view.contains(existing)
+    ? existing : host.ownerDocument.createElement("div");
+  if (existing && existing !== container) existing.remove();
   container.className = "s2-template-extensions s2-tree";
   container.dataset.studio2TemplateExtensions = "true";
   container.setAttribute("aria-label", "Additional SHOWSET sections");
-  container.innerHTML = renderNodes(page.builder.roots, urls);
-  if (closing) closing.before(container);
-  else if (page.route.startsWith("/work/"))
-    (view.querySelector(".case-experience") || view).append(container);
-  else (view.querySelector(".service-experience") || view).append(container);
+  const nextMarkup = renderNodes(page.builder.roots, urls);
+  if (lastMarkup.get(container) !== nextMarkup) {
+    container.innerHTML = nextMarkup;
+    lastMarkup.set(container, nextMarkup);
+  }
+  if (closing) {
+    if (container.nextElementSibling !== closing ||
+        container.parentElement !== closing.parentElement)
+      closing.before(container);
+  } else {
+    const destination = page.route.startsWith("/work/")
+      ? (view.querySelector(".case-experience") || view)
+      : (view.querySelector(".service-experience") || view);
+    if (container.parentElement !== destination) destination.append(container);
+  }
   return container;
 }
