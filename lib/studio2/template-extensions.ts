@@ -1,5 +1,6 @@
 import type { PageData } from "../types";
 import { renderNodes } from "./render";
+import { syncNativeReplacementVisibility } from "./native-rebuild";
 
 /**
  * Stable append-only area for owner-created sections inside approved layouts.
@@ -14,6 +15,7 @@ export function applyTemplateExtensions(
   page: PageData,
   urls: Record<string, string> = {},
 ): HTMLElement | null {
+  syncNativeReplacementVisibility(host,page);
   const existing = host.querySelector<HTMLElement>("[data-studio2-template-extensions]");
   if (page.builder?.mode !== "template" || !page.builder.roots.length) {
     existing?.remove();
