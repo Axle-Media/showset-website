@@ -103,7 +103,7 @@ for(const asset of assets.values()){
 }
 for(const [key,value] of Object.entries({pages,globals})){
   fs.mkdirSync(path.dirname(output[key]),{recursive:true});
-  fs.writeFileSync(output[key],JSON.stringify(value,null,2)+"\\n","utf8");
+  fs.writeFileSync(output[key],JSON.stringify(value,null,2)+"\n","utf8");
 }
 for(const asset of assets.values()){
   if(!paths.has(asset.relative))continue;
