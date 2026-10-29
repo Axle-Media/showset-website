@@ -133,11 +133,13 @@ export default function Studio2() {
       (w) => ({ ...w, pages: { ...w.pages, [slug]: fn(w.pages[slug]) } }),
       label,
     );
-  const choose = (id: string) => {
+  const choose = (id: string, fromImageBrowser = false) => {
     setInspection(null);
     setSelectionSerial((n) => n + 1);
     setSelected(id);
-    setTab("Layers");
+    // Keep the photo browser available while replacing several images in a
+    // row. Canvas and layer selection still switch back to the Layers view.
+    if (!fromImageBrowser) setTab("Layers");
     setMetrics({});
     if (innerWidth <= 800) setPanel("Inspector");
   };
@@ -686,7 +688,7 @@ export default function Studio2() {
               setQuery("");
             }}
             onQuery={setQuery}
-            onSelect={choose}
+            onSelect={(id) => choose(id, tab === "Images")}
             onAdd={add}
             onMove={move}
             onNew={() => setDialog(true)}
