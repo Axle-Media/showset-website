@@ -35,11 +35,13 @@
 .service-hero--digital{align-items:center;background:linear-gradient(138deg,#143952,#0b293e 80%)}
 .service-hero--digital .service-hero-content{width:64%;z-index:1}
 .service-hero--digital .service-heading{max-width:11em}
-/* Bring the Digital touchpoint artwork towards its heading and body copy. */
-.service-digital-art{position:absolute;right:clamp(20px,4vw,72px);top:calc(var(--header-height) + 40px);width:43%;bottom:65px;overflow:hidden;isolation:isolate}
-.service-art-orbit{position:absolute;width:120%;aspect-ratio:1;border:1px solid rgba(18,186,175,.38);border-radius:50%;top:10%;left:17%}
+/* Digital & Marketing graphic fills the available right-hand space.
+   Its mask reaches the section's right and bottom edges on desktop,
+   while the existing stacked layout remains authoritative on mobile. */
+.service-digital-art{position:absolute;right:0;top:calc(var(--header-height) + 20px);width:52%;bottom:0;overflow:hidden;isolation:isolate}
+.service-art-orbit{position:absolute;width:140%;aspect-ratio:1;border:1px solid rgba(18,186,175,.38);border-radius:50%;top:8%;left:10%}
 .service-art-orbit:after{content:'';position:absolute;inset:18%;border:1px solid rgba(18,186,175,.22);border-radius:50%}
-.service-art-arrow{position:absolute;left:20%;top:5%;color:var(--teal);font:500 clamp(220px,33vw,520px)/1 var(--display);transform:rotate(-8deg)}
+.service-art-arrow{position:absolute;left:20%;top:5%;color:var(--teal);font:500 clamp(250px,38vw,610px)/1 var(--display);transform:rotate(-8deg)}
 .service-art-label{position:absolute;right:10%;font-family:var(--display);font-size:clamp(19px,2.4vw,38px);font-weight:600;border-bottom:1px solid var(--service-line);padding:12px 0;min-width:55%}
 .service-art-label-0{top:45%;right:0}.service-art-label-1{top:62%;right:12%}.service-art-label-2{top:79%;right:24%}
 /* Content & Production opens as a full-bleed cinematic photograph. Unlike
