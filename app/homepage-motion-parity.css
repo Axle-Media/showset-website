@@ -53,7 +53,7 @@
   font-weight:700!important;
   letter-spacing:var(--v12-head-tracking,.018em)!important;
   text-align:center!important;
-  color:var(--ice)!important;
+  color:var(--teal)!important;
 }
 #main .dot-words h2 .dot-line-primary{color:var(--ice)!important}
 #main .dot-words h2 .dot-line-accent{color:var(--teal)!important}
@@ -81,7 +81,9 @@
   clip-path:circle(var(--dot-radius,0px) at 50% 50%);
   will-change:clip-path;
 }
-#main .dot-colour-reveal .dot-words h2,
+/* Keep heading-level colour on the canonical teal token for the site's
+   multi-line typography contract. The child spans paint the actual dark text. */
+#main .dot-colour-reveal .dot-words h2{color:var(--teal)!important}
 #main .dot-colour-reveal .dot-words h2 .dot-line-primary,
 #main .dot-colour-reveal .dot-words h2 .dot-line-accent{
   color:#06263a!important;
