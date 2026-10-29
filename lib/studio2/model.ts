@@ -230,7 +230,7 @@ export function makeNode(kind: NodeKind): CanvasNode {
   if (kind === "text") {
     n.props.text = "We bring ideas and details together.";
     n.styles.desktop = {
-      fontFamily: "Manrope",
+      fontFamily: "Poppins",
       fontSize: "17px",
       lineHeight: 1.5,
       color: "#FAF9FD",
@@ -556,6 +556,11 @@ export function assertWorkspace(value: unknown): asserts value is Workspace {
       mediaRef(module.after);
     }
     if (p.builder) {
+      // Approved templates can only mount complete owner-authored chapters.
+      // Imported backups and drag operations cannot strand loose elements.
+      if (p.builder.mode === "template" &&
+          p.builder.roots.some((root) => root.kind !== "section"))
+        throw Error("Template additions must be complete sections.");
       if (p.builder.schemaVersion !== 2)
         throw Error("Unsupported page version.");
       if (

@@ -23,9 +23,19 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001";
   assert.equal(await frame.locator(".s2-template-extensions").count(),0);
   await p.getByRole("button",{name:"+ Add editable section",exact:true}).click();
   await frame.locator(".s2-template-extensions > section.s2-node-section").waitFor();
+  // The cinematic route mounts asynchronously; first allow its initial
+  // refresh to settle, then check stability across an inspector-only change.
+  await p.waitForTimeout(900);
+  // Selecting a different inspector target without changing the underlying
+  // section must not unmount all its media, links and input state.
+  await frame.locator(".s2-template-extensions > section.s2-node-section")
+    .evaluate(node=>{window.__showsetOriginalSection=node;});
   assert.equal(await frame.locator(".s2-template-extensions").evaluate(
     e=>e.nextElementSibling?.classList.contains("service-close")),true);
   await p.getByRole("button",{name:"Select Heading",exact:true}).first().click();
+  assert.equal(await frame.locator(".s2-template-extensions > section.s2-node-section")
+    .evaluate(node=>node===window.__showsetOriginalSection),true,
+    "selection must preserve existing section DOM");
   await p.getByLabel("Headline",{exact:true}).fill("The next event idea.");
   await p.getByLabel("Headline",{exact:true}).blur();
   await frame.locator(".s2-template-extensions .s2-node-heading")

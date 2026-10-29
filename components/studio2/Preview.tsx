@@ -16,6 +16,8 @@ import { nodeMotions } from "@/lib/studio2/render";
 import { mountNodeMotion } from "@/lib/studio2/motion";
 export interface CanvasState {
   workspace: Workspace;
+  /** Incremented only when content changes, not on a selection click. */
+  workspaceVersion?: number;
   slug: string;
   selected: string | null;
   interactive: boolean;
@@ -46,7 +48,16 @@ export default function Preview() {
         data?.workspace?.schemaVersion === 2 &&
         data.workspace.pages[data.slug]
       )
-        setState(data);
+        setState((previous) => {
+          // A new structured-cloned workspace object from postMessage is not
+          // necessarily changed content. Keep the original object identity
+          // until Studio sends a genuinely new workspace version. Otherwise
+          // SiteLayout refreshes entire cinematic views on every click.
+          if (previous && data.workspaceVersion !== undefined &&
+              previous.workspaceVersion === data.workspaceVersion)
+            return { ...data, workspace: previous.workspace };
+          return data;
+        });
     };
     addEventListener("message", receive);
     if (parent !== window)

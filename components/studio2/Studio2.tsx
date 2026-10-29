@@ -86,8 +86,19 @@ export default function Studio2() {
       setSelected(null);
     }
   }, [workspace?.pages, slug]);
+  // postMessage structured-clones the workspace on every selection update.
+  // Tag the actual workspace object identity, so Preview can keep its existing
+  // content references when only selection/viewport/interaction state changes.
+  const workspaceIdentity = useRef<{value:typeof workspace;version:number}>({
+    value:null,version:0,
+  });
+  if (workspaceIdentity.current.value !== workspace)
+    workspaceIdentity.current = {
+      value:workspace,version:workspaceIdentity.current.version+1,
+    };
   const frameState = useMemo(
-    () => (workspace ? { workspace, slug, selected, interactive, urls } : null),
+    () => (workspace ? { workspace, slug, selected, interactive, urls,
+      workspaceVersion:workspaceIdentity.current.version } : null),
     [workspace, slug, selected, interactive, urls],
   );
   useEffect(() => {
@@ -287,7 +298,19 @@ export default function Studio2() {
     setSelected(next.id);
     setTab("Layers");
   };
-  const move = (id: string, parent: string | null, index: number) =>
+  const move = (id: string, parent: string | null, index: number) => {
+    if (!page) return;
+    if (page.builder?.mode !== "custom") {
+      const roots = builderFor(page).roots;
+      const moved = findNode(roots,id);
+      const destination = parent ? findNode(roots,parent) : null;
+      if (!moved || (parent === null && moved.kind !== "section") ||
+          (parent !== null && (moved.kind === "section" ||
+            !destination || !isContainer(destination.kind)))) {
+        editor.setError("New sections stay at page level. Move their elements only within editable sections.");
+        return;
+      }
+    }
     updatePage(
       (p) => ({
         ...p,
@@ -298,6 +321,7 @@ export default function Studio2() {
       }),
       "Move element",
     );
+  };
   const action = (name: string) => {
     if (!page) return;
     if (name === "duplicate-page") {
@@ -337,16 +361,19 @@ export default function Studio2() {
     }
     if (name === "paste" && clipboard) {
       const copy = cloneNode(clipboard);
+      const template = page.builder?.mode !== "custom";
+      const parent = template && copy.kind === "section" ? null :
+        isContainer(node.kind) ? node.id : null;
+      if (template && !parent && copy.kind !== "section") {
+        editor.setError("Select an editable section before pasting a nested element.");
+        return;
+      }
       updatePage(
         (p) => ({
           ...p,
           builder: {
             ...builderFor(p),
-            roots: insertNode(
-              builderFor(p).roots,
-              copy,
-              isContainer(node.kind) ? node.id : null,
-            ),
+            roots: insertNode(builderFor(p).roots,copy,parent),
           },
         }),
         "Paste element",
