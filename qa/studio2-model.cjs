@@ -82,6 +82,15 @@ const w = {
   updatedAt: new Date().toISOString(),
 };
 assertWorkspace(w);
+// Template pages preserve native sections and accept only full added chapters.
+const validTemplate=structuredClone(w);
+validTemplate.pages.home.builder={
+  schemaVersion:2,mode:"template",overrides:{},roots:[makeNode("section")]
+};
+assertWorkspace(validTemplate);
+validTemplate.pages.home.builder.roots=[makeNode("text")];
+assert.throws(()=>assertWorkspace(validTemplate),/complete sections/);
+console.log("PASS imported template chapters cannot contain loose root content.");
 w.pages["qa"] = newCustomPage("QA", "/qa/");
 w.pages.qa.builder.roots = roots;
 assertWorkspace(w);
