@@ -13,6 +13,7 @@ import { safeHref } from "@/lib/safe";
 import { compatiblePages, compatibleGlobals } from "@/lib/concept-12/compat";
 import CustomSite from "./studio2/CustomSite";
 import {syncTemplateSections,mountTemplateMotion} from "@/lib/studio2/template-sections";
+const EMPTY_STUDIO_MEDIA_URLS: Record<string,string> = {};
 type LayoutProps = {
   page: PageData;
   g: Globals;
@@ -34,7 +35,7 @@ function TemplateSiteLayout({
   onSelect,
   selectedId,
   suppressSubmissions=false,
-  urls={},
+  urls=EMPTY_STUDIO_MEDIA_URLS,
 }: LayoutProps) {
   const pathname = usePathname();
   const root = useRef<HTMLDivElement>(null),
