@@ -29,16 +29,16 @@ const fetch=async(url,init)=>{
     return response({Key:"site/"+id},201);
   throw Error("Unknown endpoint "+path);
 };
-const module={exports:{}};
+const sandboxModule={exports:{}};
 vm.runInNewContext("(function(exports,require,module,process,fetch,URL,Blob,crypto){"+
-  js+"\n})",{Response,Uint8Array})(module.exports,(name)=>{
+  js+"\n})",{Response,Uint8Array})(sandboxModule.exports,(name)=>{
     if(name==="./model")return {assertWorkspace:()=>{}};
     throw Error("Unexpected module");
-  },module,{env:{NEXT_PUBLIC_SHOWSET_SUPABASE_URL:"https://test.supabase.co",
+  },sandboxModule,{env:{NEXT_PUBLIC_SHOWSET_SUPABASE_URL:"https://test.supabase.co",
     NEXT_PUBLIC_SHOWSET_SUPABASE_PUBLISHABLE_KEY:"public_test"}},
   fetch,URL,Blob,webcrypto);
 (async()=>{
-  const cloud=new module.exports.CloudStore({
+  const cloud=new sandboxModule.exports.CloudStore({
     url:"https://test.supabase.co",key:"public_test"
   });
   await cloud.signIn("owner@showset.test","password");
