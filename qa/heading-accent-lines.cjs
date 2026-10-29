@@ -1,6 +1,7 @@
 // Website-wide headline colour contract. Check actual rendered lines on desktop
 // and mobile: ivory first, teal second, ivory terminal punctuation except the
-// intentionally turquoise pre-dot homepage story punctuation.
+// intentionally turquoise pre-dot homepage story punctuation. The revealed
+// version switches to white punctuation against the turquoise circle.
 const {chromium}=require(process.env.SHOWSET_PLAYWRIGHT_MODULE||'playwright');
 const fs=require('node:fs');
 const base=process.env.SHOWSET_BASE_URL||'http://127.0.0.1:3001';
@@ -30,13 +31,14 @@ const ck=(name,pass,details)=>{checks.push({name,pass:!!pass,details});console.l
      const plain=!lines.length;
      const isCase=h.hasAttribute('data-case-heading');
      const isDot=h.closest('.dot-words')!==null;
+     const isRevealedDot=h.closest('.dot-colour-reveal')!==null;
      const accentLine=lines.length>1?lines.at(-1):null;
      // Editorial CTAs put text directly in .plain-line and only their punctuation in a child span.
      // Reading firstElementChild in those cases samples the ivory period, not the teal wording.
      const accentTarget=accentLine?.matches('.plain-line')?accentLine:(accentLine?.firstElementChild||accentLine);
      const naturalTarget=lines.length===1?lines[0].firstElementChild:h;
      const colour=x=>x?getComputedStyle(x).color:null;
-     return {text:text.slice(0,85),two,plain,isCase,isDot,expectedPeriod,terminal:terminal?.textContent||'',terminalColour:colour(terminal),baseColour:colour(naturalTarget),firstLineColour:getComputedStyle(naturalTarget,'::first-line').color,accentColour:colour(accentTarget),explicit:lines.length>=2};
+     return {text:text.slice(0,85),two,plain,isCase,isDot,isRevealedDot,expectedPeriod,terminal:terminal?.textContent||'',terminalColour:colour(terminal),baseColour:colour(naturalTarget),firstLineColour:getComputedStyle(naturalTarget,'::first-line').color,accentColour:colour(accentTarget),explicit:lines.length>=2};
     }));
     const two=result.filter(x=>x.two);
     ck('Headings with intentional second lines have teal text '+route+' '+width,
@@ -45,7 +47,7 @@ const ck=(name,pass,details)=>{checks.push({name,pass:!!pass,details});console.l
       two.filter(x=>!x.explicit&&!x.isCase).every(x=>x.baseColour==='rgb(18, 186, 175)'),two.filter(x=>!x.explicit&&!x.isCase));
     ck('Two-line terminal punctuation follows approved colours '+route+' '+width,
       two.filter(x=>x.expectedPeriod).every(x=>x.terminalColour===
-        (x.isDot?'rgb(18, 186, 175)':'rgb(250, 249, 253)')),two.filter(x=>x.expectedPeriod));
+        (x.isDot&&!x.isRevealedDot?'rgb(18, 186, 175)':'rgb(250, 249, 253)')),two.filter(x=>x.expectedPeriod));
     ck('No horizontal headline overflow '+route+' '+width,
       await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
    }
