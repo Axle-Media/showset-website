@@ -47,6 +47,10 @@ const restored=structuredClone(revised);
 restored.builder.replacedNative=[];
 container=applyTemplateExtensions(host,restored);
 assert.equal(host.querySelector(".service-intro").style.display,"");
+const archived=structuredClone(restored);
+archived.builder.roots[0].hidden=true;
+assert.equal(applyTemplateExtensions(host,archived),null,
+  "Archived-only restored sections must leave no empty wrapper");
 const cleared=structuredClone(restored);
 cleared.builder.roots=[];
 assert.equal(applyTemplateExtensions(host,cleared),null);
