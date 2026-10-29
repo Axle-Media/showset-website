@@ -31,7 +31,8 @@ export default function Preview() {
     lastSelected = useRef<string | null>(null);
   current.current = state;
   useEffect(() => {
-    if (!isLoopback(location.hostname)) {
+    if (!isLoopback(location.hostname) &&
+        process.env.NEXT_PUBLIC_SHOWSET_STUDIO_CLOUD_ENABLED !== "true") {
       setUnavailable(true);
       return;
     }

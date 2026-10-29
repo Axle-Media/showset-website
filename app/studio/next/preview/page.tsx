@@ -4,7 +4,8 @@ export const metadata = {
   robots: { index: false, follow: false },
 };
 export default function PreviewPage() {
-  return process.env.NODE_ENV === "development" ? (
+  return (process.env.NODE_ENV === "development" ||
+    process.env.NEXT_PUBLIC_SHOWSET_STUDIO_CLOUD_ENABLED === "true") ? (
     <Preview />
   ) : (
     <main style={{ padding: "10vh 8vw" }}>

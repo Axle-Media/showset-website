@@ -126,8 +126,11 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
-      - name: Component model and upload-header validation
-        run: node qa/studio2-model.cjs
+      - name: Component model and cloud security contract
+        run: |
+          node qa/studio2-model.cjs
+          node qa/studio2-cloud-contract.cjs
+          node qa/studio2-release.cjs
       - name: Install isolated browser tooling
         run: |
           npm install --no-save --no-package-lock playwright
@@ -150,6 +153,7 @@ jobs:
           node qa/studio2-existing-media.cjs
           node qa/studio2-existing-text.cjs
           node qa/studio2-template-sections.cjs
+          node qa/studio2-native-rebuild.cjs
           node qa/studio2-recovery.cjs
           node qa/studio2-motion.cjs
           node qa/studio2-touch.cjs

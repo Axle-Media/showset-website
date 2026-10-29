@@ -31,6 +31,8 @@ import {
   storeMedia,
   verifyBackup,
   importMedia,
+  createBackup,
+  downloadJson,
 } from "@/lib/studio2/storage";
 import { useWorkspace } from "./useWorkspace";
 import Canvas from "./Canvas";
@@ -41,8 +43,10 @@ import type { CanvasInspection } from "@/lib/studio2/selection";
 import { bindingContent } from "@/lib/studio2/bindings";
 import { mediaSource } from "@/lib/studio2/render";
 import "./studio2.css";
-export default function Studio2() {
-  const editor = useWorkspace(),
+import type {CloudStore} from "@/lib/studio2/cloud";
+import {replaceNativeBlock,restoreNativeBlock} from "@/lib/studio2/native-rebuild";
+export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
+  const editor = useWorkspace(cloud),
     [slug, setSlug] = useState("home"),
     [selected, setSelected] = useState<string | null>(null),
     [tab, setTab] = useState("Layers"),
@@ -105,7 +109,7 @@ export default function Studio2() {
     if (!workspace) return;
     let disposed = false,
       current: Record<string, string> = {};
-    mediaUrls(workspace.media)
+    (cloud ? cloud.imageUrls(workspace.media) : mediaUrls(workspace.media))
       .then((value) => {
         if (disposed) {
           // The previous canvas can unmount before IndexedDB finishes loading.
@@ -127,7 +131,7 @@ export default function Studio2() {
         if (url) URL.revokeObjectURL(url);
       });
     };
-  }, [workspace?.media.map((a) => a.id).join(",")]);
+  }, [cloud,workspace?.media.map((a) => a.id).join(",")]);
   useEffect(() => {
     if (dialog) {
       dialogRef.current?.showModal();
@@ -354,6 +358,21 @@ export default function Studio2() {
       choosePage("home");
       return;
     }
+    if(binding?.kind==="section" &&
+       (name==="rebuild-native"||name==="restore-native")){
+      try{
+        if(name==="rebuild-native"){
+          const result=replaceNativeBlock(page,binding.sectionId);
+          updatePage(()=>result.page,"Rebuild original editorial section");
+          setSelected(result.nodeId);
+          setTab("Layers");
+        }else{
+          updatePage(p=>restoreNativeBlock(p,binding.sectionId),
+            "Restore original editorial section");
+        }
+      }catch(e){editor.setError((e as Error).message);}
+      return;
+    }
     if (!node) return;
     if (name === "copy") {
       setClipboard(structuredClone(node));
@@ -446,6 +465,9 @@ export default function Studio2() {
   const upload = async (file: File) => {
     try {
       const asset = await storeMedia(file);
+      // Never update a shared draft until its original exists in private
+      // remote storage; failed uploads cannot strand missing image references.
+      if(cloud)await cloud.putOriginal(file,asset.id);
       editor.edit((w) => {
         const media = w.media.some((a) => a.id === asset.id)
           ? w.media
@@ -544,8 +566,7 @@ export default function Studio2() {
         <img src="/brand/approved-wordmark.png" alt="SHOWSET" />
         <h1>Private editing workspace.</h1>
         <p>
-          Studio 2.0 is local-only until authenticated hosting and permissions
-          are configured.
+          Studio 2.0 requires a local session or authenticated private cloud staging.
         </p>
         <a href="/">Return to website</a>
       </main>
@@ -554,25 +575,24 @@ export default function Studio2() {
     return (
       <main className="studio2 s2-welcome">
         <img src="/brand/approved-wordmark.png" alt="SHOWSET" />
-        <p className="s2-eyebrow">Studio 2.0 · Local workspace</p>
+        <p className="s2-eyebrow">Studio 2.0 · {cloud ? "Private cloud workspace" : "Local workspace"}</p>
         <h1>
           Your ideas.
           <br />
           <em>Every detail.</em>
         </h1>
         <p>
-          A working canvas for the website you’ve approved. Before editing,
-          we’ll preserve your exact local drafts and recovery records in a
-          checksum-verified backup.
+          A working canvas for the website you’ve approved. All changes are
+          private drafts until an authorised owner approves a release.
         </p>
         <p className="s2-hint">
-          Classic Studio and its saved data stay in place. This does not publish
-          online.
+          {cloud ? "Shared edits remain private. Approval does not deploy the public website."
+            : "Classic Studio and its saved data stay in place. This does not publish online."}
         </p>
         {editor.error && <p role="alert">{editor.error}</p>}
         {workspace ? (
           <button className="s2-primary" onClick={() => void editor.start()}>
-            Back up and start editing ↗
+            {cloud ? "Open private workspace" : "Back up and start editing ↗"}
           </button>
         ) : (
           <p>Loading local data…</p>
@@ -613,9 +633,38 @@ export default function Studio2() {
             Redo
           </button>
           <button onClick={() => void editor.save()}>Save draft</button>
-          <button className="s2-primary" onClick={() => void editor.preview()}>
-            Save local preview ↗
-          </button>
+          {cloud ? (
+            <>
+              <button className="s2-primary" onClick={() => void editor.preview()}>
+                Save shared draft
+              </button>
+              {(cloud.role==="owner"||cloud.role==="publisher") && (
+                <button onClick={() => {
+                  if(window.confirm("Approve the current saved draft as an immutable release checkpoint? This does not deploy the public site."))
+                    void editor.approve();
+                }}>Approve release snapshot</button>
+              )}
+              {(cloud.role==="owner"||cloud.role==="publisher") && (
+                <button onClick={async()=>{
+                  try{
+                    const release=await cloud.latestApprovedRelease();
+                    if(!release)throw Error("No approved snapshot exists.");
+                    const backup=await createBackup(release.workspace,false,
+                      (asset)=>cloud.getOriginal(asset));
+                    downloadJson(backup,"SHOWSET-approved-release-"+
+                      release.id+".json");
+                  }catch(error){
+                    editor.setError("Release export failed: "+
+                      (error as Error).message);
+                  }
+                }}>Export latest approved release</button>
+              )}
+            </>
+          ):(
+            <button className="s2-primary" onClick={() => void editor.preview()}>
+              Save local preview ↗
+            </button>
+          )}
         </div>
       </header>
       <div className="s2-viewbar">
@@ -668,13 +717,13 @@ export default function Studio2() {
             {interactive ? "Preview · links active" : "Editing · clicks select"}
           </span>
           {editor.status}
-          <a
+          {!cloud && <a
             href={"/studio/next/preview/?page=" + encodeURIComponent(slug)}
             target="_blank"
             rel="noreferrer"
           >
             Open saved preview ↗
-          </a>
+          </a>}
         </div>
       </div>
       {editor.error && (
@@ -795,10 +844,10 @@ export default function Studio2() {
               <button onClick={() => void editor.backup()}>
                 Download verified backup
               </button>
-              <button onClick={() => importInput.current?.click()}>
+              {!cloud && <button onClick={() => importInput.current?.click()}>
                 Import workspace backup
-              </button>
-              <input
+              </button>}
+              {!cloud && <input
                 ref={importInput}
                 type="file"
                 accept="application/json"
@@ -827,7 +876,7 @@ export default function Studio2() {
                   }
                   e.target.value = "";
                 }}
-              />
+              />}
               <p className="s2-hint">
                 Local saves and previews stay on this browser origin. Shared
                 roles and authenticated release are later phases. No production
