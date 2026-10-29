@@ -161,16 +161,18 @@ export class CloudStore {
       },
     );
   }
+  async getOriginal(asset:MediaAsset):Promise<Blob>{
+    if(!/^asset-[a-f0-9]{64}$/.test(asset.id))
+      throw Error("Invalid media ID in shared workspace.");
+    return this.request<Blob>(
+      "/storage/v1/object/authenticated/showset-studio-media/site/"+
+        encodeURIComponent(asset.id),
+    );
+  }
   async imageUrls(media:MediaAsset[]):Promise<Record<string,string>>{
-    const blobs=await Promise.all(media.map(async(asset)=>{
-      if(!/^asset-[a-f0-9]{64}$/.test(asset.id))
-        throw Error("Invalid media ID in shared workspace.");
-      const blob=await this.request<Blob>(
-        "/storage/v1/object/authenticated/showset-studio-media/site/"+
-          encodeURIComponent(asset.id),
-      );
-      return {id:asset.id,blob};
-    }));
+    const blobs=await Promise.all(media.map(async(asset)=>({
+      id:asset.id,blob:await this.getOriginal(asset),
+    })));
     const urls:Record<string,string>={};
     try{
       for(const value of blobs)
