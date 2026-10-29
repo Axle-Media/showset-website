@@ -204,6 +204,49 @@ invalidLibrary.sectionLibrary[0].section.kind="text";
 assert.throws(()=>assertWorkspace(invalidLibrary),/Invalid reusable section/);
 console.log("PASS four responsive branded section presets and safe independent reusable library.");
  
+// Responsive gallery crops are metadata only: rendering is CSS-based,
+// independent per breakpoint and never alters the original media reference.
+const focal=load("lib/studio2/image-focal.ts");
+const usage=load("lib/studio2/media-usage.ts");
+const cropGallery=makeNode("gallery");
+cropGallery.props.items=[{id:"item-focal-1",title:"Photograph",body:"",
+  src:"/media/planning.webp",alt:"Hands at work",
+  focal:{desktop:"25% 65%",tablet:"55% 40%",mobile:"90% 20%"}}];
+const cropHtml=render.renderNodes([cropGallery]);
+assert.match(cropHtml,/data-gallery-item="item-focal-1"/);
+assert.match(cropHtml,/object-position:25% 65%!important/);
+assert.match(cropHtml,/@media\\(max-width:1024px\\)/);
+assert.match(cropHtml,/object-position:55% 40%!important/);
+assert.match(cropHtml,/@media\\(max-width:600px\\)/);
+assert.match(cropHtml,/object-position:90% 20%!important/);
+assert.deepEqual(focal.parseFocal("25% 65%"),{x:25,y:65});
+assert.equal(focal.focalValue(-3,102),"0% 100%");
+assert.equal(focal.focalFor(cropGallery.props.items[0],"mobile"),"90% 20%");
+const alteredCrop=structuredClone(cropGallery);
+alteredCrop.props.items[0].focal.desktop="100% 12%;color:red";
+assert.ok(!render.renderNodes([alteredCrop]).includes("color:red"),
+  "Unvalidated focal settings may not enter CSS");
+const mediaPages=structuredClone(require("../content/pages.json"));
+mediaPages.home.builder={schemaVersion:2,mode:"template",overrides:{},
+  roots:[cropGallery]};
+const mediaWorkspace={schemaVersion:2,revision:0,pages:mediaPages,globals:g,
+  media:[],updatedAt:""};
+assertWorkspace(mediaWorkspace);
+mediaPages.home.builder.roots[0].props.items[0].focal.mobile="105% 0%";
+assert.throws(()=>assertWorkspace(mediaWorkspace),/Invalid repeated content/);
+mediaPages.home.builder.roots[0].props.items[0].focal.mobile="95% 0%";
+assertWorkspace(mediaWorkspace);
+const replacement=cloneNode(cropGallery);
+assert.notEqual(replacement.props.items[0].id,cropGallery.props.items[0].id);
+assert.equal(replacement.props.items[0].focal.desktop,"25% 65%");
+assert.deepEqual(usage.parseTags(" Events, Campaign, events "),["events","campaign"]);
+assert.throws(()=>usage.parseTags("invalid@tag"),/tags/);
+const tagged=[{name:"Planning photograph",alt:"People at an event",
+  tags:["events","studio"]},{name:"Campaign",alt:"",tags:["digital"]}];
+assert.equal(usage.searchMedia(tagged,"event","").length,1);
+assert.equal(usage.searchMedia(tagged,"","digital").length,1);
+console.log("PASS non-destructive responsive focal rendering, strict crop validation and searchable media tags.");
+
 const legacyHome = {
   ...safe.home,
   title: "Owner custom title",
