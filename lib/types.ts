@@ -1,3 +1,4 @@
+import type {BuilderPage} from "./studio2/model";
 export type BlockType =
   | "hero"
   | "pagehero"
@@ -83,6 +84,7 @@ export interface CaseExperience {
   partners?: { name: string; role?: string; logo?: string; href?: string }[];
 }
 export interface PageData {
+  builder?: BuilderPage;
   /** ISO 8601 date for newest-first portfolio ordering. */
   publishedAt?: string;
   caseExperience?: CaseExperience;

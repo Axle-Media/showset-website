@@ -1,0 +1,13 @@
+/* Explicit authored legacy controls outrank the approved defaults. Empty seed
+   design objects match none of these selectors, so the public baseline is intact. */
+.concept-12-root #main [data-section].c12-custom-heading :is(h1, h2) {
+  font-size: var(--c12-heading) !important;
+}
+.concept-12-root #main [data-section].c12-custom-body p {
+  font-size: var(--c12-body) !important;
+}
+@media (max-width: 800px) {
+  .concept-12-root #main [data-section].c12-mobile-heading :is(h1, h2) {
+    font-size: var(--c12-mobile-heading) !important;
+  }
+}

@@ -49,6 +49,7 @@ jobs:
           done
           # Run all browser suites, then fail if any failed. Do not mask failures.
           qa_status=0
+          SHOWSET_PRODUCTION_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/studio2-production.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/mobile-tablet-audit.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/event-format-row.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/studio-scroll-hero.cjs || qa_status=1
@@ -112,4 +113,50 @@ jobs:
             qa-results/case-related-390.png
             qa-results/header-desktop.png
             qa-results/header-mobile.png
+          if-no-files-found: ignore
+
+  studio2:
+    name: Studio 2.0 local editor and recovery
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Component model and upload-header validation
+        run: node qa/studio2-model.cjs
+      - name: Install isolated browser tooling
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+      - name: Actual Next.js editing, media, conflicts and reversible motion
+        env:
+          SHOWSET_BASE_URL: http://127.0.0.1:3002
+          SHOWSET_PLAYWRIGHT_CHANNEL: chromium
+          SHOWSET_QA_OUTPUT: qa-results/studio2
+        run: |
+          npm run dev -- --hostname 127.0.0.1 -p 3002 >/tmp/showset-studio2.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" || true' EXIT
+          for attempt in $(seq 1 45); do
+            if curl --fail --silent http://127.0.0.1:3002/studio/next/ >/dev/null; then break; fi
+            sleep 1
+          done
+          node qa/studio2-builder.cjs
+          node qa/studio2-selection.cjs
+          node qa/studio2-recovery.cjs
+          node qa/studio2-motion.cjs
+          node qa/studio2-touch.cjs
+      - name: Archive Studio screenshots and recordings
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: showset-studio2-browser-evidence
+          path: |
+            qa-results/studio2/*.png
+            qa-results/studio2/video/*.webm
+            qa-results/studio2/motion-video/*.webm
           if-no-files-found: ignore
