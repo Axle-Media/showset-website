@@ -25,6 +25,11 @@ const base=process.env.SHOWSET_BASE_URL||"http://localhost:3001";
     const rebuilt=frame.locator(".s2-template-extensions > section");
     await rebuilt.waitFor();
     assert.equal(await rebuilt.count(),1);
+    await p.getByText("This rebuilt section stays at the original page position.",
+      {exact:false}).waitFor();
+    assert.equal(await p.locator(".s2-element-actions button").filter(
+      {hasText:"Move up"}).count(),0,
+      "Anchored section must not offer a visually ineffective move operation");
     const replacement=frame.locator('[data-studio2-native-extension="section-2"]');
     assert.equal(await replacement.evaluate(el=>{
       const next=el.nextElementSibling;
