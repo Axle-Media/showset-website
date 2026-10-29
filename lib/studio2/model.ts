@@ -105,6 +105,8 @@ export interface BuilderPage {
   overrides: Record<string, TargetOverride>;
   /** Source IDs temporarily replaced by owner-created editable chapters. */
   replacedNative?: string[];
+  /** Preserve the exact builder chapter that replaces each native section. */
+  nativeReplacementNodes?: Record<string,string>;
 }
 export interface MediaAsset {
   id: string;
@@ -576,6 +578,15 @@ export function assertWorkspace(value: unknown): asserts value is Workspace {
         checkTarget(override);
       }
       scan(p.builder.roots, 0);
+      if (p.builder.nativeReplacementNodes) {
+        for (const [source,id] of Object.entries(p.builder.nativeReplacementNodes)) {
+          if (!/^[\\w-]{1,100}$/.test(source) ||
+              !/^[\\w-]{1,100}$/.test(id) ||
+              !p.sections.some(block=>block.id===source) ||
+              !p.builder.roots.some(root=>root.id===id && root.kind==="section"))
+            throw Error("Invalid native section replacement mapping.");
+        }
+      }
     }
   }
   if (ids.size > 2500 || Object.keys(w.pages).length > 200)
