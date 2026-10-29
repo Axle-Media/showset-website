@@ -40,6 +40,24 @@ Studio 2.0 now has a browser-to-Supabase transport, but it **must** point to a s
 - Owner/publisher **Approve release snapshot** calls a server-side, revision-checked database function. This creates an immutable record and **does not publish public pages**. Public release deployment needs a separate export/snapshot asset reconciler.
 - Local Studio continues as a separate fallback, with previous browser data untouched.
 
+## Prepare a reviewed static release
+
+After an owner/publisher approves a snapshot in Studio, click **Export latest approved release**. This downloads `SHOWSET-approved-release-<id>.json` with the exact saved snapshot and all immutable image originals, protected by an SHA-256 backup checksum.
+
+On a **separate reviewed GitHub release branch** (never directly on `main`), run:
+
+```bash
+node scripts/prepare-studio-release.mjs SHOWSET-approved-release-123.json --dry-run
+node scripts/prepare-studio-release.mjs SHOWSET-approved-release-123.json --apply
+npm run check
+npm run lint:source
+npm run build
+```
+
+The script checks every image checksum, rewrites `asset:` references to `/media/studio/asset-<SHA-256>.<ext>`, prepares `content/pages.json` and `content/globals.json` for a reviewed commit, and copies only the approved media. It never contacts GitHub or Vercel, triggers a deployment or modifies a public hosting environment. To prepare a temporary release directory instead of the working repo, use `--target /path/to/isolated/source`.
+
+Once approved, an operator can deploy the resulting reviewed static build through Vercel or run `npm run package:xneelo` for the private xneelo archive. The actual public release deployment and release rollback are **still manual** until the dedicated publish controller and immutable release manifest are tested. Never run the preparer on unapproved backups.
+
 ## Safety constraints and open work
 
 - Staging is not production-ready until an actual dedicated Supabase project exists, RLS is validated there, and browser/security acceptance tests pass. Mock contract tests alone do not prove live backend readiness.
