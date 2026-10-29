@@ -730,5 +730,5 @@ export function bindConcept(
     g.header.buttonHref !== defaultGlobals.header.buttonHref
   )
     link(".header-cta", g.header.buttonLabel, g.header.buttonHref);
-  if (typeof getComputedStyle === "function") refineHeadingPeriods(host);
+  refineHeadingPeriods(host);
 }

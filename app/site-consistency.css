@@ -1,0 +1,107 @@
+/* Site-wide QC contract. Keep this last: route art direction shares these
+   typography and alignment tokens. Reference: Studio text edge 85 / 780. */
+:root {
+  --gutter:max(24px,10.9vw,calc((100vw - 1500px)/2));
+  --showset-photo-size:clamp(40px,4.8vw,67px);
+  --showset-editorial-size:clamp(32px,3.35vw,47px);
+  --showset-card-size:clamp(22px,1.8vw,26px);
+}
+.concept-12-root { --homepage-hero-size:var(--showset-photo-size); }
+#main :is(h1,h2,h3) {
+  font-family:var(--display)!important;
+  font-weight:650!important;
+  letter-spacing:var(--v12-head-tracking)!important;
+  line-height:1.08!important;
+}
+#main :is(h1,h2) {font-size:var(--showset-editorial-size)!important;}
+#main h3 {font-size:var(--showset-card-size)!important;}
+#main :is(.hero-title,.hero-second h2,.film-step h2,.studio-scroll-heading,
+  .work-hero h1,.case-primary-heading,[data-service-reveal="photo"]) {
+  font-size:var(--showset-photo-size)!important;
+}
+.concept-12-root :is(p,li,blockquote,.studio-final-copy,.work-final-copy,.hero-second-copy) {
+  font-family:var(--body-font)!important;
+  font-size:17px!important;
+  font-weight:500;
+  line-height:1.65!important;
+  letter-spacing:var(--v12-body-tracking)!important;
+}
+/* Description copy follows the same reading size, including related cards. */
+.concept-12-root .case-related-card-caption p {font-size:17px!important;}
+.concept-12-root :is(.section-gutter,.service-gutter,.footer,.contact-view) {
+  padding-inline:var(--gutter);
+}
+.concept-12-root .site-header .header-inner {
+  width:100%;max-width:none;padding-inline:var(--gutter);
+}
+.concept-12-root :is(.hero-foreground,.hero-second) {
+  left:var(--gutter);right:var(--gutter);max-width:calc(100% - 2 * var(--gutter));
+}
+.concept-12-root .dot-words {width:calc(100% - 2 * var(--gutter));max-width:none;text-align:left;}
+.concept-12-root .dot-words h2 {text-align:left;}
+/* Punctuation is explicit and works in server HTML before any animation. */
+#main :is(h1,h2,h3) .headline-period {color:var(--teal)!important;}
+#main :is(h1,h2,h3) :is(.accent-text,.accent-line,.hero-accent-phrase,.service-accent,.case-heading-accent) .headline-period,
+#main :is(h1,h2,h3) .headline-period[data-period-tone="light"] {color:var(--ice)!important;}
+.concept-12-root .case-primary-heading .case-heading-period {color:var(--teal)!important;}
+.concept-12-root .case-heading-accent .case-heading-period {color:var(--ice)!important;}
+/* Home and case endings use the same geometry as the shared editorial CTA. */
+.concept-12-root :is(#ending,#case-ending)>:not(.end-line) {position:relative;z-index:1;}
+.concept-12-root :is(#ending,#case-ending) .end-line {display:none;}
+.concept-12-root :is(#ending,#case-ending) h2 {
+  margin:0;padding:0;max-width:850px;width:100%;text-align:left;
+}
+.concept-12-root :is(#ending,#case-ending) .end-bottom {
+  display:flex;flex-direction:column;align-items:flex-start;gap:0;
+  margin:clamp(24px,2.8vw,40px) 0 0;padding:0;border:0;max-width:645px;
+}
+.concept-12-root :is(#ending,#case-ending) .end-bottom p {max-width:645px;margin:0;color:rgba(250,249,253,.78);}
+.concept-12-root :is(#ending,#case-ending) .end-link {
+  display:inline-flex;align-items:center;justify-content:space-between;gap:24px;
+  width:max-content;max-width:100%;min-height:43px;
+  margin:clamp(21px,2.5vw,31px) 0 0;padding:11px 15px 11px 17px;
+  border:1px solid var(--teal);border-radius:100px!important;
+  background:var(--teal);color:var(--deep);font:650 14px/1.3 var(--body-font);
+}
+.concept-12-root :is(#ending,#case-ending) .end-link:hover {background:#39d4c8;}
+/* The narrower approved desktop grid needs navigation to collapse earlier. */
+@media (max-width:1320px) {
+  .concept-12-root .desktop-navigation {display:none;}
+  .concept-12-root .mobile-toggle {display:flex;}
+  .concept-12-root .site-header .header-inner {display:flex;}
+  .concept-12-root .header-cta {margin-left:auto;}
+}
+@media (max-width:800px) {
+  :root {--gutter:clamp(24px,6vw,48px);--showset-editorial-size:clamp(29px,5.3vw,42px);}
+}
+@media (max-width:600px) {
+  :root {--gutter:24px;--showset-photo-size:clamp(32px,8.5vw,48px);--showset-editorial-size:clamp(29px,7.4vw,36px);--showset-card-size:22px;}
+}
+@media (max-height:600px) and (orientation:landscape) {
+  :root {--showset-photo-size:clamp(28px,4vw,48px);}
+}
+
+@media (min-width:1321px) and (max-width:1600px) {
+ .concept-12-root .site-header .header-inner {display:flex;gap:12px;}
+ .concept-12-root .desktop-navigation {gap:8px;margin-inline:auto;}
+ .concept-12-root .desktop-navigation a {font-size:14px;}
+ .concept-12-root .site-header .approved-wordmark {width:130px;}
+}
+.concept-12-root .dot-words {padding-inline:0;}
+.concept-12-root .header-cta {flex-shrink:0;}
+@media (min-width:1321px) and (max-width:1600px) {
+  .concept-12-root .desktop-navigation a {font-size:14px!important;}
+  .concept-12-root .desktop-navigation {gap:8px;}
+}
+/* Photo reveal selectors colour nested spans; these rules must win that cascade. */
+#main :is(h1,h2,h3) .headline-period[data-period-tone="teal"] {color:var(--teal)!important;}
+#main :is(h1,h2,h3) .headline-period[data-period-tone="light"] {color:var(--ice)!important;}
+
+#main .work-page-gallery .case-index-info h2 {font-size:var(--showset-card-size)!important;}
+
+/* Editorial type does not need the photo-mask overscan. */
+#main [data-service-reveal="editorial"] .wipe-line>span {padding-inline:0;margin-inline:0;}
+
+@media (min-width:1321px) and (max-width:1600px) {
+ .concept-12-root .header-cta {gap:12px;}
+}
