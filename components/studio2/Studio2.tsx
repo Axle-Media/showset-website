@@ -42,6 +42,7 @@ import { bindingContent } from "@/lib/studio2/bindings";
 import { mediaSource } from "@/lib/studio2/render";
 import "./studio2.css";
 import type {CloudStore} from "@/lib/studio2/cloud";
+import {replaceNativeBlock,restoreNativeBlock} from "@/lib/studio2/native-rebuild";
 export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
   const editor = useWorkspace(cloud),
     [slug, setSlug] = useState("home"),
@@ -353,6 +354,21 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
         return { ...w, pages };
       }, "Delete builder page");
       choosePage("home");
+      return;
+    }
+    if(binding?.kind==="section" &&
+       (name==="rebuild-native"||name==="restore-native")){
+      try{
+        if(name==="rebuild-native"){
+          const result=replaceNativeBlock(page,binding.sectionId);
+          updatePage(()=>result.page,"Rebuild original editorial section");
+          setSelected(result.nodeId);
+          setTab("Layers");
+        }else{
+          updatePage(p=>restoreNativeBlock(p,binding.sectionId),
+            "Restore original editorial section");
+        }
+      }catch(e){editor.setError((e as Error).message);}
       return;
     }
     if (!node) return;
