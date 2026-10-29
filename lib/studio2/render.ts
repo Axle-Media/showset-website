@@ -46,6 +46,14 @@ export function renderNodes(
             '"'
           : "");
     const text = escapeHtml(p.text).replace(/\n/g, "<br>");
+    // SHOWSET's two-line heading convention retains the period as text, but
+    // colours the first-line period teal and the accent-line period white.
+    const headingLine=(value:string,periodClass:string)=>{
+      const content=escapeHtml(value).replace(/\n/g,"<br>");
+      return content.endsWith(".")
+        ? content.slice(0,-1)+'<span class="'+periodClass+'">.</span>'
+        : content;
+    };
     const image = (src: string | undefined, alt: string | undefined) => {
       const url = mediaSource(src, urls);
       return url
@@ -74,9 +82,10 @@ export function renderNodes(
         tag +
         attrs +
         ">" +
-        text +
+        headingLine(p.text||"","s2-first-period") +
         (p.accent
-          ? '<span class="s2-accent">' + escapeHtml(p.accent) + "</span>"
+          ? '<span class="s2-accent">' +
+              headingLine(p.accent,"s2-accent-period") + "</span>"
           : "") +
         "</" +
         tag +
