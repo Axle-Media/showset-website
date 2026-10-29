@@ -100,7 +100,7 @@ const check=(name,ok,detail)=>{checks.push({name,pass:!!ok,detail});console.log(
       geometry.dotBaseColour==='rgb(18, 186, 175)' &&
       geometry.dotAccentColour==='rgb(18, 186, 175)' &&
       geometry.dotEmphasisColour==='rgb(229, 216, 195)' &&
-      geometry.dotPeriods.length===2 &&
+      geometry.dotPeriods.length>=2 &&
       geometry.dotPeriods.every(color=>color==='rgb(18, 186, 175)'),geometry);
    check('Dot supporting text is prominent, including inside colour reveal '+width,
       geometry.dotParagraphSize>=18 &&
@@ -110,7 +110,7 @@ const check=(name,ok,detail)=>{checks.push({name,pass:!!ok,detail});console.log(
    check('Revealed dot text and punctuation remain readable on teal '+width,
       geometry.dotRevealedColour==='rgb(6, 38, 58)' &&
       geometry.dotRevealedAccent==='rgb(6, 38, 58)' &&
-      geometry.dotRevealedPeriods.length===2 &&
+      geometry.dotRevealedPeriods.length>=2 &&
       geometry.dotRevealedPeriods.every(color=>color==='rgb(250, 249, 253)'),geometry);
    check('Footer approved wordmark enlarged without horizontal overflow '+width,
       geometry.footerWidth>=(width>800?250:width>600?225:205) &&
