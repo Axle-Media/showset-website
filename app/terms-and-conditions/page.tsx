@@ -11,7 +11,6 @@ export default function TermsAndConditionsPage() {
     <LegalPageShell
       firstLine="Terms &"
       accentLine="Conditions"
-      currentPage="terms"
       summary="The practical details about using our website, accessing our content and getting in touch with SHOWSET."
     >
       <section className="legal-section" id="acceptance">
