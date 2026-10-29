@@ -91,6 +91,20 @@ function ck(label,pass,detail){
           const viewport=document.documentElement.scrollWidth;
           const body=document.body.scrollWidth;
           const digitalArt=root.querySelector('.service-hero--digital .service-digital-art');
+          const creativeArt=root.querySelector('.service-hero--creative .service-hero-art');
+          const contactAccent=root.querySelector('.contact-editorial-heading > .accent-text');
+          const contactWhatsapp=root.querySelector('.contact-whatsapp');
+          const contactAccentMetrics=contactAccent?{
+            height:contactAccent.getBoundingClientRect().height,
+            lineHeight:parseFloat(getComputedStyle(contactAccent).lineHeight),
+            font:parseFloat(getComputedStyle(contactAccent).fontSize)
+          }:null;
+          const mobileHeroArt={
+            creative:creativeArt?.getBoundingClientRect().height??null,
+            digital:digitalArt?.getBoundingClientRect().height??null,
+            whatsapp:contactWhatsapp?.getBoundingClientRect().height??null,
+            contactAccent:contactAccentMetrics
+          };
           const contactShell=root.querySelector('.contact-shell');
           const workCard=root.querySelector('.work-page-gallery .case-index-info');
           const workMeta=root.querySelector('.work-page-gallery .work-card-meta');
@@ -105,6 +119,7 @@ function ck(label,pass,detail){
             contactLabelAlign:contactLabel?getComputedStyle(contactLabel).textAlign:null,
             contactColumns:contactShell?getComputedStyle(contactShell).gridTemplateColumns:null,
             digitalArtPosition:digitalArt?getComputedStyle(digitalArt).position:null,
+            mobileHeroArt,
             workCardHeight:workCard?workCard.getBoundingClientRect().height:null,
             workCardMinHeight:workCard?getComputedStyle(workCard).minHeight:null,
             workAlignment:workCard?{
@@ -138,6 +153,25 @@ function ck(label,pass,detail){
           if(name==='contact'){
             ck('Contact details centred; form labels still left-aligned: '+tag,
               result.contactIntroAlign==='center'&&result.contactLabelAlign==='left',result);
+            if(width<=370){
+              const m=result.mobileHeroArt;
+              ck('Narrow phone Contact headline accent stays on one line: '+tag,
+                !!m.contactAccent&&m.contactAccent.lineHeight>0
+                &&m.contactAccent.height<=m.contactAccent.lineHeight*1.25,
+                m.contactAccent);
+              ck('Narrow phone WhatsApp CTA text does not wrap: '+tag,
+                m.whatsapp>0&&m.whatsapp<=65,m.whatsapp);
+            }
+          }
+          if(width<=430&&name==='creative'){
+            ck('Mobile Creative art remains compact and visible: '+tag,
+              result.mobileHeroArt.creative>=160
+              &&result.mobileHeroArt.creative<=216,result.mobileHeroArt.creative);
+          }
+          if(width<=430&&name==='digital'){
+            ck('Mobile Digital illustration leaves space for the heading: '+tag,
+              result.mobileHeroArt.digital>=180
+              &&result.mobileHeroArt.digital<=216,result.mobileHeroArt.digital);
           }
         }
         if(width>=768){

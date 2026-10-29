@@ -643,3 +643,74 @@
     margin-inline:auto!important;
   }
 }
+
+
+/* Mobile inner-page visual review: reduce decorative first-fold height
+   without suppressing project content, changing desktop copy or altering
+   pinned photographic storytelling. The phone retains real image subjects. */
+@media (max-width:430px) {
+  /* Creative: the floating print packshot dominated the first viewport. */
+  .concept-12-root .service-experience--creative .service-hero--creative{
+    padding-top:calc(var(--header-height) + 30px);
+    padding-bottom:clamp(45px,10vw,64px);
+  }
+  .concept-12-root .service-experience--creative
+  .service-hero--creative .service-hero-art{
+    height:clamp(176px,51vw,215px);
+    margin-bottom:19px;
+  }
+  /* Digital: preserve the four disciplines, but keep the connection-map
+     illustration secondary to the actual service headline and copy. */
+  .concept-12-root .service-experience--digital .service-hero--digital{
+    padding-top:calc(var(--header-height) + 26px);
+    padding-bottom:clamp(48px,10vw,65px);
+  }
+  .concept-12-root .service-experience--digital
+  .service-hero--digital .service-digital-art{
+    height:clamp(188px,51vw,215px);
+    max-height:215px;
+    margin-bottom:17px;
+  }
+  .concept-12-root .service-experience--digital .service-art-arrow{
+    font-size:clamp(185px,49vw,215px);
+    top:-28px;
+    left:5%;
+  }
+  .concept-12-root .service-experience--digital .service-art-label{
+    font-size:clamp(14px,3.9vw,17px);
+    padding:4px 0;
+  }
+  /* Contact: allow the enquiry form to enter the reading flow sooner while
+     keeping the complete approved introduction and usable contact links. */
+  .concept-12-root .contact-rebuilt .contact-editorial-heading{
+    margin-bottom:clamp(16px,4vw,20px);
+  }
+  .concept-12-root .contact-rebuilt .contact-intro>p{
+    font-size:16px;
+    line-height:1.5;
+  }
+  .concept-12-root .contact-rebuilt .contact-direct{
+    gap:clamp(12px,3vw,16px);
+    margin-top:clamp(23px,6vw,29px);
+  }
+}
+
+@media (max-width:370px) {
+  /* Keep the approved two-line headline even on 320px phones. */
+  /* #main's global heading token has ID specificity. An explicitly
+     narrow phone heading must override it to retain two visual lines. */
+  #main .contact-rebuilt .contact-editorial-heading{
+    font-size:clamp(25.5px,8vw,28px)!important;
+  }
+  /* Preserve the approved contact font size: reduce icon spacing and side
+     padding rather than breaking the WhatsApp label into two lines. */
+  .concept-12-root .contact-rebuilt .contact-whatsapp{
+    width:100%;
+    padding-inline:11px;
+    gap:6px;
+    white-space:nowrap;
+  }
+  .concept-12-root .contact-rebuilt .contact-whatsapp-arrow{
+    margin-left:0;
+  }
+}
