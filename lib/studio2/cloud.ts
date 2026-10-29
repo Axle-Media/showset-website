@@ -175,9 +175,16 @@ export class CloudStore {
     this.writable();
     if(!/^asset-[a-f0-9]{64}$/.test(id))
       throw Error("Invalid original media identifier.");
-    if(file.size>15*1024*1024||
-      !["image/jpeg","image/png","image/webp","image/avif"].includes(file.type))
-      throw Error("Only JPEG, PNG, WebP or AVIF images up to 15 MB may be uploaded.");
+    if(file.size>8*1024*1024||
+      !["image/jpeg","image/png","image/webp"].includes(file.type))
+      throw Error("Only JPEG, PNG or WebP images up to 8 MB may be uploaded.");
+    // Media originals are addressed by SHA-256. Validate even when this
+    // method is called directly rather than through the image picker.
+    const digest=[...new Uint8Array(await crypto.subtle.digest(
+      "SHA-256",await file.arrayBuffer()))]
+      .map(byte=>byte.toString(16).padStart(2,"0")).join("");
+    if(id!=="asset-"+digest)
+      throw Error("Original image does not match its content-addressed ID.");
     try{
       await this.request(
         "/storage/v1/object/showset-studio-media/site/"+encodeURIComponent(id),{
@@ -201,10 +208,18 @@ export class CloudStore {
   async getOriginal(asset:Pick<MediaAsset,"id">):Promise<Blob>{
     if(!/^asset-[a-f0-9]{64}$/.test(asset.id))
       throw Error("Invalid media ID in shared workspace.");
-    return this.request<Blob>(
+    const original=await this.request<Blob>(
       "/storage/v1/object/authenticated/showset-studio-media/site/"+
         encodeURIComponent(asset.id),
     );
+    if(original.size>8*1024*1024)
+      throw Error("Private original exceeds the media size limit.");
+    const digest=[...new Uint8Array(await crypto.subtle.digest(
+      "SHA-256",await original.arrayBuffer()))]
+        .map(byte=>byte.toString(16).padStart(2,"0")).join("");
+    if(asset.id!=="asset-"+digest)
+      throw Error("Private original checksum does not match its media ID.");
+    return original;
   }
   async imageUrls(media:MediaAsset[]):Promise<Record<string,string>>{
     const blobs=await Promise.all(media.map(async(asset)=>({

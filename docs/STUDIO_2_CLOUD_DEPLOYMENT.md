@@ -11,7 +11,7 @@ Studio 2.0 now has a browser-to-Supabase transport, but it **must** point to a s
 ## Before enabling protected Vercel staging
 
 1. Create a separate **SHOWSET** Supabase project in the chosen organisation and region; confirm any quoted cost before provisioning.
-2. From the Supabase dashboard, create the private `showset-studio-media` bucket, enforce MIME types `image/jpeg,image/png,image/webp,image/avif` and maximum 8 MB per object. Keep public access **OFF**.
+2. From the Supabase dashboard, create the private `showset-studio-media` bucket, enforce MIME types `image/jpeg,image/png,image/webp` and maximum 8 MB per object. Keep public access **OFF**.
 3. Run and review [studio2-cloud-schema.sql](./studio2-cloud-schema.sql) against **only** the new SHOWSET database. Validate RLS policies, grants and `showset_studio_publish` in a staging account. The SQL must be applied before sign-in.
 4. Disable open sign-ups in Auth. Invite owners individually through Supabase Auth, have them set their passwords, and insert their exact `auth.users.id` and roles into `public.showset_studio_members` from the admin SQL editor. **Never** assign roles through user-editable `user_metadata`. Role `owner` can edit/approve; `publisher` can edit/approve; `editor` can edit only.
 5. Use a private Vercel preview or staging domain with preview deployment protection. Set these **build-time** environment values in the staging project, not in Git:
@@ -67,6 +67,10 @@ Once approved, an operator can deploy the resulting reviewed static build throug
 - MFA for publisher approval and scheduled audit logging should be evaluated before production access.
 - Original pinned/scroll-driven cinematic sections remain protected. Standard-flow editorial sections can be rebuilt nondestructively into builder sections with restore and Undo/Redo.
 - Browser-in-memory sessions require sign-in after a full reload; credentials are not written to localStorage. Persistent secure cookie sessions require a server runtime/proxy and are a separate staging upgrade.
+
+## Public build parity
+
+Approved builder sections and reversible native editorial replacements must be rendered by both the static route generator and the hydrated public site. The static page must include owner-authored headings, photographs and accessibility semantics, rather than displaying them only inside Studio's preview. Before any public rollout, inspect the generated `out/` HTML and verify the approved section appears in the HTML without JavaScript as well as after hydration.
 
 ## Release acceptance
 

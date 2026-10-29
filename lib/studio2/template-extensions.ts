@@ -17,7 +17,8 @@ export function applyTemplateExtensions(
 ): HTMLElement | null {
   syncNativeReplacementVisibility(host,page);
   const existing = host.querySelector<HTMLElement>("[data-studio2-template-extensions]");
-  if (page.builder?.mode !== "template" || !page.builder.roots.length) {
+  if (page.builder?.mode !== "template" ||
+      !page.builder.roots.some(root=>!root.hidden)) {
     existing?.remove();
     return null;
   }

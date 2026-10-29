@@ -413,6 +413,11 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
       return;
     }
     if (name === "delete") {
+      if (Object.values(builderFor(page).nativeReplacementNodes || {})
+          .includes(node.id)) {
+        editor.setError("This section stores a reversible original. Restore the original instead of deleting its protected replacement.");
+        return;
+      }
       updatePage(
         (p) => ({
           ...p,

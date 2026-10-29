@@ -12,6 +12,9 @@ import { patchConcept } from "@/lib/concept-12/patch";
 import { safeHref } from "@/lib/safe";
 import { compatiblePages, compatibleGlobals } from "@/lib/concept-12/compat";
 import CustomSite from "./studio2/CustomSite";
+import {applyTemplateExtensions} from "@/lib/studio2/template-extensions";
+import {mountNodeMotion} from "@/lib/studio2/motion";
+import {nodeMotions} from "@/lib/studio2/render";
 type LayoutProps = {
   page: PageData;
   g: Globals;
@@ -40,6 +43,7 @@ function TemplateSiteLayout({
   select.current = onSelect;
   const latest = useRef({page,g,catalog,editor,suppressSubmissions,reduced:false});
   const engine = useRef<ReturnType<typeof mountConcept> | null>(null);
+  const authoredMotion = useRef<(() => void) | null>(null);
   const rendered = useRef<unknown>(null);
   const [reduced, setReduced] = useState(false);
   useEffect(() => {
@@ -148,6 +152,15 @@ function TemplateSiteLayout({
           editor,
         });
       dispose = mountConcept(host, optionsFor(latest.current));
+      // Public runtime must consume the same approved builder chapters and
+      // native editorial replacements that Studio previews. Studio itself
+      // owns these mutations inside its dedicated preview, so skip it here.
+      if (!editor && page.builder?.mode === "template") {
+        const extension = applyTemplateExtensions(host,page);
+        authoredMotion.current?.();
+        authoredMotion.current = extension ? mountNodeMotion(extension,
+          nodeMotions(page),g.motion.enabled&&!reduced) : null;
+      }
     } catch (error) {
       console.error("SHOWSET interactive page failed; restoring static content", error);
       host.innerHTML = serverMarkup;
@@ -182,6 +195,8 @@ function TemplateSiteLayout({
     if (y > 0) scrollTo({ top: y, behavior: "instant" });
     return () => {
       host.removeEventListener("click", choose, true);
+      authoredMotion.current?.();
+      authoredMotion.current=null;
       dispose?.();
       engine.current=null;
     };
@@ -192,6 +207,13 @@ function TemplateSiteLayout({
     const context=latest.current;
     patchConcept(host, host.dataset.conceptRoute || keyForRoute(page.route) || "home", {catalog:{...catalog,[page.slug]:page},g,editor});
     engine.current.refresh(optionsFor(context));
+    authoredMotion.current?.();
+    authoredMotion.current=null;
+    if (!editor && page.builder?.mode === "template") {
+      const extension=applyTemplateExtensions(host,page);
+      authoredMotion.current=extension ? mountNodeMotion(extension,
+        nodeMotions(page),g.motion.enabled&&!reduced) : null;
+    }
     rendered.current=context;
   }, [page,g,catalog,editor,reduced]);
   useEffect(() => {

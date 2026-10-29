@@ -88,6 +88,16 @@ validTemplate.pages.home.builder={
   schemaVersion:2,mode:"template",overrides:{},roots:[makeNode("section")]
 };
 assertWorkspace(validTemplate);
+validTemplate.pages.home.builder.nativeReplacementNodes={
+  [validTemplate.pages.home.sections[0].id]:
+    validTemplate.pages.home.builder.roots[0].id,
+};
+assertWorkspace(validTemplate);
+validTemplate.pages.home.builder.nativeReplacementNodes={
+  "nonexistent-section":validTemplate.pages.home.builder.roots[0].id,
+};
+assert.throws(()=>assertWorkspace(validTemplate),/replacement mapping/);
+delete validTemplate.pages.home.builder.nativeReplacementNodes;
 validTemplate.pages.home.builder.roots=[makeNode("text")];
 assert.throws(()=>assertWorkspace(validTemplate),/complete sections/);
 console.log("PASS imported template chapters cannot contain loose root content.");
