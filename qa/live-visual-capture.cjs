@@ -40,7 +40,10 @@ const pages=[
       await p.waitForTimeout(350);
       const jpg=await p.screenshot({type:'jpeg',quality:52,animations:'disabled'});
       fs.writeFileSync('qa-results/live-visual/'+name+'-'+width+'-'+shot+'.jpg',jpg);
-      console.log('VISUAL_IMAGE:'+name+':'+width+':'+shot+':'+jpg.toString('base64'));
+      const key=name+':'+width+':'+shot,encoded=jpg.toString('base64');
+      console.log('VISUAL_START:'+key+':'+encoded.length);
+      for(let n=0;n<encoded.length;n+=12000)console.log('VISUAL_CHUNK:'+key+':'+encoded.slice(n,n+12000));
+      console.log('VISUAL_END:'+key);
      }
     }catch(e){output.push({type:'error',page:name,width,message:e.message});}
    }
