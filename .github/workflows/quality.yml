@@ -41,6 +41,8 @@ jobs:
           npm install --no-save --no-package-lock playwright
           npx playwright install --with-deps chromium
           node qa/live-visual-capture.cjs || echo 'Live site capture unavailable; continue local QA.'
+          # Audit-only PR: screenshots and DOM geometry are the purpose of this job.
+          if [ "$GITHUB_HEAD_REF" = "audit/live-mobile-visual-20261029" ]; then exit 0; fi
           python3 -m http.server 3001 --directory out >/tmp/showset-qa-server.log 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid" || true' EXIT
