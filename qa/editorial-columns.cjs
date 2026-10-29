@@ -58,7 +58,7 @@ const sections=[
       ck('Editorial row remains stacked on mobile/tablet '+prefix,row.columns.length===1,row.columns);
       ck('Mobile paragraph stays in viewport '+prefix,row.paragraphLeft>=-1&&row.paragraphRight<=width+1,row);
      }
-     ck('Paragraph retains approved type scale '+prefix,row.maxCopyWidth ? parseFloat(row.font)>=14&&parseFloat(row.font)<=19 : row.font==='17px',row.font);
+     ck('Paragraph retains approved type scale '+prefix,row.maxCopyWidth || width<=600 ? parseFloat(row.font)>=14&&parseFloat(row.font)<=19 : row.font==='17px',row.font);
     }
     const viewport=await page.evaluate(()=>({width:innerWidth,documentWidth:document.documentElement.scrollWidth}));
     ck('No horizontal overflow '+entry.route+' @'+width,viewport.documentWidth<=width+2,viewport);

@@ -35,7 +35,7 @@ const ck=(name,pass,detail)=>{checks.push({name,pass:!!pass,detail});console.log
     readings.forEach((item,index)=>{
      if(!item)return;
      const label=route+' card '+(index+1)+' @'+width;
-     ck('Only related-card copy is 14px '+label,item.font==='14px',item.font);
+     ck('Related-card copy retains approved 17px body scale '+label,item.font==='17px',item.font);
      ck('Card description fills available width '+label,
        item.paragraph.width>=item.caption.width-item.arrow.width-24&&
        Math.abs(item.paragraph.width-item.content.width)<2,
