@@ -2,6 +2,14 @@ const assert=require("node:assert/strict");
 const fs=require("node:fs");
 const vm=require("node:vm");
 const ts=require("typescript");
+const validationModule={exports:{}};
+const validationScript=ts.transpileModule(
+  fs.readFileSync("lib/studio2/image-validation.ts","utf8"),{
+    compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022},
+  }).outputText;
+vm.runInNewContext("(function(exports,module){"+validationScript+"\n})")(
+  validationModule.exports,validationModule
+);
 const source=fs.readFileSync("lib/studio2/cloud.ts","utf8");
 const transpiled=ts.transpileModule(source,{
   compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022},
@@ -59,6 +67,7 @@ const load=vm.runInNewContext(
   {Response,Uint8Array},
 );
 load(sandboxModule.exports,(name)=>{
+  if(name==="./image-validation")return validationModule.exports;
   if(name==="./model")return {assertWorkspace:(workspace)=>{
     assert.equal(workspace.schemaVersion,2);
   }};
