@@ -52,10 +52,13 @@ export function syncTemplateSections(
   const closing = view.querySelector<HTMLElement>(
     ".service-close,.studio-final,.work-final,.case-related,.case-lightbox,.end-section,#ending"
   );
-  if (closing && closing.parentElement === container.parentElement)
-    closing.before(container);
-  else if (!container.isConnected)
+  if (closing) {
+    if (container.nextElementSibling !== closing ||
+        container.parentElement !== closing.parentElement)
+      closing.before(container);
+  } else if (container.parentElement !== view) {
     view.append(container);
+  }
   const html = renderNodes(roots, urls) + STYLE;
   if (lastMarkup.get(container) !== html) {
     container.innerHTML = html;
