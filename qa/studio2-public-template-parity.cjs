@@ -7,9 +7,9 @@ const source=fs.readFileSync("lib/studio2/template-extensions.ts","utf8");
 const transpiled=ts.transpileModule(source,{compilerOptions:{
   module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022
 }}).outputText;
-const module={exports:{}};
+const sandboxModule={exports:{}};
 vm.runInNewContext("(function(exports,require,module){"+transpiled+"\n})",{})(
-  module.exports,(path)=>{
+  sandboxModule.exports,(path)=>{
     if(path==="./render")return {renderNodes:(roots)=>roots.map(
       n=>'<section class="s2-node-section" data-builder-node="'+n.id+'"><h2>'+
         n.children?.[0]?.props?.text+'</h2></section>'
@@ -21,8 +21,8 @@ vm.runInNewContext("(function(exports,require,module){"+transpiled+"\n})",{})(
       });
     }};
     throw Error("Unexpected module "+path);
-  },module);
-const {applyTemplateExtensions}=module.exports;
+  },sandboxModule);
+const {applyTemplateExtensions}=sandboxModule.exports;
 const {document}=parseHTML('<html><body><div id="host"><div class="view" data-view="service">'+
   '<div class="service-experience"><div class="service-intro" data-service-section="section-2">'+
   '<h2>Original introduction</h2></div><div class="service-close">Final CTA</div></div></div></div></body></html>');
