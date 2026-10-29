@@ -130,8 +130,8 @@
   }
   .concept-12-root .manifesto-copy>p,
   .concept-12-root .portfolio-intro p{
-    max-width:600px;font-size:clamp(15px,3.7vw,17px)!important;
-    line-height:1.7!important;
+    max-width:600px;font-size:17px!important;
+    line-height:var(--v12-body-leading)!important;
   }
   .concept-12-root .manifesto-heading-group .understated-link{margin-inline:auto}
   .concept-12-root #portfolio-section .portfolio-heading{justify-items:center!important;text-align:center}
@@ -778,5 +778,13 @@
   .concept-12-root .service-story--events .service-event-triptych-note p,
   .concept-12-root :is(.service-story--production,.service-story--digital) .service-production-step p{
     max-width:min(55ch,100%);
+  }
+}
+
+/* The Content & Production opening is approved as a full-screen photograph.
+   Mobile editorial height caps must not shorten the photographic hero. */
+@media (max-width:800px) {
+  .concept-12-root .service-experience .service-hero--production {
+    min-height:100svh;
   }
 }
