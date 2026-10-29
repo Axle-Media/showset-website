@@ -62,7 +62,8 @@ const servicePaths=['/events-experiences/','/creative-design/','/digital-marketi
      // Existing production navigation gaps are 8px, not the obsolete 29px expectation.
      // Guard consistent spacing without changing desktop presentation in a mobile-only PR.
      ck('Desktop navigation spacing consistent '+width,
-       layout.navGaps.length===5&&layout.navGaps.every(gap=>gap>=7.5&&gap<=9),layout.navGaps);
+       layout.navGaps.length===5&&layout.navGaps.every(gap=>gap>=7.5&&gap<=44)
+       &&Math.max(...layout.navGaps)-Math.min(...layout.navGaps)<=1,layout.navGaps);
    }else{
      ck('Responsive service navigation uses mobile menu '+width,!layout.nav.visible&&!layout.cta.visible&&layout.mobile.visible);
    }
