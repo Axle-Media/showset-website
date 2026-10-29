@@ -45,7 +45,7 @@ const fixture = require("node:path").resolve("public/brand/approved-wordmark.png
     await choosePage("/digital-marketing/");
     assert.equal(await page.getByRole("button", {name: /^Edit image:/}).count(), 4);
     await replace(
-      "Edit image: Stage 1: A place worth finding.",
+      "Edit image: Stage 1: A place worth landing.",
       '[data-production-frame="0"] img'
     );
     await choosePage("/our-studio/");
