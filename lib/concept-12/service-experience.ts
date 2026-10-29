@@ -11,7 +11,11 @@ const heading=(s:Pick<Block,'headline'|'accent'>,tag='h2',id='',reveal='editoria
  const lines=(value:string,accent=false)=>value.split(/<br\s*\/?>/i).filter(Boolean).map(line=>'<span class="wipe-line'+(accent?' accent-line':'')+'">'+phrase(line,accent)+'</span>').join('');
  return '<'+tag+(id?' id="'+id+'"':'')+' class="service-heading block-heading" data-service-reveal="'+reveal+'">'+lines(s.headline)+(s.accent?lines(s.accent,true):'')+'</'+tag+'>';
 };
-const photo=(src:string,alt:string,eager=false)=>safeHref(src)==='#'?'':'<img src="'+esc(safeHref(src))+'" alt="'+esc(alt)+'" '+(eager?'fetchpriority="high"':'loading="lazy"')+' decoding="async">';
+const photo=(src:string,alt:string,eager=false)=>{
+ const localAsset=src.startsWith('asset:');
+ const href=localAsset?'/brand/showset-approved.svg':safeHref(src);
+ return href==='#'?'':'<img src="'+esc(href)+'" alt="'+esc(alt)+'" '+(eager?'fetchpriority="high"':'loading="lazy"')+' decoding="async">';
+};
 const action=(label:string,href:string,solid=true)=>'<a class="'+(solid?'solid-link':'understated-link')+'" href="'+esc(safeHref(href))+'">'+text(label)+'<span aria-hidden="true">↗</span></a>';
 const label=(v:string)=>'<span class="service-eyebrow">'+text(v)+'</span>';
 const category=(value:string)=>'<span class="service-category">'+text(value)+'</span>';
