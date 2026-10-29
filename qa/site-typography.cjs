@@ -20,7 +20,21 @@ const routes=['/','/events-experiences/','/creative-design/','/digital-marketing
     const actual=await page.evaluate(()=>{
       const root=document.querySelector('.concept-12-root');
       const style=el=>getComputedStyle(el);
-      const paragraphs=[...root.querySelectorAll('p,li,blockquote')].filter(el=>!el.closest('.c12-custom-body,.case-related-card-caption')&&!el.matches('.footer-identity > p'));
+      // The dot-film statement is display typography, not body copy; the six
+      // Events formats are micro-labels, not paragraphs. Verify both separately.
+      const paragraphs=[...root.querySelectorAll('p,li,blockquote')].filter(el=>
+        !el.closest('.c12-custom-body,.case-related-card-caption') &&
+        !el.matches('.footer-identity > p,#main .dot-words > p,.service-event-types li'));
+      const displayCopy=[...root.querySelectorAll('#main .dot-words > p')];
+      const formatLabels=[...root.querySelectorAll('.service-event-types li')];
+      const badDisplay=displayCopy.filter(el=>{
+        const px=parseFloat(style(el).fontSize);
+        return !(px>=18&&px<=23);
+      });
+      const badFormats=formatLabels.filter(el=>{
+        const px=parseFloat(style(el).fontSize);
+        return !(px>=12&&px<=14);
+      });
       const phone=innerWidth<=600;
       const copy=paragraphs.map(el=>({
         tag:el.localName,className:el.className,px:style(el).fontSize,
@@ -37,9 +51,19 @@ const routes=['/','/events-experiences/','/creative-design/','/digital-marketing
       const nav=[...root.querySelectorAll('.desktop-navigation>.nav-text')].map(el=>style(el).fontSize);
       const input=[...root.querySelectorAll('.contact-form input:not([type="checkbox"]):not([type="radio"]),.contact-form textarea')];
       const wrongInputs=input.filter(el=>style(el).fontSize!=='17px').map(el=>({tag:el.localName,size:style(el).fontSize}));
-      return {pCount:paragraphs.length,copy,buttonCount:buttons.length,wrongButtons,wrongInputs,nav,documentWidth:document.documentElement.scrollWidth};
+      return {pCount:paragraphs.length,copy,displayCount:displayCopy.length,
+        badDisplay:badDisplay.map(el=>style(el).fontSize),
+        formatCount:formatLabels.length,
+        badFormats:badFormats.map(el=>style(el).fontSize),
+        buttonCount:buttons.length,wrongButtons,wrongInputs,nav,
+        documentWidth:document.documentElement.scrollWidth};
     });
     ck('Body copy preserves desktop 17px and a readable mobile scale '+route+' @'+width,actual.pCount>0&&actual.copy.length===0,actual.copy.slice(0,8));
+    ck('Dot-film statement retains intentional 18–23px display scale '+route+' @'+width,
+      actual.displayCount>0&&actual.badDisplay.length===0,actual.badDisplay);
+    if(route==='/events-experiences/')
+      ck('Event format labels retain compact 12–14px category scale @'+width,
+        actual.formatCount===6&&actual.badFormats.length===0,actual.badFormats);
     ck('Button and CTA labels are 14px '+route+' @'+width,actual.buttonCount>0&&actual.wrongButtons.length===0,actual.wrongButtons.slice(0,8));
     if(width>=1351) ck('Visible desktop menu typography remains 14px '+route+' @'+width,actual.nav.length===6&&actual.nav.every(s=>s==='14px'));
     ck('Body inputs are 17px '+route+' @'+width,actual.wrongInputs.length===0,actual.wrongInputs);
