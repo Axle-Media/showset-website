@@ -93,6 +93,10 @@ function ck(label,pass,detail){
           const digitalArt=root.querySelector('.service-hero--digital .service-digital-art');
           const contactShell=root.querySelector('.contact-shell');
           const workCard=root.querySelector('.work-page-gallery .case-index-info');
+          const workMeta=root.querySelector('.work-page-gallery .work-card-meta');
+          const workAction=root.querySelector('.work-page-gallery .work-feature-discover');
+          const galleryHeading=root.querySelector('.case-gallery-heading-row .case-editorial-heading');
+          const studioShade=root.querySelector('.studio-hero-shade');
           return {
             text,images,viewport,body,windowWidth:innerWidth,rootWidth:root.getBoundingClientRect().width,
             footerWrap:footer?getComputedStyle(footer).whiteSpace:'',
@@ -102,7 +106,15 @@ function ck(label,pass,detail){
             contactColumns:contactShell?getComputedStyle(contactShell).gridTemplateColumns:null,
             digitalArtPosition:digitalArt?getComputedStyle(digitalArt).position:null,
             workCardHeight:workCard?workCard.getBoundingClientRect().height:null,
-            workCardMinHeight:workCard?getComputedStyle(workCard).minHeight:null
+            workCardMinHeight:workCard?getComputedStyle(workCard).minHeight:null,
+            workAlignment:workCard?{
+              axis:getComputedStyle(workCard).alignItems,
+              heading:getComputedStyle(workCard.querySelector('h2')).textAlign,
+              meta:workMeta?getComputedStyle(workMeta).justifyContent:null,
+              action:workAction?getComputedStyle(workAction).alignSelf:null
+            }:null,
+            galleryHeadingAlign:galleryHeading?getComputedStyle(galleryHeading).textAlign:null,
+            studioShade:studioShade?getComputedStyle(studioShade).backgroundImage:null
           };
         },{selectors:centered[name]||[],imageSelectors,width});
         const tag=name+' @'+width;
@@ -131,6 +143,22 @@ function ck(label,pass,detail){
         if(width>=768){
           ck('Tablet and desktop footer Discover remains visible: '+tag,
             result.footerColumns.discoverVisible===true,result.footerColumns);
+        }
+        if(width<=600&&name==='work'){
+          ck('Mobile Work cards use centred title, metadata and action: '+tag,
+            result.workAlignment?.axis==='center'
+            &&result.workAlignment?.heading==='center'
+            &&result.workAlignment?.meta==='center'
+            &&result.workAlignment?.action==='center',
+            result.workAlignment);
+        }
+        if(width<=600&&name.startsWith('case-')){
+          ck('Mobile case gallery heading centred: '+tag,
+            result.galleryHeadingAlign==='center',result.galleryHeadingAlign);
+        }
+        if(width>=768&&width<=900&&name==='studio'){
+          ck('Studio tablet photograph has legibility shade: '+tag,
+            result.studioShade?.includes('0.8)'),result.studioShade?.slice(0,200));
         }
         if(width>=768&&width<=900&&name==='contact'){
           ck('Contact stacks rather than squeezing tablet form: '+tag,
