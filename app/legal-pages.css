@@ -20,7 +20,13 @@
              linear-gradient(135deg,#0d2f49,#071e30);
   border-bottom:1px solid rgba(255,255,255,.1);
 }
-.legal-page .legal-hero-inner {max-width:1500px;margin:0 auto;}
+.legal-page .legal-hero {position:relative;isolation:isolate;}
+.legal-page .legal-hero::before {
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:url("/brand/pattern.svg") repeat right top / 390px auto;
+  opacity:.045;z-index:0;
+}
+.legal-page .legal-hero-inner {max-width:1500px;margin:0 auto;position:relative;z-index:1;}
 .legal-page .legal-kicker, .legal-page .legal-aside>p, .legal-page .legal-switch>p {
   margin:0 0 26px;font:700 11px/1.4 var(--body-font);
   letter-spacing:.16em;color:var(--teal);
