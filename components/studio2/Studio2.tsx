@@ -86,8 +86,19 @@ export default function Studio2() {
       setSelected(null);
     }
   }, [workspace?.pages, slug]);
+  // postMessage structured-clones the workspace on every selection update.
+  // Tag the actual workspace object identity, so Preview can keep its existing
+  // content references when only selection/viewport/interaction state changes.
+  const workspaceIdentity = useRef<{value:typeof workspace;version:number}>({
+    value:null,version:0,
+  });
+  if (workspaceIdentity.current.value !== workspace)
+    workspaceIdentity.current = {
+      value:workspace,version:workspaceIdentity.current.version+1,
+    };
   const frameState = useMemo(
-    () => (workspace ? { workspace, slug, selected, interactive, urls } : null),
+    () => (workspace ? { workspace, slug, selected, interactive, urls,
+      workspaceVersion:workspaceIdentity.current.version } : null),
     [workspace, slug, selected, interactive, urls],
   );
   useEffect(() => {
