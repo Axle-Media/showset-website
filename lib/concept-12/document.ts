@@ -1,4 +1,6 @@
 import "server-only";
+import {composeCustom} from "../studio2/compose";
+import {applyTemplateExtensions} from "../studio2/template-extensions";
 import { parseHTML } from "linkedom";
 import type { Globals, PageData } from "@/lib/types";
 import { defaultPages } from "@/lib/data";
@@ -11,6 +13,7 @@ import { populateCategory, populateCaseStudy, selectCurrentView } from "./route-
 export function conceptDocument(page: PageData, g: Globals): string {
   const { document } = parseHTML("<!doctype html><html><body><div id=ssr-host></div></body></html>");
   const host = document.getElementById("ssr-host")!;
+  if(page.builder?.mode==="custom"){composeCustom(host as unknown as HTMLElement,page,g,{...defaultPages,[page.slug]:page});return host.innerHTML;}
   host.innerHTML = markup;
   const key = keyForRoute(page.route);
   if (key in services) populateCategory(host, key, services);
@@ -27,6 +30,11 @@ export function conceptDocument(page: PageData, g: Globals): string {
     const key = anchor.getAttribute("href")!.slice(1);
     if (paths[key]) anchor.setAttribute("href", paths[key]);
   });
+  // Include approved Studio chapters and reversible editorial replacements in
+  // static HTML. An owner-approved release must render identically before
+  // JavaScript hydration and in the live site, not only inside Studio preview.
+  if(page.builder?.mode === "template")
+    applyTemplateExtensions(host as unknown as HTMLElement,page);
   // No-JS visitors get the same second-scene content without inert scroll controls.
   const second=host.querySelector("#hero-second");
   if(second){
