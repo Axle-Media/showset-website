@@ -222,8 +222,24 @@ export default function Navigator({
           </>
         ) : (
           <>
+            <div className="s2-template-builder">
+              <h3>Additional sections</h3>
+              <p className="s2-hint">
+                Build new sections before the closing CTA without changing
+                approved scenes. Drag your added sections to rearrange them.
+              </p>
+              {tree(page.builder?.roots || [])}
+              <button
+                type="button"
+                className="s2-secondary"
+                onClick={() => onAdd("section")}
+              >
+                + Add editable section
+              </button>
+            </div>
             <p className="s2-hint">
-              Select content below, or open Images to change a photograph.
+              Approved page content is protected. Select an original section
+              below to adjust its content, layout or background.
             </p>
             <ul className="s2-page-list">
               {bindings
@@ -253,8 +269,17 @@ export default function Navigator({
         ))}
       {tab === "Add" && (
         <div className="s2-library">
+          {page.builder?.mode !== "custom" &&
+            !isContainer(findNode(page.builder?.roots || [], selected || "")?.kind || "text") && (
+            <p className="s2-hint">
+              Add or select an editable section first to insert nested content.
+            </p>
+          )}
           {Object.entries(registry)
-            .filter(([, v]) =>
+            .filter(([kind, v]) =>
+              (page.builder?.mode === "custom" ||
+                kind === "section" ||
+                isContainer(findNode(page.builder?.roots || [], selected || "")?.kind || "text")) &&
               (v.label + " " + v.description)
                 .toLowerCase()
                 .includes(query.toLowerCase()),
