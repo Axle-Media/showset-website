@@ -140,8 +140,8 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
   });
   ck('Contact uses a content-height layout, not a full-screen hero '+width,
     contactGeometry.minHeight==='0px'&&!contactGeometry.hasPhoto,contactGeometry);
-  ck('Contact uses responsive two-column composition '+width,
-    contactGeometry.columns===(width>740?2:1),contactGeometry);
+  ck('Contact uses desktop columns and a comfortable stacked tablet/mobile form '+width,
+    contactGeometry.columns===(width>950?2:1),contactGeometry);
   ck('Contact uses a branded navy panel with outlined light-on-dark fields '+width,
     contactGeometry.panel==='rgb(13, 47, 73)'&&
     contactGeometry.panelBorder==='rgba(18, 186, 175, 0.38)'&&
@@ -179,7 +179,7 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
     fields.companyVisible&&fields.typeVisible&&fields.budgetVisible&&!fields.disclosure&&!fields.note,fields);
   ck('Contact WhatsApp matches contact-detail type size '+width,
     Math.abs(fields.whatsappSize-fields.emailSize)<1,fields);
-  if(width>740)ck('Contact copy vertically centred beside the form '+width,
+  if(width>950)ck('Contact copy vertically centred beside the form '+width,
     fields.centreDifference<3,fields.centreDifference);
   ck('Both dropdowns use branded panels without visible scrollbars '+width,
     await page.locator('#contact-form').evaluate(form=>
