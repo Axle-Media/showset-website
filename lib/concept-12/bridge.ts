@@ -676,6 +676,25 @@ export function bindConcept(
       link.setAttribute("aria-disabled", "true");
     }
   });
+  // Replace the legacy back-to-top link in every public/Studio footer, including SSR.
+  // Do this after static markup binding so the legal links survive client hydration.
+  const footerBottom = host.querySelector<HTMLElement>(".footer-bottom");
+  const obsoleteBackToTop = footerBottom?.querySelector<HTMLAnchorElement>('a[href="#home"]');
+  if (obsoleteBackToTop) {
+    const legalLinks = document.createElement("nav");
+    legalLinks.className = "footer-legal-links";
+    legalLinks.setAttribute("aria-label", "Legal");
+    for (const [label, href] of [
+      ["Privacy & Policy", "/privacy-policy/"],
+      ["Terms & Conditions", "/terms-and-conditions/"],
+    ]) {
+      const link = document.createElement("a");
+      link.textContent = label;
+      link.href = href;
+      legalLinks.appendChild(link);
+    }
+    obsoleteBackToTop.replaceWith(legalLinks);
+  }
   const signoff = host.querySelector<HTMLElement>(".footer-signoff");
   if (signoff) signoff.textContent = g.footer.signoff ?? defaultGlobals.footer.signoff ?? "Made by Showset.";
   if (g.footer.copyright !== defaultGlobals.footer.copyright) {
