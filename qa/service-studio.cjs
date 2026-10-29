@@ -13,7 +13,15 @@ await p.waitForTimeout(450);
 ck('Shared renderer updates story '+slug,await f.locator('.service-story').textContent().then(t=>t.includes(title)&&t.includes(body)&&t.includes('Edited first scene')));
 if(slug!=='digital-marketing')ck('Scene image updates '+slug,await f.locator('.service-story img').first().getAttribute('src')==='/media/planning.webp');
 await p.getByRole('button',{name:'design',exact:true}).click();await p.getByLabel('headingSize',{exact:true}).fill('41');await p.getByLabel('spaceTop',{exact:true}).fill('88');await p.getByRole('button',{name:'motion',exact:true}).click();await p.getByLabel('Scene preset').selectOption('still');await p.waitForTimeout(350);
-ck('Section styling and motion editable '+slug,await f.locator('.service-story').evaluate(e=>getComputedStyle(e.querySelector('h2')).fontSize==='41px'&&getComputedStyle(e).paddingTop==='88px'&&e.dataset.scene==='still'));
+const computedStyle=await f.locator('.service-story').evaluate(e=>({
+  headingSize:getComputedStyle(e.querySelector('h2')).fontSize,
+  spaceTop:getComputedStyle(e).paddingTop,
+  scene:e.dataset.scene,
+  authoredHeading:e.style.getPropertyValue('--c12-heading'),
+  authoredTop:e.style.paddingTop,
+}));
+ck('Section styling and motion editable '+slug,
+  computedStyle.headingSize==='41px'&&computedStyle.spaceTop==='88px'&&computedStyle.scene==='still',computedStyle);
 await p.getByRole('button',{name:'Save draft',exact:true}).click();}
 await p.reload();await p.waitForSelector('.studio-layer');
 for(const slug of slugs){await p.getByLabel('Edit page',{exact:true}).selectOption(slug);await f.locator('[data-service-experience]').waitFor();ck('Saved draft survives reload '+slug,await f.locator('.service-story h2').innerText().then(t=>t.includes('Edited '+slug+' story')));}
