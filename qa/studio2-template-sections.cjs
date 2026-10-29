@@ -138,6 +138,34 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001";
       ?.querySelector(".s2-node-gallery img");
     return !!gallery && gallery.getAttribute("src")?.startsWith("blob:");
   });
+  // Photo-gallery crop is device-specific, survives reordering and
+  // changes only CSS object-position, never the original file bytes.
+  await p.getByRole("slider",{name:/Horizontal focus/}).first().focus();
+  await p.getByRole("slider",{name:/Horizontal focus/}).first().press("Home");
+  await p.getByRole("slider",{name:/Vertical focus/}).first().focus();
+  await p.getByRole("slider",{name:/Vertical focus/}).first().press("End");
+  await frame.locator(".s2-node-gallery figure img").first().evaluate(async img=>{
+    if(getComputedStyle(img).objectPosition!=="0% 100%")
+      throw Error("Desktop gallery focus did not apply");
+  });
+  await p.getByRole("button",{name:"Mobile",exact:true}).click();
+  await p.getByRole("slider",{name:/Horizontal focus/}).first().focus();
+  await p.getByRole("slider",{name:/Horizontal focus/}).first().press("End");
+  await p.getByRole("slider",{name:/Vertical focus/}).first().focus();
+  await p.getByRole("slider",{name:/Vertical focus/}).first().press("Home");
+  await p.waitForFunction(()=>{
+    const doc=document.querySelector("iframe")?.contentDocument;
+    const img=doc?.querySelector(".s2-node-gallery figure img");
+    return !!img&&document.querySelector("iframe").contentWindow
+      .getComputedStyle(img).objectPosition==="100% 0%";
+  });
+  await p.getByRole("button",{name:"Desktop",exact:true}).click();
+  await p.waitForFunction(()=>{
+    const doc=document.querySelector("iframe")?.contentDocument;
+    const img=doc?.querySelector(".s2-node-gallery figure img");
+    return !!img&&document.querySelector("iframe").contentWindow
+      .getComputedStyle(img).objectPosition==="0% 100%";
+  });
   await p.getByLabel("Caption",{exact:true}).first().fill("First moment");
   await p.getByLabel("Caption",{exact:true}).first().blur();
   await p.getByRole("button",{name:"Move item down"}).first().click();
@@ -145,12 +173,33 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001";
   assert.equal(await frame.locator(".s2-node-gallery figure").count(),3);
   assert.equal(await frame.locator(".s2-node-gallery figure").nth(1)
     .locator("figcaption").innerText(),"First moment");
+  assert.equal(await frame.locator(".s2-node-gallery figure img").nth(1)
+    .evaluate(img=>getComputedStyle(img).objectPosition),"0% 100%",
+    "Moved gallery photograph retains its desktop crop");
   await p.getByRole("button",{name:"Save draft",exact:true}).click();
   await p.waitForTimeout(1000);
   await p.reload();
   await choose("/events-experiences/");
   await frame.locator(".s2-node-gallery figure").nth(1)
     .locator("figcaption").filter({hasText:"First moment"}).waitFor();
+  assert.equal(await frame.locator(".s2-node-gallery figure img").nth(1)
+    .evaluate(img=>getComputedStyle(img).objectPosition),"0% 100%",
+    "Gallery crop survives draft save and reload");
+  await p.getByRole("button",{name:"Media",exact:true}).click();
+  await p.getByText("Details and tags",{exact:true}).first().click();
+  await p.getByLabel("Library name",{exact:true}).first().fill("Event planning original");
+  await p.getByLabel("Library name",{exact:true}).first().blur();
+  await p.getByLabel("Tags (comma-separated)").first().fill("events, production");
+  await p.getByLabel("Tags (comma-separated)").first().blur();
+  await p.getByLabel("Tag",{exact:true}).selectOption("events");
+  await p.getByText("Event planning original",{exact:true}).waitFor();
+  assert.equal(await p.locator(".s2-media-card").count(),1,
+    "Media tag filter only shows matched originals");
+  await p.getByRole("button",{name:"Save draft",exact:true}).click();
+  await p.waitForTimeout(850);
+  await p.reload();
+  await p.getByRole("button",{name:"Media",exact:true}).click();
+  await p.getByText("Event planning original",{exact:true}).waitFor();
   await p.getByRole("button",{name:"Sections",exact:true}).click();
   await p.getByText("Reusable editorial QA",{exact:true}).waitFor();
   assert.deepEqual(errors,[]);
