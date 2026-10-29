@@ -173,11 +173,31 @@ fs.mkdirSync(out, { recursive: true });
     .setInputFiles("public/media/planning.webp");
   await frame().locator(".s2-node-image img").waitFor();
   await p.getByRole("button", { name: "Layout", exact: true }).click();
-  await p.getByLabel("Focal position", { exact: true }).fill("20% 40%");
-  await p.getByLabel("Focal position", { exact: true }).blur();
+  // Keyboard-native visual crop picker: desktop and mobile remain independent.
+  await p.locator(".s2-focal-control").first().waitFor({timeout:10000});
+  assert.equal(await p.locator(".s2-focal-control input[type=range]").count(),2,
+    "Selected image layout must expose two focus sliders");
+  await p.getByRole("slider",{name:"Horizontal focus",exact:true}).focus();
+  await p.getByRole("slider",{name:"Horizontal focus",exact:true}).press("Home");
+  await p.getByRole("slider",{name:"Vertical focus",exact:true}).focus();
+  await p.getByRole("slider",{name:"Vertical focus",exact:true}).press("End");
+  await p.waitForFunction(()=>
+    document.querySelector("iframe")?.contentDocument
+      ?.querySelector(".s2-node-image img") &&
+    document.querySelector("iframe")?.contentWindow.getComputedStyle(
+      document.querySelector("iframe").contentDocument.querySelector(".s2-node-image img")
+    ).objectPosition==="0% 100%");
   await p.getByRole("button", { name: "Mobile", exact: true }).click();
-  await p.getByLabel("Focal position", { exact: true }).fill("70% 40%");
-  await p.getByLabel("Focal position", { exact: true }).blur();
+  await p.getByRole("slider",{name:"Horizontal focus",exact:true}).focus();
+  await p.getByRole("slider",{name:"Horizontal focus",exact:true}).press("End");
+  await p.getByRole("slider",{name:"Vertical focus",exact:true}).focus();
+  await p.getByRole("slider",{name:"Vertical focus",exact:true}).press("Home");
+  await p.waitForFunction(()=>
+    document.querySelector("iframe")?.contentDocument
+      ?.querySelector(".s2-node-image img") &&
+    document.querySelector("iframe")?.contentWindow.getComputedStyle(
+      document.querySelector("iframe").contentDocument.querySelector(".s2-node-image img")
+    ).objectPosition==="100% 0%");
   await p.waitForFunction(() => {
     const f = document.querySelector("iframe"),
       e = f?.contentDocument?.querySelector(".s2-node-section");

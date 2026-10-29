@@ -83,6 +83,8 @@ export interface CanvasNode {
       body: string;
       src?: string;
       alt?: string;
+      /** Device-specific crop focal points. Never modifies the original. */
+      focal?: Partial<Record<Breakpoint,string>>;
     }[];
   };
   styles: Partial<Record<Breakpoint, StyleValues>>;
@@ -453,7 +455,12 @@ export function assertWorkspace(value: unknown): asserts value is Workspace {
       asset.width > 8192 ||
       asset.height > 8192 ||
       asset.width * asset.height > 24000000 ||
-      asset.size > 8 * 1024 * 1024
+      asset.size > 8 * 1024 * 1024 ||
+      typeof asset.name !== "string" || asset.name.length > 180 ||
+      typeof asset.alt !== "string" || asset.alt.length > 500 ||
+      !Array.isArray(asset.tags) || asset.tags.length > 20 ||
+      asset.tags.some(tag=>typeof tag!=="string" || tag.length>40 ||
+        !/^[a-z0-9][a-z0-9 -]*$/i.test(tag))
     )
       throw Error("Invalid original image metadata.");
     mediaIds.add(asset.id);
@@ -504,9 +511,15 @@ export function assertWorkspace(value: unknown): asserts value is Workspace {
                 typeof item.id !== "string" ||
                 typeof item.title !== "string" ||
                 typeof item.body !== "string" ||
-                Object.values(item).some(
-                  (v) => v !== undefined && typeof v !== "string",
-                ),
+                Object.entries(item).some(([key,v])=>
+                key!=="focal" && v!==undefined && typeof v!=="string"
+              ) ||
+              (item.focal!==undefined &&
+                (!record(item.focal) ||
+                  Object.entries(item.focal).some(([point,position])=>
+                    !["desktop","tablet","mobile"].includes(point) ||
+                    !validStyle("objectPosition",position)
+                  ))),
             )
           )
             throw Error("Invalid repeated content.");

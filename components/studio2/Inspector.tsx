@@ -80,6 +80,9 @@ import { defaultPattern, defaultMotion } from "@/lib/studio2/model";
 import { bindingContent, type Binding } from "@/lib/studio2/bindings";
 import type { PageData } from "@/lib/types";
 import {canReplaceNative} from "@/lib/studio2/native-rebuild";
+import {mediaSource} from "@/lib/studio2/render";
+import {focalFor} from "@/lib/studio2/image-focal";
+import FocalControl from "./FocalControl";
 export default function Inspector({
   page,
   node,
@@ -95,6 +98,8 @@ export default function Inspector({
   onUpload,
   onGalleryUpload,
   onGalleryLibrary,
+  onGalleryPosition,
+  galleryUrls,
   onAction,
   onReset,
   imagePreview,
@@ -115,6 +120,8 @@ export default function Inspector({
   onUpload: (file: File) => void;
   onGalleryUpload: (index:number,file:File) => void;
   onGalleryLibrary: (index:number) => void;
+  onGalleryPosition: (index:number,position:string) => void;
+  galleryUrls: Record<string,string>;
   onAction: (action: string) => void;
   onReset: () => void;
   imagePreview?: string;
@@ -455,6 +462,13 @@ export default function Inspector({
                         onClick={()=>onGalleryLibrary(index)}>
                         Choose photograph from media library
                       </button>
+                      <FocalControl
+                        src={mediaSource(item.src,galleryUrls)}
+                        position={focalFor(item,breakpoint)}
+                        fit="cover"
+                        breakpoint={breakpoint}
+                        onPosition={position=>onGalleryPosition(index,position)}
+                      />
                     </>}
                     <button disabled={index===0} onClick={()=>{
                       const next=[...(node.props.items||[])];
@@ -570,13 +584,16 @@ export default function Inspector({
                     Choose from media library
                   </button>
                 )}
-                {select(
-                  "Image fit",
-                  styles.objectFit || metrics.objectFit || "cover",
-                  ["cover", "contain"],
-                  (v) => onStyle("objectFit", v),
-                )}
-                {style("Focal position", "objectPosition", "50% 50%")}
+                <FocalControl
+                  src={imagePreview||""}
+                  position={String(styles.objectPosition ||
+                    metrics.objectPosition || "50% 50%")}
+                  fit={(styles.objectFit || metrics.objectFit)==="contain"
+                    ? "contain":"cover"}
+                  breakpoint={breakpoint}
+                  onPosition={v=>onStyle("objectPosition",v)}
+                  onFit={v=>onStyle("objectFit",v)}
+                />
               </>
             )}
           </>
@@ -912,8 +929,10 @@ export default function Inspector({
               style("Responsive font size", "fontSize", "Inherited")}
             {style("Responsive width", "width", "Inherited")}
             {style("Responsive padding", "padding", "Inherited")}
-            {kind === "image" &&
-              style("Responsive crop", "objectPosition", "50% 50%")}
+            {kind === "image" && <p className="s2-hint">
+              Use the Layout tab's visual crop picker at this breakpoint.
+              Other device sizes keep their independent focal positions.
+            </p>}
             <button className="s2-secondary" onClick={onReset}>
               Reset {breakpoint} overrides
             </button>
