@@ -33,6 +33,8 @@ export default function LegalMobileMenu() {
         stops[event.shiftKey ? stops.length - 1 : 0]?.focus();
       }
     };
+    const year = root.querySelector<HTMLElement>("#year");
+    if (year) year.textContent = String(new Date().getFullYear());
     const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 24);
     const onNavigation = () => setOpen(false);
     setOpen(false);
