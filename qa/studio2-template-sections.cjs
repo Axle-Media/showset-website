@@ -23,6 +23,9 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001";
   assert.equal(await frame.locator(".s2-template-extensions").count(),0);
   await p.getByRole("button",{name:"+ Add editable section",exact:true}).click();
   await frame.locator(".s2-template-extensions > section.s2-node-section").waitFor();
+  // The cinematic route mounts asynchronously; first allow its initial
+  // refresh to settle, then check stability across an inspector-only change.
+  await p.waitForTimeout(900);
   // Selecting a different inspector target without changing the underlying
   // section must not unmount all its media, links and input state.
   await frame.locator(".s2-template-extensions > section.s2-node-section")
