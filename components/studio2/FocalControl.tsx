@@ -37,12 +37,12 @@ export default function FocalControl({
     <p className="s2-hint">Click the subject to set the focus, or adjust the sliders. The original image is never cropped or overwritten.</p>
     <label className="s2-focal-slider">
       Horizontal focus <output>{Math.round(x)}%</output>
-      <input type="range" min={0} max={100} step={1} value={x}
+      <input type="range" aria-label="Horizontal focus" min={0} max={100} step={1} value={x}
         onChange={e=>put(Number(e.target.value),y)}/>
     </label>
     <label className="s2-focal-slider">
       Vertical focus <output>{Math.round(y)}%</output>
-      <input type="range" min={0} max={100} step={1} value={y}
+      <input type="range" aria-label="Vertical focus" min={0} max={100} step={1} value={y}
         onChange={e=>put(x,Number(e.target.value))}/>
     </label>
     {onFit && <label className="s2-field">Image fit
