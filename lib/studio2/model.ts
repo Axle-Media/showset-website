@@ -103,6 +103,8 @@ export interface BuilderPage {
   mode: "custom" | "template";
   roots: CanvasNode[];
   overrides: Record<string, TargetOverride>;
+  /** Source IDs temporarily replaced by owner-created editable chapters. */
+  replacedNative?: string[];
 }
 export interface MediaAsset {
   id: string;
