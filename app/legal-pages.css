@@ -26,11 +26,18 @@
   background:url("/brand/pattern.svg") repeat right top / 390px auto;
   opacity:.045;z-index:0;
 }
-.legal-page .legal-hero-inner {max-width:1500px;margin:0 auto;position:relative;z-index:1;}
+/* No inner max-width: the hero, legal copy and navigation must share one left gutter. */
+.legal-page .legal-hero-inner {position:relative;z-index:1;}
 #main .legal-title {
   display:flex;flex-direction:column;align-items:flex-start;gap:0;
   margin:0;font-size:clamp(42px,6.6vw,98px)!important;
   line-height:1.06!important;letter-spacing:var(--v12-head-tracking)!important;
+}
+/* A single readable desktop line without forcing horizontal scrolling on narrow phones. */
+.legal-page #main .legal-title.legal-title--one-line {
+  display:block;
+  white-space:nowrap;
+  font-size:clamp(28px,6.6vw,98px)!important;
 }
 .legal-page .legal-title-accent {color:var(--teal);}
 .legal-page .legal-teal-dot {color:var(--teal);}
@@ -38,7 +45,7 @@
 #main .legal-summary {max-width:665px;margin:30px 0 0;color:rgba(250,249,253,.77);}
 .legal-page .legal-updated {margin:34px 0 0!important;color:rgba(250,249,253,.51);font-size:13px!important;}
 .legal-page .legal-content {
-  max-width:1500px;margin:0 auto;
+  width:100%;
   padding:clamp(64px,7.5vw,120px) var(--gutter) clamp(100px,10vw,170px);
 }
 .legal-page .legal-body {min-width:0;max-width:850px;}

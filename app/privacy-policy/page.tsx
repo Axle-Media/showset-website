@@ -11,6 +11,8 @@ export default function PrivacyPolicyPage() {
     <LegalPageShell
       firstLine="Privacy"
       accentLine="Policy"
+      compactTitle
+      currentPage="privacy"
       summary="Your information matters. This policy explains what we collect, why we use it and how you can exercise your rights."
     >
       <section className="legal-section" id="who-we-are">
