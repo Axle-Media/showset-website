@@ -57,6 +57,8 @@ const base=process.env.SHOWSET_BASE_URL||"http://localhost:3001";
         ?.querySelector(".service-intro");
       return !!el && el.style.getPropertyValue("display")!=="none";
     });
+    assert.equal(await frame.locator(".s2-template-extensions > section").count(),0,
+      "Restore original must hide the replacement chapter, not display both");
     // Undo/Redo are reversible and preserve original content.
     await p.getByRole("button",{name:"Undo",exact:true}).click();
     await p.waitForFunction(()=>{
