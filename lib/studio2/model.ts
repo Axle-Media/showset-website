@@ -381,6 +381,10 @@ export function cloneNode(node: CanvasNode): CanvasNode {
     ...structuredClone(node),
     id: uid(),
     name: node.name + " copy",
+    props:{
+      ...structuredClone(node.props),
+      items:node.props.items?.map(item=>({...item,id:uid("item")})),
+    },
     children: node.children.map(cloneNode),
   };
 }
