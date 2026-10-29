@@ -93,6 +93,8 @@ export default function Inspector({
   onMotion,
   onPage,
   onUpload,
+  onGalleryUpload,
+  onGalleryLibrary,
   onAction,
   onReset,
   imagePreview,
@@ -111,6 +113,8 @@ export default function Inspector({
   onMotion: (motion: Motion) => void;
   onPage: (key: string, value: string) => void;
   onUpload: (file: File) => void;
+  onGalleryUpload: (index:number,file:File) => void;
+  onGalleryLibrary: (index:number) => void;
   onAction: (action: string) => void;
   onReset: () => void;
   imagePreview?: string;
@@ -427,15 +431,42 @@ export default function Inspector({
                           ),
                         ),
                     )}
-                    {node.kind === "gallery" &&
-                      field("Image alt text", item.alt || "", (v) =>
-                        onProps(
-                          "items",
-                          node.props.items!.map((x, i) =>
-                            i === index ? { ...x, alt: v } : x,
-                          ),
-                        ),
+                    {node.kind === "gallery" && <>
+                      {field("Image alt text", item.alt || "", (v) =>
+                        onProps("items", node.props.items!.map((x,i)=>
+                          i===index ? {...x,alt:v} : x
+                        ))
                       )}
+                      {field("Caption", item.body || "", (v) =>
+                        onProps("items", node.props.items!.map((x,i)=>
+                          i===index ? {...x,body:v} : x
+                        ))
+                      )}
+                      <label className="s2-upload">
+                        Upload gallery photograph
+                        <input type="file" accept="image/png,image/jpeg,image/webp"
+                          onChange={e=>{
+                            const file=e.target.files?.[0];
+                            e.target.value="";
+                            if(file)onGalleryUpload(index,file);
+                          }}/>
+                      </label>
+                      <button className="s2-secondary"
+                        onClick={()=>onGalleryLibrary(index)}>
+                        Choose photograph from media library
+                      </button>
+                    </>}
+                    <button disabled={index===0} onClick={()=>{
+                      const next=[...(node.props.items||[])];
+                      [next[index-1],next[index]]=[next[index],next[index-1]];
+                      onProps("items",next);
+                    }}>Move item up</button>
+                    <button disabled={index===(node.props.items||[]).length-1}
+                      onClick={()=>{
+                        const next=[...(node.props.items||[])];
+                        [next[index+1],next[index]]=[next[index],next[index+1]];
+                        onProps("items",next);
+                      }}>Move item down</button>
                     <button
                       onClick={() =>
                         onProps(
@@ -944,6 +975,12 @@ export default function Inspector({
       )}
       {node && (
         <div className="s2-element-actions">
+          {node.kind==="section" && !anchoredOriginal && !node.locked && (
+            <button className="s2-secondary"
+              onClick={()=>onAction("save-section")}>
+              Save to section library
+            </button>
+          )}
           {anchoredOriginal ? <p className="s2-hint">
             This rebuilt section stays at the original page position.
             Its inner elements can still be reordered.
