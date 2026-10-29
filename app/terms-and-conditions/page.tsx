@@ -1,23 +1,10 @@
 import type { Metadata } from "next";
-import LegalPageShell, { type LegalSectionLink } from "@/components/LegalPageShell";
+import LegalPageShell from "@/components/LegalPageShell";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | SHOWSET",
   description: "Terms governing access to and use of the SHOWSET website, its content, enquiries and external links.",
 };
-
-const sections: LegalSectionLink[] = [
-  { id: "acceptance", title: "Using our website" },
-  { id: "website-use", title: "Acceptable use" },
-  { id: "intellectual-property", title: "Our creative work" },
-  { id: "enquiries", title: "Enquiries and proposals" },
-  { id: "third-party", title: "Third-party websites" },
-  { id: "accuracy", title: "Website information" },
-  { id: "liability", title: "Liability" },
-  { id: "changes", title: "Updates and availability" },
-  { id: "law", title: "Applicable law" },
-  { id: "contact", title: "Get in touch" },
-];
 
 export default function TermsAndConditionsPage() {
   return (
@@ -25,7 +12,6 @@ export default function TermsAndConditionsPage() {
       firstLine="Terms &"
       accentLine="Conditions"
       summary="The practical details about using our website, accessing our content and getting in touch with SHOWSET."
-      sections={sections}
     >
       <section className="legal-section" id="acceptance">
         <h2>Using our website</h2>
