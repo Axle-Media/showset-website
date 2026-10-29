@@ -142,3 +142,12 @@
     margin-inline: auto;
   }
 }
+
+/* Approved SHOWSET two-line punctuation: accent dot on the first line,
+   white dot at the end of the teal accent line. */
+.s2-node-heading .s2-first-period {
+  color: var(--teal, #12BAAF);
+}
+.s2-node-heading .s2-accent-period {
+  color: var(--ice, #FAF9FD);
+}
