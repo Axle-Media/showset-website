@@ -1,0 +1,111 @@
+/* Generic authored components only; no default approved template matches these selectors. */
+.s2-site {
+  min-height: 100svh;
+  background: var(--deep);
+  color: var(--ice);
+  font-family: var(--body-font);
+}
+.s2-tree {
+  padding-top: var(--header-height, 78px);
+  min-height: 100svh;
+}
+.s2-node {
+  box-sizing: border-box;
+  position: relative;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+.s2-node-section:empty,
+.s2-node-container:empty {
+  min-height: 120px;
+}
+.s2-node-heading {
+  font-family: var(--display);
+  font-size: 48px;
+  line-height: 1.08;
+  margin: 0 0 24px;
+  font-weight: 650;
+}
+.s2-node-heading .s2-accent {
+  display: block;
+  color: var(--s2-accent, var(--teal));
+}
+.s2-node-text {
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 0 0 24px;
+}
+.s2-node-image {
+  margin: 0;
+  overflow: hidden;
+}
+.s2-node-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: inherit;
+  object-position: inherit;
+}
+.s2-node-image figcaption,
+.s2-node-gallery figcaption {
+  font-size: 14px;
+  padding-top: 12px;
+}
+.s2-node-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  min-height: 43px;
+  padding: 10px 18px;
+  background: var(--teal);
+  color: #07263c;
+  font: 750 14px/1.4 var(--body-font);
+  border-radius: 999px;
+  width: fit-content;
+}
+.s2-node-divider {
+  border: 0;
+  border-top: 1px solid rgba(250, 249, 253, 0.3);
+  margin: 24px 0;
+  width: 100%;
+}
+.s2-node-accordion summary {
+  padding: 20px 0;
+  cursor: pointer;
+  border-block-start: 1px solid rgba(250, 249, 253, 0.3);
+  font-size: 20px;
+}
+.s2-node-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.s2-node-gallery figure {
+  margin: 0;
+}
+.s2-node-gallery img {
+  width: 100%;
+  aspect-ratio: 1.4;
+  object-fit: cover;
+}
+.s2-node-video video {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 600px) {
+  .s2-node-heading {
+    font-size: 34px;
+  }
+  .s2-node-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .s2-node {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    clip-path: none !important;
+    opacity: 1 !important;
+  }
+}

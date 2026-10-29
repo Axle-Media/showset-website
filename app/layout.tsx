@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./fonts.css";
+import "./builder-components.css";
 import "./concept-12.css";
 import "./concept-12-refinements.css";
 import "./case-study.css";

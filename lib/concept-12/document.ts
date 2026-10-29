@@ -1,4 +1,5 @@
 import "server-only";
+import {composeCustom} from "../studio2/compose";
 import { parseHTML } from "linkedom";
 import type { Globals, PageData } from "@/lib/types";
 import { defaultPages } from "@/lib/data";
@@ -11,6 +12,7 @@ import { populateCategory, populateCaseStudy, selectCurrentView } from "./route-
 export function conceptDocument(page: PageData, g: Globals): string {
   const { document } = parseHTML("<!doctype html><html><body><div id=ssr-host></div></body></html>");
   const host = document.getElementById("ssr-host")!;
+  if(page.builder?.mode==="custom"){composeCustom(host as unknown as HTMLElement,page,g,{...defaultPages,[page.slug]:page});return host.innerHTML;}
   host.innerHTML = markup;
   const key = keyForRoute(page.route);
   if (key in services) populateCategory(host, key, services);

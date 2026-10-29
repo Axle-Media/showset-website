@@ -11,6 +11,7 @@ import { conceptMetadata } from "@/lib/concept-12/metadata";
 import { patchConcept } from "@/lib/concept-12/patch";
 import { safeHref } from "@/lib/safe";
 import { compatiblePages, compatibleGlobals } from "@/lib/concept-12/compat";
+import CustomSite from "./studio2/CustomSite";
 type LayoutProps = {
   page: PageData;
   g: Globals;
@@ -21,7 +22,7 @@ type LayoutProps = {
   selectedId?: string;
 };
 /** Public site and Studio mount the same original Concept 12 DOM and runtime. */
-export function SiteLayout({
+function TemplateSiteLayout({
   page,
   g,
   catalog = defaultPages,
@@ -212,6 +213,7 @@ export function SiteLayout({
     />
   );
 }
+export function SiteLayout(props:LayoutProps){return props.page.builder?.mode==="custom"?<CustomSite {...props} catalog={props.catalog||defaultPages} />:<TemplateSiteLayout {...props}/>;}
 type Props = {
   initialPage: PageData;
   initialGlobals: Globals;

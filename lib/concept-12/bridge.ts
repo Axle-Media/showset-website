@@ -1,3 +1,4 @@
+import {applyTemplateOverrides} from "../studio2/bindings";
 import {renderServiceExperience} from "./service-experience";
 import type {ServiceKind} from "./service-content";
 import { refineHeadingPeriods } from "./typography";
@@ -740,4 +741,5 @@ export function bindConcept(
   )
     link(".header-cta", g.header.buttonLabel, g.header.buttonHref);
   refineHeadingPeriods(host);
+  if(page.builder?.mode==="template")applyTemplateOverrides(host,page);
 }
