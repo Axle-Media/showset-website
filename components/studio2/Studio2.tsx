@@ -31,6 +31,8 @@ import {
   storeMedia,
   verifyBackup,
   importMedia,
+  createBackup,
+  downloadJson,
 } from "@/lib/studio2/storage";
 import { useWorkspace } from "./useWorkspace";
 import Canvas from "./Canvas";
@@ -641,6 +643,21 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
                   if(window.confirm("Approve the current saved draft as an immutable release checkpoint? This does not deploy the public site."))
                     void editor.approve();
                 }}>Approve release snapshot</button>
+              )}
+              {(cloud.role==="owner"||cloud.role==="publisher") && (
+                <button onClick={async()=>{
+                  try{
+                    const release=await cloud.latestApprovedRelease();
+                    if(!release)throw Error("No approved snapshot exists.");
+                    const backup=await createBackup(release.workspace,false,
+                      (asset)=>cloud.getOriginal(asset));
+                    downloadJson(backup,"SHOWSET-approved-release-"+
+                      release.id+".json");
+                  }catch(error){
+                    editor.setError("Release export failed: "+
+                      (error as Error).message);
+                  }
+                }}>Export latest approved release</button>
               )}
             </>
           ):(
