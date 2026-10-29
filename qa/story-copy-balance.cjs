@@ -20,8 +20,8 @@ function ck(name,ok,detail){checks.push({name,pass:!!ok,detail});console.log(ok?
       const title=el.querySelector('h1,h2'),p=el.querySelector('p');
       const heading=title.getBoundingClientRect(),copy=p.getBoundingClientRect();
       const style=getComputedStyle(p);
-      return {heading:title.textContent.replace(/\\s+/g,' ').trim(),
-       copy:p.textContent.trim(),words:p.textContent.trim().split(/\\s+/).length,
+      return {heading:title.textContent.replace(/\s+/g,' ').trim(),
+       copy:p.textContent.trim(),words:p.textContent.trim().split(/\s+/).length,
        pWidth:copy.width,pHeight:copy.height,px:copy.left,right:copy.right,
        headingEnd:heading.bottom,copyStart:copy.top,
        fontSize:parseFloat(style.fontSize),lineHeight:parseFloat(style.lineHeight),
