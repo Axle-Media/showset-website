@@ -63,7 +63,10 @@
 #main .dot-words h2 .dot-line-primary{color:var(--teal)!important}
 #main .dot-words h2 .dot-line-accent{color:var(--teal)!important}
 #main .dot-words h2 em{font-style:normal;color:var(--sand)!important}
-#main .dot-words h2 em span{color:var(--teal)!important}
+/* Dynamic Studio punctuation can add a nested span around the final stop.
+   Keep every descendant stop turquoise before the dot expands. */
+#main .dot-stage > .dot-words h2 em span,
+#main .dot-stage > .dot-words h2 em span span{color:var(--teal)!important}
 #main .dot-words > p{
   max-width:870px;
   margin:clamp(22px,3vw,38px) auto 0!important;
@@ -98,7 +101,8 @@
   color:#06263a!important;
 }
 #main .dot-colour-reveal .dot-words h2 em,
-#main .dot-colour-reveal .dot-words h2 em span{
+#main .dot-stage > .dot-colour-reveal .dot-words h2 em span,
+#main .dot-stage > .dot-colour-reveal .dot-words h2 em span span{
   color:var(--ice)!important;
 }
 #main .dot-colour-reveal .dot-words > p{
