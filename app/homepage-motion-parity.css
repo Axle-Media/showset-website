@@ -96,6 +96,37 @@
   color:#06263a!important;
 }
 
+/* A slightly wider, more substantial reading measure for the three
+   photographic homepage chapters and both photographic Studio hero scenes.
+   This preserves the headline swipe and the surrounding full-bleed images. */
+#main .film-steps{
+  width:100%;
+  max-width:930px;
+  min-height:365px;
+}
+#main .film-step > p{
+  width:100%;
+  max-width:660px;
+  margin-top:0;
+}
+#main .editorial-page.studio-rebuilt .studio-hero-scene > p{
+  width:100%;
+  max-width:660px;
+}
+@media(max-width:800px){
+  #main .film-steps{max-width:100%;min-height:380px}
+  #main .film-step > p,
+  #main .editorial-page.studio-rebuilt .studio-hero-scene > p{
+    max-width:100%;
+  }
+}
+@media(max-width:540px){
+  #main .film-steps{min-height:390px}
+}
+@media(max-height:650px) and (min-width:801px){
+  #main .film-steps{min-height:310px}
+}
+
 /* The approved wordmark gains prominence without resizing the header logo
    or changing the footer's two-line sign-off. */
 .concept-12-root .footer .brand .approved-wordmark{
