@@ -525,3 +525,56 @@
     font-size:clamp(30px,8.7vw,37px)!important;
   }
 }
+
+
+/* Visual review of actual production screenshots, 29 October 2026.
+   These refinements apply only to mobile and tablet; desktop stays approved. */
+@media (max-width:900px) {
+  /* When the fixed navigation is scrolled, completely mask copy travelling
+     beneath it rather than letting letters ghost through the dark glass. */
+  .concept-12-root .site-header.scrolled,
+  .concept-12-root .site-header.menu-is-open {
+    background-color:#051726!important;
+  }
+}
+@media (min-width:601px) and (max-width:900px) {
+  /* Our Studio's white copy spans the brighter right-hand side of its photo
+     on tablets. Strengthen the existing photograph shade, not the headline. */
+  .concept-12-root .studio-rebuilt .studio-hero-shade {
+    background:
+      linear-gradient(90deg,rgba(3,16,28,.93) 0%,rgba(3,16,28,.80) 58%,rgba(3,16,28,.51) 100%),
+      linear-gradient(0deg,rgba(3,16,28,.58),transparent 58%);
+  }
+}
+@media (max-width:600px) {
+  /* Project cards should follow the same centred mobile reading axis
+     as the Work introduction and final CTA. */
+  .concept-12-root .work-rebuilt .work-page-gallery .case-index-info {
+    align-items:center!important;
+    text-align:center!important;
+  }
+  .concept-12-root .work-rebuilt .work-page-gallery .case-index-info :is(h2,p){
+    text-align:center!important;
+    margin-inline:auto;
+  }
+  .concept-12-root .work-rebuilt .work-page-gallery .work-card-meta {
+    justify-content:center!important;
+    flex-wrap:wrap;
+    text-align:center;
+  }
+  .concept-12-root .work-rebuilt .work-page-gallery .work-feature-discover{
+    align-self:center!important;
+    justify-content:center;
+    margin-inline:auto!important;
+  }
+  /* Case-study image galleries used a left-aligned standalone heading even
+     though their chapter titles and body were centred on phones. */
+  .concept-12-root .case-experience .case-gallery-heading-row{
+    justify-content:center;
+    text-align:center;
+  }
+  .concept-12-root .case-experience .case-gallery-heading-row .case-editorial-heading{
+    text-align:center!important;
+    margin-inline:auto!important;
+  }
+}
