@@ -61,6 +61,15 @@ const fixture = require("node:path").resolve("public/brand/approved-wordmark.png
       '[data-case-chapter="0"] .case-chapter-photo img, [data-case-story-image="0"] img'
     );
     await replace("Edit image: Gallery photograph 2", '[data-case-image="1"] img');
+    await replace("Edit image: Opening photograph", ".case-opening-first > img");
+    // Portfolio cards use the linked case's photograph as their only owner.
+    await choosePage("/our-work/");
+    await page.waitForFunction(() =>
+      document.querySelector("iframe")?.contentDocument
+        ?.querySelector('a[href="/work/made-to-be-remembered/"] img')
+        ?.getAttribute("src")?.startsWith("blob:")
+    );
+    await choosePage("/work/made-to-be-remembered/");
     await page.getByRole("button", { name: "Save draft", exact: true }).click();
     await page.getByText("Saved locally", { exact: true }).first().waitFor();
     await page.reload();
