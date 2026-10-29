@@ -12,6 +12,7 @@ import { patchConcept } from "@/lib/concept-12/patch";
 import { safeHref } from "@/lib/safe";
 import { compatiblePages, compatibleGlobals } from "@/lib/concept-12/compat";
 import CustomSite from "./studio2/CustomSite";
+import {syncTemplateSections,mountTemplateMotion} from "@/lib/studio2/template-sections";
 type LayoutProps = {
   page: PageData;
   g: Globals;
@@ -21,6 +22,7 @@ type LayoutProps = {
   onSelect?: (id: string) => void;
   selectedId?: string;
   suppressSubmissions?: boolean;
+  urls?: Record<string,string>;
 };
 /** Public site and Studio mount the same original Concept 12 DOM and runtime. */
 function TemplateSiteLayout({
@@ -32,6 +34,7 @@ function TemplateSiteLayout({
   onSelect,
   selectedId,
   suppressSubmissions=false,
+  urls={},
 }: LayoutProps) {
   const pathname = usePathname();
   const root = useRef<HTMLDivElement>(null),
@@ -40,6 +43,7 @@ function TemplateSiteLayout({
   select.current = onSelect;
   const latest = useRef({page,g,catalog,editor,suppressSubmissions,reduced:false});
   const engine = useRef<ReturnType<typeof mountConcept> | null>(null);
+  const templateMotion = useRef<(() => void) | null>(null);
   const rendered = useRef<unknown>(null);
   const [reduced, setReduced] = useState(false);
   useEffect(() => {
@@ -148,6 +152,11 @@ function TemplateSiteLayout({
           editor,
         });
       dispose = mountConcept(host, optionsFor(latest.current));
+      if(page.builder?.mode !== "custom" && page.builder?.roots.length){
+        syncTemplateSections(host,page,urls);
+        templateMotion.current?.();
+        templateMotion.current = mountTemplateMotion(host,page,!editor && g.motion.enabled && !reduced);
+      }
     } catch (error) {
       console.error("SHOWSET interactive page failed; restoring static content", error);
       host.innerHTML = serverMarkup;
@@ -182,6 +191,8 @@ function TemplateSiteLayout({
     if (y > 0) scrollTo({ top: y, behavior: "instant" });
     return () => {
       host.removeEventListener("click", choose, true);
+      templateMotion.current?.();
+      templateMotion.current=null;
       dispose?.();
       engine.current=null;
     };
@@ -192,8 +203,14 @@ function TemplateSiteLayout({
     const context=latest.current;
     patchConcept(host, host.dataset.conceptRoute || keyForRoute(page.route) || "home", {catalog:{...catalog,[page.slug]:page},g,editor});
     engine.current.refresh(optionsFor(context));
+    templateMotion.current?.();
+    templateMotion.current=null;
+    if(page.builder?.mode !== "custom" && page.builder?.roots.length){
+      syncTemplateSections(host,page,urls);
+      templateMotion.current=mountTemplateMotion(host,page,!editor && g.motion.enabled && !reduced);
+    }
     rendered.current=context;
-  }, [page,g,catalog,editor,reduced]);
+  }, [page,g,catalog,editor,reduced,urls]);
   useEffect(() => {
     root.current
       ?.querySelectorAll("[data-section]")
