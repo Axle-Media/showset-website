@@ -66,7 +66,7 @@ create policy "Publishers record immutable releases" on public.showset_studio_re
 -- the REST insert endpoint directly rather than our approval UI.
 create or replace function public.showset_studio_verify_release()
 returns trigger language plpgsql security invoker
-set search_path = public, pg_temp as $
+set search_path = public, pg_temp as $$
 declare
   stored_revision bigint;
   stored_document jsonb;
@@ -80,7 +80,7 @@ begin
   end if;
   return new;
 end;
-$;
+$$;
 revoke all on function public.showset_studio_verify_release() from public,anon;
 drop trigger if exists showset_studio_release_source on public.showset_studio_releases;
 create trigger showset_studio_release_source

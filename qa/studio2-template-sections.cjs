@@ -85,7 +85,15 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001";
   await frame.locator(".s2-template-extensions .s2-node-heading")
     .filter({hasText:"The next event idea."}).waitFor();
   await choose("/work/made-to-be-remembered/");
-  assert.equal(await frame.locator(".s2-template-extensions").count(),0);
+  // Canvas messages are asynchronous: assert after the real case view is
+  // mounted, not while the previous service view is still transitioning.
+  await frame.locator(".case-experience").waitFor();
+  await p.waitForFunction(()=>{
+    const doc=document.querySelector("iframe")?.contentDocument;
+    return doc?.querySelector(".case-experience") &&
+      !doc?.querySelector(".view[data-view='service'].is-current") &&
+      !doc?.querySelector(".case-experience .s2-template-extensions");
+  });
   await p.getByRole("button",{name:"+ Add editable section",exact:true}).click();
   await frame.locator(".case-experience .s2-template-extensions > section").waitFor();
   assert.equal(await frame.locator(".s2-template-extensions").evaluate(
