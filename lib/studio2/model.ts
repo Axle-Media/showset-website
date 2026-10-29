@@ -580,8 +580,8 @@ export function assertWorkspace(value: unknown): asserts value is Workspace {
       scan(p.builder.roots, 0);
       if (p.builder.nativeReplacementNodes) {
         for (const [source,id] of Object.entries(p.builder.nativeReplacementNodes)) {
-          if (!/^[\\w-]{1,100}$/.test(source) ||
-              !/^[\\w-]{1,100}$/.test(id) ||
+          if (!/^[\w-]{1,100}$/.test(source) ||
+              !/^[\w-]{1,100}$/.test(id) ||
               !p.sections.some(block=>block.id===source) ||
               !p.builder.roots.some(root=>root.id===id && root.kind==="section"))
             throw Error("Invalid native section replacement mapping.");
