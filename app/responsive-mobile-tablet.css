@@ -331,7 +331,7 @@
   .concept-12-root .studio-rebuilt .studio-hero-scene > p{
     max-width:min(560px,100%);margin-inline:auto;
     text-align:center!important;
-    font-size:clamp(14px,3.75vw,17px)!important;
+    font-size:clamp(16.5px,4.35vw,17px)!important;
     line-height:1.6!important;
   }
   .concept-12-root .studio-rebuilt :is(
