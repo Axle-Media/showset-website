@@ -1,4 +1,5 @@
 import morphdom from "morphdom";
+import { replaceUpRightArrows } from "./up-right-arrows";
 import markup from "./markup.json";
 import services from "./data.json";
 import cases from "./caseStudies.json";
@@ -26,6 +27,8 @@ export function patchConcept(host: HTMLElement, key: string, context: Parameters
     bindConcept(target,"home",context);
     if(key!=="home") bindConcept(target,key,context);
     selectCurrentView(target,key);
+    // Keep the Studio patch tree identical to its SVG-based live DOM.
+    replaceUpRightArrows(target);
     morphdom(host,target,{
       childrenOnly:true,
       onBeforeElUpdated(from,to) {
