@@ -35,7 +35,28 @@ async function ready(page,route){
   check('Dropdown services use legible 17px labels rather than inherited 9px spans',
    serviceType.length===4&&serviceType.every(v=>v.size==='17px'&&parseInt(v.weight)>=600),
    serviceType);
+  const inactiveColours=await dropdownLinks.evaluateAll(nodes=>nodes.map(el=>({
+    label:getComputedStyle(el.querySelector('span:first-child')).color,
+    arrow:getComputedStyle(el.querySelector('span:last-child')).color,
+    link:getComputedStyle(el).color
+  })));
+  check('Inactive dropdown services have SHOWSET white labels and arrows',
+   inactiveColours.length===4&&inactiveColours.every(x=>x.label==='rgb(250, 249, 253)'&&
+     x.arrow==='rgb(250, 249, 253)'&&x.link==='rgb(250, 249, 253)'),
+   inactiveColours);
   await trigger.hover();
+  await dropdownLinks.first().hover();
+  const hoverColours=await dropdownLinks.first().evaluate(el=>({
+    label:getComputedStyle(el.querySelector('span:first-child')).color,
+    arrow:getComputedStyle(el.querySelector('span:last-child')).color,
+    background:getComputedStyle(el).backgroundColor
+  }));
+  check('Inactive hovered service remains white with subtle background feedback',
+   hoverColours.label==='rgb(250, 249, 253)'&&
+   hoverColours.arrow==='rgb(250, 249, 253)'&&
+   hoverColours.background!=='rgba(0, 0, 0, 0)',
+   hoverColours);
+
   check('Hover opens dropdown and updates its accessible expanded state',
    await trigger.getAttribute('aria-expanded')==='true'&&await dropdownLinks.first().isVisible());
   await page.mouse.move(1,1);
@@ -59,6 +80,17 @@ async function ready(page,route){
    serviceActive.parent&&serviceActive.parentColour==='rgb(18, 186, 175)'&&
    serviceActive.selectedHref==='/creative-design/'&&serviceActive.selectedColour==='rgb(18, 186, 175)',
    serviceActive);
+  const selectedColours=await page.locator('#nav-panel .nav-service-link').evaluateAll(nodes=>nodes.map(el=>({
+    active:el.getAttribute('aria-current')==='page',
+    label:getComputedStyle(el.querySelector('span:first-child')).color,
+    arrow:getComputedStyle(el.querySelector('span:last-child')).color
+  })));
+  check('Only current dropdown service uses teal label and arrow',
+   selectedColours.length===4&&selectedColours.filter(x=>x.active).length===1&&
+   selectedColours.every(x=>x.label===(x.active?'rgb(18, 186, 175)':'rgb(250, 249, 253)') &&
+      x.arrow===(x.active?'rgb(18, 186, 175)':'rgb(250, 249, 253)')),
+   selectedColours);
+
   for(const [route,selector] of [['/our-studio/','a[href="/our-studio/"]'],['/our-work/','a[href="/our-work/"]']]){
    await ready(page,route);
    const selected=page.locator('.desktop-navigation > '+selector);
