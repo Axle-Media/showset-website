@@ -83,15 +83,20 @@ async function ready(page,route){
   await page.setViewportSize({width:390,height:844});
   await ready(page,'/events-experiences/');
   await page.locator('#mobile-toggle').click();
-  const summary=page.locator('.mobile-services summary');
-  check('Mobile active service expands What We Do and highlights parent',
-   await page.locator('.mobile-services').getAttribute('open')!==null&&
-   await summary.evaluate(el=>getComputedStyle(el).color)==='rgb(18, 186, 175)');
-  check('Four services are accessible in mobile dropdown',
-   JSON.stringify(await page.locator('.mobile-service-links a').evaluateAll(nodes=>nodes.map(x=>new URL(x.href).pathname)))===JSON.stringify(servicePaths));
-  await page.locator('.mobile-service-links a[href="/digital-marketing/"]').click();
+  const mobileLinks=page.locator('#mobile-panel nav > a.mobile-nav-link');
+  const allMobilePaths=await mobileLinks.evaluateAll(nodes=>nodes.map(x=>new URL(x.href).pathname));
+  check('Mobile lists Home, all four services, Studio and Work directly',
+   JSON.stringify(allMobilePaths)===JSON.stringify(['/',...servicePaths,'/our-studio/','/our-work/']) &&
+   await page.locator('#mobile-panel details,#mobile-panel summary').count()===0,
+   allMobilePaths);
+  const activeMobile=page.locator('#mobile-panel nav > a[href="/events-experiences/"]');
+  check('Mobile current service link remains teal with aria-current',
+   await activeMobile.getAttribute('aria-current')==='page' &&
+   await activeMobile.evaluate(el=>getComputedStyle(el).color)==='rgb(18, 186, 175)');
+  await page.locator('#mobile-panel nav > a[href="/digital-marketing/"]').click();
   await page.waitForURL(url=>url.pathname==='/digital-marketing/');
-  check('Mobile service dropdown navigates correctly',new URL(page.url()).pathname==='/digital-marketing/');
+  check('Mobile direct service link navigates correctly',
+   new URL(page.url()).pathname==='/digital-marketing/');
   for(const route of ['/privacy-policy/','/terms-and-conditions/']){
    await page.setViewportSize({width:1440,height:900});
    await ready(page,route);
@@ -111,7 +116,6 @@ async function ready(page,route){
   await page.setViewportSize({width:390,height:844});
   await ready(page,'/');
   await page.locator('#mobile-toggle').click();
-  await page.locator('.mobile-services summary').click();
   await page.screenshot({path:'qa-results/header-mobile.png',animations:'disabled'});
   check('No browser errors',errors.length===0,errors);
  }finally{
