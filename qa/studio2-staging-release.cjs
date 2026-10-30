@@ -34,6 +34,11 @@ function signedBackup(revision,text){
 }
 const prepare="scripts/prepare-studio-release.mjs";
 const verify="scripts/verify-studio-release.mjs";
+const scope="scripts/verify-studio-release-scope.mjs";
+const withEnv=(script,args,env,cwd=process.cwd())=>execFileSync(
+  process.execPath,[path.resolve(script),...args],{
+    encoding:"utf8",stdio:"pipe",cwd,env:{...process.env,...env}
+  });
 const save=(name,doc)=>{
   const file=path.join(root,name);
   fs.writeFileSync(file,JSON.stringify(doc));
@@ -52,6 +57,14 @@ try{
     "--release-id","42","--expect-revision","6"]);
   assert.ok(!fs.existsSync(dest),"Wrong revision may not write source");
   fail(prepare,[backup,"--apply","--release-id","42","--expect-revision","7"]);
+  // Simulate an isolated release checkout and its original base commit.
+  fs.mkdirSync(dest,{recursive:true});
+  const git=(...args)=>execFileSync("git",args,{cwd:dest,encoding:"utf8"});
+  git("init","-q");
+  git("config","user.name","Studio release QA");
+  git("config","user.email","qa@showset.test");
+  git("commit","--allow-empty","-m","baseline");
+  const base=git("rev-parse","HEAD").trim();
   assert.match(run(prepare,[backup,"--apply",...flags]),/no deployment performed/);
   const manifest=JSON.parse(fs.readFileSync(
     path.join(dest,".showset-staging/manifest.json"),"utf8"));
@@ -60,6 +73,16 @@ try{
   assert.equal(manifest.backupChecksum,first.checksum);
   assert.equal(manifest.files.length,3);
   assert.match(run(verify,["--target",dest]),/PASS private SHOWSET staging/);
+  assert.match(withEnv(verify,["--target",dest],{
+    SHOWSET_RELEASE_BRANCH:"release/studio-r42-rev7",
+  }),/PASS/);
+  assert.throws(()=>withEnv(verify,["--target",dest],{
+    SHOWSET_RELEASE_BRANCH:"release/studio-r43-rev7",
+  }),/Command failed/);
+  git("add","-A");
+  git("commit","-m","Reviewed source candidate");
+  assert.match(withEnv(scope,[],{SHOWSET_RELEASE_BASE_SHA:base},dest),
+    /PASS Studio release PR/);
 
   const built=(file,text)=>{
     const target=path.join(dest,"out",file);
@@ -90,6 +113,15 @@ try{
   fail(verify,["--target",dest]);
   fs.writeFileSync(originalPath,original);
   assert.match(run(verify,["--target",dest]),/PASS/);
+  // Even if the asset manifest is intact, application-code changes must
+  // invalidate the content-only release branch.
+  fs.mkdirSync(path.join(dest,"lib"),{recursive:true});
+  fs.writeFileSync(path.join(dest,"lib/unreviewed.ts"),"export const hidden = true;\n");
+  git("add","-A");
+  git("commit","-m","Unreviewed code injection");
+  assert.throws(()=>withEnv(scope,[],{
+    SHOWSET_RELEASE_BASE_SHA:base
+  },dest),/Command failed/);
 
   // A rollback is a *new* reviewed checkpoint, never an overwrite of history.
   const rollback=save("rollback.json",signedBackup(8,"Earlier approved content"));
