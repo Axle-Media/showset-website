@@ -71,7 +71,12 @@ async function ready(page,route){
   check('Keyboard focus opens dropdown',await trigger.getAttribute('aria-expanded')==='true');
   await dropdownLinks.nth(1).click();
   await page.waitForURL(url=>url.pathname==='/creative-design/');
-  await page.waitForSelector('[data-concept-ready="true"]');
+  // History is updated before the route curtain completes. Wait for the
+  // renderer to rebind the active links, not only for the address-bar change.
+  await page.waitForFunction(() =>
+    document.querySelector('.concept-12-root')?.dataset.conceptRoute === 'creative' &&
+    document.querySelector('#nav-panel a[aria-current="page"]')?.getAttribute('href') === '/creative-design/'
+  );
   const serviceActive=await page.evaluate(()=>{
    const parent=document.querySelector('#services-button'),selected=document.querySelector('#nav-panel .nav-service-link[aria-current="page"]');
    return {parent:parent?.classList.contains('active'),parentColour:parent&&getComputedStyle(parent).color,
