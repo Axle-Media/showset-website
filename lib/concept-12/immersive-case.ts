@@ -36,7 +36,7 @@ export function renderImmersiveCase(host:HTMLElement,page:PageData,catalog:Recor
  }));
  const chapters=[s.brief,s.intention,s.approach];
  const creditAttrs=(p:CaseExperience["gallery"][number])=>' data-photo-credit="'+esc(p.credit||'')+'" data-photo-credit-href="'+esc(safeHref(p.creditHref))+'" data-photo-license="'+esc(p.license||'')+'" data-photo-license-href="'+esc(safeHref(p.licenseHref))+'"';
- const galleryMarkup=gallery.length?'<section class="case-photo-gallery section-gutter" aria-label="Event photography">'+
+ const galleryMarkup=gallery.length?'<section class="case-photo-gallery section-gutter" aria-label="Project imagery">'+
    '<div class="case-gallery-heading-row">'+heading("Explore the moments.")+
    '</div>'+
    '<div class="case-gallery-viewport" data-case-gallery role="group" aria-roledescription="carousel" aria-label="Photographs. Drag, swipe or use arrow keys" tabindex="0">'+
@@ -47,7 +47,7 @@ export function renderImmersiveCase(host:HTMLElement,page:PageData,catalog:Recor
  view.innerHTML='<div class="case-experience" data-case-experience>'+
   '<section class="case-scroll-opening" data-case-opening><div class="case-scroll-frame"><div class="case-scroll-track" data-case-track>'+
   '<article class="case-opening-scene case-opening-first">'+img(s.openingImage,s.openingTitle,true)+'<div class="case-scene-shade"></div><div class="case-scene-copy">'+heading(s.openingTitle,"h1",true)+'<p>'+esc(s.openingBody)+'</p></div></article>'+
-  '<article class="case-opening-scene case-opening-second">'+img(s.secondImage,"Event story")+'<div class="case-scene-shade"></div><div class="case-scene-copy">'+heading(s.secondTitle||"This is how we made it happen.","h2",true)+'<p>'+esc(s.secondBody)+'</p></div></article>'+
+  '<article class="case-opening-scene case-opening-second">'+img(s.secondImage,page.title+" project story")+'<div class="case-scene-shade"></div><div class="case-scene-copy">'+heading(s.secondTitle||"This is how we made it happen.","h2",true)+'<p>'+esc(s.secondBody)+'</p></div></article>'+
   '</div></div></section>'+
   '<section class="case-scroll-narrative" data-case-narrative><div class="case-narrative-stage"><div class="case-chapter-stack">'+chapters.map((c,i)=>chapter(c,i)).join("")+storyVisual(chapters)+'</div></div></section>'+
   galleryMarkup+

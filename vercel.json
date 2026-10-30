@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/work/behind-every-moment", "destination": "/work/provault/", "permanent": true },
+    { "source": "/work/behind-every-moment/", "destination": "/work/provault/", "permanent": true }
+  ]
+}

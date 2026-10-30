@@ -4,7 +4,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const photos=require('../lib/concept-12/image-replacements.json');
 const base=process.env.SHOWSET_BASE_URL||'http://localhost:3001';
-const routes=[['/',1,10],['/events-experiences/',11,14],['/creative-design/',15,18],['/digital-marketing/',19,22],['/content-production/',23,26],['/our-studio/',27,30],['/our-work/',31,34],['/work/the-amaze-ball/',35,47],['/work/made-to-be-remembered/',48,57],['/work/behind-every-moment/',58,67]];
+const routes=[['/',1,10],['/events-experiences/',11,14],['/creative-design/',15,18],['/digital-marketing/',19,22],['/content-production/',23,26],['/our-studio/',27,30],['/our-work/',31,34],['/work/the-amaze-ball/',35,47],['/work/made-to-be-remembered/',48,57],['/work/provault/',58,67]];
 (async()=>{
  const browser=await chromium.launch({channel:process.env.SHOWSET_PLAYWRIGHT_CHANNEL||'chrome',headless:true});
  const results=[],errors=[];
@@ -20,10 +20,11 @@ const routes=[['/',1,10],['/events-experiences/',11,14],['/creative-design/',15,
      return images.map(i=>({id:Number(i.dataset.imagePlacement),src:i.getAttribute('src'),current:i.currentSrc,loaded:i.complete&&i.naturalWidth>0,mobile:i.parentElement.querySelector('source')?.getAttribute('srcset')}));
     });
     const ids=[...new Set(actual.map(i=>i.id))].sort((a,b)=>a-b);
-    const replaced={5:201,6:101,32:201,33:101,46:101,66:201,67:101};
+    const replaced={5:201,6:101,7:224,32:201,33:101,34:224,46:101,66:201,67:101};
     const expected=route==='/work/made-to-be-remembered/'
-     ? [56,...Array.from({length:11},(_,i)=>101+i),201]
-     : route==='/work/the-amaze-ball/' ? [47,101,...Array.from({length:20},(_,i)=>201+i)]
+     ? [...Array.from({length:11},(_,i)=>101+i),201,224]
+     : route==='/work/the-amaze-ball/' ? [101,...Array.from({length:20},(_,i)=>201+i),224]
+     : route==='/work/provault/' ? [101,201,...Array.from({length:8},(_,i)=>221+i)]
      : Array.from({length:last-first+1},(_,i)=>replaced[first+i]||first+i).sort((a,b)=>a-b);
     assert.deepEqual(ids,expected,`${route} at ${width}: all current placements`);
     assert(actual.every(i=>i.loaded),`${route}: every image decodes`);

@@ -1,0 +1,2699 @@
+{
+  "home": {
+    "slug": "home",
+    "route": "/",
+    "title": "SHOWSET | Events & Creative Agency",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "hero",
+        "headline": "Great ideas",
+        "accent": "move people.",
+        "body": "And they should go places. Into rooms. Across screens. Onto stages. Into the hands and heads of real people. We bring events and creative work together to make sure they do.",
+        "image": "/media/showset/01-home-hero.webp",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "See what we do",
+        "buttonHref": "#services",
+        "secondaryLabel": "Get to know us",
+        "secondaryHref": "/our-studio/",
+        "items": [
+          {
+            "id": "hero-second-scene",
+            "title": "An idea is a start.",
+            "accent": "We bring it to life.",
+            "description": "We take the good part of “what if?” and turn it into something you can actually experience. From the first sketch to the final detail, we connect the ideas, people and production that bring it to life.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "Too good to leave",
+        "accent": "on the drawing board.",
+        "body": "You know that feeling when an idea clicks and suddenly you can see the whole thing? We live for that part. But we love what happens next even more.\n\nThe planning. The pixels. The people. The power cables. The tiny decisions nobody notices until they are done right. We connect creative thinking with the practical craft it takes to bring a concept into the world. So the work does more than look impressive. It feels right, behaves right and makes people want to be part of it.",
+        "image": "",
+        "pattern": true,
+        "reveal": false,
+        "buttonLabel": "Meet the people behind it",
+        "buttonHref": "/our-studio/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "story",
+        "headline": "",
+        "accent": "",
+        "body": "",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "item-0",
+            "title": "First, we",
+            "accent": "imagine it.",
+            "description": "We start by getting curious. About the people in the room, the story worth telling and the thing this idea really needs to do. We ask awkwardly good questions, challenge the obvious and connect unlikely dots until we find a direction everyone can believe in.",
+            "image": "/media/showset/02-imagine-sketches.webp",
+            "href": ""
+          },
+          {
+            "id": "item-1",
+            "title": "Then, we",
+            "accent": "make it happen.",
+            "description": "Then we get our hands into it. The sketches become identities, layouts, websites, run sheets and real-world production plans. Creative thinking meets the people who build things, and we sweat the tiny details so the big picture feels effortless.",
+            "image": "/media/showset/03-installation-crew.webp",
+            "href": ""
+          },
+          {
+            "id": "item-2",
+            "title": "Finally, we",
+            "accent": "move people.",
+            "description": "Then comes the part you can feel. The doors open, the site goes live, the lights come up and people step into the idea. All the planning disappears into the experience, leaving the atmosphere, the connection and the moments people talk about afterwards.",
+            "image": "/media/showset/04-audience-moment.webp",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-5",
+        "type": "work",
+        "headline": "The thinking",
+        "accent": "behind the thing.",
+        "body": "A little more than a final image. We like to show what makes an idea work: the intention, the atmosphere, the choices and the craft. Here are a few creative explorations that take you behind the scenes of how we think.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "the-amaze-ball-0",
+            "title": "The Amaze-Ball",
+            "accent": "",
+            "description": "Padel, purpose and a whole lot of production.",
+            "image": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2.webp",
+            "href": "/work/the-amaze-ball/"
+          },
+          {
+            "id": "made-to-be-remembered-1",
+            "title": "Elmboog Organiese Boerdery",
+            "accent": "Brand identity",
+            "description": "A connected identity for Elmboog Organiese Boerdery, brought to life through a brand guide, company profile, stationery and presentation design.",
+            "image": "/media/elmboog/elmboog-01-identity-system-hero.webp",
+            "href": "/work/made-to-be-remembered/"
+          },
+          {
+            "id": "behind-every-moment-2",
+            "title": "Behind every moment",
+            "accent": "",
+            "description": "The quiet precision that makes a big production feel effortless.",
+            "image": "/media/showset/07-production-project-hero.webp",
+            "href": "/work/behind-every-moment/"
+          }
+        ],
+        "speed": 4.7,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-4",
+        "type": "services",
+        "headline": "Different disciplines.",
+        "accent": "One connected team.",
+        "body": "A launch might need an identity. An event might need a digital home. A campaign might need a film, a space or a piece of technology to make it work. We move between all four worlds so the idea stays in one piece.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "events---experiences-0",
+            "title": "Events & experiences",
+            "accent": "",
+            "description": "We make room for the unexpected, then plan every last detail around it.",
+            "image": "/media/showset/08-events-guests.webp",
+            "href": "/events-experiences/"
+          },
+          {
+            "id": "creative---design-1",
+            "title": "Creative & design",
+            "accent": "",
+            "description": "The kind of thinking that gives a brand a point of view, not just a pretty face.",
+            "image": "/media/showset/09-creative-materials.webp",
+            "href": "/creative-design/"
+          },
+          {
+            "id": "digital---marketing-2",
+            "title": "Digital & marketing",
+            "accent": "",
+            "description": "Websites, campaigns and technology made for people, not just platforms.",
+            "image": "/media/showset/digital-marketing-service-v2.webp",
+            "href": "/digital-marketing/"
+          },
+          {
+            "id": "content---production-3",
+            "title": "Content & production",
+            "accent": "",
+            "description": "From the first storyboard to the final sound check, we bring the moving parts together.",
+            "image": "/media/showset/10-content-camera-operator.webp",
+            "href": "/content-production/"
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-6",
+        "type": "dot",
+        "headline": "Serious about the <em>details.</em><br>Wild about the <em>possibilities.</em>",
+        "accent": "",
+        "body": "The small stuff is never small when you are making something big.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "cta",
+        "headline": "Got a beautifully",
+        "accent": "complicated idea?",
+        "body": "The brief can be polished, half-written or still living entirely in your head. Tell us what you are trying to make happen. We know where to start.",
+        "image": "",
+        "pattern": true,
+        "reveal": false,
+        "buttonLabel": "Let’s make a plan",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "SHOWSET | Events & Creative Agency",
+      "description": "We bring events and creative work together to turn bold ideas into memorable experiences across rooms, screens and stages."
+    }
+  },
+  "events-experiences": {
+    "slug": "events-experiences",
+    "route": "/events-experiences/",
+    "title": "Events & Experiences",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "From a spark",
+        "accent": "to a room alive.",
+        "body": "The room. The crowd. The goosebumps. The perfectly timed reveal.\n\nWe dream up, design and deliver events that people remember. From corporate conferences and brand launches to festivals, activations and private celebrations, we bring the creative thinking, people and production together to make every moment count.",
+        "image": "/media/showset/11-events-hero.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Plan something brilliant",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "The guest list is only the beginning.",
+        "accent": "",
+        "body": "An event starts long before anyone walks through the door. It starts with a question. What do we want people to feel, experience and remember?\n\nThat's where we come in. We take an idea and build an entire experience around it. The concept, the space, the atmosphere, the people and the details that make something feel extraordinary.\n\nFrom finding the right venue and developing the creative direction to designing the environment, coordinating suppliers and managing production, we connect the moving parts so everything feels like one complete experience.\n\nWe don't believe in doing things just because they've always been done that way. We find the right way to make every event unmistakably its own.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "event-type-corporate-events",
+            "title": "Corporate events & conferences",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-type-brand-activations",
+            "title": "Brand activations",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-type-product-launches",
+            "title": "Product launches",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-type-festivals",
+            "title": "Festivals & public events",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-type-galas",
+            "title": "Gala dinners & celebrations",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-type-immersive",
+            "title": "Immersive brand experiences",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "service-story",
+        "type": "story",
+        "headline": "A thought. A world. A feeling.",
+        "accent": "",
+        "body": "Every unforgettable experience has a story behind it. Here's how we turn the thinking into something you can actually step into.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "service-scene-1",
+            "title": "First, the possibility.",
+            "description": "Before the floor plans, the lighting rigs or the guest lists, there has to be an idea worth bringing to life. We explore the brief, challenge the obvious and find the creative direction that gives the entire experience its purpose and personality.",
+            "image": "/media/showset/12-event-concept.webp",
+            "href": "",
+            "category": "Concept"
+          },
+          {
+            "id": "service-scene-2",
+            "title": "Then, the world.",
+            "description": "This is where ideas become spaces. We bring layouts, 3D renders, staging, sound, lighting, branding and environmental design together to create a world that looks, feels and functions as one.",
+            "image": "/media/showset/13-event-build.webp",
+            "href": "",
+            "category": "Environment"
+          },
+          {
+            "id": "service-scene-3",
+            "title": "Finally, the feeling.",
+            "description": "The doors open. The lights change. The room comes alive. Behind the scenes, we coordinate the cues, teams and details that keep everything moving. Out front, people get to enjoy the experience without seeing the work that made it happen.",
+            "image": "/media/showset/14-guest-reaction.webp",
+            "href": "",
+            "category": "Experience"
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-6",
+        "type": "accordion",
+        "headline": "Everything we bring to the table.",
+        "accent": "",
+        "body": "Big ideas are only the beginning. We bring the creative, practical and technical capabilities together to take an event from its first concept to its final moment.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "event-concepts---creative-di-1",
+            "title": "Event concepts & creative direction",
+            "accent": "",
+            "description": "We shape the central idea, guest experience and creative world that makes the event unmistakably itself. Everything else has something strong to build on.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "graphic-design---event-brand-2",
+            "title": "Event branding & graphic design",
+            "accent": "",
+            "description": "Invitations, stage visuals, signage, credentials and everything in between. We make the whole event look and feel as though it belongs together.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-layout---3d-renders-3",
+            "title": "Event layouts, floor plans & 3D renders",
+            "accent": "",
+            "description": "We help translate ambitious ideas into practical spaces, layouts and visual previews, so decisions can be made before the build begins.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-planning---management-4",
+            "title": "Event planning & management",
+            "accent": "",
+            "description": "We give the experience a plan, a sequence and a clear line of responsibility, keeping the moving parts aligned from briefing to breakdown.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "venue-sourcing-5",
+            "title": "Venue sourcing & coordination",
+            "accent": "",
+            "description": "We help find the setting that suits the brief, the audience and the practical realities. The right room changes what is possible.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "d-cor---styling-6",
+            "title": "Décor, styling & floral design",
+            "accent": "",
+            "description": "We set the tone with material, colour, furniture, detail and atmosphere, creating a space that looks considered from every angle.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "furniture---equipment-hire-8",
+            "title": "Furniture & equipment hire",
+            "accent": "",
+            "description": "We source and coordinate the pieces that make the space function and feel right, from seating and tables to the less glamorous essentials.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "stage-builds---custom-instal-9",
+            "title": "Stage builds & custom installations",
+            "accent": "",
+            "description": "Sometimes the idea needs its own structure. We plan and coordinate stages, scenic elements and custom features that give it physical presence.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "branding--signage---printing-10",
+            "title": "Signage, printing & branded environments",
+            "accent": "",
+            "description": "From wayfinding and entry moments to step-and-repeat walls and printed details, we make sure the brand is present in the right ways.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "catering---bar-services-11",
+            "title": "Catering & bar service coordination",
+            "accent": "",
+            "description": "Food and drinks are part of the guest experience. We coordinate options that fit the format, the atmosphere and the practical brief.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "entertainment--djs---mcs-12",
+            "title": "Entertainment, DJs & MCs",
+            "accent": "",
+            "description": "We help shape the energy of the room through the right performers, presenters and entertainment for the audience and occasion.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "guest-management---rsvp-coor-13",
+            "title": "Guest management & RSVP coordination",
+            "accent": "",
+            "description": "From invitations and responses to arrival flow, we help make the guest journey feel personal, clear and well considered.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "event-staffing---hospitality-14",
+            "title": "Event staffing & hospitality",
+            "accent": "",
+            "description": "The best welcome comes from people who know what they are doing. We plan staffing needs and hospitality touchpoints around the experience.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "gifting---branded-merchandis-15",
+            "title": "Gifting & branded merchandise",
+            "accent": "",
+            "description": "We create or coordinate thoughtful takeaways that people might actually want to keep. Useful, surprising and on brand.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "transport---logistics-16",
+            "title": "Transport, logistics & supplier management",
+            "accent": "",
+            "description": "We think through who and what needs to be where, when and how. Timing, access, movement and deliveries matter as much as the main event.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "brand-activations---interact-17",
+            "title": "Brand activations & interactive experiences",
+            "accent": "",
+            "description": "We design reasons for people to participate, not just observe. A strong activation makes the brand part of a real interaction.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "lighting-sound-av-production-20261028",
+            "title": "Lighting, sound & audiovisual production",
+            "accent": "",
+            "description": "From technical planning to stage lighting, sound and audiovisual delivery, we coordinate the production systems behind the experience.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "photography-videography-20261028",
+            "title": "Photography & videography",
+            "accent": "",
+            "description": "We plan and coordinate event coverage that captures the atmosphere, the people and the moments worth sharing.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "visual",
+        "headline": "Let's make a room",
+        "accent": "worth remembering.",
+        "body": "Got an idea worth getting excited about?\n\nWhether you've got a fully developed brief or just the beginning of something brilliant, we'd love to hear it. Bring us the possibilities. We'll help work out the details.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "Bring us your brief",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Events & Experiences",
+      "description": "We bring bold ideas and meticulous planning together to turn gatherings, corporate events and brand activations into memorable experiences."
+    }
+  },
+  "creative-design": {
+    "slug": "creative-design",
+    "route": "/creative-design/",
+    "title": "Creative & Design",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "Ideas made",
+        "accent": "tangible.",
+        "body": "We give ideas a point of view, then bring them into the world. From brand identities and campaigns to packaging, print and the spaces people experience, we make design that looks distinctive and works wherever it needs to live.",
+        "image": "/media/showset/15-creative-hero.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Make something distinctive",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "Pretty is easy.",
+        "accent": "Personality takes thinking.",
+        "body": "A logo is a starting point. A colour palette is not a personality. And looking good is only half the job.\n\nWe get to know what makes a brand tick, who it needs to connect with and what it should stand for. Then we translate that thinking into a visual language with enough character to be recognised and enough flexibility to work in the real world.\n\nFrom the first sketch to the final print file, we connect strategy, art direction, design and production. A business card, a billboard, a presentation and an entire environment should all feel like they come from the same imagination.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "service-story",
+        "type": "story",
+        "headline": "One idea.",
+        "accent": "A world of possibilities.",
+        "body": "Good design is never one isolated graphic. Explore how clear thinking becomes a distinctive identity, then takes on a life across everything people see, hold and step into.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "service-scene-1",
+            "title": "A point of view.",
+            "description": "Before we choose a colour or draw a mark, we find the idea worth building on. We ask better questions, challenge the obvious and give the creative work a direction that makes sense.",
+            "image": "/media/showset/16-design-exploration.webp",
+            "href": "",
+            "category": "Thinking"
+          },
+          {
+            "id": "service-scene-2",
+            "title": "A visual language.",
+            "description": "Then the idea gets its own visual DNA. Typography, colour, form, imagery and composition come together as a recognisable system, with rules that keep it consistent and room for it to have personality.",
+            "image": "/media/showset/17-print-finish.webp",
+            "href": "",
+            "category": "Identity"
+          },
+          {
+            "id": "service-scene-3",
+            "title": "A life beyond the logo.",
+            "description": "This is where the design proves itself. We bring the same thinking into packaging, print, campaigns, digital touchpoints and physical spaces so each encounter feels unmistakably connected.",
+            "image": "/media/showset/18-brand-applications.webp",
+            "href": "",
+            "category": "Application"
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-6",
+        "type": "accordion",
+        "headline": "What we can put",
+        "accent": "our minds to.",
+        "body": "From the thinking behind a brand to the smallest production detail, we bring everything together. Choose the parts you need or give us the whole creative challenge.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "brand-strategy---identity-0",
+            "title": "Brand strategy & visual identity",
+            "accent": "",
+            "description": "We find the character behind the business and give it a clear voice, visual identity and rules worth following. The goal is not just recognition, but a brand that knows how to show up.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "marketing-strategy---creativ-4",
+            "title": "Creative strategy & brand positioning",
+            "accent": "",
+            "description": "We challenge the brief, find the sharpest opportunity and put a direction behind the work. Good creative decisions are easier when the thinking is clear.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-naming-20261028",
+            "title": "Naming & brand personality",
+            "accent": "",
+            "description": "Naming support, tone and verbal personality help the brand sound as distinctive as it looks.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-brand-guidelines-20261028",
+            "title": "Brand guidelines & design systems",
+            "accent": "",
+            "description": "We build usable rules and creative systems that keep the work recognisable as it grows.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "graphic-design---creative-pr-1",
+            "title": "Graphic design & creative production",
+            "accent": "",
+            "description": "Campaign assets, presentations, layouts, illustrations and everyday creative with the same care as the big launch. The idea deserves to look good at every size.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-campaign-art-direction-20261028",
+            "title": "Campaign concepts & art direction",
+            "accent": "",
+            "description": "One sharp idea, applied across the visual assets and formats that make a campaign land.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-presentations-20261028",
+            "title": "Presentations, pitch decks & proposals",
+            "accent": "",
+            "description": "We turn complicated stories and ambitious pitches into presentations people can follow.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-illustration-20261028",
+            "title": "Illustration & custom graphic artwork",
+            "accent": "",
+            "description": "Illustrations, iconography and bespoke graphic assets with their own character.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "packaging--print---retail-de-2",
+            "title": "Packaging, print & retail design",
+            "accent": "",
+            "description": "We give physical touchpoints their own personality, from packaging and print collateral to retail displays. Something people pick up can make as strong an impression as something they scroll past.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-print-collateral-20261028",
+            "title": "Brochures, catalogues & print collateral",
+            "accent": "",
+            "description": "Thoughtful printed pieces that make ideas tangible and useful.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-retail-pos-20261028",
+            "title": "Retail displays & point-of-sale artwork",
+            "accent": "",
+            "description": "Graphics and display systems that help brands show up with confidence in-store.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-production-artwork-20261028",
+            "title": "Print-ready artwork & production files",
+            "accent": "",
+            "description": "Practical artwork preparation that respects the details of print and fabrication.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "experiential---environmental-3",
+            "title": "Experiential & environmental design",
+            "accent": "",
+            "description": "We think about how people move through, interact with and remember a space. Physical design becomes part of the story, rather than just somewhere to place the logo.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-event-branding-20261028",
+            "title": "Event branding & signage",
+            "accent": "",
+            "description": "Visual identities and all the signs, backdrops and touchpoints that bring an event together.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-spatial-visuals-20261028",
+            "title": "Spatial concepts, layouts & 3D visualisation",
+            "accent": "",
+            "description": "Layouts, concepts and 3D previews that make a physical idea easier to picture and plan.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "creative-branded-installations-20261028",
+            "title": "Branded environments & installations",
+            "accent": "",
+            "description": "Visual worlds that move from screens and paper into real spaces.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "visual",
+        "headline": "Give your next idea",
+        "accent": "a point of view.",
+        "body": "Got an idea that deserves more than another template?\n\nWhether you need a new identity, a campaign with character or a design partner to make everything feel connected, we can take it from the first thought to the finished piece.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "Give the idea a look",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Creative & Design",
+      "description": "We build identities, design systems, packaging, print and creative experiences with a clear point of view and a recognisable personality."
+    }
+  },
+  "digital-marketing": {
+    "slug": "digital-marketing",
+    "route": "/digital-marketing/",
+    "title": "Digital & Marketing",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "Creativity that",
+        "accent": "travels further.",
+        "body": "The right idea can go a long way.\n\nWe bring websites, marketing, content and technology together to make brands more useful, more memorable and easier to connect with. Less noise for the sake of it. More things that actually work.",
+        "image": "/media/brand.webp",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "Build what's next",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "Clicks are nice.",
+        "accent": "Connection is better.",
+        "body": "Everyone wants attention. We'd rather give people a reason to care.\n\nWe connect creative thinking, marketing strategy, digital design and technology to make brands work better in the real world. The website people actually enjoy using. The campaign with something worth saying. The content that sounds like a person. The smarter solution that makes everyone's day a little easier.\n\nA good digital experience doesn't end with a launch. We can stay involved with content, campaigns, ongoing improvements and the practical support that keeps everything moving. Because being online isn't the achievement. Making something happen is.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "service-story",
+        "type": "story",
+        "headline": "The whole thing",
+        "accent": "should click.",
+        "body": "A website, an advert, a conversation and the systems behind them all work harder when they belong to one idea. Here's how we connect the moving parts without making the experience complicated.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "service-scene-1",
+            "title": "A place worth landing.",
+            "description": "Good digital experiences give people a clear way in and a reason to stay. We shape the structure, content and design so the next step always makes sense.",
+            "image": "/media/showset/19-responsive-website.webp",
+            "href": "",
+            "category": "Websites",
+            "accent": ""
+          },
+          {
+            "id": "service-scene-2",
+            "title": "An idea worth noticing.",
+            "description": "We build marketing around a clear message and a real audience, then create work that belongs on each channel without losing its personality.",
+            "image": "/media/showset/20-digital-campaign.webp",
+            "href": "",
+            "category": "Campaigns",
+            "accent": ""
+          },
+          {
+            "id": "service-scene-3",
+            "title": "A conversation worth continuing.",
+            "description": "From planning to production and publishing, we help brands show up consistently with content that sounds human and feels recognisable.",
+            "image": "/media/showset/21-social-content.webp",
+            "href": "",
+            "category": "Social",
+            "accent": ""
+          },
+          {
+            "id": "service-scene-4",
+            "title": "The clever bits behind it.",
+            "description": "Tools, websites, workflows and custom solutions should remove friction, not create it. We connect the practical technology to the people using it.",
+            "image": "/media/showset/22-digital-workflow.webp",
+            "href": "",
+            "category": "Technology",
+            "accent": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-6",
+        "type": "accordion",
+        "headline": "What we make",
+        "accent": "happen online.",
+        "body": "A little support or the whole digital picture. We bring creative, strategic and technical capabilities together, then make them work around what your business actually needs.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "websites---digital-experienc-0",
+            "title": "Websites & digital experiences",
+            "accent": "",
+            "description": "We plan and design websites and digital journeys that people understand and enjoy using. Useful structure, clear content and good design should all pull in the same direction.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-web-development-20261028",
+            "title": "Website design & development",
+            "accent": "",
+            "description": "From a clear architecture to a polished build, we create websites that work for real users.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-ux-ui-20261028",
+            "title": "UX, UI & digital journeys",
+            "accent": "",
+            "description": "We make digital journeys feel considered, understandable and easy to use.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-landing-pages-20261028",
+            "title": "Landing pages & online experiences",
+            "accent": "",
+            "description": "Focused web experiences designed around a useful outcome, not an endless scroll.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-marketing---advertis-1",
+            "title": "Digital marketing & advertising",
+            "accent": "",
+            "description": "We build campaigns around an idea, an audience and a clear objective. From creative to channel planning, every message should have a reason to exist.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-marketing-strategy-20261028",
+            "title": "Marketing strategy & campaign planning",
+            "accent": "",
+            "description": "We work out who needs to hear what, where and why, before making the creative.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-campaign-production-20261028",
+            "title": "Creative campaigns & advertising assets",
+            "accent": "",
+            "description": "Connected creative that can travel across platforms without losing the idea.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-performance-20261028",
+            "title": "Reporting, insights & optimisation",
+            "accent": "",
+            "description": "We look at what happened, learn from it and make the next move sharper.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "social-media---content-manag-2",
+            "title": "Social media & content management",
+            "accent": "",
+            "description": "We plan the conversation, create the content and keep the rhythm consistent. A recognisable brand voice is built one considered post at a time.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-social-planning-20261028",
+            "title": "Social strategy & content calendars",
+            "accent": "",
+            "description": "A clear rhythm for the right platforms, ideas, formats and moments.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-social-content-20261028",
+            "title": "Content creation & creative production",
+            "accent": "",
+            "description": "Distinctive content that feels like the brand behind it, not another template.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-social-community-20261028",
+            "title": "Social publishing & community support",
+            "accent": "",
+            "description": "Practical help keeping the conversation clear, consistent and human.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "software--technology---solut-3",
+            "title": "Software, technology & solutions",
+            "accent": "",
+            "description": "We look for the useful technical answer, whether that means a digital tool, tailored software, an integration or a smarter workflow. The best technology makes the hard part feel simple.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-automation-20261028",
+            "title": "Workflow automation & smarter processes",
+            "accent": "",
+            "description": "Less busywork, fewer disconnected steps and systems that earn their place.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "digital-integrations-20261028",
+            "title": "Digital tools, platforms & integrations",
+            "accent": "",
+            "description": "We connect useful platforms and tools around the work people actually do.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "ongoing-creative---marketing-4",
+            "title": "Ongoing creative & marketing partnerships",
+            "accent": "",
+            "description": "We become the creative support that keeps things moving. From fresh campaigns to day-to-day design and marketing needs, we build consistency without losing curiosity.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "visual",
+        "headline": "Let's make something",
+        "accent": "people connect with.",
+        "body": "Got an idea that needs to go further?\n\nWhether it's a website that needs a rethink, a campaign that needs direction or a smarter way of making everything work together, we'd love to hear what you're planning.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "Tell us what you're building",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Digital & Marketing",
+      "description": "We create websites, campaigns, digital experiences and useful technology that connect brands and people with purpose."
+    }
+  },
+  "content-production": {
+    "slug": "content-production",
+    "route": "/content-production/",
+    "title": "Content & Production",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "Every frame",
+        "accent": "has a purpose.",
+        "body": "Stories deserve more than a good-looking shot.\n\nWe bring ideas to life through film, photography, animation, live streaming and technical production. From a story worth telling to the very last cue, we make each detail count.",
+        "image": "/media/showset/23-production-hero.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Bring the story to life",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "The magic has",
+        "accent": "a call sheet.",
+        "body": "The final result might last thirty seconds, fill a screen or transform an entire room. What makes it memorable happens long before anyone presses record.\n\nWe bring together creative thinking, production planning and technical know-how to make every frame, sound and detail count. From finding the story and capturing the moment to editing, animating, broadcasting live and preparing the finished work, we connect the people and processes behind the scenes.\n\nSometimes the brief calls for a polished film. Sometimes it needs cameras, a live audience and a reliable stream reaching people somewhere else entirely. We think through the format, crew, equipment, schedules, platforms and final deliverables before the action starts. Because the best production doesn't draw attention to how complicated it was. It makes everything feel exactly as it should.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "service-story",
+        "type": "story",
+        "headline": "The anatomy",
+        "accent": "of a moment.",
+        "body": "Three stages. Hundreds of decisions. One finished experience. Explore how we take the story from the first sketch to the final frame, whether it's captured, animated or happening live.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "service-scene-1",
+            "title": "Find the story.",
+            "description": "We work out what the audience should see, hear and feel before the first shot. Creative direction, scripting, storyboards, shot lists, production plans and technical requirements turn an exciting idea into something ready to make.",
+            "image": "/media/showset/24-story-treatment.webp",
+            "href": "",
+            "category": "Pre-production",
+            "accent": ""
+          },
+          {
+            "id": "service-scene-2",
+            "title": "Make it happen.",
+            "description": "Cameras roll. Lights change. The crew, sound and technical elements work together. We capture the planned moments and the unexpected ones, keeping the creative direction intact whether it's a studio shoot, an event or a live broadcast.",
+            "image": "/media/showset/25-filming-scene.webp",
+            "href": "",
+            "category": "Production",
+            "accent": ""
+          },
+          {
+            "id": "service-scene-3",
+            "title": "Finish with purpose.",
+            "description": "We shape the edit, animation, graphics, colour and sound until every piece feels intentional. Then we deliver the right formats, captions, recordings, highlights and cutdowns for the screens and audiences that matter.",
+            "image": "/media/showset/26-colour-edit.webp",
+            "href": "",
+            "category": "Post-production",
+            "accent": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-6",
+        "type": "accordion",
+        "headline": "The craft behind",
+        "accent": "every frame.",
+        "body": "From one creative asset to a complete production, we connect the thinking, technical preparation and finishing work. Tell us the outcome you're aiming for and we'll bring the right disciplines together.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "production-concepts-20261028",
+            "title": "Creative concepts & production direction",
+            "description": "We shape the story, tone, format and visual approach before a camera or computer gets involved.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-scripting-20261028",
+            "title": "Scripts, treatments & storyboards",
+            "description": "Scripts, visual treatments and storyboards give the crew and client a clear picture of the finished idea.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-planning-20261028",
+            "title": "Production planning & coordination",
+            "description": "We plan schedules, locations, crew, equipment, call sheets and the practical details that keep a shoot moving.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-shoot-design-20261028",
+            "title": "Shot lists, locations & production design",
+            "description": "We plan what to capture and the settings, sets and details that help the story look and feel right.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "photography---videography-1",
+            "title": "Photography & videography",
+            "accent": "",
+            "description": "We capture the hero moments and the subtle details, with considered shooting plans for brands, campaigns, events and productions.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "production-branded-film-20261028",
+            "title": "Brand films & campaign video",
+            "description": "Purposeful films, interviews and campaign footage that communicate clearly and feel distinctive to the brand.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-event-coverage-20261028",
+            "title": "Event photography & highlight films",
+            "description": "Coverage of the energy, people and moments worth remembering, with photographs and recap films prepared for sharing.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-content-shoot-20261028",
+            "title": "Product, lifestyle & social content shoots",
+            "description": "Planned shoots and reusable visual assets shaped for the platforms and campaigns where they will appear.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "motion-graphics--video---mul-0",
+            "title": "Motion graphics, video & multimedia",
+            "accent": "",
+            "description": "We create animation, motion graphics and multimedia pieces that make information easier to understand and stories more compelling.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "production-animation-20261028",
+            "title": "2D animation & animated content",
+            "description": "Titles, illustrations, transitions and animated sequences built around the brand's own visual language.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-editing-20261028",
+            "title": "Video editing, colour & sound finishing",
+            "description": "We give footage its rhythm and finish with refined editing, colour treatment, audio and graphic details.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-cutdowns-20261028",
+            "title": "Platform-ready edits, subtitles & cutdowns",
+            "description": "We prepare useful versions of each production, including aspect ratios, captions, highlights and channel-specific deliverables.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "lighting--sound---audiovisua-2",
+            "title": "Lighting, sound & audiovisual production",
+            "accent": "",
+            "description": "We coordinate lighting, sound, screens and audiovisual systems so the production supports the story and works as planned.",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "production-live-streaming-20261028",
+            "title": "Live Streaming",
+            "description": "We plan and produce live streams for events, launches, presentations and hybrid experiences. Depending on the brief, that includes streaming-platform setup, camera feeds, live switching, audio checks, stream graphics, remote participation, monitoring, recording and replay-ready delivery.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-multicamera-20261028",
+            "title": "Multi-camera live direction & switching",
+            "description": "We plan camera positions and manage a coordinated live feed, moving between speakers, stages, demonstrations and audience moments.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-hybrid-20261028",
+            "title": "Hybrid events & remote contributors",
+            "description": "We help connect on-site and online audiences, including remote speakers, presentation feeds, participation requirements and the technical running order.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-live-visuals-20261028",
+            "title": "Live screen visuals & broadcast graphics",
+            "description": "Branded overlays, lower thirds, presentation playback, stage-screen content and visual cues that make a live production feel cohesive.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          },
+          {
+            "id": "production-stream-recording-20261028",
+            "title": "Live recording, replay & highlights",
+            "description": "We coordinate stream recording and provide usable footage, replays, short highlights and platform-ready content after the live moment.",
+            "image": "",
+            "accent": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "visual",
+        "headline": "What should your",
+        "accent": "next frame say?",
+        "body": "Got something worth showing the world?\n\nA brand story, a content series, a live stream or a room full of people. Whatever the format, we can help you plan it properly, bring it to life and deliver something you're proud to share.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "Let's get producing",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Content & Production",
+      "description": "We bring stories to life through film, photography, motion graphics, live streaming and technical event production, from first concept to final delivery."
+    }
+  },
+  "our-studio": {
+    "slug": "our-studio",
+    "route": "/our-studio/",
+    "title": "Our Studio",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "Curious minds.",
+        "accent": "Capable hands.",
+        "body": "We're curious thinkers, practical makers and people who care about every part of the experience. Behind the creative work are the plans, partners, pixels and production details that make it possible. We bring those worlds together, because the best ideas deserve more than a beautiful presentation.",
+        "image": "/media/showset/27-studio-collaboration.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "studio-follow-up",
+            "title": "We think it through.",
+            "accent": "We make it happen.",
+            "description": "We don't believe the big idea should get lost between teams. We shape the concept, design the details and stay close to the making, from the first sketch and the website to the final on-site cue. One connected team means fewer handovers, clearer thinking and work that feels like it belongs together.",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "Good ideas need",
+        "accent": "good company.",
+        "body": "We work across events, creative, digital and production, which means the big picture and the small details can sit at the same table.\n\nSometimes we're shaping an event from the first sketch. Sometimes we're building the brand, the website, the content or the technical side that brings it to life. We join the right minds and hands around the brief, without making you manage all the moving parts.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "items",
+        "headline": "From the first sketch",
+        "accent": "to the final cue.",
+        "body": "Great work doesn't happen in separate departments. We keep the thinking, making and doing connected from the first conversation to the final detail.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "curiosity-first-0",
+            "title": "Find the idea.",
+            "accent": "",
+            "description": "We listen, question and look for the thing that will make this brief matter. Strategy, concepts and creative direction start here.",
+            "image": "/media/showset/28-studio-discussion.webp",
+            "href": ""
+          },
+          {
+            "id": "craft-everywhere-1",
+            "title": "Make it tangible.",
+            "accent": "",
+            "description": "Visual identities, layouts, websites and content. We turn a direction into something you can see, use and build on.",
+            "image": "/media/showset/29-studio-proof-detail.webp",
+            "href": ""
+          },
+          {
+            "id": "people-at-the-centre-2",
+            "title": "Make it happen.",
+            "accent": "",
+            "description": "On-site production, live experiences and the final details. Good thinking means little if it never gets made.",
+            "image": "/media/showset/30-onsite-coordination.webp",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-5",
+        "type": "split",
+        "headline": "One brief. A whole lot",
+        "accent": "of ways to make it happen.",
+        "body": "From the screen to the stage, we connect the disciplines a project needs. You get the right mix of creative thinking, digital craft and real-world production, without the extra handovers.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-7",
+        "type": "cta",
+        "headline": "Got a beautifully",
+        "accent": "complicated idea?",
+        "body": "The brief can be polished, half-written or still living entirely in your head. Tell us what you are trying to make happen. We know where to start.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "Let's make a plan",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Our Studio",
+      "description": "Meet SHOWSET, an events and creative agency connecting strategy, design, digital and production with practical people and considered execution."
+    }
+  },
+  "our-work": {
+    "slug": "our-work",
+    "route": "/our-work/",
+    "title": "Our Work",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "Work with",
+        "accent": "something to say.",
+        "body": "Every brief has a story. This is where we share the thinking, craft and detail behind the projects and possibilities we're exploring.",
+        "image": "/media/showset/31-completed-project-wide.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "Different briefs.",
+        "accent": "Different thinking.",
+        "body": "A growing collection across events, design, digital and production. From what happens behind the scenes to what people see, feel and remember, every story has its own shape.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "work",
+        "headline": "",
+        "accent": "",
+        "body": "",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "the-amaze-ball-0",
+            "title": "The Amaze-Ball",
+            "accent": "Project",
+            "description": "An evening of padel, hospitality and live coverage, organised and produced by SHOWSET.",
+            "image": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2.webp",
+            "href": "/work/the-amaze-ball/",
+            "category": "Events & experiences"
+          },
+          {
+            "id": "made-to-be-remembered-1",
+            "title": "Elmboog Organiese Boerdery",
+            "accent": "Brand identity",
+            "description": "A connected identity for Elmboog Organiese Boerdery, brought to life through a brand guide, company profile, stationery and presentation design.",
+            "image": "/media/elmboog/elmboog-01-identity-system-hero.webp",
+            "href": "/work/made-to-be-remembered/",
+            "category": "Creative & design"
+          },
+          {
+            "id": "behind-every-moment-2",
+            "title": "Behind every moment",
+            "accent": "Concept study",
+            "description": "The best production looks effortless because so much of the effort happened before the doors opened.",
+            "image": "/media/showset/34-production-project-hero.webp",
+            "href": "/work/behind-every-moment/",
+            "category": "Content & production"
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "work-closing",
+        "type": "cta",
+        "headline": "Got something",
+        "accent": "worth making?",
+        "body": "The next story could start with a conversation. Bring us the idea, the challenge or the wonderfully ambitious brief.",
+        "image": "",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "Start a conversation",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Our Work",
+      "description": "Explore SHOWSET's growing portfolio of event, creative, digital and production projects, with clearly identified creative concept studies."
+    }
+  },
+  "made-to-be-remembered": {
+    "slug": "made-to-be-remembered",
+    "route": "/work/made-to-be-remembered/",
+    "title": "Elmboog Organiese Boerdery",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "Elmboog Organiese Boerdery",
+        "accent": "",
+        "body": "A connected identity for Elmboog Organiese Boerdery, brought to life through a brand guide, company profile, stationery and presentation design.",
+        "image": "/media/elmboog/elmboog-01-identity-system-hero.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "Rooted in the land.",
+        "accent": "",
+        "body": "Give Elmboog a recognisable visual language across the materials people see, read and hold. The identity needed to connect the farm’s name and organic character with a consistent approach to everyday communication.\n\nThe work brings together a circular grape-and-field mark, a practical colour palette, typography and an organic flowing pattern, documented in a brand guide.",
+        "image": "/media/elmboog/elmboog-11-identity-in-the-making.webp",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "visual",
+        "headline": "One identity. Everyday expression.",
+        "accent": "",
+        "body": "Deep green, fresh green, warm gold and cream give the identity a natural, confident character. The grape-and-field mark makes a clear connection to farming, while the flowing pattern adds movement across the supporting materials.\n\n“Pure. Organic. Purposeful.” gives the visual system a simple verbal anchor. Colour, type and layout carry that same character from the company profile to the smallest stationery detail.",
+        "image": "/media/elmboog/elmboog-02-company-profile-cover.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-4",
+        "type": "cta",
+        "headline": "Have something",
+        "accent": "in mind?",
+        "body": "A good idea deserves a good ending. What could yours become?",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Start a conversation",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Elmboog Organiese Boerdery | Brand identity case study",
+      "description": "Brand identity, guidelines, company profile, stationery and presentation design for Elmboog Organiese Boerdery by SHOWSET."
+    },
+    "projectModules": [
+      {
+        "id": "elmboog-intention",
+        "kind": "text",
+        "title": "The intention.",
+        "body": "Deep green, fresh green, warm gold and cream give the identity a natural, confident character. The grape-and-field mark makes a clear connection to farming, while the flowing pattern adds movement across the supporting materials.\n\n“Pure. Organic. Purposeful.” gives the visual system a simple verbal anchor. Colour, type and layout carry that same character from the company profile to the smallest stationery detail."
+      },
+      {
+        "id": "elmboog-image-1",
+        "kind": "image",
+        "title": "Identity System Hero",
+        "body": "",
+        "src": "/media/elmboog/elmboog-01-identity-system-hero.webp",
+        "alt": "Presentation mockup of Elmboog’s company profile, letterhead and patterned business cards",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-2",
+        "kind": "image",
+        "title": "Company Profile Cover",
+        "body": "",
+        "src": "/media/elmboog/elmboog-02-company-profile-cover.webp",
+        "alt": "Elmboog 2025 company profile cover in a photographic print mockup",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-3",
+        "kind": "image",
+        "title": "Company Profile Open Spread",
+        "body": "",
+        "src": "/media/elmboog/elmboog-03-company-profile-open-spread.webp",
+        "alt": "Open Elmboog company profile showing the values spread in a book mockup",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-4",
+        "kind": "image",
+        "title": "Stationery Suite",
+        "body": "",
+        "src": "/media/elmboog/elmboog-04-stationery-suite.webp",
+        "alt": "Option 1 Elmboog business cards and letterhead in a stationery mockup",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-5",
+        "kind": "image",
+        "title": "Email Signature In Context",
+        "body": "",
+        "src": "/media/elmboog/elmboog-05-email-signature-in-context.webp",
+        "alt": "Elmboog email signature displayed on a laptop in a screen mockup",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-6",
+        "kind": "image",
+        "title": "Presentation Template",
+        "body": "",
+        "src": "/media/elmboog/elmboog-06-presentation-template.webp",
+        "alt": "Elmboog presentation opening slide displayed on a laptop in a mockup",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-7",
+        "kind": "image",
+        "title": "Branded Workwear",
+        "body": "",
+        "src": "/media/elmboog/elmboog-07-branded-workwear.webp",
+        "alt": "Brand-guide workwear concept with a green polo and two-tone Elmboog cap",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-8",
+        "kind": "image",
+        "title": "Lanyard Brand Detail",
+        "body": "",
+        "src": "/media/elmboog/elmboog-08-lanyard-brand-detail.webp",
+        "alt": "Close-up presentation mockup of the Elmboog branded lanyard concept",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-9",
+        "kind": "image",
+        "title": "Campaign Posters",
+        "body": "",
+        "src": "/media/elmboog/elmboog-09-campaign-posters.webp",
+        "alt": "Two Elmboog campaign poster concepts displayed in a generated interior",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-10",
+        "kind": "image",
+        "title": "Digital Brand Applications",
+        "body": "",
+        "src": "/media/elmboog/elmboog-10-digital-brand-applications.webp",
+        "alt": "Elmboog website and social concepts shown in a device mockup",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-11",
+        "kind": "image",
+        "title": "Identity In The Making",
+        "body": "",
+        "src": "/media/elmboog/elmboog-11-identity-in-the-making.webp",
+        "alt": "Illustrative review scene with Elmboog logo, pattern and colour proofs",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      }
+    ],
+    "caseExperience": {
+      "demo": false,
+      "tags": [
+        "Creative"
+      ],
+      "openingTitle": "Elmboog Organiese Boerdery",
+      "openingBody": "A connected identity for Elmboog Organiese Boerdery, brought to life through a brand guide, company profile, stationery and presentation design.",
+      "openingImage": "/media/elmboog/elmboog-01-identity-system-hero.webp",
+      "secondTitle": "This is how we made it happen.",
+      "secondBody": "From a distinctive mark to a family of connected materials. A closer look at the Elmboog identity and its applications, presented through photographic mockups of the supplied design work.",
+      "secondImage": "/media/elmboog/elmboog-02-company-profile-cover.webp",
+      "brief": {
+        "heading": "Rooted in the land.",
+        "body": "Give Elmboog a recognisable visual language across the materials people see, read and hold. The identity needed to connect the farm’s name and organic character with a consistent approach to everyday communication.\n\nThe work brings together a circular grape-and-field mark, a practical colour palette, typography and an organic flowing pattern, documented in a brand guide.",
+        "image": "/media/elmboog/elmboog-11-identity-in-the-making.webp",
+        "imageAlt": "Illustrative review scene with Elmboog logo, pattern and colour proofs",
+        "images": [
+          "/media/elmboog/elmboog-11-identity-in-the-making.webp"
+        ]
+      },
+      "intention": {
+        "heading": "Pure. Organic. Purposeful.",
+        "body": "Deep green, fresh green, warm gold and cream give the identity a natural, confident character. The grape-and-field mark makes a clear connection to farming, while the flowing pattern adds movement across the supporting materials.\n\n“Pure. Organic. Purposeful.” gives the visual system a simple verbal anchor. Colour, type and layout carry that same character from the company profile to the smallest stationery detail.",
+        "image": "/media/elmboog/elmboog-04-stationery-suite.webp",
+        "imageAlt": "Option 1 Elmboog business cards and letterhead in a stationery mockup",
+        "images": [
+          "/media/elmboog/elmboog-04-stationery-suite.webp"
+        ]
+      },
+      "approach": {
+        "heading": "Built to work together.",
+        "body": "We carried the identity through the 2025 company profile, business cards, letterhead, email signature and presentation template. Looking at these pieces together keeps the typography, information hierarchy and brand details connected.\n\nThe brand guide also explores how the system could extend into posters, workwear, social content and a website. The images shown here are generated presentation mockups based on the supplied artwork; they illustrate the designs and concepts rather than document live installations.",
+        "image": "/media/elmboog/elmboog-03-company-profile-open-spread.webp",
+        "imageAlt": "Open Elmboog company profile showing the values spread in a book mockup",
+        "images": [
+          "/media/elmboog/elmboog-03-company-profile-open-spread.webp"
+        ]
+      },
+      "gallery": [
+        {
+          "id": "elmboog-1",
+          "src": "/media/elmboog/elmboog-01-identity-system-hero.webp",
+          "alt": "Presentation mockup of Elmboog’s company profile, letterhead and patterned business cards"
+        },
+        {
+          "id": "elmboog-2",
+          "src": "/media/elmboog/elmboog-02-company-profile-cover.webp",
+          "alt": "Elmboog 2025 company profile cover in a photographic print mockup"
+        },
+        {
+          "id": "elmboog-3",
+          "src": "/media/elmboog/elmboog-03-company-profile-open-spread.webp",
+          "alt": "Open Elmboog company profile showing the values spread in a book mockup"
+        },
+        {
+          "id": "elmboog-4",
+          "src": "/media/elmboog/elmboog-04-stationery-suite.webp",
+          "alt": "Option 1 Elmboog business cards and letterhead in a stationery mockup"
+        },
+        {
+          "id": "elmboog-5",
+          "src": "/media/elmboog/elmboog-05-email-signature-in-context.webp",
+          "alt": "Elmboog email signature displayed on a laptop in a screen mockup"
+        },
+        {
+          "id": "elmboog-6",
+          "src": "/media/elmboog/elmboog-06-presentation-template.webp",
+          "alt": "Elmboog presentation opening slide displayed on a laptop in a mockup"
+        },
+        {
+          "id": "elmboog-7",
+          "src": "/media/elmboog/elmboog-07-branded-workwear.webp",
+          "alt": "Brand-guide workwear concept with a green polo and two-tone Elmboog cap"
+        },
+        {
+          "id": "elmboog-8",
+          "src": "/media/elmboog/elmboog-08-lanyard-brand-detail.webp",
+          "alt": "Close-up presentation mockup of the Elmboog branded lanyard concept"
+        },
+        {
+          "id": "elmboog-9",
+          "src": "/media/elmboog/elmboog-09-campaign-posters.webp",
+          "alt": "Two Elmboog campaign poster concepts displayed in a generated interior"
+        },
+        {
+          "id": "elmboog-10",
+          "src": "/media/elmboog/elmboog-10-digital-brand-applications.webp",
+          "alt": "Elmboog website and social concepts shown in a device mockup"
+        },
+        {
+          "id": "elmboog-11",
+          "src": "/media/elmboog/elmboog-11-identity-in-the-making.webp",
+          "alt": "Illustrative review scene with Elmboog logo, pattern and colour proofs"
+        }
+      ],
+      "partners": []
+    }
+  },
+  "behind-every-moment": {
+    "slug": "behind-every-moment",
+    "route": "/work/behind-every-moment/",
+    "title": "Behind every moment",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "Behind every moment.",
+        "accent": "",
+        "body": "A creative study celebrating the work that makes a live experience run like it was meant to.",
+        "image": "/media/showset/58-production-project-hero.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "The invisible is important.",
+        "accent": "",
+        "body": "The audience comes for the experience. The cables, cue sheets, timing checks and technical conversations are not the headline. They are what allows the headline to happen. This study explores the relationship between creative vision and production craft. How lighting, sound, visuals, people and precision come together to create a moment that feels natural. Our favourite kind of technical excellence is the kind you do not have to think about while you are enjoying the show.",
+        "image": "/media/showset/60-production-audio-operator.webp",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "visual",
+        "headline": "Behind the scenes. Ahead of the moment.",
+        "accent": "",
+        "body": "",
+        "image": "/media/showset/59-production-cue-team.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-4",
+        "type": "cta",
+        "headline": "Have something",
+        "accent": "in mind?",
+        "body": "A good idea deserves a good ending. What could yours become?",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Start a conversation",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Behind every moment",
+      "description": "A creative production study exploring how planning, lighting, sound, visuals and people shape memorable live experiences."
+    },
+    "projectModules": [
+      {
+        "id": "production-intention",
+        "kind": "text",
+        "title": "The intention.",
+        "body": "The best live moments feel effortless. Behind that ease is a chain of decisions that makes space for the audience to focus on what matters."
+      },
+      {
+        "id": "production-image-preparation",
+        "kind": "image",
+        "title": "Before the doors open.",
+        "body": "A production comes together in layers. Technical preparation gives the creative idea room to land.",
+        "src": "/media/showset/60-production-audio-operator.webp",
+        "alt": "A male audio engineer actively mixing a live show at a credible digital sound console, side-rear angle with naturally placed hand on fader and concentrated expression",
+        "captions": "Creative exploration. The work before the moment."
+      },
+      {
+        "id": "production-approach",
+        "kind": "text",
+        "title": "The approach.",
+        "body": "We look at the cues, the technical requirements and the people who bring them together. Creative direction and production planning meet so that every transition feels natural."
+      },
+      {
+        "id": "production-image-live",
+        "kind": "image",
+        "title": "And then it happens.",
+        "body": "The planning disappears into the experience. What remains is the feeling of being there.",
+        "src": "/media/showset/61-production-equipment-prep.webp",
+        "alt": "A woman technician at floor level checking a credible professional camera and locking a mounting plate onto a stable tripod before a show",
+        "captions": "Creative exploration. The audience-facing experience."
+      }
+    ],
+    "caseExperience": {
+      "demo": true,
+      "tags": [
+        "Content"
+      ],
+      "openingTitle": "Behind every moment.",
+      "openingBody": "A creative study celebrating the work that makes a live experience run like it was meant to. This fictional production study explores the preparation behind a live stage experience.",
+      "openingImage": "/media/showset/58-production-project-hero.webp",
+      "secondTitle": "This is how we made it happen.",
+      "secondImage": "/media/showset/59-production-cue-team.webp",
+      "secondBody": "Before the lights come up, every cue needs a place in the plan. This imagined production follows preparation, rehearsal and the handover to a live moment; it does not document a completed SHOWSET event.",
+      "brief": {
+        "heading": "The invisible is important.",
+        "body": "The audience comes for the experience. The cables, cue sheets, timing checks and technical conversations are not the headline. They are what allows the headline to happen. This study explores the relationship between creative vision and production craft. How lighting, sound, visuals, people and precision come together to create a moment that feels natural. Our favourite kind of technical excellence is the kind you do not have to think about while you are enjoying the show.\n\nThis fictional production study explores the preparation behind a live stage experience.",
+        "image": "/media/showset/60-production-audio-operator.webp",
+        "imageAlt": "A male audio engineer actively mixing a live show at a credible digital sound console, side-rear angle with naturally placed hand on fader and concentrated expression",
+        "images": [
+          "/media/showset/60-production-audio-operator.webp"
+        ]
+      },
+      "intention": {
+        "heading": "Give the moment room.",
+        "body": "The best live moments feel effortless. Behind that ease is a chain of decisions that makes space for the audience to focus on what matters.\n\nIn the concept, the audience should be free to follow the story rather than notice the equipment. Technical clarity supports that ease: a clean signal path, an understood cue and a team ready for the next change.",
+        "image": "/media/showset/61-production-equipment-prep.webp",
+        "imageAlt": "A woman technician at floor level checking a credible professional camera and locking a mounting plate onto a stable tripod before a show",
+        "images": [
+          "/media/showset/61-production-equipment-prep.webp"
+        ]
+      },
+      "approach": {
+        "heading": "Prepare for the unexpected.",
+        "body": "We look at the cues, the technical requirements and the people who bring them together. Creative direction and production planning meet so that every transition feels natural.\n\nThe imagined workflow brings the production plan, rehearsals and equipment checks into one conversation. Each department can see how its decisions affect the next, so the eventual audience-facing moment has a coherent shape.",
+        "image": "/media/showset/62-production-live-show.webp",
+        "imageAlt": "Photographic live-production moment viewed obliquely from the wings of a modest venue: a woman vocalist onstage holding a normal microphone, musician beside her, three and one crew member partially visible in foreground wings",
+        "images": [
+          "/media/showset/62-production-live-show.webp"
+        ]
+      },
+      "gallery": [
+        {
+          "id": "behind-every-moment-concept-1",
+          "src": "/media/showset/63-production-gallery-backstage.webp",
+          "alt": "Alternate wide backstage photograph in a real-looking modest venue, navy curtains, restrained turquoise stage accent, warm utility lights, two secured grounded flight cases, neatly routed cables and edge of a stable camera tripod"
+        },
+        {
+          "id": "behind-every-moment-concept-2",
+          "src": "/media/showset/64-production-gallery-operator.webp",
+          "alt": "Close candid side portrait of a woman video operator working at a believable compact switcher in a dim venue"
+        },
+        {
+          "id": "behind-every-moment-concept-3",
+          "src": "/media/showset/65-production-gallery-detail.webp",
+          "alt": "Extreme documentary detail of a credible cinema camera mounted securely on stable tripod beside navy theatre curtain, focus ring and properly connected single cable in focus, subtle warm practical light and restrained turquoise stage reflec"
+        }
+      ],
+      "partners": [
+        {
+          "name": "Cuepoint Collective",
+          "role": "Production planning (fictional test partner)"
+        },
+        {
+          "name": "Signalroom Workshop",
+          "role": "Audio and control (fictional test partner)"
+        },
+        {
+          "name": "Beamline Lab",
+          "role": "Lighting exploration (fictional test partner)"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "slug": "contact",
+    "route": "/contact/",
+    "title": "Contact",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "contact",
+        "headline": "Big ideas start",
+        "accent": "with a conversation.",
+        "body": "Planning an event that needs to feel different? Building a brand, launching a website or working on an idea that doesn't fit neatly into a box? Tell us what you're imagining, even if it's still taking shape. We bring together the creative thinking, practical people and attention to detail to turn big ideas into things people can see, feel and remember.",
+        "image": "/media/planning.webp",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "Prepare the email",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "an-event-or-experience-0",
+            "title": "An event or experience",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "a-brand-or-design-project-1",
+            "title": "A brand or design project",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "a-website-or-digital-solutio-2",
+            "title": "A website or digital solution",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "marketing-and-content-3",
+            "title": "Marketing and content",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "film-or-production-4",
+            "title": "Film or production",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "a-bit-of-everything-5",
+            "title": "A bit of everything",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          },
+          {
+            "id": "not-quite-sure-yet-6",
+            "title": "Not quite sure yet",
+            "accent": "",
+            "description": "",
+            "image": "",
+            "href": ""
+          }
+        ],
+        "speed": 6,
+        "formTitle": "Tell us the interesting bit.",
+        "helperText": "Your message hasn't been sent. This opens a prepared email for you to review and send."
+      }
+    ],
+    "seo": {
+      "title": "Contact",
+      "description": "Start a conversation with SHOWSET about your next event, brand, website or production. Send us the idea, or contact our team directly."
+    }
+  },
+  "services": {
+    "slug": "services",
+    "route": "/services/",
+    "title": "Our disciplines | SHOWSET",
+    "sections": [
+      {
+        "id": "services-opening-v3",
+        "type": "pagehero",
+        "headline": "Different disciplines.",
+        "accent": "One connected team.",
+        "body": "A launch might need an identity. An event might need a digital home. A campaign might need a film, a space or a piece of technology to make it work. We move between all four worlds so the idea stays in one piece.",
+        "image": "/media/rigging.webp",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "Explore our disciplines",
+        "buttonHref": "#services",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "services-navigator-v3",
+        "type": "services",
+        "headline": "Different disciplines.",
+        "accent": "One connected team.",
+        "body": "A launch might need an identity. An event might need a digital home. A campaign might need a film, a space or a piece of technology to make it work. We move between all four worlds so the idea stays in one piece.",
+        "image": "",
+        "pattern": false,
+        "reveal": false,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [
+          {
+            "id": "events---experiences-0",
+            "title": "Events & experiences",
+            "accent": "",
+            "description": "We make room for the unexpected, then plan every last detail around it.",
+            "image": "/media/evening.webp",
+            "href": "/events-experiences/"
+          },
+          {
+            "id": "creative---design-1",
+            "title": "Creative & design",
+            "accent": "",
+            "description": "The kind of thinking that gives a brand a point of view, not just a pretty face.",
+            "image": "/media/brand.webp",
+            "href": "/creative-design/"
+          },
+          {
+            "id": "digital---marketing-2",
+            "title": "Digital & marketing",
+            "accent": "",
+            "description": "Websites, campaigns and technology made for people, not just platforms.",
+            "image": "/media/planning.webp",
+            "href": "/digital-marketing/"
+          },
+          {
+            "id": "content---production-3",
+            "title": "Content & production",
+            "accent": "",
+            "description": "From the first storyboard to the final sound check, we bring the moving parts together.",
+            "image": "/media/sound.webp",
+            "href": "/content-production/"
+          }
+        ],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "services-conversation-v3",
+        "type": "cta",
+        "headline": "Got a beautifully",
+        "accent": "complicated idea?",
+        "body": "The brief can be polished, half-written or still living entirely in your head. Tell us what you are trying to make happen. We know where to start.",
+        "image": "",
+        "pattern": true,
+        "reveal": false,
+        "buttonLabel": "Let’s make a plan",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "Our disciplines | SHOWSET",
+      "description": "A launch might need an identity. An event might need a digital home. A campaign might need a film, a space or a piece of technology to make it work. We move between all four worlds so the idea stays in one piece."
+    }
+  },
+  "the-amaze-ball": {
+    "slug": "the-amaze-ball",
+    "route": "/work/the-amaze-ball/",
+    "title": "The Amaze-Ball",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "A grand slam.",
+        "accent": "For a greater cause.",
+        "body": "A charity padel tournament and cocktail evening built around sport, connection and a purpose beyond the court.",
+        "image": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "Sport with a bigger purpose.",
+        "accent": "",
+        "body": "Amazeballs brought together a padel tournament and an evening of hospitality on 24 October 2026 at Padel 365, Century City. The Amaze-Ball put a R50,000 Golden Point Grand Slam at the centre of a charity event supporting the organisation's mission to give used padel balls a second life.\n\nSHOWSET was responsible for organising the event and bringing its physical and technical requirements together. The venue needed to work as a sporting environment, an evening gathering and a live production space, all on the same night.",
+        "image": "/media/showset/amaze-ball/amaze-ball-impact-edited-v2.webp",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "visual",
+        "headline": "From court to crowd.",
+        "accent": "",
+        "body": "Sport, sound, lighting and live coverage brought together for one connected evening.",
+        "image": "/media/showset/amaze-ball/amaze-ball-padel-edited-v2.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-4",
+        "type": "cta",
+        "headline": "Have an event",
+        "accent": "in mind?",
+        "body": "From the first plan to the final technical check, we help bring every moving part together.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Let's talk",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "The Amaze-Ball | Charity Padel Event | SHOWSET",
+      "description": "How SHOWSET organised The Amaze-Ball for Amazeballs, bringing venue setup, event production, lighting, sound, screens and live broadcasting together in Century City."
+    },
+    "projectModules": [
+      {
+        "id": "amaze-intention",
+        "kind": "text",
+        "title": "The intention.",
+        "body": "The idea was to make the experience feel connected from court to crowd. Players needed a place to compete, while guests needed somewhere to gather, follow the action and enjoy the evening.\n\nAmazeballs' distinctive visual identity and the Go for Gold dress theme helped give the occasion its character. The role of the environment, from the event stage to the cocktail tables and screens, was to support those different moments without taking attention away from the cause."
+      },
+      {
+        "id": "amaze-approach",
+        "kind": "text",
+        "title": "The approach.",
+        "body": "SHOWSET coordinated the event setup and prepared the venue with cocktail tables, seating, a stage, lighting, television displays and sound. The audio setup included microphones for the MC and the requirements of the evening programme.\n\nOur production remit also covered the live broadcast, bringing camera coverage and technical delivery into the same event plan. With sport happening on the courts and conversations happening around them, the practical challenge was making all the moving parts work together as one experience."
+      },
+      {
+        "id": "amaze-ball-hero",
+        "kind": "image",
+        "title": "Hero",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2.webp",
+        "alt": "Camera operator filming the MC beside the ball installation at The Amaze-Ball",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-impact",
+        "kind": "image",
+        "title": "Impact",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-impact-edited-v2.webp",
+        "alt": "Guest beside the padel-ball Golden Point Grand Slam installation",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-padel",
+        "kind": "image",
+        "title": "Padel",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-padel-edited-v2.webp",
+        "alt": "Two padel players on the blue court",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-court-moment",
+        "kind": "image",
+        "title": "Court Moment",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-court-moment-edited-v2.webp",
+        "alt": "Guests and players sharing a moment on the padel court",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-guests",
+        "kind": "image",
+        "title": "Guests",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-guests-edited-v2.webp",
+        "alt": "Guests gathering around a gold-covered cocktail table",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-interview",
+        "kind": "image",
+        "title": "Interview",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-interview-edited-v2.webp",
+        "alt": "The MC interviewing a guest beside the branded backdrop",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-broadcast",
+        "kind": "image",
+        "title": "Broadcast",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-broadcast-edited-v2.webp",
+        "alt": "Camera operator filming a speaker against the Amazeballs backdrop",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-artist",
+        "kind": "image",
+        "title": "Artist",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-artist-edited-v2.webp",
+        "alt": "An artist working on a circular portrait during the event",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-artwork-detail",
+        "kind": "image",
+        "title": "Artwork Detail",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-artwork-detail-edited-v2.webp",
+        "alt": "Close detail of the artist drawing on a circular surface",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-hospitality",
+        "kind": "image",
+        "title": "Hospitality",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-hospitality-edited-v2.webp",
+        "alt": "Canapés on a serving tray at the event",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-canapes",
+        "kind": "image",
+        "title": "Canapes",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-canapes-edited-v2.webp",
+        "alt": "Bite-size canapés being served beside the court",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-drinks",
+        "kind": "image",
+        "title": "Drinks",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-drinks-edited-v2.webp",
+        "alt": "A bartender preparing drinks for guests",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-table-detail",
+        "kind": "image",
+        "title": "Table Detail",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-table-detail-edited-v2.webp",
+        "alt": "Gold table lamp and Bid for a Ball fundraising card at the event",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-ball-detail",
+        "kind": "image",
+        "title": "Ball Detail",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-ball-detail-edited-v2.webp",
+        "alt": "Close detail of padel balls in the event installation",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-brand-backdrop",
+        "kind": "image",
+        "title": "Brand Backdrop",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-brand-backdrop-edited-v2.webp",
+        "alt": "The padel-ball event backdrop and small stage",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-team-detail",
+        "kind": "image",
+        "title": "Team Detail",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-team-detail-edited-v2.webp",
+        "alt": "AMAZE-TEAM lettering on a crew member’s shirt",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-venue-setup",
+        "kind": "image",
+        "title": "Venue Setup",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-venue-setup-edited-v2.webp",
+        "alt": "Crew preparing the venue and furniture before the event",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-screen-setup",
+        "kind": "image",
+        "title": "Screen Setup",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-screen-setup-edited-v2.webp",
+        "alt": "Crew installing a display beside the padel court",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-production-desk",
+        "kind": "image",
+        "title": "Production Desk",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-production-desk-edited-v2.webp",
+        "alt": "The crew preparing monitors and event production equipment",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-live-control",
+        "kind": "image",
+        "title": "Live Control",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-live-control-edited-v2.webp",
+        "alt": "The live production multiview showing court and presenter feeds",
+        "captions": "SHOWSET event photography · edited"
+      }
+    ],
+    "caseExperience": {
+      "demo": false,
+      "tags": [
+        "Events",
+        "Content"
+      ],
+      "openingTitle": "A grand slam. For a greater cause.",
+      "openingBody": "The Amaze-Ball brought padel, people and purpose together. SHOWSET made the event happen, from organising the evening to its technical production.",
+      "openingImage": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2.webp",
+      "secondTitle": "Where sport met the spotlight.",
+      "secondImage": "/media/showset/amaze-ball/amaze-ball-padel-edited-v2.webp",
+      "secondBody": "A charity padel tournament, a cocktail evening and a live broadcast, brought together at Padel 365 in Century City.",
+      "brief": {
+        "heading": "One night. More than a game.",
+        "body": "Amazeballs brought together a padel tournament and an evening of hospitality on 24 October 2026 at Padel 365, Century City. The Amaze-Ball put a R50,000 Golden Point Grand Slam at the centre of a charity event supporting the organisation's mission to give used padel balls a second life.\n\nSHOWSET was responsible for organising the event and bringing its physical and technical requirements together. The venue needed to work as a sporting environment, an evening gathering and a live production space, all on the same night.",
+        "image": "/media/showset/amaze-ball/amaze-ball-impact-edited-v2.webp",
+        "images": [
+          "/media/showset/amaze-ball/amaze-ball-impact-edited-v2.webp"
+        ],
+        "imageAlt": "Guest beside the padel-ball Golden Point Grand Slam installation"
+      },
+      "intention": {
+        "heading": "Every moment had a place.",
+        "body": "The idea was to make the experience feel connected from court to crowd. Players needed a place to compete, while guests needed somewhere to gather, follow the action and enjoy the evening.\n\nAmazeballs' distinctive visual identity and the Go for Gold dress theme helped give the occasion its character. The role of the environment, from the event stage to the cocktail tables and screens, was to support those different moments without taking attention away from the cause.",
+        "image": "/media/showset/amaze-ball/amaze-ball-guests-edited-v2.webp",
+        "images": [
+          "/media/showset/amaze-ball/amaze-ball-guests-edited-v2.webp"
+        ],
+        "imageAlt": "Guests gathering around a gold-covered cocktail table"
+      },
+      "approach": {
+        "heading": "The work behind the moment.",
+        "body": "SHOWSET coordinated the event setup and prepared the venue with cocktail tables, seating, a stage, lighting, television displays and sound. The audio setup included microphones for the MC and the requirements of the evening programme.\n\nOur production remit also covered the live broadcast, bringing camera coverage and technical delivery into the same event plan. With sport happening on the courts and conversations happening around them, the practical challenge was making all the moving parts work together as one experience.",
+        "image": "/media/showset/amaze-ball/amaze-ball-broadcast-edited-v2.webp",
+        "images": [
+          "/media/showset/amaze-ball/amaze-ball-broadcast-edited-v2.webp"
+        ],
+        "imageAlt": "Camera operator filming a speaker against the Amazeballs backdrop"
+      },
+      "gallery": [
+        {
+          "id": "amaze-ball-hero",
+          "src": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2.webp",
+          "alt": "Camera operator filming the MC beside the ball installation at The Amaze-Ball",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-impact",
+          "src": "/media/showset/amaze-ball/amaze-ball-impact-edited-v2.webp",
+          "alt": "Guest beside the padel-ball Golden Point Grand Slam installation",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-padel",
+          "src": "/media/showset/amaze-ball/amaze-ball-padel-edited-v2.webp",
+          "alt": "Two padel players on the blue court",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-court-moment",
+          "src": "/media/showset/amaze-ball/amaze-ball-court-moment-edited-v2.webp",
+          "alt": "Guests and players sharing a moment on the padel court",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-guests",
+          "src": "/media/showset/amaze-ball/amaze-ball-guests-edited-v2.webp",
+          "alt": "Guests gathering around a gold-covered cocktail table",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-interview",
+          "src": "/media/showset/amaze-ball/amaze-ball-interview-edited-v2.webp",
+          "alt": "The MC interviewing a guest beside the branded backdrop",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-broadcast",
+          "src": "/media/showset/amaze-ball/amaze-ball-broadcast-edited-v2.webp",
+          "alt": "Camera operator filming a speaker against the Amazeballs backdrop",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-artist",
+          "src": "/media/showset/amaze-ball/amaze-ball-artist-edited-v2.webp",
+          "alt": "An artist working on a circular portrait during the event",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-artwork-detail",
+          "src": "/media/showset/amaze-ball/amaze-ball-artwork-detail-edited-v2.webp",
+          "alt": "Close detail of the artist drawing on a circular surface",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-hospitality",
+          "src": "/media/showset/amaze-ball/amaze-ball-hospitality-edited-v2.webp",
+          "alt": "Canapés on a serving tray at the event",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-canapes",
+          "src": "/media/showset/amaze-ball/amaze-ball-canapes-edited-v2.webp",
+          "alt": "Bite-size canapés being served beside the court",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-drinks",
+          "src": "/media/showset/amaze-ball/amaze-ball-drinks-edited-v2.webp",
+          "alt": "A bartender preparing drinks for guests",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-table-detail",
+          "src": "/media/showset/amaze-ball/amaze-ball-table-detail-edited-v2.webp",
+          "alt": "Gold table lamp and Bid for a Ball fundraising card at the event",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-ball-detail",
+          "src": "/media/showset/amaze-ball/amaze-ball-ball-detail-edited-v2.webp",
+          "alt": "Close detail of padel balls in the event installation",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-brand-backdrop",
+          "src": "/media/showset/amaze-ball/amaze-ball-brand-backdrop-edited-v2.webp",
+          "alt": "The padel-ball event backdrop and small stage",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-team-detail",
+          "src": "/media/showset/amaze-ball/amaze-ball-team-detail-edited-v2.webp",
+          "alt": "AMAZE-TEAM lettering on a crew member’s shirt",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-venue-setup",
+          "src": "/media/showset/amaze-ball/amaze-ball-venue-setup-edited-v2.webp",
+          "alt": "Crew preparing the venue and furniture before the event",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-screen-setup",
+          "src": "/media/showset/amaze-ball/amaze-ball-screen-setup-edited-v2.webp",
+          "alt": "Crew installing a display beside the padel court",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-production-desk",
+          "src": "/media/showset/amaze-ball/amaze-ball-production-desk-edited-v2.webp",
+          "alt": "The crew preparing monitors and event production equipment",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-live-control",
+          "src": "/media/showset/amaze-ball/amaze-ball-live-control-edited-v2.webp",
+          "alt": "The live production multiview showing court and presenter feeds",
+          "credit": "SHOWSET event photography · edited"
+        }
+      ],
+      "partners": [
+        {
+          "name": "Amazeballs",
+          "role": "Charity initiative and event partner"
+        },
+        {
+          "name": "SHOWSET",
+          "role": "Event organisation and technical production"
+        }
+      ]
+    },
+    "publishedAt": "2026-10-30"
+  }
+}

@@ -20,7 +20,7 @@ export const routeKeys: Record<string, string> = {
   "/contact/": "contact",
   "/work/the-amaze-ball/": "case-events",
   "/work/made-to-be-remembered/": "case-identity",
-  "/work/behind-every-moment/": "case-production",
+  "/work/provault/": "case-production",
   "/services/": "home",
 };
 /** Preserve approved route keys, while new Studio projects need no route-map edits. */

@@ -124,11 +124,12 @@
           },
           {
             "id": "behind-every-moment-2",
-            "title": "Behind every moment",
-            "accent": "",
-            "description": "The quiet precision that makes a big production feel effortless.",
-            "image": "/media/showset/07-production-project-hero.webp",
-            "href": "/work/behind-every-moment/"
+            "title": "ProVault",
+            "accent": "Brand & digital platform",
+            "description": "A complete brand and digital platform for Freestyle Legends, connecting athlete identity, community and achievement across desktop and mobile.",
+            "image": "/media/provault/16-platform-creative-workspace.webp",
+            "href": "/work/provault/",
+            "category": "Digital"
           }
         ],
         "speed": 4.7,
@@ -1554,12 +1555,12 @@
           },
           {
             "id": "behind-every-moment-2",
-            "title": "Behind every moment",
-            "accent": "Concept study",
-            "description": "The best production looks effortless because so much of the effort happened before the doors opened.",
-            "image": "/media/showset/34-production-project-hero.webp",
-            "href": "/work/behind-every-moment/",
-            "category": "Content & production"
+            "title": "ProVault",
+            "accent": "Brand & digital platform",
+            "description": "A complete brand and digital platform for Freestyle Legends, connecting athlete identity, community and achievement across desktop and mobile.",
+            "image": "/media/provault/16-platform-creative-workspace.webp",
+            "href": "/work/provault/",
+            "category": "Digital"
           }
         ],
         "speed": 6,
@@ -1875,191 +1876,6 @@
         }
       ],
       "partners": []
-    }
-  },
-  "behind-every-moment": {
-    "slug": "behind-every-moment",
-    "route": "/work/behind-every-moment/",
-    "title": "Behind every moment",
-    "sections": [
-      {
-        "id": "section-1",
-        "type": "pagehero",
-        "headline": "Behind every moment.",
-        "accent": "",
-        "body": "A creative study celebrating the work that makes a live experience run like it was meant to.",
-        "image": "/media/showset/58-production-project-hero.webp",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-2",
-        "type": "split",
-        "headline": "The invisible is important.",
-        "accent": "",
-        "body": "The audience comes for the experience. The cables, cue sheets, timing checks and technical conversations are not the headline. They are what allows the headline to happen. This study explores the relationship between creative vision and production craft. How lighting, sound, visuals, people and precision come together to create a moment that feels natural. Our favourite kind of technical excellence is the kind you do not have to think about while you are enjoying the show.",
-        "image": "/media/showset/60-production-audio-operator.webp",
-        "pattern": true,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-3",
-        "type": "visual",
-        "headline": "Behind the scenes. Ahead of the moment.",
-        "accent": "",
-        "body": "",
-        "image": "/media/showset/59-production-cue-team.webp",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-4",
-        "type": "cta",
-        "headline": "Have something",
-        "accent": "in mind?",
-        "body": "A good idea deserves a good ending. What could yours become?",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "Start a conversation",
-        "buttonHref": "/contact/",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      }
-    ],
-    "seo": {
-      "title": "Behind every moment",
-      "description": "A creative production study exploring how planning, lighting, sound, visuals and people shape memorable live experiences."
-    },
-    "projectModules": [
-      {
-        "id": "production-intention",
-        "kind": "text",
-        "title": "The intention.",
-        "body": "The best live moments feel effortless. Behind that ease is a chain of decisions that makes space for the audience to focus on what matters."
-      },
-      {
-        "id": "production-image-preparation",
-        "kind": "image",
-        "title": "Before the doors open.",
-        "body": "A production comes together in layers. Technical preparation gives the creative idea room to land.",
-        "src": "/media/showset/60-production-audio-operator.webp",
-        "alt": "A male audio engineer actively mixing a live show at a credible digital sound console, side-rear angle with naturally placed hand on fader and concentrated expression",
-        "captions": "Creative exploration. The work before the moment."
-      },
-      {
-        "id": "production-approach",
-        "kind": "text",
-        "title": "The approach.",
-        "body": "We look at the cues, the technical requirements and the people who bring them together. Creative direction and production planning meet so that every transition feels natural."
-      },
-      {
-        "id": "production-image-live",
-        "kind": "image",
-        "title": "And then it happens.",
-        "body": "The planning disappears into the experience. What remains is the feeling of being there.",
-        "src": "/media/showset/61-production-equipment-prep.webp",
-        "alt": "A woman technician at floor level checking a credible professional camera and locking a mounting plate onto a stable tripod before a show",
-        "captions": "Creative exploration. The audience-facing experience."
-      }
-    ],
-    "caseExperience": {
-      "demo": true,
-      "tags": [
-        "Content"
-      ],
-      "openingTitle": "Behind every moment.",
-      "openingBody": "A creative study celebrating the work that makes a live experience run like it was meant to. This fictional production study explores the preparation behind a live stage experience.",
-      "openingImage": "/media/showset/58-production-project-hero.webp",
-      "secondTitle": "This is how we made it happen.",
-      "secondImage": "/media/showset/59-production-cue-team.webp",
-      "secondBody": "Before the lights come up, every cue needs a place in the plan. This imagined production follows preparation, rehearsal and the handover to a live moment; it does not document a completed SHOWSET event.",
-      "brief": {
-        "heading": "The invisible is important.",
-        "body": "The audience comes for the experience. The cables, cue sheets, timing checks and technical conversations are not the headline. They are what allows the headline to happen. This study explores the relationship between creative vision and production craft. How lighting, sound, visuals, people and precision come together to create a moment that feels natural. Our favourite kind of technical excellence is the kind you do not have to think about while you are enjoying the show.\n\nThis fictional production study explores the preparation behind a live stage experience.",
-        "image": "/media/showset/60-production-audio-operator.webp",
-        "imageAlt": "A male audio engineer actively mixing a live show at a credible digital sound console, side-rear angle with naturally placed hand on fader and concentrated expression",
-        "images": [
-          "/media/showset/60-production-audio-operator.webp"
-        ]
-      },
-      "intention": {
-        "heading": "Give the moment room.",
-        "body": "The best live moments feel effortless. Behind that ease is a chain of decisions that makes space for the audience to focus on what matters.\n\nIn the concept, the audience should be free to follow the story rather than notice the equipment. Technical clarity supports that ease: a clean signal path, an understood cue and a team ready for the next change.",
-        "image": "/media/showset/61-production-equipment-prep.webp",
-        "imageAlt": "A woman technician at floor level checking a credible professional camera and locking a mounting plate onto a stable tripod before a show",
-        "images": [
-          "/media/showset/61-production-equipment-prep.webp"
-        ]
-      },
-      "approach": {
-        "heading": "Prepare for the unexpected.",
-        "body": "We look at the cues, the technical requirements and the people who bring them together. Creative direction and production planning meet so that every transition feels natural.\n\nThe imagined workflow brings the production plan, rehearsals and equipment checks into one conversation. Each department can see how its decisions affect the next, so the eventual audience-facing moment has a coherent shape.",
-        "image": "/media/showset/62-production-live-show.webp",
-        "imageAlt": "Photographic live-production moment viewed obliquely from the wings of a modest venue: a woman vocalist onstage holding a normal microphone, musician beside her, three and one crew member partially visible in foreground wings",
-        "images": [
-          "/media/showset/62-production-live-show.webp"
-        ]
-      },
-      "gallery": [
-        {
-          "id": "behind-every-moment-concept-1",
-          "src": "/media/showset/63-production-gallery-backstage.webp",
-          "alt": "Alternate wide backstage photograph in a real-looking modest venue, navy curtains, restrained turquoise stage accent, warm utility lights, two secured grounded flight cases, neatly routed cables and edge of a stable camera tripod"
-        },
-        {
-          "id": "behind-every-moment-concept-2",
-          "src": "/media/showset/64-production-gallery-operator.webp",
-          "alt": "Close candid side portrait of a woman video operator working at a believable compact switcher in a dim venue"
-        },
-        {
-          "id": "behind-every-moment-concept-3",
-          "src": "/media/showset/65-production-gallery-detail.webp",
-          "alt": "Extreme documentary detail of a credible cinema camera mounted securely on stable tripod beside navy theatre curtain, focus ring and properly connected single cable in focus, subtle warm practical light and restrained turquoise stage reflec"
-        }
-      ],
-      "partners": [
-        {
-          "name": "Cuepoint Collective",
-          "role": "Production planning (fictional test partner)"
-        },
-        {
-          "name": "Signalroom Workshop",
-          "role": "Audio and control (fictional test partner)"
-        },
-        {
-          "name": "Beamline Lab",
-          "role": "Lighting exploration (fictional test partner)"
-        }
-      ]
     }
   },
   "contact": {
@@ -2695,5 +2511,202 @@
       ]
     },
     "publishedAt": "2026-10-30"
+  },
+  "provault": {
+    "slug": "provault",
+    "route": "/work/provault/",
+    "title": "ProVault",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "More than a profile. A place to progress.",
+        "accent": "",
+        "body": "A complete brand and digital platform for Freestyle Legends, connecting athlete identity, community and achievement across desktop and mobile.",
+        "image": "/media/provault/16-platform-creative-workspace.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "A home for the athlete community.",
+        "accent": "",
+        "body": "Build a recognisable home for the Freestyle Legends athlete community. ProVault needed an identity and a platform that could bring profiles, sporting achievements and everyday community activity into one connected experience.\n\nSHOWSET created the project from brand identity and UX/UI to platform development and content, giving the product a consistent voice and visual language.",
+        "image": "/media/provault/17-over-shoulder-platform.webp",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "visual",
+        "headline": "One identity. A connected platform.",
+        "accent": "",
+        "body": "From the ProVault identity to the way athletes discover, share and connect, SHOWSET created the complete project. Brand, UX/UI, development and content work together as one experience.",
+        "image": "/media/provault/13-phone-coastal-cafe.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-4",
+        "type": "cta",
+        "headline": "Have something",
+        "accent": "in mind?",
+        "body": "A good idea deserves a good ending. What could yours become?",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Start a conversation",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "ProVault: brand and digital platform",
+      "description": "SHOWSET created ProVault for Freestyle Legends, bringing brand identity, UX/UI, platform development and content into one connected athlete community."
+    },
+    "projectModules": [
+      {
+        "id": "provault-intention",
+        "kind": "text",
+        "title": "The intention.",
+        "body": "Put the athlete at the centre. A profile brings together the person, their disciplines, highlights and achievements, helping the community discover more than a name.\n\nThe dark interface, gold accents and clear hierarchy give sporting content room to stand out. The experience carries across desktop and mobile so the platform fits into life around the sport."
+      },
+      {
+        "id": "provault-profile",
+        "kind": "image",
+        "title": "The athlete at the centre.",
+        "src": "/media/provault/14-profile-in-hand.webp",
+        "alt": "Close-up of the ProVault athlete profile held naturally in hand",
+        "captions": "ProVault platform presentation mockup."
+      },
+      {
+        "id": "provault-approach",
+        "kind": "text",
+        "title": "The approach.",
+        "body": "Bring the brand and product together from the start. We developed the identity alongside the interface, translating its visual character into navigation, profiles, community content and achievement cards.\n\nMember discovery, activity, highlights and achievements form a connected platform rather than separate destinations. Responsive layouts adapt the same visual system for desktop and mobile. The imagery shown here presents the live platform in illustrative device mockups."
+      },
+      {
+        "id": "provault-responsive",
+        "kind": "image",
+        "title": "One responsive platform.",
+        "src": "/media/provault/16-platform-creative-workspace.webp",
+        "alt": "ProVault desktop and mobile profiles in a daylight creative workspace",
+        "captions": "Desktop and mobile platform presentation mockup."
+      }
+    ],
+    "caseExperience": {
+      "demo": false,
+      "tags": [
+        "Digital",
+        "Creative",
+        "Content"
+      ],
+      "openingTitle": "More than a profile. A place to progress.",
+      "openingBody": "A complete brand and digital platform for Freestyle Legends, connecting athlete identity, community and achievement across desktop and mobile.",
+      "openingImage": "/media/provault/16-platform-creative-workspace.webp",
+      "secondTitle": "One identity. A connected platform.",
+      "secondImage": "/media/provault/13-phone-coastal-cafe.webp",
+      "secondBody": "From the ProVault identity to the way athletes discover, share and connect, SHOWSET created the complete project. Brand, UX/UI, development and content work together as one experience.",
+      "brief": {
+        "heading": "A home for the athlete community.",
+        "body": "Build a recognisable home for the Freestyle Legends athlete community. ProVault needed an identity and a platform that could bring profiles, sporting achievements and everyday community activity into one connected experience.\n\nSHOWSET created the project from brand identity and UX/UI to platform development and content, giving the product a consistent voice and visual language.",
+        "image": "/media/provault/17-over-shoulder-platform.webp",
+        "imageAlt": "Over-the-shoulder view of the ProVault achievements platform",
+        "images": [
+          "/media/provault/17-over-shoulder-platform.webp"
+        ]
+      },
+      "intention": {
+        "heading": "Put the athlete first.",
+        "body": "Put the athlete at the centre. A profile brings together the person, their disciplines, highlights and achievements, helping the community discover more than a name.\n\nThe dark interface, gold accents and clear hierarchy give sporting content room to stand out. The experience carries across desktop and mobile so the platform fits into life around the sport.",
+        "image": "/media/provault/14-profile-in-hand.webp",
+        "imageAlt": "Close-up of the ProVault athlete profile held naturally in hand",
+        "images": [
+          "/media/provault/14-profile-in-hand.webp"
+        ]
+      },
+      "approach": {
+        "heading": "Build the whole experience.",
+        "body": "Bring the brand and product together from the start. We developed the identity alongside the interface, translating its visual character into navigation, profiles, community content and achievement cards.\n\nMember discovery, activity, highlights and achievements form a connected platform rather than separate destinations. Responsive layouts adapt the same visual system for desktop and mobile. The imagery shown here presents the live platform in illustrative device mockups.",
+        "image": "/media/provault/19-workspace-overhead.webp",
+        "imageAlt": "Overhead detail of the ProVault desktop and mobile experience",
+        "images": [
+          "/media/provault/19-workspace-overhead.webp"
+        ]
+      },
+      "gallery": [
+        {
+          "id": "13-phone-coastal-cafe",
+          "src": "/media/provault/13-phone-coastal-cafe.webp",
+          "alt": "ProVault athlete profile on a phone beside a coastal café window"
+        },
+        {
+          "id": "14-profile-in-hand",
+          "src": "/media/provault/14-profile-in-hand.webp",
+          "alt": "Close-up of the ProVault athlete profile held naturally in hand"
+        },
+        {
+          "id": "15-laptop-working-table",
+          "src": "/media/provault/15-laptop-working-table.webp",
+          "alt": "ProVault achievements on a laptop in a working production space"
+        },
+        {
+          "id": "16-platform-creative-workspace",
+          "src": "/media/provault/16-platform-creative-workspace.webp",
+          "alt": "ProVault desktop and mobile profiles in a daylight creative workspace"
+        },
+        {
+          "id": "17-over-shoulder-platform",
+          "src": "/media/provault/17-over-shoulder-platform.webp",
+          "alt": "Over-the-shoulder view of the ProVault achievements platform"
+        },
+        {
+          "id": "18-phone-on-location",
+          "src": "/media/provault/18-phone-on-location.webp",
+          "alt": "ProVault mobile athlete profile at a coastal sports venue"
+        },
+        {
+          "id": "19-workspace-overhead",
+          "src": "/media/provault/19-workspace-overhead.webp",
+          "alt": "Overhead detail of the ProVault desktop and mobile experience"
+        },
+        {
+          "id": "20-laptop-coastal-detail",
+          "src": "/media/provault/20-laptop-coastal-detail.webp",
+          "alt": "Close side-angle detail of ProVault achievements on a laptop"
+        }
+      ],
+      "partners": []
+    }
   }
 }

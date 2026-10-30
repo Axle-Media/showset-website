@@ -6,7 +6,7 @@ const fs=require('node:fs');
 const base=process.env.SHOWSET_BASE_URL||'http://127.0.0.1:3001';
 const checks=[];
 const ck=(name,pass,details)=>{checks.push({name,pass:!!pass,details});console.log(pass?'PASS':'FAIL',name,details||'')};
-const cases=['atmosphere-is-everything','made-to-be-remembered','behind-every-moment'];
+const cases=['atmosphere-is-everything','made-to-be-remembered','provault'];
 const entries=[
  {route:'/',selector:'#case-rail',label:'Homepage'},
  ...cases.map(slug=>({route:'/work/'+slug+'/',selector:'[data-case-gallery]',label:slug}))

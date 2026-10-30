@@ -4,7 +4,7 @@ const fs=require('node:fs');
 const base=process.env.SHOWSET_BASE_URL||'http://localhost:3001';
 const checks=[];
 const ck=(name,pass,details)=>{checks.push({name,pass:!!pass,details});console.log(pass?'PASS':'FAIL',name,details||'')};
-const routes=['atmosphere-is-everything','made-to-be-remembered','behind-every-moment'];
+const routes=['atmosphere-is-everything','made-to-be-remembered','provault'];
 const pageUrl=id=>'/work/'+id+'/';
 const width=1440;
 (async()=>{

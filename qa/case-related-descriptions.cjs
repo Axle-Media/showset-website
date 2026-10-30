@@ -3,7 +3,7 @@
 const {chromium}=require(process.env.SHOWSET_PLAYWRIGHT_MODULE||'playwright');
 const fs=require('node:fs');
 const base=process.env.SHOWSET_BASE_URL||'http://127.0.0.1:3001';
-const cases=['atmosphere-is-everything','made-to-be-remembered','behind-every-moment'];
+const cases=['atmosphere-is-everything','made-to-be-remembered','provault'];
 const checks=[],errors=[];
 const ck=(name,pass,detail)=>{checks.push({name,pass:!!pass,detail});console.log(pass?'PASS':'FAIL',name,detail||'')};
 (async()=>{
