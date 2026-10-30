@@ -1,6 +1,7 @@
 import "server-only";
 import {composeCustom} from "../studio2/compose";
 import {applyTemplateExtensions} from "../studio2/template-extensions";
+import {applyTemplateOverrides} from "../studio2/bindings";
 import { parseHTML } from "linkedom";
 import type { Globals, PageData } from "@/lib/types";
 import { defaultPages } from "@/lib/data";
@@ -33,8 +34,10 @@ export function conceptDocument(page: PageData, g: Globals): string {
   // Include approved Studio chapters and reversible editorial replacements in
   // static HTML. An owner-approved release must render identically before
   // JavaScript hydration and in the live site, not only inside Studio preview.
-  if(page.builder?.mode === "template")
+  if(page.builder?.mode === "template"){
     applyTemplateExtensions(host as unknown as HTMLElement,page);
+    applyTemplateOverrides(host as unknown as HTMLElement,page);
+  }
   // No-JS visitors get the same second-scene content without inert scroll controls.
   const second=host.querySelector("#hero-second");
   if(second){
