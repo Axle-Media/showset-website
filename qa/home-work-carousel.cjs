@@ -4,7 +4,7 @@ const fs=require('node:fs');
 const base=process.env.SHOWSET_BASE_URL||'http://localhost:3001';
 const checks=[];
 const ck=(name,pass,details)=>{checks.push({name,pass:!!pass,details});console.log(pass?'PASS':'FAIL',name,details||'')};
-const routes=['atmosphere-is-everything','made-to-be-remembered','provault'];
+const routes=['the-amaze-ball','made-to-be-remembered','provault'];
 const pageUrl=id=>'/work/'+id+'/';
 const width=1440;
 (async()=>{
@@ -28,6 +28,14 @@ const width=1440;
   await page.waitForSelector('[data-concept-ready="true"]');
   const cards=page.locator('#case-rail > [data-case-slide]');
   ck('Home has all 3 unique original cards',await cards.count()===3);
+  const homeCopy={};
+  for(const card of await cards.all()){
+   const href=await card.getAttribute('href');
+   homeCopy[href]={
+    title:(await card.locator('h3').innerText()).replace(/\s+/g,' ').trim(),
+    description:(await card.locator('.case-story p').innerText()).trim(),
+   };
+  }
   // These images are intentionally lazy-loaded; scroll to the rail before
   // checking the decoded asset instead of racing the browser's loader.
   await page.locator('#case-rail').scrollIntoViewIfNeeded();
@@ -92,6 +100,15 @@ const width=1440;
   await page.waitForSelector('.case-index-item');
   const work=page.locator('.case-index-item');
   ck('Our Work has all 3 cases',await work.count()===3);
+  for(const card of await work.all()){
+   const href=await card.getAttribute('href');
+   const expected=homeCopy[href];
+   if(!expected)continue;
+   const title=(await card.locator('h2').innerText()).replace(/\s+/g,' ').trim();
+   const description=(await card.locator('.case-index-info p').innerText()).trim();
+   ck('Home headline matches Our Work for '+href,expected.title===title,{home:expected.title,work:title});
+   ck('Home description matches Our Work for '+href,expected.description===description,{home:expected.description,work:description});
+  }
   for(let i=0;i<routes.length;i++){
    const src=await work.nth(i).locator('img').getAttribute('src');
    await work.nth(i).scrollIntoViewIfNeeded();
@@ -104,6 +121,12 @@ const width=1440;
   // Also exercise a future case study explicitly linked from each work section.
   const published=JSON.parse(fs.readFileSync('content/pages.json','utf8'));
   published['made-to-be-remembered'].caseExperience.openingImage='/media/cases/production-hero.webp';
+  // Editing Our Work should update Home even when homepage's duplicated
+  // titles and descriptions have not been manually touched.
+  const editedWork=published['our-work'].sections.find(section=>section.type==='work');
+  const editedElmboog=editedWork.items.find(item=>item.href==='/work/made-to-be-remembered/');
+  editedElmboog.title='A fresh identity.\nRooted in nature.';
+  editedElmboog.description='Updated in Our Work through SHOWSET Studio, reflected on Home automatically.';
   const next=structuredClone(published['made-to-be-remembered']);
   next.slug='future-creative-exploration';
   next.route='/work/future-creative-exploration/';
@@ -126,6 +149,9 @@ const width=1440;
   ck('Studio preview picks up a modified case opening image',await homePreview.nth(1).locator('img').getAttribute('src')==='/media/cases/production-hero.webp');
   ck('Future case uses its own opening image on Home',await homePreview.nth(3).locator('img').getAttribute('src')==='/media/cases/identity-hero.webp');
   ck('Future homepage card keeps its project name and period',(await homePreview.nth(3).getAttribute('aria-label'))==='Explore creative study: '+next.title&&await homePreview.nth(3).locator('h3 .teal-dot').count()===1);
+  ck('Studio Our Work headline propagates to Home',(await homePreview.nth(1).locator('h3').innerText()).replace(/\s+/g,' ').trim()==='A fresh identity. Rooted in nature.');
+  ck('Studio Our Work description propagates to Home',(await homePreview.nth(1).locator('.case-story p').innerText()).trim()===editedElmboog.description);
+  const editedHomeTitle=(await homePreview.nth(1).locator('h3').innerText()).replace(/\s+/g,' ').trim();
   await previewPage.goto(base+'/our-work/');
   await previewPage.waitForSelector('[data-concept-ready="true"]');
   await previewPage.waitForFunction(()=>document.querySelectorAll('.case-index-item').length===4);
@@ -133,6 +159,8 @@ const width=1440;
   ck('Newly added case leads Our Work',await workPreview.nth(0).getAttribute('href')==='/work/future-creative-exploration/');
   ck('Studio preview picks up modified opening image on Our Work',await workPreview.nth(2).locator('img').getAttribute('src')==='/media/cases/production-hero.webp');
   ck('Future case uses its own opening image on Our Work',await workPreview.nth(0).locator('img').getAttribute('src')==='/media/cases/identity-hero.webp');
+  ck('Edited Our Work headline and Home remain identical in Studio preview',
+   editedHomeTitle===(await workPreview.nth(2).locator('h2').innerText()).replace(/\s+/g,' ').trim());
   await preview.close();
   // Grow the published preview without inventing public projects. Confirm
   // the interactive six-at-a-time contract, newest-first dates and filtering.
