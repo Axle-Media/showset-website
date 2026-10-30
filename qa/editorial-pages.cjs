@@ -1,6 +1,7 @@
 // SHOWSET Studio, portfolio and Contact acceptance. No hardcoded portfolio size.
 const {chromium}=require(process.env.SHOWSET_PLAYWRIGHT_MODULE||'playwright');
 const fs=require('node:fs');
+const seed=require('../content/pages.json');
 const base=process.env.SHOWSET_BASE_URL||'http://127.0.0.1:3001';
 const checks=[],errors=[];
 function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log(pass?'PASS':'FAIL',name,detail??'')}
@@ -76,7 +77,11 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
    copy:n.querySelector('.case-index-info p')?.textContent
   })));
   ck('Portfolio derives valid linked stories '+width,portfolio.length>=3&&portfolio.every(x=>x.href?.startsWith('/work/')&&x.title&&x.image&&x.copy),portfolio.slice(0,4));
-  ck('Initial demonstration cases are clearly labelled '+width,portfolio.slice(0,3).every(x=>x.label==='Concept study'),portfolio.slice(0,3).map(x=>x.label));
+  ck('Client and concept cases retain their authored labels '+width,portfolio.every(x=>{
+   const project=Object.values(seed).find(p=>p.route===x.href);
+   const item=seed['our-work'].sections.flatMap(s=>s.items||[]).find(i=>i.href===x.href);
+   return project&&x.label===(project.caseExperience?.demo?'Concept study':item?.accent?.trim()||'Project');
+  }),portfolio.map(x=>x.label));
   const intro=await page.locator('.work-intro-copy').innerText();
   ck('Work intro does not hardcode case-study count '+width,!/three creative studies|only three|not completed client projects/i.test(intro),intro);
   ck('All Work cards reuse the homepage card shell '+width,
