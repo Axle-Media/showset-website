@@ -1937,5 +1937,486 @@
         "width": 1536
       }
     ]
+  },
+  {
+    "placement": 201,
+    "source": 201,
+    "page": "The Amaze-Ball",
+    "title": "hero",
+    "src": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2.webp",
+    "alt": "Camera operator filming the MC beside the ball installation at The Amaze-Ball",
+    "width": 1672,
+    "height": 940,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2.webp",
+        "width": 1672
+      }
+    ],
+    "mobile": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2-mobile.webp"
+  },
+  {
+    "placement": 202,
+    "source": 202,
+    "page": "The Amaze-Ball",
+    "title": "impact",
+    "src": "/media/showset/amaze-ball/amaze-ball-impact-edited-v2.webp",
+    "alt": "Guest beside the padel-ball Golden Point Grand Slam installation",
+    "width": 1672,
+    "height": 940,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-impact-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-impact-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-impact-edited-v2.webp",
+        "width": 1672
+      }
+    ]
+  },
+  {
+    "placement": 203,
+    "source": 203,
+    "page": "The Amaze-Ball",
+    "title": "padel",
+    "src": "/media/showset/amaze-ball/amaze-ball-padel-edited-v2.webp",
+    "alt": "Two padel players on the blue court",
+    "width": 1673,
+    "height": 940,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-padel-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-padel-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-padel-edited-v2.webp",
+        "width": 1673
+      }
+    ]
+  },
+  {
+    "placement": 204,
+    "source": 204,
+    "page": "The Amaze-Ball",
+    "title": "court-moment",
+    "src": "/media/showset/amaze-ball/amaze-ball-court-moment-edited-v2.webp",
+    "alt": "Guests and players sharing a moment on the padel court",
+    "width": 1672,
+    "height": 940,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-court-moment-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-court-moment-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-court-moment-edited-v2.webp",
+        "width": 1672
+      }
+    ]
+  },
+  {
+    "placement": 205,
+    "source": 205,
+    "page": "The Amaze-Ball",
+    "title": "guests",
+    "src": "/media/showset/amaze-ball/amaze-ball-guests-edited-v2.webp",
+    "alt": "Guests gathering around a gold-covered cocktail table",
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-guests-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-guests-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-guests-edited-v2.webp",
+        "width": 1672
+      }
+    ]
+  },
+  {
+    "placement": 206,
+    "source": 206,
+    "page": "The Amaze-Ball",
+    "title": "interview",
+    "src": "/media/showset/amaze-ball/amaze-ball-interview-edited-v2.webp",
+    "alt": "The MC interviewing a guest beside the branded backdrop",
+    "width": 1672,
+    "height": 940,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-interview-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-interview-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-interview-edited-v2.webp",
+        "width": 1672
+      }
+    ]
+  },
+  {
+    "placement": 207,
+    "source": 207,
+    "page": "The Amaze-Ball",
+    "title": "broadcast",
+    "src": "/media/showset/amaze-ball/amaze-ball-broadcast-edited-v2.webp",
+    "alt": "Camera operator filming a speaker against the Amazeballs backdrop",
+    "width": 1672,
+    "height": 940,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-broadcast-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-broadcast-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-broadcast-edited-v2.webp",
+        "width": 1672
+      }
+    ]
+  },
+  {
+    "placement": 208,
+    "source": 208,
+    "page": "The Amaze-Ball",
+    "title": "artist",
+    "src": "/media/showset/amaze-ball/amaze-ball-artist-edited-v2.webp",
+    "alt": "An artist working on a circular portrait during the event",
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-artist-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-artist-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-artist-edited-v2.webp",
+        "width": 1672
+      }
+    ]
+  },
+  {
+    "placement": 209,
+    "source": 209,
+    "page": "The Amaze-Ball",
+    "title": "artwork-detail",
+    "src": "/media/showset/amaze-ball/amaze-ball-artwork-detail-edited-v2.webp",
+    "alt": "Close detail of the artist drawing on a circular surface",
+    "width": 1672,
+    "height": 940,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-artwork-detail-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-artwork-detail-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-artwork-detail-edited-v2.webp",
+        "width": 1672
+      }
+    ]
+  },
+  {
+    "placement": 210,
+    "source": 210,
+    "page": "The Amaze-Ball",
+    "title": "hospitality",
+    "src": "/media/showset/amaze-ball/amaze-ball-hospitality-edited-v2.webp",
+    "alt": "Canapés on a serving tray at the event",
+    "width": 1673,
+    "height": 940,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-hospitality-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-hospitality-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-hospitality-edited-v2.webp",
+        "width": 1673
+      }
+    ]
+  },
+  {
+    "placement": 211,
+    "source": 211,
+    "page": "The Amaze-Ball",
+    "title": "canapes",
+    "src": "/media/showset/amaze-ball/amaze-ball-canapes-edited-v2.webp",
+    "alt": "Bite-size canapés being served beside the court",
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-canapes-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-canapes-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-canapes-edited-v2.webp",
+        "width": 1672
+      }
+    ]
+  },
+  {
+    "placement": 212,
+    "source": 212,
+    "page": "The Amaze-Ball",
+    "title": "drinks",
+    "src": "/media/showset/amaze-ball/amaze-ball-drinks-edited-v2.webp",
+    "alt": "A bartender preparing drinks for guests",
+    "width": 1672,
+    "height": 940,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-drinks-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-drinks-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-drinks-edited-v2.webp",
+        "width": 1672
+      }
+    ]
+  },
+  {
+    "placement": 213,
+    "source": 213,
+    "page": "The Amaze-Ball",
+    "title": "table-detail",
+    "src": "/media/showset/amaze-ball/amaze-ball-table-detail-edited-v2.webp",
+    "alt": "Gold table lamp and Bid for a Ball fundraising card at the event",
+    "width": 1673,
+    "height": 940,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-table-detail-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-table-detail-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-table-detail-edited-v2.webp",
+        "width": 1673
+      }
+    ]
+  },
+  {
+    "placement": 214,
+    "source": 214,
+    "page": "The Amaze-Ball",
+    "title": "ball-detail",
+    "src": "/media/showset/amaze-ball/amaze-ball-ball-detail-edited-v2.webp",
+    "alt": "Close detail of padel balls in the event installation",
+    "width": 1672,
+    "height": 940,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-ball-detail-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-ball-detail-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-ball-detail-edited-v2.webp",
+        "width": 1672
+      }
+    ]
+  },
+  {
+    "placement": 215,
+    "source": 215,
+    "page": "The Amaze-Ball",
+    "title": "brand-backdrop",
+    "src": "/media/showset/amaze-ball/amaze-ball-brand-backdrop-edited-v2.webp",
+    "alt": "The padel-ball event backdrop and small stage",
+    "width": 1672,
+    "height": 940,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-brand-backdrop-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-brand-backdrop-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-brand-backdrop-edited-v2.webp",
+        "width": 1672
+      }
+    ]
+  },
+  {
+    "placement": 216,
+    "source": 216,
+    "page": "The Amaze-Ball",
+    "title": "team-detail",
+    "src": "/media/showset/amaze-ball/amaze-ball-team-detail-edited-v2.webp",
+    "alt": "AMAZE-TEAM lettering on a crew member’s shirt",
+    "width": 1672,
+    "height": 940,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-team-detail-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-team-detail-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-team-detail-edited-v2.webp",
+        "width": 1672
+      }
+    ]
+  },
+  {
+    "placement": 217,
+    "source": 217,
+    "page": "The Amaze-Ball",
+    "title": "venue-setup",
+    "src": "/media/showset/amaze-ball/amaze-ball-venue-setup-edited-v2.webp",
+    "alt": "Crew preparing the venue and furniture before the event",
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-venue-setup-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-venue-setup-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-venue-setup-edited-v2.webp",
+        "width": 1672
+      }
+    ]
+  },
+  {
+    "placement": 218,
+    "source": 218,
+    "page": "The Amaze-Ball",
+    "title": "screen-setup",
+    "src": "/media/showset/amaze-ball/amaze-ball-screen-setup-edited-v2.webp",
+    "alt": "Crew installing a display beside the padel court",
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-screen-setup-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-screen-setup-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-screen-setup-edited-v2.webp",
+        "width": 1672
+      }
+    ]
+  },
+  {
+    "placement": 219,
+    "source": 219,
+    "page": "The Amaze-Ball",
+    "title": "production-desk",
+    "src": "/media/showset/amaze-ball/amaze-ball-production-desk-edited-v2.webp",
+    "alt": "The crew preparing monitors and event production equipment",
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-production-desk-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-production-desk-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-production-desk-edited-v2.webp",
+        "width": 1672
+      }
+    ]
+  },
+  {
+    "placement": 220,
+    "source": 220,
+    "page": "The Amaze-Ball",
+    "title": "live-control",
+    "src": "/media/showset/amaze-ball/amaze-ball-live-control-edited-v2.webp",
+    "alt": "The live production multiview showing court and presenter feeds",
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-live-control-edited-v2-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-live-control-edited-v2-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/amaze-ball/amaze-ball-live-control-edited-v2.webp",
+        "width": 1672
+      }
+    ]
   }
 ]

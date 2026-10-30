@@ -4,7 +4,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const photos=require('../lib/concept-12/image-replacements.json');
 const base=process.env.SHOWSET_BASE_URL||'http://localhost:3001';
-const routes=[['/',1,10],['/events-experiences/',11,14],['/creative-design/',15,18],['/digital-marketing/',19,22],['/content-production/',23,26],['/our-studio/',27,30],['/our-work/',31,34],['/work/atmosphere-is-everything/',35,47],['/work/made-to-be-remembered/',48,57],['/work/behind-every-moment/',58,67]];
+const routes=[['/',1,10],['/events-experiences/',11,14],['/creative-design/',15,18],['/digital-marketing/',19,22],['/content-production/',23,26],['/our-studio/',27,30],['/our-work/',31,34],['/work/the-amaze-ball/',35,47],['/work/made-to-be-remembered/',48,57],['/work/behind-every-moment/',58,67]];
 (async()=>{
  const browser=await chromium.launch({channel:process.env.SHOWSET_PLAYWRIGHT_CHANNEL||'chrome',headless:true});
  const results=[],errors=[];
@@ -20,9 +20,10 @@ const routes=[['/',1,10],['/events-experiences/',11,14],['/creative-design/',15,
      return images.map(i=>({id:Number(i.dataset.imagePlacement),src:i.getAttribute('src'),current:i.currentSrc,loaded:i.complete&&i.naturalWidth>0,mobile:i.parentElement.querySelector('source')?.getAttribute('srcset')}));
     });
     const ids=[...new Set(actual.map(i=>i.id))].sort((a,b)=>a-b);
-    const replaced={6:101,33:101,46:101,67:101};
+    const replaced={5:201,6:101,32:201,33:101,46:101,66:201,67:101};
     const expected=route==='/work/made-to-be-remembered/'
-     ? [56,57,...Array.from({length:11},(_,i)=>101+i)]
+     ? [56,...Array.from({length:11},(_,i)=>101+i),201]
+     : route==='/work/the-amaze-ball/' ? [47,101,...Array.from({length:20},(_,i)=>201+i)]
      : Array.from({length:last-first+1},(_,i)=>replaced[first+i]||first+i).sort((a,b)=>a-b);
     assert.deepEqual(ids,expected,`${route} at ${width}: all current placements`);
     assert(actual.every(i=>i.loaded),`${route}: every image decodes`);
@@ -32,10 +33,10 @@ const routes=[['/',1,10],['/events-experiences/',11,14],['/creative-design/',15,
     await page.screenshot({path:`qa-results/image-replacements/${first}-${width}.png`});
    }
    // Lightbox next must load the next full photo rather than retain the old srcset.
-   await page.goto(base+'/work/atmosphere-is-everything/');await page.waitForSelector('[data-case-ready="true"]');
+   await page.goto(base+'/work/the-amaze-ball/');await page.waitForSelector('[data-case-ready="true"]');
    await page.locator('[data-case-image="0"]').click();
    await page.locator('[data-case-lightbox-next]').click();
-   await page.waitForFunction(()=>{const i=document.querySelector('[data-case-lightbox-image]');return i.complete&&i.naturalWidth>0&&i.getAttribute('src')?.includes('41-event-arrivals')});
+   await page.waitForFunction(()=>{const i=document.querySelector('[data-case-lightbox-image]');return i.complete&&i.naturalWidth>0&&i.getAttribute('src')?.includes('amaze-ball-impact-edited-v2')});
    assert.equal(await page.locator('[data-case-lightbox-image]').getAttribute('srcset'),null);
    await context.close();
   }

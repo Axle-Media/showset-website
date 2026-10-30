@@ -18,7 +18,7 @@ export const routeKeys: Record<string, string> = {
   "/our-studio/": "studio",
   "/our-work/": "work",
   "/contact/": "contact",
-  "/work/atmosphere-is-everything/": "case-events",
+  "/work/the-amaze-ball/": "case-events",
   "/work/made-to-be-remembered/": "case-identity",
   "/work/behind-every-moment/": "case-production",
   "/services/": "home",
@@ -492,7 +492,7 @@ export function bindConcept(
     host.querySelectorAll(selector).forEach((card, i) => {
       const x = s.items[i];
       if (!x) return;
-      if (itemChanged(s, i, "title")) {
+      if (itemChanged(s, i, "title") || x.href?.startsWith("/work/")) {
         const heading = card.querySelector("h2,h3");
         if (heading) {
           // Preserve the approved teal period when Studio adds a new card.
@@ -501,15 +501,15 @@ export function bindConcept(
           if (period) heading.append(period);
         }
       }
-      if (itemChanged(s, i, "description")) {
+      if (itemChanged(s, i, "description") || x.href?.startsWith("/work/")) {
         const e = card.querySelector("p");
         if (e) e.textContent = x.description;
       }
-      if (itemChanged(s, i, "image")) {
+      if (itemChanged(s, i, "image") || x.href?.startsWith("/work/")) {
         const e = card.querySelector<HTMLImageElement>("img");
         if (e) e.src = safeHref(x.image);
       }
-      if (itemChanged(s, i, "href")) {
+      if (itemChanged(s, i, "href") || x.href?.startsWith("/work/")) {
         const e = card.matches("a")
           ? (card as HTMLAnchorElement)
           : card.querySelector<HTMLAnchorElement>("a");
