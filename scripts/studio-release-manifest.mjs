@@ -98,7 +98,7 @@ export function verifyStagingCandidate(root,{checkBuild=false}={}){
     const exportRoot=inside(base,"out");
     if(!fs.existsSync(exportRoot))throw Error("No built static staging site.");
     for(const route of expectedRoutes){
-      if(!/^\/[a-z0-9/-]*\/$/.test(route))
+      if(route!=="/"&&!/^\/[a-z0-9/-]*\/$/.test(route))
         throw Error("Unexpected release route.");
       const file=inside(exportRoot,path.join(route.slice(1),"index.html"));
       if(!fs.existsSync(file))throw Error("Built preview missing route "+route);
