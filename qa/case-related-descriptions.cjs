@@ -1,69 +1,66 @@
-// Guard the scoped related-case-study card typography and text-column width.
-// Cards should fill their available space, without affecting other body copy.
+// Related case study regression: canonical Our Work titles, title-only cards,
+// accessible project links and visually centred phone cards.
 const {chromium}=require(process.env.SHOWSET_PLAYWRIGHT_MODULE||'playwright');
 const fs=require('node:fs');
 const base=process.env.SHOWSET_BASE_URL||'http://127.0.0.1:3001';
-const cases=['atmosphere-is-everything','made-to-be-remembered','provault'];
-const checks=[],errors=[];
-const ck=(name,pass,detail)=>{checks.push({name,pass:!!pass,detail});console.log(pass?'PASS':'FAIL',name,detail||'')};
+const routes=['the-amaze-ball','made-to-be-remembered','provault'];
+const results=[],errors=[];
+const check=(label,pass,detail)=>{results.push({label,pass:!!pass,detail});console.log(pass?'PASS':'FAIL',label,detail??'')};
+const normal=s=>(s||'').replace(/\s+/g,' ').trim();
 (async()=>{
- const browser=await chromium.launch({channel:process.env.SHOWSET_PLAYWRIGHT_CHANNEL||'chrome',headless:true});
+ const browser=await chromium.launch({channel:process.env.SHOWSET_PLAYWRIGHT_CHANNEL||'chromium',headless:true});
  try{
-  const page=await browser.newPage();
+  const page=await browser.newPage({viewport:{width:390,height:844}});
   page.on('pageerror',e=>errors.push(e.message));
-  for(const width of [1796,1440,768,390,320]){
-   await page.setViewportSize({width,height:950});
-   for(const slug of cases){
+  await page.goto(base+'/our-work/');
+  await page.waitForSelector('.case-index-item');
+  const titles=Object.fromEntries(await page.locator('.case-index-item').evaluateAll(cards=>cards.map(c=>[
+    new URL(c.href).pathname, c.querySelector('h2')?.textContent?.replace(/\s+/g,' ').trim()
+  ])));
+  check('Our Work exposes all canonical project titles',routes.every(slug=>titles['/work/'+slug+'/']));
+  for(const width of [390,600,768,1440]){
+   await page.setViewportSize({width,height:900});
+   for(const slug of routes){
     const route='/work/'+slug+'/';
     await page.goto(base+route);
-    await page.waitForSelector('.concept-12-root[data-concept-ready="true"]');
-    await page.waitForSelector('.case-related-card-caption p');
+    await page.waitForSelector('[data-concept-ready="true"]');
+    await page.waitForSelector('.case-related-card');
     await page.evaluate(()=>document.fonts.ready);
-    const readings=await page.locator('.case-related-card').evaluateAll(cards=>cards.map(card=>{
-     const caption=card.querySelector('.case-related-card-caption');
-     const content=caption?.querySelector(':scope > div');
-     const title=content?.querySelector('h3');
-     const paragraph=content?.querySelector('p');
-     const arrow=caption?.querySelector(':scope > span');
-     if(!caption||!content||!title||!paragraph||!arrow)return null;
-     const bounds=el=>{const r=el.getBoundingClientRect();return {x:r.x,right:r.right,width:r.width}};
-     return {caption:bounds(caption),content:bounds(content),paragraph:bounds(paragraph),arrow:bounds(arrow),
-       title:bounds(title),font:getComputedStyle(paragraph).fontSize,
-       headingFont:getComputedStyle(title).fontSize,copy:paragraph.textContent.trim()};
-    }));
-    ck('Two related cards exist '+route+' @'+width,readings.length===2&&readings.every(Boolean));
-    readings.forEach((item,index)=>{
-     if(!item)return;
-     const label=route+' card '+(index+1)+' @'+width;
-     ck('Only related-card copy is 14px '+label,item.font==='14px',item.font);
-     ck('Card description fills available width '+label,
-       item.paragraph.width>=item.caption.width-item.arrow.width-24&&
-       Math.abs(item.paragraph.width-item.content.width)<2,
-       {paragraph:item.paragraph.width,caption:item.caption.width,arrow:item.arrow.width,content:item.content.width});
-     ck('Related heading retains larger size '+label,parseFloat(item.headingFont)>14,item.headingFont);
-     ck('Card copy and title retain left alignment '+label,
-       Math.abs(item.paragraph.x-item.title.x)<2,
-       {copyLeft:item.paragraph.x,titleLeft:item.title.x});
-     ck('Arrow stays at right without overlapping text '+label,
-       item.paragraph.right+15<=item.arrow.x&&Math.abs(item.caption.right-item.arrow.right)<2,
-       {paragraphRight:item.paragraph.right,arrowLeft:item.arrow.x,arrowRight:item.arrow.right});
-    });
-    const regular=await page.locator('.case-body-copy p').first().evaluate(el=>getComputedStyle(el).fontSize);
-    ck('Other case-story paragraphs remain 17px '+route+' @'+width,regular==='17px',regular);
-    const docWidth=await page.evaluate(()=>document.documentElement.scrollWidth);
-    ck('No page overflow '+route+' @'+width,docWidth<=width+2,{docWidth,width});
-    if(slug===cases[0]&&(width===1796||width===390)){
-      fs.mkdirSync('qa-results',{recursive:true});
-      await page.locator('.case-related').scrollIntoViewIfNeeded();
-      await page.screenshot({path:'qa-results/case-related-'+width+'.png',animations:'disabled'});
+    const observed=await page.locator('.case-related-card').evaluateAll(cards=>cards.map(card=>{
+      const link=new URL(card.href).pathname;
+      const title=card.querySelector('.case-related-card-caption h3');
+      const description=card.querySelector('.case-related-card-caption p');
+      const arrow=card.querySelector('.case-related-card-caption > span');
+      const caption=card.querySelector('.case-related-card-caption');
+      const cap=caption?.getBoundingClientRect(),ar=arrow?.getBoundingClientRect();
+      return {link,title:title?.dataset.caseHeading?.replace(/\s+/g,' ').trim(),
+        description:!!description,alignment:title?getComputedStyle(title).textAlign:null,
+        arrow:ar?{x:ar.x+ar.width/2,y:ar.y}:null,
+        caption:cap?{x:cap.x+cap.width/2,y:cap.y}:null,
+        picture:!!card.querySelector('.case-related-photo img')};
+    })));
+    const label=route+' @'+width;
+    check('Related projects remain two distinct links '+label,observed.length===2&&new Set(observed.map(x=>x.link)).size===2);
+    check('Related titles equal Our Work '+label,observed.every(x=>normal(x.title)===normal(titles[x.link])),observed.map(x=>({route:x.link,title:x.title,want:titles[x.link]})));
+    check('Related cards contain headings only, not descriptions '+label,observed.every(x=>!x.description&&x.picture));
+    if(width<=600){
+      check('Related heading and arrow centred '+label,observed.every(x=>
+        x.alignment==='center'&&x.arrow&&x.caption&&Math.abs(x.arrow.x-x.caption.x)<=3),observed);
+      const heading=await page.locator('.case-related-heading').evaluate(el=>{
+       const a=el.querySelector('.understated-link'),r=el.getBoundingClientRect(),l=a?.getBoundingClientRect();
+       return {align:getComputedStyle(el).alignItems,gap:Math.abs((l?.x||0)+(l?.width||0)/2-(r.x+r.width/2))};
+      });
+      check('Explore our work link centred '+label,heading.align==='center'&&heading.gap<=3,heading);
     }
+    check('Full original case narratives retained '+label,(await page.locator('.case-body-copy p').count())>=3);
+    check('No viewport overflow '+label,await page.evaluate(w=>document.documentElement.scrollWidth<=w+2,width));
    }
   }
-  ck('No uncaught browser errors',errors.length===0,errors);
+  check('No browser errors',errors.length===0,errors);
  }finally{
   await browser.close();
   fs.mkdirSync('qa-results',{recursive:true});
-  fs.writeFileSync('qa-results/case-related-descriptions.json',JSON.stringify({checks,errors},null,2));
-  if(checks.some(x=>!x.pass)||errors.length)process.exitCode=1;
+  fs.writeFileSync('qa-results/case-related-descriptions.json',JSON.stringify(results,null,2));
+  if(results.some(x=>!x.pass)||errors.length)process.exitCode=1;
  }
-})().catch(err=>{console.error(err);process.exitCode=1});
+})().catch(e=>{console.error(e);process.exitCode=1});

@@ -3,6 +3,7 @@ import { safeHref } from "@/lib/safe";
 import { primaryChapterImage } from "./chapter-image";
 import { caseExperienceFor } from "./case-content";
 import { defaultPages } from "@/lib/data";
+import { portfolioEntries } from "./portfolio-content";
 
 const esc=(v:string="")=>String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
 const src=(v?:string)=>{const s=safeHref(v||"");return s==="#"?"/brand/showset-approved.svg":s;};
@@ -41,6 +42,15 @@ export function renderImmersiveCase(host:HTMLElement,page:PageData,catalog:Recor
    '</div>'+
    '<div class="case-gallery-viewport" data-case-gallery role="group" aria-roledescription="carousel" aria-label="Photographs. Drag, swipe or use arrow keys" tabindex="0">'+
    gallery.map((p,j)=>'<button type="button" class="case-gallery-item" data-case-image="'+j+'" data-case-image-id="'+esc(p.id||photoId(p.src)+'-'+gallery.slice(0,j).filter(x=>x.src===p.src).length)+'"'+creditAttrs(p)+' aria-label="Enlarge photograph '+(j+1)+'">'+img(p.src,p.alt)+'</button>').join("")+'</div></section>':"";
+ // Related cards share Our Work's canonical titles. Descriptions and metadata
+ // belong on the Work index, not in the related-story card captions.
+ const workSection=Object.values(catalog).find(p=>p.route==="/our-work/")?.sections.find(s=>s.type==="work");
+ const homeSection=Object.values(catalog).find(p=>p.route==="/")?.sections.find(s=>s.type==="work");
+ const sharedSection=workSection||homeSection;
+ const sharedTitles=new Map(
+   (sharedSection?portfolioEntries(sharedSection,catalog):[])
+     .map(project=>[project.route,project.title])
+ );
  const studies=Object.values(catalog).filter(p=>p.route.startsWith("/work/"));
  const index=studies.findIndex(p=>p.route===page.route);
  const others=Array.from({length:Math.min(2,Math.max(0,studies.length-1))},(_,i)=>studies[(index+i+1)%studies.length]).filter(p=>p.route!==page.route);
@@ -51,7 +61,7 @@ export function renderImmersiveCase(host:HTMLElement,page:PageData,catalog:Recor
   '</div></div></section>'+
   '<section class="case-scroll-narrative" data-case-narrative><div class="case-narrative-stage"><div class="case-chapter-stack">'+chapters.map((c,i)=>chapter(c,i)).join("")+storyVisual(chapters)+'</div></div></section>'+
   galleryMarkup+
-  (others.length?'<section class="case-related section-gutter"><div class="case-related-heading">'+heading("More stories worth exploring.")+'<a class="understated-link" href="/our-work/">Explore our work <span aria-hidden="true">↗</span></a></div><div class="case-related-grid">'+others.map(p=>'<a class="case-related-card" href="'+esc(safeHref(p.route))+'"><div class="case-related-photo">'+img(caseExperienceFor(p).openingImage)+'</div><div class="case-related-card-caption"><div>'+heading(caseExperienceFor(p).openingTitle||p.title,"h3")+'<p>'+esc(caseExperienceFor(p).openingBody||p.seo?.description||'')+'</p></div><span aria-hidden="true">↗</span></div></a>').join("")+'</div></section>':"")+
+  (others.length?'<section class="case-related section-gutter"><div class="case-related-heading">'+heading("More stories worth exploring.")+'<a class="understated-link" href="/our-work/">Explore our work <span aria-hidden="true">↗</span></a></div><div class="case-related-grid">'+others.map(p=>'<a class="case-related-card" href="'+esc(safeHref(p.route))+'"><div class="case-related-photo">'+img(caseExperienceFor(p).openingImage)+'</div><div class="case-related-card-caption"><div>'+heading(sharedTitles.get(p.route)||p.title,"h3")+'</div><span aria-hidden="true">↗</span></div></a>').join("")+'</div></section>':"")+
   '</div><div class="case-lightbox" data-case-lightbox role="dialog" aria-modal="true" aria-label="Image viewer" hidden><button type="button" data-case-close class="case-lightbox-close" aria-label="Close image viewer">✕</button><button type="button" class="case-lightbox-nav case-lightbox-prev" data-case-lightbox-prev aria-label="Previous image">←</button><figure class="case-lightbox-figure"><img data-case-lightbox-image src="'+esc(src(gallery[0]?.src))+'" alt=""><figcaption><span data-case-lightbox-caption></span><span data-case-lightbox-count></span><span class="case-photo-credit" data-case-photo-credit hidden></span></figcaption></figure><button type="button" class="case-lightbox-nav case-lightbox-next" data-case-lightbox-next aria-label="Next image">→</button></div>';
  const original=host.querySelector<HTMLElement>("#ending");
  if(original){const cloned=original.cloneNode(true) as HTMLElement;cloned.id="case-ending";view.querySelector(".case-experience")?.append(cloned);}

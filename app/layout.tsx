@@ -21,6 +21,7 @@ import "./responsive-mobile-tablet.css";
 import "./legal-pages.css";
 import "./button-interactions.css";
 import "./navigation-menu.css";
+import "./mobile-alignment-qc.css";
 export const metadata: Metadata = {
   title: "SHOWSET | Events & Creative Agency",
   description:
