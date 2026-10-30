@@ -177,3 +177,32 @@
     margin-inline:auto!important;
   }
 }
+
+/* Home and Our Studio only: centre the whole hero content group in the
+   actual photographic frame, not at a fixed offset from the screen top.
+   Scroll scripts update the midpoint as each image expands edge-to-edge.
+   CSS translate is separate from JS transform so entrance motion is retained. */
+@media (max-width:600px) and (min-height:701px) {
+  .concept-12-root #main .hero-stage :is(#hero-foreground,#hero-second) {
+    top:var(--home-photo-midpoint,52.5%)!important;
+    bottom:auto!important;
+    translate:0 -50%!important;
+    text-align:center!important;
+  }
+  .concept-12-root #main .editorial-page.studio-rebuilt
+  .studio-hero-track[data-studio-motion="on"] .studio-hero-scene {
+    top:var(--studio-photo-midpoint,53%)!important;
+    bottom:auto!important;
+    translate:0 -50%!important;
+    text-align:center!important;
+  }
+  /* Centre title lines inside the content column, including line reveals. */
+  .concept-12-root #main .hero-stage :is(.hero-title,.hero-second h2),
+  .concept-12-root #main .studio-hero-track[data-studio-motion="on"] .studio-scroll-heading {
+    width:100%;text-align:center!important;
+  }
+  .concept-12-root #main .hero-stage :is(.hero-title .line,.hero-second h2 .wipe-line),
+  .concept-12-root #main .studio-hero-track[data-studio-motion="on"] .studio-scroll-heading .wipe-line {
+    margin-inline:auto!important;
+  }
+}
