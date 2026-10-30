@@ -116,10 +116,10 @@
           },
           {
             "id": "made-to-be-remembered-1",
-            "title": "Made to be remembered",
-            "accent": "",
-            "description": "Identity is built in a thousand little encounters, not one big reveal.",
-            "image": "/media/showset/06-identity-project-hero.webp",
+            "title": "Elmboog Organiese Boerdery",
+            "accent": "Brand identity",
+            "description": "A connected identity for Elmboog Organiese Boerdery, brought to life through a brand guide, company profile, stationery and presentation design.",
+            "image": "/media/elmboog/elmboog-01-identity-system-hero.webp",
             "href": "/work/made-to-be-remembered/"
           },
           {
@@ -1545,10 +1545,10 @@
           },
           {
             "id": "made-to-be-remembered-1",
-            "title": "Made to be remembered",
-            "accent": "Concept study",
-            "description": "A brand gets built every time someone meets it. One voice, many touchpoints, a thousand tiny clues.",
-            "image": "/media/showset/33-identity-project-hero.webp",
+            "title": "Elmboog Organiese Boerdery",
+            "accent": "Brand identity",
+            "description": "A connected identity for Elmboog Organiese Boerdery, brought to life through a brand guide, company profile, stationery and presentation design.",
+            "image": "/media/elmboog/elmboog-01-identity-system-hero.webp",
             "href": "/work/made-to-be-remembered/",
             "category": "Creative & design"
           },
@@ -1593,15 +1593,15 @@
   "made-to-be-remembered": {
     "slug": "made-to-be-remembered",
     "route": "/work/made-to-be-remembered/",
-    "title": "Made to be remembered",
+    "title": "Elmboog Organiese Boerdery",
     "sections": [
       {
         "id": "section-1",
         "type": "pagehero",
-        "headline": "Made to be remembered.",
+        "headline": "Elmboog Organiese Boerdery",
         "accent": "",
-        "body": "A visual study of how identity becomes something people recognise without having to think twice.",
-        "image": "/media/showset/48-identity-project-hero.webp",
+        "body": "A connected identity for Elmboog Organiese Boerdery, brought to life through a brand guide, company profile, stationery and presentation design.",
+        "image": "/media/elmboog/elmboog-01-identity-system-hero.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "",
@@ -1616,10 +1616,10 @@
       {
         "id": "section-2",
         "type": "split",
-        "headline": "Consistency with a pulse.",
+        "headline": "Rooted in the land.",
         "accent": "",
-        "body": "An identity needs more than one beautiful logo. It needs a character strong enough to travel. Through type and colour, packaging and print, screens and spaces, big statements and tiny bits of useful information. This concept study looks at how a flexible visual system can bring every encounter back to the same idea while leaving space for expression. The goal is not for everything to look identical. It is for everything to feel unmistakably connected.",
-        "image": "/media/showset/50-identity-designer.webp",
+        "body": "Give Elmboog a recognisable visual language across the materials people see, read and hold. The identity needed to connect the farm’s name and organic character with a consistent approach to everyday communication.\n\nThe work brings together a circular grape-and-field mark, a practical colour palette, typography and an organic flowing pattern, documented in a brand guide.",
+        "image": "/media/elmboog/elmboog-11-identity-in-the-making.webp",
         "pattern": true,
         "reveal": true,
         "buttonLabel": "",
@@ -1634,10 +1634,10 @@
       {
         "id": "section-3",
         "type": "visual",
-        "headline": "Recognition lives in the details.",
+        "headline": "One identity. Everyday expression.",
         "accent": "",
-        "body": "",
-        "image": "/media/showset/49-identity-early-concepts.webp",
+        "body": "Deep green, fresh green, warm gold and cream give the identity a natural, confident character. The grape-and-field mark makes a clear connection to farming, while the flowing pattern adds movement across the supporting materials.\n\n“Pure. Organic. Purposeful.” gives the visual system a simple verbal anchor. Colour, type and layout carry that same character from the company profile to the smallest stationery detail.",
+        "image": "/media/elmboog/elmboog-02-company-profile-cover.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "",
@@ -1669,106 +1669,212 @@
       }
     ],
     "seo": {
-      "title": "Made to be remembered",
-      "description": "A creative identity study exploring how typography, colour, packaging and print come together in a recognisable design system."
+      "title": "Elmboog Organiese Boerdery | Brand identity case study",
+      "description": "Brand identity, guidelines, company profile, stationery and presentation design for Elmboog Organiese Boerdery by SHOWSET."
     },
     "projectModules": [
       {
-        "id": "identity-intention",
+        "id": "elmboog-intention",
         "kind": "text",
         "title": "The intention.",
-        "body": "A recognisable identity needs more than a single strong mark. The idea has to carry through every encounter, from the smallest printed detail to the largest expression."
+        "body": "Deep green, fresh green, warm gold and cream give the identity a natural, confident character. The grape-and-field mark makes a clear connection to farming, while the flowing pattern adds movement across the supporting materials.\n\n“Pure. Organic. Purposeful.” gives the visual system a simple verbal anchor. Colour, type and layout carry that same character from the company profile to the smallest stationery detail."
       },
       {
-        "id": "identity-image-application",
+        "id": "elmboog-image-1",
         "kind": "image",
-        "title": "Make the idea travel.",
-        "body": "The identity should feel like itself on a screen, in a space or in someone's hands.",
-        "src": "/media/showset/50-identity-designer.webp",
-        "alt": "A woman designer refining physical print proofs for an navy, ivory and turquoise identity at an oak studio desk",
-        "captions": "Creative exploration. Visual details and brand expression."
+        "title": "Identity System Hero",
+        "body": "",
+        "src": "/media/elmboog/elmboog-01-identity-system-hero.webp",
+        "alt": "Presentation mockup of Elmboog’s company profile, letterhead and patterned business cards",
+        "captions": "Presentation mockup based on Elmboog artwork."
       },
       {
-        "id": "identity-approach",
-        "kind": "text",
-        "title": "The approach.",
-        "body": "We explore a visual language with enough consistency to feel familiar and enough flexibility to stay interesting. Typography, colour, composition and application all become part of the same story."
-      },
-      {
-        "id": "identity-image-system",
+        "id": "elmboog-image-2",
         "kind": "image",
-        "title": "A thousand little encounters.",
-        "body": "The strongest systems are built to move. Consistency makes the connection, and variation keeps it alive.",
-        "src": "/media/showset/51-identity-environment.webp",
-        "alt": "Realistic photographic view of a small temporary event welcome environment using a coherent navy, ivory and restrained turquoise identity",
-        "captions": "Creative exploration. From the first sketch to a connected visual system."
+        "title": "Company Profile Cover",
+        "body": "",
+        "src": "/media/elmboog/elmboog-02-company-profile-cover.webp",
+        "alt": "Elmboog 2025 company profile cover in a photographic print mockup",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-3",
+        "kind": "image",
+        "title": "Company Profile Open Spread",
+        "body": "",
+        "src": "/media/elmboog/elmboog-03-company-profile-open-spread.webp",
+        "alt": "Open Elmboog company profile showing the values spread in a book mockup",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-4",
+        "kind": "image",
+        "title": "Stationery Suite",
+        "body": "",
+        "src": "/media/elmboog/elmboog-04-stationery-suite.webp",
+        "alt": "Option 1 Elmboog business cards and letterhead in a stationery mockup",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-5",
+        "kind": "image",
+        "title": "Email Signature In Context",
+        "body": "",
+        "src": "/media/elmboog/elmboog-05-email-signature-in-context.webp",
+        "alt": "Elmboog email signature displayed on a laptop in a screen mockup",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-6",
+        "kind": "image",
+        "title": "Presentation Template",
+        "body": "",
+        "src": "/media/elmboog/elmboog-06-presentation-template.webp",
+        "alt": "Elmboog presentation opening slide displayed on a laptop in a mockup",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-7",
+        "kind": "image",
+        "title": "Branded Workwear",
+        "body": "",
+        "src": "/media/elmboog/elmboog-07-branded-workwear.webp",
+        "alt": "Brand-guide workwear concept with a green polo and two-tone Elmboog cap",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-8",
+        "kind": "image",
+        "title": "Lanyard Brand Detail",
+        "body": "",
+        "src": "/media/elmboog/elmboog-08-lanyard-brand-detail.webp",
+        "alt": "Close-up presentation mockup of the Elmboog branded lanyard concept",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-9",
+        "kind": "image",
+        "title": "Campaign Posters",
+        "body": "",
+        "src": "/media/elmboog/elmboog-09-campaign-posters.webp",
+        "alt": "Two Elmboog campaign poster concepts displayed in a generated interior",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-10",
+        "kind": "image",
+        "title": "Digital Brand Applications",
+        "body": "",
+        "src": "/media/elmboog/elmboog-10-digital-brand-applications.webp",
+        "alt": "Elmboog website and social concepts shown in a device mockup",
+        "captions": "Presentation mockup based on Elmboog artwork."
+      },
+      {
+        "id": "elmboog-image-11",
+        "kind": "image",
+        "title": "Identity In The Making",
+        "body": "",
+        "src": "/media/elmboog/elmboog-11-identity-in-the-making.webp",
+        "alt": "Illustrative review scene with Elmboog logo, pattern and colour proofs",
+        "captions": "Presentation mockup based on Elmboog artwork."
       }
     ],
     "caseExperience": {
-      "demo": true,
+      "demo": false,
       "tags": [
         "Creative"
       ],
-      "openingTitle": "Made to be remembered.",
-      "openingBody": "A visual study of how identity becomes something people recognise without having to think twice. This fictional identity study explores a visual system in print, packaging and space.",
-      "openingImage": "/media/showset/48-identity-project-hero.webp",
+      "openingTitle": "Elmboog Organiese Boerdery",
+      "openingBody": "A connected identity for Elmboog Organiese Boerdery, brought to life through a brand guide, company profile, stationery and presentation design.",
+      "openingImage": "/media/elmboog/elmboog-01-identity-system-hero.webp",
       "secondTitle": "This is how we made it happen.",
-      "secondImage": "/media/showset/49-identity-early-concepts.webp",
-      "secondBody": "From a paper sample to a complete identity system, this concept follows one idea through its many expressions. It is an imagined design exercise, not a commissioned client project.",
+      "secondBody": "From a distinctive mark to a family of connected materials. A closer look at the Elmboog identity and its applications, presented through photographic mockups of the supplied design work.",
+      "secondImage": "/media/elmboog/elmboog-02-company-profile-cover.webp",
       "brief": {
-        "heading": "Consistency with a pulse.",
-        "body": "An identity needs more than one beautiful logo. It needs a character strong enough to travel. Through type and colour, packaging and print, screens and spaces, big statements and tiny bits of useful information. This concept study looks at how a flexible visual system can bring every encounter back to the same idea while leaving space for expression. The goal is not for everything to look identical. It is for everything to feel unmistakably connected.\n\nThis fictional identity study explores a visual system in print, packaging and space.",
-        "image": "/media/showset/50-identity-designer.webp",
-        "imageAlt": "A woman designer refining physical print proofs for an navy, ivory and turquoise identity at an oak studio desk",
+        "heading": "Rooted in the land.",
+        "body": "Give Elmboog a recognisable visual language across the materials people see, read and hold. The identity needed to connect the farm’s name and organic character with a consistent approach to everyday communication.\n\nThe work brings together a circular grape-and-field mark, a practical colour palette, typography and an organic flowing pattern, documented in a brand guide.",
+        "image": "/media/elmboog/elmboog-11-identity-in-the-making.webp",
+        "imageAlt": "Illustrative review scene with Elmboog logo, pattern and colour proofs",
         "images": [
-          "/media/showset/50-identity-designer.webp"
+          "/media/elmboog/elmboog-11-identity-in-the-making.webp"
         ]
       },
       "intention": {
-        "heading": "Familiar, never predictable.",
-        "body": "A recognisable identity needs more than a single strong mark. The idea has to carry through every encounter, from the smallest printed detail to the largest expression.\n\nIn this imagined system, recognition comes from the relationship between colour, proportion and material. Each application can have its own rhythm while carrying the same character.",
-        "image": "/media/showset/51-identity-environment.webp",
-        "imageAlt": "Realistic photographic view of a small temporary event welcome environment using a coherent navy, ivory and restrained turquoise identity",
+        "heading": "Pure. Organic. Purposeful.",
+        "body": "Deep green, fresh green, warm gold and cream give the identity a natural, confident character. The grape-and-field mark makes a clear connection to farming, while the flowing pattern adds movement across the supporting materials.\n\n“Pure. Organic. Purposeful.” gives the visual system a simple verbal anchor. Colour, type and layout carry that same character from the company profile to the smallest stationery detail.",
+        "image": "/media/elmboog/elmboog-04-stationery-suite.webp",
+        "imageAlt": "Option 1 Elmboog business cards and letterhead in a stationery mockup",
         "images": [
-          "/media/showset/51-identity-environment.webp"
+          "/media/elmboog/elmboog-04-stationery-suite.webp"
         ]
       },
       "approach": {
-        "heading": "Let the system travel.",
-        "body": "We explore a visual language with enough consistency to feel familiar and enough flexibility to stay interesting. Typography, colour, composition and application all become part of the same story.\n\nThe fictional process moves from sketches and print tests to a small family of applications. Looking at those pieces together reveals where a rule needs to hold and where variation can make the identity more useful.",
-        "image": "/media/showset/52-identity-in-use.webp",
-        "imageAlt": "Candid desk-level photograph of a designer passing a finished navy and turquoise publication to a colleague, only their hands and partial torsos visible",
+        "heading": "Built to work together.",
+        "body": "We carried the identity through the 2025 company profile, business cards, letterhead, email signature and presentation template. Looking at these pieces together keeps the typography, information hierarchy and brand details connected.\n\nThe brand guide also explores how the system could extend into posters, workwear, social content and a website. The images shown here are generated presentation mockups based on the supplied artwork; they illustrate the designs and concepts rather than document live installations.",
+        "image": "/media/elmboog/elmboog-03-company-profile-open-spread.webp",
+        "imageAlt": "Open Elmboog company profile showing the values spread in a book mockup",
         "images": [
-          "/media/showset/52-identity-in-use.webp"
+          "/media/elmboog/elmboog-03-company-profile-open-spread.webp"
         ]
       },
       "gallery": [
         {
-          "id": "made-to-be-remembered-concept-1",
-          "src": "/media/showset/53-identity-gallery-system.webp",
-          "alt": "Alternate diagonal photographic arrangement of one consistent navy-and-ivory identity with restrained turquoise offset-line motif: stitched publication partly open, a navy packaging box, sleeve, paper cards, tote and folded poster on worn o"
+          "id": "elmboog-1",
+          "src": "/media/elmboog/elmboog-01-identity-system-hero.webp",
+          "alt": "Presentation mockup of Elmboog’s company profile, letterhead and patterned business cards"
         },
         {
-          "id": "made-to-be-remembered-concept-2",
-          "src": "/media/showset/54-identity-gallery-finish.webp",
-          "alt": "Macro photograph of ivory heavy uncoated paper with a navy printed block and subtle turquoise debossed offset line, the edge of a stitched publication and a folded navy packaging corner"
+          "id": "elmboog-2",
+          "src": "/media/elmboog/elmboog-02-company-profile-cover.webp",
+          "alt": "Elmboog 2025 company profile cover in a photographic print mockup"
         },
         {
-          "id": "made-to-be-remembered-concept-3",
-          "src": "/media/showset/55-identity-gallery-application.webp",
-          "alt": "Photographic close view of an navy canvas tote and cap on a studio chair beside a slim ivory publication, all using the same restrained turquoise offset-line abstract motif"
+          "id": "elmboog-3",
+          "src": "/media/elmboog/elmboog-03-company-profile-open-spread.webp",
+          "alt": "Open Elmboog company profile showing the values spread in a book mockup"
+        },
+        {
+          "id": "elmboog-4",
+          "src": "/media/elmboog/elmboog-04-stationery-suite.webp",
+          "alt": "Option 1 Elmboog business cards and letterhead in a stationery mockup"
+        },
+        {
+          "id": "elmboog-5",
+          "src": "/media/elmboog/elmboog-05-email-signature-in-context.webp",
+          "alt": "Elmboog email signature displayed on a laptop in a screen mockup"
+        },
+        {
+          "id": "elmboog-6",
+          "src": "/media/elmboog/elmboog-06-presentation-template.webp",
+          "alt": "Elmboog presentation opening slide displayed on a laptop in a mockup"
+        },
+        {
+          "id": "elmboog-7",
+          "src": "/media/elmboog/elmboog-07-branded-workwear.webp",
+          "alt": "Brand-guide workwear concept with a green polo and two-tone Elmboog cap"
+        },
+        {
+          "id": "elmboog-8",
+          "src": "/media/elmboog/elmboog-08-lanyard-brand-detail.webp",
+          "alt": "Close-up presentation mockup of the Elmboog branded lanyard concept"
+        },
+        {
+          "id": "elmboog-9",
+          "src": "/media/elmboog/elmboog-09-campaign-posters.webp",
+          "alt": "Two Elmboog campaign poster concepts displayed in a generated interior"
+        },
+        {
+          "id": "elmboog-10",
+          "src": "/media/elmboog/elmboog-10-digital-brand-applications.webp",
+          "alt": "Elmboog website and social concepts shown in a device mockup"
+        },
+        {
+          "id": "elmboog-11",
+          "src": "/media/elmboog/elmboog-11-identity-in-the-making.webp",
+          "alt": "Illustrative review scene with Elmboog logo, pattern and colour proofs"
         }
       ],
-      "partners": [
-        {
-          "name": "Paperline Workshop",
-          "role": "Print and material exploration (fictional test partner)"
-        },
-        {
-          "name": "Form & Field Lab",
-          "role": "Identity applications (fictional test partner)"
-        }
-      ]
+      "partners": []
     }
   },
   "behind-every-moment": {

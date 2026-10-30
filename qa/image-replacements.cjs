@@ -20,7 +20,11 @@ const routes=[['/',1,10],['/events-experiences/',11,14],['/creative-design/',15,
      return images.map(i=>({id:Number(i.dataset.imagePlacement),src:i.getAttribute('src'),current:i.currentSrc,loaded:i.complete&&i.naturalWidth>0,mobile:i.parentElement.querySelector('source')?.getAttribute('srcset')}));
     });
     const ids=[...new Set(actual.map(i=>i.id))].sort((a,b)=>a-b);
-    assert.deepEqual(ids,Array.from({length:last-first+1},(_,i)=>first+i),`${route} at ${width}: all placements`);
+    const replaced={6:101,33:101,46:101,67:101};
+    const expected=route==='/work/made-to-be-remembered/'
+     ? [56,57,...Array.from({length:11},(_,i)=>101+i)]
+     : Array.from({length:last-first+1},(_,i)=>replaced[first+i]||first+i).sort((a,b)=>a-b);
+    assert.deepEqual(ids,expected,`${route} at ${width}: all current placements`);
     assert(actual.every(i=>i.loaded),`${route}: every image decodes`);
     if(width<768)assert(actual.filter(i=>i.mobile).every(i=>new URL(i.current).pathname===i.mobile),`${route}: art-directed mobile sources`);
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+2),`${route}: no horizontal overflow`);
@@ -46,6 +50,6 @@ const routes=[['/',1,10],['/events-experiences/',11,14],['/creative-design/',15,
   assert(await page.evaluate(()=>!!localStorage.getItem('showset-concept12-recovery')),'Migration preserves recovery snapshot');
   await context.close();
   assert.deepEqual(errors,[],'No browser runtime errors');
-  console.log('PASS all 67 placements on desktop/mobile; decoded assets, mobile art direction, lightbox, saved defaults and custom overrides');
+  console.log('PASS all current placements on desktop/mobile; decoded assets, mobile art direction, lightbox, saved defaults and custom overrides');
  }finally{fs.writeFileSync('qa-results/image-replacements.json',JSON.stringify({results,errors},null,2));await browser.close();}
 })().catch(e=>{console.error(e);process.exit(1)});

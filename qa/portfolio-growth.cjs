@@ -17,7 +17,7 @@ new Function('require','module','exports',compiled)(name=>{
 const {portfolioEntries,renderPortfolioIndex}=moduleProxy.exports;
 const seed=JSON.parse(fs.readFileSync('content/pages.json','utf8'));
 const sourceProjects=Object.values(seed).filter(p=>p.route.startsWith('/work/'));
-assert.equal(sourceProjects.length,3,'Published demo seed count');
+assert.equal(sourceProjects.length,3,'Published case-study seed count');
 const catalog={...seed};
 for(let i=0;i<27;i++){
  const key='future-project-'+i;
@@ -44,6 +44,12 @@ assert.ok(projects.slice(0,27).every(p=>p.label==='Project'),'New pages must app
 assert.equal(projects.filter(p=>p.label==='Concept study').length,
  sourceProjects.filter(p=>p.caseExperience?.demo).length,
  'Only demonstration cases must have the concept-study label');
+for (const page of sourceProjects) {
+ const entry=projects.find(p=>p.route===page.route);
+ const item=work.items.find(item=>item.href===page.route);
+ assert.equal(entry.label,page.caseExperience.demo?'Concept study':item?.accent?.trim()||'Project',
+  'Each case must preserve its authored client/concept classification');
+}
 assert.ok(projects.every(p=>p.route.startsWith('/work/')&&p.image.startsWith('/')));
 const {document}=parseHTML('<html><body><div class="view" data-view="work"><div data-work-filters hidden></div><div data-work-index></div><div data-work-more hidden></div></div></body></html>');
 renderPortfolioIndex(document.body,work,catalog);
