@@ -102,6 +102,7 @@ jobs:
             out/
             .showset-staging/manifest.json
           retention-days: 7
+          include-hidden-files: true
           if-no-files-found: error
       - name: Archive browser QA results
         if: always()
