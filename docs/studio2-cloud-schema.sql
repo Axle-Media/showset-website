@@ -69,7 +69,7 @@ create policy "Active editors request reviews" on public.showset_studio_reviews
 -- comparison as the request-review RPC. An editor cannot invent a snapshot.
 create or replace function public.showset_studio_verify_review()
 returns trigger language plpgsql security invoker
-set search_path = public, pg_temp as $
+set search_path = public, pg_temp as $$
 declare
   current_revision bigint;
   current_document jsonb;
@@ -83,7 +83,7 @@ begin
   end if;
   return new;
 end;
-$;
+$$;
 revoke all on function public.showset_studio_verify_review() from public,anon;
 drop trigger if exists showset_studio_review_source on public.showset_studio_reviews;
 create trigger showset_studio_review_source
@@ -94,13 +94,11 @@ create trigger showset_studio_review_source
 create or replace function public.showset_studio_request_review(
   p_expected_revision bigint, p_note text
 ) returns bigint language plpgsql security invoker
-set search_path = public, pg_temp as $
+set search_path = public, pg_temp as $$
 declare
   current_revision bigint;
   current_document jsonb;
   next_id bigint;
-  review_revision bigint;
-  review_doc jsonb;
 begin
   if (select auth.uid()) is null or not exists (
     select 1 from public.showset_studio_members m
@@ -124,7 +122,7 @@ begin
     returning id into next_id;
   return next_id;
 end;
-$;
+$$;
 revoke all on function public.showset_studio_request_review(bigint,text) from public,anon;
 grant execute on function public.showset_studio_request_review(bigint,text) to authenticated;
 
@@ -257,7 +255,7 @@ create or replace function public.showset_studio_rollback(
   p_source_release_id bigint, p_expected_revision bigint,
   p_expected_latest_release_id bigint
 ) returns bigint language plpgsql security invoker
-set search_path = public, pg_temp as $
+set search_path = public, pg_temp as $$
 declare
   current_rev bigint;
   current_doc jsonb;
@@ -312,7 +310,7 @@ begin
     returning id into next_id;
   return next_id;
 end;
-$;
+$$;
 revoke all on function public.showset_studio_rollback(bigint,bigint,bigint) from public,anon;
 grant execute on function public.showset_studio_rollback(bigint,bigint,bigint) to authenticated;
 
