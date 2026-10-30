@@ -40,6 +40,7 @@ import Canvas from "./Canvas";
 import Navigator from "./Navigator";
 import Inspector from "./Inspector";
 import MediaManager from "./MediaManager";
+import CloudReleasePanel from "./CloudReleasePanel";
 import ContextInspector from "./ContextInspector";
 import type { CanvasInspection } from "@/lib/studio2/selection";
 import { bindingContent } from "@/lib/studio2/bindings";
@@ -61,6 +62,7 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
     [metrics, setMetrics] = useState<Record<string, string>>({}),
     [urls, setUrls] = useState<Record<string, string>>({}),
     [dialog, setDialog] = useState(false),
+    [showReleases,setShowReleases] = useState(false),
     [title, setTitle] = useState(""),
     [route, setRoute] = useState(""),
     [clipboard, setClipboard] = useState<CanvasNode | null>(null),
@@ -755,27 +757,10 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
               <button className="s2-primary" onClick={() => void editor.preview()}>
                 Save shared draft
               </button>
-              {(cloud.role==="owner"||cloud.role==="publisher") && (
-                <button onClick={() => {
-                  if(window.confirm("Approve the current saved draft as an immutable release checkpoint? This does not deploy the public site."))
-                    void editor.approve();
-                }}>Approve release snapshot</button>
-              )}
-              {(cloud.role==="owner"||cloud.role==="publisher") && (
-                <button onClick={async()=>{
-                  try{
-                    const release=await cloud.latestApprovedRelease();
-                    if(!release)throw Error("No approved snapshot exists.");
-                    const backup=await createBackup(release.workspace,false,
-                      (asset)=>cloud.getOriginal(asset));
-                    downloadJson(backup,"SHOWSET-approved-release-"+
-                      release.id+".json");
-                  }catch(error){
-                    editor.setError("Release export failed: "+
-                      (error as Error).message);
-                  }
-                }}>Export latest approved release</button>
-              )}
+              <button type="button" onClick={()=>setShowReleases(value=>!value)}
+                aria-expanded={showReleases}>
+                Review &amp; releases
+              </button>
             </>
           ):(
             <button className="s2-primary" onClick={() => void editor.preview()}>
@@ -784,6 +769,14 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
           )}
         </div>
       </header>
+      {cloud && showReleases && <CloudReleasePanel
+        cloud={cloud}
+        currentRevision={editor.revision}
+        onRequest={editor.requestReview}
+        onApprove={editor.approve}
+        onRollback={editor.rollback}
+        onClose={()=>setShowReleases(false)}
+      />}
       <div className="s2-viewbar">
         <div className="s2-view-options">
           {[1440, 768, 390].map((size, index) => (
