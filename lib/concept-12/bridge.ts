@@ -1,3 +1,4 @@
+import { applyReplacementMedia } from "./replacement-media";
 import {renderServiceExperience} from "./service-experience";
 import type {ServiceKind} from "./service-content";
 import { refineHeadingPeriods } from "./typography";
@@ -251,7 +252,7 @@ export function bindConcept(
       if (s.type === "hero") {
         heading(".hero-title", s);
         body("#hero-foreground>p", s);
-        if (changed(s, "image")) image("#hero-photo>img", s.image);
+        image("#hero-photo img", s.image);
         action(".hero-links .solid-link", s);
         action(".hero-links .text-arrow-link", s, true);
         action(".hero-second-links .solid-link", s);
@@ -271,8 +272,7 @@ export function bindConcept(
           repeat("[data-film-step]", s.items.length, "data-film-step");
           repeat("[data-film-image]", s.items.length, "data-film-image");
         }
-        if (changed(s, "items"))
-          s.items.forEach((x, i) => {
+        s.items.forEach((x, i) => {
             const a = host.querySelector(`[data-film-step="${i}"]`);
             if (!a) return;
             if (itemChanged(s, i, "title") || itemChanged(s, i, "accent"))
@@ -280,8 +280,7 @@ export function bindConcept(
                 `<span class="wipe-line"><span>${rich(x.title)}</span></span><span class="wipe-line accent-line"><span>${rich(x.accent || "")}</span></span>`;
             if (itemChanged(s, i, "description"))
               a.querySelector("p")!.textContent = x.description;
-            if (itemChanged(s, i, "image"))
-              image(`[data-film-image="${i}"] img`, x.image || "");
+            image(`[data-film-image="${i}"] img`, x.image || "");
           });
       } else if (s.type === "services") {
         if (changed(s, "items")) {
@@ -306,7 +305,7 @@ export function bindConcept(
               delete a.dataset.routeKey;
             }
           }
-          if (itemChanged(s, i, "image")) {
+          if (itemChanged(s, i, "image") || x.image?.startsWith("/media/showset/")) {
             const visual = host.querySelector(`[data-service-visual="${i}"]`);
             if (visual && !visual.querySelector("img")) {
               const img = document.createElement("img");
@@ -371,7 +370,7 @@ export function bindConcept(
         h.id = id;
         heading("#" + id, s);
       }
-      if (s.type === "pagehero" && changed(s, "image"))
+      if (s.type === "pagehero")
         image(".studio-hero .studio-hero-photo img", s.image);
       if (s.type === "pagehero" && changed(s, "items") && s.items[0]) {
         const second = scope.querySelector<HTMLElement>("[data-studio-hero-follow]");
@@ -402,7 +401,7 @@ export function bindConcept(
             ? paragraphs(s.body) : rich(s.body);
         }
       }
-      if (scope.matches(".studio-exploration") && changed(s, "items")) {
+      if (scope.matches(".studio-exploration") && (changed(s, "items") || s.items.some(item => item.image?.startsWith("/media/showset/")))) {
         const journey = scope.querySelector<HTMLElement>("[data-studio-storyboard]");
         if (journey) {
           journey.innerHTML = s.items.map((item, index) =>
@@ -423,7 +422,7 @@ export function bindConcept(
         mark(host.querySelector(".work-hero"), s);
         heading(".work-hero h1", s);
         body(".work-hero .simple-hero-content>p", s);
-        if (changed(s, "image")) image(".work-hero .simple-bg img", s.image);
+        image(".work-hero .simple-bg img", s.image);
       } else if (s.type === "split") {
         mark(host.querySelector(".work-page-intro"), s);
         heading(".work-intro-title", s);
@@ -758,5 +757,6 @@ export function bindConcept(
     g.header.buttonHref !== defaultGlobals.header.buttonHref
   )
     link(".header-cta", g.header.buttonLabel, g.header.buttonHref);
+  applyReplacementMedia(host, key);
   refineHeadingPeriods(host);
 }

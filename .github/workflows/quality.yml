@@ -59,6 +59,7 @@ jobs:
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/homepage-motion-parity.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/story-copy-balance.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/home-work-carousel.cjs || qa_status=1
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/image-replacements.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/carousel-playback.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/header-navigation-alignment.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/instant-route-top.cjs || qa_status=1
@@ -80,6 +81,8 @@ jobs:
         with:
           name: showset-home-work-browser-qa
           path: |
+            qa-results/image-replacements.json
+            qa-results/image-replacements/
             qa-results/mobile-tablet-audit.json
             qa-results/mobile-tablet/
             qa-results/event-format-row.json
