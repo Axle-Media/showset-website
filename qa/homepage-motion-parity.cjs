@@ -65,10 +65,16 @@ const check=(name,ok,detail)=>{checks.push({name,pass:!!ok,detail});console.log(
       dotPeriods:[...dot.querySelectorAll('h2 em span')].map(n=>getComputedStyle(n).color),
       dotParagraphSize:parseFloat(getComputedStyle(dot.querySelector('p')).fontSize),
       dotParagraphLineHeight:parseFloat(getComputedStyle(dot.querySelector('p')).lineHeight),
+      dotParagraphWeight:getComputedStyle(dot.querySelector('p')).fontWeight,
+      dotParagraphColour:getComputedStyle(dot.querySelector('p')).color,
+      dotParagraphFamily:getComputedStyle(dot.querySelector('p')).fontFamily,
       dotRevealedColour:getComputedStyle(overlay.querySelector('.dot-line-primary')).color,
       dotRevealedAccent:getComputedStyle(overlay.querySelector('.dot-line-accent')).color,
       dotRevealedPeriods:[...overlay.querySelectorAll('h2 em span')].map(n=>getComputedStyle(n).color),
       dotOverlayParagraphSize:parseFloat(getComputedStyle(overlay.querySelector('p')).fontSize),
+      dotOverlayParagraphWeight:getComputedStyle(overlay.querySelector('p')).fontWeight,
+      dotOverlayParagraphColour:getComputedStyle(overlay.querySelector('p')).color,
+      dotOverlayParagraphFamily:getComputedStyle(overlay.querySelector('p')).fontFamily,
       overlayA11yHidden:overlay.closest('[aria-hidden]')?.getAttribute('aria-hidden'),
       footerWidth:wordmark.getBoundingClientRect().width,
       documentWidth:document.documentElement.scrollWidth
@@ -107,6 +113,15 @@ const check=(name,ok,detail)=>{checks.push({name,pass:!!ok,detail});console.log(
       geometry.dotParagraphSize<=23.5 &&
       geometry.dotParagraphLineHeight>=geometry.dotParagraphSize*1.45 &&
       Math.abs(geometry.dotParagraphSize-geometry.dotOverlayParagraphSize)<1,geometry);
+   check('Dot supporting copy remains equally bold and aligned through colour transition '+width,
+      geometry.dotParagraphWeight==='700' &&
+      geometry.dotOverlayParagraphWeight==='700' &&
+      geometry.dotParagraphFamily===geometry.dotOverlayParagraphFamily &&
+      geometry.dotParagraphColour==='rgb(250, 249, 253)' &&
+      geometry.dotOverlayParagraphColour==='rgb(6, 38, 58)',{
+        before:{weight:geometry.dotParagraphWeight,color:geometry.dotParagraphColour,font:geometry.dotParagraphFamily},
+        after:{weight:geometry.dotOverlayParagraphWeight,color:geometry.dotOverlayParagraphColour,font:geometry.dotOverlayParagraphFamily}
+      });
    check('Revealed dot text and punctuation remain readable on teal '+width,
       geometry.dotRevealedColour==='rgb(6, 38, 58)' &&
       geometry.dotRevealedAccent==='rgb(6, 38, 58)' &&

@@ -74,7 +74,9 @@
   color:var(--ice)!important;
   font-size:clamp(18px,1.55vw,23px)!important;
   line-height:1.55!important;
-  font-weight:600!important;
+  /* Both the white pre-dot copy and the dark on-teal reveal use
+     the same genuine bold Manrope face, so the mask never changes weight. */
+  font-weight:700!important;
   letter-spacing:0!important;
 }
 
@@ -107,6 +109,7 @@
 }
 #main .dot-colour-reveal .dot-words > p{
   color:#06263a!important;
+  font-weight:700!important;
 }
 
 /* A slightly wider, more substantial reading measure for the three
