@@ -705,41 +705,53 @@ export function bindConcept(
         "</span> " +
         rich(g.footer.copyright);
   }
-  // Keep all authored navigation links except the obsolete dropdown trigger.
-  // This also handles already-published Studio globals with the old link array.
-  const primaryLinks = [
-    ...g.header.services,
-    ...g.header.links.filter(
-      (item) => item.label.trim().toLowerCase() !== "what we do" &&
-        item.label.trim().toLowerCase() !== "contact" &&
-        safeHref(item.href) !== "/contact/" &&
-        !g.header.services.some((service) => service.href === item.href),
-    ),
-  ];
+  // Keep service links editable through Studio globals, but present them in
+  // one branded "What We Do" menu rather than six crowded top-level links.
+  const services = g.header.services.length ? g.header.services : defaultGlobals.header.services;
+  const others = g.header.links.filter(
+    item => !["what we do","contact"].includes(item.label.trim().toLowerCase()) &&
+      safeHref(item.href) !== "/contact/" &&
+      !services.some(service => safeHref(service.href) === safeHref(item.href)),
+  );
+  const serviceActive = services.some(item => routeKeys[safeHref(item.href)] === key);
+  const active = (href: string) => routeKeys[safeHref(href)] === key;
+  const current = (href: string) => active(href) ? ' aria-current="page"' : "";
+  const itemLink = (item: {label:string;href:string}, isMobile=false) => {
+    const href = safeHref(item.href);
+    const route = routeKeys[href] || "";
+    return '<a class="' + (isMobile ? 'mobile-nav-link' : 'nav-text') +
+      (active(href) ? ' active' : '') + '" href="' + escape(href) +
+      '" data-route-key="' + escape(route) + '"' + current(href) + '>' +
+      escape(plain(item.label)) + '</a>';
+  };
+  const serviceLinks = services.map(item => {
+    const href = safeHref(item.href);
+    return '<a class="nav-service-link' + (active(href) ? ' active' : '') +
+      '" href="' + escape(href) + '" data-route-key="' +
+      escape(routeKeys[href] || '') + '"' + current(href) + '>' +
+      '<span>' + escape(plain(item.label)) + '</span><span aria-hidden="true">↗</span></a>';
+  }).join("");
+  const chevron = '<svg viewBox="0 0 12 12" aria-hidden="true" focusable="false">' +
+    '<path d="m2.5 4.5 3.5 3.5 3.5-3.5" /></svg>';
   const nav = host.querySelector<HTMLElement>(".desktop-navigation");
   if (nav) {
-    nav.innerHTML = primaryLinks
-      .map((item) => {
-        const href = safeHref(item.href);
-        const route = routeKeys[href] || "";
-        return '<a class="nav-text" href="' + escape(href) +
-          '" data-route-key="' + escape(route) + '">' +
-          escape(plain(item.label)) + '</a>';
-      })
-      .join("");
+    nav.innerHTML = '<div class="nav-dropdown" id="nav-dropdown">' +
+      '<button class="nav-text dropdown-button' + (serviceActive ? ' active' : '') +
+      '" id="services-button" type="button" aria-controls="nav-panel" aria-expanded="false">' +
+      'What We Do ' + chevron + '</button>' +
+      '<div class="nav-panel" id="nav-panel"><nav aria-label="Our services">' +
+      serviceLinks + '</nav></div></div>' +
+      others.map(item => itemLink(item)).join("");
   }
   const mobile = host.querySelector<HTMLElement>("#mobile-panel nav");
   if (mobile) {
+    // Phones and tablets show every service as a direct, always-visible link.
+    // Active-page styling comes from itemLink (aria-current + .active).
     mobile.innerHTML = [
-      { label: "Home", href: "/" },
-      ...primaryLinks,
-    ]
-      .map(
-        (item) =>
-          '<a href="' + escape(safeHref(item.href)) + '">' +
-          escape(plain(item.label)) + '</a>',
-      )
-      .join("");
+      itemLink({label:"Home",href:"/"},true),
+      ...services.map(item => itemLink(item,true)),
+      ...others.map(item => itemLink(item,true)),
+    ].join("");
   }
   if (!equal(g.footer.links, defaultGlobals.footer.links)) {
     const group = host.querySelector(".footer-links>div");
