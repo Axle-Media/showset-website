@@ -1,5 +1,6 @@
 import "server-only";
 import { parseHTML } from "linkedom";
+import { replaceUpRightArrows } from "./up-right-arrows";
 import type { Globals, PageData } from "@/lib/types";
 import { defaultPages } from "@/lib/data";
 import markup from "./markup.json";
@@ -36,5 +37,7 @@ export function conceptDocument(page: PageData, g: Globals): string {
     const fallback=document.createElement("noscript");fallback.innerHTML=copy.outerHTML;
     second.after(fallback);
   }
+  // Produce real SVG icons in server-rendered HTML, including without JavaScript.
+  replaceUpRightArrows(host as unknown as HTMLElement);
   return host.innerHTML;
 }

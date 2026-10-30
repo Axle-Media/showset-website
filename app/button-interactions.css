@@ -176,3 +176,24 @@
     opacity: 0!important;
   }
 }
+
+/* Lucide ArrowUpRight: vector in place of the platform-dependent ↗ emoji.
+   Inherit every existing wrapper's colour, font size, spacing and hover motion. */
+.concept-12-root svg.showset-arrow-up-right {
+  display:inline-block;
+  width:1em;
+  height:1em;
+  min-width:1em;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:3;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  flex-shrink:0;
+  vertical-align:-.12em;
+  pointer-events:none;
+}
+/* Only the dropdown chevron should rotate when the services menu opens. */
+.concept-12-root .nav-dropdown.is-open svg.showset-arrow-up-right {
+  transform:none;
+}

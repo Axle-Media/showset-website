@@ -9,6 +9,7 @@ import { mountConcept } from "@/lib/concept-12/runtime";
 import { bindConcept, keyForRoute } from "@/lib/concept-12/bridge";
 import { conceptMetadata } from "@/lib/concept-12/metadata";
 import { patchConcept } from "@/lib/concept-12/patch";
+import { replaceUpRightArrows, watchUpRightArrows } from "@/lib/concept-12/up-right-arrows";
 import { safeHref } from "@/lib/safe";
 import { compatiblePages, compatibleGlobals } from "@/lib/concept-12/compat";
 type LayoutProps = {
@@ -130,6 +131,7 @@ export function SiteLayout({
     // animation error must not replace a complete page with hidden views.
     const serverMarkup = initialMarkup || host.innerHTML;
     let dispose: ReturnType<typeof mountConcept> | null = null;
+    let stopArrowWatch: (() => void) | null = null;
     try {
       host.innerHTML = markup;
       bindConcept(host, "home", {
@@ -143,10 +145,15 @@ export function SiteLayout({
           g,
           editor,
         });
+      replaceUpRightArrows(host);
+      stopArrowWatch = watchUpRightArrows(host);
       dispose = mountConcept(host, optionsFor(latest.current));
     } catch (error) {
       console.error("SHOWSET interactive page failed; restoring static content", error);
+      stopArrowWatch?.();
+      stopArrowWatch = null;
       host.innerHTML = serverMarkup;
+      replaceUpRightArrows(host);
       host.dataset.caseMotion = "off";
       host.querySelector("#route-curtain")?.remove();
       // SSR already selects the active view. If the initial markup is not
@@ -178,6 +185,7 @@ export function SiteLayout({
     if (y > 0) scrollTo({ top: y, behavior: "instant" });
     return () => {
       host.removeEventListener("click", choose, true);
+      stopArrowWatch?.();
       dispose?.();
       engine.current=null;
     };
