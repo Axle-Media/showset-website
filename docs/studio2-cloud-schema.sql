@@ -215,6 +215,8 @@ declare
   current_rev bigint;
   current_doc jsonb;
   next_id bigint;
+  review_revision bigint;
+  review_doc jsonb;
 begin
   if (select auth.uid()) is null or not exists (
     select 1 from public.showset_studio_members m
