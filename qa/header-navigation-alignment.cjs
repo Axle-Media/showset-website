@@ -24,10 +24,17 @@ async function ready(page,route){
   const trigger=page.locator('#services-button');
   const dropdownLinks=page.locator('#nav-panel .nav-service-link');
   check('Single What We Do parent replaces four direct service menu items',
-   await trigger.count()===1&&(await nav.locator(':scope > a.nav-text').allTextContents()).join('|')==='Our studio|Our work',
+   await trigger.count()===1&&(await nav.locator(':scope > a.nav-text').allTextContents()).join('|')==='Our studio|Our work|Contact',
    await nav.innerText());
   check('Four correct service destinations remain in the dropdown',
    JSON.stringify(await dropdownLinks.evaluateAll(nodes=>nodes.map(x=>new URL(x.href).pathname)))===JSON.stringify(servicePaths));
+  const serviceType=await dropdownLinks.evaluateAll(nodes=>nodes.map(node=>{
+    const el=node.querySelector('span:first-child'),s=getComputedStyle(el),r=el.getBoundingClientRect();
+    return {size:s.fontSize,color:s.color,width:r.width,weight:s.fontWeight};
+  }));
+  check('Dropdown services use legible 17px labels rather than inherited 9px spans',
+   serviceType.length===4&&serviceType.every(v=>v.size==='17px'&&parseInt(v.weight)>=600),
+   serviceType);
   await trigger.hover();
   check('Hover opens dropdown and updates its accessible expanded state',
    await trigger.getAttribute('aria-expanded')==='true'&&await dropdownLinks.first().isVisible());
@@ -59,6 +66,11 @@ async function ready(page,route){
     await selected.getAttribute('aria-current')==='page'&&
     await selected.evaluate(el=>getComputedStyle(el).color)==='rgb(18, 186, 175)');
   }
+  await ready(page,'/contact/');
+  const contact=page.locator('.desktop-navigation > a[href="/contact/"]');
+  check('Contact is in the top bar and persists teal on its own route',
+   await contact.getAttribute('aria-current')==='page' &&
+   await contact.evaluate(el=>getComputedStyle(el).color)==='rgb(18, 186, 175)');
   for(const width of[1920,1600,1440,1366,1351,1350,1100,600,390]){
    await page.setViewportSize({width,height:920});
    await ready(page,'/');
@@ -74,7 +86,7 @@ async function ready(page,route){
    if(width>=1351){
     check('Desktop navigation visible and clear of logo/CTA '+width,
      geometry.nav.visible&&geometry.cta.visible&&!geometry.toggle.visible&&
-     geometry.logo.right+8<geometry.first&&geometry.last+8<geometry.cta.left&&geometry.items===3,
+     geometry.logo.right+8<geometry.first&&geometry.last+8<geometry.cta.left&&geometry.items===4,
      geometry);
     check('Top-level navigation centred '+width,Math.abs(geometry.centre-width/2)<3,geometry.centre);
    }else check('Compact menu replaces desktop navigation '+width,
@@ -85,8 +97,8 @@ async function ready(page,route){
   await page.locator('#mobile-toggle').click();
   const mobileLinks=page.locator('#mobile-panel nav > a.mobile-nav-link');
   const allMobilePaths=await mobileLinks.evaluateAll(nodes=>nodes.map(x=>new URL(x.href).pathname));
-  check('Mobile lists Home, all four services, Studio and Work directly',
-   JSON.stringify(allMobilePaths)===JSON.stringify(['/',...servicePaths,'/our-studio/','/our-work/']) &&
+  check('Mobile lists services, Studio, Work and Contact directly',
+   JSON.stringify(allMobilePaths)===JSON.stringify(['/',...servicePaths,'/our-studio/','/our-work/','/contact/']) &&
    await page.locator('#mobile-panel details,#mobile-panel summary').count()===0,
    allMobilePaths);
   const activeMobile=page.locator('#mobile-panel nav > a[href="/events-experiences/"]');
