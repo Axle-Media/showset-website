@@ -151,6 +151,7 @@ const width=1440;
   ck('Future homepage card keeps its project name and period',(await homePreview.nth(3).getAttribute('aria-label'))==='Explore creative study: '+next.title&&await homePreview.nth(3).locator('h3 .teal-dot').count()===1);
   ck('Studio Our Work headline propagates to Home',(await homePreview.nth(1).locator('h3').innerText()).replace(/\s+/g,' ').trim()==='A fresh identity. Rooted in nature.');
   ck('Studio Our Work description propagates to Home',(await homePreview.nth(1).locator('.case-story p').innerText()).trim()===editedElmboog.description);
+  const editedHomeTitle=(await homePreview.nth(1).locator('h3').innerText()).replace(/\s+/g,' ').trim();
   await previewPage.goto(base+'/our-work/');
   await previewPage.waitForSelector('[data-concept-ready="true"]');
   await previewPage.waitForFunction(()=>document.querySelectorAll('.case-index-item').length===4);
@@ -159,8 +160,7 @@ const width=1440;
   ck('Studio preview picks up modified opening image on Our Work',await workPreview.nth(2).locator('img').getAttribute('src')==='/media/cases/production-hero.webp');
   ck('Future case uses its own opening image on Our Work',await workPreview.nth(0).locator('img').getAttribute('src')==='/media/cases/identity-hero.webp');
   ck('Edited Our Work headline and Home remain identical in Studio preview',
-   (await homePreview.nth(1).locator('h3').innerText()).replace(/\s+/g,' ').trim()===
-   (await workPreview.nth(2).locator('h2').innerText()).replace(/\s+/g,' ').trim());
+   editedHomeTitle===(await workPreview.nth(2).locator('h2').innerText()).replace(/\s+/g,' ').trim());
   await preview.close();
   // Grow the published preview without inventing public projects. Confirm
   // the interactive six-at-a-time contract, newest-first dates and filtering.
