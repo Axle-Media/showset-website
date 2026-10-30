@@ -61,10 +61,19 @@ const base=process.env.SHOWSET_BASE_URL||"http://127.0.0.1:3002";
   await p.waitForTimeout(900);
   await p.reload();
   await frame.locator('#discover > [data-studio2-native-pattern="home-section-section-2"]').waitFor();
+  // A reloaded Studio opens at desktop; the original desktop focus must be
+  // visible again before switching to the saved mobile override.
   await p.waitForFunction(()=>{
     const f=document.querySelector("iframe"),doc=f?.contentDocument,
       el=doc?.querySelector("#discover > [data-studio2-native-pattern]");
-    return !!el && f.contentWindow.getComputedStyle(el).backgroundPosition==="70% 50%";
+    return !!el && f.contentWindow.getComputedStyle(el).backgroundPosition==="140% 50%";
+  });
+  await p.getByRole("button",{name:"Mobile",exact:true}).click();
+  await p.waitForFunction(()=>{
+    const f=document.querySelector("iframe"),doc=f?.contentDocument,
+      el=doc?.querySelector("#discover > [data-studio2-native-pattern]");
+    return !!el && f.contentWindow.innerWidth<=600 &&
+      f.contentWindow.getComputedStyle(el).backgroundPosition==="70% 50%";
   });
   // A saved preview consumes the exact same canonical native overrides.
   await p.getByRole("button",{name:"Save local preview",exact:false}).click();
