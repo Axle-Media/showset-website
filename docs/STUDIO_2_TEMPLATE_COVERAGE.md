@@ -41,6 +41,15 @@ Each control updates an existing `PageData` or `CaseExperience` field, with resp
 
 **Not yet covered:** arbitrary reconstruction or reordering of protected scenes, a full cinematic timeline designer, source-controlled pattern asset replacement, global synchronised reusable sections and authenticated cloud publishing. No production rollout is included.
 
+## Shared release review and rollback foundation (30 October 2026)
+
+- Cloud editors can create an immutable review request against the exact saved shared revision. The server captures the snapshot; client-supplied documents cannot create reviews. If the draft changes, an old review is stale.
+- Owners and publishers can approve reviewed snapshots into immutable release checkpoints. Editors cannot approve. A no-op save does not increment the revision merely by opening the release panel.
+- The private Studio now shows the review queue, review notes, release history, source revisions, approved copy export and guarded historical restore.
+- Rollback is a **new** immutable release checkpoint copied from an earlier approved snapshot; neither past release records nor original media are deleted. Concurrent revision and latest-release conditions are checked transactionally. Any unreleased shared draft blocks rollback until it is separately reviewed or safely resolved.
+- Reviews, releases, workspace and media remain protected by membership-based RLS; RPCs use SECURITY INVOKER and no privileged service-role credentials.
+- SQL is a dedicated-project **proposal**, not applied to an existing Supabase project. It must pass live PostgreSQL/RLS integration tests, invite-only session checks and a staging deployment before cloud mode can be enabled. The source-release preparation script remains an offline dry-run/explicit-apply tool and never deploys.
+
 ## Safety gaps blocking online availability
 
 - Authentication and shared owner access controls.
