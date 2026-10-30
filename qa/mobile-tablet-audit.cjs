@@ -9,7 +9,7 @@ const pages=[
   ['events','/events-experiences/'],['creative','/creative-design/'],
   ['digital','/digital-marketing/'],['production','/content-production/'],
   ['contact','/contact/'],
-  ['case-atmosphere','/work/atmosphere-is-everything/'],
+  ['case-amaze','/work/the-amaze-ball/'],
   ['case-identity','/work/made-to-be-remembered/'],
   ['case-production','/work/provault/']
 ];
@@ -22,7 +22,7 @@ const centered={
  digital:['.service-hero h1','.service-section-head h2','.service-close .service-heading'],
  production:['.service-hero h1','.service-section-head h2','.service-close .service-heading'],
  contact:['.contact-editorial-heading','.contact-intro > p'],
- 'case-atmosphere':['.case-opening-scene .case-primary-heading'],
+ 'case-amaze':['.case-opening-scene .case-primary-heading'],
  'case-identity':['.case-opening-scene .case-primary-heading'],
  'case-production':['.case-opening-scene .case-primary-heading']
 };
