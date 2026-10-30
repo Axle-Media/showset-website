@@ -123,64 +123,31 @@
   outline:2px solid var(--teal);
   outline-offset:-2px;
 }
-/* Mobile and tablet keep an accordion instead of a detached floating menu. */
+/* Mobile and tablet: seven direct links, no nested service accordion.
+   Preserve the approved full-height navy menu and turquoise current page. */
 .concept-12-root .mobile-panel{
   overflow-y:auto;
   overscroll-behavior:contain;
 }
-.concept-12-root .mobile-panel nav .mobile-services{
-  border-bottom:1px solid rgba(255,255,255,.07);
-}
-.concept-12-root .mobile-panel nav .mobile-services summary{
-  list-style:none;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
+.concept-12-root .mobile-panel nav .mobile-nav-link{
+  display:block;
   width:100%;
-  padding:6px 0;
-  cursor:pointer;
   color:var(--ice);
-  font-family:var(--display);
-  font-weight:550;
-  font-size:clamp(20px,6.2vw,33px);
-  letter-spacing:-.05em;
-  line-height:1.45;
+  transition:color .2s ease;
 }
-.concept-12-root .mobile-panel nav .mobile-services summary::-webkit-details-marker{display:none}
-.concept-12-root .mobile-panel nav .mobile-services[open] summary svg{transform:rotate(180deg)}
-.concept-12-root .mobile-panel nav .mobile-services summary:is(:hover,:focus-visible),
-.concept-12-root .mobile-panel nav .mobile-services summary.active,
 .concept-12-root .mobile-panel nav .mobile-nav-link:is(:hover,:focus-visible),
 .concept-12-root .mobile-panel nav .mobile-nav-link.active{
   color:var(--teal)!important;
 }
-.concept-12-root .mobile-panel nav .mobile-services .mobile-service-links{
-  display:flex;
-  flex-direction:column;
-  gap:0;
-  padding:5px 0 12px 15px;
-  border-left:1px solid rgba(18,186,175,.35);
-}
-.concept-12-root .mobile-panel nav .mobile-services .mobile-service-links a{
-  display:block;
-  padding:9px 0 9px 14px;
-  border-bottom:0;
-  font-size:clamp(15px,3.5vw,18px);
-  font-weight:550;
-  letter-spacing:-.015em;
-  line-height:1.35;
-}
-.concept-12-root .mobile-panel nav .mobile-services .mobile-service-links a.active{
+.concept-12-root .mobile-panel nav .mobile-nav-link.active{
   font-weight:650;
 }
 @media(max-height:650px){
   .concept-12-root .mobile-panel{padding-top:calc(var(--header-height) + 22px)}
   .concept-12-root .mobile-panel nav{gap:3px}
-  .concept-12-root .mobile-panel nav .mobile-services .mobile-service-links a{padding-block:6px}
+  .concept-12-root .mobile-panel nav .mobile-nav-link{padding-block:4px}
 }
 @media(prefers-reduced-motion:reduce){
   .concept-12-root .desktop-navigation .nav-panel,
-  .concept-12-root .desktop-navigation .dropdown-button svg,
-  .concept-12-root .mobile-services summary svg{transition:none!important}
+  .concept-12-root .desktop-navigation .dropdown-button svg{transition:none!important}
 }
