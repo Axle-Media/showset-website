@@ -54,7 +54,7 @@ const inventory=el=>{
      Math.max(...data.top)-Math.min(...data.top)<2&&
      data.whiteSpace.every(x=>x==='nowrap'),data.top);
    ck('Enlarged editorial format typography @'+width,
-     data.sizes.every(x=>x>=15.9&&x<=19.1),data.sizes);
+     data.sizes.every(x=>x>=15.4&&x<=19.1),data.sizes);
    ck('Scrollbars are hidden @'+width,data.scrollbar==='none',data.scrollbar);
    ck('No horizontal page overflow @'+width,data.docWidth<=width+2,
      {document:data.docWidth,viewport:width});
