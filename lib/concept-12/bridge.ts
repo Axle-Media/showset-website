@@ -745,12 +745,13 @@ export function bindConcept(
   }
   const mobile = host.querySelector<HTMLElement>("#mobile-panel nav");
   if (mobile) {
-    mobile.innerHTML = itemLink({label:"Home",href:"/"},true) +
-      '<details class="mobile-services"' + (serviceActive ? ' open' : '') + '>' +
-      '<summary class="' + (serviceActive ? 'active' : '') + '">What We Do ' +
-      chevron + '</summary><div class="mobile-service-links">' +
-      services.map(item => itemLink(item,true)).join("") + '</div></details>' +
-      others.map(item => itemLink(item,true)).join("");
+    // Phones and tablets show every service as a direct, always-visible link.
+    // Active-page styling comes from itemLink (aria-current + .active).
+    mobile.innerHTML = [
+      itemLink({label:"Home",href:"/"},true),
+      ...services.map(item => itemLink(item,true)),
+      ...others.map(item => itemLink(item,true)),
+    ].join("");
   }
   if (!equal(g.footer.links, defaultGlobals.footer.links)) {
     const group = host.querySelector(".footer-links>div");
