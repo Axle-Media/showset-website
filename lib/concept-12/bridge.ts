@@ -708,11 +708,19 @@ export function bindConcept(
   // Keep service links editable through Studio globals, but present them in
   // one branded "What We Do" menu rather than six crowded top-level links.
   const services = g.header.services.length ? g.header.services : defaultGlobals.header.services;
-  const others = g.header.links.filter(
-    item => !["what we do","contact"].includes(item.label.trim().toLowerCase()) &&
+  // Contact is a first-class menu link again, in addition to the CTA.
+  // Older Studio-saved globals may lack it, so guarantee one copy here.
+  const standardLinks = g.header.links.filter(
+    item => item.label.trim().toLowerCase() !== "what we do" &&
+      item.label.trim().toLowerCase() !== "contact" &&
       safeHref(item.href) !== "/contact/" &&
       !services.some(service => safeHref(service.href) === safeHref(item.href)),
   );
+  const contactLink = g.header.links.find(
+    item => item.label.trim().toLowerCase() === "contact" ||
+      safeHref(item.href) === "/contact/",
+  ) || { label: "Contact", href: "/contact/" };
+  const others = [...standardLinks, contactLink];
   const serviceActive = services.some(item => routeKeys[safeHref(item.href)] === key);
   const active = (href: string) => routeKeys[safeHref(href)] === key;
   const current = (href: string) => active(href) ? ' aria-current="page"' : "";
