@@ -17,5 +17,12 @@ if(i<0||!args[i+1])throw Error("A candidate checkout path is required.");
 const result=verifyStagingCandidate(path.resolve(args[i+1]),{
   checkBuild:args.includes("--built"),
 });
+const branch=process.env.SHOWSET_RELEASE_BRANCH;
+if(branch){
+  const matched=/^release\/studio-r([1-9]\d*)-rev([1-9]\d*)$/.exec(branch);
+  if(!matched || Number(matched[1])!==result.checkpointId||
+    Number(matched[2])!==result.sourceRevision)
+    throw Error("Release branch does not match the reviewed checkpoint and revision.");
+}
 console.log("PASS private SHOWSET staging release candidate",JSON.stringify(result));
 console.log("This check does not grant deployment approval or publish the website.");
