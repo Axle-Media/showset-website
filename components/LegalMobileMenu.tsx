@@ -19,14 +19,54 @@ export default function LegalMobileMenu() {
       header.classList.toggle("menu-is-open", open);
       document.body.classList.toggle("menu-open", open);
     };
+    // Legal pages use the shared server-rendered header without the main
+    // animated runtime; provide the same dropdown behaviour here.
+    const navDropdown = root.querySelector<HTMLElement>("#nav-dropdown");
+    const navTrigger = root.querySelector<HTMLButtonElement>("#services-button");
+    const setServicesOpen = (open: boolean) => {
+      navDropdown?.classList.toggle("is-open", open);
+      navTrigger?.setAttribute("aria-expanded", String(open));
+    };
+    const onDropdownClick = (event: MouseEvent) => {
+      if (!(event.target instanceof Element)) return;
+      if (event.target.closest("#services-button")) {
+        event.preventDefault();
+        setServicesOpen(!navDropdown?.classList.contains("is-open"));
+      }
+    };
+    const onPointerOver = (event: PointerEvent) => {
+      if (event.pointerType === "mouse" && event.target instanceof Element &&
+          event.target.closest("#nav-dropdown") &&
+          !navDropdown?.contains(event.relatedTarget as Node)) setServicesOpen(true);
+    };
+    const onPointerOut = (event: PointerEvent) => {
+      if (event.pointerType === "mouse" && event.target instanceof Element &&
+          event.target.closest("#nav-dropdown") &&
+          !navDropdown?.contains(event.relatedTarget as Node)) setServicesOpen(false);
+    };
+    const onFocusIn = (event: FocusEvent) => {
+      if (navDropdown?.contains(event.target as Node)) setServicesOpen(true);
+    };
+    const onFocusOut = (event: FocusEvent) => {
+      if (!navDropdown?.contains(event.relatedTarget as Node)) setServicesOpen(false);
+    };
+    const onOutsideClick = (event: MouseEvent) => {
+      if (!navDropdown?.contains(event.target as Node)) setServicesOpen(false);
+    };
     const onToggle = () => setOpen(toggle.getAttribute("aria-expanded") !== "true");
     const onKeydown = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && navDropdown?.classList.contains("is-open")) {
+        setServicesOpen(false);
+        root.querySelector<HTMLAnchorElement>(".desktop-navigation > a.nav-text")?.focus();
+        event.preventDefault();
+        return;
+      }
       if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
         setOpen(false);
         toggle.focus();
       }
       if (event.key !== "Tab" || toggle.getAttribute("aria-expanded") !== "true") return;
-      const stops = [toggle, ...Array.from(panel.querySelectorAll<HTMLAnchorElement>("a[href]"))];
+      const stops = [toggle, ...Array.from(panel.querySelectorAll<HTMLAnchorElement>("a[href],summary"))];
       const index = stops.indexOf(document.activeElement as HTMLButtonElement & HTMLAnchorElement);
       if (index < 0 || (event.shiftKey && index === 0) || (!event.shiftKey && index === stops.length - 1)) {
         event.preventDefault();
@@ -40,12 +80,24 @@ export default function LegalMobileMenu() {
     setOpen(false);
     onScroll();
     toggle.addEventListener("click", onToggle);
+    header.addEventListener("click", onDropdownClick);
+    navDropdown?.addEventListener("pointerover", onPointerOver);
+    navDropdown?.addEventListener("pointerout", onPointerOut);
+    navDropdown?.addEventListener("focusin", onFocusIn);
+    navDropdown?.addEventListener("focusout", onFocusOut);
+    document.addEventListener("click", onOutsideClick);
     panel.addEventListener("click", onNavigation);
     document.addEventListener("keydown", onKeydown);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       setOpen(false);
       toggle.removeEventListener("click", onToggle);
+      header.removeEventListener("click", onDropdownClick);
+      navDropdown?.removeEventListener("pointerover", onPointerOver);
+      navDropdown?.removeEventListener("pointerout", onPointerOut);
+      navDropdown?.removeEventListener("focusin", onFocusIn);
+      navDropdown?.removeEventListener("focusout", onFocusOut);
+      document.removeEventListener("click", onOutsideClick);
       panel.removeEventListener("click", onNavigation);
       document.removeEventListener("keydown", onKeydown);
       window.removeEventListener("scroll", onScroll);
