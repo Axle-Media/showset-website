@@ -5,7 +5,7 @@
 const {chromium}=require(process.env.SHOWSET_PLAYWRIGHT_MODULE||'playwright');
 const fs=require('node:fs');
 const base=process.env.SHOWSET_BASE_URL||'http://127.0.0.1:3001';
-const slugs=['','our-studio','our-work','events-experiences','creative-design','digital-marketing','content-production','contact','work/atmosphere-is-everything','work/made-to-be-remembered','work/behind-every-moment'];
+const slugs=['','our-studio','our-work','events-experiences','creative-design','digital-marketing','content-production','contact','work/atmosphere-is-everything','work/made-to-be-remembered','work/provault'];
 const checks=[],errors=[];
 const ck=(name,pass,details)=>{checks.push({name,pass:!!pass,details});console.log(pass?'PASS':'FAIL',name,details??'')};
 (async()=>{

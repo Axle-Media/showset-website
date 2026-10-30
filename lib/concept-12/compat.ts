@@ -1,6 +1,7 @@
 import p6 from "./legacy/pre-image-replacement-pages.json";
 import p7 from "./legacy/pre-elmboog-pages.json";
 import p8 from "./legacy/pre-amaze-photo-edit-pages.json";
+import p9 from "./legacy/pre-provault-pages.json";
 import p1 from "./legacy/12cbba7-pages.json";
 import p2 from "./legacy/9307c4d-pages.json";
 import p3 from "./legacy/1a59de3-pages.json";
@@ -96,6 +97,15 @@ function safely<T>(value: T, canonical: Value, legacy: Value[]): T {
   return next;
 }
 export function compatiblePages(value: Record<string, PageData>) {
+  const oldProduction = value['behind-every-moment'];
+  if (oldProduction && [p1,p2,p3,p4,p5,p6,p7,p8,p9].some(seed => same(oldProduction, seed['behind-every-moment']))) {
+    try {
+      preserveBeforeMigration();
+      value = {...value};
+      delete value['behind-every-moment'];
+      value.provault ??= structuredClone(defaultPages.provault);
+    } catch { return value; }
+  }
   // Retire only the proven untouched event concept when its real replacement
   // has a new route. Custom studies and their authored media remain intact.
   const legacyEvent = value['atmosphere-is-everything'];
@@ -110,7 +120,7 @@ export function compatiblePages(value: Record<string, PageData>) {
       return value;
     }
   }
-  const reconciled = safely(value, defaultPages, [p1, p2, p3, p4, p5, p6, p7, p8]);
+  const reconciled = safely(value, defaultPages, [p1, p2, p3, p4, p5, p6, p7, p8, p9]);
   const oldHero = reconciled.home?.sections.find((s) => s.type === "hero");
   // Only migrate known previous default splits. Never change an edited headline.
   const priorDefault =

@@ -9,7 +9,7 @@ const routes = [
   '/', '/events-experiences/', '/creative-design/', '/digital-marketing/',
   '/content-production/', '/our-studio/', '/our-work/', '/contact/',
   '/work/atmosphere-is-everything/', '/work/made-to-be-remembered/',
-  '/work/behind-every-moment/', '/privacy-policy/', '/terms-and-conditions/'
+  '/work/provault/', '/privacy-policy/', '/terms-and-conditions/'
 ];
 const expected = {
   primary: { background: 'rgb(57, 212, 200)', color: 'rgb(6, 39, 57)' },

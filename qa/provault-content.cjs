@@ -1,0 +1,18 @@
+const fs=require('node:fs'),ts=require('typescript'),assert=require('node:assert/strict');
+const pages=require('../content/pages.json'),globals=require('../content/globals.json');
+const p=pages.provault;assert(p&&!pages['behind-every-moment']);
+assert.equal(p.route,'/work/provault/');assert.equal(p.caseExperience.demo,false);
+assert.equal(p.caseExperience.gallery.length,8);assert.deepEqual(p.caseExperience.partners,[]);
+assert.equal(new Set(p.caseExperience.gallery.map(x=>x.src)).size,8);
+for(const x of p.caseExperience.gallery)assert(fs.existsSync('public'+x.src));
+const source=fs.readFileSync('lib/concept-12/compat.ts','utf8');
+const compiled=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText;
+const proxy={exports:{}};const store=new Map();global.localStorage={getItem:k=>store.get(k)||null,setItem:(k,v)=>store.set(k,v)};
+new Function('require','module','exports',compiled)(name=>name==='@/lib/data'?{defaultPages:pages,defaultGlobals:globals}:require('../lib/concept-12/'+name),proxy,proxy.exports);
+const previous=require('../lib/concept-12/legacy/pre-provault-pages.json');
+const next=proxy.exports.compatiblePages(structuredClone(previous));
+assert(!next['behind-every-moment']);assert.deepEqual(next.provault,p);assert(store.has('showset-concept12-recovery'));
+assert.equal(next.home.sections.find(s=>s.type==='work').items.at(-1).href,p.route);
+const custom=structuredClone(previous);custom['behind-every-moment'].title='Authored custom project';
+assert.equal(proxy.exports.compatiblePages(custom)['behind-every-moment'].title,'Authored custom project');
+console.log('PASS ProVault: real project, eight assets, migrated untouched defaults, recovery backup and preserved custom projects.');
