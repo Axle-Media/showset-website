@@ -9,9 +9,10 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import process from "node:process";
+import {makeStagingManifest,stagingManifest,verifyStagingCandidate} from "./studio-release-manifest.mjs";
 
 const sha=(bytes)=>crypto.createHash("sha256").update(bytes).digest("hex");
-const usage="Usage: node scripts/prepare-studio-release.mjs <verified-backup.json> [--dry-run|--apply] [--target <directory>]";
+const usage="Usage: node scripts/prepare-studio-release.mjs <verified-backup.json> [--dry-run|--apply] [--target <directory>] [--release-id <approved-checkpoint>] [--expect-revision <saved-revision>]";
 const args=process.argv.slice(2);
 if(!args.length||args.includes("--help")){
   console.log(usage);process.exit(args.includes("--help")?0:1);
@@ -21,6 +22,17 @@ const file=args[0],apply=args.includes("--apply"),
 const targetIndex=args.indexOf("--target");
 if(targetIndex>=0&&!args[targetIndex+1])throw Error("Missing --target directory.");
 const root=path.resolve(targetIndex>=0?args[targetIndex+1]:process.cwd());
+const releaseIndex=args.indexOf("--release-id");
+const revisionIndex=args.indexOf("--expect-revision");
+if((releaseIndex>=0)!==(revisionIndex>=0))
+  throw Error("A reviewed release requires both --release-id and --expect-revision.");
+if(apply&&targetIndex<0)
+  throw Error("Explicit --target is mandatory for any source write.");
+const releaseId=releaseIndex>=0?Number(args[releaseIndex+1]):null;
+const expectedRevision=revisionIndex>=0?Number(args[revisionIndex+1]):null;
+if(releaseId!==null&&(!Number.isSafeInteger(releaseId)||releaseId<1||
+   !Number.isSafeInteger(expectedRevision)||expectedRevision<1))
+  throw Error("Release ID and saved revision must be positive integers.");
 const backup=JSON.parse(fs.readFileSync(file,"utf8"));
 if(backup.format!=="showset-studio2-backup"||backup.version!==2||
    typeof backup.checksum!=="string"||!backup.workspace)
@@ -31,6 +43,8 @@ if(sha(Buffer.from(JSON.stringify(body)))!==checksum)
 const workspace=backup.workspace;
 if(workspace.schemaVersion!==2||!workspace.pages||!workspace.globals?.theme)
   throw Error("Incomplete version 2 Studio workspace.");
+if(expectedRevision!==null && workspace.revision!==expectedRevision)
+  throw Error("Saved revision does not match the approved release. No write performed.");
 const mimeExtension={
   "image/jpeg":"jpg","image/png":"png","image/webp":"webp",
   "image/avif":"avif",
@@ -90,7 +104,8 @@ const output={
 };
 if(!apply){
   console.log(JSON.stringify({mode:"dry-run",pages:Object.keys(pages).length,
-    originals:paths.size,changedPaths:Object.values(output),target:root},null,2));
+    originals:paths.size,changedPaths:Object.values(output),target:root,
+    checkpointId:releaseId,sourceRevision:expectedRevision},null,2));
   console.log("No website source or public assets were modified.");
   process.exit(0);
 }
@@ -111,6 +126,18 @@ for(const asset of assets.values()){
   fs.mkdirSync(path.dirname(location),{recursive:true});
   if(!fs.existsSync(location))fs.writeFileSync(location,asset.bytes);
 }
+if(releaseId!==null){
+  // Manifest is the last write. An interrupted run cannot pass the candidate
+  // validator with a partial or stale source set.
+  const manifest=makeStagingManifest({
+    root,checkpointId:releaseId,sourceRevision:expectedRevision,
+    backupChecksum:checksum,originals:[...paths].map(value=>"public/"+value.slice(1)),
+  });
+  const file=path.join(root,stagingManifest);
+  fs.mkdirSync(path.dirname(file),{recursive:true});
+  fs.writeFileSync(file,JSON.stringify(manifest,null,2)+"\n","utf8");
+  verifyStagingCandidate(root);
+}
 console.log(JSON.stringify({mode:"prepared-source",pages:Object.keys(pages).length,
-  originals:paths.size,target:root},null,2));
+  originals:paths.size,target:root,checkpointId:releaseId},null,2));
 console.log("Source prepared only. Run QA, owner review and build separately; no deployment performed.");
