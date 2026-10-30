@@ -9,6 +9,14 @@ import {detectedImageMime,imageDimensions} from "./image-validation";
  * the authority for every operation.
  */
 export type CloudRole="owner"|"editor"|"publisher";
+export type CloudReview={
+  id:number;source_revision:number;note:string;
+  requested_by:string;created_at:string;
+};
+export type CloudRelease={
+  id:number;source_revision:number;published_by:string;created_at:string;
+  review_id:number|null;restored_from:number|null;
+};
 type Session={
   access_token:string;refresh_token:string;expires_in:number;
   token_type:string;user:{id:string;email?:string};
@@ -161,16 +169,65 @@ export class CloudStore {
     assertWorkspace(workspace);
     return {id:result.id,workspace};
   }
-  async approve(expectedRevision:number):Promise<number>{
+  async listReviews():Promise<CloudReview[]>{
+    return this.request<CloudReview[]>(
+      "/rest/v1/showset_studio_reviews?select=id,source_revision,note,requested_by,created_at&order=id.desc&limit=30"
+    );
+  }
+  async listReleases():Promise<CloudRelease[]>{
+    return this.request<CloudRelease[]>(
+      "/rest/v1/showset_studio_releases?select=id,source_revision,published_by,created_at,review_id,restored_from&order=id.desc&limit=30"
+    );
+  }
+  async requestReview(expectedRevision:number,note:string):Promise<number>{
+    this.writable();
+    if(!Number.isSafeInteger(expectedRevision)||expectedRevision<1||
+       note.length>1000)throw Error("Invalid review request.");
+    return this.request<number>("/rest/v1/rpc/showset_studio_request_review",{
+      method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({p_expected_revision:expectedRevision,p_note:note}),
+    });
+  }
+  async approve(expectedRevision:number,reviewId:number):Promise<number>{
     if(!this.role||!["owner","publisher"].includes(this.role))
       throw Error("Publisher role required.");
-    const id=await this.request<number>(
-      "/rest/v1/rpc/showset_studio_publish",{
-        method:"POST",headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({p_expected_revision:expectedRevision}),
-      },
+    if(!Number.isSafeInteger(expectedRevision)||expectedRevision<1||
+       !Number.isSafeInteger(reviewId)||reviewId<1)
+      throw Error("Invalid release approval request.");
+    return this.request<number>("/rest/v1/rpc/showset_studio_publish",{
+      method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        p_expected_revision:expectedRevision,p_review_id:reviewId
+      }),
+    });
+  }
+  async rollback(
+    sourceReleaseId:number,expectedRevision:number,
+    expectedLatestReleaseId:number
+  ):Promise<number>{
+    if(!this.role||!["owner","publisher"].includes(this.role))
+      throw Error("Publisher role required.");
+    if(![sourceReleaseId,expectedRevision,expectedLatestReleaseId]
+      .every(v=>Number.isSafeInteger(v)&&v>0))
+      throw Error("Invalid rollback checkpoint.");
+    return this.request<number>("/rest/v1/rpc/showset_studio_rollback",{
+      method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        p_source_release_id:sourceReleaseId,
+        p_expected_revision:expectedRevision,
+        p_expected_latest_release_id:expectedLatestReleaseId,
+      }),
+    });
+  }
+  async releaseSnapshot(id:number):Promise<Workspace>{
+    if(!Number.isSafeInteger(id)||id<1)throw Error("Invalid release ID.");
+    const rows=await this.request<{source_revision:number;snapshot:Workspace}[]>(
+      "/rest/v1/showset_studio_releases?select=source_revision,snapshot&id=eq."+id
     );
-    return id;
+    if(rows.length!==1)throw Error("Approved release not found.");
+    const workspace={...rows[0].snapshot,revision:rows[0].source_revision};
+    assertWorkspace(workspace);
+    return workspace;
   }
   async putOriginal(file:File,id:string):Promise<void>{
     this.writable();

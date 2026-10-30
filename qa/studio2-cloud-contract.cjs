@@ -14,7 +14,7 @@ const source=fs.readFileSync("lib/studio2/cloud.ts","utf8");
 const transpiled=ts.transpileModule(source,{
   compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022},
 }).outputText;
-const database={row:null,releases:[],users:new Map()};
+const database={row:null,releases:[],reviews:[],users:new Map()};
 const response=(value,status=200,headers={"content-type":"application/json"})=>
   new Response(status===204?null:JSON.stringify(value),{status,headers});
 let calls=[];
@@ -48,13 +48,65 @@ async function fakeFetch(url,init){
     }
     return response(database.row?[database.row]:[]);
   }
-  if(path.endsWith("/rpc/showset_studio_publish")){
-    if(identity.role!=="owner")return response({message:"Permission denied"},403);
-    const {p_expected_revision}=JSON.parse(init.body);
+  if(path.endsWith("/showset_studio_reviews"))
+    return response([...database.reviews].reverse());
+  if(path.endsWith("/showset_studio_releases")){
+    const query=new URL(url).searchParams;
+    const wanted=query.get("id");
+    const rows=wanted?database.releases.filter(r=>r.id===Number(wanted.slice(3)))
+      :[...database.releases].reverse();
+    return response(query.get("select")?.includes("snapshot")?rows:
+      rows.map(({snapshot,...entry})=>entry));
+  }
+  if(path.endsWith("/rpc/showset_studio_request_review")){
+    const {p_expected_revision,p_note}=JSON.parse(init.body);
     if(p_expected_revision!==database.row?.revision)
       return response({message:"Draft changed"},409);
-    database.releases.push({...database.row,by:uid});
-    return response(database.releases.length);
+    if(database.reviews.some(r=>r.source_revision===p_expected_revision))
+      return response({message:"Duplicate review"},409);
+    const id=database.reviews.length+1;
+    database.reviews.push({id,source_revision:p_expected_revision,
+      note:p_note,requested_by:uid,created_at:"2026-10-30T00:00:00Z",
+      snapshot:structuredClone(database.row.document)});
+    return response(id);
+  }
+  if(path.endsWith("/rpc/showset_studio_publish")){
+    if(identity.role!=="owner")return response({message:"Permission denied"},403);
+    const {p_expected_revision,p_review_id}=JSON.parse(init.body);
+    const review=database.reviews.find(r=>r.id===p_review_id);
+    if(p_expected_revision!==database.row?.revision || !review ||
+       review.source_revision!==p_expected_revision ||
+       JSON.stringify(review.snapshot)!==JSON.stringify(database.row.document))
+      return response({message:"Stale review"},409);
+    if(database.releases.some(r=>r.source_revision===p_expected_revision))
+      return response({message:"Duplicate release"},409);
+    const id=database.releases.length+1;
+    database.releases.push({id,source_revision:p_expected_revision,
+      snapshot:structuredClone(database.row.document),published_by:uid,
+      review_id:p_review_id,restored_from:null,created_at:"2026-10-30T00:00:00Z"});
+    return response(id);
+  }
+  if(path.endsWith("/rpc/showset_studio_rollback")){
+    if(identity.role!=="owner")return response({message:"Permission denied"},403);
+    const {p_source_release_id,p_expected_revision,
+      p_expected_latest_release_id}=JSON.parse(init.body);
+    const latest=database.releases.at(-1),
+      previous=database.releases.find(r=>r.id===p_source_release_id);
+    if(!previous || !latest || latest.id!==p_expected_latest_release_id ||
+       latest.id===p_source_release_id ||
+       p_expected_revision!==database.row?.revision ||
+       latest.source_revision!==database.row.revision ||
+       JSON.stringify(latest.snapshot)!==JSON.stringify(database.row.document))
+      return response({message:"Rollback blocked"},409);
+    const revision=database.row.revision+1;
+    const restored={...structuredClone(previous.snapshot),revision,
+      updatedAt:"2026-10-30T00:00:01Z"};
+    database.row={...database.row,revision,document:restored};
+    const id=database.releases.length+1;
+    database.releases.push({id,source_revision:revision,snapshot:restored,
+      published_by:uid,review_id:null,restored_from:p_source_release_id,
+      created_at:"2026-10-30T00:00:01Z"});
+    return response(id);
   }
   if(path.includes("/object/showset-studio-media/"))
     return response({Key:"site/test"},201);
@@ -96,11 +148,27 @@ const {CloudStore,CloudConflictError,cloudConfig}=sandboxModule.exports;
   const next=await owner.save(first,1);
   assert.equal(next.revision,2);
   await assert.rejects(()=>editor.save(stale,1),CloudConflictError);
-  await assert.rejects(()=>editor.approve(2),/Publisher role required/);
-  const checkpoint=await owner.approve(2);
+  const reviewId=await editor.requestReview(2,"Ready for review");
+  assert.equal(reviewId,1);
+  assert.equal((await owner.listReviews()).length,1);
+  await assert.rejects(()=>editor.approve(2,reviewId),/Publisher role required/);
+  const checkpoint=await owner.approve(2,reviewId);
   assert.equal(checkpoint,1);
   assert.equal(database.releases.length,1);
-  assert.equal(database.releases[0].revision,2);
+  assert.equal(database.releases[0].source_revision,2);
+  assert.equal((await owner.releaseSnapshot(1)).revision,2);
+  const changed=await owner.save(next,2);
+  await assert.rejects(()=>owner.approve(3,reviewId),/Stale review/);
+  await assert.rejects(()=>owner.rollback(1,3,1),/Rollback blocked/);
+  const review2=await editor.requestReview(3,"Second release");
+  const second=await owner.approve(3,review2);
+  assert.equal(second,2);
+  const restoreId=await owner.rollback(1,3,2);
+  assert.equal(restoreId,3);
+  assert.equal((await owner.read()).revision,4);
+  assert.equal((await owner.listReleases())[0].restored_from,1);
+  await assert.rejects(()=>owner.rollback(1,4,2),/Rollback blocked/);
+  assert.equal(changed.revision,3);
   assert.ok(calls.every(c=>!JSON.stringify(c.headers).includes("service_role")));
   assert.ok(calls.some(c=>c.path==="/auth/v1/token"&&!c.headers.Authorization),
     "sign-in sends publishable key, never forged JWT");

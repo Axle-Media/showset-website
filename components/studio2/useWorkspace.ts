@@ -85,6 +85,9 @@ export function useWorkspace(cloud:CloudStore|null=null) {
   }, [cloud]);
   const save = useCallback(async () => {
     if (!current.current || !ready || conflict) return false;
+    // No-op saves must not create a new revision and invalidate an existing
+    // submitted review or an immutable release checkpoint.
+    if (expected.current > 0 && savedSequence.current === seq.current) return true;
     return saveCoordinator.current.flush(async () => {
       const value = current.current!;
       const start = seq.current;
@@ -229,14 +232,61 @@ export function useWorkspace(cloud:CloudStore|null=null) {
       setError((e as Error).message);
     }
   };
-  const approve = async () => {
-    if(!cloud)return;
-    if (!(await save())) return;
+  const requestReview = async (note:string):Promise<number|null> => {
+    if(!cloud || conflict || !ready)return null;
+    if(!(await save()))return null;
     try{
-      const release=await cloud.approve(expected.current);
-      setStatus("Approved immutable release #"+release+
-        ". Public site NOT deployed.");
-    }catch(e){setError("Approval rejected: "+(e as Error).message);}
+      const id=await cloud.requestReview(expected.current,note);
+      setStatus("Review #"+id+" requested for saved draft revision "+
+        expected.current+". No public deployment.");
+      return id;
+    }catch(e){
+      setError("Review rejected: "+(e as Error).message);return null;
+    }
+  };
+  const approve = async (reviewId:number):Promise<number|null> => {
+    if(!cloud || conflict || !ready)return null;
+    // Do not silently save new edits on top of an already requested review.
+    if(seq.current!==savedSequence.current){
+      setError("Save your changes and submit a new review before approval.");
+      return null;
+    }
+    try{
+      const release=await cloud.approve(expected.current,reviewId);
+      setStatus("Release checkpoint #"+release+
+        " approved. Public website NOT deployed.");
+      return release;
+    }catch(e){
+      setError("Approval rejected: "+(e as Error).message);
+      return null;
+    }
+  };
+  const rollback = async (
+    sourceReleaseId:number,latestReleaseId:number
+  ):Promise<number|null> => {
+    if(!cloud || conflict || !ready || !current.current)return null;
+    if(seq.current!==savedSequence.current){
+      setError("Unsaved edits must be backed up and resolved before rollback.");
+      return null;
+    }
+    try{
+      const releaseId=await cloud.rollback(
+        sourceReleaseId,expected.current,latestReleaseId);
+      const restored=await cloud.read();
+      if(!restored)throw Error("Rollback completed but shared draft is unreadable.");
+      expected.current=restored.revision;
+      savedSequence.current=seq.current;
+      current.current=restored;
+      setWorkspace(restored);
+      setUndo([]);setRedo([]);setConflict(null);
+      setStatus("Rollback checkpoint #"+releaseId+
+        " created from #"+sourceReleaseId+
+        ". This does NOT deploy or undo a public website deployment.");
+      return releaseId;
+    }catch(e){
+      setError("Rollback rejected: "+(e as Error).message);
+      return null;
+    }
   };
   const step = (direction: "undo" | "redo") => {
     if (!workspace || conflict) return;
@@ -303,6 +353,8 @@ export function useWorkspace(cloud:CloudStore|null=null) {
     backup,
     preview,
     approve,
+    requestReview,
+    rollback,
     step,
     restore,
     loadConflict,

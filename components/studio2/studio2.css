@@ -1066,3 +1066,33 @@
  .s2-media-card {grid-template-columns:72px minmax(0,1fr)}
  .s2-media-card>img {width:72px;height:72px}
 }
+
+/* Authenticated review and immutable checkpoint archive. */
+.s2-release-panel{margin:12px clamp(12px,2vw,28px);padding:clamp(16px,2vw,26px);
+ border:1px solid #4a7182;background:#0c2c43;color:#fff;border-radius:10px;
+ display:grid;gap:18px;max-height:65vh;overflow-y:auto;overflow-x:hidden}
+.s2-release-head{display:flex;gap:16px;justify-content:space-between;align-items:flex-start}
+.s2-release-head h2{font-size:19px;margin:0 0 7px}
+.s2-release-head p{font-size:12px;line-height:1.5;color:#b8cdd4;margin:0}
+.s2-release-request{display:grid;gap:9px;max-width:660px}
+.s2-release-request label{font-size:12px}
+.s2-release-request textarea{min-height:70px;padding:11px;background:#081f30;color:#fff;
+ border:1px solid #56798a;border-radius:6px;font:inherit;font-size:13px;resize:vertical}
+.s2-release-request button{justify-self:start}
+.s2-release-panel h3{font-size:15px;margin:6px 0 0}
+.s2-release-error{padding:12px;border:1px solid #c2a6a6;color:#ffd4d4}
+.s2-release-list{display:grid;gap:10px}
+.s2-release-item{display:flex;align-items:center;justify-content:space-between;
+ gap:16px;min-width:0;padding:13px;border:1px solid #456b7f;border-radius:7px;
+ background:#11364d}
+.s2-release-item>div:first-child{display:grid;gap:6px;min-width:0}
+.s2-release-item strong{font-size:13px;font-weight:650;overflow-wrap:anywhere}
+.s2-release-item small{font-size:11px;color:#a9c5cc}
+.s2-release-item p{font-size:12px;line-height:1.5;margin:4px 0;color:#e1eded}
+.s2-release-actions{display:flex;gap:8px;flex-wrap:wrap}
+.s2-release-item button{font-size:12px;min-height:34px}
+@media(max-width:750px){
+ .s2-release-panel{max-height:60vh}
+ .s2-release-item,.s2-release-head{flex-direction:column;align-items:stretch}
+ .s2-release-actions{flex-direction:column}
+}
