@@ -95,7 +95,7 @@ export function bindConcept(
     const e = host.querySelector<HTMLAnchorElement>(selector);
     if (!e) return;
     const arrow =
-      e.lastElementChild?.outerHTML || '<span aria-hidden="true">â†—</span>';
+      e.lastElementChild?.outerHTML || '<span aria-hidden="true">↗</span>';
     e.innerHTML = rich(label) + " " + arrow;
     e.href = safeHref(href);
     delete e.dataset.routeKey;
