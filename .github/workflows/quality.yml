@@ -34,8 +34,14 @@ jobs:
         run: npm run check:seo
       - name: Scalable case-study portfolio regression
         run: node qa/portfolio-growth.cjs
+      - name: Verify reviewed Studio source candidate before build
+        if: ${{ github.event_name == 'pull_request' && startsWith(github.head_ref, 'release/studio-r') }}
+        run: node scripts/verify-studio-release.mjs --target .
       - name: Static Next.js build
         run: npm run build
+      - name: Verify full static output matches reviewed source
+        if: ${{ github.event_name == 'pull_request' && startsWith(github.head_ref, 'release/studio-r') }}
+        run: node scripts/verify-studio-release.mjs --target . --built
       - name: Browser acceptance checks (homepage, cases, services and Studio)
         run: |
           npm install --no-save --no-package-lock playwright
@@ -74,6 +80,18 @@ jobs:
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/photo-headline-swipe.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/non-photo-headlines.cjs || qa_status=1
           exit "$qa_status"
+      # Artifact is private to repository collaborators. It is a staging
+      # review bundle, not an automatic Vercel or xneelo deployment.
+      - name: Package verified staging site for owner review
+        if: ${{ github.event_name == 'pull_request' && startsWith(github.head_ref, 'release/studio-r') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: showset-staging-${{ github.event.pull_request.head.sha }}
+          path: |
+            out/
+            .showset-staging/manifest.json
+          retention-days: 7
+          if-no-files-found: error
       - name: Archive browser QA results
         if: always()
         uses: actions/upload-artifact@v4
@@ -135,6 +153,7 @@ jobs:
           node qa/studio2-public-template-parity.cjs
           node qa/studio2-cloud-schema.cjs
           node qa/studio2-release.cjs
+          node qa/studio2-staging-release.cjs
       - name: Install isolated browser tooling
         run: |
           npm install --no-save --no-package-lock playwright
