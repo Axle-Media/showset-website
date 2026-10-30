@@ -1,0 +1,180 @@
+/* SHOWSET phone-first editorial alignment QC.
+   Imported last so the mobile intent wins over late site-wide layout defaults.
+   This is a layout/alignment layer only: no image sizes, motion, colours, type
+   scales, navigation rows, filter mechanics or form-field behaviour change. */
+@media (max-width:600px) {
+  /* Editorial headings and accompanying copy, including the end-of-page CTA.
+     These selectors are intentionally scoped to content, not navigation. */
+  .concept-12-root #main :is(
+    .dot-words,.dot-words h2,.dot-words > p,
+    .manifesto-heading-group,.manifesto-heading-group h2,.manifesto-copy > p,
+    .portfolio-heading,.portfolio-heading h2,.portfolio-intro > p,
+    .services-stage-intro,.services-stage-intro h2,.services-stage-intro > p,
+    .service-image-information,.service-image-information > p,
+    .studio-manifesto,.studio-manifesto :is(h2,p),
+    .studio-exploration-intro,.studio-exploration-intro :is(h2,p),
+    .studio-partnership-body,.studio-partnership-body > p,
+    .studio-outlook,.studio-outlook :is(h2,p),
+    .studio-final-inner,.studio-final-copy,.studio-final-copy p,
+    .work-final-inner,.work-final-copy,
+    .work-index-empty,.work-filter-empty,
+    .contact-intro,.contact-intro > p
+  ) { text-align:center!important; }
+
+  .concept-12-root #main .dot-words {
+    margin-inline:auto;
+    display:flex;flex-direction:column;align-items:center;
+  }
+  .concept-12-root #main .dot-words h2 {width:100%;max-width:100%;}
+  .concept-12-root #main .dot-words .wipe-line,
+  .concept-12-root #main .studio-scroll-heading .wipe-line,
+  .concept-12-root #main .studio-editorial-heading > .plain-line {
+    margin-inline:auto;
+  }
+  .concept-12-root #main .studio-final-inner > div,
+  .concept-12-root #main .work-final-inner > div {
+    width:100%;
+    display:flex;flex-direction:column;align-items:center;
+  }
+
+  /* Site-wide end CTA: late desktop defaults otherwise left-align its header,
+     paragraph and button despite the earlier responsive CSS. */
+  .concept-12-root #main :is(#ending,#case-ending) > h2 {
+    margin-inline:auto!important;
+    text-align:center!important;
+  }
+  .concept-12-root #main :is(#ending,#case-ending) .end-bottom {
+    align-items:center!important;
+    margin-inline:auto!important;
+    text-align:center!important;
+  }
+  .concept-12-root #main :is(#ending,#case-ending) .end-bottom p {
+    margin-inline:auto!important;
+    text-align:center!important;
+  }
+  .concept-12-root #main :is(#ending,#case-ending) .end-link {
+    align-self:center!important;
+    justify-content:center;
+    margin-inline:auto!important;
+  }
+
+  /* CTA actions are centred as controls, not merely centre-aligned text. */
+  .concept-12-root #main .service-experience .service-hero-actions,
+  .concept-12-root #main .service-experience .service-close--editorial .end-bottom,
+  .concept-12-root #main .service-experience .service-close--editorial .service-close-description,
+  .concept-12-root #main .service-experience .service-close--editorial .service-close-description p {
+    align-items:center!important;
+    text-align:center!important;
+    margin-inline:auto;
+  }
+  .concept-12-root #main .service-experience .service-close--editorial .end-link.solid-link,
+  .concept-12-root #main .studio-final .editorial-action,
+  .concept-12-root #main .work-final .editorial-action {
+    align-self:center!important;
+    margin-inline:auto!important;
+  }
+  .concept-12-root #main .contact-submit-row {justify-content:center!important;}
+  .concept-12-root #main .contact-submit-row .contact-submit {
+    margin-inline:auto!important;
+  }
+
+  /* All four service pages: text columns centred, but functional capability,
+     service tabs and dropdown choices remain usable. */
+  .concept-12-root #main .service-experience :is(
+    .service-scene-copy,.service-scene-copy h3,.service-scene-copy p,
+    .service-creative-artboard-copy,.service-creative-artboard-copy h3,.service-creative-artboard-copy p,
+    .service-section-head,.service-section-head h2,.service-section-head > p,
+    .service-close,.service-close h2,.service-close p,
+    .service-proof-copy,.service-proof-copy h3,.service-proof-copy p,
+    .service-work-card,.service-work-card h3,.service-work-card p
+  ) {text-align:center!important;}
+  .concept-12-root #main .service-experience :is(
+    .service-scene-copy > p,.service-creative-artboard-copy > p,
+    .service-proof-copy > p,.service-section-head > p
+  ) {margin-inline:auto;}
+  .concept-12-root #main .service-experience .service-heading .wipe-line,
+  .concept-12-root #main .studio-rebuilt .studio-scroll-heading .wipe-line {
+    margin-inline:auto!important;
+  }
+
+  /* Portfolio cards: preserve the image and swipe; centre their content axis.
+     Work's category pills still exist only on the Work page. */
+  .concept-12-root #main .work-page-gallery .case-index-info {
+    align-items:center!important;text-align:center!important;
+  }
+  .concept-12-root #main .work-page-gallery .case-index-info :is(h2,p) {
+    text-align:center!important;margin-inline:auto;
+  }
+  .concept-12-root #main .work-page-gallery .work-feature-discover {
+    align-self:center!important;margin-inline:auto!important;
+  }
+  .concept-12-root #main #portfolio-section .case-story :is(h3,p),
+  .concept-12-root #main #portfolio-section .case-story {text-align:center!important;}
+
+  /* Every case study: chapter narrative, gallery, related-work link and
+     title-only cards share one reading axis. Existing arrows remain visible. */
+  .concept-12-root #main .case-experience :is(
+    .case-scene-copy,.case-scene-copy > p,
+    .case-chapter-copy,.case-chapter-copy h2,.case-chapter-eyebrow,
+    .case-body-copy,.case-body-copy p,
+    .case-gallery-heading-row,.case-gallery-heading-row h2,
+    .case-related-heading,.case-related-heading h2,
+    .case-related-card-caption,.case-related-card-caption h3
+  ) {text-align:center!important;}
+  .concept-12-root #main .case-experience :is(
+    .case-scene-copy > p,.case-chapter-copy h2,
+    .case-body-copy p,.case-gallery-heading-row h2,
+    .case-related-heading h2
+  ) {margin-inline:auto!important;}
+  .concept-12-root #main .case-experience .case-heading-line,
+  .concept-12-root #main .case-experience .case-primary-heading .wipe-line {
+    margin-inline:auto!important;
+  }
+  .concept-12-root #main .case-experience .case-related-heading {
+    display:flex;flex-direction:column;align-items:center!important;
+    justify-content:center;gap:clamp(18px,5vw,28px);
+  }
+  .concept-12-root #main .case-experience .case-related-heading .understated-link {
+    align-self:center!important;margin-inline:auto!important;
+    justify-content:center;
+  }
+  .concept-12-root #main .case-experience .case-related-card-caption {
+    display:flex;flex-direction:column;align-items:center;
+    justify-content:center;gap:10px;
+  }
+  .concept-12-root #main .case-experience .case-related-card-caption > div {width:100%;}
+  .concept-12-root #main .case-experience .case-related-card-caption h3 {
+    margin:0 auto!important;
+    max-width:100%;
+  }
+  .concept-12-root #main .case-experience .case-related-card-caption > span {
+    align-self:center;
+  }
+
+  /* Contact input values, field labels and option lists are purposefully
+     left-aligned; only prose and the submission CTA use the editorial axis. */
+  .concept-12-root #main .contact-rebuilt .contact-form :is(
+    label,input,textarea,select,.select-trigger,.select-option
+  ) {text-align:left!important;}
+
+  /* Legal pages: align headings and prose while retaining indented, scannable
+     legal lists and link/navigation structure. */
+  .concept-12-root.legal-page #main .legal-hero-inner,
+  .concept-12-root.legal-page #main .legal-title,
+  .concept-12-root.legal-page #main .legal-summary,
+  .concept-12-root.legal-page #main .legal-updated,
+  .concept-12-root.legal-page #main .legal-section :is(h2,h3,p) {
+    text-align:center!important;
+  }
+  .concept-12-root.legal-page #main .legal-title:not(.legal-title--one-line) {
+    align-items:center!important;
+  }
+  .concept-12-root.legal-page #main .legal-title--one-line {
+    white-space:normal;
+  }
+  .concept-12-root.legal-page #main .legal-summary,
+  .concept-12-root.legal-page #main .legal-updated,
+  .concept-12-root.legal-page #main .legal-body {
+    margin-inline:auto!important;
+  }
+}
