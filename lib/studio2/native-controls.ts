@@ -20,7 +20,10 @@ export function permittedNativeMotion(motion: Motion): boolean {
     Number.isFinite(motion.duration) && motion.duration >= 0 && motion.duration <= 2500 &&
     Number.isFinite(motion.delay) && motion.delay >= 0 && motion.delay <= 1500 &&
     Number.isFinite(motion.distance) && motion.distance >= 0 && motion.distance <= 70 &&
-    ["ease", "linear", "ease-in-out"].includes(motion.ease);
+    ["ease", "linear", "ease-in-out"].includes(motion.ease) &&
+    Number.isFinite(motion.start) && motion.start >= 0 && motion.start < 1 &&
+    Number.isFinite(motion.end) && motion.end > motion.start && motion.end <= 1 &&
+    typeof motion.replay === "boolean";
 }
 const query = (point: Breakpoint, rule: string) =>
   point === "desktop" ? rule :
