@@ -14,6 +14,13 @@ const inside=(root,relative)=>{
     throw Error("Manifest path leaves the staging workspace.");
   return absolute;
 };
+function unresolvedAssets(value){
+  if(typeof value==="string")return value.startsWith("asset:")?[value]:[];
+  if(Array.isArray(value))return value.flatMap(unresolvedAssets);
+  if(value&&typeof value==="object")
+    return Object.values(value).flatMap(unresolvedAssets);
+  return [];
+}
 function assetReferences(value){
   if(typeof value==="string")return value.startsWith("/media/studio/asset-")?[value.slice(1)]:[];
   if(Array.isArray(value))return value.flatMap(assetReferences);
@@ -63,6 +70,8 @@ export function verifyStagingCandidate(root,{checkBuild=false}={}){
   if(!expectedRoutes.includes("/")||
     JSON.stringify(expectedRoutes)!==JSON.stringify(manifest.routes))
     throw Error("Page routes differ from the reviewed release.");
+  if(unresolvedAssets(pages).length||unresolvedAssets(globals).length)
+    throw Error("Unresolved editor asset references remain in the staging source.");
   const used=new Set([...assetReferences(pages),...assetReferences(globals)]);
   const required=["content/pages.json","content/globals.json",...used].sort();
   const declared=manifest.files.map(item=>item.path).sort();
