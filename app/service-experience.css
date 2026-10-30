@@ -1289,6 +1289,15 @@
   .concept-12-root .service-experience--events .service-event-types [data-event-format-clone]{
     user-select:none;
   }
+  /* The repeated sequence needs the same leading and trailing geometry as
+     the original, so the loop has no visible jump at its reset point. */
+  .concept-12-root .service-experience--events .service-event-types[data-event-format-marquee] li:last-child{
+    padding-right:18px;
+    border-right:1px solid rgba(250,249,253,.24);
+  }
+  .concept-12-root .service-experience--events .service-event-types[data-event-format-marquee] li[data-event-format-clone]:nth-child(7){
+    padding-left:0;
+  }
 }
 .concept-12-root .service-experience--events .service-event-types:focus-visible{
   outline:2px solid var(--teal);
