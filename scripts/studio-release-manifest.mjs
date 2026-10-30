@@ -22,7 +22,7 @@ function unresolvedAssets(value){
   return [];
 }
 function assetReferences(value){
-  if(typeof value==="string")return value.startsWith("/media/studio/asset-")?[value.slice(1)]:[];
+  if(typeof value==="string")return value.startsWith("/media/studio/asset-")?["public"+value]:[];
   if(Array.isArray(value))return value.flatMap(assetReferences);
   if(value&&typeof value==="object")return Object.values(value).flatMap(assetReferences);
   return [];
