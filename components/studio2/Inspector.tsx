@@ -80,6 +80,7 @@ import { defaultPattern, defaultMotion } from "@/lib/studio2/model";
 import { bindingContent, type Binding } from "@/lib/studio2/bindings";
 import type { PageData } from "@/lib/types";
 import {canReplaceNative} from "@/lib/studio2/native-rebuild";
+import {canDecorateNative} from "@/lib/studio2/native-controls";
 import {mediaSource} from "@/lib/studio2/render";
 import {focalFor} from "@/lib/studio2/image-focal";
 import FocalControl from "./FocalControl";
@@ -142,7 +143,8 @@ export default function Inspector({
         ? (node || override)?.patterns?.desktop
         : undefined),
     kind = node?.kind || binding?.kind,
-    motion = node?.motion || defaultMotion;
+    motion = node?.motion || override?.motion || defaultMotion,
+    nativeEditorial = !!binding && binding.kind==="section" && canDecorateNative(binding.id);
   const field = (
     label: string,
     value: string,
@@ -668,16 +670,16 @@ export default function Inspector({
               1,
               0.01,
             )}
-            {!binding && (
+            {(!binding || nativeEditorial) && (
               <>
-                <button
+                {!binding && <button
                   className="s2-secondary"
                   onClick={() =>
                     onPattern({ ...defaultPattern, preset: "closing" })
                   }
                 >
                   Restore approved closing CTA pattern
-                </button>
+                </button>}
                 <label className="s2-checkbox">
                   <input
                     type="checkbox"
@@ -789,12 +791,16 @@ export default function Inspector({
                 )}
               </>
             )}
-            {binding && (
+            {binding && !nativeEditorial && (
               <p className="s2-hint">
-                Template pattern geometry stays approved in this slice. Pattern
-                placement is fully editable on builder sections.
+                This cinematic or closing section retains its approved pattern
+                geometry. Use a standard-flow editorial section for additional overlays.
               </p>
             )}
+            {nativeEditorial && <p className="s2-hint">
+              A separate, non-interactive overlay protects the original section
+              artwork and can be positioned independently for each breakpoint.
+            </p>}
           </>
         )}
         {tab === "Motion" &&
@@ -911,11 +917,41 @@ export default function Inspector({
                 visitors always see readable content.
               </p>
             </>
+          ) : nativeEditorial ? (
+            <>
+              <p className="s2-hint">
+                Add an optional entrance to this normal-flow section. Its original
+                composition stays in place. Pinned, scroll-driven choreography
+                cannot be replaced by a generic effect.
+              </p>
+              {select("Editorial entrance",motion.preset==="reveal"||
+                motion.preset==="parallax"?"none":motion.preset,
+                ["none","fade","slide","scale"],v=>onMotion({
+                  ...motion,preset:v as Motion["preset"],trigger:"load",
+                  duration:Math.min(2500,motion.duration),
+                  delay:Math.min(1500,motion.delay),
+                  distance:Math.min(70,motion.distance),
+                }))}
+              {motion.preset!=="none" && <>
+                {numeric("Entrance duration (ms)",motion.duration,v=>onMotion({
+                  ...motion,trigger:"load",duration:v
+                }),0,2500,50)}
+                {numeric("Entrance delay (ms)",motion.delay,v=>onMotion({
+                  ...motion,trigger:"load",delay:v
+                }),0,1500,50)}
+                {motion.preset==="slide" && numeric("Entrance distance (px)",
+                  motion.distance,v=>onMotion({...motion,trigger:"load",
+                    distance:v}),0,70,5)}
+              </>}
+              <p className="s2-hint">
+                Motion runs on page load and is disabled automatically for
+                visitors who request reduced motion.
+              </p>
+            </>
           ) : (
             <p className="s2-hint">
-              This element retains the approved cinematic engine. Editing its
-              advanced timeline belongs to the template-coverage phase; there is
-              no pretend override here.
+              This section retains its approved cinematic animation engine.
+              Pinned timelines are protected against generic motion overrides.
             </p>
           ))}
         {tab === "Responsive" && (

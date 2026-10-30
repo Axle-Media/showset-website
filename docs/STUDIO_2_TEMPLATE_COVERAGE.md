@@ -1,6 +1,6 @@
 # Studio 2.0: existing SHOWSET template editing coverage
 
-Updated: 29 October 2026
+Updated: 30 October 2026
 Branch: `feat/studio2-existing-page-media-20261029`
 Target: draft Studio integration PR #81; **not the public production branch**.
 
@@ -8,7 +8,7 @@ Target: draft Studio integration PR #81; **not the public production branch**.
 
 | Template | Image bindings | Copy bindings | Selectable section styles |
 | --- | --- | --- | --- |
-| Home | Hero, story scenes, service photos | Existing hero title, accent, body and actions | Opening scene (existing) |
+| Home | Hero, story scenes, service photos | Existing hero title, accent, body and actions | All seven original Home chapters (hero, manifesto, film, portfolio, services, approach, closing) |
 | Events & Experiences | Hero, three triptych stage photos | Opening, intro, story, expertise, individual stage heading and paragraph, grouped capability labels | Opening, intro, story, expertise and close |
 | Creative & Design | Hero, three artboards | Same service copy controls; artboard titles and paragraphs | Same five scopes |
 | Digital & Marketing | Four production-stage photos; digital hero remains illustrative | Same service copy controls; four stage titles and paragraphs | Same five scopes |
@@ -28,6 +28,18 @@ Each control updates an existing `PageData` or `CaseExperience` field, with resp
 - Existing service process stage count is preserved. New owner-created sections can be added, duplicated, reordered, hidden and deleted in the safe pre-CTA extension area. Eligible standard-flow editorial sections can be rebuilt at their exact native position with an archived reversible original. Arbitrary movement/deletion of approved cinematic sections is still prohibited.
 - Section bindings expose styling controls and only supported editorial sections offer native rebuilding. Pinned scroll choreography and template scene ordering remain owned by the approved renderer, not a generic drag-to-reorder control.
 - Case-study photographs in Our Work are read-only linked references. Edit the owning case study to change them.
+
+## Native editorial visual controls (30 October milestone)
+
+- All seven original Home sections are selectable in Studio's Layers list. The existing Studio, Work, Services, Case and Contact section-style bindings remain available.
+- **Safe editorial zones only:** Home manifesto/portfolio, Studio manifesto/partnership, Work introduction/portfolio, and Services introduction/expertise permit independently editable S-dot overlay position, size, repeat, rotation, blend and opacity at desktop/tablet/mobile breakpoints.
+- Native patterns render as separate pointer-events-free overlays rather than replacing any original `::before` artwork. Turning off a Studio overlay preserves the original page design.
+- Optional editorial entrance effects (none, fade, slide, scale) use a bounded load-time animation, never replace scroll-driven choreography, and are automatically disabled for `prefers-reduced-motion`.
+- Pinned/scroll-driven Home hero, film, services and dot tracks, service storytelling, Studio scroll heroes, case-study sequences and closing CTAs **remain protected** from generic patterns and motion. Their original custom animation engines are not editable as generic motion presets in this milestone.
+- Native overrides now use one compositor in the Studio editor, the static Next.js HTML and the hydrated public runtime. Override data is validated before an imported workspace can be restored.
+- New browser regression `qa/studio2-native-editorial.cjs` tests desktop/mobile pattern positions, load entrance, pin protection, save/reload and standalone preview. The Studio component suite also checks allowed destinations, escaping and no-JS/public wiring.
+
+**Not yet covered:** arbitrary reconstruction or reordering of protected scenes, a full cinematic timeline designer, source-controlled pattern asset replacement, global synchronised reusable sections and authenticated cloud publishing. No production rollout is included.
 
 ## Safety gaps blocking online availability
 

@@ -48,6 +48,7 @@ import "./studio2.css";
 import type {CloudStore} from "@/lib/studio2/cloud";
 import {replaceNativeBlock,restoreNativeBlock} from "@/lib/studio2/native-rebuild";
 import {createSectionPreset,type SectionPresetId} from "@/lib/studio2/section-presets";
+import {canDecorateNative,permittedNativeMotion} from "@/lib/studio2/native-controls";
 export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
   const editor = useWorkspace(cloud),
     [slug, setSlug] = useState("home"),
@@ -262,7 +263,15 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
     }, "Style " + key);
   };
   const patchPattern = (pattern: Pattern | undefined) => {
-    if (!selected || !node || node.locked) return;
+    if (!selected || node?.locked) return;
+    if(binding){
+      if(!canDecorateNative(binding.id) || binding.kind!=="section")return;
+      updatePage(p=>updateOverride(p,binding.id,o=>({
+        ...o,patterns:{...o.patterns,[breakpoint]:pattern},
+      })),"Edit native editorial pattern");
+      return;
+    }
+    if(!node)return;
     updatePage((p) => {
       const builder = builderFor(p);
       return {
@@ -278,7 +287,18 @@ export default function Studio2({cloud=null}:{cloud?:CloudStore|null}={}) {
     }, "Edit background pattern");
   };
   const patchMotion = (motion: Motion) => {
-    if (!selected || !node || node.locked) return;
+    if (!selected || node?.locked) return;
+    if(binding){
+      if(binding.kind!=="section" || !canDecorateNative(binding.id) ||
+          !permittedNativeMotion(motion)){
+        editor.setError("Only safe load animations are available for native editorial sections.");
+        return;
+      }
+      updatePage(p=>updateOverride(p,binding.id,o=>({...o,motion})),
+        "Edit native editorial motion");
+      return;
+    }
+    if(!node)return;
     updatePage((p) => {
       const builder = builderFor(p);
       return {

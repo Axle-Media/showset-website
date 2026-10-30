@@ -5,6 +5,7 @@ import { serviceKind } from "../concept-12/service-content";
 
 import type { TargetOverride } from "./model";
 import { responsiveCss, targetSelector } from "./registry";
+import { canDecorateNative, nativeDecorationCss } from "./native-controls";
 export interface Binding {
   id: string;
   name: string;
@@ -86,6 +87,20 @@ export function templateBindings(page: PageData): Binding[] {
       { id: "home-hero-secondary", name: "Secondary action", kind: "button", selector: ".hero-links .text-arrow-link", sectionId: hero.id, field: "secondaryLabel", secondary: true, content: true },
     );
     image("home-hero-image", "Hero photograph", "#hero-photo>img", hero.id);
+    // All seven original Home chapters are selectable for native styling.
+    // Only the standard-flow editorial ones permit new pattern/motion layers.
+    const chapters=[
+      ["Opening","section-1","#hero-track"],
+      ["Manifesto","section-2","#discover"],
+      ["Film","section-3","#film-track"],
+      ["Portfolio","section-5","#portfolio-section"],
+      ["Services","section-4","#services-track"],
+      ["Approach","section-6","#dot-track"],
+      ["Closing","section-7","#ending"],
+    ] as const;
+    for(const [name,id,selector] of chapters)
+      if(page.sections.some(s=>s.id===id))
+        sectionStyle("home-section-"+id,name+" section",selector,id);
     for (const s of page.sections) {
       if (!["story", "services"].includes(s.type)) continue;
       s.items.forEach((item, i) => {
@@ -356,6 +371,7 @@ export function applyTemplateOverrides(
   urls: Record<string, string> = {},
 ): void {
   host.querySelectorAll("[data-studio2-style]").forEach((el) => el.remove());
+  host.querySelectorAll("[data-studio2-native-pattern]").forEach(el=>el.remove());
   const bindings = templateBindings(page);
   let css = "";
   for (const binding of bindings) {
@@ -374,7 +390,25 @@ export function applyTemplateOverrides(
       }
     }
     if (override) {
-      css += responsiveCss(binding.id, override);
+      const decorative = binding.kind === "section" &&
+        canDecorateNative(binding.id);
+      // The generic pattern generator replaces ::before; on native pages
+      // that pseudo-element may belong to the approved art direction.
+      // Use a separate pointer-events-free overlay instead.
+      css += responsiveCss(binding.id,
+        decorative ? {...override,patterns:undefined} : override);
+      if (decorative) {
+        css += nativeDecorationCss(binding.id,override.patterns,override.motion);
+        if (override.patterns &&
+            Object.values(override.patterns).some(value=>value?.enabled)) {
+          for (const target of targets) {
+            const layer=host.ownerDocument.createElement("span");
+            layer.setAttribute("data-studio2-native-pattern",binding.id);
+            layer.setAttribute("aria-hidden","true");
+            target.append(layer);
+          }
+        }
+      }
       if (binding.field === "accent")
         for (const point of ["desktop", "tablet", "mobile"] as const) {
           if (override.styles[point]?.accentColor) {

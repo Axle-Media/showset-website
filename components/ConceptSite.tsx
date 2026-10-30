@@ -13,6 +13,7 @@ import { safeHref } from "@/lib/safe";
 import { compatiblePages, compatibleGlobals } from "@/lib/concept-12/compat";
 import CustomSite from "./studio2/CustomSite";
 import {applyTemplateExtensions} from "@/lib/studio2/template-extensions";
+import {applyTemplateOverrides} from "@/lib/studio2/bindings";
 import {mountNodeMotion} from "@/lib/studio2/motion";
 import {nodeMotions} from "@/lib/studio2/render";
 type LayoutProps = {
@@ -157,6 +158,7 @@ function TemplateSiteLayout({
       // owns these mutations inside its dedicated preview, so skip it here.
       if (!editor && page.builder?.mode === "template") {
         const extension = applyTemplateExtensions(host,page);
+        applyTemplateOverrides(host,page);
         authoredMotion.current?.();
         authoredMotion.current = extension ? mountNodeMotion(host,
           nodeMotions(page),g.motion.enabled&&!reduced) : null;
@@ -211,6 +213,7 @@ function TemplateSiteLayout({
     authoredMotion.current=null;
     if (!editor && page.builder?.mode === "template") {
       const extension=applyTemplateExtensions(host,page);
+      applyTemplateOverrides(host,page);
       authoredMotion.current=extension ? mountNodeMotion(host,
         nodeMotions(page),g.motion.enabled&&!reduced) : null;
     }

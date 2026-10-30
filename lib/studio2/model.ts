@@ -1,4 +1,5 @@
 import { validStyle } from "./registry";
+import {canDecorateNative,permittedNativeMotion} from "./native-controls";
 import type { Globals, PageData } from "../types";
 export const SCHEMA_VERSION = 2 as const;
 export type Breakpoint = "desktop" | "tablet" | "mobile";
@@ -603,6 +604,12 @@ export function assertWorkspace(value: unknown): asserts value is Workspace {
         if (!/^[\w-]{1,100}$/.test(id))
           throw Error("Invalid binding identifier.");
         checkTarget(override);
+        if(override.motion && (!canDecorateNative(id) ||
+            !permittedNativeMotion(override.motion)))
+          throw Error("Unsafe native motion override.");
+        if(override.patterns && Object.keys(override.patterns).length &&
+            !canDecorateNative(id))
+          throw Error("Unsafe native pattern override.");
       }
       scan(p.builder.roots, 0);
       if (p.builder.nativeReplacementNodes) {

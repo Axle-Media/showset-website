@@ -248,6 +248,49 @@ assert.equal(usage.searchMedia(tagged,"event","").length,1);
 assert.equal(usage.searchMedia(tagged,"","digital").length,1);
 console.log("PASS non-destructive responsive focal rendering, strict crop validation and searchable media tags.");
 
+// Native sections keep their original markup, with decorative layers and
+// motion restricted to normal-flow editorial regions only.
+const nativeControls=load("lib/studio2/native-controls.ts");
+const nativeMotion={...model.defaultMotion,preset:"fade",trigger:"load"};
+const nativePattern={...model.defaultPattern,enabled:true,x:125,y:40,
+  opacity:.08,size:750,preset:"custom"};
+assert.equal(nativeControls.canDecorateNative("home-section-section-2"),true);
+assert.equal(nativeControls.canDecorateNative("home-section-section-3"),false);
+const nativeCss=nativeControls.nativeDecorationCss("home-section-section-2",
+  {desktop:nativePattern,mobile:{...nativePattern,x:70}},nativeMotion);
+assert.match(nativeCss,/data-studio2-native-pattern/);
+assert.ok(nativeCss.includes("@media(max-width:600px)"));
+assert.match(nativeCss,/125% 40%/);
+assert.match(nativeCss,/prefers-reduced-motion:reduce/);
+assert.doesNotMatch(nativeCss,/::before/);
+assert.equal(nativeControls.nativeDecorationCss("home-section-section-3",
+  {desktop:nativePattern},nativeMotion),"");
+assert.equal(nativeControls.permittedNativeMotion(
+  {...nativeMotion,trigger:"scroll"}),false);
+const nativeWorkspace={schemaVersion:2,revision:0,
+  pages:structuredClone(require("../content/pages.json")),
+  globals:structuredClone(require("../content/globals.json")),
+  media:[],updatedAt:""};
+nativeWorkspace.pages.home.builder={schemaVersion:2,mode:"template",
+  roots:[],overrides:{"home-section-section-2":{
+    styles:{desktop:{padding:"120px 6.3vw"}},
+    patterns:{desktop:nativePattern},motion:nativeMotion,
+  }}};
+assertWorkspace(nativeWorkspace);
+const protectedScene=structuredClone(nativeWorkspace);
+protectedScene.pages.home.builder.overrides["home-section-section-3"]=
+  protectedScene.pages.home.builder.overrides["home-section-section-2"];
+assert.throws(()=>assertWorkspace(protectedScene),/Unsafe native/);
+const badMotion=structuredClone(nativeWorkspace);
+badMotion.pages.home.builder.overrides["home-section-section-2"].motion.trigger="scroll";
+assert.throws(()=>assertWorkspace(badMotion),/Unsafe native motion/);
+for(const path of ["lib/concept-12/document.ts","components/ConceptSite.tsx",
+  "components/studio2/Preview.tsx"]){
+  const source=fs.readFileSync(path,"utf8");
+  assert.match(source,/applyTemplateOverrides/);
+}
+console.log("PASS native editorial pattern/motion constraints, reduced-motion CSS and static/hydrated/preview parity.");
+
 const legacyHome = {
   ...safe.home,
   title: "Owner custom title",
