@@ -31,7 +31,7 @@ export default function LegalMobileMenu() {
       if (!(event.target instanceof Element)) return;
       if (event.target.closest("#services-button")) {
         event.preventDefault();
-        setServicesOpen(!navDropdown?.classList.contains("is-open"));
+        setServicesOpen(true);
       }
     };
     const onPointerOver = (event: PointerEvent) => {
