@@ -113,18 +113,26 @@
      rule for full-size, readable service names. */
   font:600 17px/1.35 var(--body-font)!important;
   letter-spacing:0;
-  color:inherit;
+  color:var(--ice)!important;
 }
 .concept-12-root .desktop-navigation .nav-panel .nav-service-link:last-child{border-bottom-color:transparent}
 .concept-12-root .desktop-navigation .nav-panel .nav-service-link > span:last-child{
   font-size:19px;
-  color:var(--teal);
+  color:var(--ice)!important;
   font-weight:500;
 }
-.concept-12-root .desktop-navigation .nav-panel .nav-service-link:is(:hover,:focus-visible),
-.concept-12-root .desktop-navigation .nav-panel .nav-service-link.active{
+/* Hover gives an understated panel highlight; text and arrow stay white
+   unless this is the currently selected service. */
+.concept-12-root .desktop-navigation .nav-panel .nav-service-link:is(:hover,:focus-visible){
   background:rgba(18,186,175,.10);
-  color:var(--teal);
+  color:var(--ice);
+}
+.concept-12-root .desktop-navigation .nav-panel .nav-service-link:is(.active,[aria-current="page"]){
+  background:rgba(18,186,175,.10);
+  color:var(--teal)!important;
+}
+.concept-12-root .desktop-navigation .nav-panel .nav-service-link:is(.active,[aria-current="page"]) > span{
+  color:var(--teal)!important;
 }
 .concept-12-root .desktop-navigation .nav-panel .nav-service-link:focus-visible{
   outline:2px solid var(--teal);
