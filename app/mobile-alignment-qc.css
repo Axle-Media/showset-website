@@ -182,7 +182,7 @@
    actual photographic frame, not at a fixed offset from the screen top.
    Scroll scripts update the midpoint as each image expands edge-to-edge.
    CSS translate is separate from JS transform so entrance motion is retained. */
-@media (max-width:600px) and (min-height:701px) {
+@media (max-width:600px) and (min-height:501px) {
   .concept-12-root #main .hero-stage :is(#hero-foreground,#hero-second) {
     top:var(--home-photo-midpoint,52.5%)!important;
     bottom:auto!important;
