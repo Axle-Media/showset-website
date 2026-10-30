@@ -259,7 +259,7 @@ assert.equal(nativeControls.canDecorateNative("home-section-section-3"),false);
 const nativeCss=nativeControls.nativeDecorationCss("home-section-section-2",
   {desktop:nativePattern,mobile:{...nativePattern,x:70}},nativeMotion);
 assert.match(nativeCss,/data-studio2-native-pattern/);
-assert.match(nativeCss,/@media\\(max-width:600px\\)/);
+assert.ok(nativeCss.includes("@media(max-width:600px)"));
 assert.match(nativeCss,/125% 40%/);
 assert.match(nativeCss,/prefers-reduced-motion:reduce/);
 assert.doesNotMatch(nativeCss,/::before/);
