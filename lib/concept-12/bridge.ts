@@ -4,7 +4,7 @@ import type {ServiceKind} from "./service-content";
 import { refineHeadingPeriods } from "./typography";
 import { renderImmersiveCase } from "./immersive-case";
 import { caseExperienceFor } from "./case-content";
-import { renderPortfolioIndex } from "./portfolio-content";
+import { portfolioEntries, renderPortfolioIndex } from "./portfolio-content";
 import type { Block, Globals, PageData } from "@/lib/types";
 import { defaultPages, defaultGlobals } from "@/lib/data";
 import { safeHref } from "@/lib/safe";
@@ -483,6 +483,12 @@ export function bindConcept(
     }
   }
   function bindWork(s: Block, selector: string) {
+    // Home and Our Work must use the same authored portfolio titles and copy.
+    // The home section still controls which projects appear and their order.
+    const workPage = Object.values(catalog).find(p => p.route === "/our-work/");
+    const workSection = workPage?.sections.find(section => section.type === "work") || s;
+    const workCopy = new Map(portfolioEntries(workSection, catalog)
+      .map(project => [project.route, project]));
     if (changed(s, "items"))
       repeat(
         selector,
@@ -492,18 +498,21 @@ export function bindConcept(
     host.querySelectorAll(selector).forEach((card, i) => {
       const x = s.items[i];
       if (!x) return;
-      if (itemChanged(s, i, "title") || x.href?.startsWith("/work/")) {
+      const canonical = workCopy.get(safeHref(x.href));
+      const cardTitle = canonical?.title ?? x.title;
+      const cardDescription = canonical?.description ?? x.description;
+      if (canonical || itemChanged(s, i, "title")) {
         const heading = card.querySelector("h2,h3");
         if (heading) {
           // Preserve the approved teal period when Studio adds a new card.
           const period = heading.querySelector(".teal-dot");
-          heading.textContent = period ? x.title.trim().replace(/\\.$/, "") : x.title;
+          heading.textContent = period ? cardTitle.trim().replace(/[.!?]\s*$/, "") : cardTitle;
           if (period) heading.append(period);
         }
       }
-      if (itemChanged(s, i, "description") || x.href?.startsWith("/work/")) {
+      if (canonical || itemChanged(s, i, "description")) {
         const e = card.querySelector("p");
-        if (e) e.textContent = x.description;
+        if (e) e.textContent = cardDescription;
       }
       if (itemChanged(s, i, "image") || x.href?.startsWith("/work/")) {
         const e = card.querySelector<HTMLImageElement>("img");
@@ -535,7 +544,7 @@ export function bindConcept(
           ? (card as HTMLAnchorElement)
           : card.querySelector<HTMLAnchorElement>("a");
         if (projectLink?.hasAttribute("aria-label"))
-          projectLink.setAttribute("aria-label", "Explore creative study: " + project.title);
+          projectLink.setAttribute("aria-label", "Explore creative study: " + (canonical?.title ?? project.title).replace(/\s+/g, " "));
         const featured = safeHref(caseExperienceFor(project).openingImage);
         const photo = card.querySelector<HTMLImageElement>("img");
         if (photo && featured !== "#") {
