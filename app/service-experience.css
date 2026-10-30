@@ -1253,10 +1253,10 @@
 .concept-12-root .service-experience--events .service-event-types li{
   flex:0 0 auto;
   white-space:nowrap;
-  font-size:clamp(16px,1.12vw,19px)!important;
+  font-size:clamp(15.5px,1.08vw,19px)!important;
   font-weight:600;
   line-height:1.45;
-  padding-inline:clamp(9px,1.05vw,20px);
+  padding-inline:clamp(7px,.65vw,14px);
 }
 .concept-12-root .service-experience--events .service-event-types li:first-child{
   padding-left:0;
