@@ -77,13 +77,16 @@ export function renderPortfolioIndex(
   const projects = portfolioEntries(section, catalog);
   index.innerHTML = projects.map((project, order) => {
     const title = project.title.replace(/[.!?]\s*$/, "");
+    const headline = title.split('\n').map((line, i, lines) =>
+      '<span class="work-card-headline-line">' + escapeHTML(line) +
+      (i === lines.length - 1 ? '<span class="teal-dot">.</span>' : '') + '</span>').join('\n');
     const href = safeHref(project.route);
     const src = project.image !== "#" ? project.image : "/media/planning.webp";
     const tags = project.tags.map(tag => '<span class="work-card-tag">' + escapeHTML(tag) + '</span>').join("");
     return `<a class="case-index-item case-slide work-portfolio-card" href="${escapeHTML(href)}" aria-label="Explore ${escapeHTML(project.label.toLowerCase())}: ${escapeHTML(project.title)}" data-work-category="${escapeHTML(project.category)}" data-work-tags="${escapeHTML(project.tags.join("|"))}" data-work-order="${order}">
 <div class="case-photo case-index-image"><img src="${escapeHTML(src)}" alt="${escapeHTML(project.title)} portfolio visual" loading="${order < 3 ? "eager" : "lazy"}" decoding="async"/></div>
 <div class="case-story case-index-info"><div class="work-card-meta"><span class="work-feature-type">${escapeHTML(project.label)}</span><span class="work-card-tags">${tags}</span></div>
-<h2>${escapeHTML(title)}<span class="teal-dot">.</span></h2>
+<h2>${headline}</h2>
 <p>${escapeHTML(project.description)}</p><span class="case-slide-link work-feature-discover">Explore the study <b aria-hidden="true">↗</b></span></div></a>`;
   }).join("") + (projects.length ? '<p class="work-filter-empty" data-work-empty hidden role="status">Nothing in this category yet. Explore another side of our work.</p>' : '<p class="work-index-empty">New stories are on their way. In the meantime, tell us what you have in mind.</p>');
   const categoryNames = [...workCategoryNames,

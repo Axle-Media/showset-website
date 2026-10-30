@@ -40,7 +40,7 @@ assert.equal(projects.length,30);
 assert.equal(new Set(projects.map(p=>p.route)).size,30);
 assert.equal(projects[0].route,'/work/future-project-20/','Newest dated case must lead the page');
 assert.deepEqual(projects[0].tags,['Events','Digital'],'Case studies support multiple filter tags');
-assert.ok(projects.slice(0,27).every(p=>p.label==='Project'),'New pages must appear without a fixed card list');
+assert.ok(projects.filter(p=>p.route.startsWith('/work/future-project-')).every(p=>p.label==='Project'),'New pages must appear without a fixed card list');
 assert.equal(projects.filter(p=>p.label==='Concept study').length,
  sourceProjects.filter(p=>p.caseExperience?.demo).length,
  'Only demonstration cases must have the concept-study label');
