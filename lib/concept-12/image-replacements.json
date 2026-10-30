@@ -1673,5 +1673,269 @@
         "width": 1536
       }
     ]
+  },
+  {
+    "placement": 101,
+    "source": 101,
+    "page": "Elmboog Organiese Boerdery",
+    "title": "Identity System Hero",
+    "src": "/media/elmboog/elmboog-01-identity-system-hero.webp",
+    "alt": "Presentation mockup of Elmboog’s company profile, letterhead and patterned business cards",
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/media/elmboog/elmboog-01-identity-system-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/elmboog/elmboog-01-identity-system-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/elmboog/elmboog-01-identity-system-hero.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 102,
+    "source": 102,
+    "page": "Elmboog Organiese Boerdery",
+    "title": "Company Profile Cover",
+    "src": "/media/elmboog/elmboog-02-company-profile-cover.webp",
+    "alt": "Elmboog 2025 company profile cover in a photographic print mockup",
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/media/elmboog/elmboog-02-company-profile-cover-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/elmboog/elmboog-02-company-profile-cover-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/elmboog/elmboog-02-company-profile-cover.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 103,
+    "source": 103,
+    "page": "Elmboog Organiese Boerdery",
+    "title": "Company Profile Open Spread",
+    "src": "/media/elmboog/elmboog-03-company-profile-open-spread.webp",
+    "alt": "Open Elmboog company profile showing the values spread in a book mockup",
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/media/elmboog/elmboog-03-company-profile-open-spread-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/elmboog/elmboog-03-company-profile-open-spread-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/elmboog/elmboog-03-company-profile-open-spread.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 104,
+    "source": 104,
+    "page": "Elmboog Organiese Boerdery",
+    "title": "Stationery Suite",
+    "src": "/media/elmboog/elmboog-04-stationery-suite.webp",
+    "alt": "Option 1 Elmboog business cards and letterhead in a stationery mockup",
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/media/elmboog/elmboog-04-stationery-suite-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/elmboog/elmboog-04-stationery-suite-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/elmboog/elmboog-04-stationery-suite.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 105,
+    "source": 105,
+    "page": "Elmboog Organiese Boerdery",
+    "title": "Email Signature In Context",
+    "src": "/media/elmboog/elmboog-05-email-signature-in-context.webp",
+    "alt": "Elmboog email signature displayed on a laptop in a screen mockup",
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/media/elmboog/elmboog-05-email-signature-in-context-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/elmboog/elmboog-05-email-signature-in-context-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/elmboog/elmboog-05-email-signature-in-context.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 106,
+    "source": 106,
+    "page": "Elmboog Organiese Boerdery",
+    "title": "Presentation Template",
+    "src": "/media/elmboog/elmboog-06-presentation-template.webp",
+    "alt": "Elmboog presentation opening slide displayed on a laptop in a mockup",
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/media/elmboog/elmboog-06-presentation-template-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/elmboog/elmboog-06-presentation-template-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/elmboog/elmboog-06-presentation-template.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 107,
+    "source": 107,
+    "page": "Elmboog Organiese Boerdery",
+    "title": "Branded Workwear",
+    "src": "/media/elmboog/elmboog-07-branded-workwear.webp",
+    "alt": "Brand-guide workwear concept with a green polo and two-tone Elmboog cap",
+    "width": 1122,
+    "height": 1402,
+    "variants": [
+      {
+        "src": "/media/elmboog/elmboog-07-branded-workwear-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/elmboog/elmboog-07-branded-workwear-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/elmboog/elmboog-07-branded-workwear.webp",
+        "width": 1122
+      }
+    ]
+  },
+  {
+    "placement": 108,
+    "source": 108,
+    "page": "Elmboog Organiese Boerdery",
+    "title": "Lanyard Brand Detail",
+    "src": "/media/elmboog/elmboog-08-lanyard-brand-detail.webp",
+    "alt": "Close-up presentation mockup of the Elmboog branded lanyard concept",
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/media/elmboog/elmboog-08-lanyard-brand-detail-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/elmboog/elmboog-08-lanyard-brand-detail-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/elmboog/elmboog-08-lanyard-brand-detail.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 109,
+    "source": 109,
+    "page": "Elmboog Organiese Boerdery",
+    "title": "Campaign Posters",
+    "src": "/media/elmboog/elmboog-09-campaign-posters.webp",
+    "alt": "Two Elmboog campaign poster concepts displayed in a generated interior",
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/media/elmboog/elmboog-09-campaign-posters-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/elmboog/elmboog-09-campaign-posters-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/elmboog/elmboog-09-campaign-posters.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 110,
+    "source": 110,
+    "page": "Elmboog Organiese Boerdery",
+    "title": "Digital Brand Applications",
+    "src": "/media/elmboog/elmboog-10-digital-brand-applications.webp",
+    "alt": "Elmboog website and social concepts shown in a device mockup",
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/media/elmboog/elmboog-10-digital-brand-applications-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/elmboog/elmboog-10-digital-brand-applications-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/elmboog/elmboog-10-digital-brand-applications.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 111,
+    "source": 111,
+    "page": "Elmboog Organiese Boerdery",
+    "title": "Identity In The Making",
+    "src": "/media/elmboog/elmboog-11-identity-in-the-making.webp",
+    "alt": "Illustrative review scene with Elmboog logo, pattern and colour proofs",
+    "width": 1536,
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/media/elmboog/elmboog-11-identity-in-the-making-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/elmboog/elmboog-11-identity-in-the-making-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/elmboog/elmboog-11-identity-in-the-making.webp",
+        "width": 1536
+      }
+    ]
   }
 ]
