@@ -24,12 +24,14 @@ for(let i=0;i<27;i++){
  const original=sourceProjects[i%sourceProjects.length];
  catalog[key]={
   ...original,slug:key,route:'/work/'+key+'/',title:'Future project '+i,
+  // Synthetic records must not inherit the publication date of a real source project.
+  publishedAt:undefined,
   caseExperience:{...original.caseExperience,demo:false,openingTitle:'Future project '+i},
   sections:original.sections.map((s,j)=>({...s,headline:j===0?'Future project '+i:s.headline}))
  };
 }
 // A newly dated project must lead, regardless of old curated item order.
-catalog['future-project-20'].publishedAt='2026-10-28T12:00:00Z';
+catalog['future-project-20'].publishedAt='2027-10-28T12:00:00Z';
 catalog['future-project-20'].caseExperience.tags=['Events','Digital'];
 catalog['future-project-19'].publishedAt='2026-10-20T12:00:00Z';
 const work=seed['our-work'].sections.find(s=>s.type==='work');
@@ -39,7 +41,9 @@ assert.equal(new Set(projects.map(p=>p.route)).size,30);
 assert.equal(projects[0].route,'/work/future-project-20/','Newest dated case must lead the page');
 assert.deepEqual(projects[0].tags,['Events','Digital'],'Case studies support multiple filter tags');
 assert.ok(projects.slice(0,27).every(p=>p.label==='Project'),'New pages must appear without a fixed card list');
-assert.ok(projects.slice(-3).every(p=>p.label==='Concept study'),'Demo work must not become client work');
+assert.equal(projects.filter(p=>p.label==='Concept study').length,
+ sourceProjects.filter(p=>p.caseExperience?.demo).length,
+ 'Only demonstration cases must have the concept-study label');
 assert.ok(projects.every(p=>p.route.startsWith('/work/')&&p.image.startsWith('/')));
 const {document}=parseHTML('<html><body><div class="view" data-view="work"><div data-work-filters hidden></div><div data-work-index></div><div data-work-more hidden></div></div></body></html>');
 renderPortfolioIndex(document.body,work,catalog);
