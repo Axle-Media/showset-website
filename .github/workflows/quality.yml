@@ -50,6 +50,7 @@ jobs:
           # Run all browser suites, then fail if any failed. Do not mask failures.
           qa_status=0
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/mobile-tablet-audit.cjs || qa_status=1
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/mobile-centre-alignment.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/event-format-row.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/studio-scroll-hero.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/studio-heading-alignment.cjs || qa_status=1
@@ -83,6 +84,7 @@ jobs:
           path: |
             qa-results/image-replacements.json
             qa-results/image-replacements/
+            qa-results/mobile-centre-alignment.json
             qa-results/mobile-tablet-audit.json
             qa-results/mobile-tablet/
             qa-results/event-format-row.json
