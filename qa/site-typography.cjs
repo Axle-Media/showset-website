@@ -35,7 +35,7 @@ const routes=['/','/events-experiences/','/creative-design/','/digital-marketing
     });
     ck('Body copy preserves desktop 17px and a readable mobile scale '+route+' @'+width,actual.pCount>0&&actual.copy.length===0,actual.copy.slice(0,8));
     ck('Button and CTA labels are 14px '+route+' @'+width,actual.buttonCount>0&&actual.wrongButtons.length===0,actual.wrongButtons.slice(0,8));
-    if(width>=1351) ck('Visible desktop menu typography remains 14px '+route+' @'+width,actual.nav.length===3&&actual.nav.every(s=>s==='14px'));
+    if(width>=1351) ck('Visible desktop menu typography remains 14px '+route+' @'+width,actual.nav.length===4&&actual.nav.every(s=>s==='14px'));
     ck('Body inputs are 17px '+route+' @'+width,actual.wrongInputs.length===0,actual.wrongInputs);
     ck('No horizontal document overflow '+route+' @'+width,actual.documentWidth<=width+2,actual.documentWidth);
     if(route==='/'){
