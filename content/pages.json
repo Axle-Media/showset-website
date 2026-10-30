@@ -111,7 +111,7 @@
             "title": "The Amaze-Ball",
             "accent": "",
             "description": "Padel, purpose and a whole lot of production.",
-            "image": "/media/showset/amaze-ball/amaze-ball-hero.webp",
+            "image": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2.webp",
             "href": "/work/the-amaze-ball/"
           },
           {
@@ -1539,7 +1539,7 @@
             "title": "The Amaze-Ball",
             "accent": "Project",
             "description": "An evening of padel, hospitality and live coverage, organised and produced by SHOWSET.",
-            "image": "/media/showset/amaze-ball/amaze-ball-hero.webp",
+            "image": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2.webp",
             "href": "/work/the-amaze-ball/",
             "category": "Events & experiences"
           },
@@ -2257,7 +2257,7 @@
         "headline": "A grand slam.",
         "accent": "For a greater cause.",
         "body": "A charity padel tournament and cocktail evening built around sport, connection and a purpose beyond the court.",
-        "image": "/media/showset/amaze-ball/amaze-ball-hero.webp",
+        "image": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "",
@@ -2275,7 +2275,7 @@
         "headline": "Sport with a bigger purpose.",
         "accent": "",
         "body": "Amazeballs brought together a padel tournament and an evening of hospitality on 24 October 2026 at Padel 365, Century City. The Amaze-Ball put a R50,000 Golden Point Grand Slam at the centre of a charity event supporting the organisation's mission to give used padel balls a second life.\n\nSHOWSET was responsible for organising the event and bringing its physical and technical requirements together. The venue needed to work as a sporting environment, an evening gathering and a live production space, all on the same night.",
-        "image": "/media/showset/amaze-ball/amaze-ball-impact.webp",
+        "image": "/media/showset/amaze-ball/amaze-ball-impact-edited-v2.webp",
         "pattern": true,
         "reveal": true,
         "buttonLabel": "",
@@ -2293,7 +2293,7 @@
         "headline": "From court to crowd.",
         "accent": "",
         "body": "Sport, sound, lighting and live coverage brought together for one connected evening.",
-        "image": "/media/showset/amaze-ball/amaze-ball-padel.webp",
+        "image": "/media/showset/amaze-ball/amaze-ball-padel-edited-v2.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "",
@@ -2336,26 +2336,190 @@
         "body": "The idea was to make the experience feel connected from court to crowd. Players needed a place to compete, while guests needed somewhere to gather, follow the action and enjoy the evening.\n\nAmazeballs' distinctive visual identity and the Go for Gold dress theme helped give the occasion its character. The role of the environment, from the event stage to the cocktail tables and screens, was to support those different moments without taking attention away from the cause."
       },
       {
-        "id": "amaze-guest",
-        "kind": "image",
-        "title": "Built around the experience.",
-        "body": "The courts, guest spaces and event branding were all part of the evening.",
-        "src": "/media/showset/amaze-ball/amaze-ball-impact.webp",
-        "alt": "Guests beside the bright yellow padel-ball Golden Point Grand Slam installation"
-      },
-      {
         "id": "amaze-approach",
         "kind": "text",
         "title": "The approach.",
         "body": "SHOWSET coordinated the event setup and prepared the venue with cocktail tables, seating, a stage, lighting, television displays and sound. The audio setup included microphones for the MC and the requirements of the evening programme.\n\nOur production remit also covered the live broadcast, bringing camera coverage and technical delivery into the same event plan. With sport happening on the courts and conversations happening around them, the practical challenge was making all the moving parts work together as one experience."
       },
       {
-        "id": "amaze-production",
+        "id": "amaze-ball-hero",
         "kind": "image",
-        "title": "Live from the venue.",
-        "body": "Camera coverage, MC audio and technical production formed part of SHOWSET's event delivery.",
-        "src": "/media/showset/amaze-ball/amaze-ball-broadcast.webp",
-        "alt": "Professional camera filming a speaker against the Amazeballs backdrop"
+        "title": "Hero",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2.webp",
+        "alt": "Camera operator filming the MC beside the ball installation at The Amaze-Ball",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-impact",
+        "kind": "image",
+        "title": "Impact",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-impact-edited-v2.webp",
+        "alt": "Guest beside the padel-ball Golden Point Grand Slam installation",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-padel",
+        "kind": "image",
+        "title": "Padel",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-padel-edited-v2.webp",
+        "alt": "Two padel players on the blue court",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-court-moment",
+        "kind": "image",
+        "title": "Court Moment",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-court-moment-edited-v2.webp",
+        "alt": "Guests and players sharing a moment on the padel court",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-guests",
+        "kind": "image",
+        "title": "Guests",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-guests-edited-v2.webp",
+        "alt": "Guests gathering around a gold-covered cocktail table",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-interview",
+        "kind": "image",
+        "title": "Interview",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-interview-edited-v2.webp",
+        "alt": "The MC interviewing a guest beside the branded backdrop",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-broadcast",
+        "kind": "image",
+        "title": "Broadcast",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-broadcast-edited-v2.webp",
+        "alt": "Camera operator filming a speaker against the Amazeballs backdrop",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-artist",
+        "kind": "image",
+        "title": "Artist",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-artist-edited-v2.webp",
+        "alt": "An artist working on a circular portrait during the event",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-artwork-detail",
+        "kind": "image",
+        "title": "Artwork Detail",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-artwork-detail-edited-v2.webp",
+        "alt": "Close detail of the artist drawing on a circular surface",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-hospitality",
+        "kind": "image",
+        "title": "Hospitality",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-hospitality-edited-v2.webp",
+        "alt": "Canapés on a serving tray at the event",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-canapes",
+        "kind": "image",
+        "title": "Canapes",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-canapes-edited-v2.webp",
+        "alt": "Bite-size canapés being served beside the court",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-drinks",
+        "kind": "image",
+        "title": "Drinks",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-drinks-edited-v2.webp",
+        "alt": "A bartender preparing drinks for guests",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-table-detail",
+        "kind": "image",
+        "title": "Table Detail",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-table-detail-edited-v2.webp",
+        "alt": "Gold table lamp and Bid for a Ball fundraising card at the event",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-ball-detail",
+        "kind": "image",
+        "title": "Ball Detail",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-ball-detail-edited-v2.webp",
+        "alt": "Close detail of padel balls in the event installation",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-brand-backdrop",
+        "kind": "image",
+        "title": "Brand Backdrop",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-brand-backdrop-edited-v2.webp",
+        "alt": "The padel-ball event backdrop and small stage",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-team-detail",
+        "kind": "image",
+        "title": "Team Detail",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-team-detail-edited-v2.webp",
+        "alt": "AMAZE-TEAM lettering on a crew member’s shirt",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-venue-setup",
+        "kind": "image",
+        "title": "Venue Setup",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-venue-setup-edited-v2.webp",
+        "alt": "Crew preparing the venue and furniture before the event",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-screen-setup",
+        "kind": "image",
+        "title": "Screen Setup",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-screen-setup-edited-v2.webp",
+        "alt": "Crew installing a display beside the padel court",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-production-desk",
+        "kind": "image",
+        "title": "Production Desk",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-production-desk-edited-v2.webp",
+        "alt": "The crew preparing monitors and event production equipment",
+        "captions": "SHOWSET event photography · edited"
+      },
+      {
+        "id": "amaze-ball-live-control",
+        "kind": "image",
+        "title": "Live Control",
+        "body": "",
+        "src": "/media/showset/amaze-ball/amaze-ball-live-control-edited-v2.webp",
+        "alt": "The live production multiview showing court and presenter feeds",
+        "captions": "SHOWSET event photography · edited"
       }
     ],
     "caseExperience": {
@@ -2366,91 +2530,157 @@
       ],
       "openingTitle": "A grand slam. For a greater cause.",
       "openingBody": "The Amaze-Ball brought padel, people and purpose together. SHOWSET made the event happen, from organising the evening to its technical production.",
-      "openingImage": "/media/showset/amaze-ball/amaze-ball-hero.webp",
+      "openingImage": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2.webp",
       "secondTitle": "Where sport met the spotlight.",
-      "secondImage": "/media/showset/amaze-ball/amaze-ball-padel.webp",
+      "secondImage": "/media/showset/amaze-ball/amaze-ball-padel-edited-v2.webp",
       "secondBody": "A charity padel tournament, a cocktail evening and a live broadcast, brought together at Padel 365 in Century City.",
       "brief": {
         "heading": "One night. More than a game.",
         "body": "Amazeballs brought together a padel tournament and an evening of hospitality on 24 October 2026 at Padel 365, Century City. The Amaze-Ball put a R50,000 Golden Point Grand Slam at the centre of a charity event supporting the organisation's mission to give used padel balls a second life.\n\nSHOWSET was responsible for organising the event and bringing its physical and technical requirements together. The venue needed to work as a sporting environment, an evening gathering and a live production space, all on the same night.",
-        "image": "/media/showset/amaze-ball/amaze-ball-impact.webp",
+        "image": "/media/showset/amaze-ball/amaze-ball-impact-edited-v2.webp",
         "images": [
-          "/media/showset/amaze-ball/amaze-ball-impact.webp"
+          "/media/showset/amaze-ball/amaze-ball-impact-edited-v2.webp"
         ],
-        "imageAlt": "Guests beside the bright yellow padel-ball Golden Point Grand Slam installation"
+        "imageAlt": "Guest beside the padel-ball Golden Point Grand Slam installation"
       },
       "intention": {
         "heading": "Every moment had a place.",
         "body": "The idea was to make the experience feel connected from court to crowd. Players needed a place to compete, while guests needed somewhere to gather, follow the action and enjoy the evening.\n\nAmazeballs' distinctive visual identity and the Go for Gold dress theme helped give the occasion its character. The role of the environment, from the event stage to the cocktail tables and screens, was to support those different moments without taking attention away from the cause.",
-        "image": "/media/showset/amaze-ball/amaze-ball-padel.webp",
+        "image": "/media/showset/amaze-ball/amaze-ball-guests-edited-v2.webp",
         "images": [
-          "/media/showset/amaze-ball/amaze-ball-padel.webp"
+          "/media/showset/amaze-ball/amaze-ball-guests-edited-v2.webp"
         ],
-        "imageAlt": "Padel players on the blue court during The Amaze-Ball"
+        "imageAlt": "Guests gathering around a gold-covered cocktail table"
       },
       "approach": {
         "heading": "The work behind the moment.",
         "body": "SHOWSET coordinated the event setup and prepared the venue with cocktail tables, seating, a stage, lighting, television displays and sound. The audio setup included microphones for the MC and the requirements of the evening programme.\n\nOur production remit also covered the live broadcast, bringing camera coverage and technical delivery into the same event plan. With sport happening on the courts and conversations happening around them, the practical challenge was making all the moving parts work together as one experience.",
-        "image": "/media/showset/amaze-ball/amaze-ball-broadcast.webp",
+        "image": "/media/showset/amaze-ball/amaze-ball-broadcast-edited-v2.webp",
         "images": [
-          "/media/showset/amaze-ball/amaze-ball-broadcast.webp"
+          "/media/showset/amaze-ball/amaze-ball-broadcast-edited-v2.webp"
         ],
-        "imageAlt": "Professional camera filming a speaker against the Amazeballs backdrop"
+        "imageAlt": "Camera operator filming a speaker against the Amazeballs backdrop"
       },
       "gallery": [
         {
           "id": "amaze-ball-hero",
-          "src": "/media/showset/amaze-ball/amaze-ball-hero.webp",
-          "alt": "Camera operator filming the MC on stage at The Amaze-Ball",
-          "credit": "SHOWSET event photography"
+          "src": "/media/showset/amaze-ball/amaze-ball-hero-edited-v2.webp",
+          "alt": "Camera operator filming the MC beside the ball installation at The Amaze-Ball",
+          "credit": "SHOWSET event photography · edited"
         },
         {
           "id": "amaze-ball-impact",
-          "src": "/media/showset/amaze-ball/amaze-ball-impact.webp",
-          "alt": "Guests beside the bright yellow padel-ball Golden Point Grand Slam installation",
-          "credit": "SHOWSET event photography"
+          "src": "/media/showset/amaze-ball/amaze-ball-impact-edited-v2.webp",
+          "alt": "Guest beside the padel-ball Golden Point Grand Slam installation",
+          "credit": "SHOWSET event photography · edited"
         },
         {
           "id": "amaze-ball-padel",
-          "src": "/media/showset/amaze-ball/amaze-ball-padel.webp",
-          "alt": "Padel players on the blue court during The Amaze-Ball",
-          "credit": "SHOWSET event photography"
+          "src": "/media/showset/amaze-ball/amaze-ball-padel-edited-v2.webp",
+          "alt": "Two padel players on the blue court",
+          "credit": "SHOWSET event photography · edited"
         },
         {
-          "id": "amaze-ball-competition",
-          "src": "/media/showset/amaze-ball/amaze-ball-competition.webp",
-          "alt": "Players and spectators beside a padel court",
-          "credit": "SHOWSET event photography"
+          "id": "amaze-ball-court-moment",
+          "src": "/media/showset/amaze-ball/amaze-ball-court-moment-edited-v2.webp",
+          "alt": "Guests and players sharing a moment on the padel court",
+          "credit": "SHOWSET event photography · edited"
         },
         {
-          "id": "amaze-ball-broadcast",
-          "src": "/media/showset/amaze-ball/amaze-ball-broadcast.webp",
-          "alt": "Professional camera filming a speaker against the Amazeballs backdrop",
-          "credit": "SHOWSET event photography"
+          "id": "amaze-ball-guests",
+          "src": "/media/showset/amaze-ball/amaze-ball-guests-edited-v2.webp",
+          "alt": "Guests gathering around a gold-covered cocktail table",
+          "credit": "SHOWSET event photography · edited"
         },
         {
           "id": "amaze-ball-interview",
-          "src": "/media/showset/amaze-ball/amaze-ball-interview.webp",
-          "alt": "Interview with an Amazeballs-branded microphone at the event",
-          "credit": "SHOWSET event photography"
+          "src": "/media/showset/amaze-ball/amaze-ball-interview-edited-v2.webp",
+          "alt": "The MC interviewing a guest beside the branded backdrop",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-broadcast",
+          "src": "/media/showset/amaze-ball/amaze-ball-broadcast-edited-v2.webp",
+          "alt": "Camera operator filming a speaker against the Amazeballs backdrop",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-artist",
+          "src": "/media/showset/amaze-ball/amaze-ball-artist-edited-v2.webp",
+          "alt": "An artist working on a circular portrait during the event",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-artwork-detail",
+          "src": "/media/showset/amaze-ball/amaze-ball-artwork-detail-edited-v2.webp",
+          "alt": "Close detail of the artist drawing on a circular surface",
+          "credit": "SHOWSET event photography · edited"
         },
         {
           "id": "amaze-ball-hospitality",
-          "src": "/media/showset/amaze-ball/amaze-ball-hospitality.webp",
-          "alt": "Cocktail-style food being served to guests during the evening",
-          "credit": "SHOWSET event photography"
+          "src": "/media/showset/amaze-ball/amaze-ball-hospitality-edited-v2.webp",
+          "alt": "Canapés on a serving tray at the event",
+          "credit": "SHOWSET event photography · edited"
         },
         {
-          "id": "amaze-ball-mc",
-          "src": "/media/showset/amaze-ball/amaze-ball-mc.webp",
-          "alt": "MC speaking into a microphone on stage at the charity event",
-          "credit": "SHOWSET event photography"
+          "id": "amaze-ball-canapes",
+          "src": "/media/showset/amaze-ball/amaze-ball-canapes-edited-v2.webp",
+          "alt": "Bite-size canapés being served beside the court",
+          "credit": "SHOWSET event photography · edited"
         },
         {
-          "id": "amaze-ball-on-court",
-          "src": "/media/showset/amaze-ball/amaze-ball-on-court.webp",
-          "alt": "A camera operator filming the MC beside the padel court",
-          "credit": "SHOWSET event photography"
+          "id": "amaze-ball-drinks",
+          "src": "/media/showset/amaze-ball/amaze-ball-drinks-edited-v2.webp",
+          "alt": "A bartender preparing drinks for guests",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-table-detail",
+          "src": "/media/showset/amaze-ball/amaze-ball-table-detail-edited-v2.webp",
+          "alt": "Gold table lamp and Bid for a Ball fundraising card at the event",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-ball-detail",
+          "src": "/media/showset/amaze-ball/amaze-ball-ball-detail-edited-v2.webp",
+          "alt": "Close detail of padel balls in the event installation",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-brand-backdrop",
+          "src": "/media/showset/amaze-ball/amaze-ball-brand-backdrop-edited-v2.webp",
+          "alt": "The padel-ball event backdrop and small stage",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-team-detail",
+          "src": "/media/showset/amaze-ball/amaze-ball-team-detail-edited-v2.webp",
+          "alt": "AMAZE-TEAM lettering on a crew member’s shirt",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-venue-setup",
+          "src": "/media/showset/amaze-ball/amaze-ball-venue-setup-edited-v2.webp",
+          "alt": "Crew preparing the venue and furniture before the event",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-screen-setup",
+          "src": "/media/showset/amaze-ball/amaze-ball-screen-setup-edited-v2.webp",
+          "alt": "Crew installing a display beside the padel court",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-production-desk",
+          "src": "/media/showset/amaze-ball/amaze-ball-production-desk-edited-v2.webp",
+          "alt": "The crew preparing monitors and event production equipment",
+          "credit": "SHOWSET event photography · edited"
+        },
+        {
+          "id": "amaze-ball-live-control",
+          "src": "/media/showset/amaze-ball/amaze-ball-live-control-edited-v2.webp",
+          "alt": "The live production multiview showing court and presenter feeds",
+          "credit": "SHOWSET event photography · edited"
         }
       ],
       "partners": [
