@@ -66,7 +66,7 @@ export default function LegalMobileMenu() {
         toggle.focus();
       }
       if (event.key !== "Tab" || toggle.getAttribute("aria-expanded") !== "true") return;
-      const stops = [toggle, ...Array.from(panel.querySelectorAll<HTMLAnchorElement>("a[href],summary"))];
+      const stops = [toggle, ...Array.from(panel.querySelectorAll<HTMLAnchorElement>("a[href]"))];
       const index = stops.indexOf(document.activeElement as HTMLButtonElement & HTMLAnchorElement);
       if (index < 0 || (event.shiftKey && index === 0) || (!event.shiftKey && index === stops.length - 1)) {
         event.preventDefault();
