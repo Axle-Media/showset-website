@@ -46,6 +46,7 @@ async function ready(page,route){
    inactiveColours);
   await trigger.hover();
   await dropdownLinks.first().hover();
+  await page.waitForTimeout(250);
   const hoverColours=await dropdownLinks.first().evaluate(el=>({
     label:getComputedStyle(el.querySelector('span:first-child')).color,
     arrow:getComputedStyle(el.querySelector('span:last-child')).color,
