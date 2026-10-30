@@ -92,7 +92,6 @@ const expectedHash='#discover';
   await deep();
   await assertTransition('Mobile deep Home to Creative','/creative-design/',async()=>{
     await page.getByRole('button',{name:'Open menu'}).click();
-    await page.locator('.mobile-services summary').click();
     await page.locator('#mobile-panel nav a[href="/creative-design/"]').click();
   });
   await page.setViewportSize({width:1440,height:900});
