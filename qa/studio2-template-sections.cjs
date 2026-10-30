@@ -144,10 +144,11 @@ const base = process.env.SHOWSET_BASE_URL || "http://localhost:3001";
   await p.getByRole("slider",{name:/Horizontal focus/}).first().press("Home");
   await p.getByRole("slider",{name:/Vertical focus/}).first().focus();
   await p.getByRole("slider",{name:/Vertical focus/}).first().press("End");
-  await frame.locator(".s2-node-gallery figure img").first().evaluate(async img=>{
-    if(getComputedStyle(img).objectPosition!=="0% 100%")
-      throw Error("Desktop gallery focus did not apply");
-  });
+  await p.waitForFunction(()=>{
+    const frame=document.querySelector("iframe");
+    const img=frame?.contentDocument?.querySelector(".s2-node-gallery figure img");
+    return !!img&&frame.contentWindow.getComputedStyle(img).objectPosition==="0% 100%";
+  },null,{timeout:10000});
   await p.getByRole("button",{name:"Mobile",exact:true}).click();
   await p.getByRole("slider",{name:/Horizontal focus/}).first().focus();
   await p.getByRole("slider",{name:/Horizontal focus/}).first().press("End");
