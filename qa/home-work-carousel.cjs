@@ -15,11 +15,14 @@ const width=1440;
   const errors=[];
   page.on('pageerror',error=>errors.push(error.message));
   const expected={};
+  const media=require('../lib/concept-12/image-replacements.json');
+  const samePhoto=(a,b)=>a===b||(media.find(x=>x.src===a)?.source===media.find(x=>x.src===b)?.source&&media.some(x=>x.src===a));
   for(const id of routes){
    await page.goto(base+pageUrl(id));
    await page.waitForSelector('[data-case-experience]');
-   expected[id]=await page.locator('.case-opening-first > img').getAttribute('src');
-   ck(id+' opening photo loaded',await page.locator('.case-opening-first > img').evaluate(i=>i.complete&&i.naturalWidth>0),expected[id]);
+   await page.locator('.case-opening-first img').evaluate(image=>image.decode());
+   expected[id]=await page.locator('.case-opening-first img').getAttribute('src');
+   ck(id+' opening photo loaded',await page.locator('.case-opening-first img').evaluate(i=>i.complete&&i.naturalWidth>0),expected[id]);
   }
   await page.goto(base+'/');
   await page.waitForSelector('[data-concept-ready="true"]');
@@ -31,7 +34,7 @@ const width=1440;
   await page.waitForFunction(()=>[...document.querySelectorAll('#case-rail > [data-case-slide] img')].every(img=>img.complete&&img.naturalWidth>0),null,{timeout:10000});
   for(let i=0;i<routes.length;i++){
    const src=await cards.nth(i).locator('img').getAttribute('src');
-   ck('Home featured photo matches '+routes[i],src===expected[routes[i]],src);
+   ck('Home featured photo matches '+routes[i],samePhoto(src,expected[routes[i]]),src);
    ck('Home image loads '+routes[i],await cards.nth(i).locator('img').evaluate(i=>i.complete&&i.naturalWidth>0));
    ck('Home card links to '+routes[i],(await cards.nth(i).getAttribute('href'))===pageUrl(routes[i]));
   }
@@ -93,7 +96,7 @@ const width=1440;
    const src=await work.nth(i).locator('img').getAttribute('src');
    await work.nth(i).scrollIntoViewIfNeeded();
    await page.waitForFunction(index=>{const img=document.querySelectorAll('.case-index-item img')[index];return !!img&&img.complete&&img.naturalWidth>0},i,{timeout:10000});
-   ck('Our Work featured photo matches '+routes[i],src===expected[routes[i]],src);
+   ck('Our Work featured photo matches '+routes[i],samePhoto(src,expected[routes[i]]),src);
    ck('Our Work image loads '+routes[i],await work.nth(i).locator('img').evaluate(i=>i.complete&&i.naturalWidth>0));
   }
   // Local Studio publish preview: modifying a case study's opening photo must

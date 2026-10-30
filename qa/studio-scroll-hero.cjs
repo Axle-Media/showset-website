@@ -43,7 +43,7 @@ const assert=(name,pass,info)=>{checks.push({name,pass:!!pass,info});console.log
   assert('Studio first scene visible '+width,a.firstOpacity>=.99&&a.secondOpacity<=.01&&a.firstHidden==='false'&&a.secondHidden==='true',a);
   assert('Studio original first heading '+width,a.firstHeadline?.replace(/\s+/g,' ').includes('Curious minds.')&&a.firstHeadline.includes('Capable hands.'),a.firstHeadline);
   assert('Studio headline text is unmasked, not merely in the DOM '+width,!a.firstClip.includes('100%'),a.firstClip);
-  assert('Studio photo is ready '+width,a.imgLoaded&&a.image==='/media/planning.webp',a.image);
+  assert('Studio photo is ready '+width,a.imgLoaded&&a.image===require('../content/pages.json')['our-studio'].sections[0].image,a.image);
   const at=async fraction=>{
    await page.locator('.studio-hero-track').evaluate((track,fraction)=>{
     window.scrollTo({top:window.scrollY+track.getBoundingClientRect().top+

@@ -10,7 +10,7 @@
         "headline": "Great ideas",
         "accent": "move people.",
         "body": "And they should go places. Into rooms. Across screens. Onto stages. Into the hands and heads of real people. We bring events and creative work together to make sure they do.",
-        "image": "/media/planning.webp",
+        "image": "/media/showset/01-home-hero.webp",
         "pattern": true,
         "reveal": true,
         "buttonLabel": "See what we do",
@@ -68,7 +68,7 @@
             "title": "First, we",
             "accent": "imagine it.",
             "description": "We start by getting curious. About the people in the room, the story worth telling and the thing this idea really needs to do. We ask awkwardly good questions, challenge the obvious and connect unlikely dots until we find a direction everyone can believe in.",
-            "image": "/media/planning.webp",
+            "image": "/media/showset/02-imagine-sketches.webp",
             "href": ""
           },
           {
@@ -76,7 +76,7 @@
             "title": "Then, we",
             "accent": "make it happen.",
             "description": "Then we get our hands into it. The sketches become identities, layouts, websites, run sheets and real-world production plans. Creative thinking meets the people who build things, and we sweat the tiny details so the big picture feels effortless.",
-            "image": "/media/rigging.webp",
+            "image": "/media/showset/03-installation-crew.webp",
             "href": ""
           },
           {
@@ -84,7 +84,7 @@
             "title": "Finally, we",
             "accent": "move people.",
             "description": "Then comes the part you can feel. The doors open, the site goes live, the lights come up and people step into the idea. All the planning disappears into the experience, leaving the atmosphere, the connection and the moments people talk about afterwards.",
-            "image": "/media/evening.webp",
+            "image": "/media/showset/04-audience-moment.webp",
             "href": ""
           }
         ],
@@ -111,7 +111,7 @@
             "title": "Atmosphere is everything",
             "accent": "",
             "description": "You can plan the programme. The feeling is what makes people stay.",
-            "image": "/media/evening.webp",
+            "image": "/media/showset/05-event-project-hero.webp",
             "href": "/work/atmosphere-is-everything/"
           },
           {
@@ -119,7 +119,7 @@
             "title": "Made to be remembered",
             "accent": "",
             "description": "Identity is built in a thousand little encounters, not one big reveal.",
-            "image": "/media/cases/identity-hero.webp",
+            "image": "/media/showset/06-identity-project-hero.webp",
             "href": "/work/made-to-be-remembered/"
           },
           {
@@ -127,7 +127,7 @@
             "title": "Behind every moment",
             "accent": "",
             "description": "The quiet precision that makes a big production feel effortless.",
-            "image": "/media/cases/production-hero.webp",
+            "image": "/media/showset/07-production-project-hero.webp",
             "href": "/work/behind-every-moment/"
           }
         ],
@@ -154,7 +154,7 @@
             "title": "Events & experiences",
             "accent": "",
             "description": "We make room for the unexpected, then plan every last detail around it.",
-            "image": "/media/evening.webp",
+            "image": "/media/showset/08-events-guests.webp",
             "href": "/events-experiences/"
           },
           {
@@ -162,7 +162,7 @@
             "title": "Creative & design",
             "accent": "",
             "description": "The kind of thinking that gives a brand a point of view, not just a pretty face.",
-            "image": "/media/brand.webp",
+            "image": "/media/showset/09-creative-materials.webp",
             "href": "/creative-design/"
           },
           {
@@ -178,7 +178,7 @@
             "title": "Content & production",
             "accent": "",
             "description": "From the first storyboard to the final sound check, we bring the moving parts together.",
-            "image": "/media/sound.webp",
+            "image": "/media/showset/10-content-camera-operator.webp",
             "href": "/content-production/"
           }
         ],
@@ -239,7 +239,7 @@
         "headline": "From a spark",
         "accent": "to a room alive.",
         "body": "The room. The crowd. The goosebumps. The perfectly timed reveal.\n\nWe dream up, design and deliver events that people remember. From corporate conferences and brand launches to festivals, activations and private celebrations, we bring the creative thinking, people and production together to make every moment count.",
-        "image": "/media/cases/production-hero.webp",
+        "image": "/media/showset/11-events-hero.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "Plan something brilliant",
@@ -336,7 +336,7 @@
             "id": "service-scene-1",
             "title": "First, the possibility.",
             "description": "Before the floor plans, the lighting rigs or the guest lists, there has to be an idea worth bringing to life. We explore the brief, challenge the obvious and find the creative direction that gives the entire experience its purpose and personality.",
-            "image": "/media/planning.webp",
+            "image": "/media/showset/12-event-concept.webp",
             "href": "",
             "category": "Concept"
           },
@@ -344,7 +344,7 @@
             "id": "service-scene-2",
             "title": "Then, the world.",
             "description": "This is where ideas become spaces. We bring layouts, 3D renders, staging, sound, lighting, branding and environmental design together to create a world that looks, feels and functions as one.",
-            "image": "/media/rigging.webp",
+            "image": "/media/showset/13-event-build.webp",
             "href": "",
             "category": "Environment"
           },
@@ -352,7 +352,7 @@
             "id": "service-scene-3",
             "title": "Finally, the feeling.",
             "description": "The doors open. The lights change. The room comes alive. Behind the scenes, we coordinate the cues, teams and details that keep everything moving. Out front, people get to enjoy the experience without seeing the work that made it happen.",
-            "image": "/media/evening.webp",
+            "image": "/media/showset/14-guest-reaction.webp",
             "href": "",
             "category": "Experience"
           }
@@ -559,7 +559,7 @@
         "headline": "Ideas made",
         "accent": "tangible.",
         "body": "We give ideas a point of view, then bring them into the world. From brand identities and campaigns to packaging, print and the spaces people experience, we make design that looks distinctive and works wherever it needs to live.",
-        "image": "/media/cases/identity-hero.webp",
+        "image": "/media/showset/15-creative-hero.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "Make something distinctive",
@@ -607,7 +607,7 @@
             "id": "service-scene-1",
             "title": "A point of view.",
             "description": "Before we choose a colour or draw a mark, we find the idea worth building on. We ask better questions, challenge the obvious and give the creative work a direction that makes sense.",
-            "image": "/media/cases/identity-process.webp",
+            "image": "/media/showset/16-design-exploration.webp",
             "href": "",
             "category": "Thinking"
           },
@@ -615,7 +615,7 @@
             "id": "service-scene-2",
             "title": "A visual language.",
             "description": "Then the idea gets its own visual DNA. Typography, colour, form, imagery and composition come together as a recognisable system, with rules that keep it consistent and room for it to have personality.",
-            "image": "/media/cases/identity-detail.webp",
+            "image": "/media/showset/17-print-finish.webp",
             "href": "",
             "category": "Identity"
           },
@@ -623,7 +623,7 @@
             "id": "service-scene-3",
             "title": "A life beyond the logo.",
             "description": "This is where the design proves itself. We bring the same thinking into packaging, print, campaigns, digital touchpoints and physical spaces so each encounter feels unmistakably connected.",
-            "image": "/media/brand.webp",
+            "image": "/media/showset/18-brand-applications.webp",
             "href": "",
             "category": "Application"
           }
@@ -862,7 +862,7 @@
             "id": "service-scene-1",
             "title": "A place worth landing.",
             "description": "Good digital experiences give people a clear way in and a reason to stay. We shape the structure, content and design so the next step always makes sense.",
-            "image": "/media/cases/identity-hero.webp",
+            "image": "/media/showset/19-responsive-website.webp",
             "href": "",
             "category": "Websites",
             "accent": ""
@@ -871,7 +871,7 @@
             "id": "service-scene-2",
             "title": "An idea worth noticing.",
             "description": "We build marketing around a clear message and a real audience, then create work that belongs on each channel without losing its personality.",
-            "image": "/media/cases/identity-detail.webp",
+            "image": "/media/showset/20-digital-campaign.webp",
             "href": "",
             "category": "Campaigns",
             "accent": ""
@@ -880,7 +880,7 @@
             "id": "service-scene-3",
             "title": "A conversation worth continuing.",
             "description": "From planning to production and publishing, we help brands show up consistently with content that sounds human and feels recognisable.",
-            "image": "/media/cases/production-detail.webp",
+            "image": "/media/showset/21-social-content.webp",
             "href": "",
             "category": "Social",
             "accent": ""
@@ -889,7 +889,7 @@
             "id": "service-scene-4",
             "title": "The clever bits behind it.",
             "description": "Tools, websites, workflows and custom solutions should remove friction, not create it. We connect the practical technology to the people using it.",
-            "image": "/media/cases/identity-process.webp",
+            "image": "/media/showset/22-digital-workflow.webp",
             "href": "",
             "category": "Technology",
             "accent": ""
@@ -1081,7 +1081,7 @@
         "headline": "Every frame",
         "accent": "has a purpose.",
         "body": "Stories deserve more than a good-looking shot.\n\nWe bring ideas to life through film, photography, animation, live streaming and technical production. From a story worth telling to the very last cue, we make each detail count.",
-        "image": "/media/cases/production-detail.webp",
+        "image": "/media/showset/23-production-hero.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "Bring the story to life",
@@ -1129,7 +1129,7 @@
             "id": "service-scene-1",
             "title": "Find the story.",
             "description": "We work out what the audience should see, hear and feel before the first shot. Creative direction, scripting, storyboards, shot lists, production plans and technical requirements turn an exciting idea into something ready to make.",
-            "image": "/media/planning.webp",
+            "image": "/media/showset/24-story-treatment.webp",
             "href": "",
             "category": "Pre-production",
             "accent": ""
@@ -1138,7 +1138,7 @@
             "id": "service-scene-2",
             "title": "Make it happen.",
             "description": "Cameras roll. Lights change. The crew, sound and technical elements work together. We capture the planned moments and the unexpected ones, keeping the creative direction intact whether it's a studio shoot, an event or a live broadcast.",
-            "image": "/media/cases/production-process.webp",
+            "image": "/media/showset/25-filming-scene.webp",
             "href": "",
             "category": "Production",
             "accent": ""
@@ -1147,7 +1147,7 @@
             "id": "service-scene-3",
             "title": "Finish with purpose.",
             "description": "We shape the edit, animation, graphics, colour and sound until every piece feels intentional. Then we deliver the right formats, captions, recordings, highlights and cutdowns for the screens and audiences that matter.",
-            "image": "/media/sound.webp",
+            "image": "/media/showset/26-colour-edit.webp",
             "href": "",
             "category": "Post-production",
             "accent": ""
@@ -1355,7 +1355,7 @@
         "headline": "Curious minds.",
         "accent": "Capable hands.",
         "body": "We're curious thinkers, practical makers and people who care about every part of the experience. Behind the creative work are the plans, partners, pixels and production details that make it possible. We bring those worlds together, because the best ideas deserve more than a beautiful presentation.",
-        "image": "/media/planning.webp",
+        "image": "/media/showset/27-studio-collaboration.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "",
@@ -1413,7 +1413,7 @@
             "title": "Find the idea.",
             "accent": "",
             "description": "We listen, question and look for the thing that will make this brief matter. Strategy, concepts and creative direction start here.",
-            "image": "/media/planning.webp",
+            "image": "/media/showset/28-studio-discussion.webp",
             "href": ""
           },
           {
@@ -1421,7 +1421,7 @@
             "title": "Make it tangible.",
             "accent": "",
             "description": "Visual identities, layouts, websites and content. We turn a direction into something you can see, use and build on.",
-            "image": "/media/details.webp",
+            "image": "/media/showset/29-studio-proof-detail.webp",
             "href": ""
           },
           {
@@ -1429,7 +1429,7 @@
             "title": "Make it happen.",
             "accent": "",
             "description": "On-site production, live experiences and the final details. Good thinking means little if it never gets made.",
-            "image": "/media/rigging.webp",
+            "image": "/media/showset/30-onsite-coordination.webp",
             "href": ""
           }
         ],
@@ -1490,7 +1490,7 @@
         "headline": "Work with",
         "accent": "something to say.",
         "body": "Every brief has a story. This is where we share the thinking, craft and detail behind the projects and possibilities we're exploring.",
-        "image": "/media/rigging.webp",
+        "image": "/media/showset/31-completed-project-wide.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "",
@@ -1539,7 +1539,7 @@
             "title": "Atmosphere is everything",
             "accent": "Concept study",
             "description": "A room is never just a room. The arrival, the lighting, the sound and the unexpected little detail all have something to say.",
-            "image": "/media/evening.webp",
+            "image": "/media/showset/32-event-project-hero.webp",
             "href": "/work/atmosphere-is-everything/",
             "category": "Events & experiences"
           },
@@ -1548,7 +1548,7 @@
             "title": "Made to be remembered",
             "accent": "Concept study",
             "description": "A brand gets built every time someone meets it. One voice, many touchpoints, a thousand tiny clues.",
-            "image": "/media/cases/identity-hero.webp",
+            "image": "/media/showset/33-identity-project-hero.webp",
             "href": "/work/made-to-be-remembered/",
             "category": "Creative & design"
           },
@@ -1557,7 +1557,7 @@
             "title": "Behind every moment",
             "accent": "Concept study",
             "description": "The best production looks effortless because so much of the effort happened before the doors opened.",
-            "image": "/media/cases/production-hero.webp",
+            "image": "/media/showset/34-production-project-hero.webp",
             "href": "/work/behind-every-moment/",
             "category": "Content & production"
           }
@@ -1601,7 +1601,7 @@
         "headline": "Atmosphere is everything.",
         "accent": "",
         "body": "A creative exploration of the way spaces make people feel before anyone says a word.",
-        "image": "/media/evening.webp",
+        "image": "/media/showset/35-event-project-hero.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "",
@@ -1619,7 +1619,7 @@
         "headline": "Design for what people remember.",
         "accent": "",
         "body": "We think of atmosphere as a series of choices working together. Where the eye goes first. What people hear when they walk in. How they find their way. When the energy rises and when the room gets a moment to breathe. None of it happens by accident. This study explores how a cohesive creative concept might move through spatial layout, lighting, styling, staging and guest experience. It is a reminder that the strongest event design is not just about what a place looks like. It is about what happens to people while they are in it.",
-        "image": "",
+        "image": "/media/showset/37-event-preparation.webp",
         "pattern": true,
         "reveal": true,
         "buttonLabel": "",
@@ -1637,7 +1637,7 @@
         "headline": "Set the scene. Change the feeling.",
         "accent": "",
         "body": "",
-        "image": "/media/details.webp",
+        "image": "/media/showset/36-event-defining-moment.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "",
@@ -1684,8 +1684,8 @@
         "kind": "image",
         "title": "A feeling you can walk into.",
         "body": "A sense of arrival begins long before the first word is spoken. The environment is part of the story.",
-        "src": "/media/planning.webp",
-        "alt": "Event floor plan and creative planning details",
+        "src": "/media/showset/37-event-preparation.webp",
+        "alt": "In a warm brick event hall with timber ceiling, navy stage panels and thin turquoise edge lighting, five planning colleagues review a floor plan on a folding worktable during the afternoon before opening",
         "captions": "Creative exploration. Planning, environment and guest experience."
       },
       {
@@ -1699,8 +1699,8 @@
         "kind": "image",
         "title": "Every detail changes the room.",
         "body": "Scale, texture and light can change the energy of a space. We look for the choices that make the experience feel connected.",
-        "src": "/media/rigging.webp",
-        "alt": "Stage rigging and production lighting",
+        "src": "/media/showset/38-event-audience.webp",
+        "alt": "An intimate natural photograph across a table at a sophisticated evening ceremony in a warm brick and timber industrial event hall",
         "captions": "Creative exploration. Technical production and atmosphere."
       }
     ],
@@ -1711,67 +1711,60 @@
       ],
       "openingTitle": "A night made for the spotlight.",
       "openingBody": "A cinematic concept study inspired by the world of the Academy Awards. The art of arrival, the electricity of anticipation and a room designed for unforgettable moments.",
-      "openingImage": "/media/evening.webp",
-      "secondImage": "/media/sound.webp",
+      "openingImage": "/media/showset/35-event-project-hero.webp",
+      "secondImage": "/media/showset/36-event-defining-moment.webp",
       "secondBody": "Behind every extraordinary evening is an extraordinary amount of thinking. Follow the ideas, people and little details that make an entire room feel something.",
       "brief": {
         "heading": "Make every moment extraordinary.",
         "body": "Imagine an awards evening that feels cinematic from the very first invitation. An arrival that builds anticipation, a red-carpet experience that welcomes every guest into the story, and a ceremony where each moment has its own sense of occasion. Nothing should feel disconnected, from the first step inside to the final applause.\n\nFor this fictional concept, the brief was to bring every touchpoint together. Guest flow, visual identity, spatial planning, lighting, production and hospitality all had to feel part of one unmistakable evening. The ambition was not simply to fill a beautiful room. It was to give people a night they would remember.",
         "images": [
-          "/media/planning.webp",
-          "/media/details.webp",
-          "/media/brand.webp",
-          "/media/evening.webp"
-        ]
+          "/media/showset/37-event-preparation.webp"
+        ],
+        "image": "/media/showset/37-event-preparation.webp",
+        "imageAlt": "In a warm brick event hall with timber ceiling, navy stage panels and thin turquoise edge lighting, five planning colleagues review a floor plan on a folding worktable during the afternoon before opening"
       },
       "intention": {
         "heading": "More than a ceremony.",
         "body": "The feeling was our starting point. Before imagining a stage, we imagined the excitement of arriving, the pause before the room goes dark and the collective energy when the spotlight finds its subject. We wanted those emotions to carry through the entire experience, not appear only during the main ceremony.\n\nWarmth and spectacle could exist together. Intimate details would bring guests closer, while scale, sound and light would give the evening its drama. Every visual cue and change in atmosphere had one purpose: make each guest feel part of the story unfolding around them.",
         "images": [
-          "/media/evening.webp",
-          "/media/sound.webp",
-          "/media/details.webp",
-          "/media/brand.webp"
-        ]
+          "/media/showset/38-event-audience.webp"
+        ],
+        "image": "/media/showset/38-event-audience.webp",
+        "imageAlt": "An intimate natural photograph across a table at a sophisticated evening ceremony in a warm brick and timber industrial event hall"
       },
       "approach": {
         "heading": "Every detail plays a part.",
         "body": "We imagined the guest journey as a sequence of carefully connected scenes. First impressions began with the arrival and wayfinding. The room then opened up through layered lighting, thoughtful staging and a visual language that could move from printed details to giant screens without losing its character.\n\nBehind the atmosphere sat the practical work: layouts, technical cues, sound, guest movement and the timing of every transition. Creative direction and production planning informed each other from the first sketches. The aim was an experience that could feel effortless to a guest because every detail behind it had been considered.",
         "images": [
-          "/media/rigging.webp",
-          "/media/planning.webp",
-          "/media/sound.webp",
-          "/media/details.webp"
-        ]
+          "/media/showset/39-event-technical-prep.webp"
+        ],
+        "image": "/media/showset/39-event-technical-prep.webp",
+        "imageAlt": "A technician and a technician preparing a grounded stage lighting fixture together beside a navy stage in a warm brick industrial hall with timber ceiling"
       },
       "gallery": [
         {
-          "src": "/media/evening.webp",
-          "alt": "An atmospheric event setting"
+          "src": "/media/showset/40-event-gallery-space.webp",
+          "alt": "Alternate diagonal view of a completed intimate evening ceremony venue, warm brick piers and timber ceiling, navy stage, thin turquoise edge light, ivory tables with small warm lamps and restrained greenery"
         },
         {
-          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Red_carpet_at_81st_Academy_Awards_in_Kodak_Theatre.jpg?width=1600",
-          "alt": "Academy Awards red carpet, photograph by Greg Hernandez, CC BY 2.0",
-          "credit": "Photo: Greg Hernandez",
-          "creditHref": "https://commons.wikimedia.org/wiki/File:Red_carpet_at_81st_Academy_Awards_in_Kodak_Theatre.jpg",
-          "license": "CC BY 2.0",
-          "licenseHref": "https://creativecommons.org/licenses/by/2.0/"
+          "src": "/media/showset/41-event-arrivals.webp",
+          "alt": "Candid arrival moment at a evening event: five guests, three white, one and one adult, casually arriving through warm brick foyer with restrained navy entry panel and subtle turquoise line"
         },
         {
-          "src": "/media/rigging.webp",
-          "alt": "Lighting and technical production"
+          "src": "/media/showset/42-event-lighting-detail.webp",
+          "alt": "Close photographic detail of a professional stage lighting fixture mounted securely on a low ground-supported stand beside navy scenic panels in a warm brick event hall"
         },
         {
-          "src": "/media/details.webp",
-          "alt": "Decor and creative detailing"
+          "src": "/media/showset/43-event-decor.webp",
+          "alt": "Tactile close-up of a finished event table in a warm brick hall: ivory linen with slight natural creases, restrained green foliage, small warm shaded table lamp, navy folded paper menu with a single turquoise abstract line and no letters"
         },
         {
-          "src": "/media/sound.webp",
-          "alt": "Sound and live production"
+          "src": "/media/showset/44-event-operator.webp",
+          "alt": "A woman show operator actively working at a believable lighting desk at an evening ceremony in a warm brick hall"
         },
         {
-          "src": "/media/planning.webp",
-          "alt": "Creative process and planning"
+          "src": "/media/showset/45-event-final-check.webp",
+          "alt": "A event coordinator quietly straightening an ivory linen table setting before guests arrive, in warm brick hall with timber ceiling, navy stage and restrained turquoise line"
         }
       ],
       "bannerImage": "/media/rigging.webp",
@@ -1807,7 +1800,7 @@
         "headline": "Made to be remembered.",
         "accent": "",
         "body": "A visual study of how identity becomes something people recognise without having to think twice.",
-        "image": "/media/brand.webp",
+        "image": "/media/showset/48-identity-project-hero.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "",
@@ -1825,7 +1818,7 @@
         "headline": "Consistency with a pulse.",
         "accent": "",
         "body": "An identity needs more than one beautiful logo. It needs a character strong enough to travel. Through type and colour, packaging and print, screens and spaces, big statements and tiny bits of useful information. This concept study looks at how a flexible visual system can bring every encounter back to the same idea while leaving space for expression. The goal is not for everything to look identical. It is for everything to feel unmistakably connected.",
-        "image": "",
+        "image": "/media/showset/50-identity-designer.webp",
         "pattern": true,
         "reveal": true,
         "buttonLabel": "",
@@ -1843,7 +1836,7 @@
         "headline": "Recognition lives in the details.",
         "accent": "",
         "body": "",
-        "image": "/media/planning.webp",
+        "image": "/media/showset/49-identity-early-concepts.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "",
@@ -1890,8 +1883,8 @@
         "kind": "image",
         "title": "Make the idea travel.",
         "body": "The identity should feel like itself on a screen, in a space or in someone's hands.",
-        "src": "/media/details.webp",
-        "alt": "Close-up of considered creative details",
+        "src": "/media/showset/50-identity-designer.webp",
+        "alt": "A woman designer refining physical print proofs for an navy, ivory and turquoise identity at an oak studio desk",
         "captions": "Creative exploration. Visual details and brand expression."
       },
       {
@@ -1905,8 +1898,8 @@
         "kind": "image",
         "title": "A thousand little encounters.",
         "body": "The strongest systems are built to move. Consistency makes the connection, and variation keeps it alive.",
-        "src": "/media/planning.webp",
-        "alt": "Creative planning materials and layouts",
+        "src": "/media/showset/51-identity-environment.webp",
+        "alt": "Realistic photographic view of a small temporary event welcome environment using a coherent navy, ivory and restrained turquoise identity",
         "captions": "Creative exploration. From the first sketch to a connected visual system."
       }
     ],
@@ -1917,46 +1910,52 @@
       ],
       "openingTitle": "Made to be remembered.",
       "openingBody": "A visual study of how identity becomes something people recognise without having to think twice. This fictional identity study explores a visual system in print, packaging and space.",
-      "openingImage": "/media/cases/identity-hero.webp",
+      "openingImage": "/media/showset/48-identity-project-hero.webp",
       "secondTitle": "This is how we made it happen.",
-      "secondImage": "/media/cases/identity-process.webp",
+      "secondImage": "/media/showset/49-identity-early-concepts.webp",
       "secondBody": "From a paper sample to a complete identity system, this concept follows one idea through its many expressions. It is an imagined design exercise, not a commissioned client project.",
       "brief": {
         "heading": "Consistency with a pulse.",
         "body": "An identity needs more than one beautiful logo. It needs a character strong enough to travel. Through type and colour, packaging and print, screens and spaces, big statements and tiny bits of useful information. This concept study looks at how a flexible visual system can bring every encounter back to the same idea while leaving space for expression. The goal is not for everything to look identical. It is for everything to feel unmistakably connected.\n\nThis fictional identity study explores a visual system in print, packaging and space.",
-        "image": "/media/cases/identity-process.webp",
-        "imageAlt": "Synthetic concept photograph of identity print proofs and materials"
+        "image": "/media/showset/50-identity-designer.webp",
+        "imageAlt": "A woman designer refining physical print proofs for an navy, ivory and turquoise identity at an oak studio desk",
+        "images": [
+          "/media/showset/50-identity-designer.webp"
+        ]
       },
       "intention": {
         "heading": "Familiar, never predictable.",
         "body": "A recognisable identity needs more than a single strong mark. The idea has to carry through every encounter, from the smallest printed detail to the largest expression.\n\nIn this imagined system, recognition comes from the relationship between colour, proportion and material. Each application can have its own rhythm while carrying the same character.",
-        "image": "/media/cases/identity-detail.webp",
-        "imageAlt": "Synthetic concept photograph of geometric brand applications"
+        "image": "/media/showset/51-identity-environment.webp",
+        "imageAlt": "Realistic photographic view of a small temporary event welcome environment using a coherent navy, ivory and restrained turquoise identity",
+        "images": [
+          "/media/showset/51-identity-environment.webp"
+        ]
       },
       "approach": {
         "heading": "Let the system travel.",
         "body": "We explore a visual language with enough consistency to feel familiar and enough flexibility to stay interesting. Typography, colour, composition and application all become part of the same story.\n\nThe fictional process moves from sketches and print tests to a small family of applications. Looking at those pieces together reveals where a rule needs to hold and where variation can make the identity more useful.",
-        "image": "/media/cases/identity-hero.webp",
-        "imageAlt": "Synthetic concept photograph of a coordinated stationery and packaging system"
+        "image": "/media/showset/52-identity-in-use.webp",
+        "imageAlt": "Candid desk-level photograph of a designer passing a finished navy and turquoise publication to a colleague, only their hands and partial torsos visible",
+        "images": [
+          "/media/showset/52-identity-in-use.webp"
+        ]
       },
       "gallery": [
         {
           "id": "made-to-be-remembered-concept-1",
-          "src": "/media/cases/identity-hero.webp",
-          "alt": "Synthetic identity concept: the complete visual setting",
-          "credit": "AI-generated concept imagery; not a completed client project"
+          "src": "/media/showset/53-identity-gallery-system.webp",
+          "alt": "Alternate diagonal photographic arrangement of one consistent navy-and-ivory identity with restrained turquoise offset-line motif: stitched publication partly open, a navy packaging box, sleeve, paper cards, tote and folded poster on worn o"
         },
         {
           "id": "made-to-be-remembered-concept-2",
-          "src": "/media/cases/identity-process.webp",
-          "alt": "Synthetic identity concept: the working process",
-          "credit": "AI-generated concept imagery; not a completed client project"
+          "src": "/media/showset/54-identity-gallery-finish.webp",
+          "alt": "Macro photograph of ivory heavy uncoated paper with a navy printed block and subtle turquoise debossed offset line, the edge of a stitched publication and a folded navy packaging corner"
         },
         {
           "id": "made-to-be-remembered-concept-3",
-          "src": "/media/cases/identity-detail.webp",
-          "alt": "Synthetic identity concept: material and technical details",
-          "credit": "AI-generated concept imagery; not a completed client project"
+          "src": "/media/showset/55-identity-gallery-application.webp",
+          "alt": "Photographic close view of an navy canvas tote and cap on a studio chair beside a slim ivory publication, all using the same restrained turquoise offset-line abstract motif"
         }
       ],
       "partners": [
@@ -1982,7 +1981,7 @@
         "headline": "Behind every moment.",
         "accent": "",
         "body": "A creative study celebrating the work that makes a live experience run like it was meant to.",
-        "image": "/media/sound.webp",
+        "image": "/media/showset/58-production-project-hero.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "",
@@ -2000,7 +1999,7 @@
         "headline": "The invisible is important.",
         "accent": "",
         "body": "The audience comes for the experience. The cables, cue sheets, timing checks and technical conversations are not the headline. They are what allows the headline to happen. This study explores the relationship between creative vision and production craft. How lighting, sound, visuals, people and precision come together to create a moment that feels natural. Our favourite kind of technical excellence is the kind you do not have to think about while you are enjoying the show.",
-        "image": "",
+        "image": "/media/showset/60-production-audio-operator.webp",
         "pattern": true,
         "reveal": true,
         "buttonLabel": "",
@@ -2018,7 +2017,7 @@
         "headline": "Behind the scenes. Ahead of the moment.",
         "accent": "",
         "body": "",
-        "image": "/media/rigging.webp",
+        "image": "/media/showset/59-production-cue-team.webp",
         "pattern": false,
         "reveal": true,
         "buttonLabel": "",
@@ -2065,8 +2064,8 @@
         "kind": "image",
         "title": "Before the doors open.",
         "body": "A production comes together in layers. Technical preparation gives the creative idea room to land.",
-        "src": "/media/rigging.webp",
-        "alt": "Technical event rigging during preparation",
+        "src": "/media/showset/60-production-audio-operator.webp",
+        "alt": "A male audio engineer actively mixing a live show at a credible digital sound console, side-rear angle with naturally placed hand on fader and concentrated expression",
         "captions": "Creative exploration. The work before the moment."
       },
       {
@@ -2080,8 +2079,8 @@
         "kind": "image",
         "title": "And then it happens.",
         "body": "The planning disappears into the experience. What remains is the feeling of being there.",
-        "src": "/media/evening.webp",
-        "alt": "Warm lights and atmosphere at a live event",
+        "src": "/media/showset/61-production-equipment-prep.webp",
+        "alt": "A woman technician at floor level checking a credible professional camera and locking a mounting plate onto a stable tripod before a show",
         "captions": "Creative exploration. The audience-facing experience."
       }
     ],
@@ -2092,46 +2091,52 @@
       ],
       "openingTitle": "Behind every moment.",
       "openingBody": "A creative study celebrating the work that makes a live experience run like it was meant to. This fictional production study explores the preparation behind a live stage experience.",
-      "openingImage": "/media/cases/production-hero.webp",
+      "openingImage": "/media/showset/58-production-project-hero.webp",
       "secondTitle": "This is how we made it happen.",
-      "secondImage": "/media/cases/production-process.webp",
+      "secondImage": "/media/showset/59-production-cue-team.webp",
       "secondBody": "Before the lights come up, every cue needs a place in the plan. This imagined production follows preparation, rehearsal and the handover to a live moment; it does not document a completed SHOWSET event.",
       "brief": {
         "heading": "The invisible is important.",
         "body": "The audience comes for the experience. The cables, cue sheets, timing checks and technical conversations are not the headline. They are what allows the headline to happen. This study explores the relationship between creative vision and production craft. How lighting, sound, visuals, people and precision come together to create a moment that feels natural. Our favourite kind of technical excellence is the kind you do not have to think about while you are enjoying the show.\n\nThis fictional production study explores the preparation behind a live stage experience.",
-        "image": "/media/cases/production-process.webp",
-        "imageAlt": "Synthetic concept photograph of a live-production control desk"
+        "image": "/media/showset/60-production-audio-operator.webp",
+        "imageAlt": "A male audio engineer actively mixing a live show at a credible digital sound console, side-rear angle with naturally placed hand on fader and concentrated expression",
+        "images": [
+          "/media/showset/60-production-audio-operator.webp"
+        ]
       },
       "intention": {
         "heading": "Give the moment room.",
         "body": "The best live moments feel effortless. Behind that ease is a chain of decisions that makes space for the audience to focus on what matters.\n\nIn the concept, the audience should be free to follow the story rather than notice the equipment. Technical clarity supports that ease: a clean signal path, an understood cue and a team ready for the next change.",
-        "image": "/media/cases/production-detail.webp",
-        "imageAlt": "Synthetic concept photograph of safely secured theater lighting"
+        "image": "/media/showset/61-production-equipment-prep.webp",
+        "imageAlt": "A woman technician at floor level checking a credible professional camera and locking a mounting plate onto a stable tripod before a show",
+        "images": [
+          "/media/showset/61-production-equipment-prep.webp"
+        ]
       },
       "approach": {
         "heading": "Prepare for the unexpected.",
         "body": "We look at the cues, the technical requirements and the people who bring them together. Creative direction and production planning meet so that every transition feels natural.\n\nThe imagined workflow brings the production plan, rehearsals and equipment checks into one conversation. Each department can see how its decisions affect the next, so the eventual audience-facing moment has a coherent shape.",
-        "image": "/media/cases/production-hero.webp",
-        "imageAlt": "Synthetic concept photograph of a backstage lighting setup"
+        "image": "/media/showset/62-production-live-show.webp",
+        "imageAlt": "Photographic live-production moment viewed obliquely from the wings of a modest venue: a woman vocalist onstage holding a normal microphone, musician beside her, three and one crew member partially visible in foreground wings",
+        "images": [
+          "/media/showset/62-production-live-show.webp"
+        ]
       },
       "gallery": [
         {
           "id": "behind-every-moment-concept-1",
-          "src": "/media/cases/production-hero.webp",
-          "alt": "Synthetic production concept: the complete visual setting",
-          "credit": "AI-generated concept imagery; not a completed client project"
+          "src": "/media/showset/63-production-gallery-backstage.webp",
+          "alt": "Alternate wide backstage photograph in a real-looking modest venue, navy curtains, restrained turquoise stage accent, warm utility lights, two secured grounded flight cases, neatly routed cables and edge of a stable camera tripod"
         },
         {
           "id": "behind-every-moment-concept-2",
-          "src": "/media/cases/production-process.webp",
-          "alt": "Synthetic production concept: the working process",
-          "credit": "AI-generated concept imagery; not a completed client project"
+          "src": "/media/showset/64-production-gallery-operator.webp",
+          "alt": "Close candid side portrait of a woman video operator working at a believable compact switcher in a dim venue"
         },
         {
           "id": "behind-every-moment-concept-3",
-          "src": "/media/cases/production-detail.webp",
-          "alt": "Synthetic production concept: material and technical details",
-          "credit": "AI-generated concept imagery; not a completed client project"
+          "src": "/media/showset/65-production-gallery-detail.webp",
+          "alt": "Extreme documentary detail of a credible cinema camera mounted securely on stable tripod beside navy theatre curtain, focus ring and properly connected single cable in focus, subtle warm practical light and restrained turquoise stage reflec"
         }
       ],
       "partners": [

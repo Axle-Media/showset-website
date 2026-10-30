@@ -7,7 +7,7 @@
 .case-scroll-frame{position:relative;overflow:hidden;width:100%}
 .case-scroll-track{display:flex;width:100%;flex-direction:column}
 .case-opening-scene{height:100svh;min-height:540px;position:relative;isolation:isolate;overflow:hidden;background:var(--deep)}
-.case-opening-scene>img{position:absolute;inset:0;z-index:-2;object-position:center;transform:scale(1.035)}
+.case-opening-scene>img,.case-opening-scene>picture>img{position:absolute;inset:0;z-index:-2;object-position:center;transform:scale(1.035)}
 .case-scene-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(3,17,31,.82),rgba(3,17,31,.24) 75%),linear-gradient(0deg,rgba(3,17,31,.48),transparent 66%)}
 .case-scene-copy{position:absolute;left:var(--gutter);right:var(--gutter);bottom:clamp(70px,11svh,160px);max-width:860px}
 /* !important is required only for heading metrics: the legacy global h1–h3

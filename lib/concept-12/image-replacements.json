@@ -1,0 +1,1677 @@
+[
+  {
+    "placement": 1,
+    "source": 1,
+    "page": "Home",
+    "title": "Main hero",
+    "src": "/media/showset/01-home-hero.webp",
+    "alt": "Colleagues reviewing event plans and material samples around a studio worktable",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/01-home-hero-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/01-home-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/01-home-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/01-home-hero.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 2,
+    "source": 2,
+    "page": "Home",
+    "title": "First, we imagine it",
+    "src": "/media/showset/02-imagine-sketches.webp",
+    "alt": "Close documentary overhead view of colleagues developing an event concept with pencil sketches, floor plan, tactile material samples and reference printouts",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/02-imagine-sketches-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/02-imagine-sketches-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/02-imagine-sketches-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/02-imagine-sketches.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 3,
+    "source": 3,
+    "page": "Home",
+    "title": "Then, we make it happen",
+    "src": "/media/showset/03-installation-crew.webp",
+    "alt": "Five event crew members building a large contemporary indoor event set at floor level",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/03-installation-crew-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/03-installation-crew-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/03-installation-crew-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/03-installation-crew.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 4,
+    "source": 4,
+    "page": "Home",
+    "title": "Finally, we move people",
+    "src": "/media/showset/04-audience-moment.webp",
+    "alt": "Candid close-middle distance of five clearly visible guests in a seated event audience reacting with spontaneous delight and attentive smiles to an unseen performance",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/04-audience-moment-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/04-audience-moment-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/04-audience-moment-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/04-audience-moment.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 5,
+    "source": 35,
+    "page": "Home",
+    "title": "Atmosphere is everything card",
+    "src": "/media/showset/05-event-project-hero.webp",
+    "alt": "Defining wide photograph of a single sophisticated evening ceremony in a converted industrial hall, warm brick piers and timber ceiling, navy stage at far end, one thin turquoise light line, warm small table lamps and ivory linen, restraine",
+    "width": 1229,
+    "height": 1024,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/05-event-project-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/05-event-project-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/05-event-project-hero.webp",
+        "width": 1229
+      }
+    ]
+  },
+  {
+    "placement": 6,
+    "source": 48,
+    "page": "Home",
+    "title": "Made to be remembered card",
+    "src": "/media/showset/06-identity-project-hero.webp",
+    "alt": "Hero photograph of a coherent graphic identity applied to navy textured presentation folder, ivory stitched publication, turquoise packaging sleeve, folded abstract poster, cards and canvas tote on a naturally worn oak studio workbench",
+    "width": 1229,
+    "height": 1024,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/06-identity-project-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/06-identity-project-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/06-identity-project-hero.webp",
+        "width": 1229
+      }
+    ]
+  },
+  {
+    "placement": 7,
+    "source": 58,
+    "page": "Home",
+    "title": "Behind every moment card",
+    "src": "/media/showset/07-production-project-hero.webp",
+    "alt": "Wide documentary view from backstage toward a live unbranded performance in a believable venue",
+    "width": 1229,
+    "height": 1024,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/07-production-project-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/07-production-project-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/07-production-project-hero.webp",
+        "width": 1229
+      }
+    ]
+  },
+  {
+    "placement": 8,
+    "source": 8,
+    "page": "Home",
+    "title": "Events service image",
+    "src": "/media/showset/08-events-guests.webp",
+    "alt": "Five guests caught naturally in an informal conversation at a thoughtfully produced indoor evening event with navy scenic surfaces, restrained turquoise light and warm table lamps",
+    "width": 1122,
+    "height": 1402,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/08-events-guests-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/08-events-guests-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/08-events-guests.webp",
+        "width": 1122
+      }
+    ]
+  },
+  {
+    "placement": 9,
+    "source": 9,
+    "page": "Home",
+    "title": "Creative service image",
+    "src": "/media/showset/09-creative-materials.webp",
+    "alt": "Photographic still life of an navy and restrained turquoise visual identity applied to textured packaging, a carefully bound publication, business cards and printed poster on a working studio table",
+    "width": 1122,
+    "height": 1402,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/09-creative-materials-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/09-creative-materials-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/09-creative-materials.webp",
+        "width": 1122
+      }
+    ]
+  },
+  {
+    "placement": 10,
+    "source": 10,
+    "page": "Home",
+    "title": "Content service image",
+    "src": "/media/showset/10-content-camera-operator.webp",
+    "alt": "A woman camera operator in her late thirties actively filming with a credible professional cinema camera on a tripod in a practical interview studio",
+    "width": 1122,
+    "height": 1402,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/10-content-camera-operator-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/10-content-camera-operator-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/10-content-camera-operator.webp",
+        "width": 1122
+      }
+    ]
+  },
+  {
+    "placement": 11,
+    "source": 11,
+    "page": "Events & Experiences",
+    "title": "Hero",
+    "src": "/media/showset/11-events-hero.webp",
+    "alt": "Wide documentary view from the back corner of a populated sophisticated Johannesburg evening event, modern converted industrial hall, navy stage panels, restrained turquoise edge lighting, warm pools of table light, natural guest conversati",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/11-events-hero-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/11-events-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/11-events-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/11-events-hero.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 12,
+    "source": 12,
+    "page": "Events & Experiences",
+    "title": "First, the possibility",
+    "src": "/media/showset/12-event-concept.webp",
+    "alt": "A woman event designer developing a venue concept at her actual-looking desk",
+    "width": 1122,
+    "height": 1402,
+    "mobile": "/media/showset/12-event-concept-narrow.webp",
+    "variants": [
+      {
+        "src": "/media/showset/12-event-concept-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/12-event-concept-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/12-event-concept.webp",
+        "width": 1122
+      }
+    ]
+  },
+  {
+    "placement": 13,
+    "source": 13,
+    "page": "Events & Experiences",
+    "title": "Then, the world",
+    "src": "/media/showset/13-event-build.webp",
+    "alt": "Two crew members, a woman and a man, aligning a tall freestanding navy wayfinding panel at floor level in an event hall during build",
+    "width": 1122,
+    "height": 1402,
+    "mobile": "/media/showset/13-event-build-narrow.webp",
+    "variants": [
+      {
+        "src": "/media/showset/13-event-build-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/13-event-build-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/13-event-build.webp",
+        "width": 1122
+      }
+    ]
+  },
+  {
+    "placement": 14,
+    "source": 14,
+    "page": "Events & Experiences",
+    "title": "Finally, the feeling",
+    "src": "/media/showset/14-guest-reaction.webp",
+    "alt": "Candid medium portrait of a woman guest in her early forties sharing an understated spontaneous laugh with a woman friend at a warm indoor evening event",
+    "width": 1122,
+    "height": 1402,
+    "mobile": "/media/showset/14-guest-reaction-narrow.webp",
+    "variants": [
+      {
+        "src": "/media/showset/14-guest-reaction-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/14-guest-reaction-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/14-guest-reaction.webp",
+        "width": 1122
+      }
+    ]
+  },
+  {
+    "placement": 15,
+    "source": 15,
+    "page": "Creative & Design",
+    "title": "Hero",
+    "src": "/media/showset/15-creative-hero.webp",
+    "alt": "A complete visual identity system physically photographed on a studio table: navy textured presentation folder, ivory publication, turquoise sleeve, packaging box, paper cards and a folded abstract poster",
+    "width": 1122,
+    "height": 1402,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/15-creative-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/15-creative-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/15-creative-hero.webp",
+        "width": 1122
+      }
+    ]
+  },
+  {
+    "placement": 16,
+    "source": 16,
+    "page": "Creative & Design",
+    "title": "A point of view",
+    "src": "/media/showset/16-design-exploration.webp",
+    "alt": "Tight candid overhead photo of a designer's light-skinned hands sketching several abstract identity directions in pencil on used tracing paper, adjacent graphic reference printouts, navy and turquoise ink tests, worn ruler and handwritten n",
+    "width": 1122,
+    "height": 1402,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/16-design-exploration-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/16-design-exploration-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/16-design-exploration.webp",
+        "width": 1122
+      }
+    ]
+  },
+  {
+    "placement": 17,
+    "source": 17,
+    "page": "Creative & Design",
+    "title": "A visual language",
+    "src": "/media/showset/17-print-finish.webp",
+    "alt": "Extreme tactile photographic detail of navy printed packaging and an ivory paper sleeve with a restrained turquoise abstract line",
+    "width": 1122,
+    "height": 1402,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/17-print-finish-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/17-print-finish-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/17-print-finish.webp",
+        "width": 1122
+      }
+    ]
+  },
+  {
+    "placement": 18,
+    "source": 18,
+    "page": "Creative & Design",
+    "title": "A life beyond the logo",
+    "src": "/media/showset/18-brand-applications.webp",
+    "alt": "Fictional coherent navy, ivory and turquoise visual identity in a real small studio installation: folded printed publication, canvas tote, navy cap, upright environmental panel and a tablet showing the same abstract graphic motif",
+    "width": 1122,
+    "height": 1402,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/18-brand-applications-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/18-brand-applications-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/18-brand-applications.webp",
+        "width": 1122
+      }
+    ]
+  },
+  {
+    "placement": 19,
+    "source": 19,
+    "page": "Digital & Marketing",
+    "title": "A place worth landing",
+    "src": "/media/showset/19-responsive-website.webp",
+    "alt": "Photograph of a desktop display and a phone on a working creative studio desk showing a coherent responsive event website",
+    "width": 1586,
+    "height": 991,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/19-responsive-website-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/19-responsive-website-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/19-responsive-website.webp",
+        "width": 1586
+      }
+    ]
+  },
+  {
+    "placement": 20,
+    "source": 20,
+    "page": "Digital & Marketing",
+    "title": "An idea worth noticing",
+    "src": "/media/showset/20-digital-campaign.webp",
+    "alt": "Photographic working desk with printed social campaign concepts, laptop with matching landing page and a phone showing a corresponding social creative",
+    "width": 1586,
+    "height": 991,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/20-digital-campaign-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/20-digital-campaign-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/20-digital-campaign.webp",
+        "width": 1586
+      }
+    ]
+  },
+  {
+    "placement": 21,
+    "source": 21,
+    "page": "Digital & Marketing",
+    "title": "A conversation worth continuing",
+    "src": "/media/showset/21-social-content.webp",
+    "alt": "A woman content creator in her thirties capturing a short close video of tactile printed packaging on a small tabletop with a phone on a modest tripod",
+    "width": 1586,
+    "height": 991,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/21-social-content-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/21-social-content-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/21-social-content.webp",
+        "width": 1586
+      }
+    ]
+  },
+  {
+    "placement": 22,
+    "source": 22,
+    "page": "Digital & Marketing",
+    "title": "The clever bits behind it",
+    "src": "/media/showset/22-digital-workflow.webp",
+    "alt": "Natural photograph over the shoulder of a male developer working at a desktop screen with a clean event planning dashboard",
+    "width": 1586,
+    "height": 991,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/22-digital-workflow-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/22-digital-workflow-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/22-digital-workflow.webp",
+        "width": 1586
+      }
+    ]
+  },
+  {
+    "placement": 23,
+    "source": 23,
+    "page": "Content & Production",
+    "title": "Hero",
+    "src": "/media/showset/23-production-hero.webp",
+    "alt": "Wide documentary photograph of a five-person content production crew filming a simple interview in a real converted studio: three adults, one adult and one adult, mixed genders, equal professional roles",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/23-production-hero-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/23-production-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/23-production-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/23-production-hero.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 24,
+    "source": 24,
+    "page": "Content & Production",
+    "title": "Find the story",
+    "src": "/media/showset/24-story-treatment.webp",
+    "alt": "A woman director quietly reviewing a storyboard with a male producer and a woman cinematographer at a worn table",
+    "width": 1586,
+    "height": 991,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/24-story-treatment-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/24-story-treatment-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/24-story-treatment.webp",
+        "width": 1586
+      }
+    ]
+  },
+  {
+    "placement": 25,
+    "source": 25,
+    "page": "Content & Production",
+    "title": "Make it happen",
+    "src": "/media/showset/25-filming-scene.webp",
+    "alt": "Behind-the-scenes photograph of a small camera crew filming an interview in a warm practical studio, two crew members and one crew member visible, one operating a professional cinema camera on stable tripod, director beside a monitor, one s",
+    "width": 1586,
+    "height": 991,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/25-filming-scene-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/25-filming-scene-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/25-filming-scene.webp",
+        "width": 1586
+      }
+    ]
+  },
+  {
+    "placement": 26,
+    "source": 26,
+    "page": "Content & Production",
+    "title": "Finish with purpose",
+    "src": "/media/showset/26-colour-edit.webp",
+    "alt": "A male colourist in his late thirties finishing interview footage at a credible two-monitor workstation",
+    "width": 1586,
+    "height": 991,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/26-colour-edit-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/26-colour-edit-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/26-colour-edit.webp",
+        "width": 1586
+      }
+    ]
+  },
+  {
+    "placement": 27,
+    "source": 27,
+    "page": "Our Studio",
+    "title": "Hero",
+    "src": "/media/showset/27-studio-collaboration.webp",
+    "alt": "Wide candid image of five agency colleagues in an everyday creative studio, three adults, one adult and one adult, mixed genders and ages",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/27-studio-collaboration-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/27-studio-collaboration-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/27-studio-collaboration-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/27-studio-collaboration.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 28,
+    "source": 28,
+    "page": "Our Studio",
+    "title": "First storyboard image",
+    "src": "/media/showset/28-studio-discussion.webp",
+    "alt": "Close candid documentary photograph of a woman and a man discussing an abstract print proof at a studio wall",
+    "width": 1122,
+    "height": 1402,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/28-studio-discussion-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/28-studio-discussion-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/28-studio-discussion.webp",
+        "width": 1122
+      }
+    ]
+  },
+  {
+    "placement": 29,
+    "source": 29,
+    "page": "Our Studio",
+    "title": "Second storyboard image",
+    "src": "/media/showset/29-studio-proof-detail.webp",
+    "alt": "Close-up documentary photograph of a designer's hands and a colleague's hands reviewing an actual-looking physical navy-and-ivory print proof with restrained turquoise abstract graphic, paper stocks and binder clips on a slightly worn studi",
+    "width": 1122,
+    "height": 1402,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/29-studio-proof-detail-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/29-studio-proof-detail-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/29-studio-proof-detail.webp",
+        "width": 1122
+      }
+    ]
+  },
+  {
+    "placement": 30,
+    "source": 30,
+    "page": "Our Studio",
+    "title": "Third storyboard image",
+    "src": "/media/showset/30-onsite-coordination.webp",
+    "alt": "Candid onsite coordination between a woman production lead and a man technical lead in an event hall before opening, side-on medium composition",
+    "width": 1122,
+    "height": 1402,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/30-onsite-coordination-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/30-onsite-coordination-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/30-onsite-coordination.webp",
+        "width": 1122
+      }
+    ]
+  },
+  {
+    "placement": 31,
+    "source": 31,
+    "page": "Our Work",
+    "title": "Hero",
+    "src": "/media/showset/31-completed-project-wide.webp",
+    "alt": "Wide professional documentary architectural photograph of a completed contemporary indoor evening event in Johannesburg: warm timber and exposed brick hall, navy stage, subtle turquoise accent lights, ivory linen, warm table lamps and restr",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/31-completed-project-wide-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/31-completed-project-wide-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/31-completed-project-wide-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/31-completed-project-wide.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 32,
+    "source": 35,
+    "page": "Our Work",
+    "title": "Atmosphere is everything card",
+    "src": "/media/showset/32-event-project-hero.webp",
+    "alt": "Defining wide photograph of a single sophisticated evening ceremony in a converted industrial hall, warm brick piers and timber ceiling, navy stage at far end, one thin turquoise light line, warm small table lamps and ivory linen, restraine",
+    "width": 1229,
+    "height": 1024,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/32-event-project-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/32-event-project-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/32-event-project-hero.webp",
+        "width": 1229
+      }
+    ]
+  },
+  {
+    "placement": 33,
+    "source": 48,
+    "page": "Our Work",
+    "title": "Made to be remembered card",
+    "src": "/media/showset/33-identity-project-hero.webp",
+    "alt": "Hero photograph of a coherent graphic identity applied to navy textured presentation folder, ivory stitched publication, turquoise packaging sleeve, folded abstract poster, cards and canvas tote on a naturally worn oak studio workbench",
+    "width": 1229,
+    "height": 1024,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/33-identity-project-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/33-identity-project-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/33-identity-project-hero.webp",
+        "width": 1229
+      }
+    ]
+  },
+  {
+    "placement": 34,
+    "source": 58,
+    "page": "Our Work",
+    "title": "Behind every moment card",
+    "src": "/media/showset/34-production-project-hero.webp",
+    "alt": "Wide documentary view from backstage toward a live unbranded performance in a believable venue",
+    "width": 1229,
+    "height": 1024,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/34-production-project-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/34-production-project-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/34-production-project-hero.webp",
+        "width": 1229
+      }
+    ]
+  },
+  {
+    "placement": 35,
+    "source": 35,
+    "page": "Atmosphere is everything",
+    "title": "Opening hero",
+    "src": "/media/showset/35-event-project-hero.webp",
+    "alt": "Defining wide photograph of a single sophisticated evening ceremony in a converted industrial hall, warm brick piers and timber ceiling, navy stage at far end, one thin turquoise light line, warm small table lamps and ivory linen, restraine",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/35-event-project-hero-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/35-event-project-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/35-event-project-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/35-event-project-hero.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 36,
+    "source": 36,
+    "page": "Atmosphere is everything",
+    "title": "Second opening image",
+    "src": "/media/showset/36-event-defining-moment.webp",
+    "alt": "From the side of an unbranded stage, a woman presenter speaking naturally to an audience in a warm brick industrial hall with timber ceiling, navy stage panels, thin turquoise edge light and small warm table lamps",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/36-event-defining-moment-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/36-event-defining-moment-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/36-event-defining-moment-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/36-event-defining-moment.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 37,
+    "source": 37,
+    "page": "Atmosphere is everything",
+    "title": "Make every moment extraordinary",
+    "src": "/media/showset/37-event-preparation.webp",
+    "alt": "In a warm brick event hall with timber ceiling, navy stage panels and thin turquoise edge lighting, five planning colleagues review a floor plan on a folding worktable during the afternoon before opening",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/37-event-preparation-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/37-event-preparation-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/37-event-preparation-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/37-event-preparation.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 38,
+    "source": 38,
+    "page": "Atmosphere is everything",
+    "title": "More than a ceremony",
+    "src": "/media/showset/38-event-audience.webp",
+    "alt": "An intimate natural photograph across a table at a sophisticated evening ceremony in a warm brick and timber industrial event hall",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/38-event-audience-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/38-event-audience-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/38-event-audience-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/38-event-audience.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 39,
+    "source": 39,
+    "page": "Atmosphere is everything",
+    "title": "Every detail plays a part",
+    "src": "/media/showset/39-event-technical-prep.webp",
+    "alt": "A technician and a technician preparing a grounded stage lighting fixture together beside a navy stage in a warm brick industrial hall with timber ceiling",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/39-event-technical-prep-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/39-event-technical-prep-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/39-event-technical-prep-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/39-event-technical-prep.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 40,
+    "source": 40,
+    "page": "Atmosphere is everything",
+    "title": "Gallery 1: finished space",
+    "src": "/media/showset/40-event-gallery-space.webp",
+    "alt": "Alternate diagonal view of a completed intimate evening ceremony venue, warm brick piers and timber ceiling, navy stage, thin turquoise edge light, ivory tables with small warm lamps and restrained greenery",
+    "width": 1340,
+    "height": 1172,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/40-event-gallery-space-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/40-event-gallery-space-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/40-event-gallery-space.webp",
+        "width": 1340
+      }
+    ]
+  },
+  {
+    "placement": 41,
+    "source": 41,
+    "page": "Atmosphere is everything",
+    "title": "Gallery 2: arrivals",
+    "src": "/media/showset/41-event-arrivals.webp",
+    "alt": "Candid arrival moment at a evening event: five guests, three white, one and one adult, casually arriving through warm brick foyer with restrained navy entry panel and subtle turquoise line",
+    "width": 1341,
+    "height": 1173,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/41-event-arrivals-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/41-event-arrivals-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/41-event-arrivals.webp",
+        "width": 1341
+      }
+    ]
+  },
+  {
+    "placement": 42,
+    "source": 42,
+    "page": "Atmosphere is everything",
+    "title": "Gallery 3: technical setup",
+    "src": "/media/showset/42-event-lighting-detail.webp",
+    "alt": "Close photographic detail of a professional stage lighting fixture mounted securely on a low ground-supported stand beside navy scenic panels in a warm brick event hall",
+    "width": 1341,
+    "height": 1173,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/42-event-lighting-detail-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/42-event-lighting-detail-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/42-event-lighting-detail.webp",
+        "width": 1341
+      }
+    ]
+  },
+  {
+    "placement": 43,
+    "source": 43,
+    "page": "Atmosphere is everything",
+    "title": "Gallery 4: decor",
+    "src": "/media/showset/43-event-decor.webp",
+    "alt": "Tactile close-up of a finished event table in a warm brick hall: ivory linen with slight natural creases, restrained green foliage, small warm shaded table lamp, navy folded paper menu with a single turquoise abstract line and no letters",
+    "width": 1340,
+    "height": 1172,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/43-event-decor-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/43-event-decor-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/43-event-decor.webp",
+        "width": 1340
+      }
+    ]
+  },
+  {
+    "placement": 44,
+    "source": 44,
+    "page": "Atmosphere is everything",
+    "title": "Gallery 5: operator",
+    "src": "/media/showset/44-event-operator.webp",
+    "alt": "A woman show operator actively working at a believable lighting desk at an evening ceremony in a warm brick hall",
+    "width": 1340,
+    "height": 1172,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/44-event-operator-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/44-event-operator-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/44-event-operator.webp",
+        "width": 1340
+      }
+    ]
+  },
+  {
+    "placement": 45,
+    "source": 45,
+    "page": "Atmosphere is everything",
+    "title": "Gallery 6: preparation",
+    "src": "/media/showset/45-event-final-check.webp",
+    "alt": "A event coordinator quietly straightening an ivory linen table setting before guests arrive, in warm brick hall with timber ceiling, navy stage and restrained turquoise line",
+    "width": 1341,
+    "height": 1173,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/45-event-final-check-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/45-event-final-check-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/45-event-final-check.webp",
+        "width": 1341
+      }
+    ]
+  },
+  {
+    "placement": 46,
+    "source": 48,
+    "page": "Atmosphere is everything",
+    "title": "Related project: identity",
+    "src": "/media/showset/46-identity-project-hero.webp",
+    "alt": "Hero photograph of a coherent graphic identity applied to navy textured presentation folder, ivory stitched publication, turquoise packaging sleeve, folded abstract poster, cards and canvas tote on a naturally worn oak studio workbench",
+    "width": 1536,
+    "height": 864,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/46-identity-project-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/46-identity-project-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/46-identity-project-hero.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 47,
+    "source": 58,
+    "page": "Atmosphere is everything",
+    "title": "Related project: production",
+    "src": "/media/showset/47-production-project-hero.webp",
+    "alt": "Wide documentary view from backstage toward a live unbranded performance in a believable venue",
+    "width": 1536,
+    "height": 864,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/47-production-project-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/47-production-project-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/47-production-project-hero.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 48,
+    "source": 48,
+    "page": "Made to be remembered",
+    "title": "Opening hero",
+    "src": "/media/showset/48-identity-project-hero.webp",
+    "alt": "Hero photograph of a coherent graphic identity applied to navy textured presentation folder, ivory stitched publication, turquoise packaging sleeve, folded abstract poster, cards and canvas tote on a naturally worn oak studio workbench",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/48-identity-project-hero-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/48-identity-project-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/48-identity-project-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/48-identity-project-hero.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 49,
+    "source": 49,
+    "page": "Made to be remembered",
+    "title": "Second opening image",
+    "src": "/media/showset/49-identity-early-concepts.webp",
+    "alt": "Wide overhead photographic study of a identity design in progress: used tracing paper with abstract line and block sketches, navy and turquoise ink tests, ivory paper stock samples, rough pencil thumbnails and clipped abstract references on",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/49-identity-early-concepts-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/49-identity-early-concepts-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/49-identity-early-concepts-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/49-identity-early-concepts.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 50,
+    "source": 50,
+    "page": "Made to be remembered",
+    "title": "First narrative chapter",
+    "src": "/media/showset/50-identity-designer.webp",
+    "alt": "A woman designer refining physical print proofs for an navy, ivory and turquoise identity at an oak studio desk",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/50-identity-designer-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/50-identity-designer-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/50-identity-designer-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/50-identity-designer.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 51,
+    "source": 51,
+    "page": "Made to be remembered",
+    "title": "Second narrative chapter",
+    "src": "/media/showset/51-identity-environment.webp",
+    "alt": "Realistic photographic view of a small temporary event welcome environment using a coherent navy, ivory and restrained turquoise identity",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/51-identity-environment-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/51-identity-environment-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/51-identity-environment-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/51-identity-environment.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 52,
+    "source": 52,
+    "page": "Made to be remembered",
+    "title": "Third narrative chapter",
+    "src": "/media/showset/52-identity-in-use.webp",
+    "alt": "Candid desk-level photograph of a designer passing a finished navy and turquoise publication to a colleague, only their hands and partial torsos visible",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/52-identity-in-use-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/52-identity-in-use-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/52-identity-in-use-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/52-identity-in-use.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 53,
+    "source": 53,
+    "page": "Made to be remembered",
+    "title": "Gallery 1: complete system",
+    "src": "/media/showset/53-identity-gallery-system.webp",
+    "alt": "Alternate diagonal photographic arrangement of one consistent navy-and-ivory identity with restrained turquoise offset-line motif: stitched publication partly open, a navy packaging box, sleeve, paper cards, tote and folded poster on worn o",
+    "width": 1341,
+    "height": 1173,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/53-identity-gallery-system-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/53-identity-gallery-system-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/53-identity-gallery-system.webp",
+        "width": 1341
+      }
+    ]
+  },
+  {
+    "placement": 54,
+    "source": 54,
+    "page": "Made to be remembered",
+    "title": "Gallery 2: finish detail",
+    "src": "/media/showset/54-identity-gallery-finish.webp",
+    "alt": "Macro photograph of ivory heavy uncoated paper with a navy printed block and subtle turquoise debossed offset line, the edge of a stitched publication and a folded navy packaging corner",
+    "width": 1340,
+    "height": 1172,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/54-identity-gallery-finish-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/54-identity-gallery-finish-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/54-identity-gallery-finish.webp",
+        "width": 1340
+      }
+    ]
+  },
+  {
+    "placement": 55,
+    "source": 55,
+    "page": "Made to be remembered",
+    "title": "Gallery 3: application",
+    "src": "/media/showset/55-identity-gallery-application.webp",
+    "alt": "Photographic close view of an navy canvas tote and cap on a studio chair beside a slim ivory publication, all using the same restrained turquoise offset-line abstract motif",
+    "width": 1341,
+    "height": 1173,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/55-identity-gallery-application-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/55-identity-gallery-application-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/55-identity-gallery-application.webp",
+        "width": 1341
+      }
+    ]
+  },
+  {
+    "placement": 56,
+    "source": 58,
+    "page": "Made to be remembered",
+    "title": "Related project: production",
+    "src": "/media/showset/56-production-project-hero.webp",
+    "alt": "Wide documentary view from backstage toward a live unbranded performance in a believable venue",
+    "width": 1536,
+    "height": 864,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/56-production-project-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/56-production-project-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/56-production-project-hero.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 57,
+    "source": 35,
+    "page": "Made to be remembered",
+    "title": "Related project: events",
+    "src": "/media/showset/57-event-project-hero.webp",
+    "alt": "Defining wide photograph of a single sophisticated evening ceremony in a converted industrial hall, warm brick piers and timber ceiling, navy stage at far end, one thin turquoise light line, warm small table lamps and ivory linen, restraine",
+    "width": 1536,
+    "height": 864,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/57-event-project-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/57-event-project-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/57-event-project-hero.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 58,
+    "source": 58,
+    "page": "Behind every moment",
+    "title": "Opening hero",
+    "src": "/media/showset/58-production-project-hero.webp",
+    "alt": "Wide documentary view from backstage toward a live unbranded performance in a believable venue",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/58-production-project-hero-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/58-production-project-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/58-production-project-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/58-production-project-hero.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 59,
+    "source": 59,
+    "page": "Behind every moment",
+    "title": "Second opening image",
+    "src": "/media/showset/59-production-cue-team.webp",
+    "alt": "Candid five-person show-control team behind a credible compact FOH desk, three adults, one and one adult, mixed genders",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/59-production-cue-team-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/59-production-cue-team-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/59-production-cue-team-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/59-production-cue-team.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 60,
+    "source": 60,
+    "page": "Behind every moment",
+    "title": "First narrative chapter",
+    "src": "/media/showset/60-production-audio-operator.webp",
+    "alt": "A male audio engineer actively mixing a live show at a credible digital sound console, side-rear angle with naturally placed hand on fader and concentrated expression",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/60-production-audio-operator-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/60-production-audio-operator-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/60-production-audio-operator-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/60-production-audio-operator.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 61,
+    "source": 61,
+    "page": "Behind every moment",
+    "title": "Second narrative chapter",
+    "src": "/media/showset/61-production-equipment-prep.webp",
+    "alt": "A woman technician at floor level checking a credible professional camera and locking a mounting plate onto a stable tripod before a show",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/61-production-equipment-prep-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/61-production-equipment-prep-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/61-production-equipment-prep-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/61-production-equipment-prep.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 62,
+    "source": 62,
+    "page": "Behind every moment",
+    "title": "Third narrative chapter",
+    "src": "/media/showset/62-production-live-show.webp",
+    "alt": "Photographic live-production moment viewed obliquely from the wings of a modest venue: a woman vocalist onstage holding a normal microphone, musician beside her, three and one crew member partially visible in foreground wings",
+    "width": 1536,
+    "height": 1024,
+    "mobile": "/media/showset/62-production-live-show-mobile.webp",
+    "variants": [
+      {
+        "src": "/media/showset/62-production-live-show-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/62-production-live-show-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/62-production-live-show.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 63,
+    "source": 63,
+    "page": "Behind every moment",
+    "title": "Gallery 1: backstage wide",
+    "src": "/media/showset/63-production-gallery-backstage.webp",
+    "alt": "Alternate wide backstage photograph in a real-looking modest venue, navy curtains, restrained turquoise stage accent, warm utility lights, two secured grounded flight cases, neatly routed cables and edge of a stable camera tripod",
+    "width": 1341,
+    "height": 1173,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/63-production-gallery-backstage-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/63-production-gallery-backstage-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/63-production-gallery-backstage.webp",
+        "width": 1341
+      }
+    ]
+  },
+  {
+    "placement": 64,
+    "source": 64,
+    "page": "Behind every moment",
+    "title": "Gallery 2: operator close-up",
+    "src": "/media/showset/64-production-gallery-operator.webp",
+    "alt": "Close candid side portrait of a woman video operator working at a believable compact switcher in a dim venue",
+    "width": 1341,
+    "height": 1173,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/64-production-gallery-operator-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/64-production-gallery-operator-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/64-production-gallery-operator.webp",
+        "width": 1341
+      }
+    ]
+  },
+  {
+    "placement": 65,
+    "source": 65,
+    "page": "Behind every moment",
+    "title": "Gallery 3: technical detail",
+    "src": "/media/showset/65-production-gallery-detail.webp",
+    "alt": "Extreme documentary detail of a credible cinema camera mounted securely on stable tripod beside navy theatre curtain, focus ring and properly connected single cable in focus, subtle warm practical light and restrained turquoise stage reflec",
+    "width": 1341,
+    "height": 1173,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/65-production-gallery-detail-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/65-production-gallery-detail-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/65-production-gallery-detail.webp",
+        "width": 1341
+      }
+    ]
+  },
+  {
+    "placement": 66,
+    "source": 35,
+    "page": "Behind every moment",
+    "title": "Related project: events",
+    "src": "/media/showset/66-event-project-hero.webp",
+    "alt": "Defining wide photograph of a single sophisticated evening ceremony in a converted industrial hall, warm brick piers and timber ceiling, navy stage at far end, one thin turquoise light line, warm small table lamps and ivory linen, restraine",
+    "width": 1536,
+    "height": 864,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/66-event-project-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/66-event-project-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/66-event-project-hero.webp",
+        "width": 1536
+      }
+    ]
+  },
+  {
+    "placement": 67,
+    "source": 48,
+    "page": "Behind every moment",
+    "title": "Related project: identity",
+    "src": "/media/showset/67-identity-project-hero.webp",
+    "alt": "Hero photograph of a coherent graphic identity applied to navy textured presentation folder, ivory stitched publication, turquoise packaging sleeve, folded abstract poster, cards and canvas tote on a naturally worn oak studio workbench",
+    "width": 1536,
+    "height": 864,
+    "mobile": "",
+    "variants": [
+      {
+        "src": "/media/showset/67-identity-project-hero-480w.webp",
+        "width": 480
+      },
+      {
+        "src": "/media/showset/67-identity-project-hero-960w.webp",
+        "width": 960
+      },
+      {
+        "src": "/media/showset/67-identity-project-hero.webp",
+        "width": 1536
+      }
+    ]
+  }
+]
