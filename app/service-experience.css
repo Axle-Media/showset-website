@@ -1228,24 +1228,35 @@
 
 
 
-/* Events formats: one line on desktop, horizontally scrollable on smaller
-   screens instead of wrapping the sixth item onto an orphaned second row.
-   This index alone overrides the site-wide 17px body type rule. */
+/* Events format index: larger editorial labels make use of the full desktop
+   track. On smaller screens the row stays scrollable without a visible bar.
+   The mobile runtime quietly loops the originals when motion is permitted. */
 .concept-12-root .service-experience--events .service-event-types{
+  display:flex;
   flex-wrap:nowrap;
+  justify-content:space-between;
+  align-items:center;
+  gap:0;
+  max-width:100%;
   overflow-x:auto;
   overflow-y:hidden;
-  max-width:100%;
-  scrollbar-width:thin;
-  scrollbar-color:rgba(250,249,253,.28) transparent;
-  overscroll-behavior-inline:contain;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+  overscroll-behavior-x:contain;
   -webkit-overflow-scrolling:touch;
+}
+.concept-12-root .service-experience--events .service-event-types::-webkit-scrollbar{
+  display:none;
+  width:0;
+  height:0;
 }
 .concept-12-root .service-experience--events .service-event-types li{
   flex:0 0 auto;
   white-space:nowrap;
-  font-size:clamp(12px,.9vw,14px)!important;
-  padding-inline:clamp(8px,.9vw,15px);
+  font-size:clamp(16px,1.12vw,19px)!important;
+  font-weight:600;
+  line-height:1.45;
+  padding-inline:clamp(9px,1.05vw,20px);
 }
 .concept-12-root .service-experience--events .service-event-types li:first-child{
   padding-left:0;
@@ -1253,4 +1264,33 @@
 .concept-12-root .service-experience--events .service-event-types li:last-child{
   padding-right:0;
   border-right:0;
+}
+@media(max-width:1024px){
+  .concept-12-root .service-experience--events .service-event-types{
+    justify-content:flex-start;
+    scrollbar-width:none;
+  }
+  .concept-12-root .service-experience--events .service-event-types li{
+    padding-inline:16px;
+    font-size:16px!important;
+  }
+}
+@media(max-width:600px){
+  .concept-12-root .service-experience--events .service-event-types{
+    margin-top:32px;
+    padding-top:24px;
+  }
+  .concept-12-root .service-experience--events .service-event-types li{
+    padding-inline:18px;
+    font-size:clamp(16px,4vw,17px)!important;
+  }
+  /* Duplicated items are visual continuity only, never a second
+     announcement of the same six labels to assistive technology. */
+  .concept-12-root .service-experience--events .service-event-types [data-event-format-clone]{
+    user-select:none;
+  }
+}
+.concept-12-root .service-experience--events .service-event-types:focus-visible{
+  outline:2px solid var(--teal);
+  outline-offset:4px;
 }
