@@ -107,12 +107,12 @@
         "secondaryHref": "",
         "items": [
           {
-            "id": "atmosphere-is-everything-0",
-            "title": "Atmosphere is everything",
+            "id": "the-amaze-ball-0",
+            "title": "The Amaze-Ball",
             "accent": "",
-            "description": "You can plan the programme. The feeling is what makes people stay.",
-            "image": "/media/showset/05-event-project-hero.webp",
-            "href": "/work/atmosphere-is-everything/"
+            "description": "Padel, purpose and a whole lot of production.",
+            "image": "/media/showset/amaze-ball/amaze-ball-hero.webp",
+            "href": "/work/the-amaze-ball/"
           },
           {
             "id": "made-to-be-remembered-1",
@@ -1535,12 +1535,12 @@
         "secondaryHref": "",
         "items": [
           {
-            "id": "atmosphere-is-everything-0",
-            "title": "Atmosphere is everything",
-            "accent": "Concept study",
-            "description": "A room is never just a room. The arrival, the lighting, the sound and the unexpected little detail all have something to say.",
-            "image": "/media/showset/32-event-project-hero.webp",
-            "href": "/work/atmosphere-is-everything/",
+            "id": "the-amaze-ball-0",
+            "title": "The Amaze-Ball",
+            "accent": "Project",
+            "description": "An evening of padel, hospitality and live coverage, organised and produced by SHOWSET.",
+            "image": "/media/showset/amaze-ball/amaze-ball-hero.webp",
+            "href": "/work/the-amaze-ball/",
             "category": "Events & experiences"
           },
           {
@@ -1588,205 +1588,6 @@
     "seo": {
       "title": "Our Work",
       "description": "Explore SHOWSET's growing portfolio of event, creative, digital and production projects, with clearly identified creative concept studies."
-    }
-  },
-  "atmosphere-is-everything": {
-    "slug": "atmosphere-is-everything",
-    "route": "/work/atmosphere-is-everything/",
-    "title": "Atmosphere is everything",
-    "sections": [
-      {
-        "id": "section-1",
-        "type": "pagehero",
-        "headline": "Atmosphere is everything.",
-        "accent": "",
-        "body": "A creative exploration of the way spaces make people feel before anyone says a word.",
-        "image": "/media/showset/35-event-project-hero.webp",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-2",
-        "type": "split",
-        "headline": "Design for what people remember.",
-        "accent": "",
-        "body": "We think of atmosphere as a series of choices working together. Where the eye goes first. What people hear when they walk in. How they find their way. When the energy rises and when the room gets a moment to breathe. None of it happens by accident. This study explores how a cohesive creative concept might move through spatial layout, lighting, styling, staging and guest experience. It is a reminder that the strongest event design is not just about what a place looks like. It is about what happens to people while they are in it.",
-        "image": "/media/showset/37-event-preparation.webp",
-        "pattern": true,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-3",
-        "type": "visual",
-        "headline": "Set the scene. Change the feeling.",
-        "accent": "",
-        "body": "",
-        "image": "/media/showset/36-event-defining-moment.webp",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "",
-        "buttonHref": "",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      },
-      {
-        "id": "section-4",
-        "type": "cta",
-        "headline": "Have something",
-        "accent": "in mind?",
-        "body": "A good idea deserves a good ending. What could yours become?",
-        "image": "",
-        "pattern": false,
-        "reveal": true,
-        "buttonLabel": "Start a conversation",
-        "buttonHref": "/contact/",
-        "secondaryLabel": "",
-        "secondaryHref": "",
-        "items": [],
-        "speed": 6,
-        "formTitle": "",
-        "helperText": ""
-      }
-    ],
-    "seo": {
-      "title": "Awards Night | Demonstration Case Study | SHOWSET",
-      "description": "A fictional cinematic awards-night concept study demonstrating SHOWSET's interactive case-study template."
-    },
-    "projectModules": [
-      {
-        "id": "atmosphere-intention",
-        "kind": "text",
-        "title": "The intention.",
-        "body": "Before we think about the stage or the styling, we think about the feeling. How should the room welcome people? Where should the energy build? What should stay with them after they leave?"
-      },
-      {
-        "id": "atmosphere-image-journey",
-        "kind": "image",
-        "title": "A feeling you can walk into.",
-        "body": "A sense of arrival begins long before the first word is spoken. The environment is part of the story.",
-        "src": "/media/showset/37-event-preparation.webp",
-        "alt": "In a warm brick event hall with timber ceiling, navy stage panels and thin turquoise edge lighting, five planning colleagues review a floor plan on a folding worktable during the afternoon before opening",
-        "captions": "Creative exploration. Planning, environment and guest experience."
-      },
-      {
-        "id": "atmosphere-approach",
-        "kind": "text",
-        "title": "The approach.",
-        "body": "We explore the guest journey as one connected experience. Light, movement, sound, material and timing work together to shape an atmosphere that feels considered from arrival to the final moment."
-      },
-      {
-        "id": "atmosphere-image-light",
-        "kind": "image",
-        "title": "Every detail changes the room.",
-        "body": "Scale, texture and light can change the energy of a space. We look for the choices that make the experience feel connected.",
-        "src": "/media/showset/38-event-audience.webp",
-        "alt": "An intimate natural photograph across a table at a sophisticated evening ceremony in a warm brick and timber industrial event hall",
-        "captions": "Creative exploration. Technical production and atmosphere."
-      }
-    ],
-    "caseExperience": {
-      "demo": true,
-      "tags": [
-        "Events"
-      ],
-      "openingTitle": "A night made for the spotlight.",
-      "openingBody": "A cinematic concept study inspired by the world of the Academy Awards. The art of arrival, the electricity of anticipation and a room designed for unforgettable moments.",
-      "openingImage": "/media/showset/35-event-project-hero.webp",
-      "secondImage": "/media/showset/36-event-defining-moment.webp",
-      "secondBody": "Behind every extraordinary evening is an extraordinary amount of thinking. Follow the ideas, people and little details that make an entire room feel something.",
-      "brief": {
-        "heading": "Make every moment extraordinary.",
-        "body": "Imagine an awards evening that feels cinematic from the very first invitation. An arrival that builds anticipation, a red-carpet experience that welcomes every guest into the story, and a ceremony where each moment has its own sense of occasion. Nothing should feel disconnected, from the first step inside to the final applause.\n\nFor this fictional concept, the brief was to bring every touchpoint together. Guest flow, visual identity, spatial planning, lighting, production and hospitality all had to feel part of one unmistakable evening. The ambition was not simply to fill a beautiful room. It was to give people a night they would remember.",
-        "images": [
-          "/media/showset/37-event-preparation.webp"
-        ],
-        "image": "/media/showset/37-event-preparation.webp",
-        "imageAlt": "In a warm brick event hall with timber ceiling, navy stage panels and thin turquoise edge lighting, five planning colleagues review a floor plan on a folding worktable during the afternoon before opening"
-      },
-      "intention": {
-        "heading": "More than a ceremony.",
-        "body": "The feeling was our starting point. Before imagining a stage, we imagined the excitement of arriving, the pause before the room goes dark and the collective energy when the spotlight finds its subject. We wanted those emotions to carry through the entire experience, not appear only during the main ceremony.\n\nWarmth and spectacle could exist together. Intimate details would bring guests closer, while scale, sound and light would give the evening its drama. Every visual cue and change in atmosphere had one purpose: make each guest feel part of the story unfolding around them.",
-        "images": [
-          "/media/showset/38-event-audience.webp"
-        ],
-        "image": "/media/showset/38-event-audience.webp",
-        "imageAlt": "An intimate natural photograph across a table at a sophisticated evening ceremony in a warm brick and timber industrial event hall"
-      },
-      "approach": {
-        "heading": "Every detail plays a part.",
-        "body": "We imagined the guest journey as a sequence of carefully connected scenes. First impressions began with the arrival and wayfinding. The room then opened up through layered lighting, thoughtful staging and a visual language that could move from printed details to giant screens without losing its character.\n\nBehind the atmosphere sat the practical work: layouts, technical cues, sound, guest movement and the timing of every transition. Creative direction and production planning informed each other from the first sketches. The aim was an experience that could feel effortless to a guest because every detail behind it had been considered.",
-        "images": [
-          "/media/showset/39-event-technical-prep.webp"
-        ],
-        "image": "/media/showset/39-event-technical-prep.webp",
-        "imageAlt": "A technician and a technician preparing a grounded stage lighting fixture together beside a navy stage in a warm brick industrial hall with timber ceiling"
-      },
-      "gallery": [
-        {
-          "src": "/media/showset/40-event-gallery-space.webp",
-          "alt": "Alternate diagonal view of a completed intimate evening ceremony venue, warm brick piers and timber ceiling, navy stage, thin turquoise edge light, ivory tables with small warm lamps and restrained greenery"
-        },
-        {
-          "src": "/media/showset/41-event-arrivals.webp",
-          "alt": "Candid arrival moment at a evening event: five guests, three white, one and one adult, casually arriving through warm brick foyer with restrained navy entry panel and subtle turquoise line"
-        },
-        {
-          "src": "/media/showset/42-event-lighting-detail.webp",
-          "alt": "Close photographic detail of a professional stage lighting fixture mounted securely on a low ground-supported stand beside navy scenic panels in a warm brick event hall"
-        },
-        {
-          "src": "/media/showset/43-event-decor.webp",
-          "alt": "Tactile close-up of a finished event table in a warm brick hall: ivory linen with slight natural creases, restrained green foliage, small warm shaded table lamp, navy folded paper menu with a single turquoise abstract line and no letters"
-        },
-        {
-          "src": "/media/showset/44-event-operator.webp",
-          "alt": "A woman show operator actively working at a believable lighting desk at an evening ceremony in a warm brick hall"
-        },
-        {
-          "src": "/media/showset/45-event-final-check.webp",
-          "alt": "A event coordinator quietly straightening an ivory linen table setting before guests arrive, in warm brick hall with timber ceiling, navy stage and restrained turquoise line"
-        }
-      ],
-      "bannerImage": "/media/rigging.webp",
-      "bannerAlt": "Dramatic lighting rig at an event",
-      "partners": [
-        {
-          "name": "Northstar Experiences",
-          "role": "Concept and event direction (fictional)"
-        },
-        {
-          "name": "Framehouse Studio",
-          "role": "Creative and spatial design (fictional)"
-        },
-        {
-          "name": "Lumen Technical",
-          "role": "Lighting and audiovisual (fictional)"
-        },
-        {
-          "name": "Stagecraft Collective",
-          "role": "Stage production (fictional)"
-        }
-      ]
     }
   },
   "made-to-be-remembered": {
@@ -2338,5 +2139,225 @@
       "title": "Our disciplines | SHOWSET",
       "description": "A launch might need an identity. An event might need a digital home. A campaign might need a film, a space or a piece of technology to make it work. We move between all four worlds so the idea stays in one piece."
     }
+  },
+  "the-amaze-ball": {
+    "slug": "the-amaze-ball",
+    "route": "/work/the-amaze-ball/",
+    "title": "The Amaze-Ball",
+    "sections": [
+      {
+        "id": "section-1",
+        "type": "pagehero",
+        "headline": "A grand slam.",
+        "accent": "For a greater cause.",
+        "body": "A charity padel tournament and cocktail evening built around sport, connection and a purpose beyond the court.",
+        "image": "/media/showset/amaze-ball/amaze-ball-hero.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-2",
+        "type": "split",
+        "headline": "Sport with a bigger purpose.",
+        "accent": "",
+        "body": "Amazeballs brought together a padel tournament and an evening of hospitality on 24 October 2026 at Padel 365, Century City. The Amaze-Ball put a R50,000 Golden Point Grand Slam at the centre of a charity event supporting the organisation's mission to give used padel balls a second life.\n\nSHOWSET was responsible for organising the event and bringing its physical and technical requirements together. The venue needed to work as a sporting environment, an evening gathering and a live production space, all on the same night.",
+        "image": "/media/showset/amaze-ball/amaze-ball-impact.webp",
+        "pattern": true,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-3",
+        "type": "visual",
+        "headline": "From court to crowd.",
+        "accent": "",
+        "body": "Sport, sound, lighting and live coverage brought together for one connected evening.",
+        "image": "/media/showset/amaze-ball/amaze-ball-padel.webp",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "",
+        "buttonHref": "",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      },
+      {
+        "id": "section-4",
+        "type": "cta",
+        "headline": "Have an event",
+        "accent": "in mind?",
+        "body": "From the first plan to the final technical check, we help bring every moving part together.",
+        "image": "",
+        "pattern": false,
+        "reveal": true,
+        "buttonLabel": "Let's talk",
+        "buttonHref": "/contact/",
+        "secondaryLabel": "",
+        "secondaryHref": "",
+        "items": [],
+        "speed": 6,
+        "formTitle": "",
+        "helperText": ""
+      }
+    ],
+    "seo": {
+      "title": "The Amaze-Ball | Charity Padel Event | SHOWSET",
+      "description": "How SHOWSET organised The Amaze-Ball for Amazeballs, bringing venue setup, event production, lighting, sound, screens and live broadcasting together in Century City."
+    },
+    "projectModules": [
+      {
+        "id": "amaze-intention",
+        "kind": "text",
+        "title": "The intention.",
+        "body": "The idea was to make the experience feel connected from court to crowd. Players needed a place to compete, while guests needed somewhere to gather, follow the action and enjoy the evening.\n\nAmazeballs' distinctive visual identity and the Go for Gold dress theme helped give the occasion its character. The role of the environment, from the event stage to the cocktail tables and screens, was to support those different moments without taking attention away from the cause."
+      },
+      {
+        "id": "amaze-guest",
+        "kind": "image",
+        "title": "Built around the experience.",
+        "body": "The courts, guest spaces and event branding were all part of the evening.",
+        "src": "/media/showset/amaze-ball/amaze-ball-impact.webp",
+        "alt": "Guests beside the bright yellow padel-ball Golden Point Grand Slam installation"
+      },
+      {
+        "id": "amaze-approach",
+        "kind": "text",
+        "title": "The approach.",
+        "body": "SHOWSET coordinated the event setup and prepared the venue with cocktail tables, seating, a stage, lighting, television displays and sound. The audio setup included microphones for the MC and the requirements of the evening programme.\n\nOur production remit also covered the live broadcast, bringing camera coverage and technical delivery into the same event plan. With sport happening on the courts and conversations happening around them, the practical challenge was making all the moving parts work together as one experience."
+      },
+      {
+        "id": "amaze-production",
+        "kind": "image",
+        "title": "Live from the venue.",
+        "body": "Camera coverage, MC audio and technical production formed part of SHOWSET's event delivery.",
+        "src": "/media/showset/amaze-ball/amaze-ball-broadcast.webp",
+        "alt": "Professional camera filming a speaker against the Amazeballs backdrop"
+      }
+    ],
+    "caseExperience": {
+      "demo": false,
+      "tags": [
+        "Events",
+        "Content"
+      ],
+      "openingTitle": "A grand slam. For a greater cause.",
+      "openingBody": "The Amaze-Ball brought padel, people and purpose together. SHOWSET made the event happen, from organising the evening to its technical production.",
+      "openingImage": "/media/showset/amaze-ball/amaze-ball-hero.webp",
+      "secondTitle": "Where sport met the spotlight.",
+      "secondImage": "/media/showset/amaze-ball/amaze-ball-padel.webp",
+      "secondBody": "A charity padel tournament, a cocktail evening and a live broadcast, brought together at Padel 365 in Century City.",
+      "brief": {
+        "heading": "One night. More than a game.",
+        "body": "Amazeballs brought together a padel tournament and an evening of hospitality on 24 October 2026 at Padel 365, Century City. The Amaze-Ball put a R50,000 Golden Point Grand Slam at the centre of a charity event supporting the organisation's mission to give used padel balls a second life.\n\nSHOWSET was responsible for organising the event and bringing its physical and technical requirements together. The venue needed to work as a sporting environment, an evening gathering and a live production space, all on the same night.",
+        "image": "/media/showset/amaze-ball/amaze-ball-impact.webp",
+        "images": [
+          "/media/showset/amaze-ball/amaze-ball-impact.webp"
+        ],
+        "imageAlt": "Guests beside the bright yellow padel-ball Golden Point Grand Slam installation"
+      },
+      "intention": {
+        "heading": "Every moment had a place.",
+        "body": "The idea was to make the experience feel connected from court to crowd. Players needed a place to compete, while guests needed somewhere to gather, follow the action and enjoy the evening.\n\nAmazeballs' distinctive visual identity and the Go for Gold dress theme helped give the occasion its character. The role of the environment, from the event stage to the cocktail tables and screens, was to support those different moments without taking attention away from the cause.",
+        "image": "/media/showset/amaze-ball/amaze-ball-padel.webp",
+        "images": [
+          "/media/showset/amaze-ball/amaze-ball-padel.webp"
+        ],
+        "imageAlt": "Padel players on the blue court during The Amaze-Ball"
+      },
+      "approach": {
+        "heading": "The work behind the moment.",
+        "body": "SHOWSET coordinated the event setup and prepared the venue with cocktail tables, seating, a stage, lighting, television displays and sound. The audio setup included microphones for the MC and the requirements of the evening programme.\n\nOur production remit also covered the live broadcast, bringing camera coverage and technical delivery into the same event plan. With sport happening on the courts and conversations happening around them, the practical challenge was making all the moving parts work together as one experience.",
+        "image": "/media/showset/amaze-ball/amaze-ball-broadcast.webp",
+        "images": [
+          "/media/showset/amaze-ball/amaze-ball-broadcast.webp"
+        ],
+        "imageAlt": "Professional camera filming a speaker against the Amazeballs backdrop"
+      },
+      "gallery": [
+        {
+          "id": "amaze-ball-hero",
+          "src": "/media/showset/amaze-ball/amaze-ball-hero.webp",
+          "alt": "Camera operator filming the MC on stage at The Amaze-Ball",
+          "credit": "SHOWSET event photography"
+        },
+        {
+          "id": "amaze-ball-impact",
+          "src": "/media/showset/amaze-ball/amaze-ball-impact.webp",
+          "alt": "Guests beside the bright yellow padel-ball Golden Point Grand Slam installation",
+          "credit": "SHOWSET event photography"
+        },
+        {
+          "id": "amaze-ball-padel",
+          "src": "/media/showset/amaze-ball/amaze-ball-padel.webp",
+          "alt": "Padel players on the blue court during The Amaze-Ball",
+          "credit": "SHOWSET event photography"
+        },
+        {
+          "id": "amaze-ball-competition",
+          "src": "/media/showset/amaze-ball/amaze-ball-competition.webp",
+          "alt": "Players and spectators beside a padel court",
+          "credit": "SHOWSET event photography"
+        },
+        {
+          "id": "amaze-ball-broadcast",
+          "src": "/media/showset/amaze-ball/amaze-ball-broadcast.webp",
+          "alt": "Professional camera filming a speaker against the Amazeballs backdrop",
+          "credit": "SHOWSET event photography"
+        },
+        {
+          "id": "amaze-ball-interview",
+          "src": "/media/showset/amaze-ball/amaze-ball-interview.webp",
+          "alt": "Interview with an Amazeballs-branded microphone at the event",
+          "credit": "SHOWSET event photography"
+        },
+        {
+          "id": "amaze-ball-hospitality",
+          "src": "/media/showset/amaze-ball/amaze-ball-hospitality.webp",
+          "alt": "Cocktail-style food being served to guests during the evening",
+          "credit": "SHOWSET event photography"
+        },
+        {
+          "id": "amaze-ball-mc",
+          "src": "/media/showset/amaze-ball/amaze-ball-mc.webp",
+          "alt": "MC speaking into a microphone on stage at the charity event",
+          "credit": "SHOWSET event photography"
+        },
+        {
+          "id": "amaze-ball-on-court",
+          "src": "/media/showset/amaze-ball/amaze-ball-on-court.webp",
+          "alt": "A camera operator filming the MC beside the padel court",
+          "credit": "SHOWSET event photography"
+        }
+      ],
+      "partners": [
+        {
+          "name": "Amazeballs",
+          "role": "Charity initiative and event partner"
+        },
+        {
+          "name": "SHOWSET",
+          "role": "Event organisation and technical production"
+        }
+      ]
+    },
+    "publishedAt": "2026-10-30"
   }
 }

@@ -18,7 +18,7 @@ export const routeKeys: Record<string, string> = {
   "/our-studio/": "studio",
   "/our-work/": "work",
   "/contact/": "contact",
-  "/work/atmosphere-is-everything/": "case-events",
+  "/work/the-amaze-ball/": "case-events",
   "/work/made-to-be-remembered/": "case-identity",
   "/work/behind-every-moment/": "case-production",
   "/services/": "home",
