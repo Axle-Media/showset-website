@@ -34,13 +34,24 @@ jobs:
         run: npm run check:seo
       - name: Scalable case-study portfolio regression
         run: node qa/portfolio-growth.cjs
+      - name: Check release candidate touches only approved content
+        if: ${{ github.event_name == 'pull_request' && startsWith(github.head_ref, 'release/studio-r') }}
+        env:
+          SHOWSET_RELEASE_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --no-tags --depth=1 origin "$SHOWSET_RELEASE_BASE_SHA"
+          node scripts/verify-studio-release-scope.mjs
       - name: Verify reviewed Studio source candidate before build
         if: ${{ github.event_name == 'pull_request' && startsWith(github.head_ref, 'release/studio-r') }}
+        env:
+          SHOWSET_RELEASE_BRANCH: ${{ github.head_ref }}
         run: node scripts/verify-studio-release.mjs --target .
       - name: Static Next.js build
         run: npm run build
       - name: Verify full static output matches reviewed source
         if: ${{ github.event_name == 'pull_request' && startsWith(github.head_ref, 'release/studio-r') }}
+        env:
+          SHOWSET_RELEASE_BRANCH: ${{ github.head_ref }}
         run: node scripts/verify-studio-release.mjs --target . --built
       - name: Browser acceptance checks (homepage, cases, services and Studio)
         run: |
