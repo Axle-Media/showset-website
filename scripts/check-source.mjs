@@ -40,4 +40,11 @@ const workRenderer=fs.readFileSync('lib/concept-12/portfolio-content.ts','utf8')
 if(!workRenderer.includes('View the project')||workRenderer.includes('Explore the study'))
   bad.push('Our Work: project-card CTA wording differs from approved copy');
 
+// Services introduction now carries only the two-line heading.
+const servicesIntro=pages.home.sections.find(section=>section.type==='services');
+if(servicesIntro?.headline!=='Every discipline.'||servicesIntro?.accent!=='One creative partner.'||servicesIntro?.body!=='')
+  bad.push('Home services: director-approved heading or removed copy has regressed');
+if(!html.includes('<h2 class="services-panel-heading"><span>Every discipline<span class="service-heading-period">.</span></span><span class="accent-text">One creative partner<span class="service-heading-accent-period showset-ending-punctuation">.</span></span></h2>\n<p hidden></p>'))
+  bad.push('Home services: static heading and hidden copy are out of sync');
+
 console.log(`${Object.keys(pages).length} pages; ${Object.values(pages).reduce((n,p)=>n+p.sections.length,0)} sections; ${bad.length} errors`);bad.forEach(console.error);process.exitCode=bad.length?1:0;
