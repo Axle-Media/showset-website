@@ -66,6 +66,8 @@ assert.equal(cards[0].getAttribute('data-work-order'),'0');
 assert.equal(cards[0].getAttribute('data-work-tags'),'Events|Digital');
 assert.ok(cards.every(card=>card.querySelector('.case-photo')&&card.querySelector('.case-story')));
 assert.ok(cards.every(card=>card.querySelector('h2')&&card.querySelector('a')===null&&card.getAttribute('href')?.startsWith('/work/')));
+assert.ok(cards.every(card=>card.querySelector('.work-feature-discover')?.textContent.includes('View the project')),
+ 'Every portfolio card should say View the project');
 const amaze=cards.find(card=>card.getAttribute('href')==='/work/the-amaze-ball/');
 assert.ok(amaze,'Amaze-Ball card is present');
 assert.deepEqual([...amaze.querySelectorAll('.case-title-line')].map(line=>line.textContent.trim()),
