@@ -26,4 +26,18 @@ if(!html.includes('<div class="portfolio-intro" hidden><p></p></div>')||
    !html.includes('<span>Work that</span></span><span class="wipe-line accent-line"><span>speaks for itself.</span>'))
   bad.push('home featured work: static title-only markup is out of sync');
 
+// Directors' portfolio CTA and Elmboog description must remain consistent
+// between the Home source, the Our Work source and the initial server markup.
+const elmboogCopy='A brand identity rooted in the land, brought to life across a brand guide, company profile, stationery and presentations.';
+for(const [pageName,section] of [['Home',featured],['Our Work',pages['our-work'].sections.find(s=>s.type==='work')]]){
+  const item=section?.items.find(x=>x.href==='/work/made-to-be-remembered/');
+  if(item?.description!==elmboogCopy)bad.push(pageName+': Elmboog description differs from approved copy');
+}
+if(!html.includes('<p>'+elmboogCopy+'</p>'))bad.push('Home: Elmboog static card description differs from approved copy');
+if((html.match(/View the project <b>/g)||[]).length!==3 ||
+   /Explore the study/.test(html))bad.push('Home: some project-card CTAs use outdated wording');
+const workRenderer=fs.readFileSync('lib/concept-12/portfolio-content.ts','utf8');
+if(!workRenderer.includes('View the project')||workRenderer.includes('Explore the study'))
+  bad.push('Our Work: project-card CTA wording differs from approved copy');
+
 console.log(`${Object.keys(pages).length} pages; ${Object.values(pages).reduce((n,p)=>n+p.sections.length,0)} sections; ${bad.length} errors`);bad.forEach(console.error);process.exitCode=bad.length?1:0;
