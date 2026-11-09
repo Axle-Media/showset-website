@@ -296,6 +296,9 @@ export function bindConcept(
         }
         heading(".services-panel-heading", s);
         body(".services-stage-intro>p", s);
+        // Keep Studio editable: a future paragraph can be shown again.
+        const description = host.querySelector<HTMLElement>(".services-stage-intro > p");
+        if (description) description.hidden = !s.body.trim();
         s.items.forEach((x, i) => {
           if (itemChanged(s, i, "title"))
             text(`[data-service="${i}"] .discipline-name`, x.title);
