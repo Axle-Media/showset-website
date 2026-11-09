@@ -70,17 +70,18 @@ if(!serviceRuntime.includes('options.serviceOverrides?.[n]')||
    !serviceRuntime.includes("'Discover more about '+override.title"))
   bad.push('Home services: dynamic panel descriptions or accessible CTA label regressed');
 
-// Directors' heading-only approach and universal legacy closing CTA replacement.
+// Keep the approach heading-only; restore copy to the shared closing CTA.
 const dot=pages.home.sections.find(s=>s.type==='dot');
 if(dot?.body!=='')bad.push('Home approach: obsolete explanatory paragraph remains');
-const closing={headline:'Have an idea',accent:'worth bringing to life?',body:'',
-  buttonLabel:'Start a conversation',buttonHref:'/contact/#contact-form'};
+const closing={headline:'Have an idea',accent:'worth bringing to life?',
+  body:'The brief can be polished, half-written or still living entirely in your head. Tell us what you are trying to make happen. We know where to start.',buttonLabel:'Start a conversation',buttonHref:'/contact/#contact-form'};
 for(const pageName of ['home','our-studio','services']){
   const s=pages[pageName].sections.find(s=>s.type==='cta');
   if(!s||Object.entries(closing).some(([k,v])=>s[k]!==v))
     bad.push(pageName+': closing CTA does not match approved conversation wording or destination');
 }
-if((html.split('<p hidden></p>').length-1)<3 ||
+if(!html.includes('<div class="end-bottom"><p>'+closing.body+'</p>') ||
+   !html.includes('<div class="studio-final-copy"><p>'+closing.body+'</p></div>') ||
    (html.split('Start a conversation <span aria-hidden="true">↗</span>').length-1)<2 ||
    /Got a beautifully|The small stuff is never small/.test(html))
   bad.push('Static Home/Studio: outdated closing CTA or approach paragraph');
