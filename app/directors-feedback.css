@@ -11,3 +11,8 @@
     text-wrap:balance;
   }
 }
+
+/* Keep the full stop ivory on the turquoise second hero line. */
+.concept-12-root #hero-second .hero-period {
+  color:var(--ice)!important;
+}
