@@ -5,6 +5,7 @@ import { refineHeadingPeriods } from "./typography";
 import { renderImmersiveCase } from "./immersive-case";
 import { caseExperienceFor } from "./case-content";
 import { portfolioEntries, renderPortfolioIndex } from "./portfolio-content";
+import { splitCaseTitle } from "./case-title";
 import type { Block, Globals, PageData } from "@/lib/types";
 import { defaultPages, defaultGlobals } from "@/lib/data";
 import { safeHref } from "@/lib/safe";
@@ -259,8 +260,10 @@ export function bindConcept(
         action(".hero-second-links .text-arrow-link", s, true);
         if (changed(s, "items") && s.items[0]) {
           const x = s.items[0];
+          const punctuation = (x.accent || "").trimEnd().match(/[.!?]$/)?.[0] || "";
+          const accent = punctuation ? (x.accent || "").trimEnd().slice(0, -1) : x.accent || "";
           host.querySelector("#hero-second h2")!.innerHTML =
-            `<span class="wipe-line"><span>${rich(x.title)}</span></span><span class="wipe-line accent-line"><span>${rich(x.accent || "")}</span></span>`;
+            `<span class="wipe-line"><span>${rich(x.title)}</span></span><span class="wipe-line accent-line"><span>${rich(accent)}${punctuation ? '<span class="hero-period">' + punctuation + '</span>' : ""}</span></span>`;
           text(".hero-second-copy", x.description);
         }
       } else if (s.type === "split") {
@@ -293,6 +296,9 @@ export function bindConcept(
         }
         heading(".services-panel-heading", s);
         body(".services-stage-intro>p", s);
+        // Keep Studio editable: a future paragraph can be shown again.
+        const description = host.querySelector<HTMLElement>(".services-stage-intro > p");
+        if (description) description.hidden = !s.body.trim();
         s.items.forEach((x, i) => {
           if (itemChanged(s, i, "title"))
             text(`[data-service="${i}"] .discipline-name`, x.title);
@@ -319,6 +325,9 @@ export function bindConcept(
       } else if (s.type === "work") {
         heading(".portfolio-heading h2", s);
         body(".portfolio-intro>p", s);
+        // Preserve Studio editing: bring the paragraph back when copy is added.
+        const intro = host.querySelector<HTMLElement>(".portfolio-intro");
+        if (intro) intro.hidden = !s.body.trim();
         bindWork(s, "#case-rail > [data-case-slide]");
       } else if (s.type === "dot") {
         if (changed(s, "headline")) {
@@ -328,9 +337,15 @@ export function bindConcept(
         }
         body(".dot-stage > .dot-words>p", s);
         body(".dot-colour-reveal .dot-words>p", s);
+        // Both visible and inverted copies need the same visibility rule.
+        host.querySelectorAll<HTMLElement>(".dot-stage .dot-words > p").forEach(p => {
+          p.hidden = !s.body.trim();
+        });
       } else if (s.type === "cta") {
         heading("#ending h2", s);
         body(".end-bottom>p", s);
+        const closingCopy = host.querySelector<HTMLElement>("#ending .end-bottom > p");
+        if (closingCopy) closingCopy.hidden = !s.body.trim();
         action(".end-link", s);
       }
     }
@@ -387,6 +402,10 @@ export function bindConcept(
           }
           if (copy) copy.textContent = plain(follow.description);
         }
+      }
+      if (scope.matches(".studio-final")) {
+        const closingCopy = scope.querySelector<HTMLElement>(".studio-final-copy");
+        if (closingCopy) closingCopy.hidden = !s.body.trim();
       }
       if (changed(s, "body")) {
         const content = scope.querySelector<HTMLElement>(
@@ -504,10 +523,21 @@ export function bindConcept(
       if (canonical || itemChanged(s, i, "title")) {
         const heading = card.querySelector("h2,h3");
         if (heading) {
-          // Preserve the approved teal period when Studio adds a new card.
-          const period = heading.querySelector(".teal-dot");
-          heading.textContent = period ? cardTitle.trim().replace(/[.!?]\s*$/, "") : cardTitle;
-          if (period) heading.append(period);
+          // A full stop followed by more title always begins a new line.
+          // Rebuild the title, not the surrounding card, so editing and
+          // carousel state remain untouched when Studio changes its copy.
+          const titleLines = splitCaseTitle(cardTitle);
+          const finalPeriod = heading.querySelector(".teal-dot") || document.createElement("span");
+          finalPeriod.className = "teal-dot";
+          finalPeriod.textContent = ".";
+          heading.replaceChildren(...titleLines.map((line, index) => {
+            const span = document.createElement("span");
+            span.className = "case-title-line";
+            const last = index === titleLines.length - 1;
+            span.textContent = last ? line.replace(/[.!?]\s*$/, "") : line;
+            if (last) span.append(finalPeriod);
+            return span;
+          }));
         }
       }
       if (canonical || itemChanged(s, i, "description")) {

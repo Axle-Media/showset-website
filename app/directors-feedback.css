@@ -1,0 +1,91 @@
+/* Director-approved homepage copy is longer than the original two-line
+   headline. Allow the photographic hero title sufficient width on desktop
+   without altering its typography, animation, photo or mobile layout. */
+@media (min-width:801px) {
+  .concept-12-root #main #hero-track #hero-foreground {
+    width:min(1050px,calc(100% - 2 * var(--gutter)));
+    max-width:min(1050px,calc(100% - 2 * var(--gutter)));
+  }
+  .concept-12-root #main #hero-track .hero-title > .line {
+    white-space:normal;
+    text-wrap:balance;
+  }
+}
+
+/* Keep the full stop ivory on the turquoise second hero line. */
+.concept-12-root #hero-second .hero-period {
+  color:var(--ice)!important;
+}
+
+/* Homepage portfolio introduction is intentionally heading-only.
+   Keep Studio able to restore the paragraph without changing the layout. */
+.concept-12-root #portfolio-section .portfolio-intro[hidden] {
+  display:none!important;
+}
+.concept-12-root #portfolio-section .portfolio-heading:has(.portfolio-intro[hidden]) {
+  grid-template-columns:minmax(0,1fr);
+}
+
+/* Case-study headings: a first full stop followed by more wording always
+   introduces a new line, consistently on Home, Our Work and case pages.
+   Existing first-line / accent-line punctuation colours are retained. */
+.concept-12-root #portfolio-section .case-title-line,
+.concept-12-root .work-page-gallery .case-title-line,
+.concept-12-root .case-experience .case-fallback-title-line {
+  display:block;
+}
+.concept-12-root #portfolio-section .case-title-line:nth-child(n+2),
+.concept-12-root .work-page-gallery .case-title-line:nth-child(n+2) {
+  color:var(--teal);
+}
+.concept-12-root #portfolio-section .case-title-line:nth-child(n+2) .teal-dot,
+.concept-12-root .work-page-gallery .case-title-line:nth-child(n+2) .teal-dot,
+.concept-12-root #portfolio-section .case-title-line:nth-child(n+2) .teal-dot .headline-period,
+.concept-12-root .work-page-gallery .case-title-line:nth-child(n+2) .teal-dot .headline-period {
+  color:var(--ice)!important;
+}
+/* The case-story motion engine measures each authored sentence separately,
+   then wraps within that sentence only when the viewport requires it. */
+.concept-12-root .case-heading-measure > .case-heading-measure-segment {
+  display:block;
+  white-space:normal;
+}
+.concept-12-root .case-heading-measure-segment > span {
+  display:inline-block;
+  white-space:nowrap;
+}
+
+/* The approved approach statement is intentionally heading-only, in both
+   colour-reveal layers. Keep the text node for future Studio content edits. */
+.concept-12-root #dot-track .dot-words > p[hidden] {
+  display:none!important;
+}
+
+/* The shared closing CTA has a heading and direct email-form button only.
+   The editable body slot stays in the DOM without occupying any space. */
+.concept-12-root #ending .end-bottom > p[hidden],
+.concept-12-root #case-ending .end-bottom > p[hidden],
+.concept-12-root .studio-final .studio-final-copy[hidden] {
+  display:none!important;
+}
+.concept-12-root #ending .end-bottom:has(>p[hidden]),
+.concept-12-root #case-ending .end-bottom:has(>p[hidden]) {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+  gap:0;
+  max-width:645px;
+}
+@media(max-width:600px) {
+  .concept-12-root #ending .end-bottom:has(>p[hidden]),
+  .concept-12-root #case-ending .end-bottom:has(>p[hidden]) {
+    align-items:center;
+    justify-content:center;
+  }
+}
+
+/* Direct email-form links land beneath the sticky mobile/desktop header. */
+.concept-12-root #contact-form {
+  scroll-margin-top:calc(var(--header-height) + 20px);
+}

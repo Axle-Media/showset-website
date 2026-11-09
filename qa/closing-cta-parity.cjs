@@ -31,16 +31,16 @@ function near(a,b,eps=1.5){return Number.isFinite(a)&&Number.isFinite(b)&&Math.a
     const root=document.querySelector('.view.is-current');
     const s=root.querySelector(section);
     const h=s?.querySelector(heading),p=s?.querySelector(paragraph),a=s?.querySelector(button);
-    if(!s||!h||!p||!a)return {missing:true,details:[!!s,!!h,!!p,!!a]};
-    const H=getComputedStyle(h),P=getComputedStyle(p),A=getComputedStyle(a),S=getComputedStyle(s),BG=getComputedStyle(s,'::before');
+    if(!s||!h||!a)return {missing:true,details:[!!s,!!h,!!p,!!a]};
+    const H=getComputedStyle(h),P=p?getComputedStyle(p):null,A=getComputedStyle(a),S=getComputedStyle(s),BG=getComputedStyle(s,'::before');
     const rect=n=>{const r=n.getBoundingClientRect();return{x:r.left,y:r.top,w:r.width,h:r.height}};
     return {
       route:location.pathname,
       headingText:h.textContent?.trim(),
-      heading:rect(h),paragraph:rect(p),button:rect(a),section:rect(s),
+      heading:rect(h),paragraph:p?rect(p):null,button:rect(a),section:rect(s),
       headingFont:H.fontSize,headingWeight:H.fontWeight,headingLineHeight:H.lineHeight,
       headingTracking:H.letterSpacing,headingTextAlign:H.textAlign,
-      bodyFont:P.fontSize,bodyLineHeight:P.lineHeight,
+      bodyFont:P?.fontSize??null,bodyLineHeight:P?.lineHeight??null,
       buttonFont:A.fontSize,buttonRadius:A.borderRadius,
       buttonColor:A.backgroundColor,buttonTextColor:A.color,
       buttonTracking:A.letterSpacing,buttonLineHeight:A.lineHeight,buttonBorder:A.border,
@@ -74,14 +74,15 @@ function near(a,b,eps=1.5){return Number.isFinite(a)&&Number.isFinite(b)&&Math.a
    if(i===4)continue; // Studio is the approved reference for every other page.
    if(entry.missing||studio.missing)continue;
    const metrics=['headingFont','headingWeight','headingLineHeight','headingTracking','headingTextAlign',
-      'bodyFont','bodyLineHeight','buttonFont','buttonRadius','buttonColor','buttonTextColor','buttonTracking','buttonLineHeight','buttonBorder',
+      'buttonFont','buttonRadius','buttonColor','buttonTextColor','buttonTracking','buttonLineHeight','buttonBorder',
       'sectionPaddingTop','sectionPaddingBottom','sectionBackground',
       'pattern','patternSize','patternPosition','patternOpacity','patternRepeat','patternLayer','patternCanvasHeight'];
    const different=metrics.filter(key=>entry[key]!==studio[key]).map(key=>({key,actual:entry[key],reference:studio[key]}));
    pass('Service matches Studio typography, pattern, CTA styling '+entry.route+' @'+width,
       different.length===0,different);
    const position={
-    title:near(entry.heading.x,studio.heading.x),body:near(entry.paragraph.x,studio.paragraph.x),
+    title:near(entry.heading.x,studio.heading.x),
+    body:entry.paragraph&&studio.paragraph?near(entry.paragraph.x,studio.paragraph.x):true,
     button:width<=600
       ? near(entry.button.x+entry.button.w/2,studio.button.x+studio.button.w/2,2.5) &&
         near(entry.button.x+entry.button.w/2,entry.section.x+entry.section.w/2,3)
@@ -91,6 +92,11 @@ function near(a,b,eps=1.5){return Number.isFinite(a)&&Number.isFinite(b)&&Math.a
    };
    pass('Closing CTA content uses same left/top placement '+entry.route+' @'+width,
     Object.values(position).every(Boolean),position);
+   if(i<4){
+    const reference=screenshots[0];
+    pass('Service paragraphs retain shared typography '+entry.route+' @'+width,
+      entry.bodyFont===reference.bodyFont&&entry.bodyLineHeight===reference.bodyLineHeight);
+   }
   }
  }
  } finally {

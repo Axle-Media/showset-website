@@ -55,9 +55,12 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
     layer:getComputedStyle(el,'::before').zIndex
   }));
   ck('Studio approved oversized nonrepeating graphic behind closing CTA '+width,
-    ending.heading?.includes('complicated idea')&&ending.background.includes('studio-cta-pattern.svg')&&ending.repeat==='no-repeat'&&ending.layer==='0',
+    ending.heading?.includes('Have an idea')&&ending.heading?.includes('worth bringing to life?')&&ending.background.includes('studio-cta-pattern.svg')&&ending.repeat==='no-repeat'&&ending.layer==='0',
     ending);
-  ck('Studio CTA links to Contact '+width,await page.locator('.view.is-current .studio-final .editorial-action').getAttribute('href')==='/contact/');
+  ck('Studio CTA links to email form '+width,await page.locator('.view.is-current .studio-final .editorial-action').getAttribute('href')==='/contact/#contact-form');
+  ck('Studio closing CTA has no extra paragraph '+width,
+    await page.locator('.view.is-current .studio-final .studio-final-copy').isHidden() &&
+    (await page.locator('.view.is-current .studio-final .editorial-action').innerText()).includes('Start a conversation'));
   ck('Studio no horizontal overflow '+width,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
   if([1440,390].includes(width))await page.screenshot({path:'qa-results/editorial/studio-'+width+'.png',fullPage:true});
   await page.goto(base+'/our-work/');
