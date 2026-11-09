@@ -25,3 +25,30 @@
 .concept-12-root #portfolio-section .portfolio-heading:has(.portfolio-intro[hidden]) {
   grid-template-columns:minmax(0,1fr);
 }
+
+/* Case-study headings: a first full stop followed by more wording always
+   introduces a new line, consistently on Home, Our Work and case pages.
+   Existing first-line / accent-line punctuation colours are retained. */
+.concept-12-root #portfolio-section .case-title-line,
+.concept-12-root .work-page-gallery .case-title-line,
+.concept-12-root .case-experience .case-fallback-title-line {
+  display:block;
+}
+.concept-12-root #portfolio-section .case-title-line:nth-child(n+2),
+.concept-12-root .work-page-gallery .case-title-line:nth-child(n+2) {
+  color:var(--teal);
+}
+.concept-12-root #portfolio-section .case-title-line:nth-child(n+2) .teal-dot,
+.concept-12-root .work-page-gallery .case-title-line:nth-child(n+2) .teal-dot {
+  color:var(--ice)!important;
+}
+/* The case-story motion engine measures each authored sentence separately,
+   then wraps within that sentence only when the viewport requires it. */
+.concept-12-root .case-heading-measure > .case-heading-measure-segment {
+  display:block;
+  white-space:normal;
+}
+.concept-12-root .case-heading-measure-segment > span {
+  display:inline-block;
+  white-space:nowrap;
+}
