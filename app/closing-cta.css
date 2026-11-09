@@ -205,3 +205,19 @@
     --showset-close-pattern-opacity:.32;
   }
 }
+
+/* Home and individual case studies use the shorter, heading-and-button-only
+   closing CTA. Reduce the surplus desktop/tablet height and centre both
+   elements as one group, without changing artwork, typography or the
+   previously approved mobile layout. */
+@media (min-width:601px) {
+  .concept-12-root #main :is(#ending,#case-ending) {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    min-height:clamp(410px,28vw,500px);
+    padding-top:clamp(58px,5vw,88px);
+    padding-bottom:clamp(58px,5vw,88px);
+  }
+}
