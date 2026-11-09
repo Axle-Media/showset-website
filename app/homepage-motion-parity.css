@@ -164,3 +164,13 @@
   #main .dot-stage > .dot-words,
   #main .dot-colour-reveal > .dot-words{transform:none!important}
 }
+
+/* The second Home story caption is intentionally one editorial line on
+   desktop. Only widen this caption; the first and final chapters and the
+   responsive mobile/tablet wrapping retain their existing measures. */
+@media (min-width:1100px) {
+  #main .film-step[data-film-step="1"] > p {
+    max-width:min(930px,100%);
+    white-space:nowrap;
+  }
+}
