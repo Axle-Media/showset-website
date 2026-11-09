@@ -70,4 +70,21 @@ if(!serviceRuntime.includes('options.serviceOverrides?.[n]')||
    !serviceRuntime.includes("'Discover more about '+override.title"))
   bad.push('Home services: dynamic panel descriptions or accessible CTA label regressed');
 
+// Directors' heading-only approach and universal legacy closing CTA replacement.
+const dot=pages.home.sections.find(s=>s.type==='dot');
+if(dot?.body!=='')bad.push('Home approach: obsolete explanatory paragraph remains');
+const closing={headline:'Have an idea',accent:'worth bringing to life?',body:'',
+  buttonLabel:'Start a conversation',buttonHref:'/contact/#contact-form'};
+for(const pageName of ['home','our-studio','services']){
+  const s=pages[pageName].sections.find(s=>s.type==='cta');
+  if(!s||Object.entries(closing).some(([k,v])=>s[k]!==v))
+    bad.push(pageName+': closing CTA does not match approved conversation wording or destination');
+}
+if((html.match(/<p hidden><\\/p>/g)||[]).length<3 ||
+   (html.match(/Start a conversation <span aria-hidden="true">↗<\\/span>/g)||[]).length<2 ||
+   /Got a beautifully|The small stuff is never small/.test(html))
+  bad.push('Static Home/Studio: outdated closing CTA or approach paragraph');
+if(!html.includes('href="/contact/#contact-form"') || !html.includes('id="contact-form"'))
+  bad.push('Contact CTA: missing direct email form anchor');
+
 console.log(`${Object.keys(pages).length} pages; ${Object.values(pages).reduce((n,p)=>n+p.sections.length,0)} sections; ${bad.length} errors`);bad.forEach(console.error);process.exitCode=bad.length?1:0;
