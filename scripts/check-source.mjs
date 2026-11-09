@@ -47,4 +47,27 @@ if(servicesIntro?.headline!=='Every discipline.'||servicesIntro?.accent!=='One c
 if(!html.includes('<h2 class="services-panel-heading"><span>Every discipline<span class="service-heading-period">.</span></span><span class="accent-text">One creative partner<span class="service-heading-accent-period showset-ending-punctuation">.</span></span></h2>\n<p hidden></p>'))
   bad.push('Home services: static heading and hidden copy are out of sync');
 
+// Every interactive homepage services panel must display the revised
+// directors' copy with one shared Discover more CTA, on initial HTML and
+// after changing the active discipline.
+const servicePanelCopy=[
+  ['Events & experiences','Conferences, launches and celebrations, delivered with precision.','/events-experiences/'],
+  ['Creative & design','Brand identities with a distinct point of view.','/creative-design/'],
+  ['Digital & marketing','Websites and campaigns that engage and convert.','/digital-marketing/'],
+  ['Content & production','Film, photography, motion and live production.','/content-production/'],
+];
+servicePanelCopy.forEach(([title,description,href],i)=>{
+  const item=servicesIntro?.items[i];
+  if(item?.title!==title||item?.description!==description||item?.href!==href)
+    bad.push('Home services: panel '+i+' content or route differs from approved copy');
+});
+if(!html.includes('<p id="service-visual-copy">'+servicePanelCopy[0][1]+'</p>')||
+   !html.includes('id="service-visual-link">Discover more <span>')||
+   html.includes('Step inside this world'))
+  bad.push('Home services: server-rendered initial panel or CTA differs from approved copy');
+const serviceRuntime=fs.readFileSync('lib/concept-12/runtime.js','utf8');
+if(!serviceRuntime.includes('options.serviceOverrides?.[n]')||
+   !serviceRuntime.includes("'Discover more about '+override.title"))
+  bad.push('Home services: dynamic panel descriptions or accessible CTA label regressed');
+
 console.log(`${Object.keys(pages).length} pages; ${Object.values(pages).reduce((n,p)=>n+p.sections.length,0)} sections; ${bad.length} errors`);bad.forEach(console.error);process.exitCode=bad.length?1:0;
