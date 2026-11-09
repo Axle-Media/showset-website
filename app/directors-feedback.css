@@ -89,3 +89,21 @@
 .concept-12-root #contact-form {
   scroll-margin-top:calc(var(--header-height) + 20px);
 }
+
+/* Keep the two approved service headline phrases on exactly two rows on
+   two-column desktop/tablet layouts. Scale the heading against the usable
+   width of its own left panel rather than the whole monitor viewport.
+   Mobile retains its existing centred layout and fluid wrapping. */
+@media (min-width:801px) {
+  .concept-12-root #main .services-stage-intro {
+    container-type:inline-size;
+    container-name:services-intro-heading;
+  }
+  .concept-12-root #main .services-panel-heading {
+    font-size:clamp(25px,2.8vw,47px)!important;
+    font-size:clamp(25px,7.8cqi,47px)!important;
+  }
+  .concept-12-root #main .services-panel-heading > span {
+    white-space:nowrap;
+  }
+}
