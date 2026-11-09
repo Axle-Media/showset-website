@@ -4,6 +4,7 @@ import { primaryChapterImage } from "./chapter-image";
 import { caseExperienceFor } from "./case-content";
 import { defaultPages } from "@/lib/data";
 import { portfolioEntries } from "./portfolio-content";
+import { normaliseCaseTitle, splitCaseTitle } from "./case-title";
 
 const esc=(v:string="")=>String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
 const src=(v?:string)=>{const s=safeHref(v||"");return s==="#"?"/brand/showset-approved.svg":s;};
@@ -13,7 +14,15 @@ const paras=(s:string)=>s.split(/\n\s*\n/).filter(Boolean).map(v=>"<p>"+esc(v)+"
 // Raw text is the accessible, server-rendered fallback. The motion module wraps
 // measured visual lines after fonts load; editorial and photo headings share it.
 const photoId=(value:string)=>{let hash=2166136261;for(const c of value)hash=Math.imul(hash^c.charCodeAt(0),16777619);return (hash>>>0).toString(36);};
-const heading=(text:string,tag="h2",photo=false)=>'<'+tag+' class="'+(photo?'case-primary-heading block-heading':'case-editorial-heading')+'" data-case-heading="'+esc(text)+'">'+esc(text)+'</'+tag+'>';
+const heading=(text:string,tag="h2",photo=false)=>{
+ const title=normaliseCaseTitle(text);
+ // Before JavaScript runs, server HTML already displays the deliberate break.
+ const lines=splitCaseTitle(text).map((line,i)=>{
+  const period=line.endsWith('.')?esc(line.slice(0,-1))+'<span class="case-heading-period">.</span>':esc(line);
+  return '<span class="case-fallback-title-line'+(i?' case-heading-accent':'')+'">'+period+'</span>';
+ }).join('\n');
+ return '<'+tag+' class="'+(photo?'case-primary-heading block-heading':'case-editorial-heading')+'" data-case-heading="'+esc(title)+'">'+lines+'</'+tag+'>';
+};
 
 function chapter(c:CaseStoryChapter,i:number) {
  const photo=primaryChapterImage(c);
