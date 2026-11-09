@@ -260,7 +260,7 @@ export function bindConcept(
         if (changed(s, "items") && s.items[0]) {
           const x = s.items[0];
           const punctuation = (x.accent || "").trimEnd().match(/[.!?]$/)?.[0] || "";
-          const accent = punctuation ? x.accent.trimEnd().slice(0, -1) : x.accent || "";
+          const accent = punctuation ? (x.accent || "").trimEnd().slice(0, -1) : x.accent || "";
           host.querySelector("#hero-second h2")!.innerHTML =
             `<span class="wipe-line"><span>${rich(x.title)}</span></span><span class="wipe-line accent-line"><span>${rich(accent)}${punctuation ? '<span class="hero-period">' + punctuation + '</span>' : ""}</span></span>`;
           text(".hero-second-copy", x.description);
