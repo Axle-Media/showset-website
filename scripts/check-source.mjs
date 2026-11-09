@@ -80,8 +80,8 @@ for(const pageName of ['home','our-studio','services']){
   if(!s||Object.entries(closing).some(([k,v])=>s[k]!==v))
     bad.push(pageName+': closing CTA does not match approved conversation wording or destination');
 }
-if((html.match(/<p hidden><\\/p>/g)||[]).length<3 ||
-   (html.match(/Start a conversation <span aria-hidden="true">↗<\\/span>/g)||[]).length<2 ||
+if((html.split('<p hidden></p>').length-1)<3 ||
+   (html.split('Start a conversation <span aria-hidden="true">↗</span>').length-1)<2 ||
    /Got a beautifully|The small stuff is never small/.test(html))
   bad.push('Static Home/Studio: outdated closing CTA or approach paragraph');
 if(!html.includes('href="/contact/#contact-form"') || !html.includes('id="contact-form"'))
