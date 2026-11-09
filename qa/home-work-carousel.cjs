@@ -36,6 +36,11 @@ const width=1440;
     description:(await card.locator('.case-story p').innerText()).trim(),
    };
   }
+  const elmboogText='A brand identity rooted in the land, brought to life across a brand guide, company profile, stationery and presentations.';
+  ck('Elmboog Home description uses director-approved wording',
+    homeCopy['/work/made-to-be-remembered/']?.description===elmboogText);
+  ck('Every Home case CTA says View the project',
+    await cards.locator('.case-slide-link').allTextContents().then(labels=>labels.every(x=>x.trim().startsWith('View the project'))));
   // These images are intentionally lazy-loaded; scroll to the rail before
   // checking the decoded asset instead of racing the browser's loader.
   await page.locator('#case-rail').scrollIntoViewIfNeeded();
@@ -109,6 +114,10 @@ const width=1440;
    ck('Home headline matches Our Work for '+href,expected.title===title,{home:expected.title,work:title});
    ck('Home description matches Our Work for '+href,expected.description===description,{home:expected.description,work:description});
   }
+  ck('Elmboog Our Work description uses director-approved wording',
+    (await page.locator('.case-index-item[href="/work/made-to-be-remembered/"] .case-index-info p').innerText()).trim()===elmboogText);
+  ck('Every Our Work case CTA says View the project',
+    await work.locator('.work-feature-discover').allTextContents().then(labels=>labels.every(x=>x.trim().startsWith('View the project'))));
   for(let i=0;i<routes.length;i++){
    const src=await work.nth(i).locator('img').getAttribute('src');
    await work.nth(i).scrollIntoViewIfNeeded();
