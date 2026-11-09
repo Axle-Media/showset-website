@@ -25,6 +25,7 @@ function ck(label,ok,details){
     const [name,copy,href]=expected[i];
     // Focus selection works with keyboard as well as pointer/scroll, and
     // does not navigate away from the Home service scene.
+    await page.locator('[data-service="'+(i===0?1:i-1)+'"]').focus();
     await page.locator('[data-service="'+i+'"]').focus();
     await page.waitForFunction(expected=>document.querySelector('#service-visual-copy')?.textContent===expected,copy,{timeout:5000});
     const current=await page.locator('#service-visual-copy').innerText();
