@@ -1,0 +1,13 @@
+/* Director-approved homepage copy is longer than the original two-line
+   headline. Allow the photographic hero title sufficient width on desktop
+   without altering its typography, animation, photo or mobile layout. */
+@media (min-width:801px) {
+  .concept-12-root #main #hero-track #hero-foreground {
+    width:min(1050px,calc(100% - 2 * var(--gutter)));
+    max-width:min(1050px,calc(100% - 2 * var(--gutter)));
+  }
+  .concept-12-root #main #hero-track .hero-title > .line {
+    white-space:normal;
+    text-wrap:balance;
+  }
+}
