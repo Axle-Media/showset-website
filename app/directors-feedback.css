@@ -39,7 +39,9 @@
   color:var(--teal);
 }
 .concept-12-root #portfolio-section .case-title-line:nth-child(n+2) .teal-dot,
-.concept-12-root .work-page-gallery .case-title-line:nth-child(n+2) .teal-dot {
+.concept-12-root .work-page-gallery .case-title-line:nth-child(n+2) .teal-dot,
+.concept-12-root #portfolio-section .case-title-line:nth-child(n+2) .teal-dot .headline-period,
+.concept-12-root .work-page-gallery .case-title-line:nth-child(n+2) .teal-dot .headline-period {
   color:var(--ice)!important;
 }
 /* The case-story motion engine measures each authored sentence separately,
