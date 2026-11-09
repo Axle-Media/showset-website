@@ -4,6 +4,7 @@ const {chromium}=require(process.env.SHOWSET_PLAYWRIGHT_MODULE||'playwright');
 const fs=require('node:fs');
 const base=process.env.SHOWSET_BASE_URL||'http://127.0.0.1:3001';
 const expected='Have an idea worth bringing to life?';
+const expectedBody='The brief can be polished, half-written or still living entirely in your head. Tell us what you are trying to make happen. We know where to start.';
 const results=[],errors=[];
 function ck(label,ok,details){
   results.push({label,pass:!!ok,details});
@@ -34,7 +35,9 @@ function ck(label,ok,details){
     const heading=(await section.locator(headingSel).innerText()).replace(/\s+/g,' ').trim();
     const button=section.locator(buttonSel);
     ck('Closing heading matches new wording '+route+' @'+width,heading===expected,heading);
-    ck('Closing paragraph removed '+route+' @'+width,await section.locator(copySel).isHidden());
+    const copy = section.locator(copySel);
+    ck('Closing paragraph restored '+route+' @'+width,
+      await copy.isVisible() && (await copy.innerText()).replace(/\\s+/g,' ').trim()===expectedBody);
     ck('Start a conversation CTA label '+route+' @'+width,
       (await button.innerText()).trim().startsWith('Start a conversation'));
     ck('CTA goes straight to email form '+route+' @'+width,
