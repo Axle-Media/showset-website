@@ -1,6 +1,7 @@
 import type { Block, PageData } from "@/lib/types";
 import { safeHref } from "@/lib/safe";
 import { caseExperienceFor } from "./case-content";
+import { splitCaseTitle } from "./case-title";
 
 /**
  * Real published /work/ pages, not a curated three-project limit, power this gallery.
@@ -76,10 +77,13 @@ export function renderPortfolioIndex(
   if (!index || !tools || !more) return;
   const projects = portfolioEntries(section, catalog);
   index.innerHTML = projects.map((project, order) => {
-    const title = project.title.replace(/[.!?]\s*$/, "");
-    const headline = title.split('\n').map((line, i, lines) =>
-      '<span class="work-card-headline-line">' + escapeHTML(line) +
-      (i === lines.length - 1 ? '<span class="teal-dot">.</span>' : '') + '</span>').join('\n');
+    const titleLines = splitCaseTitle(project.title);
+    const headline = titleLines.map((line, i) => {
+      const last = i === titleLines.length - 1;
+      const words = last ? line.replace(/[.!?]\s*$/, "") : line;
+      return '<span class="work-card-headline-line case-title-line">' + escapeHTML(words) +
+        (last ? '<span class="teal-dot">.</span>' : '') + '</span>';
+    }).join('');
     const href = safeHref(project.route);
     const src = project.image !== "#" ? project.image : "/media/planning.webp";
     const tags = project.tags.map(tag => '<span class="work-card-tag">' + escapeHTML(tag) + '</span>').join("");
