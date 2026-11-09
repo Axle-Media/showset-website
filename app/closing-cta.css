@@ -206,9 +206,9 @@
   }
 }
 
-/* Home and individual case studies use the shorter, heading-and-button-only
-   closing CTA. Reduce the surplus desktop/tablet height and centre both
-   elements as one group, without changing artwork, typography or the
+/* Home and individual case studies use the shorter editorial
+   closing CTA. Balance the heading, explanatory paragraph and button
+   together with the available section height, without changing artwork, typography or the
    previously approved mobile layout. */
 @media (min-width:601px) {
   .concept-12-root #main :is(#ending,#case-ending) {

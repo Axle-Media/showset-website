@@ -58,8 +58,9 @@ function ck(name,pass,detail){checks.push({name,pass:!!pass,detail});console.log
     ending.heading?.includes('Have an idea')&&ending.heading?.includes('worth bringing to life?')&&ending.background.includes('studio-cta-pattern.svg')&&ending.repeat==='no-repeat'&&ending.layer==='0',
     ending);
   ck('Studio CTA links to email form '+width,await page.locator('.view.is-current .studio-final .editorial-action').getAttribute('href')==='/contact/#contact-form');
-  ck('Studio closing CTA has no extra paragraph '+width,
-    await page.locator('.view.is-current .studio-final .studio-final-copy').isHidden() &&
+  ck('Studio closing CTA restores supporting paragraph '+width,
+    await page.locator('.view.is-current .studio-final .studio-final-copy').isVisible() &&
+    (await page.locator('.view.is-current .studio-final .studio-final-copy').innerText()).includes('The brief can be polished') &&
     (await page.locator('.view.is-current .studio-final .editorial-action').innerText()).includes('Start a conversation'));
   ck('Studio no horizontal overflow '+width,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
   if([1440,390].includes(width))await page.screenshot({path:'qa-results/editorial/studio-'+width+'.png',fullPage:true});
