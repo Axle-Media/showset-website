@@ -16,4 +16,14 @@ for(const [field,expected] of [['buttonLabel','Explore our services'],['secondar
   if(matches!==2)bad.push('home hero: expected '+expected+' in both scenes, found '+matches);
 }
 if(/See what we do|Get to know us/i.test(html))bad.push('home hero: old CTA wording in static HTML');
+// The featured-work introduction is a heading-only treatment on Home.
+// Check the authored data and static HTML together, without changing
+// individual case-study cards or the Our Work catalogue.
+const featured=pages.home.sections.find(section=>section.type==='work');
+if(featured?.headline!=='Work that'||featured?.accent!=='speaks for itself.'||featured?.body!=='')
+  bad.push('home featured work: heading or removed paragraph has regressed');
+if(!html.includes('<div class="portfolio-intro" hidden><p></p></div>')||
+   !html.includes('<span>Work that</span></span><span class="wipe-line accent-line"><span>speaks for itself.</span>'))
+  bad.push('home featured work: static title-only markup is out of sync');
+
 console.log(`${Object.keys(pages).length} pages; ${Object.values(pages).reduce((n,p)=>n+p.sections.length,0)} sections; ${bad.length} errors`);bad.forEach(console.error);process.exitCode=bad.length?1:0;
