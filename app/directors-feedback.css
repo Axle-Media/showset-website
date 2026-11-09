@@ -54,3 +54,38 @@
   display:inline-block;
   white-space:nowrap;
 }
+
+/* The approved approach statement is intentionally heading-only, in both
+   colour-reveal layers. Keep the text node for future Studio content edits. */
+.concept-12-root #dot-track .dot-words > p[hidden] {
+  display:none!important;
+}
+
+/* The shared closing CTA has a heading and direct email-form button only.
+   The editable body slot stays in the DOM without occupying any space. */
+.concept-12-root #ending .end-bottom > p[hidden],
+.concept-12-root #case-ending .end-bottom > p[hidden],
+.concept-12-root .studio-final .studio-final-copy[hidden] {
+  display:none!important;
+}
+.concept-12-root #ending .end-bottom:has(>p[hidden]),
+.concept-12-root #case-ending .end-bottom:has(>p[hidden]) {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+  gap:0;
+  max-width:645px;
+}
+@media(max-width:600px) {
+  .concept-12-root #ending .end-bottom:has(>p[hidden]),
+  .concept-12-root #case-ending .end-bottom:has(>p[hidden]) {
+    align-items:center;
+    justify-content:center;
+  }
+}
+
+/* Direct email-form links land beneath the sticky mobile/desktop header. */
+.concept-12-root #contact-form {
+  scroll-margin-top:calc(var(--header-height) + 20px);
+}
