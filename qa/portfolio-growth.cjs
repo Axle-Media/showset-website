@@ -6,8 +6,14 @@ const assert=require('node:assert/strict');
 const source=fs.readFileSync('lib/concept-12/portfolio-content.ts','utf8');
 const compiled=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
 const moduleProxy={exports:{}};
+// Run the actual shared title formatter, rather than duplicating its rules in QA.
+const titleSource=fs.readFileSync('lib/concept-12/case-title.ts','utf8');
+const titleCompiled=ts.transpileModule(titleSource,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
+const titleModule={exports:{}};
+new Function('module','exports',titleCompiled)(titleModule,titleModule.exports);
 const modules={
  './case-content':{caseExperienceFor:page=>page.caseExperience||{openingImage:page.sections[0]?.image,demo:false}},
+ './case-title':titleModule.exports,
  '@/lib/safe':{safeHref:source=>typeof source==='string'&&source.startsWith('/')?source:'#'}
 };
 new Function('require','module','exports',compiled)(name=>{
@@ -60,6 +66,15 @@ assert.equal(cards[0].getAttribute('data-work-order'),'0');
 assert.equal(cards[0].getAttribute('data-work-tags'),'Events|Digital');
 assert.ok(cards.every(card=>card.querySelector('.case-photo')&&card.querySelector('.case-story')));
 assert.ok(cards.every(card=>card.querySelector('h2')&&card.querySelector('a')===null&&card.getAttribute('href')?.startsWith('/work/')));
+const amaze=cards.find(card=>card.getAttribute('href')==='/work/the-amaze-ball/');
+assert.ok(amaze,'Amaze-Ball card is present');
+assert.deepEqual([...amaze.querySelectorAll('.case-title-line')].map(line=>line.textContent.trim()),
+ ['A grand slam.','A greater cause.'],
+ 'Title break always falls immediately after the first period');
+assert.equal(amaze.querySelector('.case-index-info p')?.textContent,
+ 'Look and feel, décor, furniture, entertainment, technical production and live coverage for a padel tournament with purpose.',
+ 'The project description uses the approved new copy');
+
 assert.deepEqual([...document.querySelectorAll('[data-work-filter]')].map(x=>x.textContent),['All','Events','Creative','Digital','Content']);
 assert.equal(document.querySelector('[data-work-more]').hasAttribute('hidden'),false,'Load more must activate after six stories');
 assert.equal(document.querySelectorAll('[data-work-index] .work-portfolio-card').length,30);
