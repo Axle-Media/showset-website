@@ -91,7 +91,7 @@ export function renderPortfolioIndex(
 <div class="case-photo case-index-image"><img src="${escapeHTML(src)}" alt="${escapeHTML(project.title)} portfolio visual" loading="${order < 3 ? "eager" : "lazy"}" decoding="async"/></div>
 <div class="case-story case-index-info"><div class="work-card-meta"><span class="work-feature-type">${escapeHTML(project.label)}</span><span class="work-card-tags">${tags}</span></div>
 <h2>${headline}</h2>
-<p>${escapeHTML(project.description)}</p><span class="case-slide-link work-feature-discover">Explore the study <b aria-hidden="true">↗</b></span></div></a>`;
+<p>${escapeHTML(project.description)}</p><span class="case-slide-link work-feature-discover">View the project <b aria-hidden="true">↗</b></span></div></a>`;
   }).join("") + (projects.length ? '<p class="work-filter-empty" data-work-empty hidden role="status">Nothing in this category yet. Explore another side of our work.</p>' : '<p class="work-index-empty">New stories are on their way. In the meantime, tell us what you have in mind.</p>');
   const categoryNames = [...workCategoryNames,
     ...new Set(projects.flatMap(p => p.tags).filter(tag => !workCategoryNames.includes(tag as typeof workCategoryNames[number])))];
