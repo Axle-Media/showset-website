@@ -321,6 +321,9 @@ export function bindConcept(
       } else if (s.type === "work") {
         heading(".portfolio-heading h2", s);
         body(".portfolio-intro>p", s);
+        // Preserve Studio editing: bring the paragraph back when copy is added.
+        const intro = host.querySelector<HTMLElement>(".portfolio-intro");
+        if (intro) intro.hidden = !s.body.trim();
         bindWork(s, "#case-rail > [data-case-slide]");
       } else if (s.type === "dot") {
         if (changed(s, "headline")) {
