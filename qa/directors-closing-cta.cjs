@@ -37,7 +37,7 @@ function ck(label,ok,details){
     ck('Closing heading matches new wording '+route+' @'+width,heading===expected,heading);
     const copy = section.locator(copySel);
     ck('Closing paragraph restored '+route+' @'+width,
-      await copy.isVisible() && (await copy.innerText()).replace(/\\s+/g,' ').trim()===expectedBody);
+      await copy.isVisible() && (await copy.innerText()).replace(/\s+/g,' ').trim()===expectedBody);
     ck('Start a conversation CTA label '+route+' @'+width,
       (await button.innerText()).trim().startsWith('Start a conversation'));
     ck('CTA goes straight to email form '+route+' @'+width,
