@@ -20,10 +20,12 @@ const check=(label,ok,data)=>{
       const rect=el=>{const r=el.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,height:r.height};};
       const title=section.querySelector('h2');
       const button=section.querySelector('.end-bottom .end-link');
+      const paragraph=section.querySelector('.end-bottom > p');
       const a=rect(section),h=rect(title),b=rect(button);
       const before=h.top-a.top,after=a.bottom-b.bottom;
       return {before,after,imbalance:Math.abs(before-after),
         height:a.height,heading:h.height,button:b.height,
+        paragraphVisible:!!paragraph && !paragraph.hidden && paragraph.getBoundingClientRect().height>0,
         xCenter:Math.abs((h.left+h.right)/2-(a.left+a.right)/2),
         align:getComputedStyle(section).justifyContent,
         display:getComputedStyle(section).display,
@@ -38,6 +40,7 @@ const check=(label,ok,data)=>{
         geometry.display==='flex'&&geometry.align==='center'&&
         geometry.height<=525,geometry);
     }
+    check('CTA supporting paragraph visible '+label,geometry.paragraphVisible,geometry);
     check('CTA wording and destination preserved '+label,
       geometry.buttonLabel.startsWith('Start a conversation')&&
       geometry.href==='/contact/#contact-form');
