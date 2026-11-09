@@ -16,3 +16,12 @@
 .concept-12-root #hero-second .hero-period {
   color:var(--ice)!important;
 }
+
+/* Homepage portfolio introduction is intentionally heading-only.
+   Keep Studio able to restore the paragraph without changing the layout. */
+.concept-12-root #portfolio-section .portfolio-intro[hidden] {
+  display:none!important;
+}
+.concept-12-root #portfolio-section .portfolio-heading:has(.portfolio-intro[hidden]) {
+  grid-template-columns:minmax(0,1fr);
+}
