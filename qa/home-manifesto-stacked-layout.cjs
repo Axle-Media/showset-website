@@ -28,9 +28,9 @@ function ck(label,ok,detail){
      return {
        order:[...group.children].map(el=>el.tagName.toLowerCase()+'.'+el.className),
        title:r(title),body:r(body),button:r(button),group:r(group),
-       titleCopy:title?.textContent?.replace(/\\s+/g,' ').trim(),
+       titleCopy:title?.innerText?.replace(/\s+/g,' ').trim(),
        bodyCopy:body?.textContent?.trim(),
-       buttonCopy:button?.textContent?.replace(/\\s+/g,' ').trim(),
+       buttonCopy:button?.textContent?.replace(/\s+/g,' ').trim(),
        href:button?.getAttribute('href'),
        textAlign:getComputedStyle(body).textAlign,
        scrollWidth:document.documentElement.scrollWidth,
