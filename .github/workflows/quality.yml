@@ -56,6 +56,7 @@ jobs:
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/studio-scroll-hero.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/studio-heading-alignment.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/closing-cta-parity.cjs || qa_status=1
+          SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/closing-cta-vertical-centre.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/directors-closing-cta.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/editorial-pages.cjs || qa_status=1
           SHOWSET_BASE_URL=http://127.0.0.1:3001 SHOWSET_PLAYWRIGHT_CHANNEL=chromium node qa/heading-accent-lines.cjs || qa_status=1
@@ -105,6 +106,7 @@ jobs:
             qa-results/studio-scroll-hero.json
             qa-results/studio-heading-alignment.json
             qa-results/closing-cta-parity.json
+            qa-results/closing-cta-vertical-centre.json
             qa-results/directors-closing-cta.json
             qa-results/closing-cta/
             qa-results/editorial-pages.json
