@@ -337,9 +337,15 @@ export function bindConcept(
         }
         body(".dot-stage > .dot-words>p", s);
         body(".dot-colour-reveal .dot-words>p", s);
+        // Both visible and inverted copies need the same visibility rule.
+        host.querySelectorAll<HTMLElement>(".dot-stage .dot-words > p").forEach(p => {
+          p.hidden = !s.body.trim();
+        });
       } else if (s.type === "cta") {
         heading("#ending h2", s);
         body(".end-bottom>p", s);
+        const closingCopy = host.querySelector<HTMLElement>("#ending .end-bottom > p");
+        if (closingCopy) closingCopy.hidden = !s.body.trim();
         action(".end-link", s);
       }
     }
@@ -396,6 +402,10 @@ export function bindConcept(
           }
           if (copy) copy.textContent = plain(follow.description);
         }
+      }
+      if (scope.matches(".studio-final")) {
+        const closingCopy = scope.querySelector<HTMLElement>(".studio-final-copy");
+        if (closingCopy) closingCopy.hidden = !s.body.trim();
       }
       if (changed(s, "body")) {
         const content = scope.querySelector<HTMLElement>(
