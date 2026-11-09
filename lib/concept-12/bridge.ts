@@ -5,6 +5,7 @@ import { refineHeadingPeriods } from "./typography";
 import { renderImmersiveCase } from "./immersive-case";
 import { caseExperienceFor } from "./case-content";
 import { portfolioEntries, renderPortfolioIndex } from "./portfolio-content";
+import { splitCaseTitle } from "./case-title";
 import type { Block, Globals, PageData } from "@/lib/types";
 import { defaultPages, defaultGlobals } from "@/lib/data";
 import { safeHref } from "@/lib/safe";
@@ -509,10 +510,21 @@ export function bindConcept(
       if (canonical || itemChanged(s, i, "title")) {
         const heading = card.querySelector("h2,h3");
         if (heading) {
-          // Preserve the approved teal period when Studio adds a new card.
-          const period = heading.querySelector(".teal-dot");
-          heading.textContent = period ? cardTitle.trim().replace(/[.!?]\s*$/, "") : cardTitle;
-          if (period) heading.append(period);
+          // A full stop followed by more title always begins a new line.
+          // Rebuild the title, not the surrounding card, so editing and
+          // carousel state remain untouched when Studio changes its copy.
+          const titleLines = splitCaseTitle(cardTitle);
+          const finalPeriod = heading.querySelector(".teal-dot") || document.createElement("span");
+          finalPeriod.className = "teal-dot";
+          finalPeriod.textContent = ".";
+          heading.replaceChildren(...titleLines.map((line, index) => {
+            const span = document.createElement("span");
+            span.className = "case-title-line";
+            const last = index === titleLines.length - 1;
+            span.textContent = last ? line.replace(/[.!?]\s*$/, "") : line;
+            if (last) span.append(finalPeriod);
+            return span;
+          }));
         }
       }
       if (canonical || itemChanged(s, i, "description")) {
