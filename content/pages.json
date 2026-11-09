@@ -13,9 +13,9 @@
         "image": "/media/showset/01-home-hero.webp",
         "pattern": true,
         "reveal": true,
-        "buttonLabel": "See what we do",
+        "buttonLabel": "Explore our services",
         "buttonHref": "#services",
-        "secondaryLabel": "Get to know us",
+        "secondaryLabel": "Meet the studio",
         "secondaryHref": "/our-studio/",
         "items": [
           {
