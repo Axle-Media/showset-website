@@ -122,6 +122,12 @@ function walk(directory, base = directory) {
       sha256: crypto.createHash('sha256').update(fs.readFileSync(absolute)).digest('hex') }];
   });
 }
+// Pin the export's release marker to the exact GitHub source revision.
+const buildCommit = process.env.SHOWSET_RELEASE_COMMIT || process.env.GITHUB_SHA || '';
+if (/^[a-f0-9]{40}$/i.test(buildCommit)) {
+  fs.writeFileSync(path.join(destination, 'release.json'),
+    JSON.stringify({ commit: buildCommit.toLowerCase() }) + '\n');
+}
 const files = walk(destination).sort((a, b) => a.relative.localeCompare(b.relative));
 const fingerprint = crypto.createHash('sha256')
   .update(files.map(file => file.relative + ' ' + file.sha256).join('\n'))
