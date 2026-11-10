@@ -3,6 +3,19 @@
    This is a layout/alignment layer only: no image sizes, motion, colours, type
    scales, navigation rows, filter mechanics or form-field behaviour change. */
 @media (max-width:600px) {
+  /* Home dot story: keep each second line together on small screens.
+     Apply the same break to both colour-reveal copies. */
+  .concept-12-root #main #dot-track .dot-mobile-tail {
+    display:block;
+  }
+  /* Reduce the mobile-only full-viewport hold without altering desktop timing. */
+  .concept-12-root #main #dot-track {
+    height:135svh!important;
+  }
+  .concept-12-root #main #dot-track .dot-stage {
+    height:84svh!important;
+  }
+
   /* Editorial headings and accompanying copy, including the end-of-page CTA.
      These selectors are intentionally scoped to content, not navigation. */
   .concept-12-root #main :is(
