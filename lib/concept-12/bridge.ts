@@ -143,10 +143,13 @@ export function bindConcept(
       const period = s.accent.trimEnd().endsWith(".");
       const accent = period ? s.accent.trimEnd().slice(0, -1) : s.accent;
       e.innerHTML =
-        `<span class="line"><span>${rich(s.headline)}</span></span>` +
+        `<span class="line hero-line-desktop"><span>${rich(s.headline)}</span></span>` +
         (s.accent
-          ? `<span class="line hero-accent-phrase"><span>${rich(accent)}${period ? '<span class="hero-period">.</span>' : ""}</span></span>`
-          : "");
+          ? `<span class="line hero-accent-phrase hero-line-desktop"><span>${rich(accent)}${period ? '<span class="hero-period">.</span>' : ""}</span></span>`
+          : "") +
+        // Both copy variants share one H1. The shorter pair is mobile-only.
+        `<span class="line hero-line-mobile"><span>Big ideas.</span></span>` +
+        `<span class="line hero-accent-phrase hero-line-mobile"><span>Bold impact<span class="hero-period">.</span></span></span>`;
       return;
     }
     if (
