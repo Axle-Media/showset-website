@@ -71,7 +71,7 @@ fs.writeFileSync(path.join(publicApi, '.htaccess'), [
   '  Require all denied',
   '</FilesMatch>',
   '',
-].join('\\n'));
+].join('\n'));
 
 // trailingSlash in next.config.ts emits /route/index.html. No catch-all rewrite.
 const apache = [
