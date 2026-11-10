@@ -9,7 +9,9 @@
     "check": "tsc --noEmit",
     "export:assets": "node scripts/copy-export.mjs",
     "package:xneelo": "npm run build && node scripts/copy-export.mjs",
-    "check:seo": "node scripts/check-seo-content.mjs"
+    "check:seo": "node scripts/check-seo-content.mjs",
+    "package:xneelo:public": "npm run build && node scripts/package-xneelo-public.mjs && node scripts/check-xneelo-public.mjs",
+    "check:xneelo": "node scripts/check-xneelo-public.mjs"
   },
   "dependencies": {
     "linkedom": "0.18.12",
