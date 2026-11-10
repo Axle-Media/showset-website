@@ -8,7 +8,7 @@ SHOWSET already uses Next.js static export (`output: 'export'`, `trailingSlash: 
 
 **Use `npm run package:xneelo:public` for the public site, NEVER `npm run package:xneelo`.** The legacy command makes a *different*, password-protected PHP preview gateway (`out/protected-site/`).
 
-The public package excludes `/studio/`, `/studio-preview/`, `/local-studio-backup.html`, the PHP API, all gate files and private configuration. SHOWSET Studio 2.0 needs an independently secured backend before it can publish, potentially on `studio.showset.co.za`. Do not expose the editor on the public site.
+The public package excludes `/studio/`, `/studio-preview/`, `/local-studio-backup.html`, the **private Studio PHP API**, all gate files and private configuration. It includes only one public PHP handler at `/api/contact.php` for contact form delivery. SHOWSET Studio 2.0 needs an independently secured backend before it can publish, potentially on `studio.showset.co.za`. Do not expose the editor on the public site.
 
 ## Build an auditable static release
 
@@ -111,8 +111,43 @@ xneelo documentation: [File Manager / uploading](https://xneelo.co.za/help-centr
 - Keep Vercel running until xneelo is tested and accepted. For rollback, restore the backed-up files or former web DNS records. DNS caches can delay rollback.
 - Only later, after a separately approved hosting/auth design, connect SHOWSET Studio 2.0 to its own publishing backend and deployment/rollback workflow.
 
+## Contact form setup and Google Workspace delivery
+
+The xneelo ZIP includes `api/contact.php` and `api/.htaccess`, separate from
+all private Studio endpoints. The PHP handler sends enquiries to the fixed
+destination **hello@showset.co.za** using `no-reply@showset.co.za` as the
+sender, with the visitor's address as Reply-To. It validates data, limits
+submissions per IP, rejects cross-site requests and checks a honeypot.
+
+SHOWSET mail uses Google Workspace. Confirm Google MX records remain intact and
+that local delivery for the domain is **disabled** in xneelo **Mail tools →
+Enable/Disable Mail** to prevent the mail server swallowing messages intended
+for Google. Keep the existing single SPF record and do not alter SPF, DKIM or
+DMARC blindly. If xneelo sends mail as this domain, it may need authorisation
+in the existing SPF record; check the delivered headers before changing DNS.
+
+After the updated production ZIP is extracted:
+1. Visit `https://showset.co.za/api/contact.php`. A normal GET should return
+   **405 Method Not Allowed**. If PHP source is shown or downloaded, stop and
+   fix the server's PHP configuration before accepting submissions.
+2. Submit a real test on `https://showset.co.za/contact/`. The button should
+   read **Send the idea** and submission should not open an email application.
+3. In browser Network tools, confirm `POST /api/contact.php` returns
+   `{"ok":true,"code":"accepted_for_delivery"}`.
+4. Confirm **actual arrival** in the Google Workspace
+   `hello@showset.co.za` inbox (including spam/junk). Use Reply to confirm
+   the visitor's address populates correctly.
+5. If the form reports success but no email arrives, inspect the xneelo mail
+   logs, local delivery setting, SPF/DKIM/DMARC authentication and Google
+   Workspace logs. PHP `mail()` acknowledgement is **not proof of delivery**.
+   Consider an authenticated transactional SMTP or email API if needed.
+
+The browser keeps the message and shows an error if the PHP handler rejects
+or cannot queue it. Do not assume a change has been fully deployed until
+both the updated public JavaScript and PHP endpoint are uploaded.
+
 ## Important limitations
 
-The current contact flow prepares an email for the visitor to review and send. Static hosting alone **does not deliver enquiries**; adding a real email delivery backend is a separate task. New or edited case studies require a fresh static export before they appear on public URLs. Static export provides no Next.js server actions, PHP Studio publishing, automatic database updates or image optimisation. The existing Vercel config does not execute on Apache; known redirects are explicitly mirrored in `.htaccess`. Confirm SEO canonical domain, search console verification and analytics during final cutover.
+On `showset.co.za` and `www.showset.co.za`, the contact form sends through the isolated PHP `/api/contact.php` handler to `hello@showset.co.za`. A successful PHP `mail()` call means acceptance into the local mail queue, **not** final inbox delivery. Vercel previews and Studio demos retain the mailto-draft fallback. New or edited case studies require a fresh static export before they appear on public URLs. Static export provides no Next.js server actions, PHP Studio publishing, automatic database updates or image optimisation. The existing Vercel config does not execute on Apache; known redirects are explicitly mirrored in `.htaccess`. Confirm SEO canonical domain, search console verification and analytics during final cutover.
 
 A future automated GitHub→xneelo upload should be a **separate reviewed workflow** after SSH access is confirmed, with environment approvals, pinned SSH host keys, scoped credentials, staging-first verification, remote backups and no destructive mirror deletion by default. For now GitHub deliberately generates artifacts only.
