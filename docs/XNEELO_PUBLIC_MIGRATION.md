@@ -46,6 +46,51 @@ In [SHOWSET GitHub Actions](https://github.com/Axle-Media/showset-website/action
 
 The ZIP contains `index.html` and hidden `.htaccess` **at its root**. Extract its contents directly into the site's assigned document root, not into a nested folder. The GitHub workflow **does not automatically upload, deploy, overwrite or alter DNS**.
 
+## Replacing the existing SHOWSET placeholder in public_html
+
+This account already has a backed-up WordPress installation and a Next.js/PHP
+preview occupying the root of `public_html`. **Do not install a fresh hosting
+package or create another subdomain for the public launch**.
+
+The new `main` workflow produces a **production** release ZIP as a downloadable
+artifact after each approved site change. On the `Prepare SHOWSET xneelo static
+package` workflow page, open the latest successful **push / main** run, download
+`showset-xneelo-static-package`, then extract the *outer GitHub artifact ZIP*
+locally. Upload the **inner `showset-xneelo-production.zip`**, not the
+`showset-xneelo-staging.zip` used in pull request checks.
+
+For a clean replacement:
+
+1. Confirm the old WordPress and PHP preview files have a current backup **outside
+   the publicly accessible web root**. Do not rely solely on a ZIP in
+   `public_html`; move or download any `Back-Up.zip` before cleaning.
+2. In xneelo File Manager, open `public_html`. Retain the
+   **`public_html` directory itself** and leave sibling email/log data alone.
+3. Remove obsolete website files *inside* the directory, including `index.php`,
+   old `.htaccess`, `wp-admin`, `wp-content`, `wp-includes`, `api`,
+   `protected-site`, `gate-assets`, and preview-related folders/files.
+   Do not delete unrecognised application or verification files until their
+   ownership is known, and preserve any required `.well-known` records.
+4. Upload the inner production ZIP to `public_html` (typically under the xneelo
+   File Manager 100 MB upload limit), then use the File Manager's ZIP extraction
+   feature. If extraction creates an extra parent folder, **move its contents**
+   up into `public_html`. Ensure `.htaccess` is included and overwrites the
+   previous PHP-preview routing rules.
+5. Confirm `public_html/index.html`, `public_html/_next/static/`,
+   `public_html/contact/index.html`, and `public_html/release.json` are at the
+   correct depth. There must be **no** old `index.php` or `wp-*` files
+   interfering with the new static site.
+6. Test the site's current public domain (if already pointed to xneelo) or the
+   xneelo interim URL before changing any DNS. The interim URL can be useful
+   for inspection, but it may not perfectly reproduce root-relative asset paths
+   if it includes a path prefix.
+7. Do not remove the Vercel deployment until the new site's pages and
+   iPhone/desktop presentation have been verified.
+
+**Never delete the `public_html` directory or symbolic link itself.** A clear
+root and one active `.htaccess` prevent the old PHP gate from overriding the
+new static site.
+
 ## Stage on xneelo without affecting the live site
 
 1. Confirm the existing xneelo hosting plan has **showset.co.za assigned to a web-accessible document root**. DNS records alone do not create an Apache site or `public_html` directory.
