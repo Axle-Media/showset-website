@@ -75,6 +75,12 @@ jobs:
           npm run check:seo
       - name: Build and audit public xneelo package
         run: npm run package:xneelo:public
+      - name: Check PHP contact endpoint and submission safeguards
+        shell: bash
+        run: |
+          set -euo pipefail
+          php -l dist/xneelo-public/api/contact.php
+          bash qa/xneelo-contact-smoke.sh dist/xneelo-public
       - name: Preflight the production flavour on pull requests
         if: github.event_name == 'pull_request'
         shell: bash
@@ -95,6 +101,8 @@ jobs:
           unzip -Z -1 "$ZIP" | grep -Fxq ".htaccess"
           unzip -Z -1 "$ZIP" | grep -Fxq "index.html"
           unzip -Z -1 "$ZIP" | grep -Fxq "contact/index.html"
+          unzip -Z -1 "$ZIP" | grep -Fxq "api/contact.php"
+          unzip -Z -1 "$ZIP" | grep -Fxq "api/.htaccess"
           cp dist/xneelo-manifest.json "release/xneelo-manifest.json"
           (cd release && sha256sum *.zip > SHA256SUMS.txt)
           ls -lh release/
