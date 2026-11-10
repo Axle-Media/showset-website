@@ -58,6 +58,16 @@ jobs:
           npm run check:seo
       - name: Build and audit public xneelo package
         run: npm run package:xneelo:public
+      - name: Preflight the production flavour on pull requests
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          SHOWSET_XNEELO_PACKAGE_MODE=production node scripts/package-xneelo-public.mjs
+          SHOWSET_XNEELO_PACKAGE_MODE=production node scripts/check-xneelo-public.mjs
+          # Restore the original selected staging package before making the ZIP.
+          node scripts/package-xneelo-public.mjs
+          node scripts/check-xneelo-public.mjs
       - name: Produce transport ZIP and SHA-256 checksum
         shell: bash
         run: |
