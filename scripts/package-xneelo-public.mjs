@@ -57,9 +57,25 @@ fs.cpSync(source, destination, {
   },
 });
 
+// The public site is static except for this small, tightly scoped PHP
+// contact handler. Do not package the unrelated Studio API or preview gate.
+const publicApi = path.join(destination, 'api');
+fs.mkdirSync(publicApi, { recursive: true });
+fs.copyFileSync(
+  path.join(root, 'backend', 'contact', 'contact.php'),
+  path.join(publicApi, 'contact.php'),
+);
+fs.writeFileSync(path.join(publicApi, '.htaccess'), [
+  'Options -Indexes',
+  '<FilesMatch "^(?!contact\\.php$).+">',
+  '  Require all denied',
+  '</FilesMatch>',
+  '',
+].join('\n'));
+
 // trailingSlash in next.config.ts emits /route/index.html. No catch-all rewrite.
 const apache = [
-  '# SHOWSET public static export for Apache / xneelo. No PHP backend.',
+  '# SHOWSET static website with isolated PHP contact handler (no Studio backend).',
   'Options -Indexes -MultiViews',
   'DirectoryIndex index.html',
   'ErrorDocument 404 /404.html',
@@ -122,5 +138,5 @@ fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
 console.log('xneelo ' + mode + ' public export ready: ' + destination);
 console.log(manifest.routes + ' public routes, ' + manifest.files + ' files, ' + manifest.bytes + ' bytes');
 console.log('Package fingerprint: ' + manifest.sha256);
-console.log('No Studio pages, PHP backend, editor backups or secrets have been packaged.');
+console.log('Only public api/contact.php is included; no Studio API, editor backups or secrets.');
 console.log('This command does not upload files or change DNS.');

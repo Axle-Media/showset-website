@@ -15,7 +15,7 @@ assert(manifest.files > 30, 'Unexpectedly small deployment');
 assert(manifest.routes >= 10, 'Expected all public pages in build');
 for (const filename of [
   'index.html', '404.html', 'release.json', 'favicon.ico',
-  '.htaccess', 'robots.txt', 'contact/index.html', 'our-studio/index.html',
+  '.htaccess', 'robots.txt', 'api/contact.php', 'api/.htaccess', 'contact/index.html', 'our-studio/index.html',
   'our-work/index.html', 'privacy-policy/index.html',
   'terms-and-conditions/index.html',
 ]) assert(exists(filename), 'Missing required public file: ' + filename);
@@ -24,13 +24,20 @@ assert(fs.readdirSync(path.join(webroot, '_next', 'static')).length > 0,
 for (const pathName of [
   'studio', 'studio/index.html', 'studio-preview', 'studio-preview/index.html',
   'local-studio-backup.html', 'protected-site', 'gate-assets',
-  'api', 'api/showset/index.php', 'index.php',
+  'api/showset', 'api/showset/index.php', 'index.php',
 ]) assert(!exists(pathName), 'Private or preview-only path must not be public: ' + pathName);
 const apache = read('.htaccess');
 assert(apache.includes('DirectoryIndex index.html'), 'Missing directory routing');
 assert(apache.includes('RewriteRule ^work/behind-every-moment/?$ /work/provault/'),
   'The legacy Vercel redirect must also work on Apache');
 assert(!apache.includes('RewriteRule ^(.*)$ index.php'), 'PHP preview gate leaked into public export');
+assert(read('api/contact.php').includes("'hello@showset.co.za'"),
+  'Contact endpoint must send to fixed SHOWSET inbox');
+assert(!read('api/contact.php').includes("config.local.php"),
+  'Public contact handler must not access private Studio PHP configuration');
+assert(!read('api/.htaccess').includes('showset'),
+  'Public API rules must not refer to Studio backend');
+
 assert(read('index.html').includes('showset'), 'Homepage appears empty');
 const release = JSON.parse(read('release.json'));
 assert(/^[a-f0-9]{40}$/i.test(release.commit), 'Invalid release commit marker');
