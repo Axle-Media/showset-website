@@ -21,6 +21,19 @@
     .contact-intro,.contact-intro > p
   ) { text-align:center!important; }
 
+
+  /* Home featured-work heading: centre both fit-content reveal lines
+     instead of only centring the heading's outer text box. */
+  .concept-12-root #main #portfolio-section .portfolio-heading > .section-title {
+    width:100%;
+    margin-inline:auto!important;
+    text-align:center!important;
+  }
+  .concept-12-root #main #portfolio-section .portfolio-heading > .section-title .wipe-line {
+    margin-inline:auto!important;
+    text-align:center!important;
+  }
+
   .concept-12-root #main .dot-words {
     margin-inline:auto;
   }
