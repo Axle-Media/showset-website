@@ -174,3 +174,12 @@
     white-space:nowrap;
   }
 }
+
+/* One semantic hero heading with a shorter mobile-only presentation.
+   Desktop retains the original approved text and animations. */
+#main .hero-title > .hero-line-mobile { display:none!important; }
+@media (max-width:600px) {
+  #main .hero-title > .hero-line-desktop { display:none!important; }
+  #main .hero-title > .hero-line-mobile { display:block!important; }
+  #main .hero-title > .hero-line-mobile:last-child > span { animation-delay:.13s; }
+}
