@@ -1,0 +1,90 @@
+name: Prepare SHOWSET xneelo static package
+
+# Download-only by default. Never signs into xneelo or changes DNS.
+on:
+  workflow_dispatch:
+    inputs:
+      release_mode:
+        description: "staging (noindex) or production (SEO enabled)"
+        type: choice
+        options: [staging, production]
+        default: staging
+        required: true
+      public_origin:
+        description: "Final HTTPS site origin used in production sitemap"
+        type: string
+        default: "https://showset.co.za"
+        required: true
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/xneelo-package.yml"
+      - "scripts/package-xneelo-public.mjs"
+      - "scripts/check-xneelo-public.mjs"
+      - "lib/deployment.ts"
+      - "next.config.ts"
+      - "package.json"
+      - "package-lock.json"
+      - "content/**"
+      - "app/**"
+      - "public/**"
+      - "lib/**"
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    name: Validate and package public static export
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SHOWSET_XNEELO_PACKAGE_MODE: ${{ inputs.release_mode || 'staging' }}
+      SHOWSET_PUBLIC_ORIGIN: ${{ inputs.public_origin || 'https://showset.co.za' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Validate TypeScript, content and SEO
+        run: |
+          npm run check
+          npm run lint:source
+          npm run check:seo
+      - name: Build and audit public xneelo package
+        run: npm run package:xneelo:public
+      - name: Preflight the production flavour on pull requests
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          set -euo pipefail
+          SHOWSET_XNEELO_PACKAGE_MODE=production node scripts/package-xneelo-public.mjs
+          SHOWSET_XNEELO_PACKAGE_MODE=production node scripts/check-xneelo-public.mjs
+          # Restore the original selected staging package before making the ZIP.
+          node scripts/package-xneelo-public.mjs
+          node scripts/check-xneelo-public.mjs
+      - name: Produce transport ZIP and SHA-256 checksum
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p release
+          ZIP="release/showset-xneelo-$SHOWSET_XNEELO_PACKAGE_MODE.zip"
+          (cd dist/xneelo-public && zip -q -r "../../$ZIP" .)
+          unzip -Z -1 "$ZIP" | grep -Fxq ".htaccess"
+          unzip -Z -1 "$ZIP" | grep -Fxq "index.html"
+          unzip -Z -1 "$ZIP" | grep -Fxq "contact/index.html"
+          cp dist/xneelo-manifest.json "release/xneelo-manifest.json"
+          (cd release && sha256sum *.zip > SHA256SUMS.txt)
+          ls -lh release/
+      - name: Archive download-only xneelo release
+        uses: actions/upload-artifact@v4
+        with:
+          name: showset-xneelo-static-package
+          path: release/
+          if-no-files-found: error
+          retention-days: 30
