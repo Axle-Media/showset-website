@@ -103,7 +103,7 @@
   border:1.5px solid rgba(250,249,253,.33);border-radius:10px;
   background:#08263b;box-shadow:none;
   color:#FAF9FD!important;
-  font:500 15px/1.45 var(--body-font)!important;
+  font:500 16px/1.45 var(--body-font)!important;
   letter-spacing:0;outline:none;
   transition:border-color .2s,box-shadow .2s;
 }
@@ -139,7 +139,7 @@
   text-align:left;cursor:pointer;
 }
 .concept-12-root .contact-rebuilt .contact-form .select-trigger>span{
-  font:500 14px/1.4 var(--body-font);color:#c1d1db;
+  font:500 16px/1.45 var(--body-font)!important;color:#c1d1db;
 }
 .concept-12-root .contact-rebuilt .contact-form .select-panel{
   border:1px solid rgba(18,186,175,.45);
@@ -153,7 +153,7 @@
   width:0;height:0;display:none;
 }
 .concept-12-root .contact-rebuilt .contact-form .select-option{
-  font:500 14px/1.45 var(--body-font)!important;
+  font:500 16px/1.45 var(--body-font)!important;
   border-radius:7px;
 }
 .concept-12-root .contact-rebuilt .contact-form .select-option[aria-selected="true"]{
